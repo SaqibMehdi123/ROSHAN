@@ -1,10 +1,9 @@
 <div align="center">
 
-<img src="public/logo.svg" alt="ROSHAN logo" width="96" />
-
 # روشن · ROSHAN
 
 **A joyful, offline-first digital literacy adventure for rural Pakistani primary schools.**
+
 Classes 1–5 · Ages 6–11 · Urdu-first · Works on old PCs and cheap Android tablets — no internet required.
 
 [![Phase](https://img.shields.io/badge/phase-1%20live-22C55E?style=flat-square)](#-roadmap)
