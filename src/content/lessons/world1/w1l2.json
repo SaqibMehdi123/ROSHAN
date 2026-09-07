@@ -1,0 +1,183 @@
+{
+  "id": "w1l2",
+  "schemaVersion": 1,
+  "world": 1,
+  "order": 2,
+  "title": { "ur": "بجلی کے جُز", "en": "Bijli's Parts" },
+  "skill": { "ur": "کمپیوٹر کے حصے: مانیٹر، سی پی یو، کی بورڈ، ماؤس", "en": "Computer parts: monitor, CPU, keyboard, mouse" },
+  "skillKey": "computer-parts",
+  "minutes": 7,
+  "badge": "dosti-ka-safar",
+  "praise": {
+    "ur": "شاباش! تم نے بجلی کے سب جُز واپس لگا دیے!",
+    "en": "Shabash! You put all of Bijli's parts back!"
+  },
+
+  "story": {
+    "scenes": [
+      {
+        "bg": "bg-courtyard",
+        "props": ["charpai", "chai-cup"],
+        "cast": ["bijli", "golmatol"],
+        "lines": [
+          {
+            "char": "narrator",
+            "emote": "idle",
+            "ur": "اگلی صبح بجلی آنگن میں کھیل رہا تھا۔ اتنے میں گول مٹول اچھال مار کر اس پر بیٹھ گیا!",
+            "en": "Next morning, Bijli was playing in the courtyard. Suddenly Gol Matol jumped and sat on him!",
+            "audio": "w1l2_s1_l1"
+          },
+          {
+            "char": "golmatol",
+            "emote": "guilty",
+            "ur": "میاؤں…!",
+            "en": "Myaun…!",
+            "audio": "w1l2_s1_l2"
+          },
+          {
+            "char": "bijli",
+            "emote": "short-circuit",
+            "ur": "بز-بز-بز! اوہ نہیں! میرے جُز الگ ہو گئے!",
+            "en": "Bzz-bzz-bzz! Oh no! My parts came off!",
+            "audio": "w1l2_s1_l3",
+            "fx": "shake"
+          }
+        ]
+      },
+      {
+        "bg": "bg-courtyard",
+        "props": [],
+        "cast": ["noor", "chotu", "bijli"],
+        "lines": [
+          {
+            "char": "noor",
+            "emote": "pointing",
+            "ur": "مصیبت نہیں، بجلی! ہم تمہارے جُز واپس لگا دیں گے۔ پہلے سب کو جانیں!",
+            "en": "No problem, Bijli! We'll put your parts back. First let's learn them!",
+            "audio": "w1l2_s2_l1"
+          },
+          {
+            "char": "bijli",
+            "emote": "thinking",
+            "ur": "میرا مانیٹر میرا چہرہ ہے — یہ سب کچھ دکھاتا ہے!",
+            "en": "My monitor is my face — it shows everything!",
+            "audio": "w1l2_s2_l2"
+          },
+          {
+            "char": "bijli",
+            "emote": "thinking",
+            "ur": "یہ سی پی یو میرا دماغ ہے — یہ سوچتا ہے!",
+            "en": "The CPU is my brain — it thinks!",
+            "audio": "w1l2_s2_l3"
+          },
+          {
+            "char": "bijli",
+            "emote": "thinking",
+            "ur": "کی بورڈ سے میں تمہاری باتیں سنتا ہوں — یہ میرے کان ہیں!",
+            "en": "I hear your words through the keyboard — it is my ears!",
+            "audio": "w1l2_s2_l4"
+          },
+          {
+            "char": "bijli",
+            "emote": "happy",
+            "ur": "اور ماؤس میرا پالتو مددگار ہے — اس سے اشارہ کرتے ہیں!",
+            "en": "And the mouse is my pet helper — it points at things!",
+            "audio": "w1l2_s2_l5"
+          },
+          {
+            "char": "chotu",
+            "emote": "excited",
+            "ur": "چلو بگ فکسر بنیں! جُز واپس لگاتے ہیں!",
+            "en": "Let's be Bug Fixers! Put the parts back!",
+            "audio": "w1l2_s2_l6"
+          }
+        ]
+      }
+    ]
+  },
+
+  "show": {
+    "steps": [
+      {
+        "visual": "show-part-monitor",
+        "caption": { "ur": "مانیٹر — بجلی کا چہرہ (Monitor)", "en": "Monitor — Bijli's face" },
+        "audio": "w1l2_show_1"
+      },
+      {
+        "visual": "show-part-cpu",
+        "caption": { "ur": "سی پی یو — بجلی کا دماغ (CPU)", "en": "CPU — Bijli's brain" },
+        "audio": "w1l2_show_2"
+      },
+      {
+        "visual": "show-part-keyboard",
+        "caption": { "ur": "کی بورڈ — بجلی کے کان (Keyboard)", "en": "Keyboard — Bijli's ears" },
+        "audio": "w1l2_show_3"
+      },
+      {
+        "visual": "show-part-mouse",
+        "caption": { "ur": "ماؤس — بجلی کا مددگار (Mouse)", "en": "Mouse — Bijli's helper" },
+        "audio": "w1l2_show_4"
+      }
+    ]
+  },
+
+  "do": {
+    "activity": {
+      "type": "match-slots",
+      "prompt": {
+        "ur": "جُز اٹھاؤ اور بجلی پر سہی جگہ لگاؤ!",
+        "en": "Pick a part and place it on the right spot on Bijli!"
+      },
+      "audio": "w1l2_do_prompt",
+      "items": [
+        { "id": "monitor", "art": "monitor", "name": { "ur": "مانیٹر", "en": "Monitor" } },
+        { "id": "cpu", "art": "cpu-box", "name": { "ur": "سی پی یو", "en": "CPU" } },
+        { "id": "keyboard", "art": "keyboard", "name": { "ur": "کی بورڈ", "en": "Keyboard" } },
+        { "id": "mouse", "art": "mouse", "name": { "ur": "ماؤس", "en": "Mouse" } }
+      ],
+      "slots": [
+        {
+          "id": "face",
+          "accepts": "monitor",
+          "art": "slot-face",
+          "label": { "ur": "چہرہ", "en": "Face" },
+          "success": { "ur": "مانیٹر بجلی کا چہرہ ہے! یہ سب کچھ دکھاتا ہے۔", "en": "The monitor is Bijli's face! It shows everything." }
+        },
+        {
+          "id": "brain",
+          "accepts": "cpu",
+          "art": "slot-brain",
+          "label": { "ur": "دماغ", "en": "Brain" },
+          "success": { "ur": "سی پی یو بجلی کا دماغ ہے! یہ سوچتا ہے۔", "en": "The CPU is Bijli's brain! It thinks." }
+        },
+        {
+          "id": "ears",
+          "accepts": "keyboard",
+          "art": "slot-ears",
+          "label": { "ur": "کان", "en": "Ears" },
+          "success": { "ur": "کی بورڈ بجلی کے کان ہیں! اس سے بجلی سنتی ہے۔", "en": "The keyboard is Bijli's ears! Bijli listens through it." }
+        },
+        {
+          "id": "helper",
+          "accepts": "mouse",
+          "art": "slot-helper",
+          "label": { "ur": "مددگار", "en": "Helper" },
+          "success": { "ur": "ماؤس بجلی کا پالتو مددگار ہے! اشارے کرنے میں مدد کرتا ہے۔", "en": "The mouse is Bijli's pet helper! It points at things." }
+        }
+      ],
+      "wrongHint": {
+        "ur": "اوپس! ایک بگ ملا! یہ جُز یہاں نہیں لگے گا… دوبارہ کوشش کریں؟",
+        "en": "Oops! A bug! This part doesn't go here… try again?"
+      }
+    }
+  },
+
+  "cheer": {
+    "recap": [
+      { "ur": "مانیٹر چہرہ، سی پی یو دماغ،", "en": "Monitor is the face, CPU is the brain," },
+      { "ur": "کی بورڈ کان، ماؤس مددگار! ہو ہو!", "en": "keyboard the ears, mouse the helper! Hoo hoo!" }
+    ],
+    "recapAudio": ["w1l2_recap_1", "w1l2_recap_2"],
+    "rewardToast": { "ur": "+١ سٹیکر حاصل کیا!", "en": "+1 sticker earned!" }
+  }
+}

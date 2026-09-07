@@ -1,0 +1,99 @@
+{
+  "puzzles": [
+    {
+      "id": "bg-pn-1",
+      "bank": "pattern-next",
+      "tier": 1,
+      "art": "pattern",
+      "prompt": { "ur": "اگلا کون سا آئے گا؟", "en": "What comes next?" },
+      "audio": "bg_pn_prompt",
+      "series": [ { "art": "mango" }, { "art": "kite" }, { "art": "mango" }, { "art": "kite" } ],
+      "options": [
+        { "id": "mango", "art": "mango" },
+        { "id": "kite", "art": "kite" },
+        { "id": "chai", "art": "chai-cup" }
+      ],
+      "answer": "mango",
+      "explain": { "ur": "آم، پتنگ، آم، پتنگ… اب آم کی باری!", "en": "Mango, kite, mango, kite… now mango's turn!" }
+    },
+    {
+      "id": "bg-pn-2",
+      "bank": "pattern-next",
+      "tier": 2,
+      "art": "pattern",
+      "prompt": { "ur": "اگلا کون سا آئے گا؟", "en": "What comes next?" },
+      "audio": "bg_pn_prompt",
+      "series": [ { "art": "sun" }, { "art": "sun" }, { "art": "kite" }, { "art": "sun" }, { "art": "sun" } ],
+      "options": [
+        { "id": "kite", "art": "kite" },
+        { "id": "mango", "art": "mango" },
+        { "id": "sun", "art": "sun" }
+      ],
+      "answer": "kite",
+      "explain": { "ur": "دو سورج، ایک پتنگ… اب پتنگ کی باری!", "en": "Two suns, one kite… now the kite's turn!" }
+    },
+    {
+      "id": "bg-pn-3",
+      "bank": "pattern-next",
+      "tier": 3,
+      "art": "pattern",
+      "prompt": { "ur": "اگلا کون سا آئے گا؟", "en": "What comes next?" },
+      "audio": "bg_pn_prompt",
+      "series": [ { "art": "mango" }, { "art": "kite" }, { "art": "chai-cup" }, { "art": "mango" }, { "art": "kite" } ],
+      "options": [
+        { "id": "chai-cup", "art": "chai-cup" },
+        { "id": "mango", "art": "mango" },
+        { "id": "kite", "art": "kite" }
+      ],
+      "answer": "chai-cup",
+      "explain": { "ur": "آم، پتنگ، چائے… تین کا دائرہ! اب چائے!", "en": "Mango, kite, chai — a circle of three! Now chai!" }
+    },
+    {
+      "id": "bg-oo-1",
+      "bank": "odd-one-out",
+      "tier": 1,
+      "art": "odd-one",
+      "prompt": { "ur": "کون ایک الگ ہے؟ اسے ڈھونڈو!", "en": "Which one is different? Find it!" },
+      "audio": "bg_oo_prompt",
+      "options": [
+        { "id": "mango-1", "art": "mango" },
+        { "id": "mango-2", "art": "mango" },
+        { "id": "goat", "art": "goat" },
+        { "id": "mango-3", "art": "mango" }
+      ],
+      "answer": "goat",
+      "explain": { "ur": "بکری الگ ہے! باقی سب آم ہیں۔", "en": "The goat is different! The rest are mangoes." }
+    },
+    {
+      "id": "bg-oo-2",
+      "bank": "odd-one-out",
+      "tier": 2,
+      "art": "odd-one",
+      "prompt": { "ur": "کون ایک الگ ہے؟ کمپیوٹر کی مدد سے سوچو!", "en": "Which one is different? Think like a computer!" },
+      "audio": "bg_oo_prompt",
+      "options": [
+        { "id": "monitor", "art": "monitor" },
+        { "id": "keyboard", "art": "keyboard" },
+        { "id": "mouse", "art": "mouse" },
+        { "id": "cricket-bat", "art": "cricket-bat" }
+      ],
+      "answer": "cricket-bat",
+      "explain": { "ur": "بیٹ کھیل کی چیز ہے! باقی سب کمپیوٹر کے جُز ہیں۔", "en": "The bat is for cricket! The rest are computer parts." }
+    },
+    {
+      "id": "bg-so-1",
+      "bank": "sequence-order",
+      "tier": 1,
+      "art": "sequence",
+      "prompt": { "ur": "چائے بنانے کی ترتیب مکمل کرو!", "en": "Finish the order for making chai!" },
+      "audio": "bg_so_prompt",
+      "options": [
+        { "id": "kettle", "art": "kettle" },
+        { "id": "cup", "art": "chai-cup" },
+        { "id": "milk", "art": "milk-can" }
+      ],
+      "answer": "cup",
+      "explain": { "ur": "پانی اُبالا، دودھ ڈالا… اب چائے کپ کی باری!", "en": "Water boiled, milk added… now the cup!" }
+    }
+  ]
+}

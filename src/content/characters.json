@@ -1,0 +1,42 @@
+[
+  {
+    "id": "noor",
+    "name": { "ur": "نور", "en": "Noor" },
+    "role": { "ur": "ہمت والی قائد — سوال پوچھتی ہے جو تم پوچھتے!", "en": "The brave leader — she asks the questions you would ask!" },
+    "catchphrase": { "ur": "چلو! کچھ نیا سیکھیں!", "en": "Chalo! Kuch naya seekhein!" },
+    "introAudio": "char_noor_intro",
+    "color": "#0D9488"
+  },
+  {
+    "id": "chotu",
+    "name": { "ur": "چھوٹو", "en": "Chotu" },
+    "role": { "ur": "مزاحیہ دوست — غلطیاں کرتا ہے، بگ ڈھونڈتا ہے!", "en": "The funny friend — makes mistakes, finds bugs!" },
+    "catchphrase": { "ur": "اوہو! پھر بگ آ گیا!", "en": "Oho! Phir bug aa gaya!" },
+    "introAudio": "char_chotu_intro",
+    "color": "#F59E0B"
+  },
+  {
+    "id": "bijli",
+    "name": { "ur": "بجلی", "en": "Bijli" },
+    "role": { "ur": "پیلا روبوٹ — جس کے مسائل ہی سبق ہیں!", "en": "The little yellow robot — his problems are the lessons!" },
+    "catchphrase": { "ur": "بجلی ریڈی ہے!", "en": "Bijli ready hai!" },
+    "introAudio": "char_bijli_intro",
+    "color": "#FDE047"
+  },
+  {
+    "id": "golmatol",
+    "name": { "ur": "گول مٹول", "en": "Gol Matol" },
+    "role": { "ur": "شرارتی بلی — بگ پیدا کرتا ہے، تم ٹھیک کرتے ہو!", "en": "The naughty cat — makes the bugs you get to fix!" },
+    "catchphrase": { "ur": "میاؤں!", "en": "Myaun!" },
+    "introAudio": "char_golmatol_intro",
+    "color": "#FB923C"
+  },
+  {
+    "id": "ustad-ullo",
+    "name": { "ur": "اُستاد اُلوو", "en": "Ustaad Ulloo" },
+    "role": { "ur": "دانش مند الو — ہر سبق کے آخر میں دو لائنیں یاد دلاتے ہیں۔", "en": "The wise owl — recaps every lesson in two lines." },
+    "catchphrase": { "ur": "ہو ہو! یاد رکھو…", "en": "Hoo hoo! Yaad rakho…" },
+    "introAudio": "char_ustad_intro",
+    "color": "#92400E"
+  }
+]

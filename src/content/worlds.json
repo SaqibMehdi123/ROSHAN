@@ -1,0 +1,114 @@
+[
+  {
+    "id": 1,
+    "name": { "ur": "پہلی ملاقات", "en": "First Meeting" },
+    "color": "#F59E0B",
+    "motif": "storeroom-box",
+    "badgeId": "dosti-ka-safar",
+    "badgeName": { "ur": "دوستی کا سفر", "en": "Journey of Friendship" },
+    "lessonCount": 6,
+    "lessonsReady": 3,
+    "arcSummary": {
+      "ur": "نور اور چھوٹو اسٹور روم میں ایک پراسرار صندوق تلاش کرتے ہیں — اور بجلی کو جگاتے ہیں!",
+      "en": "Noor and Chotu find a mysterious box in the storeroom — and wake Bijli!"
+    }
+  },
+  {
+    "id": 2,
+    "name": { "ur": "ماؤس کا میدان", "en": "Mouse Meadow" },
+    "color": "#22C55E",
+    "motif": "butterfly",
+    "badgeId": "mouse-master",
+    "badgeName": { "ur": "ماؤس ماسٹر", "en": "Mouse Master" },
+    "lessonCount": 10,
+    "lessonsReady": 0,
+    "arcSummary": {
+      "ur": "بجلی کا پالتو تیر (کرسر) میدان میں بھاگ گیا! اسے تربیت دو۔",
+      "en": "Bijli's pet arrow (the cursor) escaped into the meadow! Train it."
+    }
+  },
+  {
+    "id": 3,
+    "name": { "ur": "کی بورڈ کی بادشاہت", "en": "Keyboard Kingdom" },
+    "color": "#8B5CF6",
+    "motif": "castle",
+    "badgeId": "keyboard-knight",
+    "badgeName": { "ur": "کی بورڈ نائٹ", "en": "Keyboard Knight" },
+    "lessonCount": 12,
+    "lessonsReady": 0,
+    "arcSummary": {
+      "ur": "بنفشے قلعے میں ہر کلید ایک مکان ہے، ہر مکان میں ایک کردار!",
+      "en": "In the purple castle every key is a house with a character inside!"
+    }
+  },
+  {
+    "id": 4,
+    "name": { "ur": "کنٹرول سٹی", "en": "Control City" },
+    "color": "#3B82F6",
+    "motif": "folder",
+    "badgeId": "folder-captain",
+    "badgeName": { "ur": "فولڈر کیپٹن", "en": "Folder Captain" },
+    "lessonCount": 8,
+    "lessonsReady": 0,
+    "arcSummary": {
+      "ur": "گول مٹول نے شہر کی فائلیں بکھیر دیں! بچے انہیں بچا کر منظم کرتے ہیں۔",
+      "en": "Gol Matol scattered the city's files! Kids rescue and organize them."
+    }
+  },
+  {
+    "id": 5,
+    "name": { "ur": "تخلیقی کارخانہ", "en": "Creative Workshop" },
+    "color": "#EC4899",
+    "motif": "ferris-wheel",
+    "badgeId": "little-artist",
+    "badgeName": { "ur": "ننھا فنکار", "en": "Little Artist" },
+    "lessonCount": 10,
+    "lessonsReady": 0,
+    "arcSummary": {
+      "ur": "گاؤں میلے کے لیے سب کچھ بنائیں — کارڈ، پوسٹر، دعوتیں!",
+      "en": "Make everything for the village mela — cards, posters, invitations!"
+    }
+  },
+  {
+    "id": 6,
+    "name": { "ur": "انٹرنیٹ بازار اور حفاظت", "en": "Internet Bazaar + Safety" },
+    "color": "#0D9488",
+    "motif": "shield",
+    "badgeId": "safety-star",
+    "badgeName": { "ur": "سیفٹی اسٹار", "en": "Safety Star" },
+    "lessonCount": 8,
+    "lessonsReady": 0,
+    "arcSummary": {
+      "ur": "انٹرنیٹ دنیا کا سب سے بڑا بازار ہے — اور اُستاد اُلوو حفاظتی ڈھال کی تربیت دیتے ہیں۔",
+      "en": "The internet is the world's biggest bazaar — and Ustaad Ulloo trains your Safety Shield."
+    }
+  },
+  {
+    "id": 7,
+    "name": { "ur": "لاجک کا جنگل", "en": "Logic Jungle" },
+    "color": "#166534",
+    "motif": "gem",
+    "badgeId": "logic-champion",
+    "badgeName": { "ur": "لاجک چیمپیئن", "en": "Logic Champion" },
+    "lessonCount": 12,
+    "lessonsReady": 0,
+    "arcSummary": {
+      "ur": "گول مٹول نے بجلی کا دماغ الٹ پلٹ کر دیا! سوچنے کے جواہر جمع کرو۔",
+      "en": "Gol Matol scrambled Bijli's brain! Collect the Thinking Gems."
+    }
+  },
+  {
+    "id": 8,
+    "name": { "ur": "کہانی کا پہاڑ", "en": "Story Mountain" },
+    "color": "#D97706",
+    "motif": "mountain-flag",
+    "badgeId": "roshan-hero",
+    "badgeName": { "ur": "روشن ہیرو", "en": "ROSHAN Hero" },
+    "lessonCount": 10,
+    "lessonsReady": 0,
+    "arcSummary": {
+      "ur": "چوٹی تک کہانیاں اور کھیل بنا کر چڑھو — اور روشن ہیرو بنو!",
+      "en": "Climb to the summit making stories and games — and become a ROSHAN Hero!"
+    }
+  }
+]

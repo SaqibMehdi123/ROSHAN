@@ -1,0 +1,207 @@
+{
+  "id": "w1l3",
+  "schemaVersion": 1,
+  "world": 1,
+  "order": 3,
+  "title": { "ur": "لیب کے آداب", "en": "Lab Manners" },
+  "skill": { "ur": "لیب کے اصول: صاف ہاتھ، نرم چھوائی، کھانا دور، پہلے پوچھو", "en": "Lab rules: clean hands, gentle touch, no food, ask first" },
+  "skillKey": "lab-rules",
+  "minutes": 7,
+  "badge": "dosti-ka-safar",
+  "praise": {
+    "ur": "شاباش! تم سچے بگ فکسر بن گئے!",
+    "en": "Shabash! You became true Bug Fixers!"
+  },
+
+  "story": {
+    "scenes": [
+      {
+        "bg": "bg-lab",
+        "props": ["bench"],
+        "cast": ["noor", "chotu", "golmatol"],
+        "lines": [
+          {
+            "char": "narrator",
+            "emote": "idle",
+            "ur": "دوستی نے بجلی کو کمپیوٹر لیب دکھانے کا فیصلہ کیا۔ لیکن گول مٹول بھی چپکے سے اندر آ گیا!",
+            "en": "The friends decided to show Bijli the computer lab. But Gol Matol sneaked in too!",
+            "audio": "w1l3_s1_l1"
+          },
+          {
+            "char": "chotu",
+            "emote": "surprised",
+            "ur": "دیکھو! گول مٹول کیچڑ والے پنجوں سے کی بورڈ پر چڑھ رہا ہے!",
+            "en": "Look! Gol Matol is climbing on the keyboard with muddy paws!",
+            "audio": "w1l3_s1_l2"
+          },
+          {
+            "char": "noor",
+            "emote": "pointing",
+            "ur": "گول مٹول، نہیں! کمپیوٹر لیب کے اصول ہوتے ہیں!",
+            "en": "Gol Matol, no! The computer lab has rules!",
+            "audio": "w1l3_s1_l3"
+          },
+          {
+            "char": "golmatol",
+            "emote": "guilty",
+            "ur": "میاؤں؟… اصول؟",
+            "en": "Myaun?… Rules?",
+            "audio": "w1l3_s1_l4"
+          }
+        ]
+      },
+      {
+        "bg": "bg-lab",
+        "props": [],
+        "cast": ["noor", "bijli", "chotu"],
+        "lines": [
+          {
+            "char": "noor",
+            "emote": "pointing",
+            "ur": "اصول ایک: ہمیشہ صاف ہاتھوں سے کمپیوٹر چھوؤ۔",
+            "en": "Rule one: always touch the computer with clean hands.",
+            "audio": "w1l3_s2_l1"
+          },
+          {
+            "char": "noor",
+            "emote": "gentle",
+            "ur": "اصول دو: نرمی سے چھوؤ — دھکا نہیں دینا!",
+            "en": "Rule two: touch gently — never bang on it!",
+            "audio": "w1l3_s2_l2"
+          },
+          {
+            "char": "noor",
+            "emote": "pointing",
+            "ur": "اصول تین: کھانا پینا کمپیوٹر سے دور رکھو۔",
+            "en": "Rule three: keep food and drinks away from the computer.",
+            "audio": "w1l3_s2_l3"
+          },
+          {
+            "char": "noor",
+            "emote": "thinking",
+            "ur": "اصول چار: کمپیوٹر چھونے سے پہلے اُستاد سے پوچھو۔",
+            "en": "Rule four: ask the teacher before using the computer.",
+            "audio": "w1l3_s2_l4"
+          },
+          {
+            "char": "golmatol",
+            "emote": "sleepy",
+            "ur": "میاؤں… اتنے اصول! میں تو چارپائی پر سونے چلا۔",
+            "en": "Myaun… so many rules! I'm going to nap on the charpai.",
+            "audio": "w1l3_s2_l5"
+          },
+          {
+            "char": "bijli",
+            "emote": "happy",
+            "ur": "اب تم بگ فکسر ہو! بتاؤ کون سا کام ٹھیک ہے اور کون سا بگ!",
+            "en": "Now you are Bug Fixers! Tell me which action is good and which is a bug!",
+            "audio": "w1l3_s2_l6"
+          }
+        ]
+      }
+    ]
+  },
+
+  "show": {
+    "steps": [
+      {
+        "visual": "show-rule-clean-hands",
+        "caption": { "ur": "صاف ہاتھ — کمپیوٹر خوش!", "en": "Clean hands — happy computer!" },
+        "audio": "w1l3_show_1"
+      },
+      {
+        "visual": "show-rule-gentle-touch",
+        "caption": { "ur": "نرمی سے چھوؤ!", "en": "Touch gently!" },
+        "audio": "w1l3_show_2"
+      },
+      {
+        "visual": "show-rule-no-food",
+        "caption": { "ur": "کھانا پینا دور رکھو!", "en": "Keep food and drinks away!" },
+        "audio": "w1l3_show_3"
+      },
+      {
+        "visual": "show-rule-ask-first",
+        "caption": { "ur": "پہلے اُستاد سے پوچھو!", "en": "Ask the teacher first!" },
+        "audio": "w1l3_show_4"
+      }
+    ]
+  },
+
+  "do": {
+    "activity": {
+      "type": "sort-bins",
+      "prompt": {
+        "ur": "کارڈ اٹھاؤ اور بتاؤ — یہ ٹھیک ہے یا بگ؟",
+        "en": "Pick a card and decide — is it good, or is it a bug?"
+      },
+      "audio": "w1l3_do_prompt",
+      "bins": [
+        { "id": "theek", "label": { "ur": "ٹھیک ہے", "en": "Good" }, "art": "bin-green" },
+        { "id": "bug", "label": { "ur": "بگ ملا!", "en": "Bug!" }, "art": "bin-teal" }
+      ],
+      "cards": [
+        {
+          "id": "c1", "art": "clean-hands",
+          "text": { "ur": "علی نے ہاتھ دھو کر کمپیوٹر چھوا۔", "en": "Ali washed his hands, then touched the computer." },
+          "bin": "theek",
+          "explain": { "ur": "صاف ہاتھ — کمپیوٹر خوش!", "en": "Clean hands — happy computer!" }
+        },
+        {
+          "id": "c2", "art": "juice-spill",
+          "text": { "ur": "سارہ نے کی بورڈ کے پاس جوس رکھ دیا۔", "en": "Sara kept her juice next to the keyboard." },
+          "bin": "bug",
+          "explain": { "ur": "اوپس! پینے کی چیزیں کمپیوٹر سے دور رکھو!", "en": "Oops! Keep drinks away from the computer!" }
+        },
+        {
+          "id": "c3", "art": "gentle-touch",
+          "text": { "ur": "عائشہ نے نرمی سے ماؤس پکڑا۔", "en": "Ayesha held the mouse gently." },
+          "bin": "theek",
+          "explain": { "ur": "نرم چھوائی — بالکل ٹھیک!", "en": "Gentle touch — exactly right!" }
+        },
+        {
+          "id": "c4", "art": "dirty-paws",
+          "text": { "ur": "بلال نے مٹی والے ہاتھوں سے ماؤس چھوا۔", "en": "Bilal touched the mouse with muddy hands." },
+          "bin": "bug",
+          "explain": { "ur": "اوپس! پہلے ہاتھ صاف کرو!", "en": "Oops! Clean your hands first!" }
+        },
+        {
+          "id": "c5", "art": "sneak-in",
+          "text": { "ur": "بغیر پوچھے کمپیوٹر آن کر دیا۔", "en": "He turned the computer on without asking." },
+          "bin": "bug",
+          "explain": { "ur": "اوپس! پہلے اُستاد سے پوچھو!", "en": "Oops! Ask the teacher first!" }
+        },
+        {
+          "id": "c6", "art": "ask-first",
+          "text": { "ur": "حمدان نے اُستاد سے پوچھ کر کمپیوٹر آن کیا۔", "en": "Hamdan asked the teacher, then turned it on." },
+          "bin": "theek",
+          "explain": { "ur": "پہلے پوچھنا — بہادری کی نشانی!", "en": "Asking first — that's a hero's habit!" }
+        },
+        {
+          "id": "c7", "art": "bang-keys",
+          "text": { "ur": "عمر نے غصے میں کی بورڈ دبا دیا۔", "en": "Umar banged hard on the keyboard in anger." },
+          "bin": "bug",
+          "explain": { "ur": "اوپس! ہمیشہ نرمی سے چھوؤ!", "en": "Oops! Always touch gently!" }
+        },
+        {
+          "id": "c8", "art": "polite-question",
+          "text": { "ur": "زینب نے نرمی سے کی بورڈ دبایا۔", "en": "Zainab pressed the keyboard softly." },
+          "bin": "theek",
+          "explain": { "ur": "نرم دبانا — کمپیوٹر خوش!", "en": "Soft pressing — happy computer!" }
+        }
+      ],
+      "wrongHint": {
+        "ur": "اوپس! ایک بگ ملا! دوبارہ سوچو اور دوبارہ کوشش کرو!",
+        "en": "Oops! A bug! Think again and try once more!"
+      }
+    }
+  },
+
+  "cheer": {
+    "recap": [
+      { "ur": "صاف ہاتھ، نرم چھوائی، کھانا دور،", "en": "Clean hands, gentle touch, food away," },
+      { "ur": "اور پہلے اُستاد سے پوچھو! ہو ہو!", "en": "and always ask the teacher first! Hoo hoo!" }
+    ],
+    "recapAudio": ["w1l3_recap_1", "w1l3_recap_2"],
+    "rewardToast": { "ur": "+١ سٹیکر حاصل کیا!", "en": "+1 sticker earned!" }
+  }
+}
