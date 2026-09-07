@@ -6,11 +6,6 @@
 
 Classes 1–5 · Ages 6–11 · Urdu-first · Works on old PCs and cheap Android tablets — no internet required.
 
-[![Phase](https://img.shields.io/badge/phase-1%20live-22C55E?style=flat-square)](#-roadmap)
-[![Offline](https://img.shields.io/badge/works-100%25%20offline-F59E0B?style=flat-square)](#-highlights)
-[![Language](https://img.shields.io/badge/language-اردو%20%2B%20English-0D9488?style=flat-square)](#-highlights)
-[![License](https://img.shields.io/badge/license-TBD-9CA3AF?style=flat-square)](#-license)
-
 </div>
 
 ---
@@ -28,34 +23,34 @@ max 7 minutes, and never punishes a wrong answer. Mistakes are *"bugs"* — and 
 Built for the real conditions of village computer labs: **unreliable electricity, no internet,
 2 children sharing 1 PC, and teachers who are computer beginners themselves.**
 
-## ✨ Highlights
+## Highlights
 
 - **100% offline PWA** — installs once, runs forever; auto-saves every 30 s and resumes exactly where the child left off after a power cut
 - **Adventure-map navigation** — a winding path through 8 lands *is* the menu; no lists, no menus, no reading required
-- **Audio-first** — every instruction spoken in Urdu; a Bijli 🔁 repeat button on every screen
-- **Zero-failure gamification** — stars, badges and a sticker album; no red ✗, no sad sounds, no losing
+- **Audio-first** — every instruction spoken in Urdu, with a repeat button on every screen
+- **Zero-failure gamification** — stars, badges and a sticker album; no red marks, no sad sounds, no losing
 - **Pair Mode** — 2 kids, 1 PC, with a friendly **SWAP!** driver/navigator rotation every 10 minutes
 - **Brain Gym** — daily 3–5 minute logic warm-up that only gets harder after 3 wins in a row
 - **Teacher Hub** — PIN-protected dashboard with progress, stuck-alerts, CSV export, printable lesson plans and take-home letters in Urdu
 - **Content as data** — every story, activity and badge lives in JSON; the engine renders any lesson from its file
 
-## 🗺️ The Learning Journey
+## The Learning Journey
 
 | # | World | Skill | Badge |
 |---|-------|-------|-------|
-| 1 | پہلی ملاقات · First Meeting | What a computer is, lab rules, power on/off | 🤝 Dosti Ka Safar |
-| 2 | ماؤس کا میدان · Mouse Meadow | Click, double-click, drag & drop | 🖱️ Mouse Master |
-| 3 | کی بورڈ کی کنگدم · Keyboard Kingdom | Posture, home row, typing name & words | ⌨️ Keyboard Knight |
-| 4 | کنٹرول سٹی · Control City | Desktop, files, folders, saving | 📁 Folder Captain |
-| 5 | کری ایٹو ورکشاپ · Creative Workshop | Paint, calculator, photos, music | 🎨 Little Artist |
-| 6 | انٹرنیٹ بازار · Internet Bazaar | Search + the Safety Superpowers shield | ⭐ Safety Star |
-| 7 | لاجک جنگل · Logic Jungle | Sequencing, loops, IF-THEN, debugging | 🧠 Logic Champion |
-| 8 | اسٹوری ماؤنٹین · Story Mountain | Block coding, animations, final showcase | 🏆 ROSHAN Hero |
+| 1 | پہلی ملاقات · First Meeting | What a computer is, lab rules, power on/off | Dosti Ka Safar |
+| 2 | ماؤس کا میدان · Mouse Meadow | Click, double-click, drag & drop | Mouse Master |
+| 3 | کی بورڈ کی کنگدم · Keyboard Kingdom | Posture, home row, typing name & words | Keyboard Knight |
+| 4 | کنٹرول سٹی · Control City | Desktop, files, folders, saving | Folder Captain |
+| 5 | کری ایٹو ورکشاپ · Creative Workshop | Paint, calculator, photos, music | Little Artist |
+| 6 | انٹرنیٹ بازار · Internet Bazaar | Search + the Safety Superpowers shield | Safety Star |
+| 7 | لاجک جنگل · Logic Jungle | Sequencing, loops, IF-THEN, debugging | Logic Champion |
+| 8 | اسٹوری ماؤنٹین · Story Mountain | Block coding, animations, final showcase | ROSHAN Hero |
 
 > **Phase 1 ships World 1, Lessons 1–3 fully playable** — Urdu story scripts with side-by-side
 > English translations, interactive activities, stars and the *Dosti Ka Safar* badge.
 
-## 🧒 Meet the Friends
+## Meet the Friends
 
 | Character | Role |
 |-----------|------|
@@ -65,7 +60,7 @@ Built for the real conditions of village computer labs: **unreliable electricity
 | **Gol Matol** | Fat, naughty (never evil) cat who causes the "bugs" |
 | **Ustaad Ulloo** | Wise owl who lands at the end of every lesson with a 2-line recap |
 
-## 🚀 Run Locally
+## Run Locally
 
 ```bash
 bun install        # or: npm install
@@ -77,7 +72,7 @@ Open in Chrome → the app is installable as a PWA (fullscreen, no address bar) 
 fully offline after first load. Progress is stored on-device; a Teacher Hub CSV export moves
 data to a USB stick when needed.
 
-## 📂 Project Structure
+## Project Structure
 
 ```
 docs/                      # design docs — read these first
@@ -108,10 +103,10 @@ public/
   sw.js                    # service worker — precache + cache-first
 ```
 
-## 🧩 Content as Data
+## Content as Data
 
 Lessons are plain JSON — the engine renders any file that follows the schema
-([full schema →](docs/05-lesson-json-schema.md)):
+([full schema](docs/05-lesson-json-schema.md)):
 
 ```json
 {
@@ -128,7 +123,7 @@ Lessons are plain JSON — the engine renders any file that follows the schema
 
 Adding World 2 means adding JSON files — **zero engine changes required.**
 
-## 📚 Design Principles
+## Design Principles
 
 1. **Assume nothing, speak everything** — kids can't read fluently yet, so audio carries the meaning
 2. **Mistakes are bugs** — retry endlessly, always earn at least 1 star, celebrate the fix
@@ -137,13 +132,13 @@ Adding World 2 means adding JSON files — **zero engine changes required.**
 5. **Gentle by default** — cream background, no harsh white, photosensitivity-safe animation
 6. **Child privacy first** — first name only, no ads, no external links, no tracking
 
-## 🗺️ Roadmap
+## Roadmap
 
 - [x] **Phase 1** — app shell, lesson engine, World 1 L1–L3, Teacher Hub v1 *(shipped)*
 - [ ] **Phase 2** — World 1 L4–L6, World 2 *Mouse Meadow*, real art & voice-over assets
 - [ ] **Phase 3** — Worlds 3–8, Teacher Academy course, lab-wide sync over USB
 
-## 🤝 Contributing
+## Contributing
 
 The platform currently uses **code-drawn SVG art and placeholder audio** — see
 [docs/07-asset-checklist.md](docs/07-asset-checklist.md) for the exact list of illustrations,
