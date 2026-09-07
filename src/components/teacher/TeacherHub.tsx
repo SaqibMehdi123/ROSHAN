@@ -76,8 +76,12 @@ function Dashboard() {
   const [pin, setPin] = useState("");
   const [unlocked, setUnlocked] = useState(false);
   const hasPin = typeof window !== "undefined" && !!localStorage.getItem("roshan.v1.teacher");
+  // settings screen already verified the PIN this session → skip the second gate
+  const alreadyUnlocked =
+    typeof window !== "undefined" && sessionStorage.getItem("roshan.teacher-unlocked") === "1";
+  const open = unlocked || alreadyUnlocked;
 
-  if (!unlocked) {
+  if (!open) {
     return (
       <div className="mx-auto max-w-sm rounded-2xl border-2 border-roshan-card-border bg-white p-6">
         <p className="mb-1 text-lg font-bold">Teacher sign-in</p>
@@ -97,9 +101,13 @@ function Dashboard() {
             if (!hasPin && pin.length >= 4) {
               import("@/lib/store").then(({ setTeacherPin }) => {
                 setTeacherPin(pin);
+                try { sessionStorage.setItem("roshan.teacher-unlocked", "1"); } catch {}
                 setUnlocked(true);
               });
-            } else if (hasPin && checkTeacherPin(pin)) setUnlocked(true);
+            } else if (hasPin && checkTeacherPin(pin)) {
+              try { sessionStorage.setItem("roshan.teacher-unlocked", "1"); } catch {}
+              setUnlocked(true);
+            }
           }}
         >
           {hasPin ? "Sign in" : "Create PIN & sign in"}

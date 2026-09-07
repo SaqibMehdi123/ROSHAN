@@ -188,15 +188,15 @@ function StoryPhase({
 
   return (
     <div onClick={advance} className="cursor-pointer select-none">
-      {/* scene stage */}
-      <div className="relative overflow-hidden rounded-3xl border-4 border-roshan-card-border shadow-[var(--r-shadow)]">
+      {/* scene stage (capped so the dialog bubble always stays on screen) */}
+      <div className="relative mx-auto max-w-3xl overflow-hidden rounded-3xl border-4 border-roshan-card-border shadow-[var(--r-shadow)]">
         <Art id={scene.bg} className="block" />
         <div className="absolute inset-x-0 bottom-1 flex items-end justify-center gap-2 px-4">
           {scene.cast.map((c) => (
             <div key={c} className="transition-transform hover:scale-105">
               <Character
                 id={c}
-                size={c === "golmatol" ? 130 : c === "ustad-ullo" ? 120 : 110}
+                size={c === "golmatol" ? 118 : c === "ustad-ullo" ? 110 : 100}
                 emote={line.char === c ? line.emote ?? "idle" : "idle"}
                 className={line.char === c ? "anim-pop" : ""}
               />
@@ -210,7 +210,7 @@ function StoryPhase({
       </div>
 
       {/* dialog */}
-      <div className="mt-5" key={idx}>
+      <div className="mx-auto mt-5 max-w-2xl" key={idx}>
         <SpeakBubble
           speaker={line.char === "narrator" ? undefined : line.char}
           ur={line.ur}

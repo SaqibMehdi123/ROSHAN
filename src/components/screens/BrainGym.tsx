@@ -41,12 +41,12 @@ export function BrainGym() {
       setResult("win");
       useApp.getState().tickMinutes(null);
       const today = todayKey();
-      // mark daily play + weekly best (personal best only)
-      const updated = {
-        ...profile,
-        brainGym: { ...profile.brainGym, lastPlayedDay: today },
-      };
-      useApp.setState({ profiles: useApp.getState().profiles.map((p) => (p.id === profile.id ? updated : p)) });
+      // mark daily play (read FRESH state so the streak from brainGymResult is preserved)
+      const fresh = useApp.getState().profiles.find((p) => p.id === profile.id);
+      if (fresh) {
+        const updated = { ...fresh, brainGym: { ...fresh.brainGym, lastPlayedDay: today } };
+        useApp.setState({ profiles: useApp.getState().profiles.map((p) => (p.id === profile.id ? updated : p)) });
+      }
       void playAudio(undefined, puzzle.explain.ur);
     } else {
       playSfx("bugBoop", true);

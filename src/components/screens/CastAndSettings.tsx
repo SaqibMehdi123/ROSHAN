@@ -110,10 +110,13 @@ export function SettingsScreen() {
               className="btn-kid btn-teal"
               onClick={() => {
                 if (teacherHashExists) {
-                  if (checkTeacherPin(pin)) go("teacher");
-                  else setPinError(true);
+                  if (checkTeacherPin(pin)) {
+                    try { sessionStorage.setItem("roshan.teacher-unlocked", "1"); } catch {}
+                    go("teacher");
+                  } else setPinError(true);
                 } else if (pin.length >= 4) {
                   setTeacherPin(pin); // first run: create PIN
+                  try { sessionStorage.setItem("roshan.teacher-unlocked", "1"); } catch {}
                   go("teacher");
                 } else setPinError(true);
               }}

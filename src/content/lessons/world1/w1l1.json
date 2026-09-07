@@ -183,17 +183,17 @@
         },
         {
           "id": "atm",
-          "x": 63, "y": 55, "art": "atm", "correct": true,
+          "x": 63, "y": 74, "art": "atm", "correct": true,
           "hint": { "ur": "درست! بینک مشین بھی کمپیوٹر ہے!", "en": "Yes! The bank machine is a computer too!" }
         },
         {
           "id": "laptop",
-          "x": 88, "y": 68, "art": "laptop", "correct": true,
+          "x": 80, "y": 70, "art": "laptop", "correct": true,
           "hint": { "ur": "درست! یہ بجلی جیسا کمپیوٹر ہے!", "en": "Yes! A computer just like Bijli!" }
         },
         {
           "id": "goat",
-          "x": 26, "y": 82, "art": "goat", "correct": false,
+          "x": 30, "y": 84, "art": "goat", "correct": false,
           "hint": { "ur": "اوپس! ایک بگ ملا! بکری کمپیوٹر نہیں… دوبارہ کوشش کریں!", "en": "Oops! A bug! A goat is not a computer… try again!" }
         },
         {
@@ -208,7 +208,7 @@
         },
         {
           "id": "well",
-          "x": 8, "y": 30, "art": "well", "correct": false,
+          "x": 16, "y": 78, "art": "well", "correct": false,
           "hint": { "ur": "اوپس! ایک بگ ملا! کھوہ پانی کے لیے ہے!", "en": "Oops! A bug! The well is for water!" }
         }
       ],

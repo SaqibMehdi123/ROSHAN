@@ -15,16 +15,16 @@ import { playAudio } from "@/lib/audio";
 
 const MEDALS = ["medal-box", "medal-mouse", "medal-keyboard", "medal-folder", "medal-paint", "medal-shield", "medal-gem", "medal-mountain"];
 
-/** Node positions along an S-curved path (RTL: W1 at the right). */
+/** Node positions along an S-curved path (RTL: W1 starts top-right, ends at W8 left). */
 const NODE_POS = [
-  { x: 90, y: 78 },
-  { x: 78, y: 46 },
-  { x: 62, y: 68 },
-  { x: 47, y: 38 },
-  { x: 34, y: 70 },
-  { x: 24, y: 40 },
-  { x: 14, y: 68 },
-  { x: 7, y: 36 },
+  { x: 5, y: 30 },
+  { x: 18, y: 62 },
+  { x: 30, y: 28 },
+  { x: 43, y: 64 },
+  { x: 55, y: 30 },
+  { x: 67, y: 66 },
+  { x: 79, y: 32 },
+  { x: 88, y: 62 },
 ];
 
 export function AdventureMap() {
@@ -84,11 +84,11 @@ export function AdventureMap() {
 
       {/* The map */}
       <div className="card-kid relative overflow-hidden p-2" style={{ background: "linear-gradient(180deg,#BFE8F5 0%, #FFF8EC 100%)" }}>
-        <div className="relative aspect-[2/1] min-h-[420px] w-full">
+        <div className="relative aspect-[2/1] min-h-[380px] w-full">
           {/* winding path */}
           <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="absolute inset-0 h-full w-full">
             <path
-              d="M 92 80 C 80 74, 82 52, 76 46 C 70 40, 66 76, 58 68 C 50 60, 52 42, 44 38 C 38 35, 36 72, 30 70 C 26 69, 26 44, 22 40 C 18 37, 16 70, 10 68"
+              d="M 95 30 C 90 52, 87 58, 82 62 C 76 66, 74 32, 70 28 C 66 25, 62 58, 57 64 C 52 69, 49 33, 45 30 C 41 28, 38 60, 33 66 C 29 70, 25 35, 21 32 C 17 30, 14 56, 10 62"
               stroke="#E8D9BC"
               strokeWidth="6"
               fill="none"
