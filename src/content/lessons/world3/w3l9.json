@@ -1,0 +1,109 @@
+{
+  "id": "w3l9",
+  "schemaVersion": 1,
+  "world": 3,
+  "order": 9,
+  "title": { "ur": "T سے Z + SPACE کا جادو", "en": "T to Z + the SPACE magic" },
+  "skill": { "ur": "آخری حروف اور SPACE = لفظوں کے درمیان قالین", "en": "Final letters and SPACE = carpet between words" },
+  "skillKey": "typing-tz-space",
+  "minutes": 7,
+  "praise": {
+    "ur": "شاباش! پورا الف بے تمہارا ہوا — اور لفظ بھی بنائے!",
+    "en": "Shabash! The whole alphabet is yours — and you built words too!"
+  },
+  "story": {
+    "scenes": [
+      {
+        "bg": "bg-castle",
+        "cast": ["bijli", "noor", "chotu"],
+        "lines": [
+          {
+            "char": "bijli",
+            "emote": "happy",
+            "ur": "T سے ٹرین — چک چک چک! قلعے کے آخری مکان بھی کھل رہے ہیں!",
+            "en": "T pulls a train — chuk chuk chuk! The last houses of the castle are opening!",
+            "audio": "w3l9_story_1"
+          },
+          {
+            "char": "noor",
+            "emote": "happy",
+            "ur": "U پر چھتری — دھوپ میں سایہ! اور Z پر زیبرا — دھاری دار!",
+            "en": "U carries an umbrella — shade in the sun! And Z has a zebra — stripes everywhere!",
+            "audio": "w3l9_story_2"
+          },
+          {
+            "char": "chotu",
+            "emote": "surprised",
+            "ur": "مگر دو لفظ آپس میں کیسے چپکے ہیں؟ میرا دوسٹ… اوہ، اس میں تو گاپ ہے!",
+            "en": "But how do two words stay apart? My dost… oh, there is a gap in it!",
+            "audio": "w3l9_story_3"
+          },
+          {
+            "char": "bijli",
+            "emote": "happy",
+            "ur": "وہ گاپ SPACE ہے — دو لفظوں کے درمیان کا جادوئی قالین! SPACE دباو، قالین بچھ جاتا ہے!",
+            "en": "That gap is SPACE — the magic carpet between two words! Press SPACE and the carpet unrolls!",
+            "audio": "w3l9_story_4"
+          },
+          {
+            "char": "narrator",
+            "ur": "کیا تم حروف اور لفظ بناو گے؟",
+            "en": "Will you make letters into words?",
+            "audio": "w3l9_story_5",
+            "choice": {
+              "ur": "لفظ بناؤ!",
+              "en": "Build words!",
+              "audio": "w3l9_story_5_choice"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "show": {
+    "steps": [
+      {
+        "visual": "train",
+        "caption": { "ur": "T — ٹرین! بوجھ لے جاتی ہے۔", "en": "T — like train! It carries everything." },
+        "audio": "w3l9_show_1"
+      },
+      {
+        "visual": "space-carpet",
+        "caption": { "ur": "SPACE — جادوئی قالین، دو لفظوں کے درمیان!", "en": "SPACE — the magic carpet between two words!" },
+        "audio": "w3l9_show_2"
+      },
+      {
+        "visual": "zebra",
+        "caption": { "ur": "Z — زیبرا! الف بے کا آخری دوست۔", "en": "Z — zebra! The alphabet's last friend." },
+        "audio": "w3l9_show_3"
+      }
+    ]
+  },
+  "do": {
+    "activity": {
+      "type": "type-input",
+      "prompt": { "ur": "حرف دباؤ، پھر لفظ بناؤ — SPACE قالین بچھاتا ہے!", "en": "Press letters, then build words — SPACE lays the carpet!" },
+      "audio": "w3l9_do_prompt",
+      "keys": ["A", "B", "D", "E", "M", "O", "P", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"],
+      "space": true,
+      "targets": [
+        { "id": "t1", "expect": "T", "art": "train", "label": { "ur": "T سے ٹرین! T دباؤ", "en": "Train starts with T! Press T" }, "audio": "w3l9_do_t1" },
+        { "id": "t2", "expect": "U", "art": "umbrella", "label": { "ur": "U سے چھتری! U دباؤ", "en": "Umbrella starts with U! Press U" }, "audio": "w3l9_do_t2" },
+        { "id": "t3", "expect": "Z", "art": "zebra", "label": { "ur": "Z سے زیبرا! Z دباؤ", "en": "Zebra starts with Z! Press Z" }, "audio": "w3l9_do_t3" },
+        { "id": "w1", "expect": "BAT", "art": "cricket-bat", "label": { "ur": "لکھو: BAT — B! A! T!", "en": "Type BAT — B! A! T!" }, "audio": "w3l9_do_w1" },
+        { "id": "w2", "expect": "TOP", "art": "lattu", "label": { "ur": "لکھو: TOP — لٹو گھومے گا!", "en": "Type TOP — the lattu will spin!" }, "audio": "w3l9_do_w2" },
+        { "id": "w3", "expect": "MERA DOST", "art": "party-flag", "label": { "ur": "دو لفظ: MERA DOST — درمیان SPACE!", "en": "Two words: MERA DOST — SPACE between!" }, "audio": "w3l9_do_w3" }
+      ],
+      "wrongHint": { "ur": "اوپس! ایک بگ! صحیح کلید دباؤ!", "en": "Oops! A bug! Press the right key!" },
+      "winPraise": { "ur": "تم لفظ بنانے والے ماسٹر ہو!", "en": "You are a word-building master!" }
+    }
+  },
+  "cheer": {
+    "recap": [
+      { "ur": "T سے Z — پورا الف بے مکمل!", "en": "T to Z — the whole alphabet is complete!" },
+      { "ur": "SPACE = جادوئی قالین — دو لفظوں کے درمیان!", "en": "SPACE = the magic carpet between two words!" }
+    ],
+    "recapAudio": ["w3l9_recap_1", "w3l9_recap_2"],
+    "rewardToast": { "ur": "لٹو کہتا ہے: اگلی سبق میں غلطیاں ٹھیک کرو!", "en": "The lattu says: fix mistakes next lesson!" }
+  }
+}

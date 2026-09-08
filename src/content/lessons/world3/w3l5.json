@@ -1,0 +1,101 @@
+{
+  "id": "w3l5",
+  "schemaVersion": 1,
+  "world": 3,
+  "order": 5,
+  "title": { "ur": "G H I — غبارہ، ہاتھی، آئس کریم", "en": "G H I — Gubbara, Haathi, Ice cream" },
+  "skill": { "ur": "نئی کلیدیں: G H I", "en": "New letter keys: G H I" },
+  "skillKey": "typing-ghi",
+  "minutes": 7,
+  "praise": {
+    "ur": "شاباش! G H I کے تینوں مکان کھل گئے!",
+    "en": "Shabash! All three houses of G H I are open!"
+  },
+  "story": {
+    "scenes": [
+      {
+        "bg": "bg-castle",
+        "cast": ["noor", "bijli", "chotu"],
+        "lines": [
+          {
+            "char": "bijli",
+            "emote": "happy",
+            "ur": "G کا مکان کھلا — غبارہ اڑ رہا ہے، ڈور ہاتھ میں!",
+            "en": "The house of G opened — a balloon floats up, string in hand!",
+            "audio": "w3l5_story_1"
+          },
+          {
+            "char": "noor",
+            "emote": "happy",
+            "ur": "H پر ہاتھی! سونڈ سے پانی کے چھینٹے — کھپ کھپ!",
+            "en": "H has a haathi! Water sprays from its trunk — splish splash!",
+            "audio": "w3l5_story_2"
+          },
+          {
+            "char": "chotu",
+            "emote": "happy",
+            "ur": "اور I — آئس کریم! گرمی میں سب سے مزہ!",
+            "en": "And I — ice cream! The best treat in the summer heat!",
+            "audio": "w3l5_story_3"
+          },
+          {
+            "char": "narrator",
+            "ur": "کیا تم تینوں دوستوں کی کلیدیں دباؤ گے؟",
+            "en": "Will you press the keys of all three friends?",
+            "audio": "w3l5_story_4",
+            "choice": {
+              "ur": "ہاں! کلیدیں دباؤ!",
+              "en": "Yes! Press the keys!",
+              "audio": "w3l5_story_4_choice"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "show": {
+    "steps": [
+      {
+        "visual": "gubbara",
+        "caption": { "ur": "G — غبارہ! ہوا سے ہلکا۔", "en": "G — like gubbara (balloon)! Light as air." },
+        "audio": "w3l5_show_1"
+      },
+      {
+        "visual": "haathi",
+        "caption": { "ur": "H — ہاتھی! بڑا اور نرم دل۔", "en": "H — like haathi (elephant)! Big and gentle-hearted." },
+        "audio": "w3l5_show_2"
+      },
+      {
+        "visual": "icecream",
+        "caption": { "ur": "I — آئس کریم! تین سکوپ، ایک چیری!", "en": "I — ice cream! Three scoops, one cherry!" },
+        "audio": "w3l5_show_3"
+      }
+    ]
+  },
+  "do": {
+    "activity": {
+      "type": "type-input",
+      "prompt": { "ur": "جو دوست دکھے، اس کی کلید دباؤ!", "en": "Press the key of the friend you see!" },
+      "audio": "w3l5_do_prompt",
+      "keys": ["G", "H", "I"],
+      "targets": [
+        { "id": "t1", "expect": "G", "art": "gubbara", "label": { "ur": "G سے غبارہ! G دباؤ", "en": "Gubbara starts with G! Press G" }, "audio": "w3l5_do_t1" },
+        { "id": "t2", "expect": "H", "art": "haathi", "label": { "ur": "H سے ہاتھی! H دباؤ", "en": "Haathi starts with H! Press H" }, "audio": "w3l5_do_t2" },
+        { "id": "t3", "expect": "I", "art": "icecream", "label": { "ur": "I سے آئس کریم! I دباؤ", "en": "Ice cream starts with I! Press I" }, "audio": "w3l5_do_t3" },
+        { "id": "t4", "expect": "H", "art": "haathi", "label": { "ur": "کون آیا؟ ہاتھی! H دباؤ", "en": "Who is this? The elephant! Press H" }, "audio": "w3l5_do_t4" },
+        { "id": "t5", "expect": "G", "art": "gubbara", "label": { "ur": "اڑتا غبارہ! G دباؤ", "en": "The flying balloon! Press G" }, "audio": "w3l5_do_t5" },
+        { "id": "t6", "expect": "I", "art": "icecream", "label": { "ur": "ٹھنڈا آئس کریم! I دباؤ", "en": "Cool ice cream! Press I" }, "audio": "w3l5_do_t6" }
+      ],
+      "wrongHint": { "ur": "اوپس! ایک بگ! صحیح مکان کی کلید دباؤ!", "en": "Oops! A bug! Press the key of the right house!" },
+      "winPraise": { "ur": "غبارہ، ہاتھی اور آئس کریم — سب خوش!", "en": "Balloon, elephant and ice cream — all happy!" }
+    }
+  },
+  "cheer": {
+    "recap": [
+      { "ur": "G غبارہ، H ہاتھی، I آئس کریم۔", "en": "G for gubbara, H for haathi, I for ice cream." },
+      { "ur": "A سے آئی تک — تم نے بہت سارے مکان کھولے!", "en": "From A to I — you have opened so many houses!" }
+    ],
+    "recapAudio": ["w3l5_recap_1", "w3l5_recap_2"],
+    "rewardToast": { "ur": "ہاتھی کہتا ہے: اگلی سبق میں بجلی کے دوست!", "en": "The elephant says: Bijli's friends next lesson!" }
+  }
+}

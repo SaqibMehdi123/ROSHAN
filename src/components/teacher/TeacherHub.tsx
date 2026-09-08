@@ -9,8 +9,7 @@
 import { useMemo, useState } from "react";
 import { useApp, checkTeacherPin } from "@/lib/store";
 import { PLANS } from "@/content/teacher/plans";
-import { getLesson } from "@/lib/content";
-import { WORLDS } from "@/content/worlds.json";
+import { getLesson, WORLDS } from "@/lib/content";
 import { Art } from "@/components/art/Props";
 
 type Tab = "dashboard" | "plans" | "printables" | "academy" | "reading" | "parents" | "planner";

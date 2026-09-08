@@ -1,0 +1,100 @@
+{
+  "id": "w3l10",
+  "schemaVersion": 1,
+  "world": 3,
+  "order": 10,
+  "title": { "ur": "ENTER اور BACKSPACE — غلطی ٹھیک کرو", "en": "Enter and Backspace — fix the mistake!" },
+  "skill": { "ur": "BACKSPACE = جادوئی مٹیاں، ENTER = ہو گیا!", "en": "Backspace = magic eraser, Enter = done!" },
+  "skillKey": "typing-fixit",
+  "minutes": 7,
+  "praise": {
+    "ur": "شاباش، بگ فکسر! ہر غلطی ٹھیک کی — یہی تو کمپیوٹر کا کمال ہے!",
+    "en": "Shabash, bug fixer! You fixed every mistake — that is the magic of computers!"
+  },
+  "story": {
+    "scenes": [
+      {
+        "bg": "bg-castle",
+        "cast": ["chotu", "bijli", "ustad-ullo"],
+        "lines": [
+          {
+            "char": "chotu",
+            "emote": "surprised",
+            "ur": "اوہ نہیں! میں نے BAT لکھنا تھا… مگر بِیچ میں Q چھا گئی!",
+            "en": "Oh no! I meant to type BAT… but a Q sneaked into the middle!",
+            "audio": "w3l10_story_1"
+          },
+          {
+            "char": "bijli",
+            "emote": "happy",
+            "ur": "ڈرو نہیں! BACKSPACE جادوئی مٹیاں ہے — غلط حرف کو صرف پونچھ دیتی ہے!",
+            "en": "Fear not! Backspace is the magic eraser — it wipes away just the wrong letter!",
+            "audio": "w3l10_story_2"
+          },
+          {
+            "char": "ustad-ullo",
+            "emote": "perch",
+            "ur": "اور ENTER کہتا ہے: ہو گیا! — لکھا ہوا قبول، آگے بڑھو!",
+            "en": "And Enter says: done! — your writing is accepted, move on!",
+            "audio": "w3l10_story_3"
+          },
+          {
+            "char": "narrator",
+            "ur": "کیا تم چھوٹو کی غلطیاں ٹھیک کرو گے؟",
+            "en": "Will you fix Chotu's mistakes?",
+            "audio": "w3l10_story_4",
+            "choice": {
+              "ur": "میں بگ فکسر ہوں!",
+              "en": "I am a bug fixer!",
+              "audio": "w3l10_story_4_choice"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "show": {
+    "steps": [
+      {
+        "visual": "magic-eraser",
+        "caption": { "ur": "BACKSPACE = جادوئی مٹیاں — غلط حرف غائب!", "en": "Backspace = magic eraser — the wrong letter vanishes!" },
+        "audio": "w3l10_show_1"
+      },
+      {
+        "visual": "enter-door",
+        "caption": { "ur": "ENTER = ہو گیا! دروازہ کھل جاتا ہے۔", "en": "Enter = done! The door swings open." },
+        "audio": "w3l10_show_2"
+      },
+      {
+        "visual": "watch",
+        "caption": { "ur": "پہلے غلطی ڈھونڈو، پھر مٹاؤ، پھر صحیح لکھو!", "en": "Find the mistake, erase it, then type it right!" },
+        "audio": "w3l10_show_3"
+      }
+    ]
+  },
+  "do": {
+    "activity": {
+      "type": "type-input",
+      "prompt": { "ur": "غلط حرف ERASE سے مٹاؤ، صحیح لکھو، ENTER دبا کر کہو: ہو گیا!", "en": "Erase the wrong letter, type the right one, press ENTER: done!" },
+      "audio": "w3l10_do_prompt",
+      "keys": ["B", "A", "T", "O", "P", "W", "C", "H"],
+      "eraser": true,
+      "enter": true,
+      "targets": [
+        { "id": "f1", "expect": "BAT", "preFilled": "BQT", "art": "cricket-bat", "label": { "ur": "چھوٹو کی غلطی: BQT — ٹھیک کرو!", "en": "Chotu's typo: BQT — fix it to BAT!" }, "audio": "w3l10_do_f1" },
+        { "id": "f2", "expect": "TOP", "preFilled": "TYP", "art": "lattu", "label": { "ur": "اب TYP — لٹو ناراض ہے! TOP کرو!", "en": "Now TYP — the lattu is upset! Make it TOP!" }, "audio": "w3l10_do_f2" },
+        { "id": "f3", "expect": "WATCH", "preFilled": "WQTCH", "label": { "ur": "آخری: WQTCH — گھری کا Q؟ WATCH کرو!", "en": "Last one: WQTCH — a Q in the watch? Make it WATCH!" }, "audio": "w3l10_do_f3" }
+      ],
+      "wrongHint": { "ur": "اوپس! بگ! پہلے ERASE سے غلط حرف مٹاؤ!", "en": "Oops! A bug! First erase the wrong letter with ERASE!" },
+      "winPraise": { "ur": "تینوں غلطیاں ٹھیک — تم ماسٹر بگ فکسر!", "en": "Three mistakes fixed — you are a master bug fixer!" }
+    }
+  },
+  "cheer": {
+    "recap": [
+      { "ur": "BACKSPACE غلطی مٹاتا ہے، ENTER کہتا ہے: ہو گیا!", "en": "Backspace erases the mistake, Enter says: done!" },
+      { "ur": "غلطی = بگ۔ فکس کرو — ہر بگ تمہارا دوست ہے!", "en": "A mistake is a bug. Fix it — every bug is your friend!" }
+    ],
+    "recapAudio": ["w3l10_recap_1", "w3l10_recap_2"],
+    "rewardToast": { "ur": "چھوٹو کہتا ہے: اگلی بار میں کچھ نہیں بھو لوں گا… شاید!", "en": "Chotu says: next time I will not misspell anything… maybe!" }
+  }
+}

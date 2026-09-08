@@ -1,0 +1,122 @@
+{
+  "id": "w3l2",
+  "schemaVersion": 1,
+  "world": 3,
+  "order": 2,
+  "title": { "ur": "گھر کی قطار — ہوم راؤ", "en": "Home Row — the fingers' street" },
+  "skill": { "ur": "انگلیوں کے گھر: A S D F اور J K L ;", "en": "Fingers' homes: ASDF and JKL;" },
+  "skillKey": "home-row",
+  "minutes": 7,
+  "praise": {
+    "ur": "شاباش! تم نے ہر انگلی کو اس کے گھر پہنچا دیا!",
+    "en": "Shabash! You sent every finger to its home!"
+  },
+  "story": {
+    "scenes": [
+      {
+        "bg": "bg-castle",
+        "cast": ["bijli", "ustad-ullo"],
+        "lines": [
+          {
+            "char": "narrator",
+            "ur": "بنفشے قلعے میں ہر کلید ایک مکان ہے — اور بیچ والی قطار سب سے خاص ہے!",
+            "en": "In the purple castle every key is a little house — and the middle row is the most special of all!",
+            "audio": "w3l2_story_1"
+          },
+          {
+            "char": "bijli",
+            "emote": "happy",
+            "ur": "یہ ہوم راؤ ہے! بائیں ہاتھ کی انگلیاں A S D F کے مکانوں میں رہتی ہیں۔",
+            "en": "This is Home Row! The left hand's fingers live in the houses of A S D F.",
+            "audio": "w3l2_story_2"
+          },
+          {
+            "char": "bijli",
+            "emote": "happy",
+            "ur": "دائیں ہاتھ J K L اور ; میں! اور F اور J کے مکانوں پر چھوٹے گنبد ہیں — آنکھیں بند کر کے بھی محسوس ہوتے ہیں!",
+            "en": "The right hand lives in J K L and ;! And F and J have tiny bumps — you can feel them with your eyes closed!",
+            "audio": "w3l2_story_3"
+          },
+          {
+            "char": "ustad-ullo",
+            "emote": "perch",
+            "ur": "انگلیاں ہمیشہ گھر لوٹتی ہیں — جیسے چھپن کھیل کے بعد سب گھر آتے ہیں!",
+            "en": "Fingers always come back home — like everyone returns home after hide-and-seek!",
+            "audio": "w3l2_story_4"
+          },
+          {
+            "char": "narrator",
+            "ur": "کیا تم کلیدی دوستوں کو ان کے گھر پہنچاؤ گے؟",
+            "en": "Will you walk the key friends home?",
+            "audio": "w3l2_story_5",
+            "choice": {
+              "ur": "انگلیوں کو گھر لواؤ!",
+              "en": "Bring the fingers home!",
+              "audio": "w3l2_story_5_choice"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "show": {
+    "steps": [
+      {
+        "visual": "key-F",
+        "caption": { "ur": "F کے مکان پر چھوٹا گنبد — بائیں ہاتھ کی اشاری انگلی کا گھر!", "en": "A tiny bump on F — the home of your left pointing finger!" },
+        "audio": "w3l2_show_1"
+      },
+      {
+        "visual": "key-J",
+        "caption": { "ur": "J پر بھی گنبد — دائیں اشاری انگلی کا گھر!", "en": "J has one too — the home of your right pointing finger!" },
+        "audio": "w3l2_show_2"
+      },
+      {
+        "visual": "key-A",
+        "caption": { "ur": "بائیں سے دائیں: A S D F — پھر J K L ;", "en": "Left to right: A S D F — then J K L ;" },
+        "audio": "w3l2_show_3"
+      }
+    ]
+  },
+  "do": {
+    "activity": {
+      "type": "match-slots",
+      "prompt": { "ur": "ہر کلیدی دوست کو اس کے گھر میں پہنچاؤ!", "en": "Send every key friend to its home!" },
+      "audio": "w3l2_do_prompt",
+      "row": true,
+      "panelTitles": {
+        "left": { "ur": "ہوم راؤ — خالی گھر", "en": "Home Row — empty homes" },
+        "right": { "ur": "کلیدی دوست", "en": "Key friends" }
+      },
+      "slots": [
+        { "id": "ka", "accepts": "kA", "art": "key-A", "label": { "ur": "A کا مکان", "en": "A's home" }, "success": { "ur": "A گھر آ گیا!", "en": "A came home!" } },
+        { "id": "ks", "accepts": "kS", "art": "key-S", "label": { "ur": "S کا مکان", "en": "S's home" }, "success": { "ur": "S گھر آ گیا!", "en": "S came home!" } },
+        { "id": "kd", "accepts": "kD", "art": "key-D", "label": { "ur": "D کا مکان", "en": "D's home" }, "success": { "ur": "D گھر آ گیا!", "en": "D came home!" } },
+        { "id": "kf", "accepts": "kF", "art": "key-F", "label": { "ur": "F کا مکان", "en": "F's home" }, "success": { "ur": "F گھر آ گیا — گنبد والا مکان!", "en": "F came home — the bump house!" } },
+        { "id": "kj", "accepts": "kJ", "art": "key-J", "label": { "ur": "J کا مکان", "en": "J's home" }, "success": { "ur": "J گھر آ گیا — گنبد والا مکان!", "en": "J came home — the bump house!" } },
+        { "id": "kk", "accepts": "kK", "art": "key-K", "label": { "ur": "K کا مکان", "en": "K's home" }, "success": { "ur": "K گھر آ گیا!", "en": "K came home!" } },
+        { "id": "kl", "accepts": "kL", "art": "key-L", "label": { "ur": "L کا مکان", "en": "L's home" }, "success": { "ur": "L گھر آ گیا!", "en": "L came home!" } },
+        { "id": "ksemi", "accepts": "kSemi", "art": "key-;", "label": { "ur": "; کا مکان", "en": ";'s home" }, "success": { "ur": "; بھی گھر آ گیا — ہوم راؤ مکمل!", "en": "; came home too — Home Row is complete!" } }
+      ],
+      "items": [
+        { "id": "kA", "art": "key-A", "name": { "ur": "A", "en": "A" } },
+        { "id": "kS", "art": "key-S", "name": { "ur": "S", "en": "S" } },
+        { "id": "kD", "art": "key-D", "name": { "ur": "D", "en": "D" } },
+        { "id": "kF", "art": "key-F", "name": { "ur": "F", "en": "F" } },
+        { "id": "kJ", "art": "key-J", "name": { "ur": "J", "en": "J" } },
+        { "id": "kK", "art": "key-K", "name": { "ur": "K", "en": "K" } },
+        { "id": "kL", "art": "key-L", "name": { "ur": "L", "en": "L" } },
+        { "id": "kSemi", "art": "key-;", "name": { "ur": ";", "en": ";" } }
+      ],
+      "wrongHint": { "ur": "اوپس! ایک بگ — یہ کلید دوسرے مکان کی ہے!", "en": "Oops! A bug — that key belongs to another home!" }
+    }
+  },
+  "cheer": {
+    "recap": [
+      { "ur": "ہوم راؤ = انگلیوں کے گھر: A S D F اور J K L۔", "en": "Home Row = the fingers' homes: A S D F and J K L." },
+      { "ur": "F اور J پر گنبد ہیں — انگلیاں ہمیشہ گھر لوٹتی ہیں۔", "en": "F and J have bumps — fingers always come back home." }
+    ],
+    "recapAudio": ["w3l2_recap_1", "w3l2_recap_2"],
+    "rewardToast": { "ur": "اُستاد اُلو کہتے ہیں: اگلی سبق میں پہلے حروف!", "en": "Ustaad Ulloo says: first letters next lesson!" }
+  }
+}

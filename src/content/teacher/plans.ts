@@ -377,4 +377,249 @@ export const PLANS: TeacherPlan[] = [
     answers: ["Q1 Teer (cursor) · Q2 ek click · Q3 tez tez do click · Q4 pakro-kheencho-chhodo · Q5 ek jagah tez tez do click."],
     unplugged: "Mouse Master ceremony: char skills ke 4 stations (point/click/double-click/drag) floor par — bachay har station ka action kar ke badge paate hain.",
   },
+
+  /* ---------------- Phase 3: W3 Keyboard Kingdom (L1–L12) ---------------- */
+  {
+    lessonId: "w3l1",
+    title: { ur: "سیدھا بیٹھو — بجلی کی کمر!", en: "Sit Tall! (posture)" },
+    prepChecklist: [
+      "Kursiyan height ke hisaab se lagao — bachon ke paon zameen tak pounchein",
+      "Monitor ki height check karo: bachon ki aankh screen ke upar se 1-2 inch neeche",
+      "Aaina (mirror) ya phone camera laao — 'mirror check' ke liye",
+    ],
+    readAloudScript: [
+      { say: "Chotu kitna jhuk gaya! Bijli ka bhi back pain hai — computer doston ke liye posture zaroori hai." },
+      { say: "Char qaiday yaad karo: seedhi kamar, dono haath ready, paon zameen par, screen se ek haath ka fasla." },
+      { say: "Sab mirror check karo — kaun sa mussafir (superhero) seedha baithta hai? Wo hi computer ka hero hai!" },
+    ],
+    demo: [
+      "Khud dono tarah baith kar dikhao: pehle jhuk kar (bachay hansenge), phir seedha — farq mehsoos karwao.",
+      "Ek bacha aage aaye, class usay 'posture points' de: kamar? haath? paon? fasla?",
+    ],
+    commonMistakes: [
+      { mistake: "Bacha screen ke bilkul qareeb sir rakh leta hai.", fix: "Elbow ka rule: kohni se screen tak naapo — 'ek haath ka fasla' dikhao." },
+      { mistake: "Kursi par paon latka kar baithte hain.", fix: "Kam kursi/basta (cushion) under rakhwao taake paon zameen par pounchein." },
+    ],
+    answers: ["Sirf posture-good wali tasveer sahi hai (kamar seedhi, paon zameen par, haath ready).", "Slouch = jhuki kamar, feetup = paon hawa me, tooclose = screen se qareeb."],
+    unplugged: "Posture yaad-gar: bachay seedhe ho kar 'I am a knight!' pose banate hain — 10 second hold. Phir jhuk kar (galat) pose — farq bataate hain.",
+  },
+  {
+    lessonId: "w3l2",
+    title: { ur: "گھر کی قطار — ہوم راؤ", en: "Home Row (fingers' homes)" },
+    prepChecklist: [
+      "Asli keyboard par F aur J ke bump bachon se chhuawao (aankhen band kar ke!)",
+      "8 letter cards (A S D F J K L ;) floor ke home row me bichao — unplugged prep",
+      "w3l2 tak ROSHAN khula ho",
+    ],
+    readAloudScript: [
+      { say: "Purple castle me har key ek ghar hai. Beech wali qataar = HOME ROW — sabse special!" },
+      { say: "Left hand ke ghar: A S D F. Right hand ke: J K L ;" },
+      { say: "F aur J par chhote gumbad hain — aankhen band kar ke bhi ghar mil jata hai!" },
+    ],
+    demo: [
+      "Asli keyboard par bachon ki har ungli uske ghar par rakho — pinky A par, thumb space ke paas halke.",
+      "Aankhen band challenge: 'F ka gumbad dhoondo!' — jo pehle mile, wo 'Home Row hero'.",
+    ],
+    commonMistakes: [
+      { mistake: "Semicolon (;) ko bachay yaad nahi rakhte ya confuse hote hain.", fix: "Batao: 'ye right hand ka chhota kamra hai L ke baad' — card se dikhao, dobara game me aayega." },
+      { mistake: "Dono haath ek taraf.", fix: "Jodi (pair) me khelo: ek bacha left hand dikhaye, doosra right — jhool ke rule." },
+    ],
+    answers: ["Homes: A S D F (left) · J K L ; (right).", "Bumps sirf F aur J par hote hain."],
+    unplugged: "Painter tape se floor par 8 kamron ki home row banao. Har bacha apni ungliyon ko 'gharon' me rakhta hai — 'ghar aao!' ke pukarne par wapis.",
+  },
+  {
+    lessonId: "w3l3",
+    title: { ur: "A B C — امروود، بال، چائے", en: "A B C — first letter keys" },
+    prepChecklist: [
+      "Tablets/PC par w3l3 khula ho — on-screen keyboard dikhao",
+      "Amrood (guava), ball aur chai ki asli tasveer/toy rakho",
+    ],
+    readAloudScript: [
+      { say: "Aaj se hum castle ke darwaze kholenge! Har letter ek key hai." },
+      { say: "Jis cheez ka naam jis letter se shuru ho — wahi key dabao!" },
+      { say: "Tablet walo: screen ke neeche bare keys hain — unhe bhi dabao, wo asli keyboard jaisa hi hai!" },
+    ],
+    demo: [
+      "Ek bacha aake screen par amrood dekh kar A dabaye — amrood ka pop dekho, sab taali bajao.",
+      "Physical keyboard walo ke liye: naram dabao — 'butterfly touch' yaad dilao.",
+    ],
+    commonMistakes: [
+      { mistake: "Bachay keyboard par zor se maarte hain.", fix: "W1L3 ka rule dohrao: narm chhoo — keys ke gharon ke darwaze hain, todna nahi!" },
+      { mistake: "Harf sun kar nahi, guess kar ke dabate hain.", fix: "'Pehle aankh, phir ungli': pehle picture ka naam bolo (a-m-rood!), phir dabao." },
+    ],
+    answers: ["Targets: amrood→A, ball→B, chai→C (do baar mix, total 6 rounds)."],
+    unplugged: "ABC darwaza game: 3 cardboard darwaze (A/B/C) — teacher picture dikhaye, bachay sahi darwaze par knock karte hain.",
+  },
+  {
+    lessonId: "w3l4",
+    title: { ur: "D E F — ڈھول کا دھماکہ", en: "D E F — falling letters" },
+    prepChecklist: [
+      "w3l4 catch-falling game khula ho; dhol ki awaz ya asli dhol/dabba",
+      "Bachon ko pehle se batado: letter neeche pohanch jaye to ghabrana nahi — wapis udayga",
+    ],
+    readAloudScript: [
+      { say: "Dhol baj raha hai — dhum dhum! Letters neeche aa rahe hain!" },
+      { say: "Letter ko pakadne ke do tareeqay: uski key dabao, YA letter par haath (tap) dalo." },
+      { say: "Ye race nahi hai — letter dheere aata hai, hamare paas kaafi waqt hai!" },
+    ],
+    demo: [
+      "Khud ek letter pakdo (key press kar ke) aur dikhao: letter pop hua, Bijli ki tokri me gaya.",
+      "Ek letter ko jaan boojh kar neeche jaane do — dikhao ke wo wapis udrta hai: 'dekha? koi kho nahi!'",
+    ],
+    commonMistakes: [
+      { mistake: "Bachay jaldi panic kar ke har key daba dete hain.", fix: "Nara: 'Pehle naam, phir key!' — letter dekho, uska dost (dhol/egg/fish) bolo, phir dabao." },
+      { mistake: "Letter nikal jaye to udaas hona.", fix: "Batao — 'ye bhai wapis aa raha hai! Ek aur chance' — zero failure ka mazaak." },
+    ],
+    answers: ["Letters: D (dhol), E (egg), F (fish) — 6 catches total."],
+    unplugged: "Dhum-dhum letters: cardstock letters D/E/F ko dhire-dhire neeche girao (string se), bachay sahi naam bol kar pakadte hain.",
+  },
+  {
+    lessonId: "w3l5",
+    title: { ur: "G H I — غبارہ، ہاتھی، آئس کریم", en: "G H I — new keys" },
+    prepChecklist: ["w3l5 khula ho", "Pichli lesson ke D E F ka 30-second recap banao"],
+    readAloudScript: [
+      { say: "Teen naye ghar: G (gubbara), H (haathi), I (ice cream)!" },
+      { say: "Pehle socho: picture kaunsa dost hai? Phir uski key dabao!" },
+    ],
+    demo: [
+      "Haathi ka action karwao (soond banao) — har letter ka chhota action memory strong karta hai.",
+    ],
+    commonMistakes: [
+      { mistake: "G aur H mix ho jate hain.", fix: "G = gubbara (goool!) — round; H = haathi — bara. Picture se pehla sound bolo." },
+      { mistake: "I chhoti lagti hai, bachay L samajhte hain.", fix: "I ka naara: 'I ek akela bandar hai jo khada hai!' — on-screen key se compare karwao." },
+    ],
+    answers: ["Targets: gubbara→G, haathi→H, icecream→I (2 baar mix, total 6)."],
+    unplugged: "GHI action cards: gubbara blow karo, haathi soond, ice cream lick — har action par letter zor se bolo.",
+  },
+  {
+    lessonId: "w3l6",
+    title: { ur: "J K L — بجلی کے دوست", en: "J K L — Bijli's friends" },
+    prepChecklist: ["w3l6 khula ho", "Kite (patang) ya laddu ka prop rakho — motivation!"],
+    readAloudScript: [
+      { say: "J par jahaaz, K par patang, L par laddu — Bijli ke dost aaj girte hain, hum pakdenge!" },
+      { say: "D bhi yaad hai? Dhol wala D dobara aayega — review!" },
+    ],
+    demo: [
+      "Right hand ki ungliyan J K L par rakho — wahi home row! J ka gumbad mehsoos karwao.",
+    ],
+    commonMistakes: [
+      { mistake: "Bachay left hand se J K L dabate hain.", fix: "Gently: 'right hand ke dost' — asli keyboard par right hand rakho." },
+      { mistake: "Old D bhool jate hain.", fix: "Dhol ki awaz nikaalo — 'dhum!' D aayega. Revision pressure-free." },
+    ],
+    answers: ["Pool: J (jahaz), K (kite), L (laddu), D (dhol review) — 6 catches."],
+    unplugged: "Patang letters: floor par kite-shape cards J/K/L/D — har bacha patang 'urata' hai (card utha kar) aur letter bolta hai.",
+  },
+  {
+    lessonId: "w3l7",
+    title: { ur: "M N O — آم، ناریل، سنترہ", en: "M N O — fruit keys" },
+    prepChecklist: ["w3l7 khula ho", "Aadha alphabet complete hone wala hai — taaliyan ready!"],
+    readAloudScript: [
+      { say: "M = mango (Bijli ka favourite!), N = nariyal, O = orange." },
+      { say: "Aaj ke baad aadha alphabet hamara! A se O tak!" },
+    ],
+    demo: [
+      "Mango ka action: 'muaah!' khaane ka. Har fruit ka sound = memory hook.",
+    ],
+    commonMistakes: [
+      { mistake: "N aur M keys ke qareeb hone se mix.", fix: "On-screen keyboard par dikhao: M right hand ke neeche, N uske baghal. 'M = mango = mujhe pasand!'" },
+      { mistake: "O ko zero (0) samajhna.", fix: "Batao: O letter hai (upar ABCD wali line me), 0 number hai (upar wali number line me)." },
+    ],
+    answers: ["Targets: mango→M, naariyal→N, orange→O (2 baar mix, total 6)."],
+    unplugged: "Fruit mandi: 3 dukaanein M/N/O — bachay fruit cards sahi dukaan par le jaate hain, har baar letter bolte hain.",
+  },
+  {
+    lessonId: "w3l8",
+    title: { ur: "P Q R S — صابن کے بلبلے", en: "P Q R S — letter bubbles" },
+    prepChecklist: ["w3l8 bubble game khula ho", "Sab ko batayein: aaj DO tareeqay hain — key dabao YA bubble par tap!"],
+    readAloudScript: [
+      { say: "Soap bubbles par letters likhe hain! Key dabao YA bubble phodo — dono chalenge!" },
+      { say: "P poster, Q qalam, R rickshaw, S suraj." },
+    ],
+    demo: [
+      "Ek bubble tap kar ke pop dikhao, phir wahi letter keyboard se daba kar dikhao — 'dekha? dono jadoo!'",
+    ],
+    commonMistakes: [
+      { mistake: "Bachay bubbles ka peecha karte hain (cursor chase).", fix: "Bubbles dheere drift karte hain — 'pehle intezar, phir pop' — patience skill." },
+      { mistake: "Q ko O samajhte hain.", fix: "Q ki poonch dikhao: 'O ne poonch nikali to Q ban gaya!'" },
+    ],
+    answers: ["Targets: P (poster), Q (qalam), R (rickshaw), S (sun), Q dobara — 5 rounds."],
+    unplugged: "Bubble pop: kamre me 4 balloon letters (P/Q/R/S) likhe — teacher letter ka dost bole, bachay sahi balloon phodte hain (zor se pop = khushi!)",
+  },
+  {
+    lessonId: "w3l9",
+    title: { ur: "T سے Z + SPACE کا جادو", en: "T to Z + SPACE magic" },
+    prepChecklist: ["w3l9 khula ho — SPACE key on-screen highlighted", "Words aaj pehli baar banenge — excitement!"],
+    readAloudScript: [
+      { say: "Aakhri letters: T U V W X Y Z — aur aaj pehli baar HUM APNE LAFZ LIKHENGE!" },
+      { say: "SPACE = do lafzon ke beech ka jadooi qaleen — MERA DOST me dekho!" },
+    ],
+    demo: [
+      "Board par likho: MERADOST (chipka hua) — phir SPACE qaleen bicha do: MERA DOST. Farq clear!",
+    ],
+    commonMistakes: [
+      { mistake: "Bachay space dabaana bhool jaate hain.", fix: "Jahan slot khaali ho wahan qaleen (carpet) ki tasveer socho — slot purple dikhe to SPACE dabaana hai." },
+      { mistake: "V, X sirf screen par dekh kar press nahi karte (targets me nahi).", fix: "Batao: 'V van, X xylophone' — aaj screen par dekha, agle world me milenge!" },
+    ],
+    answers: ["Singles: T, U, Z. Words: BAT, TOP, MERA DOST (space between MERA aur DOST)."],
+    unplugged: "Word tiles: B-A-T / T-O-P cards banakar bachay milaa kar lafz banate hain; do lafzon ke beech khaali 'SPACE' card rakhte hain.",
+  },
+  {
+    lessonId: "w3l10",
+    title: { ur: "ENTER اور BACKSPACE", en: "Enter and Backspace (fix-it)" },
+    prepChecklist: ["w3l10 khula ho", "Bachon ko yaad dilao: galti = bug, bug fix karna mazedaar hai!"],
+    readAloudScript: [
+      { say: "Chotu ne BAT likha par beech me Q aa gayi! Kya karein?" },
+      { say: "BACKSPACE = jadooi mitti — ghalat harf mita do. Sahi likho. ENTER = 'ho gaya!'" },
+    ],
+    demo: [
+      "Ek target live fix karo: Q wala slot orange dikh raha — ERASE dabao (whoosh!), sahi letter, phir ENTER.",
+    ],
+    commonMistakes: [
+      { mistake: "Bachay ENTER jaldi daba dete hain (pehle word complete kiye baghair).", fix: "Friendly reminder aata hai (koi bug nahi) — batao: 'pehle saare khaane bharo, phir darwaza kholo!'" },
+      { mistake: "Sahi letter ko erase karna chahte hain.", fix: "Magic eraser sirf GHALAT harf utaata hai — bachay ko safe feeling: kuch kharab nahi ho sakta." },
+    ],
+    answers: ["BQT→BAT (erase Q, type A) · TYP→TOP (erase Y, type O) · WQTCH→WATCH (erase Q, type A)."],
+    unplugged: "Fix-it cards: ghalat lafz likhe cards (BQT) — bachay marker se ghalat harf kaato/mitao aur sahi chipkao. 'Ho gaya!' par taali.",
+  },
+  {
+    lessonId: "w3l11",
+    title: { ur: "گنتی کے نمبر — آم گنو!", en: "Number keys — count the mangoes" },
+    prepChecklist: ["w3l11 khula ho", "10 small objects (beans/bottlecaps) — counting practice"],
+    readAloudScript: [
+      { say: "Numbers keyboard ke UPAR rehte hain: 1 2 3 4 5 6 7 8 9 0!" },
+      { say: "Aam gino — jitne aam, wahi number key! Aur agar Bijli sab kha jaye? ZERO!" },
+    ],
+    demo: [
+      "Beans se counting karwao: 3 beans — teen! — phir screen par 3 mangoes aur key 3.",
+    ],
+    commonMistakes: [
+      { mistake: "Ginti me chhoot (skip) hoti hai.", fix: "Angli se point kar ke dheere gino — screen par har aam ko touch-point socho." },
+      { mistake: "0 ko 'das' bolte hain.", fix: "0 = sifar = kuch nahi! Khaali tokri ki tasveer dimaag me rakho." },
+    ],
+    answers: ["Rounds: 3, 0 (sab kha gaye), 5, 7, 1, 4."],
+    unplugged: "Aam mandi: 10 kaghaz ke aam — ek bacha ginney wala, baaki sab number card utha kar dikhate hain. Zero round me sab kha jaate hain (naatak!).",
+  },
+  {
+    lessonId: "w3l12",
+    title: { ur: "میرا نام — کی بورڈ نائٹ بنو!", en: "My Name — Keyboard Knight ceremony" },
+    prepChecklist: [
+      "Har bachay ka profile naam Latin me ho (WelcomeGate me Latin likhwao)",
+      "Knight ceremony: keyboard-knight badge printable + talwar pose!",
+      "Agar naam type karne me mushkil ho — ROSHAN likhne me madad, phir dobara naam",
+    ],
+    readAloudScript: [
+      { say: "Aakhri imtihaan: APNA NAAM likho! Har harf ek ghar — tumhara naam harfon ka shehar hai." },
+      { say: "Phir ROSHAN aur poora jumla: MAIN ROSHAN HOON — kyunki tum roshni phailate ho!" },
+      { say: "Knight banne par talwaar uthao (ungli) aur bolo: 'I am a Keyboard Knight!'" },
+    ],
+    demo: [
+      "Apna (teacher ka) naam pehle type karo — harf harf ginte hue. Phir bachay ki baari.",
+    ],
+    commonMistakes: [
+      { mistake: "Bachay apne naam ki spelling bhool jaate hain.", fix: "Slates/notebook par naam likhwa ke samne rakho — copy kar ke type karna bhi seekhna hai." },
+      { mistake: "Lambe naam me ruk jate hain.", fix: "Hint glow khud aata hai (2 stall ke baad) — 'glowing ghar dikh raha? wahi dabaao!'" },
+    ],
+    answers: ["3 targets: apna naam (profile se) · ROSHAN · MAIN ROSHAN HOON. ENTER se confirm."],
+    unplugged: "Knight ceremony: cardboard talwar par bachay apna naam likhte hain — 'knights' kneel, teacher knight banati hai. Naam wali talwar ghar le jaayein!",
+  },
 ];

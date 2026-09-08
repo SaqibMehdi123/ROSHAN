@@ -25,6 +25,7 @@ import {
   QuizMixActivity,
   TapSequenceActivity,
 } from "./Activities2";
+import { CatchFallingActivity, TypeInputActivity } from "./Activities3";
 
 interface CommonProps {
   activity: Activity;
@@ -42,7 +43,7 @@ function useBugFeedback() {
     if (timer.current) clearTimeout(timer.current);
     timer.current = setTimeout(() => setBanner(null), 4200);
   };
-  useEffect(() => () => timer.current && clearTimeout(timer.current), []);
+  useEffect(() => () => { if (timer.current) clearTimeout(timer.current); }, []);
   return { banner, showBug };
 }
 
@@ -198,6 +199,8 @@ export function MatchSlotsActivity({ activity, onWin, hintHandAfter = 2 }: Commo
   const [shakeSlot, setShakeSlot] = useState<string | null>(null);
   const { banner, showBug } = useBugFeedback();
   const sfxOn = useApp((s) => s.device.sfx);
+  const leftTitle = a.panelTitles?.left ?? { ur: "بجلی کے جُز واپس لگاؤ", en: "Put Bijli's parts back" };
+  const rightTitle = a.panelTitles?.right ?? { ur: "جُز — Parts", en: "Parts" };
 
   useEffect(() => {
     void playAudio(a.audio, a.prompt.ur);
@@ -237,25 +240,26 @@ export function MatchSlotsActivity({ activity, onWin, hintHandAfter = 2 }: Commo
     <div className="w-full">
       <Prompt prompt={a.prompt} audio={a.audio} />
       <div className="mx-auto grid max-w-4xl grid-cols-1 gap-4 md:grid-cols-2">
-        {/* Bijli with empty slots */}
+        {/* Bijli with empty slots (or a keyboard-style row for home-row practice) */}
         <div className="card-kid flex flex-col items-center justify-center gap-3 p-4">
-          <p className="urdu text-lg font-bold">بجلی کے جُز واپس لگاؤ</p>
-          <div className="grid grid-cols-2 gap-3">
+          <p className="urdu text-lg font-bold">{leftTitle.ur}</p>
+          <p className="ltr-term -mt-2 text-xs text-roshan-ink-soft" dir="ltr">{leftTitle.en}</p>
+          <div className={a.row ? "flex flex-wrap items-center justify-center gap-2" : "grid grid-cols-2 gap-3"}>
             {a.slots.map((slot) => {
               const filled = placed[slot.id];
               return (
                 <button
                   key={slot.id}
                   onClick={() => tryPlace(slot.id)}
-                  className={`relative flex h-28 w-28 flex-col items-center justify-center rounded-2xl border-3 border-dashed transition-all ${filled ? "border-solid border-roshan-green bg-green-50" : "border-roshan-lock bg-cream hover:scale-105"} ${shakeSlot === slot.id ? "anim-wiggle" : ""}`}
+                  className={`relative ${a.row ? "h-24 w-20" : "h-28 w-28"} flex flex-col items-center justify-center rounded-2xl border-3 border-dashed transition-all ${filled ? "border-solid border-roshan-green bg-green-50" : "border-roshan-lock bg-cream hover:scale-105"} ${shakeSlot === slot.id ? "anim-wiggle" : ""}`}
                   aria-label={slot.label.en}
                 >
                   {filled ? (
-                    <div className="anim-pop"><Art id={a.items.find((i) => i.id === filled)?.art ?? ""} size={64} /></div>
+                    <div className="anim-pop"><Art id={a.items.find((i) => i.id === filled)?.art ?? ""} size={a.row ? 56 : 64} /></div>
                   ) : (
                     <>
-                      <Art id={slot.art} size={54} />
-                      <span className="urdu text-sm text-roshan-ink-soft">{slot.label.ur}</span>
+                      <span className={a.row ? "opacity-45" : ""}><Art id={slot.art} size={a.row ? 50 : 54} /></span>
+                      {!a.row && <span className="urdu text-sm text-roshan-ink-soft">{slot.label.ur}</span>}
                     </>
                   )}
                 </button>
@@ -266,7 +270,8 @@ export function MatchSlotsActivity({ activity, onWin, hintHandAfter = 2 }: Commo
 
         {/* Parts pool */}
         <div className="card-kid flex flex-col items-center gap-3 p-4">
-          <p className="urdu text-lg font-bold">جُز — Parts</p>
+          <p className="urdu text-lg font-bold">{rightTitle.ur}</p>
+          <p className="ltr-term -mt-2 text-xs text-roshan-ink-soft" dir="ltr">{rightTitle.en}</p>
           <div className="flex flex-wrap justify-center gap-3">
             {a.items.map((item) => {
               const used = Object.values(placed).includes(item.id);
@@ -457,5 +462,7 @@ export function ActivityRenderer({ activity, onWin }: CommonProps) {
   if (key === "drag-drop") return <DragDropActivity activity={activity} onWin={onWin} />;
   if (key === "paint-zones") return <PaintZonesActivity activity={activity} onWin={onWin} />;
   if (key === "find-named") return <FindNamedActivity activity={activity} onWin={onWin} />;
+  if (key === "type-input") return <TypeInputActivity activity={activity} onWin={onWin} />;
+  if (key === "catch-falling") return <CatchFallingActivity activity={activity} onWin={onWin} />;
   return null;
 }

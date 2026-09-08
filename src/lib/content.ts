@@ -28,6 +28,18 @@ import w2l7 from "@/content/lessons/world2/w2l7.json";
 import w2l8 from "@/content/lessons/world2/w2l8.json";
 import w2l9 from "@/content/lessons/world2/w2l9.json";
 import w2l10 from "@/content/lessons/world2/w2l10.json";
+import w3l1 from "@/content/lessons/world3/w3l1.json";
+import w3l2 from "@/content/lessons/world3/w3l2.json";
+import w3l3 from "@/content/lessons/world3/w3l3.json";
+import w3l4 from "@/content/lessons/world3/w3l4.json";
+import w3l5 from "@/content/lessons/world3/w3l5.json";
+import w3l6 from "@/content/lessons/world3/w3l6.json";
+import w3l7 from "@/content/lessons/world3/w3l7.json";
+import w3l8 from "@/content/lessons/world3/w3l8.json";
+import w3l9 from "@/content/lessons/world3/w3l9.json";
+import w3l10 from "@/content/lessons/world3/w3l10.json";
+import w3l11 from "@/content/lessons/world3/w3l11.json";
+import w3l12 from "@/content/lessons/world3/w3l12.json";
 
 export const WORLDS = worldsJson as unknown as WorldDef[];
 export const CHARACTERS = charactersJson as unknown as CharacterDef[];
@@ -37,6 +49,7 @@ export const BRAIN_GYM_PUZZLES = puzzlesJson.puzzles as unknown as BrainGymPuzzl
 export const LESSONS: Lesson[] = [
   w1l1, w1l2, w1l3, w1l4, w1l5, w1l6, // Phase 1 + Phase 2: World 1 complete
   w2l1, w2l2, w2l3, w2l4, w2l5, w2l6, w2l7, w2l8, w2l9, w2l10, // Phase 2: World 2 complete
+  w3l1, w3l2, w3l3, w3l4, w3l5, w3l6, w3l7, w3l8, w3l9, w3l10, w3l11, w3l12, // Phase 3: World 3 complete
 ] as unknown as Lesson[];
 
 export function lessonsOfWorld(worldId: number): Lesson[] {

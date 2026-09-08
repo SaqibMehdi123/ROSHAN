@@ -1,0 +1,101 @@
+{
+  "id": "w3l12",
+  "schemaVersion": 1,
+  "world": 3,
+  "order": 12,
+  "title": { "ur": "میرا نام — کی بورڈ نائٹ بنو!", "en": "My Name — become a Keyboard Knight!" },
+  "skill": { "ur": "اپنا نام لکھو + ROSHAN + پورا جملہ", "en": "Type your name + ROSHAN + a full sentence" },
+  "skillKey": "typing-name",
+  "minutes": 7,
+  "badge": "keyboard-knight",
+  "praise": {
+    "ur": "شاباش، کی بورڈ نائٹ! تم نے اپنا نام لکھ ڈالا!",
+    "en": "Shabash, Keyboard Knight! You typed your very own name!"
+  },
+  "story": {
+    "scenes": [
+      {
+        "bg": "bg-castle",
+        "cast": ["ustad-ullo", "bijli", "noor"],
+        "lines": [
+          {
+            "char": "ustad-ullo",
+            "emote": "perch",
+            "ur": "نائٹ کی تربیت کا آخری امتحان: اپنا نام لکھنا!",
+            "en": "The final test of knight training: type your own name!",
+            "audio": "w3l12_story_1"
+          },
+          {
+            "char": "bijli",
+            "emote": "happy",
+            "ur": "ہر حرف ایک مکان — تمہارا نام بھی حروف کا ایک شہر ہے!",
+            "en": "Every letter is a house — your name is a little city of letters!",
+            "audio": "w3l12_story_2"
+          },
+          {
+            "char": "noor",
+            "emote": "happy",
+            "ur": "پھر لکھو: MAIN ROSHAN HOON — کیونکہ تم روشنی پھیلاتے ہو!",
+            "en": "Then type MAIN ROSHAN HOON — because you spread the light!",
+            "audio": "w3l12_story_3"
+          },
+          {
+            "char": "narrator",
+            "ur": "کیا تم تیار ہو، نائٹ؟",
+            "en": "Are you ready, knight?",
+            "audio": "w3l12_story_4",
+            "choice": {
+              "ur": "میرا نام لکھو!",
+              "en": "Type my name!",
+              "audio": "w3l12_story_4_choice"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "show": {
+    "steps": [
+      {
+        "visual": "key-A",
+        "caption": { "ur": "پورا الف بے اب تمہارا قلعہ ہے — A سے Z!", "en": "The whole alphabet is your castle now — A to Z!" },
+        "audio": "w3l12_show_1"
+      },
+      {
+        "visual": "space-carpet",
+        "caption": { "ur": "SPACE یاد ہو؟ جادوئی قالین!", "en": "Remember SPACE? The magic carpet!" },
+        "audio": "w3l12_show_2"
+      },
+      {
+        "visual": "enter-door",
+        "caption": { "ur": "ENTER سے کہو: ہو گیا!", "en": "Press ENTER to say: done!" },
+        "audio": "w3l12_show_3"
+      }
+    ]
+  },
+  "do": {
+    "activity": {
+      "type": "type-input",
+      "prompt": { "ur": "اپنا نام لکھو، پھر ROSHAN، پھر پورا جملہ!", "en": "Type your name, then ROSHAN, then the full sentence!" },
+      "audio": "w3l12_do_prompt",
+      "keys": ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"],
+      "space": true,
+      "enter": true,
+      "targets": [
+        { "id": "name", "expect": "ROSHAN", "useProfileName": true, "art": "qalam", "label": { "ur": "اپنا نام لکھو — تم ہیرو ہو!", "en": "Type your name — you are the hero!" }, "audio": "w3l12_do_name" },
+        { "id": "roshan", "expect": "ROSHAN", "art": "sun", "label": { "ur": "اب لکھو: ROSHAN — روشن = روشنی!", "en": "Now type ROSHAN — it means light!" }, "audio": "w3l12_do_roshan" },
+        { "id": "sentence", "expect": "MAIN ROSHAN HOON", "art": "party-flag", "label": { "ur": "پورا جملہ: MAIN ROSHAN HOON!", "en": "The full sentence: MAIN ROSHAN HOON!" }, "audio": "w3l12_do_sentence" }
+      ],
+      "wrongHint": { "ur": "اوپس! ایک بگ! صحیح کلید — تم کر سکتے ہو!", "en": "Oops! A bug! The right key — you can do it!" },
+      "winPraise": { "ur": "اُستاد اُلو تمہیں نائٹ بناتے ہیں — کی بورڈ نائٹ!", "en": "Ustaad Ulloo knights you — Keyboard Knight!" }
+    }
+  },
+  "cheer": {
+    "recap": [
+      { "ur": "تمہارا نام = حروف کا شہر — اور تم نے اسے لکھا!", "en": "Your name = a city of letters — and you wrote it!" },
+      { "ur": "A سے Z، SPACE اور ENTER — تم کی بورڈ نائٹ ہو!", "en": "A to Z, SPACE and ENTER — you are a Keyboard Knight!" }
+    ],
+    "recapAudio": ["w3l12_recap_1", "w3l12_recap_2"],
+    "rewardToast": { "ur": "اُستاد اُلو کہتے ہیں: اگلا سفر — کنٹرول سٹی!", "en": "Ustaad Ulloo says: next journey — Control City!" }
+  }
+}

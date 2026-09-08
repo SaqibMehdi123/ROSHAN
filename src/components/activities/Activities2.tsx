@@ -29,10 +29,10 @@ interface CommonProps {
 }
 
 /** Deterministic shuffle (seeded from content ids — stable across renders/SSR). */
-function seedOf(strs: string[]): number {
+export function seedOf(strs: string[]): number {
   return strs.join("").split("").reduce((a, c) => a + c.charCodeAt(0), 7) || 11;
 }
-function seededShuffle<T>(arr: T[], seed: number): T[] {
+export function seededShuffle<T>(arr: T[], seed: number): T[] {
   const a = [...arr];
   let s = seed % 2147483647;
   if (s <= 0) s += 2147483646;
@@ -54,7 +54,7 @@ function useBugFeedback() {
     if (timer.current) clearTimeout(timer.current);
     timer.current = setTimeout(() => setBanner(null), 4200);
   };
-  useEffect(() => () => timer.current && clearTimeout(timer.current), []);
+  useEffect(() => () => { if (timer.current) clearTimeout(timer.current); }, []);
   return { banner, showBug };
 }
 

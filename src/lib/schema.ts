@@ -82,6 +82,10 @@ export interface MatchSlotsActivity {
   items: MatchItem[];
   slots: MatchSlot[];
   wrongHint: Bilingual;
+  /** Custom panel headings (default: W1L2 "Bijli ke juzu" wording). */
+  panelTitles?: { left: Bilingual; right: Bilingual };
+  /** Render slots in a single keyboard-like row (home-row lesson). */
+  row?: boolean;
 }
 
 export interface SortBin {
@@ -228,6 +232,68 @@ export interface FindNamedActivity {
   winPraise: Bilingual;
 }
 
+// ---- Phase 3 activity types (World 3 — Keyboard Kingdom) ----
+
+/** One thing to type: a single letter, a digit, a word, or the child's own name. */
+export interface TypeTarget {
+  id: string;
+  expect: string; // Latin chars/digits the child must produce, e.g. "A", "BAT", "3"
+  label: Bilingual; // what/why — spoken + shown (e.g. "Amrood — A se Amrood!")
+  art?: string; // illustration for the target
+  audio?: string; // spoken when the target appears
+  /** Digit targets: show exactly this many mangoes to count (W3L11). */
+  count?: number;
+  /** Finale: type the child's own first name (resolved from profile). */
+  useProfileName?: boolean;
+  /** Fix-it targets: slots start pre-filled with these (some wrong) — erase & retype. */
+  preFilled?: string;
+}
+
+/**
+ * Typing engine — works on BOTH input devices:
+ * - physical keyboard (window keydown)
+ * - big on-screen keycaps (low-end Android tablets have no keyboard)
+ * Letters fill leftmost empty-or-wrong slot; backspace erases the leftmost
+ * wrong slot (magic eraser); enter confirms words. Wrong press = bug + coaching.
+ */
+export interface TypeInputActivity {
+  type: "type-input";
+  prompt: Bilingual;
+  audio: string;
+  keys: string[]; // keycaps shown on the on-screen keyboard, e.g. ["A","B","C"]
+  targets: TypeTarget[];
+  eraser?: boolean; // show the magic-eraser (Backspace) keycap
+  enter?: boolean; // show the ENTER keycap; words need "ho gaya!" confirmation
+  space?: boolean; // show the SPACE keycap (magic carpet between words)
+  bubble?: boolean; // letter-bubble mode: press the key OR tap the floating bubble
+  wrongHint: Bilingual;
+  winPraise: Bilingual;
+}
+
+export interface CatchLetter {
+  id: string;
+  char: string; // the letter/digit that falls, e.g. "D"
+  label: Bilingual; // spoken when caught ("D — Dhol!")
+  art?: string; // optional friend shown inside the falling card
+  audio?: string;
+}
+
+/**
+ * Falling-letter catch — letters drift down SLOWLY (photosensitivity-safe).
+ * Catch = press the matching key (physical or on-screen) OR tap the letter itself.
+ * A letter reaching the bottom softly floats back up — never lost, never a failure.
+ */
+export interface CatchFallingActivity {
+  type: "catch-falling";
+  prompt: Bilingual;
+  audio: string;
+  scene: string; // background art id (bg-castle…)
+  letters: CatchLetter[]; // pool the engine draws each round from (seeded)
+  rounds: number; // catches needed to win
+  winPraise: Bilingual;
+  wrongHint: Bilingual;
+}
+
 export type Activity =
   | TapSelectActivity
   | MatchSlotsActivity
@@ -236,7 +302,9 @@ export type Activity =
   | QuizMixActivity
   | DragDropActivity
   | PaintZonesActivity
-  | FindNamedActivity;
+  | FindNamedActivity
+  | TypeInputActivity
+  | CatchFallingActivity;
 
 // ---------------- Lesson root ----------------
 

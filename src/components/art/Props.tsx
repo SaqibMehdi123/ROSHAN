@@ -540,6 +540,279 @@ const ICONS: Record<string, React.ReactNode> = {
       <path d="M24 66 q-4 -20 16 -24 q6 -12 22 -8 q18 2 16 20 q2 14 -14 16 h-26 q-12 0 -14 -4" fill="#D6D3D1" stroke={INK} strokeWidth="3" strokeLinejoin="round" />
     </g>
   ),
+
+  /* ---- W3 Keyboard Kingdom (Phase 3) — letter friends ---- */
+  amrood: (
+    <g>
+      <circle cx="50" cy="55" r="26" fill="#BEF264" stroke={INK} strokeWidth="3" />
+      <circle cx="44" cy="50" r="7" fill="#DCFCA7" opacity="0.8" />
+      <path d="M50 30 q2 -10 12 -12" stroke="#8B5E3C" strokeWidth="3.5" fill="none" strokeLinecap="round" />
+      <path d="M56 20 q10 -6 14 2 q-8 8 -14 -2" fill="#22C55E" stroke={INK} strokeWidth="2" />
+    </g>
+  ),
+  ball: (
+    <g>
+      <circle cx="50" cy="52" r="27" fill="#FFFFFF" stroke={INK} strokeWidth="3" />
+      <path d="M50 32 l11 8 -4 13 h-14 l-4 -13 Z" fill={INK} />
+      <path d="M50 25 v7 M61 40 l12 -4 M57 53 l8 11 M43 53 l-8 11 M39 40 l-12 -4" stroke={INK} strokeWidth="2.5" />
+    </g>
+  ),
+  dhol: (
+    <g>
+      <ellipse cx="50" cy="42" rx="28" ry="12" fill="#FFF8EC" stroke={INK} strokeWidth="3" />
+      <path d="M22 42 v22 q0 10 28 10 q28 0 28 -10 V42" fill="#C68B4E" stroke={INK} strokeWidth="3" />
+      <path d="M30 48 l40 26 M70 48 l-40 26" stroke="#8B5E3C" strokeWidth="3" />
+      <ellipse cx="50" cy="42" rx="28" ry="12" fill="none" stroke={INK} strokeWidth="3" />
+      <circle cx="38" cy="40" r="2.5" fill={INK} /><circle cx="62" cy="40" r="2.5" fill={INK} />
+    </g>
+  ),
+  fish: (
+    <g>
+      <ellipse cx="44" cy="55" rx="24" ry="15" fill="#FDE047" stroke={INK} strokeWidth="3" />
+      <path d="M66 55 l16 -10 v20 Z" fill="#F59E0B" stroke={INK} strokeWidth="2.5" />
+      <circle cx="32" cy="50" r="3" fill={INK} />
+      <path d="M40 44 q6 4 12 0 M40 66 q6 -4 12 0" stroke={INK} strokeWidth="2" fill="none" />
+    </g>
+  ),
+  gubbara: (
+    <g>
+      <ellipse cx="50" cy="42" rx="22" ry="26" fill="#F472B6" stroke={INK} strokeWidth="3" />
+      <path d="M50 16 v-6 M40 20 q10 8 20 0 M34 42 q4 14 16 24 M66 42 q-4 14 -16 24" stroke="#BE185D" strokeWidth="2" fill="none" />
+      <path d="M48 68 q2 8 -2 14 q-2 6 4 8" stroke={INK} strokeWidth="2.5" fill="none" strokeLinecap="round" />
+      <ellipse cx="42" cy="32" rx="6" ry="9" fill="#FBCFE8" opacity="0.85" />
+    </g>
+  ),
+  haathi: (
+    <g>
+      <ellipse cx="48" cy="58" rx="30" ry="20" fill="#B8B1AD" stroke={INK} strokeWidth="3" />
+      <circle cx="72" cy="40" r="15" fill="#B8B1AD" stroke={INK} strokeWidth="3" />
+      <path d="M84 42 q10 4 8 16 q-2 10 -12 10 q-4 0 -4 -6" fill="none" stroke={INK} strokeWidth="5" strokeLinecap="round" />
+      <circle cx="70" cy="37" r="2.5" fill={INK} />
+      <path d="M28 76 v8 M44 76 v8 M60 76 v8 M72 74 v8" stroke={INK} strokeWidth="5" strokeLinecap="round" />
+      <path d="M60 26 q8 -10 14 -4" stroke={INK} strokeWidth="2.5" fill="none" />
+    </g>
+  ),
+  icecream: (
+    <g>
+      <path d="M36 42 L50 82 L64 42 Z" fill="#E8A25D" stroke={INK} strokeWidth="3" />
+      <path d="M40 56 h20 M44 68 h12" stroke={INK} strokeWidth="1.8" />
+      <circle cx="42" cy="36" r="11" fill="#F9A8D4" stroke={INK} strokeWidth="2.5" />
+      <circle cx="57" cy="33" r="12" fill="#FDE68A" stroke={INK} strokeWidth="2.5" />
+      <circle cx="50" cy="26" r="10" fill="#A7F3D0" stroke={INK} strokeWidth="2.5" />
+      <circle cx="50" cy="14" r="3.5" fill="#EF4444" stroke={INK} strokeWidth="1.5" />
+    </g>
+  ),
+  jahaz: (
+    <g>
+      <ellipse cx="48" cy="55" rx="32" ry="11" fill="#93C5FD" stroke={INK} strokeWidth="3" />
+      <path d="M40 48 L54 22 L62 24 L52 48 Z" fill="#3B82F6" stroke={INK} strokeWidth="2.5" />
+      <path d="M42 62 L56 80 L64 78 L54 60 Z" fill="#3B82F6" stroke={INK} strokeWidth="2.5" />
+      <path d="M76 50 l10 -6 v16 Z" fill="#1D4ED8" stroke={INK} strokeWidth="2" />
+      <circle cx="30" cy="53" r="2.5" fill={INK} /><circle cx="40" cy="53" r="2.5" fill={INK} />
+      <circle cx="70" cy="53" r="2.5" fill={INK} />
+    </g>
+  ),
+  laddu: (
+    <g>
+      <circle cx="50" cy="54" r="26" fill="#FBBF24" stroke={INK} strokeWidth="3" />
+      <circle cx="41" cy="46" r="2.5" fill="#D97706" /><circle cx="58" cy="50" r="2.5" fill="#D97706" />
+      <circle cx="50" cy="62" r="2.5" fill="#D97706" /><circle cx="62" cy="64" r="2" fill="#D97706" />
+      <circle cx="38" cy="60" r="2" fill="#D97706" /><circle cx="50" cy="42" r="2" fill="#D97706" />
+      <path d="M36 40 q8 -10 22 -6" stroke="#FDE68A" strokeWidth="4" fill="none" strokeLinecap="round" />
+    </g>
+  ),
+  naariyal: (
+    <g>
+      <circle cx="50" cy="55" r="25" fill="#92603A" stroke={INK} strokeWidth="3" />
+      <path d="M34 46 q16 -8 32 0 M32 58 q18 -6 36 0 M36 70 q14 6 28 0" stroke="#6B3F22" strokeWidth="2.5" fill="none" />
+      <circle cx="42" cy="54" r="3" fill={INK} /><circle cx="56" cy="58" r="3" fill={INK} /><circle cx="50" cy="46" r="3" fill={INK} />
+      <path d="M50 30 q0 -10 10 -14" stroke="#16A34A" strokeWidth="3.5" fill="none" strokeLinecap="round" />
+      <path d="M60 16 q12 -4 14 6 q-10 6 -14 -6" fill="#22C55E" stroke={INK} strokeWidth="2" />
+    </g>
+  ),
+  orange: (
+    <g>
+      <circle cx="50" cy="56" r="26" fill="#FB923C" stroke={INK} strokeWidth="3" />
+      <circle cx="42" cy="48" r="6" fill="#FED7AA" opacity="0.8" />
+      <path d="M50 30 q1 -8 8 -10" stroke="#8B5E3C" strokeWidth="3.5" fill="none" strokeLinecap="round" />
+      <path d="M54 20 q12 -6 16 4 q-10 8 -16 -4" fill="#22C55E" stroke={INK} strokeWidth="2" />
+      <circle cx="58" cy="64" r="2" fill="#C2410C" /><circle cx="44" cy="62" r="2" fill="#C2410C" /><circle cx="52" cy="70" r="2" fill="#C2410C" />
+    </g>
+  ),
+  poster: (
+    <g>
+      <rect x="24" y="14" width="52" height="72" rx="5" fill="#FFF8EC" stroke={INK} strokeWidth="3" />
+      <rect x="30" y="22" width="40" height="14" rx="3" fill="#FDE68A" stroke={INK} strokeWidth="1.8" />
+      <path d="M50 44 l4.5 9 10 1.5 -7 7 1.6 10 -9.1 -4.8 -9.1 4.8 1.6 -10 -7 -7 10 -1.5 Z" fill="#F59E0B" stroke={INK} strokeWidth="2" />
+      <path d="M32 82 h36" stroke="#B9AC98" strokeWidth="2.5" strokeLinecap="round" />
+    </g>
+  ),
+  qalam: (
+    <g>
+      <path d="M30 78 L38 56 L64 22 q6 -6 11 -1 q5 5 -1 11 L40 66 Z" fill="#F6EBD8" stroke={INK} strokeWidth="3" strokeLinejoin="round" />
+      <path d="M30 78 l8 -22 10 10 Z" fill={INK} />
+      <path d="M56 30 l10 10" stroke={INK} strokeWidth="2.5" />
+      <path d="M26 84 q10 -4 16 -10" stroke="#0D9488" strokeWidth="3" fill="none" strokeLinecap="round" />
+    </g>
+  ),
+  rickshaw: (
+    <g>
+      <path d="M22 44 q0 -14 16 -14 h14 q22 0 26 20 l2 12 q0 8 -8 8 H30 q-8 0 -8 -8 Z" fill="#FDE047" stroke={INK} strokeWidth="3" />
+      <path d="M52 32 v36 M52 44 h26" stroke={INK} strokeWidth="2.5" />
+      <rect x="56" y="36" width="18" height="16" rx="2" fill="#C8ECF9" stroke={INK} strokeWidth="2" />
+      <circle cx="34" cy="74" r="8" fill="#4A3421" /><circle cx="34" cy="74" r="3" fill="#FFF8EC" />
+      <circle cx="68" cy="74" r="8" fill="#4A3421" /><circle cx="68" cy="74" r="3" fill="#FFF8EC" />
+    </g>
+  ),
+  train: (
+    <g>
+      <rect x="18" y="34" width="52" height="38" rx="7" fill="#EF4444" stroke={INK} strokeWidth="3" />
+      <rect x="26" y="42" width="18" height="14" rx="2" fill="#C8ECF9" stroke={INK} strokeWidth="2" />
+      <rect x="70" y="48" width="14" height="24" rx="3" fill="#B91C1C" stroke={INK} strokeWidth="3" />
+      <rect x="73" y="38" width="8" height="10" rx="2" fill={INK} />
+      <circle cx="34" cy="76" r="8" fill="#4A3421" /><circle cx="34" cy="76" r="3" fill="#FFF8EC" />
+      <circle cx="56" cy="76" r="8" fill="#4A3421" /><circle cx="56" cy="76" r="3" fill="#FFF8EC" />
+      <circle cx="76" cy="76" r="6" fill="#4A3421" />
+      <path d="M14 30 h24" stroke="#9CA3AF" strokeWidth="4" strokeLinecap="round" />
+    </g>
+  ),
+  umbrella: (
+    <g>
+      <path d="M50 22 q-28 0 -30 26 q10 -6 15 0 q8 -7 15 0 q7 -7 15 0 q5 -6 15 0 q-2 -26 -30 -26" fill="#EF4444" stroke={INK} strokeWidth="3" strokeLinejoin="round" />
+      <path d="M50 22 v-8" stroke={INK} strokeWidth="3" strokeLinecap="round" />
+      <path d="M50 48 v26 q0 8 -8 8 q-7 0 -7 -7" fill="none" stroke={INK} strokeWidth="3.5" strokeLinecap="round" />
+      <path d="M30 32 q20 -6 40 0 M38 26 q12 -4 24 0" stroke="#FCA5A5" strokeWidth="2.5" fill="none" />
+    </g>
+  ),
+  van: (
+    <g>
+      <path d="M16 42 q0 -10 10 -10 h30 q10 0 16 8 l8 10 q4 6 -2 8 H20 q-6 0 -6 -6 Z" fill="#60A5FA" stroke={INK} strokeWidth="3" />
+      <rect x="28" y="38" width="14" height="12" rx="2" fill="#C8ECF9" stroke={INK} strokeWidth="2" />
+      <rect x="48" y="38" width="12" height="12" rx="2" fill="#C8ECF9" stroke={INK} strokeWidth="2" />
+      <circle cx="30" cy="70" r="8" fill="#4A3421" /><circle cx="30" cy="70" r="3" fill="#FFF8EC" />
+      <circle cx="62" cy="70" r="8" fill="#4A3421" /><circle cx="62" cy="70" r="3" fill="#FFF8EC" />
+      <path d="M12 54 h60" stroke={INK} strokeWidth="2" />
+    </g>
+  ),
+  watch: (
+    <g>
+      <rect x="42" y="12" width="16" height="18" rx="4" fill="#8B5CF6" stroke={INK} strokeWidth="2.5" />
+      <rect x="42" y="70" width="16" height="18" rx="4" fill="#8B5CF6" stroke={INK} strokeWidth="2.5" />
+      <circle cx="50" cy="50" r="24" fill="#FFF8EC" stroke={INK} strokeWidth="3.5" />
+      <circle cx="50" cy="50" r="24" fill="none" stroke="#FDE68A" strokeWidth="4" />
+      <path d="M50 50 V36 M50 50 l10 6" stroke={INK} strokeWidth="3" strokeLinecap="round" />
+      <circle cx="50" cy="50" r="2.5" fill={INK} />
+      <circle cx="74" cy="46" r="3" fill={INK} />
+    </g>
+  ),
+  xylophone: (
+    <g>
+      <path d="M20 30 L80 26 M20 72 L80 70" stroke="#8B5E3C" strokeWidth="5" strokeLinecap="round" />
+      {[0, 1, 2, 3, 4].map((i) => (
+        <rect key={i} x={24 + i * 11} y={30 - i * 2} width="8" height={40 + i * 2} rx="4"
+          fill={["#EF4444", "#F59E0B", "#FDE047", "#22C55E", "#3B82F6"][i]} stroke={INK} strokeWidth="2" />
+      ))}
+      <circle cx="78" cy="22" r="4" fill="#FBBF24" stroke={INK} strokeWidth="1.5" />
+    </g>
+  ),
+  yoyo: (
+    <g>
+      <circle cx="50" cy="58" r="24" fill="#F472B6" stroke={INK} strokeWidth="3" />
+      <circle cx="50" cy="58" r="9" fill="#FFF8EC" stroke={INK} strokeWidth="2.5" />
+      <circle cx="50" cy="58" r="3" fill={INK} />
+      <path d="M50 49 q-2 -20 -18 -26 q-8 -3 -10 4" stroke="#0D9488" strokeWidth="3" fill="none" strokeLinecap="round" />
+      <circle cx="22" cy="38" r="5" fill="#0D9488" stroke={INK} strokeWidth="2" />
+    </g>
+  ),
+  zebra: (
+    <g>
+      <ellipse cx="46" cy="58" rx="28" ry="18" fill="#FFF8EC" stroke={INK} strokeWidth="3" />
+      <path d="M28 44 q4 14 2 26 M42 40 q2 16 0 34 M56 42 q0 14 2 30 M68 48 q-2 10 0 20" stroke={INK} strokeWidth="3.5" fill="none" strokeLinecap="round" />
+      <circle cx="74" cy="36" r="12" fill="#FFF8EC" stroke={INK} strokeWidth="3" />
+      <path d="M70 26 q-2 -8 4 -8 M78 26 q2 -8 -4 -8" stroke={INK} strokeWidth="3" fill="none" strokeLinecap="round" />
+      <circle cx="78" cy="34" r="2" fill={INK} />
+      <path d="M84 38 q6 2 4 8" stroke={INK} strokeWidth="2.5" fill="none" strokeLinecap="round" />
+      <path d="M26 76 v8 M42 76 v8 M58 76 v8 M70 74 v8" stroke={INK} strokeWidth="4.5" strokeLinecap="round" />
+      <path d="M18 50 q-6 6 -2 14" stroke={INK} strokeWidth="3" fill="none" strokeLinecap="round" />
+    </g>
+  ),
+  lattu: (
+    <g>
+      <path d="M50 16 l10 12 -10 10 -10 -10 Z" fill="#0D9488" stroke={INK} strokeWidth="2.5" />
+      <path d="M40 36 q-8 16 10 26 q18 -10 10 -26 Z" fill="#F59E0B" stroke={INK} strokeWidth="3" strokeLinejoin="round" />
+      <path d="M42 40 h16 M44 50 h12" stroke="#B45309" strokeWidth="2.5" />
+      <path d="M50 62 v10" stroke={INK} strokeWidth="3.5" strokeLinecap="round" />
+      <circle cx="50" cy="78" r="3.5" fill={INK} />
+      <path d="M62 24 q10 -2 12 6" stroke="#9CA3AF" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeDasharray="3 3" />
+    </g>
+  ),
+  "posture-good": (
+    <g>
+      <circle cx="50" cy="26" r="11" fill="#F2C79B" stroke={INK} strokeWidth="3" />
+      <path d="M50 37 v22" stroke="#0D9488" strokeWidth="10" strokeLinecap="round" />
+      <path d="M50 42 l-12 8 M50 42 l12 8" stroke="#F2C79B" strokeWidth="6" strokeLinecap="round" />
+      <rect x="36" y="58" width="28" height="10" rx="5" fill="#3B82F6" stroke={INK} strokeWidth="2.5" />
+      <path d="M40 66 v14 M60 66 v14" stroke={INK} strokeWidth="5" strokeLinecap="round" />
+      <path d="M34 44 q-6 10 4 16" stroke="#8B5E3C" strokeWidth="4" fill="none" strokeLinecap="round" />
+      <path d="M40 80 h20" stroke={INK} strokeWidth="4" strokeLinecap="round" />
+    </g>
+  ),
+  "posture-slouch": (
+    <g>
+      <circle cx="62" cy="40" r="11" fill="#F2C79B" stroke={INK} strokeWidth="3" />
+      <path d="M60 50 q-14 4 -18 16" stroke="#0D9488" strokeWidth="10" strokeLinecap="round" fill="none" />
+      <rect x="28" y="64" width="28" height="10" rx="5" fill="#3B82F6" stroke={INK} strokeWidth="2.5" />
+      <path d="M34 74 v10 M50 74 v10" stroke={INK} strokeWidth="5" strokeLinecap="round" />
+      <path d="M66 52 l10 6" stroke="#F2C79B" strokeWidth="6" strokeLinecap="round" />
+      <path d="M76 34 q4 4 0 8" stroke="#EF4444" strokeWidth="3" fill="none" strokeLinecap="round" />
+    </g>
+  ),
+  "posture-feetup": (
+    <g>
+      <circle cx="50" cy="26" r="11" fill="#F2C79B" stroke={INK} strokeWidth="3" />
+      <path d="M50 37 v20" stroke="#0D9488" strokeWidth="10" strokeLinecap="round" />
+      <rect x="34" y="56" width="30" height="10" rx="5" fill="#3B82F6" stroke={INK} strokeWidth="2.5" />
+      <path d="M40 66 l-6 8 M60 66 l14 10" stroke={INK} strokeWidth="5" strokeLinecap="round" />
+      <path d="M74 76 l10 -4" stroke="#8B5E3C" strokeWidth="6" strokeLinecap="round" />
+      <path d="M78 62 q4 6 0 10 M84 60 q5 6 0 10" stroke="#EF4444" strokeWidth="2.5" fill="none" strokeLinecap="round" />
+    </g>
+  ),
+  "posture-tooclose": (
+    <g>
+      <circle cx="58" cy="34" r="11" fill="#F2C79B" stroke={INK} strokeWidth="3" />
+      <path d="M58 45 q-8 8 -10 18" stroke="#0D9488" strokeWidth="10" strokeLinecap="round" fill="none" />
+      <rect x="30" y="62" width="28" height="10" rx="5" fill="#3B82F6" stroke={INK} strokeWidth="2.5" />
+      <path d="M36 72 v10 M52 72 v10" stroke={INK} strokeWidth="5" strokeLinecap="round" />
+      <rect x="6" y="26" width="24" height="20" rx="3" fill="#4A3421" stroke={INK} strokeWidth="2.5" />
+      <rect x="9" y="29" width="18" height="14" rx="2" fill="#93C5FD" />
+      <path d="M70 26 q6 4 2 10 M76 22 q8 6 2 14" stroke="#EF4444" strokeWidth="2.5" fill="none" strokeLinecap="round" />
+    </g>
+  ),
+  "space-carpet": (
+    <g>
+      <path d="M14 58 q36 -18 72 0 q-36 14 -72 0 Z" fill="#8B5CF6" stroke={INK} strokeWidth="3" />
+      <path d="M22 56 q28 -12 56 0 M26 60 q24 10 48 0" stroke="#C4B5FD" strokeWidth="2.5" fill="none" />
+      <circle cx="30" cy="57" r="3" fill="#FDE047" /><circle cx="50" cy="54" r="3" fill="#FDE047" /><circle cx="70" cy="57" r="3" fill="#FDE047" />
+      <path d="M14 58 l-6 6 M86 58 l6 6" stroke="#F59E0B" strokeWidth="3" strokeLinecap="round" />
+    </g>
+  ),
+  "enter-door": (
+    <g>
+      <rect x="28" y="16" width="44" height="72" rx="6" fill="#22C55E" stroke={INK} strokeWidth="3" />
+      <rect x="34" y="22" width="32" height="60" rx="4" fill="#DCFCE7" stroke={INK} strokeWidth="2" />
+      <circle cx="60" cy="52" r="4" fill={INK} />
+      <path d="M40 34 h20 M40 42 h20" stroke="#16A34A" strokeWidth="3" strokeLinecap="round" />
+      <path d="M14 50 h10 M12 44 l8 6 -8 6" stroke="#16A34A" strokeWidth="3.5" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+    </g>
+  ),
+  "magic-eraser": (
+    <g>
+      <rect x="26" y="36" width="48" height="30" rx="8" transform="rotate(-18 50 50)" fill="#F472B6" stroke={INK} strokeWidth="3" />
+      <path d="M32 52 l30 -10" stroke="#FFF8EC" strokeWidth="8" strokeLinecap="round" transform="rotate(-18 50 50)" />
+      <path d="M20 78 q14 -6 28 0 q14 6 30 -2" stroke="#93C5FD" strokeWidth="3" fill="none" strokeLinecap="round" />
+      <path d="M46 18 l4 -8 M56 22 l6 -6" stroke="#FDE047" strokeWidth="3.5" strokeLinecap="round" />
+    </g>
+  ),
 };
 
 /* SHOW-phase & medal visual aliases (must run after ICONS is initialized) */
@@ -669,9 +942,101 @@ const SCENES: Record<string, React.ReactNode> = {
       <path d="M350 150 q-4 -26 6 -38 M338 150 q2 -20 -8 -30" stroke="#16A34A" strokeWidth="4" fill="none" strokeLinecap="round" />
     </g>
   ),
+  "bg-castle": (
+    <g>
+      <rect width="400" height="225" fill="#EDE4FB" />
+      <rect x="0" y="170" width="400" height="55" fill="#C4B5FD" />
+      {/* back towers */}
+      <rect x="18" y="60" width="46" height="120" rx="4" fill="#A78BFA" stroke="#7C3AED" strokeWidth="2.5" />
+      <path d="M14 60 h54 l-27 -26 Z" fill="#7C3AED" />
+      <rect x="336" y="60" width="46" height="120" rx="4" fill="#A78BFA" stroke="#7C3AED" strokeWidth="2.5" />
+      <path d="M332 60 h54 l-27 -26 Z" fill="#7C3AED" />
+      {/* arched windows */}
+      <path d="M34 92 a7 7 0 0 1 14 0 v16 h-14 Z" fill="#FFF8EC" stroke="#7C3AED" strokeWidth="2" />
+      <path d="M352 92 a7 7 0 0 1 14 0 v16 h-14 Z" fill="#FFF8EC" stroke="#7C3AED" strokeWidth="2" />
+      {/* wall of key-houses */}
+      <rect x="80" y="70" width="240" height="110" rx="8" fill="#DDD1F5" stroke="#7C3AED" strokeWidth="2.5" />
+      {[0, 1, 2, 3, 4, 5, 6, 7].map((i) => {
+        const x = 92 + i * 28;
+        return (
+          <g key={i}>
+            <rect x={x} y={92} width="22" height="26" rx="3" fill="#FFF8EC" stroke="#6D28D9" strokeWidth="1.8" />
+            <path d={`M${x} 92 h22 l-11 -9 Z`} fill="#F59E0B" stroke="#6D28D9" strokeWidth="1.2" />
+            <circle cx={x + 11} cy={106} r="2.4" fill="#6D28D9" />
+          </g>
+        );
+      })}
+      {/* banner */}
+      <path d="M150 44 h100 v14 l-8 8 h-84 l-8 -8 Z" fill="#F59E0B" stroke="#B45309" strokeWidth="2" />
+      <circle cx="200" cy="52" r="5" fill="#FFF8EC" />
+      {/* carpet path */}
+      <path d="M120 225 q80 -20 160 0" fill="none" stroke="#8B5CF6" strokeWidth="10" strokeLinecap="round" opacity="0.5" />
+    </g>
+  ),
 };
 
+/* Keycap colours cycle by character (cheerful keyboard houses) */
+const KEYCAP_COLORS = ["#FDE68A", "#BBF7D0", "#BFDBFE", "#FBCFE8", "#DDD6FE", "#FED7AA", "#A7F3D0"];
+
+/** Dynamic "key house" keycap: <Art id="key-A" /> renders a house-shaped key for any letter/digit. */
+function KeyHouseArt({ ch }: { ch: string }) {
+  const code = (ch.charCodeAt(0) || 65) % KEYCAP_COLORS.length;
+  const color = KEYCAP_COLORS[code];
+  const isHomeRow = "ASDFJKL;".includes(ch.toUpperCase());
+  return (
+    <g>
+      <rect x="14" y="26" width="72" height="58" rx="12" fill={color} stroke={INK} strokeWidth="3.5" />
+      {/* house roof (every key is a little house) */}
+      <path d="M14 34 q0 -14 14 -12 l22 -10 l22 10 q14 -2 14 12" fill={isHomeRow ? "#F59E0B" : "#C4B5FD"} stroke={INK} strokeWidth="3" strokeLinejoin="round" />
+      {/* the letter — big, Latin, LTR */}
+      <text x="50" y="74" fontSize={ch.length > 1 ? 26 : 38} fontWeight="800" textAnchor="middle" fill={INK} fontFamily="Arial, sans-serif">
+        {ch}
+      </text>
+      {/* F & J home-row bumps */}
+      {(ch.toUpperCase() === "F" || ch.toUpperCase() === "J") && (
+        <rect x="44" y="18" width="12" height="5" rx="2.5" fill={INK} />
+      )}
+    </g>
+  );
+}
+
 export function Art({ id, size = 64, className }: ArtProps) {
+  // dynamic keycaps: "key-A" … "key-Z", "key-1"…, "key-;", "key-space", "key-enter", "key-backspace"
+  if (id.startsWith("key-")) {
+    const ch = id.slice(4).toUpperCase() === "SPACE" ? " " : id.slice(4).toUpperCase() === "ENTER" ? "\u21B5" : id.slice(4);
+    if (id === "key-space") {
+      return (
+        <svg viewBox="0 0 100 100" width={size} height={size} className={className} role="img" aria-label="space key">
+          <rect x="8" y="38" width="84" height="26" rx="12" fill="#DDD6FE" stroke={INK} strokeWidth="3.5" />
+          <path d="M20 51 h60" stroke={INK} strokeWidth="3" strokeLinecap="round" strokeDasharray="8 6" />
+          <text x="50" y="30" fontSize="15" fontWeight="700" textAnchor="middle" fill={INK} fontFamily="Arial, sans-serif">SPACE</text>
+        </svg>
+      );
+    }
+    if (id === "key-enter") {
+      return (
+        <svg viewBox="0 0 100 100" width={size} height={size} className={className} role="img" aria-label="enter key">
+          <rect x="30" y="26" width="56" height="50" rx="12" fill="#BBF7D0" stroke={INK} strokeWidth="3.5" />
+          <path d="M42 60 h22 v-18 M54 52 l10 8 10 -8" stroke="#16A34A" strokeWidth="6" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+          <text x="58" y="92" fontSize="14" fontWeight="700" textAnchor="middle" fill="#16A34A" fontFamily="Arial, sans-serif">ENTER</text>
+        </svg>
+      );
+    }
+    if (id === "key-backspace") {
+      return (
+        <svg viewBox="0 0 100 100" width={size} height={size} className={className} role="img" aria-label="backspace key">
+          <rect x="26" y="26" width="60" height="50" rx="12" fill="#FBCFE8" stroke={INK} strokeWidth="3.5" />
+          <path d="M40 40 l20 22 M60 40 l-20 22" stroke="#BE185D" strokeWidth="6" strokeLinecap="round" />
+          <text x="50" y="92" fontSize="14" fontWeight="700" textAnchor="middle" fill="#BE185D" fontFamily="Arial, sans-serif">ERASE</text>
+        </svg>
+      );
+    }
+    return (
+      <svg viewBox="0 0 100 100" width={size} height={size} className={className} role="img" aria-label={`key ${ch}`}>
+        <KeyHouseArt ch={ch} />
+      </svg>
+    );
+  }
   if (SCENES[id]) {
     return (
       <svg viewBox="0 0 400 225" width="100%" className={className} role="img" aria-label={id}>

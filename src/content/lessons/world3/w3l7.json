@@ -1,0 +1,101 @@
+{
+  "id": "w3l7",
+  "schemaVersion": 1,
+  "world": 3,
+  "order": 7,
+  "title": { "ur": "M N O — آم، ناریل، سنترہ", "en": "M N O — Mango, Coconut, Orange" },
+  "skill": { "ur": "نئی کلیدیں: M N O", "en": "New letter keys: M N O" },
+  "skillKey": "typing-mno",
+  "minutes": 7,
+  "praise": {
+    "ur": "شاباش! آم، ناریل اور سنترہ — سب تمہارے دوست!",
+    "en": "Shabash! Mango, coconut and orange — all your friends now!"
+  },
+  "story": {
+    "scenes": [
+      {
+        "bg": "bg-castle",
+        "cast": ["bijli", "noor", "chotu"],
+        "lines": [
+          {
+            "char": "bijli",
+            "emote": "happy",
+            "ur": "M — آم! میرا پسندیدہ! پیلا، میٹھا، رسیلا!",
+            "en": "M — mango! My favourite! Yellow, sweet and juicy!",
+            "audio": "w3l7_story_1"
+          },
+          {
+            "char": "noor",
+            "emote": "happy",
+            "ur": "N — ناریل! اوپر سے سخت، اندر سے میٹھا پانی!",
+            "en": "N — coconut! Hard on the outside, sweet water inside!",
+            "audio": "w3l7_story_2"
+          },
+          {
+            "char": "chotu",
+            "emote": "happy",
+            "ur": "O — سنترہ! چھلکا اتارو تو رس بھرا!",
+            "en": "O — orange! Peel it and juicy drops jump out!",
+            "audio": "w3l7_story_3"
+          },
+          {
+            "char": "narrator",
+            "ur": "کیا تم پھلوں کی کلیدیں دباؤ گے؟",
+            "en": "Will you press the fruit keys?",
+            "audio": "w3l7_story_4",
+            "choice": {
+              "ur": "پھل گنو… نہیں — کلیدیں دباؤ!",
+              "en": "Count the fruit… no — press the keys!",
+              "audio": "w3l7_story_4_choice"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "show": {
+    "steps": [
+      {
+        "visual": "mango",
+        "caption": { "ur": "M — آم! بجلی کا پسندیدہ۔", "en": "M — mango! Bijli's favourite." },
+        "audio": "w3l7_show_1"
+      },
+      {
+        "visual": "naariyal",
+        "caption": { "ur": "N — ناریل! تین آنکھیں والا۔", "en": "N — coconut! The one with three eyes." },
+        "audio": "w3l7_show_2"
+      },
+      {
+        "visual": "orange",
+        "caption": { "ur": "O — سنترہ! گول جیسے حرف O۔", "en": "O — orange! Round like the letter O itself." },
+        "audio": "w3l7_show_3"
+      }
+    ]
+  },
+  "do": {
+    "activity": {
+      "type": "type-input",
+      "prompt": { "ur": "جو پھل دکھے، اس کی کلید دباؤ!", "en": "Press the key of the fruit you see!" },
+      "audio": "w3l7_do_prompt",
+      "keys": ["M", "N", "O"],
+      "targets": [
+        { "id": "t1", "expect": "M", "art": "mango", "label": { "ur": "M سے آم! M دباؤ", "en": "Mango starts with M! Press M" }, "audio": "w3l7_do_t1" },
+        { "id": "t2", "expect": "N", "art": "naariyal", "label": { "ur": "N سے ناریل! N دباؤ", "en": "Coconut starts with N! Press N" }, "audio": "w3l7_do_t2" },
+        { "id": "t3", "expect": "O", "art": "orange", "label": { "ur": "O سے سنترہ! O دباؤ", "en": "Orange starts with O! Press O" }, "audio": "w3l7_do_t3" },
+        { "id": "t4", "expect": "O", "art": "orange", "label": { "ur": "گول سنترہ! O دباؤ", "en": "The round orange! Press O" }, "audio": "w3l7_do_t4" },
+        { "id": "t5", "expect": "M", "art": "mango", "label": { "ur": "رسیلا آم! M دباؤ", "en": "The juicy mango! Press M" }, "audio": "w3l7_do_t5" },
+        { "id": "t6", "expect": "N", "art": "naariyal", "label": { "ur": "سخت ناریل! N دباؤ", "en": "The tough coconut! Press N" }, "audio": "w3l7_do_t6" }
+      ],
+      "wrongHint": { "ur": "اوپس! ایک بگ! صحیح پھل کی کلید دباؤ!", "en": "Oops! A bug! Press the key of the right fruit!" },
+      "winPraise": { "ur": "پھلوں کی باغیچہ تمہارا ہوا!", "en": "The fruit garden is yours now!" }
+    }
+  },
+  "cheer": {
+    "recap": [
+      { "ur": "M آم، N ناریل، O سنترہ۔", "en": "M for mango, N for coconut, O for orange." },
+      { "ur": "A سے O تک — نصف الف بے مکمل!", "en": "From A to O — half the alphabet is done!" }
+    ],
+    "recapAudio": ["w3l7_recap_1", "w3l7_recap_2"],
+    "rewardToast": { "ur": "آم کہتا ہے: اگلی سبق میں بلبلے!", "en": "The mango says: bubbles next lesson!" }
+  }
+}

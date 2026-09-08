@@ -1,0 +1,100 @@
+{
+  "id": "w3l6",
+  "schemaVersion": 1,
+  "world": 3,
+  "order": 6,
+  "title": { "ur": "J K L — بجلی کے دوست", "en": "J K L — Bijli ke Dost" },
+  "skill": { "ur": "ہوم راؤ کی کلیدیں: J K L (+ D کی دہرائی)", "en": "Home-row keys: J K L (plus D review)" },
+  "skillKey": "typing-jkl",
+  "minutes": 7,
+  "praise": {
+    "ur": "شاباش! دائیں ہاتھ کی انگلیاں نائٹ بن گئیں!",
+    "en": "Shabash! Your right-hand fingers are knights now!"
+  },
+  "story": {
+    "scenes": [
+      {
+        "bg": "bg-castle",
+        "cast": ["bijli", "chotu"],
+        "lines": [
+          {
+            "char": "bijli",
+            "emote": "happy",
+            "ur": "یہ میرے دوست ہیں! J سے جہاز اڑتا ہے — زوم!",
+            "en": "These are my friends! J flies a jahaaz (aeroplane) — zoom!",
+            "audio": "w3l6_story_1"
+          },
+          {
+            "char": "chotu",
+            "emote": "happy",
+            "ur": "K پر پتنگ! میں نے چھت سے اڑائی تھی — اڑ اڑ!",
+            "en": "K flies a kite! I flew one from our roof — wheee!",
+            "audio": "w3l6_story_2"
+          },
+          {
+            "char": "bijli",
+            "emote": "happy",
+            "ur": "L پر لڈو — میٹھا، گول، تہوار والا!",
+            "en": "L is a laddu — sweet, round, festival-perfect!",
+            "audio": "w3l6_story_3"
+          },
+          {
+            "char": "narrator",
+            "ur": "اور ڈھول والا D بھی یاد ہے؟ وہ بھی آج گرے گا — دوبارہ پکڑو!",
+            "en": "And do you remember dhol-letter D? It will fall again today — catch it once more!",
+            "audio": "w3l6_story_4",
+            "choice": {
+              "ur": "سب پکڑوں!",
+              "en": "I will catch them all!",
+              "audio": "w3l6_story_4_choice"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "show": {
+    "steps": [
+      {
+        "visual": "key-J",
+        "caption": { "ur": "J — گنبد والا مکان! جہاز والا حرف۔", "en": "J — the bump house! The aeroplane letter." },
+        "audio": "w3l6_show_1"
+      },
+      {
+        "visual": "kite",
+        "caption": { "ur": "K — پتنگ! آسمان میں اڑے۔", "en": "K — like kite! It dances in the sky." },
+        "audio": "w3l6_show_2"
+      },
+      {
+        "visual": "laddu",
+        "caption": { "ur": "L — لڈو! میٹھوں کی پلیٹ سے۔", "en": "L — like laddu! Straight from the sweets plate." },
+        "audio": "w3l6_show_3"
+      }
+    ]
+  },
+  "do": {
+    "activity": {
+      "type": "catch-falling",
+      "prompt": { "ur": "گرتے حروف پکڑو — کلید دباؤ یا ٹیپ کرو!", "en": "Catch the falling letters — press the key or tap!" },
+      "audio": "w3l6_do_prompt",
+      "scene": "bg-castle",
+      "rounds": 6,
+      "letters": [
+        { "id": "lj", "char": "J", "art": "jahaz", "label": { "ur": "J گر رہا ہے — جہاز والا!", "en": "J is falling — the aeroplane letter!" }, "audio": "w3l6_do_j" },
+        { "id": "lk", "char": "K", "art": "kite", "label": { "ur": "K گر رہا ہے — پتنگ والا!", "en": "K is falling — the kite letter!" }, "audio": "w3l6_do_k" },
+        { "id": "ll", "char": "L", "art": "laddu", "label": { "ur": "L گر رہا ہے — لڈو والا!", "en": "L is falling — the laddu letter!" }, "audio": "w3l6_do_l" },
+        { "id": "ld", "char": "D", "art": "dhol", "label": { "ur": "D واپس آ گیا — ڈھول والا! پہچانا؟", "en": "D is back — the dhol letter! Remember it?" }, "audio": "w3l6_do_d" }
+      ],
+      "wrongHint": { "ur": "اوپس! بگ! صحیح کلید دباؤ!", "en": "Oops! A bug! Press the right key!" },
+      "winPraise": { "ur": "دائیں ہاتھ کی انگلیوں کو تالیاں!", "en": "A clap for your right-hand fingers!" }
+    }
+  },
+  "cheer": {
+    "recap": [
+      { "ur": "J جہاز، K پتنگ، L لڈو۔", "en": "J for jahaaz, K for kite, L for laddu." },
+      { "ur": "J اور K ہوم راؤ کے گنبد والے مکان ہیں!", "en": "J and L sit on Home Row — right next to the bump keys!" }
+    ],
+    "recapAudio": ["w3l6_recap_1", "w3l6_recap_2"],
+    "rewardToast": { "ur": "جہاز کہتا ہے: زوم! اگلا: M N O!", "en": "The aeroplane says: zoom! Next: M N O!" }
+  }
+}

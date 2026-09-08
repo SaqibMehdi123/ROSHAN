@@ -103,8 +103,51 @@ or global keys (`ui_yes`, `praise_shabash`, `char_bijli_intro`…).
   "steps": [ { "id": "s1", "art": "power-switch", "label": Bilingual } ],
   "order": ["s1","s2","s3","s4"] }
 ```
-Additional types (implemented in later phases): `catch-falling`, `type-input`, `maze-grid`,
-`block-canvas`, `build-doc`.
+
+### Phase 3 types (World 3 — Keyboard Kingdom)
+
+```jsonc
+// type-input: typing on physical keyboard OR big on-screen keycaps (touch tablets)
+{ "type": "type-input",
+  "prompt": Bilingual, "audio": "w3l3_do_prompt",
+  "keys": ["A","B","C"],          // keycaps shown on the on-screen kingdom keyboard
+  "space": false, "eraser": false, "enter": false,  // special keycaps
+  "bubble": false,                 // letter-bubble mode: press key OR tap the bubble
+  "targets": [
+    { "id": "t1", "expect": "A", "art": "amrood",
+      "label": { "ur": "A سے امرود!", "en": "Amrood starts with A!" } },
+    { "id": "w1", "expect": "BAT", "art": "cricket-bat",
+      "label": { "ur": "لکھو: BAT", "en": "Type BAT" } },
+    { "id": "n1", "expect": "3", "count": 3,        // counting round: N mangoes shown
+      "label": { "ur": "کتنے آم؟", "en": "How many?" } },
+    { "id": "f1", "expect": "BAT", "preFilled": "BQT",  // fix-it: wrong letter pre-typed
+      "label": { "ur": "ٹھیک کرو!", "en": "Fix it!" } },
+    { "id": "name", "expect": "SANA", "useProfileName": true,  // finale: child's own name
+      "label": { "ur": "اپنا نام لکھو", "en": "Type your name" } }
+  ],
+  "wrongHint": Bilingual, "winPraise": Bilingual }
+```
+Mechanics: letters fill the **leftmost empty-or-wrong slot** (guided, zero-failure);
+BACKSPACE = magic eraser that clears the **leftmost wrong slot**; ENTER confirms
+completed words ("ho gaya!"). Physical keys and on-screen keycaps feed the same handler.
+
+```jsonc
+// catch-falling: letters drift down SLOWLY (15 s) — catch by key press or tap
+{ "type": "catch-falling",
+  "prompt": Bilingual, "audio": "w3l4_do_prompt",
+  "scene": "bg-castle",
+  "rounds": 6,
+  "letters": [
+    { "id": "ld", "char": "D", "art": "dhol",
+      "label": { "ur": "D گر رہا ہے!", "en": "D is falling!" } }
+  ],
+  "wrongHint": Bilingual, "winPraise": Bilingual }
+```
+A letter reaching the bottom **floats gently back up** — never lost, never a failure.
+`match-slots` gained `row?: boolean` (keyboard-style single-row slots) and
+`panelTitles` (custom headings) for the Home-Row lesson.
+
+Additional types (implemented in later phases): `maze-grid`, `block-canvas`, `build-doc`.
 
 ## Bilingual + audio rules
 - Every human-readable string is `{ "ur": "…", "en": "…" }`. Urdu is displayed primary (RTL,

@@ -1,0 +1,100 @@
+{
+  "id": "w3l3",
+  "schemaVersion": 1,
+  "world": 3,
+  "order": 3,
+  "title": { "ur": "A B C — امروود، بال، چائے", "en": "A B C — Amrood, Ball, Chai" },
+  "skill": { "ur": "پہلی کلیدیں: A B C دباؤ", "en": "First letter keys: press A B C" },
+  "skillKey": "typing-abc",
+  "minutes": 7,
+  "praise": {
+    "ur": "شاباش! تم نے تینوں مکانوں کے دروازے کھول دیے!",
+    "en": "Shabash! You opened all three key-house doors!"
+  },
+  "story": {
+    "scenes": [
+      {
+        "bg": "bg-castle",
+        "cast": ["noor", "bijli"],
+        "lines": [
+          {
+            "char": "narrator",
+            "ur": "قلعے کے تین مکانوں کے دروازے کھڑکھڑاتے ہیں — A، B اور C کے!",
+            "en": "Three little doors in the castle are knocking — the doors of A, B and C!",
+            "audio": "w3l3_story_1"
+          },
+          {
+            "char": "bijli",
+            "emote": "happy",
+            "ur": "A دباؤ تو امرود باہر آتا ہے! B سے بال اُچھلتا ہے، C سے چائے بھنکتی ہے!",
+            "en": "Press A and the guava pops out! B brings a bouncing ball, C brings hot chai!",
+            "audio": "w3l3_story_2"
+          },
+          {
+            "char": "noor",
+            "emote": "happy",
+            "ur": "آسان ہے! جس چیز کا نام جس حرف سے شروع ہو — وہی کلید دباؤ!",
+            "en": "Easy! Whatever a thing's name starts with — that is the key to press!",
+            "audio": "w3l3_story_3"
+          },
+          {
+            "char": "narrator",
+            "ur": "کیا تم دروازے کھولو گے؟",
+            "en": "Will you open the doors?",
+            "audio": "w3l3_story_4",
+            "choice": {
+              "ur": "دروازے کھولو!",
+              "en": "Open the doors!",
+              "audio": "w3l3_story_4_choice"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "show": {
+    "steps": [
+      {
+        "visual": "key-A",
+        "caption": { "ur": "A کا مکان — دباؤ تو امرود باہر!", "en": "The house of A — press it and out pops the guava!" },
+        "audio": "w3l3_show_1"
+      },
+      {
+        "visual": "key-B",
+        "caption": { "ur": "B کا مکان — دباؤ تو بال!", "en": "The house of B — press it for the ball!" },
+        "audio": "w3l3_show_2"
+      },
+      {
+        "visual": "key-C",
+        "caption": { "ur": "C کا مکان — دباؤ تو چائے!", "en": "The house of C — press it for chai!" },
+        "audio": "w3l3_show_3"
+      }
+    ]
+  },
+  "do": {
+    "activity": {
+      "type": "type-input",
+      "prompt": { "ur": "جو چیز دکھے، اس کا پہلا حرف دباؤ!", "en": "Press the first letter of what you see!" },
+      "audio": "w3l3_do_prompt",
+      "keys": ["A", "B", "C"],
+      "targets": [
+        { "id": "t1", "expect": "A", "art": "amrood", "label": { "ur": "A سے امرود! A دباؤ", "en": "Amrood starts with A! Press A" }, "audio": "w3l3_do_t1" },
+        { "id": "t2", "expect": "B", "art": "ball", "label": { "ur": "B سے بال! B دباؤ", "en": "Ball starts with B! Press B" }, "audio": "w3l3_do_t2" },
+        { "id": "t3", "expect": "C", "art": "chai-cup", "label": { "ur": "C سے چائے! C دباؤ", "en": "Chai starts with C! Press C" }, "audio": "w3l3_do_t3" },
+        { "id": "t4", "expect": "B", "art": "ball", "label": { "ur": "اب یہ کس کا؟ بال! B دباؤ", "en": "What is this one? Ball! Press B" }, "audio": "w3l3_do_t4" },
+        { "id": "t5", "expect": "A", "art": "amrood", "label": { "ur": "میٹھا امرود! A دباؤ", "en": "Sweet amrood! Press A" }, "audio": "w3l3_do_t5" },
+        { "id": "t6", "expect": "C", "art": "chai-cup", "label": { "ur": "گرم چائے! C دباؤ", "en": "Warm chai! Press C" }, "audio": "w3l3_do_t6" }
+      ],
+      "wrongHint": { "ur": "اوپس! ایک بگ! دوسرا دروازہ دباؤ — دوبارہ try!", "en": "Oops! A bug! Try another door — try again!" },
+      "winPraise": { "ur": "تینوں دروازے کھل گئے — زبردست!", "en": "All three doors are open — brilliant!" }
+    }
+  },
+  "cheer": {
+    "recap": [
+      { "ur": "A سے امرود، B سے بال، C سے چائے۔", "en": "A for amrood, B for ball, C for chai." },
+      { "ur": "کلید دباؤ — دوست باہر آتے ہیں!", "en": "Press the key — the friends pop out!" }
+    ],
+    "recapAudio": ["w3l3_recap_1", "w3l3_recap_2"],
+    "rewardToast": { "ur": "امرود کہتا ہے: اگلی سبق میں ڈھول کا دھماکہ!", "en": "The guava says: dhol drums next lesson!" }
+  }
+}

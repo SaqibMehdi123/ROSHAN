@@ -1,0 +1,98 @@
+{
+  "id": "w3l4",
+  "schemaVersion": 1,
+  "world": 3,
+  "order": 4,
+  "title": { "ur": "D E F — ڈھول کا دھماکہ", "en": "D E F — Dhol ka Dhamaka" },
+  "skill": { "ur": "گرتی ہوئی کلیدیں پکڑو: D E F", "en": "Catch the falling keys: D E F" },
+  "skillKey": "typing-def",
+  "minutes": 7,
+  "praise": {
+    "ur": "شاباش! تم نے ہر گرتا حرف پکڑ لیا — ڈھول دھوم!",
+    "en": "Shabash! You caught every falling letter — dhum dhum!"
+  },
+  "story": {
+    "scenes": [
+      {
+        "bg": "bg-castle",
+        "cast": ["chotu", "bijli"],
+        "lines": [
+          {
+            "char": "narrator",
+            "ur": "ٹاور سے ڈھول بج رہا ہے — دھوم دھوم! اور حروف نیچے کھلنے لگے۔",
+            "en": "A dhol thumps from the tower — dhum dhum! And letters start drifting down.",
+            "audio": "w3l4_story_1"
+          },
+          {
+            "char": "chotu",
+            "emote": "surprised",
+            "ur": "D ڈھول کے ساتھ! E انڈے کے ساتھ! F مچھلی کے ساتھ!",
+            "en": "D comes with a dhol! E with an egg! F with a fish!",
+            "audio": "w3l4_story_2"
+          },
+          {
+            "char": "bijli",
+            "emote": "happy",
+            "ur": "حرف جب آہستہ نیچے آئے، اس کی کلید دباؤ — یا حرف پر ہاتھ (ٹیپ) ڈالو! اگر وہ نیچے پہنچ جائے تو پھر اوپر اڑ کر واپس آئے گا — کوئی حرف کھوتا نہیں!",
+            "en": "When a letter drifts down slowly, press its key — or tap it! If it reaches the bottom it floats back up — no letter is ever lost!",
+            "audio": "w3l4_story_3"
+          },
+          {
+            "char": "narrator",
+            "ur": "کیا تم سب حروف پکڑو گے؟",
+            "en": "Will you catch them all?",
+            "audio": "w3l4_story_4",
+            "choice": {
+              "ur": "پکڑو!",
+              "en": "Catch them!",
+              "audio": "w3l4_story_4_choice"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "show": {
+    "steps": [
+      {
+        "visual": "key-D",
+        "caption": { "ur": "D — ڈھول والا حرف! دھوم دھوم!", "en": "D — the dhol letter! Dhum dhum!" },
+        "audio": "w3l4_show_1"
+      },
+      {
+        "visual": "egg",
+        "caption": { "ur": "E — انڈا! چھوٹا سا O جیسا حرف۔", "en": "E — like an egg! A little letter like O." },
+        "audio": "w3l4_show_2"
+      },
+      {
+        "visual": "fish",
+        "caption": { "ur": "F — مچھلی! تالاب میں تیرتی ہے۔", "en": "F — like fish! It swims in the pond." },
+        "audio": "w3l4_show_3"
+      }
+    ]
+  },
+  "do": {
+    "activity": {
+      "type": "catch-falling",
+      "prompt": { "ur": "گرتے حروف پکڑو — کلید دباؤ یا حرف پر ٹیپ!", "en": "Catch the falling letters — press the key or tap them!" },
+      "audio": "w3l4_do_prompt",
+      "scene": "bg-castle",
+      "rounds": 6,
+      "letters": [
+        { "id": "ld", "char": "D", "art": "dhol", "label": { "ur": "D نیچے آ رہا ہے — ڈھول والا D!", "en": "D is coming down — the dhol letter!" }, "audio": "w3l4_do_d" },
+        { "id": "le", "char": "E", "art": "egg", "label": { "ur": "E نیچے آ رہا ہے — انڈا!", "en": "E is coming down — the egg!" }, "audio": "w3l4_do_e" },
+        { "id": "lf", "char": "F", "art": "fish", "label": { "ur": "F نیچے آ رہا ہے — مچھلی!", "en": "F is coming down — the fish!" }, "audio": "w3l4_do_f" }
+      ],
+      "wrongHint": { "ur": "اوپس! بگ! صحیح کلید دباؤ!", "en": "Oops! A bug! Press the right key!" },
+      "winPraise": { "ur": "سب حروف بجلی کی ٹوکری میں!", "en": "Every letter is in Bijli's basket!" }
+    }
+  },
+  "cheer": {
+    "recap": [
+      { "ur": "D ڈھول، E انڈا، F مچھلی۔", "en": "D for dhol, E for egg, F for fish." },
+      { "ur": "کلید دباؤ یا حرف کو ٹیپ کرو — ہر حرف پکڑ سکتے ہیں!", "en": "Press the key or tap the letter — you can catch them all!" }
+    ],
+    "recapAudio": ["w3l4_recap_1", "w3l4_recap_2"],
+    "rewardToast": { "ur": "ڈھول کہتا ہے: دھوم! اگلے: G H I!", "en": "The dhol says: dhum! Next: G H I!" }
+  }
+}

@@ -47,9 +47,11 @@ Built for the real conditions of village computer labs: **unreliable electricity
 | 7 | لاجک جنگل · Logic Jungle | Sequencing, loops, IF-THEN, debugging | Logic Champion |
 | 8 | اسٹوری ماؤنٹین · Story Mountain | Block coding, animations, final showcase | ROSHAN Hero |
 
-> **Phase 2 ships World 1 (all 6 lessons) and World 2 *Mouse Meadow* (all 10 lessons) fully
-> playable** — Urdu story scripts with side-by-side English translations, interactive
-> activities, stars and the *Dosti Ka Safar* + *Mouse Master* badges.
+> **Phase 3 ships Worlds 1–3 fully playable (28 lessons)** — Urdu story scripts with
+> side-by-side English translations, interactive activities, stars, and the *Dosti Ka Safar*,
+> *Mouse Master* and *Keyboard Knight* badges. World 3 adds real typing: an on-screen
+> kingdom keyboard (house-shaped keycaps) plus physical-keyboard support, so it works on
+> old PCs **and** touch-only tablets.
 
 ## Meet the Friends
 
@@ -137,7 +139,8 @@ Adding World 2 means adding JSON files — **zero engine changes required.**
 
 - [x] **Phase 1** — app shell, lesson engine, World 1 L1–L3, Teacher Hub v1 *(shipped)*
 - [x] **Phase 2** — World 1 complete (L4–L6), World 2 *Mouse Meadow* all 10 lessons, 5 new activity engines (sequence, quiz, drag & drop, paint-by-tap, listen-and-point) *(shipped)*
-- [ ] **Phase 3** — World 3 *Keyboard Kingdom*, Teacher Academy course, lab-wide sync over USB
+- [x] **Phase 3** — World 3 *Keyboard Kingdom* all 12 lessons: posture, home row, A–Z with letter friends, SPACE, ENTER/BACKSPACE fix-it drills, number keys, and the *type your own name* finale with the Keyboard Knight badge — plus 2 new engines (`type-input` with on-screen + physical keyboards, `catch-falling` with float-back-up letters) *(shipped)*
+- [ ] **Phase 4** — World 4 *Control City*, real Urdu voice-over recording, Teacher Academy course
 
 ## Contributing
 

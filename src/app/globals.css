@@ -244,6 +244,19 @@ body {
 }
 .anim-ring { animation: ring-pulse 1.6s ease-out infinite; }
 
+/* Falling-letter catch (World 3) — slow linear drift down; if missed, the
+   letter floats gently back up. Never a failure, never a strobe. */
+@keyframes key-fall {
+  0%   { top: -14%; }
+  100% { top: 102%; }
+}
+.anim-fall { animation-name: key-fall; animation-timing-function: linear; animation-fill-mode: both; }
+@keyframes key-float-up {
+  0%   { top: 102%; }
+  100% { top: -14%; }
+}
+.anim-float-up { animation-name: key-float-up; animation-timing-function: ease-in-out; animation-fill-mode: both; }
+
 /* Confetti — matte paper, max ~40 pieces, 1.4s, no strobe */
 .confetti-piece {
   position: absolute;

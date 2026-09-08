@@ -75,9 +75,6 @@ export default function Home() {
       case "settings":
         view = <SettingsScreen />;
         break;
-      case "teacher":
-        view = <TeacherHub />;
-        break;
       case "map":
       default:
         view = <AdventureMap />;

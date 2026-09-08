@@ -35,7 +35,7 @@
     "badgeId": "keyboard-knight",
     "badgeName": { "ur": "کی بورڈ نائٹ", "en": "Keyboard Knight" },
     "lessonCount": 12,
-    "lessonsReady": 0,
+    "lessonsReady": 12,
     "arcSummary": {
       "ur": "بنفشے قلعے میں ہر کلید ایک مکان ہے، ہر مکان میں ایک کردار!",
       "en": "In the purple castle every key is a house with a character inside!"

@@ -1,0 +1,105 @@
+{
+  "id": "w3l8",
+  "schemaVersion": 1,
+  "world": 3,
+  "order": 8,
+  "title": { "ur": "P Q R S — صابن کے بلبلے", "en": "P Q R S — Letter Bubbles" },
+  "skill": { "ur": "کلید دباؤ یا بلبلا پھوڑو: P Q R S", "en": "Press the key or pop the bubble: P Q R S" },
+  "skillKey": "typing-pqrs",
+  "minutes": 7,
+  "praise": {
+    "ur": "شاباش! ہر بلبلے کا حرف تم نے پہچان لیا!",
+    "en": "Shabash! You named the letter on every bubble!"
+  },
+  "story": {
+    "scenes": [
+      {
+        "bg": "bg-castle",
+        "cast": ["chotu", "bijli"],
+        "lines": [
+          {
+            "char": "narrator",
+            "ur": "قلعے کے آنگن میں صابن کے بلبلے اڑ رہے ہیں — ہر بلبلے پر ایک حرف لکھا ہے!",
+            "en": "Soap bubbles drift in the castle courtyard — and each one carries a letter!",
+            "audio": "w3l8_story_1"
+          },
+          {
+            "char": "bijli",
+            "emote": "happy",
+            "ur": "کلید دباؤ یا بلبلے پر ٹیپ — دونوں چلتے ہیں! پھٹ! بلبلا غائب!",
+            "en": "Press the key OR tap the bubble — both work! Pop! The bubble is gone!",
+            "audio": "w3l8_story_2"
+          },
+          {
+            "char": "chotu",
+            "emote": "happy",
+            "ur": "P پوسٹر! Q قلم! R رکشہ! اور S سورج!",
+            "en": "P poster! Q qalam (pen)! R rickshaw! And S suraj (sun)!",
+            "audio": "w3l8_story_3"
+          },
+          {
+            "char": "narrator",
+            "ur": "کیا تم بلبلے پھوڑو گے؟",
+            "en": "Will you pop the bubbles?",
+            "audio": "w3l8_story_4",
+            "choice": {
+              "ur": "بلبلے پھوڑو!",
+              "en": "Pop the bubbles!",
+              "audio": "w3l8_story_4_choice"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "show": {
+    "steps": [
+      {
+        "visual": "poster",
+        "caption": { "ur": "P — پوسٹر! دیوار پر لگتی ہے۔", "en": "P — like poster! It hangs on the wall." },
+        "audio": "w3l8_show_1"
+      },
+      {
+        "visual": "qalam",
+        "caption": { "ur": "Q — قلم! اس سے لکھتے ہیں۔", "en": "Q — like qalam! We write with it." },
+        "audio": "w3l8_show_2"
+      },
+      {
+        "visual": "rickshaw",
+        "caption": { "ur": "R — رکشہ! ٹک ٹک، چل پڑی!", "en": "R — like rickshaw! Tik tik, off we go!" },
+        "audio": "w3l8_show_3"
+      },
+      {
+        "visual": "sun",
+        "caption": { "ur": "S — سورج! روشنی دیتا ہے — جیسے ROSHAN!", "en": "S — like suraj (sun)! It gives light — just like ROSHAN!" },
+        "audio": "w3l8_show_4"
+      }
+    ]
+  },
+  "do": {
+    "activity": {
+      "type": "type-input",
+      "prompt": { "ur": "بلبلے کا حرف پہچانو — کلید دباؤ یا بلبلے پر ٹیپ!", "en": "Name the bubble's letter — press the key or tap the bubble!" },
+      "audio": "w3l8_do_prompt",
+      "keys": ["P", "Q", "R", "S"],
+      "bubble": true,
+      "targets": [
+        { "id": "t1", "expect": "P", "art": "poster", "label": { "ur": "P سے پوسٹر! P دباؤ", "en": "Poster starts with P! Press P" }, "audio": "w3l8_do_t1" },
+        { "id": "t2", "expect": "Q", "art": "qalam", "label": { "ur": "Q سے قلم! Q دباؤ", "en": "Qalam starts with Q! Press Q" }, "audio": "w3l8_do_t2" },
+        { "id": "t3", "expect": "R", "art": "rickshaw", "label": { "ur": "R سے رکشہ! R دباؤ", "en": "Rickshaw starts with R! Press R" }, "audio": "w3l8_do_t3" },
+        { "id": "t4", "expect": "S", "art": "sun", "label": { "ur": "S سے سورج! S دباؤ", "en": "Suraj starts with S! Press S" }, "audio": "w3l8_do_t4" },
+        { "id": "t5", "expect": "Q", "art": "qalam", "label": { "ur": "لکھنے والا قلم! Q دباؤ", "en": "The writing qalam! Press Q" }, "audio": "w3l8_do_t5" }
+      ],
+      "wrongHint": { "ur": "اوپس! ایک بگ! دوسرا حرف — دوبارہ دیکھو!", "en": "Oops! A bug! Another letter — look again!" },
+      "winPraise": { "ur": "سارے بلبلے پھوٹ گئے — شاندار!", "en": "Every bubble popped — magnificent!" }
+    }
+  },
+  "cheer": {
+    "recap": [
+      { "ur": "P پوسٹر، Q قلم، R رکشہ، S سورج۔", "en": "P poster, Q qalam, R rickshaw, S suraj." },
+      { "ur": "کلید دباؤ یا ٹیپ کرو — دونوں طریقے نائٹوں والے!", "en": "Key or tap — both are knightly moves!" }
+    ],
+    "recapAudio": ["w3l8_recap_1", "w3l8_recap_2"],
+    "rewardToast": { "ur": "رکشہ کہتا ہے: ٹک ٹک! اگلا: T سے Z اور SPACE!", "en": "The rickshaw says: tik tik! Next: T to Z and SPACE!" }
+  }
+}

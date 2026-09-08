@@ -1,0 +1,96 @@
+{
+  "id": "w3l11",
+  "schemaVersion": 1,
+  "world": 3,
+  "order": 11,
+  "title": { "ur": "گنتی کے نمبر — آم گنو!", "en": "Counting keys — count the mangoes!" },
+  "skill": { "ur": "نمبر والی قطار: 1 2 3 4 5 6 7 8 9 0", "en": "The number row: 1 2 3 4 5 6 7 8 9 0" },
+  "skillKey": "typing-numbers",
+  "minutes": 7,
+  "praise": {
+    "ur": "شاباش! ہر آم کی گنتی صحیح — تم گنتی کے نائٹ ہو!",
+    "en": "Shabash! Every count is right — you are the counting knight!"
+  },
+  "story": {
+    "scenes": [
+      {
+        "bg": "bg-castle",
+        "cast": ["bijli", "noor", "chotu"],
+        "lines": [
+          {
+            "char": "bijli",
+            "emote": "happy",
+            "ur": "بھوک لگی! آم گنیں — اور جتنے آم، اُتنی نمبر کلید دباؤ!",
+            "en": "I am hungry! Count the mangoes — and press the number key that matches!",
+            "audio": "w3l11_story_1"
+          },
+          {
+            "char": "noor",
+            "emote": "happy",
+            "ur": "نمبر حروف کے اوپر رہتے ہیں: 1 2 3 4 5 6 7 8 9 0!",
+            "en": "The numbers live above the letters: 1 2 3 4 5 6 7 8 9 0!",
+            "audio": "w3l11_story_2"
+          },
+          {
+            "char": "chotu",
+            "emote": "surprised",
+            "ur": "اگر بجلی سارے آم کھا جائے؟ تو 0 دباؤ — صفر آم بچے!",
+            "en": "And if Bijli eats every mango? Press 0 — zero mangoes left!",
+            "audio": "w3l11_story_3"
+          },
+          {
+            "char": "narrator",
+            "ur": "کیا تم بجلی کو آم کھلاو گے؟",
+            "en": "Will you feed Bijli the mangoes?",
+            "audio": "w3l11_story_4",
+            "choice": {
+              "ur": "آم گنو!",
+              "en": "Count the mangoes!",
+              "audio": "w3l11_story_4_choice"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "show": {
+    "steps": [
+      {
+        "visual": "key-3",
+        "caption": { "ur": "تین آم = کلید 3!", "en": "Three mangoes = the key 3!" },
+        "audio": "w3l11_show_1"
+      },
+      {
+        "visual": "key-0",
+        "caption": { "ur": "0 = کچھ بھی نہیں! خالی ٹوکری۔", "en": "0 = nothing at all! An empty basket." },
+        "audio": "w3l11_show_2"
+      }
+    ]
+  },
+  "do": {
+    "activity": {
+      "type": "type-input",
+      "prompt": { "ur": "کتنے آم؟ گن کر صحیح نمبر دباؤ!", "en": "How many mangoes? Count and press the right number!" },
+      "audio": "w3l11_do_prompt",
+      "keys": ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"],
+      "targets": [
+        { "id": "n1", "expect": "3", "count": 3, "label": { "ur": "کتنے آم؟ گن کر دباؤ!", "en": "How many? Count and press!" }, "audio": "w3l11_do_n1" },
+        { "id": "n2", "expect": "0", "count": 0, "label": { "ur": "بجلی نے سب کھا لیے! کتنے بچے؟", "en": "Bijli ate them all! How many are left?" }, "audio": "w3l11_do_n2" },
+        { "id": "n3", "expect": "5", "count": 5, "label": { "ur": "اس بار کتنے؟ انگلی سے گنو!", "en": "How many this time? Count on your fingers!" }, "audio": "w3l11_do_n3" },
+        { "id": "n4", "expect": "7", "count": 7, "label": { "ur": "گنتی جاری! کتنے آم؟", "en": "Keep counting! How many mangoes?" }, "audio": "w3l11_do_n4" },
+        { "id": "n5", "expect": "1", "count": 1, "label": { "ur": "اکلا آم! کون سی کلید؟", "en": "One lonely mango! Which key?" }, "audio": "w3l11_do_n5" },
+        { "id": "n6", "expect": "4", "count": 4, "label": { "ur": "آخری گنتی! کتنے آم؟", "en": "The last count! How many mangoes?" }, "audio": "w3l11_do_n6" }
+      ],
+      "wrongHint": { "ur": "اوپس! ایک بگ! دوبارہ گنو — انگلی سے انگلی پر!", "en": "Oops! A bug! Count again, finger by finger!" },
+      "winPraise": { "ur": "بجلی پیٹ بھر کر ہنسی — تم گنتی کے نائٹ!", "en": "Bijli laughs with a full tummy — you are the counting knight!" }
+    }
+  },
+  "cheer": {
+    "recap": [
+      { "ur": "نمبر اوپر رہتے ہیں: 1 2 3 4 5 6 7 8 9 0۔", "en": "Numbers live in the top row: 1 2 3 4 5 6 7 8 9 0." },
+      { "ur": "گنتی کرو، صحیح کلید دباؤ — صفر یعنی کچھ نہیں!", "en": "Count, then press the key — zero means nothing at all!" }
+    ],
+    "recapAudio": ["w3l11_recap_1", "w3l11_recap_2"],
+    "rewardToast": { "ur": "بجلی کہتا ہے: آخری سبق — میرا نام!", "en": "Bijli says: the final quest — my name!" }
+  }
+}

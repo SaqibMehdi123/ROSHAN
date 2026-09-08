@@ -61,6 +61,23 @@ sticker sheet `sticker-<lessonId>` (one per lesson) · outfit items: `outfit-cap
 `water-drop` · `frog` · `stone` · scenes: `bg-meadow`, `bg-pond` · plus `close-work`,
 `party-flag` (W1 L4-L6). Real-illustration replacements follow the same ids 1:1.
 
+### World 3 "Keyboard Kingdom" — shipped as code-drawn SVG in Phase 3
+Letter-friend icons: `amrood` · `ball` · `chai-cup` (W1 reuse) · `dhol` · `egg` (reuse) ·
+`fish` · `gubbara` · `haathi` · `icecream` · `jahaz` · `kite` (reuse) · `laddu` ·
+`mango` (reuse) · `naariyal` · `orange` · `poster` · `qalam` · `rickshaw` · `sun` (reuse) ·
+`train` · `umbrella` · `van` · `watch` · `xylophone` · `yoyo` · `zebra` · `lattu` ·
+posture set: `posture-good` · `posture-slouch` · `posture-feetup` · `posture-tooclose` ·
+key props: `space-carpet` · `enter-door` · `magic-eraser` · scene: `bg-castle` ·
+**dynamic keycaps**: `<Art id="key-A">`…`key-Z`, `key-0`…`key-9`, `key-;`,
+`key-space`, `key-enter`, `key-backspace` are generated at runtime (house-shaped,
+colour-cycled, F/J bumps) — no files needed. Real-illustration replacements follow the same ids.
+
+### World 3 voice recording additions (per-lesson `w3l*` keys)
+All 12 lessons follow `{lessonId}_story_{n}` / `_story_{last}_choice` / `_show_{n}` /
+`_do_prompt` / `_do_{targetId}` / `_recap_1..2` — collect from the JSONs at record time.
+Special lines worth directing carefully: counting-round lines (w3l11_do_n1…n6) and the
+finale sentence "MAIN ROSHAN HOON" (w3l12_do_sentence).
+
 ### Later worlds (placeholder IDs already wired in schema)
 castle set, city set, mela set, bazaar set, jungle set, mountain set —
 list to be expanded per world build (docs/04-curriculum.md).
