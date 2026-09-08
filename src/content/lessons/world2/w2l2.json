@@ -1,0 +1,56 @@
+{
+  "id": "w2l2",
+  "schemaVersion": 1,
+  "world": 2,
+  "order": 2,
+  "title": { "ur": "اشارہ کرو — بالکل صحیح!", "en": "Point! — Exactly Right!" },
+  "skill": { "ur": "سنو، ڈھونڈو، صحیح چیز پر اشارہ کرو", "en": "Listen, find, point at the exact thing" },
+  "skillKey": "point-precise",
+  "minutes": 7,
+  "praise": { "ur": "بہت خوب! تم نے ہر چیز پر بالکل صحیح اشارہ کیا!", "en": "Very good! You pointed at exactly the right thing every time!" },
+  "story": {
+    "scenes": [
+      {
+        "bg": "bg-meadow",
+        "cast": ["bijli", "ustad-ullo"],
+        "lines": [
+          { "char": "narrator", "ur": "تیر نے بجلی سے کہا: 'مجھے اشارہ کرنا سکھاؤ — بالکل صحیح جگہ پر!'", "en": "Teer said to Bijli: 'Teach me to point — at exactly the right place!'", "audio": "w2l2_story_1" },
+          { "char": "bijli", "emote": "happy", "ur": "میں نام بولوں گی، تم تیر کو اُسی چیز پر لے جاؤ!", "en": "I will say a name — you take Teer to that very thing!", "audio": "w2l2_story_2" },
+          { "char": "ustad-ullo", "ur": "سنو، دیکھو، پھر اشارہ کرو۔ یہی اشارے کی طاقت ہے!", "en": "Listen, look, then point. That is the power of pointing!", "audio": "w2l2_story_3", "fx": "sparkle" },
+          { "char": "narrator", "ur": "کیا تم تیر کے ساتھ اشارہ کرو گے؟", "en": "Will you point together with Teer?", "audio": "w2l2_story_4", "choice": { "ur": "اشارہ شروع!", "en": "Start pointing!", "audio": "w2l2_story_4_choice" } }
+        ]
+      }
+    ]
+  },
+  "show": {
+    "steps": [
+      { "visual": "butterfly", "caption": { "ur": "پہلے کان سے سنو: 'تتلی!'", "en": "First listen with your ears: 'Butterfly!'" }, "audio": "w2l2_show_1" },
+      { "visual": "teer", "caption": { "ur": "پھر تیر کو اُسی چیز تک لے جاؤ۔", "en": "Then take Teer to that very thing." }, "audio": "w2l2_show_2" },
+      { "visual": "star", "caption": { "ur": "بالکل صحیح؟ ستارہ ملے گا!", "en": "Exactly right? You earn a star!" }, "audio": "w2l2_show_3" }
+    ]
+  },
+  "do": {
+    "activity": {
+      "type": "find-named",
+      "prompt": { "ur": "بجلی نام بولے گی — تم اُسی چیز پر اشارہ کرو!", "en": "Bijli will name a thing — you point at it!" },
+      "audio": "w2l2_do_prompt",
+      "scene": "bg-meadow",
+      "targets": [
+        { "id": "titli", "art": "butterfly", "x": 20, "y": 34, "name": { "ur": "تتلی", "en": "butterfly" }, "audio": "w2l2_t_titli" },
+        { "id": "phool", "art": "flower", "x": 48, "y": 72, "name": { "ur": "پھول", "en": "flower" }, "audio": "w2l2_t_phool" },
+        { "id": "aam", "art": "mango", "x": 72, "y": 28, "name": { "ur": "آم", "en": "mango" }, "audio": "w2l2_t_aam" },
+        { "id": "kuan", "art": "well", "x": 88, "y": 74, "name": { "ur": "کھوہ", "en": "well" }, "audio": "w2l2_t_kuan" }
+      ],
+      "wrongHint": { "ur": "اوپس! ایک بگ ملا! یہ دوسری چیز ہے — نام دوبارہ سنو!", "en": "Oops! A bug! That is a different thing — listen to the name again!" },
+      "winPraise": { "ur": "زبردست! تیر اب بالکل صحیح اشارہ کرتا ہے!", "en": "Zabardast! Teer now points exactly right!" }
+    }
+  },
+  "cheer": {
+    "recap": [
+      { "ur": "اشارے کا اصول: پہلے سنو، پھر ڈھونڈو، پھر اشارہ کرو۔", "en": "The pointing rule: first listen, then find, then point." },
+      { "ur": "تیر تمہارے ہاتھ کی انگلی ہے — اسکرین پر!", "en": "Teer is your pointing finger — on the screen!" }
+    ],
+    "recapAudio": ["w2l2_recap_1", "w2l2_recap_2"],
+    "rewardToast": { "ur": "تیر کہتا ہے: اب ایک کلک سکھاؤ!", "en": "Teer says: now teach me to click!" }
+  }
+}

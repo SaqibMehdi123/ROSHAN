@@ -1,0 +1,59 @@
+{
+  "id": "w2l3",
+  "schemaVersion": 1,
+  "world": 2,
+  "order": 3,
+  "title": { "ur": "ایک کلک — بلبلے پھوڑو!", "en": "One Click — Pop the Bubbles!" },
+  "skill": { "ur": "سنگل کلک: ایک دباؤ، ایک دفعہ", "en": "Single click: one press, once" },
+  "skillKey": "single-click",
+  "minutes": 7,
+  "praise": { "ur": "شاباش! تمہارا ایک کلک زبردست ہے — مچھلیاں خوش!", "en": "Shabash! Your single click is great — the fish are happy!" },
+  "story": {
+    "scenes": [
+      {
+        "bg": "bg-pond",
+        "cast": ["bijli", "chotu"],
+        "lines": [
+          { "char": "narrator", "ur": "میدان کے پاس ایک تالاب تھا — اُس میں سنہری مچھلیاں تیرتی تھیں!", "en": "Beside the meadow was a pond — golden fish swam in it!", "audio": "w2l3_story_1" },
+          { "char": "bijli", "emote": "worried", "ur": "مچھلیاں بھوکی ہیں! ان کا کھانا بلبلوں کے اندر ہے!", "en": "The fish are hungry! Their food is inside the bubbles!", "audio": "w2l3_story_2" },
+          { "char": "chotu", "emote": "happy", "ur": "بلبلے پر ایک کلک — پوپ! کھانا نیچے گِر جائے گا!", "en": "One click on a bubble — pop! The food drops down!", "audio": "w2l3_story_3" },
+          { "char": "bijli", "emote": "happy", "ur": "ایک کلک = ایک دباؤ، ایک دفعہ۔ جلدی نہیں — درست کلک!", "en": "One click = one press, once. Not fast — a right click!", "audio": "w2l3_story_4" },
+          { "char": "narrator", "ur": "کیا تم بلبلے پھوڑ کر مچھلیوں کو کھلاؤ گے؟", "en": "Will you pop bubbles and feed the fish?", "audio": "w2l3_story_5", "choice": { "ur": "بلبلے پھوڑو!", "en": "Pop the bubbles!", "audio": "w2l3_story_5_choice" } }
+        ]
+      }
+    ]
+  },
+  "show": {
+    "steps": [
+      { "visual": "mouse", "caption": { "ur": "ماؤس کا بٹن ایک بار دباؤ — یہ ہے سنگل کلک۔", "en": "Press the mouse button once — that is a single click." }, "audio": "w2l3_show_1" },
+      { "visual": "bubble", "caption": { "ur": "تیر بلبلے پر لے جاؤ، پھر ایک کلک!", "en": "Take Teer over a bubble, then one click!" }, "audio": "w2l3_show_2" },
+      { "visual": "chick", "caption": { "ur": "پوپ! مچھلی کو کھانا مل جائے گا!", "en": "Pop! The fish gets its food!" }, "audio": "w2l3_show_3" }
+    ]
+  },
+  "do": {
+    "activity": {
+      "type": "tap-select",
+      "prompt": { "ur": "ہر بلبلے پر ایک کلک کرو — مچھلیوں کو کھانا کھلاؤ!", "en": "Click each bubble once — feed the fish!" },
+      "audio": "w2l3_do_prompt",
+      "scene": "bg-pond",
+      "items": [
+        { "id": "bub1", "x": 12, "y": 62, "art": "bubble", "correct": true, "hint": { "ur": "پوپ! مچھلی خوش!", "en": "Pop! One happy fish!" } },
+        { "id": "bub2", "x": 28, "y": 40, "art": "bubble", "correct": true, "hint": { "ur": "پوپ! زبردست کلک!", "en": "Pop! Great click!" } },
+        { "id": "bub3", "x": 45, "y": 66, "art": "bubble", "correct": true, "hint": { "ur": "پوپ! ہاتھ کیا ٹھیک چلتا ہے!", "en": "Pop! Your hand is steady!" } },
+        { "id": "bub4", "x": 62, "y": 44, "art": "bubble", "correct": true, "hint": { "ur": "پوپ! مچھلیاں تالیاں بجا رہی ہیں!", "en": "Pop! The fish are clapping!" } },
+        { "id": "bub5", "x": 78, "y": 68, "art": "bubble", "correct": true, "hint": { "ur": "پوپ! سنہری مچھلی کھوش!", "en": "Pop! Golden fish fed!" } },
+        { "id": "bub6", "x": 90, "y": 42, "art": "bubble", "correct": true, "hint": { "ur": "پوپ! آخری بلبلا!", "en": "Pop! The last bubble!" } },
+        { "id": "frog", "x": 88, "y": 84, "art": "frog", "correct": false, "hint": { "ur": "اوپس! ایک بگ ملا! مینڈک بلبلا نہیں — مینڈک اچھلے گا!", "en": "Oops! A bug! A frog is not a bubble — the frog will jump!" } }
+      ],
+      "winPraise": { "ur": "زبردست! سارے بلبلے پھوٹ گئے — مچھلیاں پیٹ بھر کر خوش!", "en": "Zabardast! All bubbles popped — the fish are full and happy!" }
+    }
+  },
+  "cheer": {
+    "recap": [
+      { "ur": "ایک کلک = ایک دباؤ، ایک دفعہ۔", "en": "A single click = one press, one time." },
+      { "ur": "جلدی نہیں — پہلے اشارہ، پھر کلک۔", "en": "Not fast — first point, then click." }
+    ],
+    "recapAudio": ["w2l3_recap_1", "w2l3_recap_2"],
+    "rewardToast": { "ur": "مچھلیاں کہتی ہیں: شکریہ بلبلے والو!", "en": "The fish say: thank you, bubble poppers!" }
+  }
+}

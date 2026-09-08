@@ -18,6 +18,13 @@ import { BugBanner } from "@/components/ui-kids/KidKit";
 import { useApp } from "@/lib/store";
 import { playAudio, stopSpeaking } from "@/lib/audio";
 import { playSfx } from "@/lib/music";
+import {
+  DragDropActivity,
+  FindNamedActivity,
+  PaintZonesActivity,
+  QuizMixActivity,
+  TapSequenceActivity,
+} from "./Activities2";
 
 interface CommonProps {
   activity: Activity;
@@ -45,14 +52,53 @@ export function TapSelectActivity({ activity, onWin, hintHandAfter = 2 }: Common
   const [found, setFound] = useState<string[]>([]);
   const [wrongTap, setWrongTap] = useState<string | null>(null);
   const [stalls, setStalls] = useState(0);
+  const clickTimes = useRef<Record<string, number>>({});
+  const sceneRef = useRef<HTMLDivElement | null>(null);
+  const [teerPos, setTeerPos] = useState<{ x: number; y: number } | null>(null);
   const { banner, showBug } = useBugFeedback();
   const sfxOn = useApp((s) => s.device.sfx);
   const correctItems = a.items.filter((i) => i.correct);
 
   useEffect(() => {
     void playAudio(a.audio, a.prompt.ur);
-     
   }, []);
+
+  const succeed = (item: (typeof a.items)[number]) => {
+    playSfx("pop", sfxOn);
+    setFound((f) => (f.includes(item.id) ? f : [...f, item.id]));
+    void playAudio(undefined, item.hint.ur);
+  };
+
+  const fail = (item: (typeof a.items)[number]) => {
+    setStalls((s) => s + 1);
+    setWrongTap(item.id);
+    showBug(item.hint);
+    setTimeout(() => setWrongTap(null), 700);
+  };
+
+  const activate = (item: (typeof a.items)[number]) => {
+    if (found.includes(item.id)) return;
+    const need = item.clicks ?? 1;
+    if (need === 2) {
+      const now = Date.now();
+      const last = clickTimes.current[item.id] ?? 0;
+      // 900 ms window — generous for 6-year-olds with shaky hands
+      if (now - last <= 900) {
+        clickTimes.current[item.id] = 0;
+        if (item.correct) succeed(item);
+        else fail(item);
+      } else {
+        // mistimed double-click → coaching, never a bug
+        clickTimes.current[item.id] = now;
+        setWrongTap(item.id);
+        if (a.clickHint) void playAudio(undefined, a.clickHint.ur);
+        setTimeout(() => setWrongTap(null), 700);
+      }
+      return;
+    }
+    if (item.correct) succeed(item);
+    else fail(item);
+  };
 
   useEffect(() => {
     if (found.length === correctItems.length) {
@@ -63,15 +109,33 @@ export function TapSelectActivity({ activity, onWin, hintHandAfter = 2 }: Common
       }, 1800);
       return () => clearTimeout(t);
     }
-     
   }, [found]);
 
   return (
     <div className="w-full">
       <Prompt prompt={a.prompt} audio={a.audio} />
-      <div className="relative mx-auto max-w-4xl overflow-hidden rounded-3xl border-4 border-roshan-card-border shadow-[var(--r-shadow)]">
+      <div
+        ref={sceneRef}
+        className="relative mx-auto max-w-4xl overflow-hidden rounded-3xl border-4 border-roshan-card-border shadow-[var(--r-shadow)]"
+        onPointerMove={(e) => {
+          if (!a.cursorArt || e.pointerType !== "mouse") return;
+          const r = sceneRef.current?.getBoundingClientRect();
+          if (!r) return;
+          setTeerPos({ x: e.clientX - r.left, y: e.clientY - r.top });
+        }}
+      >
         <Art id={a.scene} className="block" />
-        {a.items.map((item) => {
+        {/* Teer — the friendly cursor that follows the mouse (mouse only) */}
+        {a.cursorArt && teerPos && (
+          <div
+            className="pointer-events-none absolute z-10 -translate-x-1/2 -translate-y-1/2 transition-transform duration-75"
+            style={{ left: teerPos.x + 14, top: teerPos.y + 14 }}
+            aria-hidden
+          >
+            <Art id={a.cursorArt} size={56} />
+          </div>
+        )}
+        {a.items.map((item, idx) => {
           const isFound = found.includes(item.id);
           const isWrong = wrongTap === item.id;
           return (
@@ -79,23 +143,20 @@ export function TapSelectActivity({ activity, onWin, hintHandAfter = 2 }: Common
               key={item.id}
               className="absolute -translate-x-1/2 -translate-y-1/2 transition-transform hover:scale-110"
               style={{ right: `${item.x}%`, top: `${item.y}%` }}
-              onClick={() => {
-                if (isFound) return;
-                if (item.correct) {
-                  playSfx("pop", sfxOn);
-                  setFound((f) => [...f, item.id]);
-                  void playAudio(undefined, item.hint.ur);
-                } else {
-                  setStalls((s) => s + 1);
-                  setWrongTap(item.id);
-                  showBug(item.hint);
-                  setTimeout(() => setWrongTap(null), 700);
-                }
+              onClick={() => activate(item)}
+              onPointerEnter={(e) => {
+                // hover-catch for mouse practice (glow spots); tap still works on touch
+                if (item.glow && item.correct && e.pointerType === "mouse") succeed(item);
               }}
               aria-label={item.id}
             >
               <div className={isWrong ? "anim-wiggle" : ""}>
-                <Art id={item.art} size={86} />
+                <div
+                  className={item.move && !isFound ? "anim-drift" : ""}
+                  style={item.move ? { animationDelay: `${(idx % 5) * 0.9}s` } : undefined}
+                >
+                  <Art id={item.art} size={86} />
+                </div>
               </div>
               {isFound && (
                 <span className="absolute -top-1 -left-1 anim-pop">
@@ -117,7 +178,7 @@ export function TapSelectActivity({ activity, onWin, hintHandAfter = 2 }: Common
       </div>
       <div className="mt-3 flex items-center justify-center gap-4">
         <div className="ltr-term rounded-full bg-white px-4 py-1.5 text-sm font-semibold shadow-sm" dir="ltr">
-          {found.length} / {correctItems.length} computers
+          {found.length} / {correctItems.length}
         </div>
       </div>
       {banner && <div className="mt-3"><BugBanner hint={banner} visible /></div>}
@@ -391,5 +452,10 @@ export function ActivityRenderer({ activity, onWin }: CommonProps) {
   if (key === "tap-select") return <TapSelectActivity activity={activity} onWin={onWin} />;
   if (key === "match-slots") return <MatchSlotsActivity activity={activity} onWin={onWin} />;
   if (key === "sort-bins") return <SortBinsActivity activity={activity} onWin={onWin} />;
+  if (key === "tap-sequence") return <TapSequenceActivity activity={activity} onWin={onWin} />;
+  if (key === "quiz-mix") return <QuizMixActivity activity={activity} onWin={onWin} />;
+  if (key === "drag-drop") return <DragDropActivity activity={activity} onWin={onWin} />;
+  if (key === "paint-zones") return <PaintZonesActivity activity={activity} onWin={onWin} />;
+  if (key === "find-named") return <FindNamedActivity activity={activity} onWin={onWin} />;
   return null;
 }

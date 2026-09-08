@@ -9,7 +9,7 @@
 import { create } from "zustand";
 import type { LessonProgress, Phase, Profile } from "@/lib/schema";
 import { simpleHash, storage, todayKey } from "@/lib/storage";
-import { getLesson } from "@/lib/content";
+import { getLesson, lessonsOfWorld } from "@/lib/content";
 import { playSfx, setMusic } from "@/lib/music";
 import { stopSpeaking } from "@/lib/audio";
 
@@ -211,11 +211,12 @@ export const useApp = create<AppState>((set, get) => ({
       },
     });
 
-    // Badge awarded at the last ready lesson of the world
+    // Badge awarded when every AUTHORED lesson of this world is complete
+    // (auto-scales as new lessons ship in later phases — no hardcoded lists)
     let newBadge: string | null = null;
-    const worldLessons = [ "w1l1", "w1l2", "w1l3" ]; // ready lessons (Phase 1: W1)
+    const worldLessons = lessonsOfWorld(lesson.world).map((l) => l.id);
     const isWorldComplete =
-      lesson.badge && worldLessons.every((id) => updated.progress[id]?.completed);
+      lesson.badge && worldLessons.length > 0 && worldLessons.every((id) => updated.progress[id]?.completed);
     if (lesson.badge && isWorldComplete && !updated.badges.includes(lesson.badge)) {
       newBadge = lesson.badge;
       updated.badges = [...updated.badges, lesson.badge];
@@ -226,10 +227,10 @@ export const useApp = create<AppState>((set, get) => ({
     OUTFIT_UNLOCKS.forEach((o) => {
       if (totalStars >= o.at && !updated.outfits.includes(o.id)) updated.outfits.push(o.id);
     });
-    // Computer Hero helper mode for fast finishers (3★ on everything so far)
+    // Computer Hero helper mode for fast finishers (3★ on everything of this world)
     const allDone = worldLessons.every((id) => updated.progress[id]?.completed);
     const allPerfect = worldLessons.every((id) => (updated.stars[id] ?? 0) >= 3);
-    updated.helperMode = allDone && allPerfect;
+    updated.helperMode = allDone && worldLessons.length > 0 && allPerfect;
 
     storage.writeProfiles(get().profiles.map((x) => (x.id === p.id ? updated : x)));
     set({ profiles: get().profiles.map((x) => (x.id === p.id ? updated : x)) });

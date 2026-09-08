@@ -1,0 +1,66 @@
+{
+  "id": "w2l9",
+  "schemaVersion": 1,
+  "world": 2,
+  "order": 9,
+  "title": { "ur": "رنگ برنگی دنیا — گاؤں رنگو!", "en": "A Colorful World — Paint the Village!" },
+  "skill": { "ur": "رنگ چُنو، جگہ پر کلک کرو: کلک کی درستی", "en": "Pick a color, click the spot: click precision" },
+  "skillKey": "color-zones",
+  "minutes": 7,
+  "praise": { "ur": "واہ! تمہارا گاؤں رنگ برنگا ہے — تم ننھے فنکار ہو!", "en": "Wow! Your village is colorful — you are a little artist!" },
+  "story": {
+    "scenes": [
+      {
+        "bg": "bg-village-street",
+        "cast": ["ustad-ullo", "bijli"],
+        "lines": [
+          { "char": "narrator", "ur": "اُستاد اُلوو نے ایک تصویر نکالی — گاؤں کی تصویر! مگر… بے رنگ!", "en": "Ustaad Ulloo brought out a picture — a village picture! But… no color!", "audio": "w2l9_story_1" },
+          { "char": "ustad-ullo", "ur": "یہ گاؤں کی تصویر بے رنگ ہے! رنگ چاہئیں!", "en": "This village picture has no color! It needs colors!", "audio": "w2l9_story_2" },
+          { "char": "bijli", "emote": "happy", "ur": "رنگ کا ڈبہ چُنو، پھر جگہ پر کلک کرو — اور دیکھو جادو!", "en": "Pick a color pot, then click a spot — and watch the magic!", "audio": "w2l9_story_3" },
+          { "char": "ustad-ullo", "ur": "ہر جگہ کا اپنا رنگ: آسمان نیلا، سورج پیلا، پتے سبز!", "en": "Every place has its color: sky is blue, sun is yellow, leaves are green!", "audio": "w2l9_story_4", "fx": "sparkle" },
+          { "char": "narrator", "ur": "کیا تم گاؤں کو رنگین بناؤ گے؟", "en": "Will you paint the village colorful?", "audio": "w2l9_story_5", "choice": { "ur": "گاؤں رنگو!", "en": "Paint the village!", "audio": "w2l9_story_5_choice" } }
+        ]
+      }
+    ]
+  },
+  "show": {
+    "steps": [
+      { "visual": "teer", "caption": { "ur": "پہلے رنگ کا ڈبہ چُنو — ڈبہ چمک اٹھے گا۔", "en": "First pick a color pot — it will glow." }, "audio": "w2l9_show_1" },
+      { "visual": "teer", "caption": { "ur": "پھر جس جگہ وہی رنگ چاہئیے، وہاں کلک کرو۔", "en": "Then click the place where that color belongs." }, "audio": "w2l9_show_2" },
+      { "visual": "star", "caption": { "ur": "غلط جگہ؟ کوئی بات نہیں — بگ ملا، دوبارہ رنگو!", "en": "Wrong place? No problem — a bug! Paint again!" }, "audio": "w2l9_show_3" }
+    ]
+  },
+  "do": {
+    "activity": {
+      "type": "paint-zones",
+      "prompt": { "ur": "رنگ کا ڈبہ چُنو، پھر صحیح جگہ پر کلک کرو!", "en": "Pick a color pot, then click the right place!" },
+      "audio": "w2l9_do_prompt",
+      "palette": [
+        { "id": "neela", "color": "#38BDF8", "name": { "ur": "نیلا", "en": "blue" } },
+        { "id": "sabz", "color": "#22C55E", "name": { "ur": "سبز", "en": "green" } },
+        { "id": "peela", "color": "#FDE047", "name": { "ur": "پیلا", "en": "yellow" } },
+        { "id": "bhora", "color": "#8B5E3C", "name": { "ur": "بھورا", "en": "brown" } },
+        { "id": "gulabi", "color": "#EC4899", "name": { "ur": "گلابی", "en": "pink" } }
+      ],
+      "zones": [
+        { "id": "asman", "x": 0, "y": 0, "w": 100, "h": 54, "colorId": "neela" },
+        { "id": "zameen", "x": 0, "y": 70, "w": 100, "h": 30, "colorId": "sabz" },
+        { "id": "sooraj", "x": 6, "y": 8, "w": 18, "h": 32, "round": true, "colorId": "peela" },
+        { "id": "darakht", "x": 70, "y": 30, "w": 26, "h": 28, "round": true, "colorId": "sabz" },
+        { "id": "tana", "x": 79, "y": 54, "w": 8, "h": 18, "colorId": "bhora" },
+        { "id": "deewar", "x": 20, "y": 42, "w": 26, "h": 26, "colorId": "bhora" },
+        { "id": "darwaza", "x": 29, "y": 52, "w": 10, "h": 16, "colorId": "gulabi" }
+      ],
+      "wrongHint": { "ur": "اوپس! ایک بگ ملا! اس جگہ دوسرا رنگ چاہئیے — دوبارہ سوچو!", "en": "Oops! A bug! This place needs a different color — think again!" },
+      "winPraise": { "ur": "زبردست! گاؤں جِل اٹھا — آسمان، سورج، درخت، گھر — سب رنگین!", "en": "Zabardast! The village shines — sky, sun, tree, house — all colorful!" }
+    }
+  },
+  "cheer": {
+    "recap": [
+      { "ur": "رنگ بھرنے کا اصول: پہلے ڈبہ چُنو، پھر جگہ پر کلک۔", "en": "The painting rule: first pick a pot, then click the place." },
+      { "ur": "ہر جگہ کا اپنا رنگ ہوتا ہے — ہر کلک کا اپنا مقصد!", "en": "Every place has its color — every click has its purpose!" }
+    ],
+    "recapAudio": ["w2l9_recap_1", "w2l9_recap_2"],
+    "rewardToast": { "ur": "اگلا سبق: ماؤس ماسٹر کورس — بیج قریب ہے!", "en": "Next lesson: the Mouse Master Course — the badge is near!" }
+  }
+}

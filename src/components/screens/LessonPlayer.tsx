@@ -10,7 +10,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { Lesson, Phase, StoryLine } from "@/lib/schema";
 import { useApp, useActiveProfile } from "@/lib/store";
-import { getLesson } from "@/lib/content";
+import { getLesson, getWorld } from "@/lib/content";
 import { Art } from "@/components/art/Props";
 import { Character } from "@/components/art/Characters";
 import { BigButton, Confetti, ProgressDots, RepeatButton, SpeakBubble, StarRow } from "@/components/ui-kids/KidKit";
@@ -308,9 +308,8 @@ function CheerPhase({
   onHome: () => void;
 }) {
   const world = lesson.world;
-  const badgeName = newBadge
-    ? { ur: "دوستی کا سفر", en: "Journey of Friendship" }
-    : null;
+  const worldDef = getWorld(world);
+  const badgeName = newBadge && worldDef ? worldDef.badgeName : null;
 
   useEffect(() => {
     setCelebrate(true);

@@ -44,6 +44,9 @@ export interface TapSelectItem {
   correct: boolean;
   hint: Bilingual; // shown on wrong tap (bug) or right tap (praise detail)
   audio?: string;
+  clicks?: number; // taps/clicks needed (default 1 → double-click lessons use 2)
+  move?: boolean; // gentle drift animation (butterflies) — photosensitivity-safe slow sway
+  glow?: boolean; // hover also counts (mouse-move practice); tap always counts (touch)
 }
 
 export interface TapSelectActivity {
@@ -53,6 +56,8 @@ export interface TapSelectActivity {
   scene: string;
   items: TapSelectItem[];
   winPraise: Bilingual;
+  cursorArt?: string; // if set, a big pointer-following friend (e.g. "teer") trails the mouse
+  clickHint?: Bilingual; // coaching line for mistimed double-clicks (not counted as a bug)
 }
 
 export interface MatchItem {
@@ -118,11 +123,120 @@ export interface TapSequenceActivity {
   wrongHint: Bilingual;
 }
 
+// ---- Phase 2 activity types (World 1 L4–L6 + World 2) ----
+
+export interface QuizOption {
+  id: string;
+  art?: string;
+  label: Bilingual;
+}
+
+export interface QuizQuestion {
+  id: string;
+  art: string; // question illustration
+  question: Bilingual;
+  audio: string;
+  options: QuizOption[];
+  answer: string; // correct option id
+  explain: Bilingual; // spoken after answering (right or bug)
+}
+
+/** Sequential review quiz (world finales) — one question at a time, retry until right. */
+export interface QuizMixActivity {
+  type: "quiz-mix";
+  prompt: Bilingual;
+  audio: string;
+  questions: QuizQuestion[];
+  wrongHint: Bilingual;
+}
+
+export interface DraggableItem {
+  id: string;
+  art: string;
+  x: number; // % spawn position inside the scene (RTL-aware)
+  y: number;
+  audio?: string; // spoken when grabbed
+}
+
+export interface DropTarget {
+  id: string;
+  art: string;
+  x: number;
+  y: number;
+  accepts: string[]; // draggable ids this target can receive
+  capacity?: number; // how many items it holds (default: accepts.length)
+  success: Bilingual; // spoken when an item lands
+  label?: Bilingual;
+}
+
+/** Drag & drop with pointer events + tap-pick/tap-place fallback for touch. */
+export interface DragDropActivity {
+  type: "drag-drop";
+  prompt: Bilingual;
+  audio: string;
+  scene: string;
+  draggable: DraggableItem[];
+  targets: DropTarget[];
+  wrongHint: Bilingual;
+  winPraise: Bilingual;
+}
+
+export interface PaintPot {
+  id: string;
+  color: string;
+  name: Bilingual;
+}
+
+export interface PaintZone {
+  id: string;
+  x: number; // % rect inside the composition
+  y: number;
+  w: number;
+  h: number;
+  round?: boolean; // fully rounded (sun, tree crown…)
+  colorId: string; // expected pot id
+}
+
+/** Color-by-tap: pick a pot, tap a zone (tap-select precision practice). */
+export interface PaintZonesActivity {
+  type: "paint-zones";
+  prompt: Bilingual;
+  audio: string;
+  palette: PaintPot[];
+  zones: PaintZone[];
+  wrongHint: Bilingual;
+  winPraise: Bilingual;
+}
+
+export interface NamedTarget {
+  id: string;
+  art: string;
+  x: number;
+  y: number;
+  name: Bilingual;
+  audio?: string;
+}
+
+/** Listen-then-point: engine names one target per round, child taps it. */
+export interface FindNamedActivity {
+  type: "find-named";
+  prompt: Bilingual;
+  audio: string;
+  scene: string;
+  targets: NamedTarget[]; // shuffled per round by the engine
+  wrongHint: Bilingual;
+  winPraise: Bilingual;
+}
+
 export type Activity =
   | TapSelectActivity
   | MatchSlotsActivity
   | SortBinsActivity
-  | TapSequenceActivity;
+  | TapSequenceActivity
+  | QuizMixActivity
+  | DragDropActivity
+  | PaintZonesActivity
+  | FindNamedActivity;
 
 // ---------------- Lesson root ----------------
 
@@ -157,7 +271,7 @@ export interface WorldDef {
   badgeId: string;
   badgeName: Bilingual;
   lessonCount: number;
-  lessonsReady: number; // how many lessons are playable (Phase 1: W1 → 3)
+  lessonsReady: number; // how many lessons are playable (Phase 1: W1 → 3, Phase 2: W1 → 6 + W2 → 10)
   arcSummary: Bilingual;
 }
 

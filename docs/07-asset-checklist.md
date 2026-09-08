@@ -55,8 +55,14 @@ Chain: app tries `/audio/<key>.mp3` → device speech synthesis → visual bubbl
 `badge-dosti-ka-safar` (two hands + robot heart) · 8 world medallions `medal-w1…w8` ·
 sticker sheet `sticker-<lessonId>` (one per lesson) · outfit items: `outfit-cap`, `outfit-dasti-topi`, `outfit-hero-cape`.
 
+### World 2 "Mouse Meadow" — shipped as code-drawn SVG in Phase 2
+`teer` (cursor arrow) · `glow-spot` · `butterfly` · `flower` · `bubble` · `egg` · `chick` ·
+`hen` · `bud` · `bloom` · `banana` · `grapes` · `watermelon` · `fruit-basket` ·
+`water-drop` · `frog` · `stone` · scenes: `bg-meadow`, `bg-pond` · plus `close-work`,
+`party-flag` (W1 L4-L6). Real-illustration replacements follow the same ids 1:1.
+
 ### Later worlds (placeholder IDs already wired in schema)
-meadow set, castle set, city set, mela set, bazaar set, jungle set, mountain set —
+castle set, city set, mela set, bazaar set, jungle set, mountain set —
 list to be expanded per world build (docs/04-curriculum.md).
 
 ## 3. Music

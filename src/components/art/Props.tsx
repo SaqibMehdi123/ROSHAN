@@ -382,6 +382,164 @@ const ICONS: Record<string, React.ReactNode> = {
       <rect x="38" y="68" width="24" height="8" rx="3" fill="#8B5E3C" stroke={INK} strokeWidth="2.5" />
     </g>
   ),
+  /* ---- W1 L4–L6 (Phase 2) ---- */
+  "close-work": (
+    <g>
+      <rect x="20" y="24" width="60" height="46" rx="5" fill="#FFF8EC" stroke={INK} strokeWidth="3" />
+      <rect x="20" y="24" width="60" height="12" rx="5" fill="#0D9488" stroke={INK} strokeWidth="3" />
+      <circle cx="27" cy="30" r="2.5" fill="#FDE047" />
+      <circle cx="35" cy="30" r="2.5" fill="#EC4899" />
+      <path d="M44 44 l12 12 M56 44 l-12 12" stroke="#EC4899" strokeWidth="5" strokeLinecap="round" />
+      <rect x="42" y="76" width="16" height="6" rx="2" fill="#0D9488" stroke={INK} strokeWidth="2" />
+    </g>
+  ),
+  "party-flag": (
+    <g>
+      <path d="M16 26 q34 14 68 0" stroke={INK} strokeWidth="3" fill="none" />
+      {[0, 1, 2, 3].map((i) => (
+        <path key={i} d={`M${22 + i * 17} 28 l7 16 l7 -16 Z`} fill={["#EC4899", "#38BDF8", "#FDE047", "#22C55E"][i]} stroke={INK} strokeWidth="2" />
+      ))}
+    </g>
+  ),
+  /* ---- W2 Mouse Meadow (Phase 2) ---- */
+  teer: (
+    <g>
+      <path d="M30 18 L70 50 L52 52 L60 74 L48 78 L42 56 L30 66 Z" fill="#FFFFFF" stroke={INK} strokeWidth="3.5" strokeLinejoin="round" />
+    </g>
+  ),
+  "glow-spot": (
+    <g>
+      <circle cx="50" cy="50" r="26" fill="#FDE047" opacity="0.35" />
+      <circle cx="50" cy="50" r="16" fill="#FDE047" stroke="#F59E0B" strokeWidth="3" />
+    </g>
+  ),
+  butterfly: (
+    <g>
+      <ellipse cx="36" cy="42" rx="17" ry="22" fill="#EC4899" stroke={INK} strokeWidth="3" transform="rotate(-18 36 42)" />
+      <ellipse cx="64" cy="42" rx="17" ry="22" fill="#EC4899" stroke={INK} strokeWidth="3" transform="rotate(18 64 42)" />
+      <ellipse cx="40" cy="56" rx="11" ry="14" fill="#38BDF8" stroke={INK} strokeWidth="2.5" transform="rotate(-14 40 56)" />
+      <ellipse cx="60" cy="56" rx="11" ry="14" fill="#38BDF8" stroke={INK} strokeWidth="2.5" transform="rotate(14 60 56)" />
+      <ellipse cx="50" cy="48" rx="5" ry="22" fill="#4A3421" />
+      <circle cx="50" cy="26" r="6" fill="#4A3421" />
+      <path d="M46 22 q-6 -8 -10 -10 M54 22 q6 -8 10 -10" stroke={INK} strokeWidth="2" fill="none" strokeLinecap="round" />
+    </g>
+  ),
+  flower: (
+    <g>
+      {[0, 60, 120, 180, 240, 300].map((a) => (
+        <ellipse key={a} cx={50 + 16 * Math.cos((a * Math.PI) / 180)} cy={42 + 16 * Math.sin((a * Math.PI) / 180)} rx="9" ry="12" fill="#EC4899" stroke={INK} strokeWidth="2" />
+      ))}
+      <circle cx="50" cy="42" r="9" fill="#FDE047" stroke={INK} strokeWidth="2.5" />
+      <path d="M50 54 v30" stroke="#16A34A" strokeWidth="4" strokeLinecap="round" />
+      <path d="M50 66 q-10 -2 -12 -10 q10 0 12 10" fill="#22C55E" stroke={INK} strokeWidth="2" />
+    </g>
+  ),
+  bubble: (
+    <g>
+      <circle cx="50" cy="50" r="30" fill="#BFE8F5" opacity="0.55" stroke="#38BDF8" strokeWidth="3" />
+      <circle cx="40" cy="38" r="8" fill="#FFFFFF" opacity="0.85" />
+      <circle cx="62" cy="60" r="4" fill="#FFFFFF" opacity="0.7" />
+    </g>
+  ),
+  egg: (
+    <g>
+      <path d="M50 18 q24 4 24 34 q0 30 -24 30 q-24 0 -24 -30 q0 -30 24 -34" fill="#FFF6E3" stroke={INK} strokeWidth="3" />
+      <circle cx="42" cy="46" r="4" fill="#F3E5C8" />
+      <circle cx="58" cy="58" r="5" fill="#F3E5C8" />
+    </g>
+  ),
+  chick: (
+    <g>
+      <circle cx="50" cy="56" r="24" fill="#FDE047" stroke={INK} strokeWidth="3" />
+      <circle cx="42" cy="50" r="3.5" fill={INK} />
+      <circle cx="58" cy="50" r="3.5" fill={INK} />
+      <path d="M46 58 l4 4 l4 -4" fill="#F59E0B" stroke={INK} strokeWidth="2" strokeLinejoin="round" />
+      <path d="M28 52 q-12 -2 -14 -10 q10 -2 16 6" fill="#F59E0B" stroke={INK} strokeWidth="2.5" />
+      <path d="M40 80 v8 M58 80 v8" stroke="#F59E0B" strokeWidth="4" strokeLinecap="round" />
+    </g>
+  ),
+  hen: (
+    <g>
+      <ellipse cx="48" cy="56" rx="28" ry="20" fill="#FFF8EC" stroke={INK} strokeWidth="3" />
+      <circle cx="72" cy="38" r="13" fill="#FFF8EC" stroke={INK} strokeWidth="3" />
+      <path d="M70 24 l4 -8 4 8 Z M76 24 l4 -6 3 7 Z" fill="#EC4899" stroke={INK} strokeWidth="2" />
+      <path d="M84 38 l8 3 -8 3" fill="#F59E0B" stroke={INK} strokeWidth="2" />
+      <circle cx="76" cy="36" r="2.5" fill={INK} />
+      <path d="M38 76 v8 M56 76 v8" stroke="#F59E0B" strokeWidth="4" strokeLinecap="round" />
+    </g>
+  ),
+  bud: (
+    <g>
+      <path d="M50 22 q14 10 12 28 q-2 18 -12 18 q-10 0 -12 -18 q-2 -18 12 -28" fill="#86EFAC" stroke={INK} strokeWidth="3" />
+      <path d="M50 26 v40" stroke="#16A34A" strokeWidth="2.5" />
+      <path d="M50 66 v20" stroke="#16A34A" strokeWidth="4" strokeLinecap="round" />
+    </g>
+  ),
+  bloom: (
+    <g>
+      {[0, 72, 144, 216, 288].map((a) => (
+        <ellipse key={a} cx={50 + 18 * Math.cos((a * Math.PI) / 180)} cy={40 + 18 * Math.sin((a * Math.PI) / 180)} rx="11" ry="15" fill="#F9A8D4" stroke={INK} strokeWidth="2.5" transform={`rotate(${a} 50 40)`} />
+      ))}
+      <circle cx="50" cy="40" r="10" fill="#FDE047" stroke={INK} strokeWidth="2.5" />
+      <path d="M50 56 v30" stroke="#16A34A" strokeWidth="4" strokeLinecap="round" />
+    </g>
+  ),
+  banana: (
+    <g>
+      <path d="M26 36 q6 34 44 32 q4 0 4 -6 q-2 2 -6 2 Q34 64 32 34 Z" fill="#FDE047" stroke={INK} strokeWidth="3" strokeLinejoin="round" />
+      <path d="M26 36 l-4 -6 M74 62 l4 4" stroke="#8B5E3C" strokeWidth="4" strokeLinecap="round" />
+    </g>
+  ),
+  grapes: (
+    <g>
+      {[36, 50, 64].map((x, r) =>
+        [0, 1, 2].map((c) => (
+          <circle key={`${r}${c}`} cx={x - r * 7 + c * 14} cy={40 + r * 15} r="10" fill="#8B5CF6" stroke={INK} strokeWidth="2.5" />
+        ))
+      )}
+      <path d="M50 30 q0 -12 10 -14" stroke="#8B5E3C" strokeWidth="3.5" fill="none" strokeLinecap="round" />
+    </g>
+  ),
+  watermelon: (
+    <g>
+      <path d="M20 58 a30 30 0 0 1 60 0 Z" fill="#22C55E" stroke={INK} strokeWidth="3" />
+      <path d="M27 58 a23 23 0 0 1 46 0 Z" fill="#FDE047" stroke={INK} strokeWidth="2" />
+      <path d="M31 58 a19 19 0 0 1 38 0 Z" fill="#EC4899" stroke={INK} strokeWidth="1.5" />
+      {[38, 50, 62].map((x) => (
+        <ellipse key={x} cx={x} cy={52} rx="2.5" ry="4" fill="#4A3421" />
+      ))}
+    </g>
+  ),
+  "fruit-basket": (
+    <g>
+      <path d="M22 46 h56 l-8 32 h-40 Z" fill="#C68B4E" stroke={INK} strokeWidth="3" strokeLinejoin="round" />
+      <path d="M22 46 q28 -18 56 0" fill="none" stroke="#8B5E3C" strokeWidth="5" strokeLinecap="round" />
+      <path d="M30 54 h40 M32 62 h36 M36 70 h28" stroke="#8B5E3C" strokeWidth="2.5" strokeLinecap="round" />
+      <circle cx="40" cy="42" r="8" fill="#F59E0B" stroke={INK} strokeWidth="2" />
+      <circle cx="58" cy="42" r="8" fill="#22C55E" stroke={INK} strokeWidth="2" />
+    </g>
+  ),
+  "water-drop": (
+    <g>
+      <path d="M50 16 q20 24 20 38 a20 20 0 1 1 -40 0 q0 -14 20 -38" fill="#38BDF8" stroke={INK} strokeWidth="3" />
+      <circle cx="42" cy="56" r="6" fill="#FFFFFF" opacity="0.7" />
+    </g>
+  ),
+  frog: (
+    <g>
+      <ellipse cx="50" cy="60" rx="26" ry="20" fill="#22C55E" stroke={INK} strokeWidth="3" />
+      <circle cx="38" cy="40" r="11" fill="#22C55E" stroke={INK} strokeWidth="3" />
+      <circle cx="62" cy="40" r="11" fill="#22C55E" stroke={INK} strokeWidth="3" />
+      <circle cx="38" cy="40" r="4.5" fill={INK} />
+      <circle cx="62" cy="40" r="4.5" fill={INK} />
+      <path d="M40 62 q10 8 20 0" stroke={INK} strokeWidth="2.5" fill="none" strokeLinecap="round" />
+    </g>
+  ),
+  stone: (
+    <g>
+      <path d="M24 66 q-4 -20 16 -24 q6 -12 22 -8 q18 2 16 20 q2 14 -14 16 h-26 q-12 0 -14 -4" fill="#D6D3D1" stroke={INK} strokeWidth="3" strokeLinejoin="round" />
+    </g>
+  ),
 };
 
 /* SHOW-phase & medal visual aliases (must run after ICONS is initialized) */
@@ -474,6 +632,41 @@ const SCENES: Record<string, React.ReactNode> = {
       {/* window */}
       <rect x="168" y="30" width="70" height="52" rx="4" fill="#BFE8F5" stroke="#8B5E3C" strokeWidth="3" />
       <path d="M203 30 v52 M168 56 h70" stroke="#8B5E3C" strokeWidth="2.5" />
+    </g>
+  ),
+  /* ---- W2 Mouse Meadow scenes ---- */
+  "bg-meadow": (
+    <g>
+      <rect width="400" height="225" fill="#C8ECF9" />
+      <circle cx="330" cy="40" r="22" fill="#FDE047" stroke="#F59E0B" strokeWidth="3" />
+      <ellipse cx="90" cy="44" rx="30" ry="12" fill="#FFFFFF" opacity="0.9" />
+      <ellipse cx="150" cy="36" rx="22" ry="10" fill="#FFFFFF" opacity="0.8" />
+      <path d="M0 150 Q100 118 200 142 T400 138 V225 H0 Z" fill="#8FBF6B" />
+      <path d="M0 172 Q120 150 240 170 T400 168 V225 H0 Z" fill="#7DB05C" />
+      {[70, 180, 300, 360].map((x, i) => (
+        <g key={i}>
+          <path d={`M${x} ${150 + i * 8} v16`} stroke="#16A34A" strokeWidth="3" strokeLinecap="round" />
+          <circle cx={x} cy={148 + i * 8} r="6" fill={["#EC4899", "#FDE047", "#F9A8D4", "#FFFFFF"][i]} stroke="#4A3421" strokeWidth="1.5" />
+        </g>
+      ))}
+    </g>
+  ),
+  "bg-pond": (
+    <g>
+      <rect width="400" height="225" fill="#C8ECF9" />
+      <circle cx="60" cy="38" r="20" fill="#FDE047" stroke="#F59E0B" strokeWidth="3" />
+      <rect x="0" y="150" width="400" height="75" fill="#7DB05C" />
+      <ellipse cx="200" cy="185" rx="150" ry="34" fill="#38BDF8" stroke="#0EA5E9" strokeWidth="3" />
+      {/* golden fish */}
+      {[[150, 178], [230, 192], [280, 176]].map(([x, y], i) => (
+        <g key={i} transform={`translate(${x} ${y})`}>
+          <ellipse cx="0" cy="0" rx="14" ry="8" fill="#FDE047" stroke="#4A3421" strokeWidth="2" />
+          <path d="M12 0 l10 -6 v12 Z" fill="#F59E0B" stroke="#4A3421" strokeWidth="1.5" />
+          <circle cx="-7" cy="-2" r="2" fill="#4A3421" />
+        </g>
+      ))}
+      <path d="M40 150 q4 -28 -6 -40 M52 150 q-2 -22 8 -34" stroke="#16A34A" strokeWidth="4" fill="none" strokeLinecap="round" />
+      <path d="M350 150 q-4 -26 6 -38 M338 150 q2 -20 -8 -30" stroke="#16A34A" strokeWidth="4" fill="none" strokeLinecap="round" />
     </g>
   ),
 };

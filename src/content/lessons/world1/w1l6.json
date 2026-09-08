@@ -1,0 +1,131 @@
+{
+  "id": "w1l6",
+  "schemaVersion": 1,
+  "world": 1,
+  "order": 6,
+  "title": { "ur": "دوستی کا جشن — پارٹی کوئز!", "en": "Friendship Party — The Quiz!" },
+  "skill": { "ur": "دنیا ۱ کا دہرائی: کمپیوٹر، حصے، اصول، آن اور آف", "en": "World 1 review: computer, parts, rules, on and off" },
+  "skillKey": "w1-review",
+  "minutes": 7,
+  "badge": "dosti-ka-safar",
+  "praise": { "ur": "مبارک ہو! تم نے 'دوستی کا سفر' کا بیج حاصل کر لیا!", "en": "Congratulations! You earned the Journey of Friendship badge!" },
+  "story": {
+    "scenes": [
+      {
+        "bg": "bg-courtyard",
+        "props": ["party-flag"],
+        "cast": ["bijli", "noor", "chotu", "golmatol"],
+        "lines": [
+          { "char": "narrator", "ur": "آج بجلی کی دوستی پارٹی تھی! گاؤں کے آنگن میں سب جمع تھے۔", "en": "Today was Bijli's friendship party! Everyone gathered in the village courtyard.", "audio": "w1l6_story_1", "fx": "confetti" },
+          { "char": "bijli", "emote": "happy", "ur": "دوستو! کیا تم واقعی مجھے جان گئے ہو؟ ایک چھوٹا سا کوئز!", "en": "Friends! Do you really know me? A little quiz!", "audio": "w1l6_story_2" },
+          { "char": "golmatol", "emote": "playful", "ur": "میاؤں! میں بھی سوال پوچھوں گا! کچھ غلط بھی!", "en": "Meow! I will ask questions too! Some tricky ones!", "audio": "w1l6_story_3" },
+          { "char": "ustad-ullo", "ur": "چھ سوال — جواب دو اور اپنا بیج 'دوستی کا سفر' حاصل کرو!", "en": "Six questions — answer them and earn your Journey of Friendship badge!", "audio": "w1l6_story_4", "fx": "sparkle" },
+          { "char": "noor", "emote": "brave", "ur": "ہم تیار ہیں! کیوں، دوستو؟", "en": "We are ready! Right, friends?", "audio": "w1l6_story_5" },
+          { "char": "narrator", "ur": "کوئز شروع کرو اور بیج جیتو!", "en": "Start the quiz and win the badge!", "audio": "w1l6_story_6", "choice": { "ur": "کوئز شروع کرو!", "en": "Start the quiz!", "audio": "w1l6_story_6_choice" } }
+        ]
+      }
+    ]
+  },
+  "show": {
+    "steps": [
+      { "visual": "party-flag", "caption": { "ur": "پارٹی کا اصول: غلطی = ایک بگ۔ بگ فکسر ہمیشہ جیتتے ہیں!", "en": "Party rule: a mistake = one bug. Bug fixers always win!" }, "audio": "w1l6_show_1" },
+      { "visual": "medal-box", "caption": { "ur": "چھوں چھوٹے جواب — اور یہ بیج تمہارا!", "en": "Six right answers — and this badge is yours!" }, "audio": "w1l6_show_2" }
+    ]
+  },
+  "do": {
+    "activity": {
+      "type": "quiz-mix",
+      "prompt": { "ur": "پارٹی کوئز: سوال سنو، صحیح جواب پر کلک کرو!", "en": "Party quiz: listen to each question, tap the right answer!" },
+      "audio": "w1l6_do_prompt",
+      "questions": [
+        {
+          "id": "q1",
+          "art": "monitor",
+          "question": { "ur": "بجلی کا چہرہ کون ہے؟", "en": "Which part is Bijli's face?" },
+          "audio": "w1l6_q1",
+          "options": [
+            { "id": "monitor", "art": "monitor", "label": { "ur": "مانیٹر", "en": "Monitor" } },
+            { "id": "mouse", "art": "mouse", "label": { "ur": "ماؤس", "en": "Mouse" } },
+            { "id": "keyboard", "art": "keyboard", "label": { "ur": "کی بورڈ", "en": "Keyboard" } }
+          ],
+          "answer": "monitor",
+          "explain": { "ur": "مانیٹر بجلی کا چہرہ ہے — یہ سب کچھ دکھاتا ہے!", "en": "The monitor is Bijli's face — it shows everything!" }
+        },
+        {
+          "id": "q2",
+          "art": "cpu-box",
+          "question": { "ur": "بجلی کا دماغ کون ہے؟", "en": "Which part is Bijli's brain?" },
+          "audio": "w1l6_q2",
+          "options": [
+            { "id": "keyboard", "art": "keyboard", "label": { "ur": "کی بورڈ", "en": "Keyboard" } },
+            { "id": "cpu", "art": "cpu-box", "label": { "ur": "سی پی یو", "en": "CPU" } },
+            { "id": "monitor", "art": "monitor", "label": { "ur": "مانیٹر", "en": "Monitor" } }
+          ],
+          "answer": "cpu",
+          "explain": { "ur": "سی پی یو بجلی کا دماغ ہے — یہی سوچتا ہے!", "en": "The CPU is Bijli's brain — it does the thinking!" }
+        },
+        {
+          "id": "q3",
+          "art": "keyboard",
+          "question": { "ur": "بجلی کس چیز سے سنتی ہے؟", "en": "What does Bijli listen with?" },
+          "audio": "w1l6_q3",
+          "options": [
+            { "id": "keyboard", "art": "keyboard", "label": { "ur": "کی بورڈ", "en": "Keyboard" } },
+            { "id": "cpu", "art": "cpu-box", "label": { "ur": "سی پی یو", "en": "CPU" } },
+            { "id": "goat", "art": "goat", "label": { "ur": "بکری", "en": "Goat" } }
+          ],
+          "answer": "keyboard",
+          "explain": { "ur": "کی بورڈ بجلی کے کان ہیں — حروف سے بجلی سنتی ہے!", "en": "The keyboard is Bijli's ears — it hears the letters!" }
+        },
+        {
+          "id": "q4",
+          "art": "mouse",
+          "question": { "ur": "بجلی کا پالتو مددگار کون ہے؟", "en": "Who is Bijli's pet helper?" },
+          "audio": "w1l6_q4",
+          "options": [
+            { "id": "goat", "art": "goat", "label": { "ur": "بکری", "en": "Goat" } },
+            { "id": "monitor", "art": "monitor", "label": { "ur": "مانیٹر", "en": "Monitor" } },
+            { "id": "mouse", "art": "mouse", "label": { "ur": "ماؤس", "en": "Mouse" } }
+          ],
+          "answer": "mouse",
+          "explain": { "ur": "ماؤس بجلی کا پالتو مددگار ہے — اسکرین پر اشارہ کرتا ہے!", "en": "The mouse is Bijli's pet helper — it points at the screen!" }
+        },
+        {
+          "id": "q5",
+          "art": "clean-hands",
+          "question": { "ur": "کمپیوٹر چھونے سے پہلے کیا کریں گے؟", "en": "What do we do before touching the computer?" },
+          "audio": "w1l6_q5",
+          "options": [
+            { "id": "wash", "art": "clean-hands", "label": { "ur": "ہاتھ دھوؤں گے", "en": "Wash our hands" } },
+            { "id": "juice", "art": "juice-spill", "label": { "ur": "جوس ساتھ رکھیں گے", "en": "Keep juice nearby" } },
+            { "id": "bang", "art": "bang-keys", "label": { "ur": "زور سے دبائیں گے", "en": "Bang the keys" } }
+          ],
+          "answer": "wash",
+          "explain": { "ur": "صاف ہاتھ — کمپیوٹر خوش! یہ لیب کا پہلا اصول ہے۔", "en": "Clean hands — happy computer! That is lab rule number one." }
+        },
+        {
+          "id": "q6",
+          "art": "power-switch",
+          "question": { "ur": "بجلی کو جگانے کا پہلا قدم کون سا ہے؟", "en": "What is the FIRST step to wake Bijli?" },
+          "audio": "w1l6_q6",
+          "options": [
+            { "id": "wall", "art": "power-switch", "label": { "ur": "دیوار کا سوئچ", "en": "The wall switch" } },
+            { "id": "monitor", "art": "monitor", "label": { "ur": "مانیٹر دباؤ", "en": "Press the monitor" } },
+            { "id": "mouse", "art": "mouse", "label": { "ur": "ماؤس دباؤ", "en": "Press the mouse" } }
+          ],
+          "answer": "wall",
+          "explain": { "ur": "پہلے دیوار کا سوئچ، پھر پی سی کا بٹن، پھر انتظار!", "en": "First the wall switch, then the PC button, then wait!" }
+        }
+      ],
+      "wrongHint": { "ur": "اوپس! ایک بگ ملا! دوبارہ سوچو اور دوبارہ کوشش کرو!", "en": "Oops! A bug! Think again and try once more!" }
+    }
+  },
+  "cheer": {
+    "recap": [
+      { "ur": "کمپیوٹر سوچنے میں مددگار ہے: مانیٹر چہرہ، سی پی یو دماغ۔", "en": "A computer is a thinking helper: monitor is the face, CPU the brain." },
+      { "ur": "صاف ہاتھ، نرم چھوائی، صحیح آن، صحیح آف — تم دنیا ۱ کے ہیرو ہو!", "en": "Clean hands, gentle touch, right on, right off — you are a World 1 hero!" }
+    ],
+    "recapAudio": ["w1l6_recap_1", "w1l6_recap_2"],
+    "rewardToast": { "ur": "بیج ملا: دوستی کا سفر! ماؤس کا میدان کھل گیا!", "en": "Badge earned: Journey of Friendship! Mouse Meadow is open!" }
+  }
+}

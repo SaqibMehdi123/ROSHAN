@@ -1,0 +1,117 @@
+{
+  "id": "w2l10",
+  "schemaVersion": 1,
+  "world": 2,
+  "order": 10,
+  "title": { "ur": "ماؤس ماسٹر کورس — بیج جیتو!", "en": "Mouse Master Course — Win the Badge!" },
+  "skill": { "ur": "دنیا ۲ کا دہرائی: کرسر، کلک، ڈبل کلک، ڈریگ", "en": "World 2 review: cursor, click, double click, drag" },
+  "skillKey": "w2-review",
+  "minutes": 7,
+  "badge": "mouse-master",
+  "praise": { "ur": "مبارک ہو! تم 'ماؤس ماسٹر' بن گئے — تیر کو تم پر فخر ہے!", "en": "Congratulations! You are a Mouse Master — Teer is proud of you!" },
+  "story": {
+    "scenes": [
+      {
+        "bg": "bg-meadow",
+        "props": ["party-flag"],
+        "cast": ["bijli", "noor", "chotu"],
+        "lines": [
+          { "char": "narrator", "ur": "یہ تھا ماؤس کا میدان — اور تیر اب ماہر تیر تھا!", "en": "This was Mouse Meadow — and Teer was now a master arrow!", "audio": "w2l10_story_1", "fx": "confetti" },
+          { "char": "bijli", "emote": "happy", "ur": "آخری امتحان! پانچ سوال — ماؤس کا سارا جادو یاد کرو!", "en": "The final challenge! Five questions — remember all the mouse magic!", "audio": "w2l10_story_2" },
+          { "char": "noor", "emote": "brave", "ur": "کرسر، کلک، ڈبل کلک، ڈریگ — ہم سب یاد رکھتے ہیں!", "en": "Cursor, click, double click, drag — we remember them all!", "audio": "w2l10_story_3" },
+          { "char": "ustad-ullo", "ur": "جیتو گے تو 'ماؤس ماسٹر' کا بیج ملے گا — اور کی بورڈ کی بادشاہت کھل جائے گی!", "en": "Win and you earn the Mouse Master badge — and Keyboard Kingdom opens!", "audio": "w2l10_story_4", "fx": "sparkle" },
+          { "char": "narrator", "ur": "کیا تم ماؤس ماسٹر بنو گے؟", "en": "Will you become a Mouse Master?", "audio": "w2l10_story_5", "choice": { "ur": "کورس شروع!", "en": "Start the course!", "audio": "w2l10_story_5_choice" } }
+        ]
+      }
+    ]
+  },
+  "show": {
+    "steps": [
+      { "visual": "medal-mouse", "caption": { "ur": "یہ بیج تمہارا ہو سکتا ہے — پانچ درست جواب!", "en": "This badge can be yours — five right answers!" }, "audio": "w2l10_show_1" },
+      { "visual": "party-flag", "caption": { "ur": "غلطی = بگ۔ بگ فکسر کبھی نہیں ہارتے!", "en": "A mistake = a bug. Bug fixers never lose!" }, "audio": "w2l10_show_2" }
+    ]
+  },
+  "do": {
+    "activity": {
+      "type": "quiz-mix",
+      "prompt": { "ur": "ماؤس ماسٹر کوئز: ہر سوال سنو، صحیح جواب پر کلک کرو!", "en": "Mouse Master quiz: listen to each question, tap the right answer!" },
+      "audio": "w2l10_do_prompt",
+      "questions": [
+        {
+          "id": "q1",
+          "art": "teer",
+          "question": { "ur": "اسکرین پر اشارہ کرنے والے تیر کو کیا کہتے ہیں؟", "en": "What is the pointing arrow on the screen called?" },
+          "audio": "w2l10_q1",
+          "options": [
+            { "id": "teer", "art": "teer", "label": { "ur": "تیر (کرسر)", "en": "Teer (cursor)" } },
+            { "id": "murgi", "art": "hen", "label": { "ur": "مُرگی", "en": "The hen" } },
+            { "id": "tokra", "art": "fruit-basket", "label": { "ur": "ٹوکرا", "en": "The basket" } }
+          ],
+          "answer": "teer",
+          "explain": { "ur": "کرسر یعنی تیر — ماؤس کا جادویی اشارہ کرنے والا!", "en": "The cursor is Teer — the mouse's magic pointer!" }
+        },
+        {
+          "id": "q2",
+          "art": "bubble",
+          "question": { "ur": "بلبلا پھوٹانے کے لیے کتنے کلک چاہئیں؟", "en": "How many clicks to pop a bubble?" },
+          "audio": "w2l10_q2",
+          "options": [
+            { "id": "one", "art": "star", "label": { "ur": "ایک کلک", "en": "One click" } },
+            { "id": "two", "art": "egg", "label": { "ur": "دو کلک", "en": "Two clicks" } },
+            { "id": "drag", "art": "water-drop", "label": { "ur": "کھینچنا", "en": "Dragging" } }
+          ],
+          "answer": "one",
+          "explain": { "ur": "ایک کلک = پوپ! ایک دباؤ، ایک دفعہ۔", "en": "One click = pop! One press, one time." }
+        },
+        {
+          "id": "q3",
+          "art": "egg",
+          "question": { "ur": "انڈہ کھولنے کے لیے کیا کرنا پڑتا ہے؟", "en": "What does it take to open an egg?" },
+          "audio": "w2l10_q3",
+          "options": [
+            { "id": "one", "art": "bubble", "label": { "ur": "ایک کلک", "en": "One click" } },
+            { "id": "two", "art": "star", "label": { "ur": "تیز تیز دو کلک", "en": "Two quick clicks" } },
+            { "id": "wait", "art": "wait", "label": { "ur": "بس انتظار", "en": "Just waiting" } }
+          ],
+          "answer": "two",
+          "explain": { "ur": "ڈبل کلک! ایک ہی جگہ، تیز تیز دو کلک۔", "en": "A double click! Same spot, two quick clicks." }
+        },
+        {
+          "id": "q4",
+          "art": "fruit-basket",
+          "question": { "ur": "پھل ٹوکرے میں کیسے لاتے ہیں؟", "en": "How do we bring a fruit to the basket?" },
+          "audio": "w2l10_q4",
+          "options": [
+            { "id": "drag", "art": "water-drop", "label": { "ur": "پکڑو، کھینچو، چھوڑو", "en": "Hold, drag, release" } },
+            { "id": "shout", "art": "frog", "label": { "ur": "زور سے پکارو", "en": "Shout loudly" } },
+            { "id": "wait", "art": "wait", "label": { "ur": "انتظار کرو", "en": "Wait for it" } }
+          ],
+          "answer": "drag",
+          "explain": { "ur": "ڈریگ اور ڈراپ: دباؤ، کھینچو، اور صحیح جگہ چھوڑو!", "en": "Drag and drop: press, drag, and release at the right place!" }
+        },
+        {
+          "id": "q5",
+          "art": "star",
+          "question": { "ur": "ڈبل کلک کیسے کریں؟", "en": "How do we double click?" },
+          "audio": "w2l10_q5",
+          "options": [
+            { "id": "fast", "art": "star", "label": { "ur": "ایک جگہ، تیز تیز دو کلک", "en": "Same spot, two quick clicks" } },
+            { "id": "slow", "art": "wait", "label": { "ur": "آہستہ آہستہ دو کلک", "en": "Two slow clicks" } },
+            { "id": "far", "art": "stone", "label": { "ur": "دو مختلف جگہوں پر", "en": "On two different spots" } }
+          ],
+          "answer": "fast",
+          "explain": { "ur": "بالکل! ایک جگہ، تیز تیز دو کلک — یہی ڈبل کلک ہے!", "en": "Exactly! Same spot, two quick clicks — that is a double click!" }
+        }
+      ],
+      "wrongHint": { "ur": "اوپس! ایک بگ ملا! دوبارہ سوچو — تم ماؤس کے سب جادو جانتے ہو!", "en": "Oops! A bug! Think again — you know all the mouse magic!" }
+    }
+  },
+  "cheer": {
+    "recap": [
+      { "ur": "ماؤس کا جادو: اشارہ، ایک کلک، ڈبل کلک، ڈریگ۔", "en": "The mouse magic: point, single click, double click, drag." },
+      { "ur": "تیر ہمیشہ تمہارے ساتھ ہے — اب کی بورڈ کی بادشاہت کی طرف!", "en": "Teer is always with you — now on to Keyboard Kingdom!" }
+    ],
+    "recapAudio": ["w2l10_recap_1", "w2l10_recap_2"],
+    "rewardToast": { "ur": "بیج ملا: ماؤس ماسٹر! کی بورڈ کی بادشاہت کھل گئی!", "en": "Badge earned: Mouse Master! Keyboard Kingdom is open!" }
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "id": "w2l8",
+  "schemaVersion": 1,
+  "world": 2,
+  "order": 8,
+  "title": { "ur": "پھول کو پانی — قطرے کھینچو!", "en": "Water the Flowers — Drag the Drops!" },
+  "skill": { "ur": "ڈریگ کی درستی: چھوٹی چیز، صحیح جگہ", "en": "Drag precision: small thing, exact place" },
+  "skillKey": "drag-precision",
+  "minutes": 7,
+  "praise": { "ur": "بہت خوب! ہر پھول کو اپنا قطرہ ملا — باغ جھوم اٹھا!", "en": "Very good! Every flower got its drop — the garden is dancing!" },
+  "story": {
+    "scenes": [
+      {
+        "bg": "bg-meadow",
+        "cast": ["noor", "bijli"],
+        "lines": [
+          { "char": "narrator", "ur": "دھوپ تیز تھی — باغ کے پھول جھک کر اداس ہو گئے۔", "en": "The sun was strong — the garden flowers drooped, feeling sad.", "audio": "w2l8_story_1" },
+          { "char": "noor", "emote": "worried", "ur": "پھول پیاسے ہیں! پانی کے قطرے کہاں ہیں؟", "en": "The flowers are thirsty! Where are the water drops?", "audio": "w2l8_story_2" },
+          { "char": "bijli", "emote": "happy", "ur": "قطرے ہوا میں تیر رہے ہیں! ہر قطرہ پکڑو، کھینچو، اور پھول پر چھوڑو!", "en": "Drops are floating in the air! Grab a drop, drag it, release on a flower!", "audio": "w2l8_story_3" },
+          { "char": "noor", "emote": "happy", "ur": "قطرہ چھوٹا ہے — درستی سے کھینچو! ایک پھول، ایک قطرہ!", "en": "Drops are small — drag with care! One flower, one drop!", "audio": "w2l8_story_4" },
+          { "char": "narrator", "ur": "کیا تم باغ کو سنوارو گے؟", "en": "Will you make the garden shine?", "audio": "w2l8_story_5", "choice": { "ur": "پھولوں کو پانی دو!", "en": "Water the flowers!", "audio": "w2l8_story_5_choice" } }
+        ]
+      }
+    ]
+  },
+  "show": {
+    "steps": [
+      { "visual": "water-drop", "caption": { "ur": "یہ پانی کا قطرہ ہے — چھوٹا مگر قیمتی!", "en": "This is a water drop — small but precious!" }, "audio": "w2l8_show_1" },
+      { "visual": "flower", "caption": { "ur": "ہر پھول کو صرف ایک قطرہ چاہئیے۔", "en": "Each flower needs just one drop." }, "audio": "w2l8_show_2" },
+      { "visual": "teer", "caption": { "ur": "قطرہ پکڑو، آہستہ کھینچو، پھول پر چھوڑو!", "en": "Grab the drop, drag slowly, release on a flower!" }, "audio": "w2l8_show_3" }
+    ]
+  },
+  "do": {
+    "activity": {
+      "type": "drag-drop",
+      "prompt": { "ur": "پانی کے تینوں قطرے کھینچ کر تینوں پھولوں پر چھوڑو!", "en": "Drag all three water drops and release one on each flower!" },
+      "audio": "w2l8_do_prompt",
+      "scene": "bg-meadow",
+      "draggable": [
+        { "id": "qatra1", "art": "water-drop", "x": 14, "y": 26, "audio": "w2l8_d_1" },
+        { "id": "qatra2", "art": "water-drop", "x": 50, "y": 18, "audio": "w2l8_d_2" },
+        { "id": "qatra3", "art": "water-drop", "x": 86, "y": 26, "audio": "w2l8_d_3" }
+      ],
+      "targets": [
+        { "id": "phool1", "art": "flower", "x": 18, "y": 72, "accepts": ["qatra1", "qatra2", "qatra3"], "capacity": 1, "label": { "ur": "پیاسا پھول", "en": "Thirsty flower" }, "success": { "ur": "ٹپک! پھول نے قطرہ پیا!", "en": "Plip! The flower drank the drop!" } },
+        { "id": "phool2", "art": "flower", "x": 50, "y": 78, "accepts": ["qatra1", "qatra2", "qatra3"], "capacity": 1, "label": { "ur": "پیاسا پھول", "en": "Thirsty flower" }, "success": { "ur": "ٹپک! یہ پھول بھی خوش!", "en": "Plip! This flower is happy too!" } },
+        { "id": "phool3", "art": "flower", "x": 82, "y": 72, "accepts": ["qatra1", "qatra2", "qatra3"], "capacity": 1, "label": { "ur": "پیاسا پھول", "en": "Thirsty flower" }, "success": { "ur": "ٹپک! آخری قطرہ!" , "en": "Plip! The last drop!" } }
+      ],
+      "wrongHint": { "ur": "اوپس! ایک بگ ملا! اس پھول کو پہلے ہی پانی مل گیا — دوسرا پھول ڈھونڈو!", "en": "Oops! A bug! This flower already drank — find another flower!" },
+      "winPraise": { "ur": "زبردست! تینوں پھول کھلے — باغ نے تمہارا شکریہ کہا!", "en": "Zabardast! All three bloomed — the garden thanks you!" }
+    }
+  },
+  "cheer": {
+    "recap": [
+      { "ur": "چھوٹی چیز کھینچنی ہو تو آہستہ کھینچو۔", "en": "To drag something small, drag it slowly." },
+      { "ur": "صحیح جگہ پر چھوڑو — پھر دیکھو کیا ہوتا ہے!", "en": "Release at the right place — then watch what happens!" }
+    ],
+    "recapAudio": ["w2l8_recap_1", "w2l8_recap_2"],
+    "rewardToast": { "ur": "اگلا سبق: گاؤں کو رنگ دو!", "en": "Next lesson: color the village!" }
+  }
+}

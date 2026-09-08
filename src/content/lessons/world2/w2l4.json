@@ -1,0 +1,58 @@
+{
+  "id": "w2l4",
+  "schemaVersion": 1,
+  "world": 2,
+  "order": 4,
+  "title": { "ur": "تتلیاں پکڑو — نرمی سے!", "en": "Catch Butterflies — Gently!" },
+  "skill": { "ur": "اڑتی ہوئی چیز پر درست کلک: تیز آنکھ، ٹھیک ہاتھ", "en": "Click a moving thing: quick eye, steady hand" },
+  "skillKey": "click-moving",
+  "minutes": 7,
+  "praise": { "ur": "واہ! تم نے ہر تتلی کو نرمی سے کلک کیا — اب وہ تمہارے دوست ہیں!", "en": "Wow! You clicked every butterfly gently — they are your friends now!" },
+  "story": {
+    "scenes": [
+      {
+        "bg": "bg-meadow",
+        "cast": ["bijli", "noor"],
+        "lines": [
+          { "char": "narrator", "ur": "میدان میں تتلیاں اڑ رہی تھیں — ہلکی، رنگ برنگی، جادویی!", "en": "Butterflies were flying over the meadow — light, colorful, magical!", "audio": "w2l4_story_1" },
+          { "char": "noor", "emote": "happy", "ur": "نرمی سے! ایک کلک سے تتلی دوست بن جائے گی!", "en": "Gently! One click and a butterfly becomes your friend!", "audio": "w2l4_story_2" },
+          { "char": "bijli", "emote": "thinking", "ur": "تتلی اڑتی ہے — پہلے اُس کا پیچھا کرو، پھر ٹھیک جگہ پر کلک!", "en": "A butterfly flies — first chase it, then click at the right spot!", "audio": "w2l4_story_3" },
+          { "char": "noor", "emote": "brave", "ur": "پھولوں کو نہیں — صرف تتلیوں پر کلک!", "en": "Not the flowers — click only the butterflies!", "audio": "w2l4_story_4" },
+          { "char": "narrator", "ur": "کیا تم تتلیوں کے دوست بنو گے؟", "en": "Will you befriend the butterflies?", "audio": "w2l4_story_5", "choice": { "ur": "تتلیاں پکڑو!", "en": "Catch the butterflies!", "audio": "w2l4_story_5_choice" } }
+        ]
+      }
+    ]
+  },
+  "show": {
+    "steps": [
+      { "visual": "butterfly", "caption": { "ur": "تتلی اڑتی رہتی ہے — ٹھہرتی نہیں۔", "en": "A butterfly keeps flying — it never stops." }, "audio": "w2l4_show_1" },
+      { "visual": "teer", "caption": { "ur": "تیر کو تتلی کے ساتھ رکھو…", "en": "Keep Teer with the butterfly…" }, "audio": "w2l4_show_2" },
+      { "visual": "star", "caption": { "ur": "…اور صحیح وقت پر ایک کلک!", "en": "…and one click at the right time!" }, "audio": "w2l4_show_3" }
+    ]
+  },
+  "do": {
+    "activity": {
+      "type": "tap-select",
+      "prompt": { "ur": "اڑتی تتلیوں پر ایک ایک کلک کرو — پھولوں کو نہ چھیڑو!", "en": "Click each flying butterfly once — leave the flowers alone!" },
+      "audio": "w2l4_do_prompt",
+      "scene": "bg-meadow",
+      "items": [
+        { "id": "tit1", "x": 18, "y": 36, "art": "butterfly", "correct": true, "move": true, "hint": { "ur": "پکی! ایک تتلی دوست ہوئی!", "en": "Got it! One butterfly friend!" } },
+        { "id": "tit2", "x": 42, "y": 58, "art": "butterfly", "correct": true, "move": true, "hint": { "ur": "زبردست! تیز آنکھ، ٹھیک ہاتھ!", "en": "Great! Quick eye, steady hand!" } },
+        { "id": "tit3", "x": 64, "y": 30, "art": "butterfly", "correct": true, "move": true, "hint": { "ur": "پکی! دوسری تتلی بھی!", "en": "Got it! A second butterfly too!" } },
+        { "id": "tit4", "x": 84, "y": 52, "art": "butterfly", "correct": true, "move": true, "hint": { "ur": "پکی! آخری تتلی!", "en": "Got it! The last butterfly!" } },
+        { "id": "fl1", "x": 30, "y": 84, "art": "flower", "correct": false, "hint": { "ur": "اوپس! ایک بگ ملا! پھول تتلی نہیں — پھول کو کلک نہیں!", "en": "Oops! A bug! A flower is not a butterfly — flowers get no clicks!" } },
+        { "id": "fl2", "x": 72, "y": 86, "art": "flower", "correct": false, "hint": { "ur": "اوپس! ایک بگ ملا! صرف اڑتی تتلیوں پر کلک کرو!", "en": "Oops! A bug! Click only the flying butterflies!" } }
+      ],
+      "winPraise": { "ur": "زبردست! چاروں تتلیاں تمہارے کندھوں پر بیٹھ گئیں!", "en": "Zabardast! All four butterflies landed on your shoulders!" }
+    }
+  },
+  "cheer": {
+    "recap": [
+      { "ur": "اڑتی چیز پر کلک: پیچھا کرو، ٹھہرو، کلک کرو۔", "en": "To click a moving thing: chase, settle, click." },
+      { "ur": "نرمی سے کلک — تتلیاں ڈرتی نہیں!", "en": "Click gently — the butterflies are not scared!" }
+    ],
+    "recapAudio": ["w2l4_recap_1", "w2l4_recap_2"],
+    "rewardToast": { "ur": "تتلیوں نے کہا: اگلے سبق میں انڈے دیکھو!", "en": "The butterflies say: see the eggs in the next lesson!" }
+  }
+}

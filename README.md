@@ -47,8 +47,9 @@ Built for the real conditions of village computer labs: **unreliable electricity
 | 7 | لاجک جنگل · Logic Jungle | Sequencing, loops, IF-THEN, debugging | Logic Champion |
 | 8 | اسٹوری ماؤنٹین · Story Mountain | Block coding, animations, final showcase | ROSHAN Hero |
 
-> **Phase 1 ships World 1, Lessons 1–3 fully playable** — Urdu story scripts with side-by-side
-> English translations, interactive activities, stars and the *Dosti Ka Safar* badge.
+> **Phase 2 ships World 1 (all 6 lessons) and World 2 *Mouse Meadow* (all 10 lessons) fully
+> playable** — Urdu story scripts with side-by-side English translations, interactive
+> activities, stars and the *Dosti Ka Safar* + *Mouse Master* badges.
 
 ## Meet the Friends
 
@@ -135,8 +136,8 @@ Adding World 2 means adding JSON files — **zero engine changes required.**
 ## Roadmap
 
 - [x] **Phase 1** — app shell, lesson engine, World 1 L1–L3, Teacher Hub v1 *(shipped)*
-- [ ] **Phase 2** — World 1 L4–L6, World 2 *Mouse Meadow*, real art & voice-over assets
-- [ ] **Phase 3** — Worlds 3–8, Teacher Academy course, lab-wide sync over USB
+- [x] **Phase 2** — World 1 complete (L4–L6), World 2 *Mouse Meadow* all 10 lessons, 5 new activity engines (sequence, quiz, drag & drop, paint-by-tap, listen-and-point) *(shipped)*
+- [ ] **Phase 3** — World 3 *Keyboard Kingdom*, Teacher Academy course, lab-wide sync over USB
 
 ## Contributing
 

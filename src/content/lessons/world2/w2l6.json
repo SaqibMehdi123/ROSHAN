@@ -1,0 +1,58 @@
+{
+  "id": "w2l6",
+  "schemaVersion": 1,
+  "world": 2,
+  "order": 6,
+  "title": { "ur": "ڈبل کلک ماسٹر — کلیانیاں کھلو!", "en": "Double Click Master — Bloom the Buds!" },
+  "skill": { "ur": "ڈبل کلک کی رفتار: آسان نہیں، درست!", "en": "Double-click fluency: not fast, just right!" },
+  "skillKey": "double-click-fluency",
+  "minutes": 7,
+  "praise": { "ur": "زبردست! پورا میدان کھلا — تم ڈبل کلک ماسٹر ہو!", "en": "Zabardast! The whole meadow bloomed — you are a Double Click Master!" },
+  "story": {
+    "scenes": [
+      {
+        "bg": "bg-meadow",
+        "cast": ["bijli", "ustad-ullo"],
+        "lines": [
+          { "char": "narrator", "ur": "میدان میں کلیانیاں بند تھیں — کھلنے کا وقت ہو چکا تھا!", "en": "The buds in the meadow were closed — it was time for them to bloom!", "audio": "w2l6_story_1" },
+          { "char": "bijli", "emote": "happy", "ur": "ڈبل کلک ماسٹر! ہر کلی پر — کلک کلک — اور کھِل جائے گی!", "en": "Double click master! On each bud — click click — and it blooms!", "audio": "w2l6_story_2" },
+          { "char": "ustad-ullo", "ur": "یاد رکھو: دو کلک، ایک ہی جگہ، تیز ساتھ۔ پتھروں سے بچو!", "en": "Remember: two clicks, one spot, quick together. Beware of stones!", "audio": "w2l6_story_3", "fx": "sparkle" },
+          { "char": "narrator", "ur": "کیا تم پورا میدان کھلاؤ گے؟", "en": "Will you make the whole meadow bloom?", "audio": "w2l6_story_4", "choice": { "ur": "میدان کھلاؤ!", "en": "Bloom the meadow!", "audio": "w2l6_story_4_choice" } }
+        ]
+      }
+    ]
+  },
+  "show": {
+    "steps": [
+      { "visual": "bud", "caption": { "ur": "کلی سو رہی ہے…", "en": "A bud is sleeping…" }, "audio": "w2l6_show_1" },
+      { "visual": "teer", "caption": { "ur": "کلک کلک! ایک ہی جگہ، تیز تیز۔", "en": "Click click! Same spot, quick quick." }, "audio": "w2l6_show_2" },
+      { "visual": "bloom", "caption": { "ur": "کھِل گئی! میدان رنگین!", "en": "It bloomed! The meadow is colorful!" }, "audio": "w2l6_show_3" }
+    ]
+  },
+  "do": {
+    "activity": {
+      "type": "tap-select",
+      "prompt": { "ur": "ہر کلی پر ڈبل کلک — مگر پتھر نہیں کھلتا!", "en": "Double click each bud — but stones never bloom!" },
+      "audio": "w2l6_do_prompt",
+      "scene": "bg-meadow",
+      "clickHint": { "ur": "قریب تھا! کلک… کلک — تیز تیز، ایک ہی جگہ!", "en": "So close! Click… click — quick quick, same spot!" },
+      "items": [
+        { "id": "bud1", "x": 14, "y": 68, "art": "bud", "correct": true, "clicks": 2, "hint": { "ur": "کھِل گئی! پہلا پھول!", "en": "It bloomed! First flower!" } },
+        { "id": "bud2", "x": 34, "y": 52, "art": "bud", "correct": true, "clicks": 2, "hint": { "ur": "کھِل گئی! رنگ آ رہا ہے!", "en": "It bloomed! Color is coming!" } },
+        { "id": "bud3", "x": 54, "y": 72, "art": "bud", "correct": true, "clicks": 2, "hint": { "ur": "کھِل گئی! میدان خوش!", "en": "It bloomed! The meadow is happy!" } },
+        { "id": "bud4", "x": 74, "y": 50, "art": "bud", "correct": true, "clicks": 2, "hint": { "ur": "کھِل گئی! بہت خوب!", "en": "It bloomed! Very good!" } },
+        { "id": "bud5", "x": 90, "y": 70, "art": "bud", "correct": true, "clicks": 2, "hint": { "ur": "کھِل گئی! آخری کلی!", "en": "It bloomed! The last bud!" } },
+        { "id": "stone", "x": 48, "y": 88, "art": "stone", "correct": false, "hint": { "ur": "اوپس! ایک بگ ملا! پتھر پر ڈبل کلک نہیں — صرف کلیانیاں!", "en": "Oops! A bug! No double clicks on stones — only buds!" } }
+      ],
+      "winPraise": { "ur": "زبردست! پانچوں کلیانیاں کھل گئیں — تم میدان کے ماسٹر!", "en": "Zabardast! All five buds bloomed — you are the master of the meadow!" }
+    }
+  },
+  "cheer": {
+    "recap": [
+      { "ur": "ڈبل کلک: دو کلک، ایک جگہ، تیز ساتھ۔", "en": "Double click: two clicks, one spot, quick together." },
+      { "ur": "پہلے سوچو کس پر کلک ہے — پھر کلک کرو۔", "en": "First think what to click — then click." }
+    ],
+    "recapAudio": ["w2l6_recap_1", "w2l6_recap_2"],
+    "rewardToast": { "ur": "گول مٹول بھوکا ہے — اگلا سبق: کھینچو!", "en": "Gol Matol is hungry — next lesson: drag!" }
+  }
+}

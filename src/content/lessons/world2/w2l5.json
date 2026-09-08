@@ -1,0 +1,57 @@
+{
+  "id": "w2l5",
+  "schemaVersion": 1,
+  "world": 2,
+  "order": 5,
+  "title": { "ur": "دو کلک — انڈے کھلو!", "en": "Two Clicks — Hatch the Eggs!" },
+  "skill": { "ur": "ڈبل کلک: ایک ہی جگہ، تیز تیز دو کلک", "en": "Double click: same spot, two quick clicks" },
+  "skillKey": "double-click",
+  "minutes": 7,
+  "praise": { "ur": "شاباش! تم نے انڈوں کو ڈبل کلک سے کھولا — چوزے سلام کرتے ہیں!", "en": "Shabash! You hatched the eggs with double clicks — the chicks salute you!" },
+  "story": {
+    "scenes": [
+      {
+        "bg": "bg-meadow",
+        "cast": ["bijli", "chotu"],
+        "lines": [
+          { "char": "narrator", "ur": "میدان کے کنارے مُرگی اپنے انڈوں کے پاس بیٹھی تھی۔", "en": "At the meadow's edge, the hen sat by her eggs.", "audio": "w2l5_story_1" },
+          { "char": "chotu", "emote": "surprised", "ur": "انڈے ہلتے ہیں! چوزے باہر آنا چاہتے ہیں!", "en": "The eggs are wiggling! The chicks want to come out!", "audio": "w2l5_story_2" },
+          { "char": "bijli", "emote": "happy", "ur": "انڈے دو کلک سے کھلتے ہیں: کلک… کلک! تیز تیز، ایک ہی جگہ!", "en": "Eggs open with two clicks: click… click! Quick-quick, in the same spot!", "audio": "w2l5_story_3" },
+          { "char": "chotu", "emote": "happy", "ur": "دو کلک کو کہتے ہیں ڈبل کلک! آسان ہے!", "en": "Two clicks is called a double click! Easy!", "audio": "w2l5_story_4" },
+          { "char": "narrator", "ur": "کیا تم چوزوں کو باہر لاؤ گے؟", "en": "Will you bring the chicks out?", "audio": "w2l5_story_5", "choice": { "ur": "انڈے کھلو!", "en": "Hatch the eggs!", "audio": "w2l5_story_5_choice" } }
+        ]
+      }
+    ]
+  },
+  "show": {
+    "steps": [
+      { "visual": "egg", "caption": { "ur": "انڈا سو رہا ہے — اسے دو کلک چاہئیں۔", "en": "The egg is asleep — it needs two clicks." }, "audio": "w2l5_show_1" },
+      { "visual": "teer", "caption": { "ur": "تیر ایک ہی جگہ رکھو — کلک، کلک! تیز!", "en": "Keep Teer in the same spot — click, click! Quick!" }, "audio": "w2l5_show_2" },
+      { "visual": "chick", "caption": { "ur": "چیں چیں! چوزہ باہر آ گیا!", "en": "Cheep cheep! The chick is out!" }, "audio": "w2l5_show_3" }
+    ]
+  },
+  "do": {
+    "activity": {
+      "type": "tap-select",
+      "prompt": { "ur": "ہر انڈے پر ڈبل کلک کرو: کلک کلک — تیز تیز، ایک ہی جگہ!", "en": "Double click each egg: click click — quick quick, same spot!" },
+      "audio": "w2l5_do_prompt",
+      "scene": "bg-meadow",
+      "clickHint": { "ur": "قریب تھا! کلک… کلک — تیز تیز، ایک ہی جگہ!", "en": "So close! Click… click — quick quick, same spot!" },
+      "items": [
+        { "id": "egg1", "x": 20, "y": 74, "art": "egg", "correct": true, "clicks": 2, "hint": { "ur": "کھٹ! پہلا چوزہ باہر!", "en": "Crack! First chick out!" } },
+        { "id": "egg2", "x": 40, "y": 62, "art": "egg", "correct": true, "clicks": 2, "hint": { "ur": "کھٹ کھٹ! دوسرا چوزہ!", "en": "Crack crack! Second chick!" } },
+        { "id": "egg3", "x": 60, "y": 76, "art": "egg", "correct": true, "clicks": 2, "hint": { "ur": "کھٹ! تیسرا چوزہ بھی!", "en": "Crack! Third chick too!" } },
+        { "id": "egg4", "x": 80, "y": 64, "art": "egg", "correct": true, "clicks": 2, "hint": { "ur": "کھٹ! چاروں بہن بھائی!", "en": "Crack! All four siblings!" } }
+      ],
+      "winPraise": { "ur": "زبردست! چار چوزے چیں چیں کرتے ہیں — تم ڈبل کلک جانتے ہو!", "en": "Zabardast! Four chicks go cheep cheep — you know the double click!" }
+    }
+  },
+  "cheer": {
+    "recap": [
+      { "ur": "ڈبل کلک = ایک ہی جگہ، تیز تیز دو کلک۔", "en": "Double click = same spot, two quick clicks." },
+      { "ur": "ڈبل کلک چیزوں کو کھولتا ہے — انڈے، فولڈر، ایپس!", "en": "Double click opens things — eggs, folders, apps!" }
+    ],
+    "recapAudio": ["w2l5_recap_1", "w2l5_recap_2"],
+    "rewardToast": { "ur": "مُرگی کہتی ہے: کل کلیانیاں کھلو!", "en": "The hen says: bloom the buds next!" }
+  }
+}

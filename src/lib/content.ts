@@ -15,13 +15,29 @@ import puzzlesJson from "@/content/braingym/puzzles.json";
 import w1l1 from "@/content/lessons/world1/w1l1.json";
 import w1l2 from "@/content/lessons/world1/w1l2.json";
 import w1l3 from "@/content/lessons/world1/w1l3.json";
+import w1l4 from "@/content/lessons/world1/w1l4.json";
+import w1l5 from "@/content/lessons/world1/w1l5.json";
+import w1l6 from "@/content/lessons/world1/w1l6.json";
+import w2l1 from "@/content/lessons/world2/w2l1.json";
+import w2l2 from "@/content/lessons/world2/w2l2.json";
+import w2l3 from "@/content/lessons/world2/w2l3.json";
+import w2l4 from "@/content/lessons/world2/w2l4.json";
+import w2l5 from "@/content/lessons/world2/w2l5.json";
+import w2l6 from "@/content/lessons/world2/w2l6.json";
+import w2l7 from "@/content/lessons/world2/w2l7.json";
+import w2l8 from "@/content/lessons/world2/w2l8.json";
+import w2l9 from "@/content/lessons/world2/w2l9.json";
+import w2l10 from "@/content/lessons/world2/w2l10.json";
 
 export const WORLDS = worldsJson as unknown as WorldDef[];
 export const CHARACTERS = charactersJson as unknown as CharacterDef[];
 export const BRAIN_GYM_PUZZLES = puzzlesJson.puzzles as unknown as BrainGymPuzzle[];
 
 // Register every authored lesson here (world order preserved)
-export const LESSONS: Lesson[] = [w1l1, w1l2, w1l3] as unknown as Lesson[];
+export const LESSONS: Lesson[] = [
+  w1l1, w1l2, w1l3, w1l4, w1l5, w1l6, // Phase 1 + Phase 2: World 1 complete
+  w2l1, w2l2, w2l3, w2l4, w2l5, w2l6, w2l7, w2l8, w2l9, w2l10, // Phase 2: World 2 complete
+] as unknown as Lesson[];
 
 export function lessonsOfWorld(worldId: number): Lesson[] {
   return LESSONS.filter((l) => l.world === worldId).sort((a, b) => a.order - b.order);

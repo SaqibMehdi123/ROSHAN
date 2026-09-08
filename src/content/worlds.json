@@ -7,7 +7,7 @@
     "badgeId": "dosti-ka-safar",
     "badgeName": { "ur": "دوستی کا سفر", "en": "Journey of Friendship" },
     "lessonCount": 6,
-    "lessonsReady": 3,
+    "lessonsReady": 6,
     "arcSummary": {
       "ur": "نور اور چھوٹو اسٹور روم میں ایک پراسرار صندوق تلاش کرتے ہیں — اور بجلی کو جگاتے ہیں!",
       "en": "Noor and Chotu find a mysterious box in the storeroom — and wake Bijli!"
@@ -21,7 +21,7 @@
     "badgeId": "mouse-master",
     "badgeName": { "ur": "ماؤس ماسٹر", "en": "Mouse Master" },
     "lessonCount": 10,
-    "lessonsReady": 0,
+    "lessonsReady": 10,
     "arcSummary": {
       "ur": "بجلی کا پالتو تیر (کرسر) میدان میں بھاگ گیا! اسے تربیت دو۔",
       "en": "Bijli's pet arrow (the cursor) escaped into the meadow! Train it."

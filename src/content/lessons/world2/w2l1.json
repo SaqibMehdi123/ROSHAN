@@ -1,0 +1,58 @@
+{
+  "id": "w2l1",
+  "schemaVersion": 1,
+  "world": 2,
+  "order": 1,
+  "title": { "ur": "جادویی تیر — کرسر سے ملو", "en": "The Magic Arrow — Meet Teer" },
+  "skill": { "ur": "ماؤس ہلانا: کرسر (تیر) ہاتھ کی پیروی کرتا ہے", "en": "Move the mouse: the cursor follows your hand" },
+  "skillKey": "cursor-move",
+  "minutes": 7,
+  "praise": { "ur": "شاباش! تم نے تیر کو میدان میں اڑایا — ہر دھبہ جل اٹھا!", "en": "Shabash! You flew Teer across the meadow — every glow-spot lit up!" },
+  "story": {
+    "scenes": [
+      {
+        "bg": "bg-meadow",
+        "cast": ["bijli", "noor", "chotu"],
+        "lines": [
+          { "char": "narrator", "ur": "بجلی کا پالتو تیر 'تیر' میدان میں بھاگ نکلا! یہی ماؤس کا جادو ہے — اسکرین پر اشارہ کرنے والا تیر!", "en": "Bijli's pet arrow 'Teer' ran off into the meadow! This is the mouse's magic — the arrow that points on the screen!", "audio": "w2l1_story_1" },
+          { "char": "bijli", "emote": "happy", "ur": "ماؤس ہلاتے ہو — تیر اڑتا ہے! دیکھو، میرا تیر تمہارے ہاتھ کی پیروی کرتا ہے!", "en": "Move the mouse — Teer flies! Watch — my Teer follows your hand!", "audio": "w2l1_story_2" },
+          { "char": "noor", "emote": "surprised", "ur": "واہ! تیر جہاں جاتا ہے، روشن دھبے جل جاتے ہیں!", "en": "Wow! Wherever Teer goes, the glow-spots light up!", "audio": "w2l1_story_3" },
+          { "char": "chotu", "emote": "playful", "ur": "چلو! تیر کو ہر دھبے تک لے جاؤ — کوئی دھبہ پیچھے نہ رہے!", "en": "Come on! Take Teer to every glow-spot — none left behind!", "audio": "w2l1_story_4" },
+          { "char": "narrator", "ur": "کیا تم تیر کو میدان میں اڑاؤ گے؟", "en": "Will you fly Teer across the meadow?", "audio": "w2l1_story_5", "choice": { "ur": "تیر کو اڑانے دو!", "en": "Let Teer fly!", "audio": "w2l1_story_5_choice" } }
+        ]
+      }
+    ]
+  },
+  "show": {
+    "steps": [
+      { "visual": "mouse", "caption": { "ur": "ماؤس کو نرمی سے ہلاؤ — تیر اُسی طرف جائے گا۔", "en": "Move the mouse gently — the arrow goes that way." }, "audio": "w2l1_show_1" },
+      { "visual": "teer", "caption": { "ur": "یہ تیر ہے — کرسر! یہ ہمیشہ تمہارے ہاتھ کے ساتھ چلتا ہے۔", "en": "This is Teer — the cursor! It always walks with your hand." }, "audio": "w2l1_show_2" },
+      { "visual": "glow-spot", "caption": { "ur": "تیر جب دھبے پر پہنچے گا — دھبہ جل جائے گا!", "en": "When Teer reaches a spot — it lights up!" }, "audio": "w2l1_show_3" }
+    ]
+  },
+  "do": {
+    "activity": {
+      "type": "tap-select",
+      "prompt": { "ur": "تیر کو ہر روشن دھبے تک لے جاؤ! ماؤس ہلاؤ یا دھبے پر کلک کرو۔", "en": "Take Teer to every glow-spot! Move the mouse over a spot, or tap it." },
+      "audio": "w2l1_do_prompt",
+      "scene": "bg-meadow",
+      "cursorArt": "teer",
+      "items": [
+        { "id": "spot1", "x": 14, "y": 78, "art": "glow-spot", "correct": true, "glow": true, "hint": { "ur": "ایک دھبہ جل گیا! تیر زندہ ہے!", "en": "One spot lit! Teer is alive!" } },
+        { "id": "spot2", "x": 32, "y": 60, "art": "glow-spot", "correct": true, "glow": true, "hint": { "ur": "دوسرا بھی! تم ماؤس کے دوست بن رہے ہو!", "en": "Two now! You are becoming friends with the mouse!" } },
+        { "id": "spot3", "x": 52, "y": 76, "art": "glow-spot", "correct": true, "glow": true, "hint": { "ur": "آدھے ہو گئے! ہاتھ ٹھیک چل رہا ہے!", "en": "Halfway there! Your hand is steady!" } },
+        { "id": "spot4", "x": 68, "y": 56, "art": "glow-spot", "correct": true, "glow": true, "hint": { "ur": "بہت خوب! تیر خوش ہو کر اڑ رہا ہے!", "en": "Very good! Teer flies happily!" } },
+        { "id": "spot5", "x": 86, "y": 74, "art": "glow-spot", "correct": true, "glow": true, "hint": { "ur": "آخری دھبہ! ماؤس نے تمہیں پہچان لیا!", "en": "The last spot! The mouse knows you now!" } }
+      ],
+      "winPraise": { "ur": "زبردست! پورا میدان روشن! تیر نے کہا: تم میرے بہترین دوست ہو!", "en": "Zabardast! The whole meadow glows! Teer says: you are my best friend!" }
+    }
+  },
+  "cheer": {
+    "recap": [
+      { "ur": "ماؤس = تیر کا گھر۔ ہلاؤ تو تیر اڑتا ہے۔", "en": "The mouse is Teer's home. Move it and Teer flies." },
+      { "ur": "تیر کو جہاں لے جاؤ، وہاں اشارہ ہوتا ہے۔", "en": "Wherever Teer goes, that is where you point." }
+    ],
+    "recapAudio": ["w2l1_recap_1", "w2l1_recap_2"],
+    "rewardToast": { "ur": "تیر نے کہا: مجھے اشارہ کرنا سکھاؤ!", "en": "Teer says: teach me to point!" }
+  }
+}

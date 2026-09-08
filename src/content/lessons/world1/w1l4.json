@@ -1,0 +1,58 @@
+{
+  "id": "w1l4",
+  "schemaVersion": 1,
+  "world": 1,
+  "order": 4,
+  "title": { "ur": "بجلی کی پاور — آن کرو!", "en": "Bijli's Power — Power On!" },
+  "skill": { "ur": "کمپیوٹر آن کرنے کی ترتیب: سوئچ، بٹن، انتظار", "en": "Power-on order: switch, button, wait" },
+  "skillKey": "power-on",
+  "minutes": 7,
+  "praise": { "ur": "شاباش! تم نے بجلی کو صحیح ترتیب سے جگایا!", "en": "Shabash! You woke Bijli in the right order!" },
+  "story": {
+    "scenes": [
+      {
+        "bg": "bg-lab",
+        "cast": ["bijli", "noor", "chotu"],
+        "lines": [
+          { "char": "narrator", "ur": "اگلے دن لیب میں بجلی کی بیٹری بالکل خالی تھی۔ وہ گہری نیند سو رہا تھا۔", "en": "The next day in the lab, Bijli's battery was totally flat. He was in a deep sleep.", "audio": "w1l4_story_1" },
+          { "char": "bijli", "emote": "sleepy", "ur": "بیٹری خالی ہے… میں سو رہا ہوں… مجھے صحیح طریقے سے جگاؤ!", "en": "Battery empty… I am sleeping… wake me the RIGHT way!", "audio": "w1l4_story_2" },
+          { "char": "noor", "emote": "thinking", "ur": "اُستاد اُلوو! بجلی کو جگانے کا صحیح طریقہ کیا ہے؟", "en": "Ustaad Ulloo! What is the right way to wake Bijli?", "audio": "w1l4_story_3" },
+          { "char": "ustad-ullo", "ur": "تین قدم یاد رکھو: پہلے دیوار کا سوئچ، پھر پی سی کا بٹن، پھر صبر سے انتظار!", "en": "Remember the steps: first the wall switch, then the PC button, then wait patiently!", "audio": "w1l4_story_4", "fx": "sparkle" },
+          { "char": "chotu", "emote": "happy", "ur": "اور جب مانیٹر روشن ہو جائے — بجلی کو سلام!", "en": "And when the screen glows — greet Bijli!", "audio": "w1l4_story_5" },
+          { "char": "narrator", "ur": "دوستو! کیا تم بجلی کو صحیح ترتیب سے جگاؤ گے؟", "en": "Friends! Will you wake Bijli in the right order?", "audio": "w1l4_story_6", "choice": { "ur": "ہاں! ہم کریں گے!", "en": "Yes! We will!", "audio": "w1l4_story_6_choice" } }
+        ]
+      }
+    ]
+  },
+  "show": {
+    "steps": [
+      { "visual": "power-switch", "caption": { "ur": "پہلا قدم: دیوار کا سوئچ آن کرو۔", "en": "Step 1: Switch on the wall socket." }, "audio": "w1l4_show_1" },
+      { "visual": "powerpc", "caption": { "ur": "دوسرا قدم: پی سی کا پاور بٹن دباؤ۔", "en": "Step 2: Press the PC power button." }, "audio": "w1l4_show_2" },
+      { "visual": "wait", "caption": { "ur": "تیسرا قدم: صبر سے انتظار کرو — بجلی جاگ رہا ہے۔", "en": "Step 3: Wait patiently — Bijli is waking up." }, "audio": "w1l4_show_3" },
+      { "visual": "monitorbtn", "caption": { "ur": "مانیٹر روشن! اب بجلی کو سلام کرو۔", "en": "The screen glows! Now greet Bijli." }, "audio": "w1l4_show_4" }
+    ]
+  },
+  "do": {
+    "activity": {
+      "type": "tap-sequence",
+      "prompt": { "ur": "بجلی کو جگانے کے قدم صحیح ترتیب سے دباؤ!", "en": "Tap Bijli's wake-up steps in the right order!" },
+      "audio": "w1l4_do_prompt",
+      "steps": [
+        { "id": "switch", "art": "power-switch", "label": { "ur": "دیوار کا سوئچ آن کرو", "en": "Wall switch on" }, "audio": "w1l4_step_1" },
+        { "id": "pc", "art": "powerpc", "label": { "ur": "پی سی کا بٹن دباؤ", "en": "Press the PC button" }, "audio": "w1l4_step_2" },
+        { "id": "wait", "art": "wait", "label": { "ur": "صبر سے انتظار کرو", "en": "Wait patiently" }, "audio": "w1l4_step_3" },
+        { "id": "salaam", "art": "monitorbtn", "label": { "ur": "بجلی کو سلام کرو", "en": "Greet Bijli" }, "audio": "w1l4_step_4" }
+      ],
+      "order": ["switch", "pc", "wait", "salaam"],
+      "wrongHint": { "ur": "اوپس! ایک بگ ملا! یہ قدم ابھی نہیں — پہلا قدم یاد کرو، دوبارہ کوشش کرو!", "en": "Oops! A bug! Not this step yet — think of the first step and try again!" }
+    }
+  },
+  "cheer": {
+    "recap": [
+      { "ur": "یاد رکھو: پہلے سوئچ، پھر بٹن، پھر انتظار۔", "en": "Remember: first the switch, then the button, then wait." },
+      { "ur": "مانیٹر روشن؟ بجلی کو سلام کرو!", "en": "Screen glowing? Greet Bijli!" }
+    ],
+    "recapAudio": ["w1l4_recap_1", "w1l4_recap_2"],
+    "rewardToast": { "ur": "بجلی جاگ گیا — تم پاور کے دوست ہو!", "en": "Bijli is awake — you are a friend of power!" }
+  }
+}
