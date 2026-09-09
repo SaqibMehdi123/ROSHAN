@@ -1,0 +1,62 @@
+{
+  "id": "w5l5",
+  "schemaVersion": 1,
+  "world": 5,
+  "order": 5,
+  "title": { "ur": "بکٹ سے بھرپور رنگ", "en": "Bucket Fill" },
+  "skill": { "ur": "بکٹ سے بڑی جگہ ایک کلک میں بھرو", "en": "Fill big areas in one tap with the bucket" },
+  "skillKey": "bucket-fill",
+  "minutes": 6,
+  "praise": { "ur": "زبردست! ایک ایک کلک میں پورا بینر جگمگا!", "en": "Zabardast! Tap by tap, the whole banner shines!" },
+  "story": {
+    "scenes": [
+      {
+        "bg": "bg-workshop",
+        "cast": ["bijli", "noor", "chotu"],
+        "lines": [
+          { "char": "narrator", "ur": "بازار کے لیے بہت بڑا بینر چاہئیں — اتنا بڑا کہ دور تک دکھے!", "en": "The bazaar needs a giant banner — so big everyone sees it from far!", "audio": "w5l5_story_1" },
+          { "char": "chotu", "emote": "oops", "ur": "برش سے یہ رنگوں تو شام ہو جائے گی! اوپس، میرا ہاتھ تھک گیا!", "en": "Painting this with the brush will take till evening! Oops, my hand is tired!", "audio": "w5l5_story_2" },
+          { "char": "bijli", "emote": "happy", "ur": "تب پینٹ بکٹ کام آئے گا! بکٹ بڑی جگہ ایک کلک میں بھر دیتا ہے!", "en": "Then use the paint bucket! The bucket fills a big place in one tap!", "audio": "w5l5_story_3" },
+          { "char": "noor", "emote": "excited", "ur": "واہ! ایک کلک — اور پوری پٹی رنگ گئی!", "en": "Wow! One tap — and the whole stripe is colored!", "audio": "w5l5_story_4" },
+          { "char": "narrator", "ur": "کیا تم بینر بکٹ سے رنگو گے؟", "en": "Will you paint the banner with the bucket?", "audio": "w5l5_story_5", "choice": { "ur": "ہاں! بکٹ لاؤ!", "en": "Yes! Bring the bucket!", "audio": "w5l5_story_5_choice" } }
+        ]
+      }
+    ]
+  },
+  "show": {
+    "steps": [
+      { "visual": "paint-brush", "caption": { "ur": "برش چھوٹی جگہ کا دوست ہے۔", "en": "The brush is a friend of small places." }, "audio": "w5l5_show_1" },
+      { "visual": "paint-bucket", "caption": { "ur": "بکٹ بڑی جگہ ایک کلک میں بھر دیتا ہے!", "en": "The bucket fills a big place in one tap!" }, "audio": "w5l5_show_2" },
+      { "visual": "party-flag", "caption": { "ur": "بازار کا بڑا بینر بکٹ سے تیار!", "en": "The big bazaar banner is done with the bucket!" }, "audio": "w5l5_show_3" }
+    ]
+  },
+  "do": {
+    "activity": {
+      "type": "paint-zones",
+      "prompt": { "ur": "بڑے بینر کی چار پٹیاں بکٹ سے بھرو! ڈبہ چُنو، پھر پٹی پر کلک۔", "en": "Fill the four big banner stripes with the bucket! Pick a pot, then tap a stripe." },
+      "audio": "w5l5_do_prompt",
+      "palette": [
+        { "id": "orange", "color": "#F59E0B", "name": { "ur": "نارنجی", "en": "Orange" } },
+        { "id": "sky", "color": "#38BDF8", "name": { "ur": "آسمانی", "en": "Sky blue" } },
+        { "id": "pink", "color": "#EC4899", "name": { "ur": "گلابی", "en": "Pink" } },
+        { "id": "green", "color": "#22C55E", "name": { "ur": "ہرا", "en": "Green" } }
+      ],
+      "zones": [
+        { "id": "banner-1", "x": 10, "y": 12, "w": 80, "h": 16, "colorId": "orange" },
+        { "id": "banner-2", "x": 10, "y": 32, "w": 80, "h": 16, "colorId": "sky" },
+        { "id": "banner-3", "x": 10, "y": 52, "w": 80, "h": 16, "colorId": "pink" },
+        { "id": "banner-4", "x": 10, "y": 72, "w": 80, "h": 16, "colorId": "green" }
+      ],
+      "wrongHint": { "ur": "اوپس! ایک بگ ملا! دوسرا ڈبہ چُنو — بڑی پٹی دوبارہ بھرو!", "en": "Oops! A bug! Pick another pot — fill the big stripe again!" },
+      "winPraise": { "ur": "زبردست! بینر جگمگا اور بازار تیار!", "en": "Zabardast! The banner shines and the bazaar is ready!" }
+    }
+  },
+  "cheer": {
+    "recap": [
+      { "ur": "بڑی جگہ؟ بکٹ! ایک کلک میں رنگ۔", "en": "Big place? Bucket! One tap of color." },
+      { "ur": "چھوٹی جگہ پر برش بہترین۔", "en": "For small places, the brush is best." }
+    ],
+    "recapAudio": ["w5l5_recap_1", "w5l5_recap_2"],
+    "rewardToast": { "ur": "بازار کا بینر لہرنے کو تیار!", "en": "The bazaar banner is ready to fly!" }
+  }
+}

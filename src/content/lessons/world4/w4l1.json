@@ -1,0 +1,115 @@
+{
+  "id": "w4l1",
+  "schemaVersion": 1,
+  "world": 4,
+  "order": 1,
+  "title": { "ur": "گول مٹول کا کھیل — فائل سے ملو", "en": "Gol Matol's Mess — Meet Files" },
+  "skill": { "ur": "فائل ایک ڈبہ ہے جو چیز محفوظ رکھتی ہے — تصویر، گانا، کہانی", "en": "A file is a box that keeps a thing safe — picture, song, story" },
+  "skillKey": "what-is-a-file",
+  "minutes": 6,
+  "praise": { "ur": "شاباش! تم نے اپنی پہلی فائل بچا لی!", "en": "Shabash! You rescued your very first file!" },
+  "story": {
+    "scenes": [
+      {
+        "bg": "bg-city",
+        "cast": ["golmatol", "bijli", "noor"],
+        "lines": [
+          {
+            "char": "narrator",
+            "ur": "کنٹرول سٹی میں آج بڑی ہلچل ہے — فائلیں ہر طرف بکھر گئی ہیں!",
+            "en": "Control City is buzzing today — files are scattered everywhere!",
+            "audio": "w4l1_story_1"
+          },
+          {
+            "char": "golmatol",
+            "emote": "guilty",
+            "ur": "میوں… مجھ سے اوپس ہو گیا! کھیلتے ہوئے فائلیں گر گئیں۔",
+            "en": "Meow… oopsie from me! My play knocked all the files down.",
+            "audio": "w4l1_story_2"
+          },
+          {
+            "char": "bijli",
+            "emote": "happy",
+            "ur": "بیپ! گھبراؤ نہیں! دیکھو — یہ چوکور ڈبے فائلیں ہیں۔",
+            "en": "Beep! No worries! Look — these square boxes are files.",
+            "audio": "w4l1_story_3"
+          },
+          {
+            "char": "noor",
+            "emote": "excited",
+            "ur": "ہر فائل ایک ڈبہ ہے — اندر تصویر، گانا یا کہانی محفوظ!",
+            "en": "Every file is a box — a picture, song, or story safe inside!",
+            "audio": "w4l1_story_4"
+          },
+          {
+            "char": "narrator",
+            "ur": "کیا تم بجلی کے ساتھ فائلیں پہچانو گے؟",
+            "en": "Will you spot the files together with Bijli?",
+            "audio": "w4l1_story_5",
+            "choice": { "ur": "مشن قبول!", "en": "Mission accepted!", "audio": "w4l1_story_5_choice" }
+          }
+        ]
+      }
+    ]
+  },
+  "show": {
+    "steps": [
+      {
+        "visual": "file-img",
+        "caption": { "ur": "یہ تصویری فائل ہے — ڈبہ جو تصویر محفوظ رکھتا ہے!", "en": "This is a picture file — a box that keeps a picture safe!" },
+        "audio": "w4l1_show_1"
+      },
+      {
+        "visual": "file-song",
+        "caption": { "ur": "یہ گانے والی فائل ہے — دباؤ اور گانا بجے!", "en": "This is a song file — tap it and the song plays!" },
+        "audio": "w4l1_show_2"
+      },
+      {
+        "visual": "file-doc",
+        "caption": { "ur": "یہ کہانی والی فائل ہے — اندر کہانی سو رہی ہے!", "en": "This is a story file — a story sleeps inside!" },
+        "audio": "w4l1_show_3"
+      }
+    ]
+  },
+  "do": {
+    "activity": {
+      "type": "find-named",
+      "prompt": { "ur": "بجلی نام کہے گی — تم وہی فائل ڈھونڈو!", "en": "Bijli will call a name — find that very file!" },
+      "audio": "w4l1_do_prompt",
+      "scene": "bg-city",
+      "targets": [
+        { "id": "aam", "art": "file-img", "x": 16, "y": 34, "name": { "ur": "آم کی تصویر", "en": "Mango picture" }, "audio": "w4l1_t_aam" },
+        { "id": "bulbul", "art": "file-song", "x": 44, "y": 28, "name": { "ur": "بلبل کا گانا", "en": "Nightingale song" }, "audio": "w4l1_t_bulbul" },
+        { "id": "sher", "art": "file-doc", "x": 72, "y": 32, "name": { "ur": "شیر کی کہانی", "en": "Lion story" }, "audio": "w4l1_t_sher" },
+        { "id": "gaon", "art": "file-img", "x": 30, "y": 70, "name": { "ur": "گاؤں کی تصویر", "en": "Village picture" }, "audio": "w4l1_t_gaon" },
+        { "id": "chaand", "art": "file-song", "x": 58, "y": 74, "name": { "ur": "چاند کا گیت", "en": "Moon song" }, "audio": "w4l1_t_chaand" },
+        { "id": "huroof", "art": "file-doc", "x": 86, "y": 70, "name": { "ur": "حروف کی کہانی", "en": "Alphabet story" }, "audio": "w4l1_t_huroof" }
+      ],
+      "wrongHint": { "ur": "اوپس! ایک بگ ملا! یہ دوسری فائل ہے — نام دوبارہ سنو!", "en": "Oops! A bug! That is another file — listen to the name again!" },
+      "winPraise": { "ur": "زبردست! تم نے ہر فائل ڈھونڈ نکالی!", "en": "Zabardast! You found every single file!" }
+    }
+  },
+  "bonus": {
+    "activity": {
+      "type": "tap-select",
+      "prompt": { "ur": "بونس! چمکتی ہوئی فائلیں دباؤ!", "en": "Bonus! Tap the glowing files!" },
+      "audio": "w4l1_bonus_prompt",
+      "scene": "bg-city",
+      "items": [
+        { "id": "b1", "x": 14, "y": 62, "art": "file-img", "correct": true, "glow": true, "hint": { "ur": "چمکتی تصویری فائل — سہی!", "en": "A glowing picture file — yes!" } },
+        { "id": "b2", "x": 38, "y": 70, "art": "file-song", "correct": true, "glow": true, "hint": { "ur": "گانے والی فائل چمکی — زبردست!", "en": "A glowing song file — zabardast!" } },
+        { "id": "b3", "x": 62, "y": 62, "art": "file-doc", "correct": true, "glow": true, "hint": { "ur": "کہانی والی فائل مل گئی!", "en": "You found a story file!" } },
+        { "id": "b4", "x": 86, "y": 70, "art": "file-img", "correct": true, "glow": true, "hint": { "ur": "آخری چمکتی فائل — کمال!", "en": "The last glowing file — amazing!" } }
+      ],
+      "winPraise": { "ur": "کمال! چار فائلیں بچا لیں!", "en": "Amazing! Four files rescued!" }
+    }
+  },
+  "cheer": {
+    "recap": [
+      { "ur": "فائل ایک ڈبہ ہے جو ایک چیز محفوظ رکھتی ہے۔", "en": "A file is a box that keeps one thing safe." },
+      { "ur": "تصویری فائل، گانے والی فائل، کہانی والی فائل — سب مل گئیں!", "en": "Picture file, song file, story file — all rescued!" }
+    ],
+    "recapAudio": ["w4l1_recap_1", "w4l1_recap_2"],
+    "rewardToast": { "ur": "گول مٹول کہتا ہے: شکریہ ہیرو! میوں!", "en": "Gol Matol says: thank you, hero! Meow!" }
+  }
+}

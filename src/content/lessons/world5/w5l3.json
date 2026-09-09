@@ -1,0 +1,73 @@
+{
+  "id": "w5l3",
+  "schemaVersion": 1,
+  "world": 5,
+  "order": 3,
+  "title": { "ur": "رنگوں کا جادو", "en": "The Magic of Colors" },
+  "skill": { "ur": "چھ ڈبے، چھ رنگ — ہر چیز کا اپنا رنگ", "en": "Six pots, six colors — everything has its own color" },
+  "skillKey": "six-color-magic",
+  "minutes": 6,
+  "praise": { "ur": "کمال! چھ رنگوں نے تمہارے ہاتھ جادو بنا دیے!", "en": "Kamaal! Six colors turned your hands into magic!" },
+  "story": {
+    "scenes": [
+      {
+        "bg": "bg-workshop",
+        "cast": ["bijli", "noor", "chotu", "golmatol"],
+        "lines": [
+          { "char": "narrator", "ur": "صبح ہو گئی۔ پینٹ اسٹوڈیو میں چھ رنگے ڈبے چمک رہے تھے۔", "en": "Morning came. Six color pots sparkled in the Paint Studio.", "audio": "w5l3_story_1" },
+          { "char": "chotu", "emote": "excited", "ur": "ایک، دو، تین… چھ! اتنے سارے رنگ!", "en": "One, two, three… six! So many colors!", "audio": "w5l3_story_2" },
+          { "char": "golmatol", "emote": "idle", "ur": "میاؤں!", "en": "Myaun!", "audio": "w5l3_story_3" }
+        ]
+      },
+      {
+        "bg": "bg-workshop",
+        "cast": ["bijli", "noor", "chotu", "golmatol"],
+        "lines": [
+          { "char": "narrator", "ur": "گول مٹول کی دُم پیلا رنگ میں ڈب گئی — فرش پر پیلا پنجے بن گئے!", "en": "Gol Matol's tail dipped into the yellow — yellow paw prints on the floor!", "audio": "w5l3_story_4" },
+          { "char": "bijli", "emote": "happy", "ur": "اوپس! مگر دیکھو — یہ تو پیلا جادو بن گیا! ہر چیز کا اپنا رنگ ہوتا ہے۔", "en": "Oops! But look — it turned into yellow magic! Everything has its own color.", "audio": "w5l3_story_5" },
+          { "char": "noor", "emote": "pointing", "ur": "سورج پیلا، پتے ہرے، آم نارنجی! چلو آم کا درخت رنگو!", "en": "The sun is yellow, leaves are green, mangoes are orange! Let's paint the mango tree!", "audio": "w5l3_story_6", "choice": { "ur": "ہاں! درخت رنگو!", "en": "Yes! Paint the tree!", "audio": "w5l3_story_6_choice" } }
+        ]
+      }
+    ]
+  },
+  "show": {
+    "steps": [
+      { "visual": "paint-bucket", "caption": { "ur": "چھ ڈبے — چھ جادوئی رنگ!", "en": "Six pots — six magic colors!" }, "audio": "w5l3_show_1" },
+      { "visual": "sun", "caption": { "ur": "سورج کو پیلا رنگ جچتا ہے۔", "en": "The sun loves yellow." }, "audio": "w5l3_show_2" },
+      { "visual": "mango", "caption": { "ur": "آم کو نارنجی — اور پتوں کو ہرا!", "en": "Mangoes love orange — and leaves love green!" }, "audio": "w5l3_show_3" }
+    ]
+  },
+  "do": {
+    "activity": {
+      "type": "paint-zones",
+      "prompt": { "ur": "آم کا درخت رنگو! ہر جگہ کا اپنا رنگ ہے۔", "en": "Paint the mango tree! Every place has its own color." },
+      "audio": "w5l3_do_prompt",
+      "palette": [
+        { "id": "yellow", "color": "#FDE047", "name": { "ur": "پیلا", "en": "Yellow" } },
+        { "id": "green", "color": "#22C55E", "name": { "ur": "ہرا", "en": "Green" } },
+        { "id": "sky", "color": "#38BDF8", "name": { "ur": "آسمانی", "en": "Sky blue" } },
+        { "id": "pink", "color": "#EC4899", "name": { "ur": "گلابی", "en": "Pink" } },
+        { "id": "brown", "color": "#C68B4E", "name": { "ur": "براؤن", "en": "Brown" } },
+        { "id": "orange", "color": "#F59E0B", "name": { "ur": "نارنجی", "en": "Orange" } }
+      ],
+      "zones": [
+        { "id": "sky-area", "x": 0, "y": 0, "w": 100, "h": 52, "colorId": "sky" },
+        { "id": "sun", "x": 8, "y": 8, "w": 16, "h": 16, "round": true, "colorId": "yellow" },
+        { "id": "ground", "x": 0, "y": 72, "w": 100, "h": 28, "colorId": "green" },
+        { "id": "tree-crown", "x": 58, "y": 22, "w": 34, "h": 28, "round": true, "colorId": "green" },
+        { "id": "tree-trunk", "x": 70, "y": 50, "w": 10, "h": 22, "colorId": "brown" },
+        { "id": "mango", "x": 30, "y": 56, "w": 14, "h": 14, "round": true, "colorId": "orange" }
+      ],
+      "wrongHint": { "ur": "اوپس! ایک بگ ملا! دوسرا ڈبہ چُنو اور دوبارہ رنگو!", "en": "Oops! A bug! Pick another pot and paint again!" },
+      "winPraise": { "ur": "کمال! تمہارا آم کا درخت جھوم رہا ہے — رنگوں کا جادو!", "en": "Kamaal! Your mango tree is dancing — the magic of colors!" }
+    }
+  },
+  "cheer": {
+    "recap": [
+      { "ur": "ہر چیز کا اپنا رنگ ہے — سورج پیلا، پتے ہرے۔", "en": "Everything has its own color — sun yellow, leaves green." },
+      { "ur": "چھ ڈبے، چھ رنگ — رنگ مل کر دنیا سجاتے ہیں۔", "en": "Six pots, six colors — colors dress up the world." }
+    ],
+    "recapAudio": ["w5l3_recap_1", "w5l3_recap_2"],
+    "rewardToast": { "ur": "گول مٹول کے پنجے بھی رنگ گئے!", "en": "Gol Matol's paws got colorful too!" }
+  }
+}

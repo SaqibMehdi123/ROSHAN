@@ -813,6 +813,244 @@ const ICONS: Record<string, React.ReactNode> = {
       <path d="M46 18 l4 -8 M56 22 l6 -6" stroke="#FDE047" strokeWidth="3.5" strokeLinecap="round" />
     </g>
   ),
+
+  /* ---- W4 Control City — files & folders ---- */
+  folder: (
+    <g>
+      <path d="M16 30 h26 l8 10 h34 a6 6 0 0 1 6 6 v34 a6 6 0 0 1 -6 6 H16 a6 6 0 0 1 -6 -6 V36 a6 6 0 0 1 6 -6 Z" fill="#60A5FA" stroke={INK} strokeWidth="3" />
+      <path d="M10 46 h80 v34 a6 6 0 0 1 -6 6 H16 a6 6 0 0 1 -6 -6 Z" fill="#93C5FD" stroke={INK} strokeWidth="3" />
+    </g>
+  ),
+  "folder-open": (
+    <g>
+      <path d="M16 30 h26 l8 10 h34 a6 6 0 0 1 6 6 v10 H12 V36 a6 6 0 0 1 4 -6 Z" fill="#60A5FA" stroke={INK} strokeWidth="3" />
+      <path d="M8 56 h78 l10 -6 -8 32 a6 6 0 0 1 -6 5 H16 a6 6 0 0 1 -6 -6 Z" fill="#BFDBFE" stroke={INK} strokeWidth="3" />
+      <rect x="30" y="60" width="18" height="14" rx="2" fill="#FFF8EC" stroke={INK} strokeWidth="2" />
+    </g>
+  ),
+  "file-doc": (
+    <g>
+      <path d="M28 12 h30 l16 16 v58 a4 4 0 0 1 -4 4 H28 a4 4 0 0 1 -4 -4 V16 a4 4 0 0 1 4 -4 Z" fill="#FFF8EC" stroke={INK} strokeWidth="3" />
+      <path d="M58 12 v16 h16" fill="none" stroke={INK} strokeWidth="3" />
+      <path d="M34 44 h32 M34 54 h32 M34 64 h22" stroke="#60A5FA" strokeWidth="4" strokeLinecap="round" />
+    </g>
+  ),
+  "file-img": (
+    <g>
+      <path d="M28 12 h30 l16 16 v58 a4 4 0 0 1 -4 4 H28 a4 4 0 0 1 -4 -4 V16 a4 4 0 0 1 4 -4 Z" fill="#FFF8EC" stroke={INK} strokeWidth="3" />
+      <path d="M58 12 v16 h16" fill="none" stroke={INK} strokeWidth="3" />
+      <circle cx="38" cy="42" r="5" fill="#FDE047" stroke="#F59E0B" strokeWidth="2" />
+      <path d="M30 74 l14 -16 10 10 8 -8 10 14 Z" fill="#22C55E" stroke="#16A34A" strokeWidth="2" />
+    </g>
+  ),
+  "file-song": (
+    <g>
+      <path d="M28 12 h30 l16 16 v58 a4 4 0 0 1 -4 4 H28 a4 4 0 0 1 -4 -4 V16 a4 4 0 0 1 4 -4 Z" fill="#FFF8EC" stroke={INK} strokeWidth="3" />
+      <path d="M58 12 v16 h16" fill="none" stroke={INK} strokeWidth="3" />
+      <path d="M46 68 v-20 l14 -4 v18" fill="none" stroke="#EC4899" strokeWidth="3.5" strokeLinecap="round" />
+      <circle cx="42" cy="68" r="5" fill="#EC4899" stroke={INK} strokeWidth="1.5" />
+      <circle cx="56" cy="62" r="5" fill="#EC4899" stroke={INK} strokeWidth="1.5" />
+    </g>
+  ),
+  "recycle-bin": (
+    <g>
+      <path d="M26 30 h48 l-5 52 a6 6 0 0 1 -6 5 H37 a6 6 0 0 1 -6 -5 Z" fill="#A7F3D0" stroke={INK} strokeWidth="3" />
+      <rect x="20" y="22" width="60" height="9" rx="4" fill="#22C55E" stroke={INK} strokeWidth="2.5" />
+      <path d="M40 14 h20 v8 h-20 Z" fill="#22C55E" stroke={INK} strokeWidth="2.5" />
+      <path d="M40 44 l-5 8 M44 44 l5 8 M52 46 l-8 12 M44 62 l10 -6" stroke="#059669" strokeWidth="3" strokeLinecap="round" fill="none" />
+    </g>
+  ),
+  "save-floppy": (
+    <g>
+      <rect x="18" y="18" width="64" height="64" rx="6" fill="#38BDF8" stroke={INK} strokeWidth="3" />
+      <rect x="32" y="18" width="30" height="26" rx="2" fill="#FFF8EC" stroke={INK} strokeWidth="2.5" />
+      <rect x="40" y="22" width="14" height="14" fill="#38BDF8" stroke={INK} strokeWidth="1.5" />
+      <rect x="28" y="56" width="44" height="24" rx="3" fill="#FFF8EC" stroke={INK} strokeWidth="2.5" />
+      <path d="M34 64 h30 M34 72 h22" stroke="#0284C7" strokeWidth="3" strokeLinecap="round" />
+    </g>
+  ),
+
+  /* ---- W5 Creative Workshop — paint tools ---- */
+  "paint-brush": (
+    <g>
+      <path d="M62 14 L78 30 44 60 34 50 Z" fill="#F59E0B" stroke={INK} strokeWidth="3" strokeLinejoin="round" />
+      <path d="M34 50 L44 60 q-2 12 -12 14 q-10 2 -18 -2 q6 -4 6 -12 q0 -10 12 -12 q6 -2 12 8 Z" fill="#4A3421" stroke={INK} strokeWidth="2.5" />
+      <path d="M26 66 q-6 10 -16 12" stroke="#EC4899" strokeWidth="4" strokeLinecap="round" fill="none" />
+    </g>
+  ),
+  "paint-bucket": (
+    <g>
+      <path d="M24 44 L52 20 82 48 54 74 Z" fill="#0D9488" stroke={INK} strokeWidth="3" strokeLinejoin="round" />
+      <path d="M24 44 L54 74 66 62" fill="none" stroke={INK} strokeWidth="3" />
+      <path d="M78 62 q6 8 0 14 q-6 -6 0 -14" fill="#38BDF8" stroke="#0284C7" strokeWidth="2" />
+      <circle cx="52" cy="46" r="7" fill="#FDE68A" stroke={INK} strokeWidth="2" />
+    </g>
+  ),
+  pencil: (
+    <g>
+      <path d="M26 74 L64 20 l14 10 -38 54 -18 6 Z" fill="#FDE68A" stroke={INK} strokeWidth="3" strokeLinejoin="round" />
+      <path d="M58 28 l14 10" stroke={INK} strokeWidth="3" />
+      <path d="M26 74 l-6 12 12 -5 Z" fill={INK} />
+    </g>
+  ),
+  "shape-star": (
+    <g>
+      <path d="M50 12 l10.5 22 24 3 -17.5 16.5 4.5 23.5 L50 65 28.5 77 33 53.5 15.5 37 39.5 34 Z" fill="#FDE047" stroke={INK} strokeWidth="3" strokeLinejoin="round" />
+    </g>
+  ),
+  "shape-heart": (
+    <g>
+      <path d="M50 80 C20 58 14 40 24 28 q12 -12 26 4 q14 -16 26 -4 q10 12 -2 30 q-8 12 -24 22 Z" fill="#EC4899" stroke={INK} strokeWidth="3" strokeLinejoin="round" />
+    </g>
+  ),
+  "undo-arrow": (
+    <g>
+      <path d="M30 38 a26 26 0 1 1 -8 40" fill="none" stroke="#0D9488" strokeWidth="8" strokeLinecap="round" />
+      <path d="M14 26 l4 26 24 -8 Z" fill="#0D9488" stroke={INK} strokeWidth="2" strokeLinejoin="round" />
+    </g>
+  ),
+  "text-tool": (
+    <g>
+      <path d="M20 22 h44 M42 22 v56 M30 78 h24" fill="none" stroke="#8B5CF6" strokeWidth="9" strokeLinecap="round" />
+    </g>
+  ),
+  easel: (
+    <g>
+      <path d="M28 84 L46 22 M72 84 L54 22 M50 40 v0" stroke="#8B5E3C" strokeWidth="5" strokeLinecap="round" />
+      <rect x="24" y="22" width="52" height="36" rx="3" fill="#FFF8EC" stroke={INK} strokeWidth="3" />
+      <circle cx="38" cy="34" r="5" fill="#FDE047" stroke="#F59E0B" strokeWidth="1.5" />
+      <path d="M30 52 l10 -10 8 6 8 -9 10 13 Z" fill="#22C55E" stroke="#16A34A" strokeWidth="1.5" />
+      <path d="M38 58 v26 M62 58 v26 M50 62 v22" stroke="#8B5E3C" strokeWidth="4" strokeLinecap="round" />
+    </g>
+  ),
+
+  /* ---- W6 Internet Bazaar — web & safety ---- */
+  "globe-net": (
+    <g>
+      <circle cx="50" cy="50" r="36" fill="#38BDF8" stroke={INK} strokeWidth="3" />
+      <ellipse cx="50" cy="50" rx="16" ry="36" fill="none" stroke="#FFF8EC" strokeWidth="3" />
+      <path d="M14 50 h72 M22 30 h56 M22 70 h56" fill="none" stroke="#FFF8EC" strokeWidth="3" />
+    </g>
+  ),
+  browser: (
+    <g>
+      <rect x="12" y="20" width="76" height="60" rx="8" fill="#FFF8EC" stroke={INK} strokeWidth="3" />
+      <path d="M12 36 h76" stroke={INK} strokeWidth="2.5" />
+      <circle cx="22" cy="28" r="3" fill="#EC4899" /><circle cx="32" cy="28" r="3" fill="#FDE047" /><circle cx="42" cy="28" r="3" fill="#22C55E" />
+      <path d="M20 46 h34 a4 4 0 0 1 4 4 v6 a4 4 0 0 1 -4 4 H20 a4 4 0 0 1 -4 -4 v-6 a4 4 0 0 1 4 -4 Z" fill="#93C5FD" stroke="#2563EB" strokeWidth="2" />
+      <rect x="60" y="48" width="20" height="12" rx="2" fill="#FDE68A" stroke="#B45309" strokeWidth="1.5" />
+      <path d="M20 70 h60 M20 76 h40" stroke="#C68B4E" strokeWidth="3" strokeLinecap="round" />
+    </g>
+  ),
+  "link-chain": (
+    <g>
+      <rect x="14" y="42" width="34" height="17" rx="9" transform="rotate(-35 31 50)" fill="none" stroke="#0D9488" strokeWidth="6" />
+      <rect x="52" y="42" width="34" height="17" rx="9" transform="rotate(-35 69 50)" fill="none" stroke="#F59E0B" strokeWidth="6" />
+      <rect x="38" y="42" width="24" height="17" rx="9" transform="rotate(-35 50 50)" fill="none" stroke={INK} strokeWidth="4" />
+    </g>
+  ),
+  "shield-safe": (
+    <g>
+      <path d="M50 10 L84 24 v22 q0 26 -34 44 Q16 72 16 46 V24 Z" fill="#22C55E" stroke={INK} strokeWidth="3" strokeLinejoin="round" />
+      <path d="M36 48 l10 10 20 -22" fill="none" stroke="#FFF8EC" strokeWidth="7" strokeLinecap="round" strokeLinejoin="round" />
+    </g>
+  ),
+  "key-password": (
+    <g>
+      <circle cx="32" cy="40" r="16" fill="none" stroke="#F59E0B" strokeWidth="8" />
+      <path d="M43 52 L74 82 M64 72 l10 -10 M70 78 l10 -10" stroke="#F59E0B" strokeWidth="8" strokeLinecap="round" />
+    </g>
+  ),
+  "letter-message": (
+    <g>
+      <rect x="14" y="26" width="72" height="48" rx="6" fill="#FFF8EC" stroke={INK} strokeWidth="3" />
+      <path d="M14 30 L50 56 86 30" fill="none" stroke={INK} strokeWidth="3" strokeLinejoin="round" />
+      <circle cx="72" cy="30" r="10" fill="#EC4899" stroke={INK} strokeWidth="2.5" />
+      <text x="72" y="34" fontSize="13" fontWeight="800" textAnchor="middle" fill="#FFF" fontFamily="Arial">!</text>
+    </g>
+  ),
+  "bazaar-stall": (
+    <g>
+      <rect x="16" y="42" width="68" height="42" rx="3" fill="#F59E0B" stroke={INK} strokeWidth="3" />
+      {[0, 1, 2, 3].map((s) => (
+        <path key={s} d={`M${16 + s * 17} 22 h17 v12 q-8.5 8 -17 0 Z`} fill={s % 2 ? "#0D9488" : "#FFF8EC"} stroke={INK} strokeWidth="2" />
+      ))}
+      <rect x="16" y="20" width="68" height="5" fill="#8B5E3C" />
+      <path d="M24 42 v42 M76 42 v42" stroke="#8B5E3C" strokeWidth="4" />
+      <circle cx="38" cy="56" r="6" fill="#EC4899" stroke={INK} strokeWidth="1.5" />
+      <rect x="52" y="50" width="16" height="12" rx="2" fill="#38BDF8" stroke={INK} strokeWidth="1.5" />
+      <path d="M24 74 h52" stroke="#8B5E3C" strokeWidth="2" />
+    </g>
+  ),
+
+  /* ---- W7 Logic Jungle — thinking ---- */
+  "pattern-blocks": (
+    <g>
+      <rect x="12" y="38" width="20" height="20" rx="4" fill="#F59E0B" stroke={INK} strokeWidth="2.5" />
+      <circle cx="47" cy="48" r="10" fill="#0D9488" stroke={INK} strokeWidth="2.5" />
+      <rect x="62" y="38" width="20" height="20" rx="4" fill="#F59E0B" stroke={INK} strokeWidth="2.5" />
+      <path d="M86 40 l6 8 -6 8 -6 -8 Z" fill="#EC4899" stroke={INK} strokeWidth="2" />
+      <text x="50" y="82" fontSize="22" fontWeight="800" textAnchor="middle" fill={INK} fontFamily="Arial">?</text>
+    </g>
+  ),
+  "loop-arrow": (
+    <g>
+      <path d="M28 62 a24 24 0 1 1 44 0 q-6 14 -22 14" fill="none" stroke="#8B5CF6" strokeWidth="8" strokeLinecap="round" />
+      <path d="M42 66 l-14 12 4 -20 Z" fill="#8B5CF6" stroke={INK} strokeWidth="2" strokeLinejoin="round" />
+    </g>
+  ),
+  "if-fork": (
+    <g>
+      <path d="M50 16 v18 M50 34 q0 8 -14 12 L22 54 M50 34 q0 8 14 12 L78 54" fill="none" stroke="#0D9488" strokeWidth="6" strokeLinecap="round" />
+      <circle cx="50" cy="20" r="8" fill="#FDE047" stroke={INK} strokeWidth="2.5" />
+      <text x="50" y="24" fontSize="10" fontWeight="800" textAnchor="middle" fill={INK} fontFamily="Arial">?</text>
+      <rect x="8" y="56" width="26" height="18" rx="4" fill="#22C55E" stroke={INK} strokeWidth="2.5" />
+      <rect x="66" y="56" width="26" height="18" rx="4" fill="#EC4899" stroke={INK} strokeWidth="2.5" />
+    </g>
+  ),
+  "glitch-bug": (
+    <g>
+      <ellipse cx="50" cy="56" rx="20" ry="16" fill="#F472B6" stroke={INK} strokeWidth="3" />
+      <circle cx="50" cy="34" r="10" fill="#F472B6" stroke={INK} strokeWidth="3" />
+      <path d="M36 48 l-12 -8 M64 48 l12 -8 M34 60 h-14 M66 60 h14 M38 70 l-10 10 M62 70 l10 10" stroke={INK} strokeWidth="3" strokeLinecap="round" />
+      <path d="M44 32 l4 4 8 -8" stroke="#FFF8EC" strokeWidth="3" fill="none" strokeLinecap="round" />
+    </g>
+  ),
+
+  /* ---- W8 Story Mountain — block coding ---- */
+  "block-cmd": (
+    <g>
+      <rect x="10" y="32" width="80" height="32" rx="10" fill="#F59E0B" stroke={INK} strokeWidth="3" />
+      <rect x="10" y="58" width="10" height="8" rx="2" fill="#B45309" />
+      <circle cx="28" cy="48" r="8" fill="#FFF8EC" stroke={INK} strokeWidth="2" />
+      <path d="M26 48 l4 -3 v6 Z" fill={INK} />
+      <path d="M44 44 h34 M44 52 h24" stroke="#FFF8EC" strokeWidth="5" strokeLinecap="round" />
+    </g>
+  ),
+  "block-loop": (
+    <g>
+      <rect x="10" y="32" width="80" height="32" rx="10" fill="#8B5CF6" stroke={INK} strokeWidth="3" />
+      <path d="M32 48 a14 14 0 1 1 6 12" fill="none" stroke="#FFF8EC" strokeWidth="5" strokeLinecap="round" />
+      <path d="M32 40 l-6 10 12 2 Z" fill="#FFF8EC" />
+      <path d="M62 44 h18 M62 52 h12" stroke="#EDE9FE" strokeWidth="5" strokeLinecap="round" />
+    </g>
+  ),
+  "block-flag": (
+    <g>
+      <rect x="10" y="32" width="80" height="32" rx="10" fill="#22C55E" stroke={INK} strokeWidth="3" />
+      <path d="M30 40 v18" stroke={INK} strokeWidth="3" strokeLinecap="round" />
+      <path d="M30 40 h16 l-5 5 5 5 h-16" fill="#FFF8EC" stroke={INK} strokeWidth="1.5" />
+      <path d="M56 44 h24 M56 52 h16" stroke="#DCFCE7" strokeWidth="5" strokeLinecap="round" />
+    </g>
+  ),
+  rocket: (
+    <g>
+      <path d="M50 8 q16 14 16 40 l-6 14 h-20 l-6 -14 q0 -26 16 -40 Z" fill="#FFF8EC" stroke={INK} strokeWidth="3" strokeLinejoin="round" />
+      <circle cx="50" cy="36" r="8" fill="#38BDF8" stroke={INK} strokeWidth="2.5" />
+      <path d="M30 56 l-10 16 16 -6 Z M70 56 l10 16 -16 -6 Z" fill="#EC4899" stroke={INK} strokeWidth="2.5" strokeLinejoin="round" />
+      <path d="M44 64 q6 14 6 22 q0 -8 6 -22" fill="#F59E0B" stroke="#B45309" strokeWidth="2" />
+    </g>
+  ),
 };
 
 /* SHOW-phase & medal visual aliases (must run after ICONS is initialized) */
@@ -971,6 +1209,132 @@ const SCENES: Record<string, React.ReactNode> = {
       <circle cx="200" cy="52" r="5" fill="#FFF8EC" />
       {/* carpet path */}
       <path d="M120 225 q80 -20 160 0" fill="none" stroke="#8B5CF6" strokeWidth="10" strokeLinecap="round" opacity="0.5" />
+    </g>
+  ),
+  /* ---- W4 Control City scenes ---- */
+  "bg-city": (
+    <g>
+      <rect width="400" height="225" fill="#DBEEFB" />
+      <circle cx="340" cy="38" r="20" fill="#FDE047" stroke="#F59E0B" strokeWidth="3" />
+      <ellipse cx="90" cy="40" rx="32" ry="12" fill="#FFFFFF" opacity="0.9" />
+      <rect x="0" y="176" width="400" height="49" fill="#93C5FD" />
+      <rect x="0" y="176" width="400" height="7" fill="#60A5FA" />
+      {/* folder-shaped buildings */}
+      <rect x="24" y="96" width="72" height="80" rx="6" fill="#60A5FA" stroke="#2563EB" strokeWidth="2.5" />
+      <path d="M24 96 h28 l8 12 h-36 Z" fill="#3B82F6" />
+      {[0, 1, 2].map((r) => [0, 1].map((c) => (
+        <rect key={`${r}${c}`} x={36 + c * 26} y={112 + r * 20} width="16" height="12" rx="2" fill="#FFF8EC" stroke="#2563EB" strokeWidth="1.5" />
+      )))}
+      <rect x="150" y="76" width="86" height="100" rx="6" fill="#38BDF8" stroke="#0284C7" strokeWidth="2.5" />
+      <path d="M150 76 h32 l9 12 h-41 Z" fill="#0EA5E9" />
+      {[0, 1, 2].map((r) => [0, 1, 2].map((c) => (
+        <rect key={`${r}${c}`} x={162 + c * 22} y={94 + r * 22} width="14" height="12" rx="2" fill="#FFF8EC" stroke="#0284C7" strokeWidth="1.5" />
+      )))}
+      <rect x="292" y="106" width="76" height="70" rx="6" fill="#7DD3FC" stroke="#0369A1" strokeWidth="2.5" />
+      <path d="M292 106 h26 l8 12 h-34 Z" fill="#0EA5E9" />
+      {[0, 1].map((r) => [0, 1].map((c) => (
+        <rect key={`${r}${c}`} x={304 + c * 26} y={122 + r * 22} width="16" height="12" rx="2" fill="#FFF8EC" stroke="#0369A1" strokeWidth="1.5" />
+      )))}
+      {/* flag on the tall tower */}
+      <path d="M193 76 v-16 h20 l-6 6 6 6 h-20" fill="#F59E0B" stroke="#B45309" strokeWidth="1.5" />
+    </g>
+  ),
+  /* ---- W5 Creative Workshop scenes ---- */
+  "bg-workshop": (
+    <g>
+      <rect width="400" height="225" fill="#FFF0F6" />
+      <rect x="0" y="174" width="400" height="51" fill="#F9C9DC" />
+      {/* bunting */}
+      {[0, 1, 2, 3, 4, 5, 6].map((i) => (
+        <path key={i} d={`M${10 + i * 56} 22 l28 0 l-14 18 Z`} fill={["#F59E0B", "#0D9488", "#EC4899", "#38BDF8", "#22C55E", "#8B5CF6", "#FDE68A"][i]} stroke="#4A3421" strokeWidth="1" />
+      ))}
+      <path d="M10 22 H398" stroke="#D9A2BC" strokeWidth="2.5" />
+      {/* easel with a painting */}
+      <path d="M70 170 l24 -84 M142 170 l-24 -84 M96 120 h20" stroke="#8B5E3C" strokeWidth="6" strokeLinecap="round" />
+      <rect x="66" y="104" width="80" height="58" rx="4" fill="#FFF8EC" stroke={INK} strokeWidth="3" />
+      <circle cx="90" cy="126" r="10" fill="#FDE047" stroke="#F59E0B" strokeWidth="2" />
+      <path d="M80 150 q18 -18 36 0" fill="#22C55E" stroke="#16A34A" strokeWidth="2" />
+      {/* ferris wheel far away */}
+      <circle cx="316" cy="96" r="34" fill="none" stroke="#EC4899" strokeWidth="4" />
+      {[0, 45, 90, 135].map((a) => (
+        <line key={a} x1={316 - 30 * Math.cos((a * Math.PI) / 180)} y1={96 - 30 * Math.sin((a * Math.PI) / 180)} x2={316 + 30 * Math.cos((a * Math.PI) / 180)} y2={96 + 30 * Math.sin((a * Math.PI) / 180)} stroke="#F9A8D4" strokeWidth="3" />
+      ))}
+      {[[286, 96], [346, 96], [316, 66], [316, 126], [295, 75], [337, 117], [337, 75], [295, 117]].map(([x, y], i) => (
+        <circle key={i} cx={x} cy={y} r="6" fill={["#F59E0B", "#0D9488", "#38BDF8", "#22C55E"][i % 4]} stroke="#4A3421" strokeWidth="1.2" />
+      ))}
+      <path d="M282 170 h68" stroke="#8B5E3C" strokeWidth="6" strokeLinecap="round" />
+    </g>
+  ),
+  /* ---- W6 Internet Bazaar scenes ---- */
+  "bg-bazaar": (
+    <g>
+      <rect width="400" height="225" fill="#FFF7E0" />
+      <circle cx="56" cy="36" r="18" fill="#FDE047" stroke="#F59E0B" strokeWidth="3" />
+      <rect x="0" y="178" width="400" height="47" fill="#E4D0A5" />
+      {/* striped awning stalls */}
+      {[20, 160, 300].map((x, i) => (
+        <g key={i}>
+          <rect x={x} y="52" width="80" height="10" rx="3" fill="#8B5E3C" />
+          {[0, 1, 2, 3].map((s) => (
+            <path key={s} d={`M${x + s * 20} 62 h20 v12 q-10 8 -20 0 Z`} fill={s % 2 ? "#0D9488" : "#FFF8EC"} stroke="#0F766E" strokeWidth="1.5" />
+          ))}
+          <rect x={x + 6} y="86" width="68" height="56" rx="4" fill={["#38BDF8", "#EC4899", "#22C55E"][i]} stroke="#4A3421" strokeWidth="2" />
+          <rect x={x + 14} y="96" width="52" height="20" rx="2" fill="#FFF8EC" stroke="#4A3421" strokeWidth="1.5" />
+          <rect x={x + 6} y="142" width="68" height="36" fill={["#0EA5E9", "#DB2777", "#16A34A"][i]} stroke="#4A3421" strokeWidth="2" />
+        </g>
+      ))}
+      {/* hanging lanterns */}
+      {[100, 200, 260].map((x, i) => (
+        <g key={i}>
+          <path d={`M${x} 22 v18`} stroke="#8B5E3C" strokeWidth="2" />
+          <path d={`M${x - 7} 40 h14 l-3 12 h-8 Z`} fill="#F59E0B" stroke="#B45309" strokeWidth="1.5" />
+        </g>
+      ))}
+    </g>
+  ),
+  /* ---- W7 Logic Jungle scenes ---- */
+  "bg-jungle": (
+    <g>
+      <rect width="400" height="225" fill="#E8F7E4" />
+      <circle cx="330" cy="42" r="20" fill="#FDE047" stroke="#F59E0B" strokeWidth="3" />
+      <rect x="0" y="172" width="400" height="53" fill="#5EA345" />
+      {/* layered canopy */}
+      <circle cx="60" cy="90" r="34" fill="#22C55E" stroke="#15803D" strokeWidth="2.5" />
+      <circle cx="92" cy="110" r="24" fill="#16A34A" stroke="#15803D" strokeWidth="2.5" />
+      <circle cx="352" cy="86" r="30" fill="#22C55E" stroke="#15803D" strokeWidth="2.5" />
+      <circle cx="318" cy="112" r="22" fill="#16A34A" stroke="#15803D" strokeWidth="2.5" />
+      {/* vines */}
+      <path d="M130 0 q14 34 2 66 M150 0 q-10 40 6 74" stroke="#15803D" strokeWidth="3" fill="none" strokeLinecap="round" />
+      {/* thinking gems on the path */}
+      {[[180, 186], [238, 176], [292, 190]].map(([x, y], i) => (
+        <path key={i} d={`M${x} ${y - 9} l9 6 l-9 12 l-9 -12 Z`} fill={["#38BDF8", "#A78BFA", "#F472B6"][i]} stroke="#4A3421" strokeWidth="2" />
+      ))}
+      {/* fireflies */}
+      {[[110, 140], [206, 128], [268, 150], [340, 140]].map(([x, y], i) => (
+        <circle key={i} cx={x} cy={y} r="3.5" fill="#FDE68A" stroke="#F59E0B" strokeWidth="1.2" />
+      ))}
+    </g>
+  ),
+  /* ---- W8 Story Mountain scenes ---- */
+  "bg-mountain": (
+    <g>
+      <rect width="400" height="225" fill="#E3F2FD" />
+      <circle cx="66" cy="40" r="20" fill="#FDE047" stroke="#F59E0B" strokeWidth="3" />
+      <ellipse cx="250" cy="46" rx="36" ry="12" fill="#FFFFFF" opacity="0.9" />
+      {/* far peak */}
+      <path d="M180 178 L268 60 L356 178 Z" fill="#B8CFF2" stroke="#8FB0E0" strokeWidth="2" />
+      {/* main peak with snow cap */}
+      <path d="M60 180 L180 34 L300 180 Z" fill="#94A9D6" stroke="#6480B8" strokeWidth="2.5" />
+      <path d="M154 66 L180 34 L206 66 L192 78 L180 62 L168 78 Z" fill="#FFFFFF" stroke="#D7E4F7" strokeWidth="2" />
+      {/* summit flag */}
+      <path d="M180 34 v-18" stroke="#8B5E3C" strokeWidth="3" />
+      <path d="M180 16 h22 l-7 7 7 7 h-22" fill="#F59E0B" stroke="#B45309" strokeWidth="1.5" />
+      {/* winding climb path with story stars */}
+      <path d="M30 200 Q120 176 150 148 T240 108 Q300 84 332 64" fill="none" stroke="#FDE68A" strokeWidth="7" strokeLinecap="round" opacity="0.9" />
+      {[[110, 178], [190, 128], [268, 96], [326, 62]].map(([x, y], i) => (
+        <path key={i} d={`M${x} ${y - 8} l2.6 5.4 6 .7 -4.4 4.1 1.2 5.8 -5.4 -3 -5.4 3 1.2 -5.8 -4.4 -4.1 6 -.7 Z`} fill="#F59E0B" stroke="#B45309" strokeWidth="1.2" />
+      ))}
+      <rect x="0" y="196" width="400" height="29" fill="#7DB05C" />
     </g>
   ),
 };

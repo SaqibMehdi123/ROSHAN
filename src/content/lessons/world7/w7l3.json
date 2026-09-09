@@ -1,0 +1,57 @@
+{
+  "id": "w7l3",
+  "schemaVersion": 1,
+  "world": 7,
+  "order": 3,
+  "title": { "ur": "چائے کی ترتیب", "en": "The Chai Recipe" },
+  "skill": { "ur": "ترتیب والا کام: چائے قدم بہ قدم بنتی ہے", "en": "A step-by-step job: chai is made in order" },
+  "skillKey": "algorithm-chai",
+  "minutes": 7,
+  "praise": { "ur": "کمال! چائے کی ترتیب مکمل — اُستاد اُلوو خوش!", "en": "Kamaal! Chai recipe complete — Ustaad Ulloo is happy!" },
+  "story": {
+    "scenes": [
+      {
+        "bg": "bg-courtyard",
+        "cast": ["ustad-ullo", "noor", "chotu", "golmatol"],
+        "lines": [
+          { "char": "narrator", "ur": "آنگن میں چائے کی مہک پھیلی — اُستاد اُلوو چائے کے وقت پر بیٹھے تھے۔", "en": "The scent of chai floated through the courtyard — Ustaad Ulloo sat down for chai time.", "audio": "w7l3_story_1" },
+          { "char": "ustad-ullo", "emote": "perch", "ur": "چائے ایک ترتیب والا کام ہے — قدم بہ قدم، سہی ترتیب سے!", "en": "Chai is a step-by-step job — step by step, in the right order!", "audio": "w7l3_story_2" },
+          { "char": "golmatol", "emote": "guilty", "ur": "میاؤں! میں نے سارے قدم ملا دیے — اب کیا پہلے، کیا بعد میں؟", "en": "Meow! I mixed all the steps — what comes first, what comes after?", "audio": "w7l3_story_3" },
+          { "char": "noor", "emote": "pointing", "ur": "پہلے کیتلی میں پانی گرم کرو، پھر چائے ڈالو۔", "en": "First warm the water in the kettle, then pour the chai.", "audio": "w7l3_story_4" },
+          { "char": "chotu", "emote": "playful", "ur": "پھر ٹھنڈا ہونے دو — گھڑی دیکھو! اور آخر میں… مزہ!", "en": "Then let it cool — watch the clock! And last… party time!", "audio": "w7l3_story_5" },
+          { "char": "narrator", "ur": "کیا تم اُستاد اُلوو کی چائے کی ترتیب مکمل کرو گے؟", "en": "Will you finish Ustaad Ulloo's chai recipe?", "audio": "w7l3_story_6", "choice": { "ur": "چائے بناؤ!", "en": "Make the chai!", "audio": "w7l3_story_6_choice" } }
+        ]
+      }
+    ]
+  },
+  "show": {
+    "steps": [
+      { "visual": "kettle", "caption": { "ur": "پہلا قدم: پانی گرم کرو۔", "en": "Step 1: Warm the water." }, "audio": "w7l3_show_1" },
+      { "visual": "chai-cup", "caption": { "ur": "دوسرا قدم: چائے ڈالو۔", "en": "Step 2: Pour the chai." }, "audio": "w7l3_show_2" },
+      { "visual": "watch", "caption": { "ur": "تیسرا قدم: ٹھنڈا ہونے دو — پھر پارٹی!", "en": "Step 3: Let it cool — then party!" }, "audio": "w7l3_show_3" }
+    ]
+  },
+  "do": {
+    "activity": {
+      "type": "tap-sequence",
+      "prompt": { "ur": "چائے کی ترتیب — چار قدم صحیح جگہ دباؤ!", "en": "The chai recipe — tap the four steps in the right order!" },
+      "audio": "w7l3_do_prompt",
+      "steps": [
+        { "id": "kettle", "art": "kettle", "label": { "ur": "پانی گرم کرو", "en": "Warm the water" }, "audio": "w7l3_step_1" },
+        { "id": "chai", "art": "chai-cup", "label": { "ur": "چائے ڈالو", "en": "Pour the chai" }, "audio": "w7l3_step_2" },
+        { "id": "cool", "art": "watch", "label": { "ur": "ٹھنڈا ہونے دو", "en": "Let it cool" }, "audio": "w7l3_step_3" },
+        { "id": "party", "art": "block-flag", "label": { "ur": "مزہ! تیار!", "en": "Yay! Ready!" }, "audio": "w7l3_step_4" }
+      ],
+      "order": ["kettle", "chai", "cool", "party"],
+      "wrongHint": { "ur": "اوپس! ایک بگ ملا! دوبارہ سوچو — سب سے پہلے کیتلی!", "en": "Oops! A bug! Think again — the kettle comes first!" }
+    }
+  },
+  "cheer": {
+    "recap": [
+      { "ur": "چائے کی ترتیب: کیتلی، چائے، انتظار، پارٹی!", "en": "The chai recipe: kettle, chai, wait, party!" },
+      { "ur": "ہر کام قدم بہ قدم ہوتا ہے۔", "en": "Every job goes step by step." }
+    ],
+    "recapAudio": ["w7l3_recap_1", "w7l3_recap_2"],
+    "rewardToast": { "ur": "تیسرا سوچنے کا جواہر مل گیا — چائے مزیدار!", "en": "Third Thinking Gem won — chai time!" }
+  }
+}

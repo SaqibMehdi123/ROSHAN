@@ -1,0 +1,137 @@
+{
+  "id": "w6l3",
+  "schemaVersion": 1,
+  "world": 6,
+  "order": 3,
+  "title": { "ur": "براؤزر کے تین دوست", "en": "The Browser's Three Friends" },
+  "skill": { "ur": "براؤزر کے حصے: ایڈریس بار (نام پلیٹ)، واپسی بٹن، صفحہ", "en": "Browser parts: address bar (name-plate), back button, page" },
+  "skillKey": "browser-parts",
+  "minutes": 6,
+  "praise": { "ur": "شاباش! براؤزر کے تینوں دوست اپنی جگہ پر — کمال!", "en": "Shabash! All three browser friends in their places — kamaal!" },
+  "story": {
+    "scenes": [
+      {
+        "bg": "bg-lab",
+        "cast": ["noor", "chotu", "bijli", "ustad-ullo"],
+        "lines": [
+          {
+            "char": "narrator",
+            "ur": "بجلی نے براؤزر کھولا — ایک جادوئی کھڑکی کھل گئی۔",
+            "en": "Bijli opened the browser — a magic window opened up.",
+            "audio": "w6l3_story_1"
+          },
+          {
+            "char": "bijli",
+            "emote": "waving",
+            "ur": "بیپ! براؤزر کے تین دوست ہیں — ایڈریس بار، واپسی بٹن، اور صفحہ!",
+            "en": "Beep! The browser has three friends — the address bar, the back button, and the page!",
+            "audio": "w6l3_story_2"
+          },
+          {
+            "char": "noor",
+            "emote": "pointing",
+            "ur": "اوپر کی لمبی پٹی؟ وہ ایڈریس بار ہے — اسٹال کی نام پلیٹ!",
+            "en": "The long strip on top? That's the address bar — the stall's name-plate!",
+            "audio": "w6l3_story_3"
+          },
+          {
+            "char": "chotu",
+            "emote": "surprised",
+            "ur": "اور یہ تیر والا بٹن؟",
+            "en": "And this arrow button?",
+            "audio": "w6l3_story_4"
+          },
+          {
+            "char": "bijli",
+            "emote": "happy",
+            "ur": "یہ واپسی بٹن — پچھلے اسٹال لوٹنے کا دروازہ! اور صفحہ وہ ہے جو تم دیکھتے ہو۔",
+            "en": "That's the back button — the door back to the last stall! And the page is what you see.",
+            "audio": "w6l3_story_5"
+          },
+          {
+            "char": "narrator",
+            "ur": "چلو، تینوں دوستوں کو اپنی جگہ لگائیں!",
+            "en": "Let's put the three friends in their places!",
+            "audio": "w6l3_story_6",
+            "choice": { "ur": "ہاں! دوست جوڑیں!", "en": "Yes! Match the friends!", "audio": "w6l3_story_6_choice" }
+          }
+        ]
+      }
+    ]
+  },
+  "show": {
+    "steps": [
+      {
+        "visual": "browser",
+        "caption": { "ur": "براؤزر کھڑکی — انٹرنیٹ بازار میں جانے کا راستہ۔", "en": "The browser window — your way into the Internet Bazaar." },
+        "audio": "w6l3_show_1"
+      },
+      {
+        "visual": "globe-net",
+        "caption": { "ur": "ایڈریس بار اوپر ہوتا ہے — وہاں اسٹال کا ایڈریس لکھا ہوتا ہے۔", "en": "The address bar sits on top — the stall's address is written there." },
+        "audio": "w6l3_show_2"
+      },
+      {
+        "visual": "monitor",
+        "caption": { "ur": "صفحہ = اسٹال کا سامان جو سامنے کھلتا ہے۔ واپسی بٹن پیچھے لے جاتا ہے۔", "en": "The page = the stall's goods open in front of you. The back button takes you back." },
+        "audio": "w6l3_show_3"
+      }
+    ]
+  },
+  "do": {
+    "activity": {
+      "type": "match-slots",
+      "prompt": { "ur": "ہر چیز اپنی جگہ پر رکھو — براؤزر کے تین دوست!", "en": "Put each thing in its place — the browser's three friends!" },
+      "audio": "w6l3_do_prompt",
+      "items": [
+        {
+          "id": "key-password",
+          "art": "key-password",
+          "name": { "ur": "پاس ورڈ", "en": "Password" }
+        },
+        {
+          "id": "globe-net",
+          "art": "globe-net",
+          "name": { "ur": "ایڈریس", "en": "Address" }
+        },
+        {
+          "id": "link-chain",
+          "art": "link-chain",
+          "name": { "ur": "لنک", "en": "Link" }
+        }
+      ],
+      "slots": [
+        {
+          "id": "address-slot",
+          "accepts": "globe-net",
+          "art": "browser",
+          "label": { "ur": "ایڈریس بار — اسٹال کی نام پلیٹ", "en": "Address bar — the stall's name-plate" },
+          "success": { "ur": "بیپ! براؤزر کو پتہ چل گیا کہ کس اسٹال جانا ہے!", "en": "Beep! Now the browser knows which stall to visit!" }
+        },
+        {
+          "id": "lock-slot",
+          "accepts": "key-password",
+          "art": "shield-safe",
+          "label": { "ur": "تالا — پاس ورڈ یہاں چھپتا ہے", "en": "The lock — where the password hides" },
+          "success": { "ur": "پاس ورڈ تالے میں محفوظ — یہ صرف تمہاری چابی ہے!", "en": "The password is safe in the lock — it is your only key!" }
+        },
+        {
+          "id": "door-slot",
+          "accepts": "link-chain",
+          "art": "link-chain",
+          "label": { "ur": "لنک — دوسرے اسٹال کا دروازہ", "en": "The link — a door to another stall" },
+          "success": { "ur": "لنک دباؤ — اور دوسرا اسٹال کھل جاتا ہے!", "en": "Tap a link — and another stall opens!" }
+        }
+      ],
+      "wrongHint": { "ur": "اوپس! ایک بگ! دوسری جگہ آزماؤ — ہر دوست کی اپنی جگہ ہے۔", "en": "Oops! A bug! Try another spot — every friend has its own place." }
+    }
+  },
+  "cheer": {
+    "recap": [
+      { "ur": "ایڈریس بار، واپسی بٹن، صفحہ — براؤزر کے تین دوست۔", "en": "Address bar, back button, page — the browser's three friends." },
+      { "ur": "پاس ورڈ تالے میں، لنک دوسرے اسٹال کا دروازہ — یاد رکھو!", "en": "The password lives in the lock, the link opens another stall — remember!" }
+    ],
+    "recapAudio": ["w6l3_recap_1", "w6l3_recap_2"],
+    "rewardToast": { "ur": "اُستاد اُلوو کہتے ہیں: ہو ہو! اب براؤزر تمہارا دوست ہے!", "en": "Ustaad Ulloo says: hoo hoo! The browser is your friend now!" }
+  }
+}

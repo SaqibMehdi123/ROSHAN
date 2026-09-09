@@ -1,0 +1,59 @@
+{
+  "id": "w7l7",
+  "schemaVersion": 1,
+  "world": 7,
+  "order": 7,
+  "title": { "ur": "لوپ — بار بار کا جادو", "en": "Loop — The Repeat Magic" },
+  "skill": { "ur": "لوپ: بار بار والا کام ایک بلاک سے", "en": "Loops: a repeating job done with one block" },
+  "skillKey": "loops",
+  "minutes": 6,
+  "praise": { "ur": "کمال! تم لوپ کے جادوگر ہو!", "en": "Kamaal! You are a loop wizard!" },
+  "story": {
+    "scenes": [
+      {
+        "bg": "bg-jungle",
+        "cast": ["bijli", "noor", "chotu"],
+        "lines": [
+          { "char": "narrator", "ur": "بجلی جنگل میں بار بار جمپ لگا لگا کر تھک گیا۔", "en": "Bijli got tired from jumping again and again in the jungle.", "audio": "w7l7_story_1" },
+          { "char": "bijli", "emote": "short-circuit", "ur": "بیپ… جمپ، جمپ، جمپ، جمپ… کتنا لمبا کام!", "en": "Beep… jump, jump, jump, jump… what a long job!", "audio": "w7l7_story_2" },
+          { "char": "noor", "emote": "thinking", "ur": "رکو! بار بار والے کام کے لیے لوپ ہوتا ہے — ایک بلاک، بار بار!", "en": "Stop! A repeating job needs a loop — one block, many times!", "audio": "w7l7_story_3" },
+          { "char": "bijli", "emote": "happy", "ur": "لوپ بلاک! ایک بار لکھو، جمپ خود دہرائے گا — کمال!", "en": "The loop block! Write it once and the jumps repeat themselves — amazing!", "audio": "w7l7_story_4" },
+          { "char": "chotu", "emote": "celebrating", "ur": "لوپ جادو ہے — کم وقت میں پورا کام!", "en": "Loops are magic — the whole job in less time!", "audio": "w7l7_story_5" },
+          { "char": "narrator", "ur": "کیا تم بجلی کے لیے لوپ تلاش کرو گے؟", "en": "Will you find the loops for Bijli?", "audio": "w7l7_story_6", "choice": { "ur": "لوپ تلاش کرو!", "en": "Find the loop!", "audio": "w7l7_story_6_choice" } }
+        ]
+      }
+    ]
+  },
+  "show": {
+    "steps": [
+      { "visual": "block-cmd", "caption": { "ur": "ایک ایک قدم لکھنا لمبا کام ہے۔", "en": "Writing one step at a time is a long job." }, "audio": "w7l7_show_1" },
+      { "visual": "block-loop", "caption": { "ur": "لوپ: ایک قدم، بار بار!", "en": "Loop: one step, many times!" }, "audio": "w7l7_show_2" },
+      { "visual": "loop-arrow", "caption": { "ur": "جمپ… جمپ… جمپ — لوپ خود دہراتا ہے!", "en": "Jump… jump… jump — the loop repeats by itself!" }, "audio": "w7l7_show_3" }
+    ]
+  },
+  "do": {
+    "activity": {
+      "type": "tap-select",
+      "prompt": { "ur": "جمپ کے لیے لوپ بلاک تلاش کرو — لوپوں پر تھپکی!", "en": "Find the loop blocks for jumping — tap the loops!" },
+      "audio": "w7l7_do_prompt",
+      "scene": "bg-jungle",
+      "cursorArt": "teer",
+      "items": [
+        { "id": "lp1", "x": 10, "y": 64, "art": "loop-arrow", "correct": true, "hint": { "ur": "ہاں! لوپ ملا — ایک بار سیٹ کرو، بار بار جمپ!", "en": "Yes! A loop! Set it once, jump again and again!" } },
+        { "id": "j1", "x": 30, "y": 72, "art": "ball", "correct": false, "hint": { "ur": "ایک ایک کرنا لمبا کام! لوپ استعمال کرو۔", "en": "One by one is a long job! Use a loop." } },
+        { "id": "lp2", "x": 50, "y": 58, "art": "loop-arrow", "correct": true, "hint": { "ur": "زبردست! دوسرا لوپ — بجلی خوش!", "en": "Zabardast! Another loop — Bijli is happy!" } },
+        { "id": "j2", "x": 70, "y": 74, "art": "yoyo", "correct": false, "hint": { "ur": "یہ ایک اکیلا قدم ہے — لوپ پہچانو!", "en": "This is one single step — spot the loop!" } },
+        { "id": "j3", "x": 90, "y": 62, "art": "star", "correct": false, "hint": { "ur": "یہ بھی ایک قدم ہے — بار بار والا بلاک چاہیے!", "en": "This is one step too — we need the repeat block!" } }
+      ],
+      "winPraise": { "ur": "لوپ ماسٹر! بجلی جمپ جمپ خوش ہے!", "en": "Loop master! Bijli is jumping with joy!" }
+    }
+  },
+  "cheer": {
+    "recap": [
+      { "ur": "لوپ = ایک قدم، بار بار۔", "en": "Loop = one step, many times." },
+      { "ur": "لمبے کام کو لوپ سے جلدی کرو!", "en": "Make long jobs quick with loops!" }
+    ],
+    "recapAudio": ["w7l7_recap_1", "w7l7_recap_2"],
+    "rewardToast": { "ur": "ساتواں سوچنے کا جواہر مل گیا — لوپ جادو!", "en": "Seventh Thinking Gem won — loop magic!" }
+  }
+}

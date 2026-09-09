@@ -1,0 +1,56 @@
+{
+  "id": "w7l2",
+  "schemaVersion": 1,
+  "world": 7,
+  "order": 2,
+  "title": { "ur": "ترتیب — پہلے، پھر، آخر", "en": "Order — First, Next, Last" },
+  "skill": { "ur": "ترتیب: پہلے کیا، پھر کیا، آخر میں کیا", "en": "Order: what comes first, next, and last" },
+  "skillKey": "order-basics",
+  "minutes": 5,
+  "praise": { "ur": "زبردست! تم نے ترتیب سیکھ لی — پہلے، پھر، آخر!", "en": "Zabardast! You learned order — first, next, last!" },
+  "story": {
+    "scenes": [
+      {
+        "bg": "bg-jungle",
+        "cast": ["chotu", "noor", "bijli", "golmatol"],
+        "lines": [
+          { "char": "narrator", "ur": "جنگل کے کونے میں ایک ننھا بیج پڑا تھا — وہ پھول بننا چاہتا تھا۔", "en": "In a jungle corner lay a tiny seed — it wanted to become a flower.", "audio": "w7l2_story_1" },
+          { "char": "golmatol", "emote": "peeking", "ur": "میاؤں! میں نے قدموں کی ترتیب ملا دی — پانی؟ بیج؟ پھول؟ کون پہلے؟", "en": "Meow! I mixed up the step order — water? seed? flower? Who is first?", "audio": "w7l2_story_2" },
+          { "char": "chotu", "emote": "oops", "ur": "اوہ اوہ! نیا بگ! یاد رکھو: پہلے، پھر، آخر!", "en": "Uh-oh! A new bug! Remember: first, next, last!", "audio": "w7l2_story_3" },
+          { "char": "noor", "emote": "pointing", "ur": "پہلے بیج بولو، پھر پانی دو، آخر میں پھول کھلتا ہے!", "en": "First plant the seed, next give water, last the flower blooms!", "audio": "w7l2_story_4" },
+          { "char": "bijli", "emote": "happy", "ur": "بیپ! ترتیب سہی ہو تو بیج خوشی سے کھل جاتا ہے!", "en": "Beep! With the right order, the seed blooms with joy!", "audio": "w7l2_story_5" },
+          { "char": "narrator", "ur": "کیا تم ننھے بیج کی صحیح ترتیب چنیں گے؟", "en": "Will you choose the right order for the tiny seed?", "audio": "w7l2_story_6", "choice": { "ur": "ترتیب لگاؤ!", "en": "Set the order!", "audio": "w7l2_story_6_choice" } }
+        ]
+      }
+    ]
+  },
+  "show": {
+    "steps": [
+      { "visual": "bud", "caption": { "ur": "پہلے: بیج بولو۔", "en": "First: plant the seed." }, "audio": "w7l2_show_1" },
+      { "visual": "water-drop", "caption": { "ur": "پھر: پانی دو۔", "en": "Next: give it water." }, "audio": "w7l2_show_2" },
+      { "visual": "bloom", "caption": { "ur": "آخر میں: پھول کھل جاتا ہے!", "en": "Last: the flower blooms!" }, "audio": "w7l2_show_3" }
+    ]
+  },
+  "do": {
+    "activity": {
+      "type": "tap-sequence",
+      "prompt": { "ur": "بیج سے پھول تک — قدموں کی صحیح ترتیب دباؤ!", "en": "From seed to flower — tap the steps in the right order!" },
+      "audio": "w7l2_do_prompt",
+      "steps": [
+        { "id": "seed", "art": "bud", "label": { "ur": "بیج بولو", "en": "Plant the seed" }, "audio": "w7l2_step_1" },
+        { "id": "water", "art": "water-drop", "label": { "ur": "پانی دو", "en": "Water it" }, "audio": "w7l2_step_2" },
+        { "id": "bloom", "art": "bloom", "label": { "ur": "پھول کھلا!", "en": "It blooms!" }, "audio": "w7l2_step_3" }
+      ],
+      "order": ["seed", "water", "bloom"],
+      "wrongHint": { "ur": "اوپس! ایک بگ ملا! سب سے پہلے کیا آتا ہے؟ بیج! دوبارہ سوچو۔", "en": "Oops! A bug! What comes first? The seed! Think again." }
+    }
+  },
+  "cheer": {
+    "recap": [
+      { "ur": "ترتیب = پہلے، پھر، آخر۔", "en": "Order = first, next, last." },
+      { "ur": "پہلے بیج، پھر پانی، آخر میں پھول!", "en": "First the seed, next the water, last the flower!" }
+    ],
+    "recapAudio": ["w7l2_recap_1", "w7l2_recap_2"],
+    "rewardToast": { "ur": "دوسرا سوچنے کا جواہر مل گیا — پھول تمہارے لیے کھلا!", "en": "Second Thinking Gem won — the flower bloomed for you!" }
+  }
+}

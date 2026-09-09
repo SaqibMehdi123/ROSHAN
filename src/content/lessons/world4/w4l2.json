@@ -1,0 +1,109 @@
+{
+  "id": "w4l2",
+  "schemaVersion": 1,
+  "world": 4,
+  "order": 2,
+  "title": { "ur": "فولڈر — فائل کا گھر", "en": "Folder — A Home for Files" },
+  "skill": { "ur": "فولڈر فائلوں کو ایک ساتھ رکھتا ہے — جیسے بستہ کتابیں", "en": "A folder holds files together — like a school bag holds books" },
+  "skillKey": "folder-home",
+  "minutes": 6,
+  "praise": { "ur": "واہ! تم نے فائلوں کو گھر دے دیا!", "en": "Wow! You gave the files a home!" },
+  "story": {
+    "scenes": [
+      {
+        "bg": "bg-city",
+        "cast": ["noor", "bijli", "golmatol"],
+        "lines": [
+          {
+            "char": "narrator",
+            "ur": "فائلیں ابھی تک سڑک پر بیٹھی ہیں — انہیں ایک گھر چاہیے۔",
+            "en": "The files are still sitting on the street — they need a home.",
+            "audio": "w4l2_story_1"
+          },
+          {
+            "char": "noor",
+            "emote": "thinking",
+            "ur": "جیسے میرا بستہ کتابوں کا گھر ہے… فائلوں کا گھر بھی ہونا چاہیے!",
+            "en": "Just like my bag is home for my books… files need a home too!",
+            "audio": "w4l2_story_2"
+          },
+          {
+            "char": "bijli",
+            "emote": "happy",
+            "ur": "بیپ! بالکل صحیح! فائلوں کے گھر کا نام ہے — فولڈر!",
+            "en": "Beep! Exactly right! A file's home is called — a folder!",
+            "audio": "w4l2_story_3"
+          },
+          {
+            "char": "golmatol",
+            "emote": "peeking",
+            "ur": "میوں! بڑا فولڈر! کیا سب فائلیں اندر سما جائیں گی؟",
+            "en": "Meow! A big folder! Will all the files fit inside?",
+            "audio": "w4l2_story_4"
+          },
+          {
+            "char": "narrator",
+            "ur": "چلو چار فائلوں کو فولڈر کے گھر پہنچائیں!",
+            "en": "Let's walk four files home into the folder!",
+            "audio": "w4l2_story_5",
+            "choice": { "ur": "فائلیں گھر جاؤ!", "en": "Files, go home!", "audio": "w4l2_story_5_choice" }
+          }
+        ]
+      }
+    ]
+  },
+  "show": {
+    "steps": [
+      {
+        "visual": "folder",
+        "caption": { "ur": "یہ فولڈر ہے — فائلوں کا گھر!", "en": "This is a folder — a home for files!" },
+        "audio": "w4l2_show_1"
+      },
+      {
+        "visual": "folder-open",
+        "caption": { "ur": "کھلا فولڈر — فائلیں اندر آرام سے سوتی ہیں۔", "en": "An open folder — files rest cozy inside." },
+        "audio": "w4l2_show_2"
+      },
+      {
+        "visual": "file-doc",
+        "caption": { "ur": "بستہ کتابوں کا گھر — فولڈر فائلوں کا گھر!", "en": "A bag is home for books — a folder is home for files!" },
+        "audio": "w4l2_show_3"
+      }
+    ]
+  },
+  "do": {
+    "activity": {
+      "type": "drag-drop",
+      "prompt": { "ur": "فائل پکڑو، کھینچو اور بڑے فولڈر پر چھوڑو!", "en": "Grab a file, drag it, and drop it on the big folder!" },
+      "audio": "w4l2_do_prompt",
+      "scene": "bg-city",
+      "draggable": [
+        { "id": "tasveer", "art": "file-img", "x": 12, "y": 76, "audio": "w4l2_f_tasveer" },
+        { "id": "gana", "art": "file-song", "x": 38, "y": 84, "audio": "w4l2_f_gana" },
+        { "id": "kahani", "art": "file-doc", "x": 64, "y": 76, "audio": "w4l2_f_kahani" },
+        { "id": "gaon", "art": "file-img", "x": 88, "y": 84, "audio": "w4l2_f_gaon" }
+      ],
+      "targets": [
+        {
+          "id": "ghar",
+          "art": "folder-open",
+          "x": 50,
+          "y": 30,
+          "accepts": ["tasveer", "gana", "kahani", "gaon"],
+          "label": { "ur": "بڑا فولڈر", "en": "Big folder" },
+          "success": { "ur": "چٹ! فائل گھر پہنچی — محفوظ!", "en": "Plop! The file is home — safe!" }
+        }
+      ],
+      "wrongHint": { "ur": "اوپس! ایک بگ ملا! فائل کو فولڈر کے اوپر چھوڑو!", "en": "Oops! A bug! Drop the file right on the folder!" },
+      "winPraise": { "ur": "شاباش! چاروں فائلیں گھر میں — فولڈر خوش!", "en": "Shabash! All four files home — the folder is happy!" }
+    }
+  },
+  "cheer": {
+    "recap": [
+      { "ur": "فولڈر فائل کا گھر ہے — سب فائلیں ایک جگہ محفوظ۔", "en": "A folder is a file's home — all files safe in one place." },
+      { "ur": "بستہ کتابوں کا گھر — فولڈر فائلوں کا گھر!", "en": "A bag is home for books — a folder is home for files!" }
+    ],
+    "recapAudio": ["w4l2_recap_1", "w4l2_recap_2"],
+    "rewardToast": { "ur": "فولڈر کہتا ہے: میرا گھر بھر گیا — شکریہ!", "en": "The folder says: my home is full — thank you!" }
+  }
+}

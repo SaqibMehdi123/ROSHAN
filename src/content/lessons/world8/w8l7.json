@@ -1,0 +1,120 @@
+{
+  "id": "w8l7",
+  "schemaVersion": 1,
+  "world": 8,
+  "order": 7,
+  "title": { "ur": "بگ ٹھیک کرو", "en": "Fix the Bug!" },
+  "skill": { "ur": "بگ ڈھونڈو اور ترتیب ٹھیک کرو", "en": "Spot the bug and fix the order" },
+  "skillKey": "debugging",
+  "minutes": 7,
+  "praise": {
+    "ur": "شاباش بگ فکسر! تم نے بلاکس بچا لیے!",
+    "en": "Shabash, bug fixer! You saved the blocks!"
+  },
+  "story": {
+    "scenes": [
+      {
+        "bg": "bg-mountain",
+        "cast": ["golmatol", "bijli", "noor", "chotu", "ustad-ullo"],
+        "lines": [
+          {
+            "char": "narrator",
+            "ur": "اوہو! گول مٹول بلاکسوں کی قطار پر سے بھاگی — سب بکھر گیا!",
+            "en": "Uh-oh! Gol Matol ran right over the line of blocks — everything scattered!",
+            "audio": "w8l7_story_1",
+            "fx": "shake"
+          },
+          {
+            "char": "golmatol",
+            "emote": "guilty",
+            "ur": "میاؤں… میں تو بس بلاکسوں کے پیچھے کھیلنا چاہتی تھی!",
+            "en": "Meow… I only wanted to play with the blocks!",
+            "audio": "w8l7_story_2"
+          },
+          {
+            "char": "chotu",
+            "emote": "surprised",
+            "ur": "دیکھو — جواہر پہلے اور پرچم آخر میں؟ یہ تو الٹ ہے!",
+            "en": "Look — the gem first and the flag last? That is backwards!",
+            "audio": "w8l7_story_3"
+          },
+          {
+            "char": "noor",
+            "emote": "pointing",
+            "ur": "کوئی بات نہیں! بگ مل گیا — اب ٹھیک کرتے ہیں: پرچم، آگے بڑھو، جواہر!",
+            "en": "No problem! We found the bug — now we fix it: flag, move, gem!",
+            "audio": "w8l7_story_4"
+          },
+          {
+            "char": "ustad-ullo",
+            "emote": "perch",
+            "ur": "ہر پروگرامر بگ ڈھونڈتا ہے اور ٹھیک کرتا ہے — چلو!",
+            "en": "Every programmer finds bugs and fixes them — let's go!",
+            "audio": "w8l7_story_5",
+            "choice": {
+              "ur": "بگ فکس کرو!",
+              "en": "Fix the bug!",
+              "audio": "w8l7_story_5_choice"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "show": {
+    "steps": [
+      {
+        "visual": "glitch-bug",
+        "caption": { "ur": "یہ بگ ہے — کوئی ڈراپ نہیں! ایک پیارا سا کیڑا جسے ٹھیک کرنا ہے۔", "en": "This is a bug — not scary at all! A friendly critter to fix." },
+        "audio": "w8l7_show_1"
+      },
+      {
+        "visual": "pattern-blocks",
+        "caption": { "ur": "ترتیب دیکھو: پرچم ہمیشہ سب سے پہلے آتا ہے!", "en": "Check the order: the flag always comes first!" },
+        "audio": "w8l7_show_2"
+      },
+      {
+        "visual": "gem",
+        "caption": { "ur": "بگ ٹھیک؟ پروگرام چلے گا — اور جواہر ملے گا!", "en": "Bug fixed? The program will run — and the gem is yours!" },
+        "audio": "w8l7_show_3"
+      }
+    ]
+  },
+  "do": {
+    "activity": {
+      "type": "tap-sequence",
+      "prompt": { "ur": "گول مٹول نے بلاکس الٹ کر دیے! سہی ترتیب دکھاؤ: پرچم، آگے بڑھو، جواہر!", "en": "Gol Matol shuffled the blocks! Show the right order: flag, move, gem!" },
+      "audio": "w8l7_do_prompt",
+      "steps": [
+        {
+          "id": "flag",
+          "art": "block-flag",
+          "label": { "ur": "پرچم — سب سے پہلے", "en": "The flag — always first" },
+          "audio": "w8l7_do_flag"
+        },
+        {
+          "id": "move",
+          "art": "block-cmd",
+          "label": { "ur": "آگے بڑھو — درمیان میں", "en": "Move — in the middle" },
+          "audio": "w8l7_do_move"
+        },
+        {
+          "id": "end",
+          "art": "gem",
+          "label": { "ur": "جواہر — آخر میں", "en": "The gem — at the end" },
+          "audio": "w8l7_do_end"
+        }
+      ],
+      "order": ["flag", "move", "end"],
+      "wrongHint": { "ur": "اوپس! ایک بگ ملا! سوچو — پرچم سب سے پہلے، جواہر سب سے آخر!", "en": "Oops! A bug! Think — the flag first, the gem last!" }
+    }
+  },
+  "cheer": {
+    "recap": [
+      { "ur": "بگ ملا؟ مسکراؤ! بگ فکسر ہمیشہ جیتتا ہے۔", "en": "Found a bug? Smile! A bug fixer always wins." },
+      { "ur": "ہر پروگرامر بگ ڈھونڈتا ہے، ٹھیک کرتا ہے، اور آگے بڑھتا ہے!", "en": "Every programmer finds bugs, fixes them, and moves on!" }
+    ],
+    "recapAudio": ["w8l7_recap_1", "w8l7_recap_2"],
+    "rewardToast": { "ur": "گول مٹول بھی خوش — تم نے بلاکس بچا لیے!", "en": "Gol Matol is happy too — you saved the blocks!" }
+  }
+}

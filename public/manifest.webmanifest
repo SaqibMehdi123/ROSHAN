@@ -1,15 +1,25 @@
 {
+  "id": "/",
   "name": "ROSHAN — روشن | Village Digital Literacy",
   "short_name": "ROSHAN",
-  "description": "Offline-first digital literacy adventure for Classes 1-5: Noor, Chotu aur Bijli ke sath seekhein!",
+  "description": "Offline-first digital literacy adventure for Classes 1-5: 8 worlds, 76 spoken Urdu lessons — Noor, Chotu aur Bijli ke sath seekhein!",
   "start_url": "/",
+  "scope": "/",
   "display": "fullscreen",
-  "orientation": "landscape",
+  "orientation": "any",
   "background_color": "#FFF8EC",
   "theme_color": "#FFF8EC",
   "dir": "rtl",
   "lang": "ur",
-  "categories": ["education", "kids"],
+  "categories": ["education", "kids", "games"],
+  "shortcuts": [
+    {
+      "name": "Adventure Map",
+      "short_name": "Map",
+      "url": "/",
+      "description": "Jump back to the adventure map"
+    }
+  ],
   "icons": [
     { "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
     { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },

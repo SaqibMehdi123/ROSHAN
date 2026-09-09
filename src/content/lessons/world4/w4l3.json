@@ -1,0 +1,100 @@
+{
+  "id": "w4l3",
+  "schemaVersion": 1,
+  "world": 4,
+  "order": 3,
+  "title": { "ur": "دو بار دبانا — کھولو!", "en": "Double-click to Open!" },
+  "skill": { "ur": "فولڈر کو دو بار دباؤ — ٹپ ٹپ — اور کھل جاتا ہے", "en": "Tap the folder twice — tap-tap — and it opens" },
+  "skillKey": "double-click-open",
+  "minutes": 6,
+  "praise": { "ur": "ٹپ ٹپ! کمال! تم نے فولڈر کھول دیا!", "en": "Tap-tap! Amazing! You opened the folder!" },
+  "story": {
+    "scenes": [
+      {
+        "bg": "bg-city",
+        "cast": ["chotu", "noor", "bijli"],
+        "lines": [
+          {
+            "char": "chotu",
+            "emote": "oops",
+            "ur": "اوپس! میں نے فولڈر کو ایک بار دبایا — پر وہ کھلا نہیں!",
+            "en": "Oops! I tapped the folder once — but it did not open!",
+            "audio": "w4l3_story_1"
+          },
+          {
+            "char": "bijli",
+            "emote": "happy",
+            "ur": "بیپ! ایک بار دبانا = جگانا۔ کھلانے کے لیے دو بار دباؤ!",
+            "en": "Beep! One tap = wake it up. To open it, tap twice!",
+            "audio": "w4l3_story_2"
+          },
+          {
+            "char": "noor",
+            "emote": "excited",
+            "ur": "جیسے دروازے پر دو بار کھٹکھٹاتے ہیں — کٹ کٹ، ٹپ ٹپ!",
+            "en": "Like knocking twice on a door — knock-knock, tap-tap!",
+            "audio": "w4l3_story_3"
+          },
+          {
+            "char": "chotu",
+            "emote": "happy",
+            "ur": "ٹپ ٹپ… واہ! فولڈر کھل گیا — اندر فائلیں!",
+            "en": "Tap-tap… wow! The folder opened — files inside!",
+            "audio": "w4l3_story_4"
+          },
+          {
+            "char": "narrator",
+            "ur": "اب تمہاری باری — ہر فولڈر کو دو بار دباؤ!",
+            "en": "Now your turn — double-click every folder!",
+            "audio": "w4l3_story_5",
+            "choice": { "ur": "میں ٹپ ٹپ کروں گا!", "en": "I will tap-tap!", "audio": "w4l3_story_5_choice" }
+          }
+        ]
+      }
+    ]
+  },
+  "show": {
+    "steps": [
+      {
+        "visual": "mouse",
+        "caption": { "ur": "ماؤس کا بٹن دو بار دباؤ — ٹپ، ٹپ!", "en": "Press the mouse button twice — tap, tap!" },
+        "audio": "w4l3_show_1"
+      },
+      {
+        "visual": "folder",
+        "caption": { "ur": "پہلا دبانا: فولڈر جاگتا ہے۔", "en": "The first tap: the folder wakes up." },
+        "audio": "w4l3_show_2"
+      },
+      {
+        "visual": "folder-open",
+        "caption": { "ur": "دوسرا دبانا: فولڈر کھل جاتا ہے!", "en": "The second tap: the folder opens!" },
+        "audio": "w4l3_show_3"
+      }
+    ]
+  },
+  "do": {
+    "activity": {
+      "type": "tap-select",
+      "prompt": { "ur": "ہر فولڈر کو دو بار دباؤ — ٹپ ٹپ!", "en": "Double-click every folder — tap-tap!" },
+      "audio": "w4l3_do_prompt",
+      "scene": "bg-city",
+      "cursorArt": "teer",
+      "clickHint": { "ur": "دوبارہ! ٹپ، ٹپ — دو بار، تیزی سے!", "en": "Try again! Tap, tap — two times, quick-quick!" },
+      "items": [
+        { "id": "f1", "x": 14, "y": 64, "art": "folder-open", "correct": true, "clicks": 2, "hint": { "ur": "واہ! ایک فولڈر کھل گیا!", "en": "Wow! One folder opened!" } },
+        { "id": "f2", "x": 38, "y": 72, "art": "folder-open", "correct": true, "clicks": 2, "hint": { "ur": "زبردست! دو فولڈر کھل گئے!", "en": "Zabardast! Two folders open!" } },
+        { "id": "f3", "x": 62, "y": 64, "art": "folder-open", "correct": true, "clicks": 2, "hint": { "ur": "کمال! تیسرا فولڈر کھلا!", "en": "Amazing! The third folder opened!" } },
+        { "id": "f4", "x": 86, "y": 72, "art": "folder-open", "correct": true, "clicks": 2, "hint": { "ur": "شاباش! سب فولڈر کھل گئے!", "en": "Shabash! Every folder is open!" } }
+      ],
+      "winPraise": { "ur": "تم ڈبل کلک کے ہیرو ہو — ٹپ ٹپ چیمپئن!", "en": "You are the double-click hero — tap-tap champion!" }
+    }
+  },
+  "cheer": {
+    "recap": [
+      { "ur": "ایک بار = جگانا، دو بار = کھولنا۔", "en": "One tap wakes it, two taps open it." },
+      { "ur": "ٹپ ٹپ! ایک ہی جگہ، تیزی سے دو بار۔", "en": "Tap-tap! Same spot, two quick taps." }
+    ],
+    "recapAudio": ["w4l3_recap_1", "w4l3_recap_2"],
+    "rewardToast": { "ur": "بجلی کہتا ہے: ٹپ ٹپ ماسٹر مل گیا!", "en": "Bijli says: found our tap-tap master!" }
+  }
+}

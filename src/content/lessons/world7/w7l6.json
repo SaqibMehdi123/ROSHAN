@@ -1,0 +1,56 @@
+{
+  "id": "w7l6",
+  "schemaVersion": 1,
+  "world": 7,
+  "order": 6,
+  "title": { "ur": "بڑا یا چھوٹا؟ ترتیب دو", "en": "Order by Size" },
+  "skill": { "ur": "سائز کی ترتیب: ننھا، درمیانہ، بڑا", "en": "Order by size: small, middle, big" },
+  "skillKey": "size-order",
+  "minutes": 5,
+  "praise": { "ur": "شاباش! سائز کی ترتیب تم نے سیدھی کی!", "en": "Shabash! You set the size order straight!" },
+  "story": {
+    "scenes": [
+      {
+        "bg": "bg-jungle",
+        "cast": ["bijli", "chotu", "golmatol", "ustad-ullo"],
+        "lines": [
+          { "char": "narrator", "ur": "جنگل کے کونے میں ایک ننھا سا بیج پڑا تھا۔", "en": "In a jungle corner lay a tiny little seed.", "audio": "w7l6_story_1" },
+          { "char": "golmatol", "emote": "peeking", "ur": "کیا بیج سب سے بڑا ہوتا ہے؟ میاؤں؟", "en": "Is the seed the biggest one? Meow?", "audio": "w7l6_story_2" },
+          { "char": "chotu", "emote": "surprised", "ur": "نہیں گول مٹول! ننھی چیز آہستہ آہستہ بڑی ہوتی ہے!", "en": "No, Gol Matol! Tiny things grow big, slowly and slowly!", "audio": "w7l6_story_3" },
+          { "char": "bijli", "emote": "happy", "ur": "بیپ! ننھا بیج، پھر پھول، پھر بڑا پھل — سائز کی ترتیب!", "en": "Beep! Tiny seed, then flower, then big fruit — the order of size!", "audio": "w7l6_story_4" },
+          { "char": "ustad-ullo", "emote": "perch", "ur": "ننھا، درمیانہ، بڑا — چھوٹے سے شروع کرو!", "en": "Small, middle, big — start from the smallest!", "audio": "w7l6_story_5" },
+          { "char": "narrator", "ur": "کیا تم سائز کی ترتیب لگاؤ گے؟", "en": "Will you set the order by size?", "audio": "w7l6_story_6", "choice": { "ur": "سائز کی ترتیب لگاؤ!", "en": "Order by size!", "audio": "w7l6_story_6_choice" } }
+        ]
+      }
+    ]
+  },
+  "show": {
+    "steps": [
+      { "visual": "bud", "caption": { "ur": "ننھا بیج — سب سے چھوٹا۔", "en": "A tiny seed — the smallest." }, "audio": "w7l6_show_1" },
+      { "visual": "bloom", "caption": { "ur": "پھول — درمیان۔", "en": "A flower — in the middle." }, "audio": "w7l6_show_2" },
+      { "visual": "mango", "caption": { "ur": "بڑا پھل — سب سے بڑا!", "en": "A big fruit — the biggest!" }, "audio": "w7l6_show_3" }
+    ]
+  },
+  "do": {
+    "activity": {
+      "type": "tap-sequence",
+      "prompt": { "ur": "ننھی چیز سے بڑی چیز تک — ترتیب دباؤ!", "en": "From the tiniest to the biggest — tap the order!" },
+      "audio": "w7l6_do_prompt",
+      "steps": [
+        { "id": "seed", "art": "bud", "label": { "ur": "ننھا بیج", "en": "Tiny seed" }, "audio": "w7l6_step_1" },
+        { "id": "flower", "art": "bloom", "label": { "ur": "پھول کھلا", "en": "A flower" }, "audio": "w7l6_step_2" },
+        { "id": "big", "art": "mango", "label": { "ur": "بڑا پھل", "en": "Big fruit" }, "audio": "w7l6_step_3" }
+      ],
+      "order": ["seed", "flower", "big"],
+      "wrongHint": { "ur": "اوپس! ایک بگ ملا! ننھی چیز پہلے — دوبارہ سوچو!", "en": "Oops! A bug! The tiny one first — think again!" }
+    }
+  },
+  "cheer": {
+    "recap": [
+      { "ur": "ننھا، درمیانہ، بڑا — سائز کی ترتیب۔", "en": "Small, middle, big — the order of size." },
+      { "ur": "ہر بڑی چیز کبھی ننھی تھی!", "en": "Every big thing was once tiny!" }
+    ],
+    "recapAudio": ["w7l6_recap_1", "w7l6_recap_2"],
+    "rewardToast": { "ur": "چھٹا سوچنے کا جواہر مل گیا — دماغ بڑھتا جا رہا ہے!", "en": "Sixth Thinking Gem won — your brain keeps growing!" }
+  }
+}

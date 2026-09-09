@@ -76,9 +76,9 @@ export function LessonPlayer() {
   };
 
   return (
-    <main className="mx-auto min-h-screen max-w-5xl px-4 pb-24 pt-3">
-      {/* HUD */}
-      <div className="mb-3 flex items-center justify-between gap-3">
+    <main className="mx-auto min-h-dvh w-full max-w-5xl px-3 pb-28 pt-0 sm:px-4">
+      {/* HUD — sticky glass bar */}
+      <div className="hud-glass mb-3 flex items-center justify-between gap-2 px-2 py-2 sm:gap-3 sm:px-3">
         <button
           className="btn-kid btn-back !min-h-16 !min-w-16 !px-3"
           onClick={() => {
@@ -89,11 +89,11 @@ export function LessonPlayer() {
         >
           <Art id="home" size={32} />
         </button>
-        <div className="flex flex-col items-center gap-1">
-          <p className="urdu text-xl font-bold leading-[1.8]">{lesson.title.ur}</p>
+        <div className="flex min-w-0 flex-col items-center gap-0.5">
+          <p className="urdu-tight truncate text-lg font-bold leading-[1.9] sm:text-xl">{lesson.title.ur}</p>
           <div className="flex items-center gap-2">
             <ProgressDots phases={PHASES.map((p) => PHASE_LABELS[p].en)} current={phaseIdx} />
-            <span className="urdu text-sm text-roshan-ink-soft">{PHASE_LABELS[phase].ur}</span>
+            <span className="urdu-tight text-sm text-roshan-ink-soft">{PHASE_LABELS[phase].ur}</span>
           </div>
         </div>
         <RepeatButton />
@@ -189,8 +189,10 @@ function StoryPhase({
   return (
     <div onClick={advance} className="cursor-pointer select-none">
       {/* scene stage (capped so the dialog bubble always stays on screen) */}
-      <div className="relative mx-auto max-w-3xl overflow-hidden rounded-3xl border-4 border-roshan-card-border shadow-[var(--r-shadow)]">
+      <div className="relative mx-auto max-w-3xl overflow-hidden rounded-3xl border-4 border-roshan-card-border bg-white shadow-[var(--r-shadow-lg)]">
         <Art id={scene.bg} className="block" />
+        {/* soft vignette so characters pop */}
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-black/10 to-transparent" aria-hidden />
         <div className="absolute inset-x-0 bottom-1 flex items-end justify-center gap-2 px-4">
           {scene.cast.map((c) => (
             <div key={c} className="transition-transform hover:scale-105">
@@ -204,7 +206,7 @@ function StoryPhase({
           ))}
         </div>
         {/* progress */}
-        <div className="ltr-term absolute left-3 top-2 rounded-full bg-white/80 px-3 py-0.5 text-xs font-bold" dir="ltr">
+        <div className="ltr-term absolute left-3 top-2 rounded-full bg-white/85 px-3 py-0.5 text-xs font-bold shadow-sm" dir="ltr">
           {idx + 1} / {total}
         </div>
       </div>
@@ -237,7 +239,7 @@ function StoryPhase({
       )}
 
       {!line.choice && (
-        <p className="urdu mt-4 text-center text-lg text-roshan-ink-soft" style={{ opacity: lineDone ? 1 : 0.45 }}>
+        <p className="urdu-tight mt-4 text-center text-lg text-roshan-ink-soft" style={{ opacity: lineDone ? 1 : 0.45 }}>
           {lineDone ? "آگے بڑھنے کے لیے کہیں بھی دباؤ" : "…" }
         </p>
       )}
@@ -271,8 +273,14 @@ function ShowPhase({
           <Art id={step.visual} size={190} />
         </div>
         <p className="urdu text-center text-3xl font-bold">{step.caption.ur}</p>
-        <p className="ltr-term text-center text-sm text-roshan-ink-soft" dir="ltr">{step.caption.en}</p>
-        <SpeakBubble ur={step.caption.ur} en={step.caption.en} audio={step.audio} onDone={markDone} />
+        <SpeakBubble
+          speaker="English"
+          ur={step.caption.ur}
+          en={step.caption.en}
+          audio={step.audio}
+          onDone={markDone}
+          hideUr
+        />
       </div>
       <div className="mt-5 flex items-center justify-center gap-3">
         {idx > 0 && (
@@ -333,7 +341,7 @@ function CheerPhase({
         <Character id="chotu" size={115} emote="celebrating" />
       </div>
 
-      <h2 className="urdu mt-4 text-4xl font-bold text-roshan-green">{lesson.praise.ur}</h2>
+      <h2 className="urdu-tight mt-4 text-4xl font-bold text-roshan-green sm:text-5xl">{lesson.praise.ur}</h2>
       <p className="ltr-term mt-1 text-sm text-roshan-ink-soft" dir="ltr">{lesson.praise.en}</p>
 
       <div className="mt-4 flex justify-center">
@@ -357,8 +365,8 @@ function CheerPhase({
         <div className="card-kid anim-pop mx-auto mt-5 flex w-fit items-center gap-3 border-roshan-orange bg-orange-50 p-4">
           <Art id="medal-box" size={56} />
           <div className="text-right">
-            <p className="urdu text-2xl font-bold text-roshan-orange-deep">نیا بیج ملا!</p>
-            <p className="urdu text-lg">{badgeName.ur} — {badgeName.en}</p>
+            <p className="urdu-tight text-2xl font-bold text-roshan-orange-deep">نیا بیج ملا!</p>
+            <p className="urdu-tight text-lg">{badgeName.ur} — {badgeName.en}</p>
           </div>
         </div>
       )}
@@ -427,8 +435,8 @@ function PairSwapTimer() {
       {/* SWAP overlay */}
       {showSwap && (
         <div className="fixed inset-0 z-50 flex flex-col items-center justify-center gap-6 bg-[#FFF8EC]/95 backdrop-blur-sm">
-          <h2 className="urdu text-6xl font-bold text-roshan-orange">سوپ!</h2>
-          <p className="urdu text-2xl font-semibold">اب دوسرے دوست کو موقع دو!</p>
+          <h2 className="urdu-tight text-6xl font-bold text-roshan-orange">سوپ!</h2>
+          <p className="urdu-tight text-2xl font-semibold">اب دوسرے دوست کو موقع دو!</p>
           <p className="ltr-term text-sm text-roshan-ink-soft" dir="ltr">
             {profile.name} ↔ {profile.buddyName ?? "dost"} — swap driver &amp; navigator seats!
           </p>

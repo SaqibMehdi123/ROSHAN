@@ -1,0 +1,63 @@
+{
+  "id": "w5l6",
+  "schemaVersion": 1,
+  "world": 5,
+  "order": 6,
+  "title": { "ur": "جادوئی ربڑ اور انڈو", "en": "Magic Eraser & Undo" },
+  "skill": { "ur": "اوپس ہو تو ربڑ اور انڈو سے ٹھیک کرو", "en": "Fix oops moments with the eraser and Undo" },
+  "skillKey": "eraser-undo",
+  "minutes": 6,
+  "praise": { "ur": "شاباش! اوپس کو بگ فکس بنا دیا — بے فکر فنکار!", "en": "Shabash! You turned an oops into a bug fix — the worry-free artist!" },
+  "story": {
+    "scenes": [
+      {
+        "bg": "bg-workshop",
+        "cast": ["chotu", "bijli", "golmatol"],
+        "lines": [
+          { "char": "narrator", "ur": "چھوٹو کارڈ پر بڑی لکیر بنا رہا تھا… اچھک! چھینک آ گیا!", "en": "Chotu was drawing a big line on the card… achoo! A sneeze!", "audio": "w5l6_story_1" },
+          { "char": "chotu", "emote": "oops", "ur": "اوپس! لکیر اور ہاتھ دونوں ہل گئے! اب کیا ہو گا؟", "en": "Oops! The line and my hand both moved! Now what?", "audio": "w5l6_story_2" },
+          { "char": "golmatol", "emote": "guilty", "ur": "میاؤں…", "en": "Myaun…", "audio": "w5l6_story_3" }
+        ]
+      },
+      {
+        "bg": "bg-workshop",
+        "cast": ["bijli", "noor", "chotu"],
+        "lines": [
+          { "char": "bijli", "emote": "waving", "ur": "گھبراؤ نہیں! یہاں دو جادوئی دوست ہیں — جادوئی ربڑ اور انڈو!", "en": "Don't worry! Two magic friends are here — the magic eraser and Undo!", "audio": "w5l6_story_4" },
+          { "char": "noor", "emote": "pointing", "ur": "ربڑ اوپس والی لکیر مٹا دیتا ہے، اور انڈو ایک قدم پیچھے لے جاتا ہے!", "en": "The eraser erases the oops line, and Undo takes you one step back!", "audio": "w5l6_story_5" },
+          { "char": "bijli", "emote": "happy", "ur": "اوپس ہمیشہ ہوتا ہے — فنکار اسے ٹھیک کر دیتے ہیں! چلو!", "en": "Oopses always happen — artists fix them! Let's go!", "audio": "w5l6_story_6", "choice": { "ur": "ہاں! بگ فکس کرو!", "en": "Yes! Fix the bug!", "audio": "w5l6_story_6_choice" } }
+        ]
+      }
+    ]
+  },
+  "show": {
+    "steps": [
+      { "visual": "magic-eraser", "caption": { "ur": "جادوئی ربڑ — اوپس کو صاف کر دیتا ہے۔", "en": "The magic eraser — it clears the oops." }, "audio": "w5l6_show_1" },
+      { "visual": "undo-arrow", "caption": { "ur": "انڈو — ایک قدم پیچھے جادو!", "en": "Undo — one step back, magic!" }, "audio": "w5l6_show_2" },
+      { "visual": "paint-brush", "caption": { "ur": "پھر دوبارہ بناؤ — بے فکر!", "en": "Then draw again — worry-free!" }, "audio": "w5l6_show_3" }
+    ]
+  },
+  "do": {
+    "activity": {
+      "type": "tap-sequence",
+      "prompt": { "ur": "اوپس والی لکیر ٹھیک کرو! قدموں کو ترتیب سے دباؤ۔", "en": "Fix the oops line! Tap the steps in order." },
+      "audio": "w5l6_do_prompt",
+      "steps": [
+        { "id": "draw", "art": "pencil", "label": { "ur": "بناؤ", "en": "Draw" } },
+        { "id": "oops", "art": "magic-eraser", "label": { "ur": "اوپس! مٹاؤ", "en": "Oops! Erase" } },
+        { "id": "undo", "art": "undo-arrow", "label": { "ur": "انڈو", "en": "Undo" } },
+        { "id": "again", "art": "paint-brush", "label": { "ur": "دوبارہ بناؤ", "en": "Draw again" } }
+      ],
+      "order": ["draw", "oops", "undo", "again"],
+      "wrongHint": { "ur": "اوپس! ایک بگ ملا! اگلا قدم دباؤ — ترتیب سے!", "en": "Oops! A bug! Tap the next step — in order!" }
+    }
+  },
+  "cheer": {
+    "recap": [
+      { "ur": "اوپس ہوا؟ جادوئی ربڑ اور انڈو تیار ہیں۔", "en": "An oops happened? The magic eraser and Undo are ready." },
+      { "ur": "فنکار وہی جو اوپس ٹھیک کر دے!", "en": "An artist is one who fixes oopses!" }
+    ],
+    "recapAudio": ["w5l6_recap_1", "w5l6_recap_2"],
+    "rewardToast": { "ur": "بگ فکس! چھینک والی لکیر گئی!", "en": "Bug fixed! The sneeze line is gone!" }
+  }
+}

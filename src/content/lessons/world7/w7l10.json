@@ -1,0 +1,88 @@
+{
+  "id": "w7l10",
+  "schemaVersion": 1,
+  "world": 7,
+  "order": 10,
+  "title": { "ur": "بگ تلاش کرو", "en": "Find the Bug!" },
+  "skill": { "ur": "ڈیبگنگ: ترتیب پڑھو، بگ تلاش کرو، ٹھیک کرو", "en": "Debugging: read the order, find the bug, fix it" },
+  "skillKey": "debugging",
+  "minutes": 5,
+  "praise": { "ur": "شاباش! تم بہترین بگ ڈٹیکٹو ہو!", "en": "Shabash! You are a great bug detective!" },
+  "story": {
+    "scenes": [
+      {
+        "bg": "bg-jungle",
+        "cast": ["golmatol", "bijli", "noor", "chotu"],
+        "lines": [
+          { "char": "narrator", "ur": "اوہ نہیں! گول مٹول نے بجلی کی کہانیوں کی ترتیب پھر الٹ دی!", "en": "Oh no! Gol Matol flipped the story order again!", "audio": "w7l10_story_1" },
+          { "char": "golmatol", "emote": "guilty", "ur": "میاؤں… مجھے نہیں پتہ تھا کہ ترتیب اتنی اہم ہے!", "en": "Meow… I didn't know the order mattered so much!", "audio": "w7l10_story_2" },
+          { "char": "bijli", "emote": "happy", "ur": "بیپ! گھبراؤ نہیں — بگ ایک چھوٹی سی بھول ہے جو ٹھیک ہو سکتی ہے!", "en": "Beep! No worries — a bug is a little mistake that can be fixed!", "audio": "w7l10_story_3" },
+          { "char": "chotu", "emote": "playful", "ur": "بگ ڈٹیکٹو چھوٹو حاضر! ترتیب پڑھو، بگ تلاش کرو!", "en": "Bug detective Chotu reporting! Read the order, find the bug!", "audio": "w7l10_story_4" },
+          { "char": "noor", "emote": "waving", "ur": "بگ مل جائے تو دماغ لگا کر ٹھیک کرو — بس اتنا ہی!", "en": "When you find the bug, use your brain and fix it — that's all!", "audio": "w7l10_story_5" },
+          { "char": "narrator", "ur": "کیا تم بگ تلاش کر کے ٹھیک کرو گے؟", "en": "Will you find the bugs and fix them?", "audio": "w7l10_story_6", "choice": { "ur": "بگ تلاش کرو!", "en": "Find the bug!", "audio": "w7l10_story_6_choice" } }
+        ]
+      }
+    ]
+  },
+  "show": {
+    "steps": [
+      { "visual": "egg", "caption": { "ur": "کہانی پڑھو: انڈا، چوزہ، مرغی — سہی ترتیب۔", "en": "Read the story: egg, chick, hen — the right order." }, "audio": "w7l10_show_1" },
+      { "visual": "glitch-bug", "caption": { "ur": "ترتیب میں گمشدہ یا الٹا قدم — یہی بگ ہے۔", "en": "A wrong or flipped step in the order — that is a bug." }, "audio": "w7l10_show_2" },
+      { "visual": "gem", "caption": { "ur": "بگ ٹھیک کرو — نئے جواہر پاؤ!", "en": "Fix the bug — win new gems!" }, "audio": "w7l10_show_3" }
+    ]
+  },
+  "do": {
+    "activity": {
+      "type": "quiz-mix",
+      "prompt": { "ur": "تین بگ سوال — ڈٹیکٹو بنو!", "en": "Three bug questions — be a detective!" },
+      "audio": "w7l10_do_prompt",
+      "questions": [
+        {
+          "id": "q1",
+          "art": "egg",
+          "question": { "ur": "مرغی کہانی میں پہلے کیا آتا ہے؟", "en": "What comes first in the hen story?" },
+          "audio": "w7l10_q1",
+          "options": [
+            { "id": "a", "art": "egg", "label": { "ur": "انڈا", "en": "The egg" } },
+            { "id": "b", "art": "hen", "label": { "ur": "مرغی", "en": "The hen" } }
+          ],
+          "answer": "a",
+          "explain": { "ur": "پہلے انڈا، پھر چوزہ، پھر مرغی!", "en": "First the egg, then the chick, then the hen!" }
+        },
+        {
+          "id": "q2",
+          "art": "chai-cup",
+          "question": { "ur": "چائے بنانے کا پہلا قدم؟", "en": "The first step to make chai?" },
+          "audio": "w7l10_q2",
+          "options": [
+            { "id": "a", "art": "kettle", "label": { "ur": "کیتلی میں پانی گرم", "en": "Warm water in the kettle" } },
+            { "id": "b", "art": "chai-cup", "label": { "ur": "چائے ڈالو", "en": "Pour the chai" } }
+          ],
+          "answer": "a",
+          "explain": { "ur": "پہلے کیتلی میں پانی گرم، پھر چائے!", "en": "First warm the water in the kettle, then the chai!" }
+        },
+        {
+          "id": "q3",
+          "art": "glitch-bug",
+          "question": { "ur": "بگ کیا ہوتا ہے؟", "en": "What is a bug?" },
+          "audio": "w7l10_q3",
+          "options": [
+            { "id": "a", "art": "gem", "label": { "ur": "ایک چمکتا جواہر", "en": "A shiny gem" } },
+            { "id": "b", "art": "glitch-bug", "label": { "ur": "چھوٹی بھول جو ٹھیک ہو سکتی ہے", "en": "A small mistake that can be fixed" } }
+          ],
+          "answer": "b",
+          "explain": { "ur": "بگ کوئی خوفناک چیز نہیں — سوچو اور ٹھیک کرو!", "en": "A bug is not scary — think and fix it!" }
+        }
+      ],
+      "wrongHint": { "ur": "اوپس! ایک بگ ملا! دوبارہ سوچو — ڈٹیکٹو دوبارہ کوشش کرتے ہیں!", "en": "Oops! A bug! Think again — detectives try again!" }
+    }
+  },
+  "cheer": {
+    "recap": [
+      { "ur": "بگ = چھوٹی بھول جو ٹھیک ہو سکتی ہے۔", "en": "A bug = a small mistake that can be fixed." },
+      { "ur": "ترتیب پڑھو، بگ تلاش کرو، ٹھیک کرو!", "en": "Read the order, find the bug, fix it!" }
+    ],
+    "recapAudio": ["w7l10_recap_1", "w7l10_recap_2"],
+    "rewardToast": { "ur": "دسواں سوچنے کا جواہر مل گیا — بگ ڈٹیکٹو!", "en": "Tenth Thinking Gem won — bug detective!" }
+  }
+}

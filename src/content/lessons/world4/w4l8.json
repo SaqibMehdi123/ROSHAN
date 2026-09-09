@@ -1,0 +1,190 @@
+{
+  "id": "w4l8",
+  "schemaVersion": 1,
+  "world": 4,
+  "order": 8,
+  "title": { "ur": "فائل ریسکیو مشن — فولڈر کیپٹن!", "en": "File Rescue Mission — Folder Captain!" },
+  "skill": { "ur": "سب یاد: فائل، فولڈر، ڈبل کلک، سیو، ری سائیکل بین", "en": "Remember it all: files, folders, double-click, save, recycle bin" },
+  "skillKey": "file-rescue-review",
+  "minutes": 7,
+  "badge": "folder-captain",
+  "praise": { "ur": "شاباش، فولڈر کیپٹن! کنٹرول سٹی روشن!", "en": "Shabash, Folder Captain! Control City shines!" },
+  "story": {
+    "scenes": [
+      {
+        "bg": "bg-city",
+        "props": ["party-flag"],
+        "cast": ["noor", "chotu", "golmatol", "bijli"],
+        "lines": [
+          {
+            "char": "narrator",
+            "ur": "دیکھو! کنٹرول سٹی سیدھی ہے — فائلیں فولڈروں میں، شہر چمک رہا ہے!",
+            "en": "Look! Control City is tidy — files in folders, the whole city sparkling!",
+            "audio": "w4l8_story_1",
+            "fx": "confetti"
+          },
+          {
+            "char": "golmatol",
+            "emote": "idle",
+            "ur": "میوں! تم نے میرا کھلا بھی ٹھیک کر دیا — شکریہ ہیرو!",
+            "en": "Meow! You even fixed my mess — thank you, hero!",
+            "audio": "w4l8_story_2"
+          },
+          {
+            "char": "bijli",
+            "emote": "waving",
+            "ur": "بیپ! اب آخری مشن — پانچ سوالوں کا کوئز!",
+            "en": "Beep! Now the final mission — a five-question quiz!",
+            "audio": "w4l8_story_3"
+          }
+        ]
+      },
+      {
+        "bg": "bg-city",
+        "props": ["trophy"],
+        "cast": ["ustad-ullo", "bijli", "noor"],
+        "lines": [
+          {
+            "char": "ustad-ullo",
+            "emote": "perch",
+            "ur": "ہو ہو! ہر سوال کا جواب = ایک ستارہ۔ پانچ ستارے = کیپٹن!",
+            "en": "Hoo hoo! Each answer = one star. Five stars = Captain!",
+            "audio": "w4l8_story_4"
+          },
+          {
+            "char": "noor",
+            "emote": "celebrating",
+            "ur": "اور پھر ملے گا — فولڈر کیپٹن کا تمغہ!",
+            "en": "And then you will earn — the Folder Captain medal!",
+            "audio": "w4l8_story_5"
+          },
+          {
+            "char": "narrator",
+            "ur": "کیا تم فولڈر کیپٹن بننے کے لیے تیار ہو؟",
+            "en": "Are you ready to become Folder Captain?",
+            "audio": "w4l8_story_6",
+            "choice": { "ur": "میں کیپٹن ہوں!", "en": "I am the Captain!", "audio": "w4l8_story_6_choice" }
+          }
+        ]
+      }
+    ]
+  },
+  "show": {
+    "steps": [
+      {
+        "visual": "medal-folder",
+        "caption": { "ur": "یہ ہے فولڈر کیپٹن کا تمغہ — تمہارا منتظر!", "en": "This is the Folder Captain medal — waiting for you!" },
+        "audio": "w4l8_show_1"
+      },
+      {
+        "visual": "trophy",
+        "caption": { "ur": "پانچ ستارے جیتو اور تمغہ تمہارا!", "en": "Win five stars and the medal is yours!" },
+        "audio": "w4l8_show_2"
+      },
+      {
+        "visual": "party-flag",
+        "caption": { "ur": "پھر جشن ہوگا — پورا کنٹرول سٹی روشن!", "en": "Then we party — all of Control City glows!" },
+        "audio": "w4l8_show_3"
+      }
+    ]
+  },
+  "do": {
+    "activity": {
+      "type": "quiz-mix",
+      "prompt": { "ur": "فائل ریسکیو کوئز! ہر جواب پر ستارہ — چلو!", "en": "The File Rescue quiz! A star for each answer — go!" },
+      "audio": "w4l8_do_prompt",
+      "questions": [
+        {
+          "id": "q1",
+          "art": "file-img",
+          "question": { "ur": "فائل کیا ہے؟", "en": "What is a file?" },
+          "audio": "w4l8_q1",
+          "options": [
+            { "id": "banana", "art": "banana", "label": { "ur": "ایک کیلا", "en": "A banana" } },
+            { "id": "box", "art": "file-doc", "label": { "ur": "چیز محفوظ رکھنے والا ڈبہ", "en": "A box that keeps a thing safe" } },
+            { "id": "stone", "art": "stone", "label": { "ur": "ایک پتھر", "en": "A stone" } }
+          ],
+          "answer": "box",
+          "explain": { "ur": "فائل ایک ڈبہ ہے — تصویر، گانا یا کہانی محفوظ رکھتی ہے!", "en": "A file is a box — it keeps a picture, song, or story safe!" }
+        },
+        {
+          "id": "q2",
+          "art": "folder-open",
+          "question": { "ur": "دو بار دبانے سے کیا کھلتا ہے؟", "en": "What opens with a double-click?" },
+          "audio": "w4l8_q2",
+          "options": [
+            { "id": "stone", "art": "stone", "label": { "ur": "پتھر", "en": "A stone" } },
+            { "id": "folder", "art": "folder", "label": { "ur": "فولڈر", "en": "A folder" } },
+            { "id": "chai", "art": "chai-cup", "label": { "ur": "چائے کا کپ", "en": "A teacup" } }
+          ],
+          "answer": "folder",
+          "explain": { "ur": "ٹپ ٹپ! دو بار دبانے سے فولڈر کھل جاتا ہے!", "en": "Tap-tap! A double-click opens the folder!" }
+        },
+        {
+          "id": "q3",
+          "art": "folder",
+          "question": { "ur": "فائلیں کہاں رہتی ہیں؟", "en": "Where do files live?" },
+          "audio": "w4l8_q3",
+          "options": [
+            { "id": "balloon", "art": "gubbara", "label": { "ur": "غبارے میں", "en": "In a balloon" } },
+            { "id": "well", "art": "well", "label": { "ur": "کنویں میں", "en": "In a well" } },
+            { "id": "folder", "art": "folder", "label": { "ur": "فولڈر کے گھر میں", "en": "In a folder home" } }
+          ],
+          "answer": "folder",
+          "explain": { "ur": "فولڈر فائل کا گھر ہے — سب فائلیں ایک جگہ!", "en": "A folder is a file's home — all files in one place!" }
+        },
+        {
+          "id": "q4",
+          "art": "save-floppy",
+          "question": { "ur": "سیو کیا کرتا ہے؟", "en": "What does Save do?" },
+          "audio": "w4l8_q4",
+          "options": [
+            { "id": "drum", "art": "dhol", "label": { "ur": "ڈھول بجاتا ہے", "en": "Plays the drum" } },
+            { "id": "tea", "art": "chai-cup", "label": { "ur": "چائے بناتا ہے", "en": "Makes tea" } },
+            { "id": "safe", "art": "star", "label": { "ur": "کام محفوظ رکھتا ہے", "en": "Keeps your work safe" } }
+          ],
+          "answer": "safe",
+          "explain": { "ur": "سیو = جادوئی تالا — کام ہمیشہ کے لیے محفوظ!", "en": "Save = a magic lock — your work is safe forever!" }
+        },
+        {
+          "id": "q5",
+          "art": "recycle-bin",
+          "question": { "ur": "ری سائیکل بین میں کیا جاتا ہے؟", "en": "What goes into the Recycle Bin?" },
+          "audio": "w4l8_q5",
+          "options": [
+            { "id": "dadi", "art": "file-song", "label": { "ur": "دادی کا قیمتی گانا", "en": "Dadi's precious song" } },
+            { "id": "tooti", "art": "file-doc", "label": { "ur": "پرانی، ٹوٹی فائلیں", "en": "Old, broken files" } },
+            { "id": "nayi", "art": "file-img", "label": { "ur": "نئی تصویریں", "en": "New pictures" } }
+          ],
+          "answer": "tooti",
+          "explain": { "ur": "قیمتی فائلیں فولڈر میں رہتی ہیں — بین صرف پرانی، ٹوٹی فائلیں لیتا ہے!", "en": "Precious files stay in folders — the bin only takes old, broken files!" }
+        }
+      ],
+      "wrongHint": { "ur": "اوپس! ایک بگ ملا! دوبارہ سوچو — تم یہ جانتے ہو!", "en": "Oops! A bug! Think again — you know this!" }
+    }
+  },
+  "bonus": {
+    "activity": {
+      "type": "tap-select",
+      "prompt": { "ur": "بونس جشن! چھپے ہوئے جواہر ڈھونڈو!", "en": "Bonus party! Find the hidden gems!" },
+      "audio": "w4l8_bonus_prompt",
+      "scene": "bg-city",
+      "items": [
+        { "id": "g1", "x": 14, "y": 32, "art": "gem", "correct": true, "glow": true, "hint": { "ur": "پہلا جواہر چمکا!", "en": "The first gem sparkles!" } },
+        { "id": "g2", "x": 40, "y": 30, "art": "gem", "correct": true, "glow": true, "hint": { "ur": "دوسرا جواہر ملا!", "en": "A second gem found!" } },
+        { "id": "g3", "x": 66, "y": 34, "art": "gem", "correct": true, "glow": true, "hint": { "ur": "تیسرا جواہر — کمال!", "en": "The third gem — amazing!" } },
+        { "id": "g4", "x": 28, "y": 68, "art": "gem", "correct": true, "glow": true, "hint": { "ur": "چوتھا جواہر — زبردست!", "en": "The fourth gem — zabardast!" } },
+        { "id": "g5", "x": 78, "y": 64, "art": "gem", "correct": true, "glow": true, "hint": { "ur": "پانچواں جواہر — مکمل!", "en": "The fifth gem — complete!" } }
+      ],
+      "winPraise": { "ur": "پانچ جواہر! فولڈر کیپٹن کا خزانہ — کمال!", "en": "Five gems! The Folder Captain's treasure — amazing!" }
+    }
+  },
+  "cheer": {
+    "recap": [
+      { "ur": "فائل ڈبہ، فولڈر گھر — ٹپ ٹپ کھولو، سیو محفوظ!", "en": "A file is a box, a folder is a home — tap-tap to open, Save to keep safe!" },
+      { "ur": "قیمتی فائلیں فولڈر میں، پرانی بین میں — تم فولڈر کیپٹن ہو!", "en": "Precious files in folders, old files in the bin — you are Folder Captain!" }
+    ],
+    "recapAudio": ["w4l8_recap_1", "w4l8_recap_2"],
+    "rewardToast": { "ur": "تمغہ مل گیا: فولڈر کیپٹن! کنٹرول سٹی تم پر فخر کرتا ہے!", "en": "Medal earned: Folder Captain! Control City is proud of you!" }
+  }
+}

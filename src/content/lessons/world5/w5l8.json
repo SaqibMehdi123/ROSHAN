@@ -1,0 +1,57 @@
+{
+  "id": "w5l8",
+  "schemaVersion": 1,
+  "world": 5,
+  "order": 8,
+  "title": { "ur": "پوسٹر سجاتو", "en": "Decorate the Poster" },
+  "skill": { "ur": "ہر سجاوٹ اپنی جگہ پر", "en": "Every decoration in its place" },
+  "skillKey": "poster-decoration",
+  "minutes": 5,
+  "praise": { "ur": "واہ! تمہارا پوسٹر جھوم رہا ہے!", "en": "Wow! Your poster is dancing with joy!" },
+  "story": {
+    "scenes": [
+      {
+        "bg": "bg-workshop",
+        "cast": ["bijli", "noor", "chotu", "golmatol"],
+        "lines": [
+          { "char": "narrator", "ur": "پوسٹر تیار تھا، مگر وہ کچا کچا لگ رہا تھا — سجاوٹ کہاں ہے؟", "en": "The poster was ready, but it looked plain — where are the decorations?", "audio": "w5l8_story_1" },
+          { "char": "bijli", "emote": "happy", "ur": "پھول نیچے، غبارے اوپر، جھنڈے کناروں پر — ہر چیز اپنی جگہ!", "en": "Flowers below, balloons above, flags on the edges — everything in its place!", "audio": "w5l8_story_2" },
+          { "char": "chotu", "emote": "playful", "ur": "غبارہ اگر زمین پر لگے تو؟ ہاہا، وہ اڑے گا نہیں!", "en": "What if the balloon goes on the ground? Haha, then it can't fly!", "audio": "w5l8_story_3" },
+          { "char": "golmatol", "emote": "peeking", "ur": "میاؤں!", "en": "Myaun!", "audio": "w5l8_story_4" },
+          { "char": "noor", "emote": "pointing", "ur": "گول مٹول ہٹو — چلو ہر سجاوٹ اپنی جگہ پر لگاؤ!", "en": "Move over, Gol Matol — let's put every decoration in its place!", "audio": "w5l8_story_5", "choice": { "ur": "ہاں! پوسٹر سجاؤ!", "en": "Yes! Decorate the poster!", "audio": "w5l8_story_5_choice" } }
+        ]
+      }
+    ]
+  },
+  "show": {
+    "steps": [
+      { "visual": "flower", "caption": { "ur": "پھول نیچے والی جگہ پر — زمین کے پاس۔", "en": "Flowers go low — near the ground." }, "audio": "w5l8_show_1" },
+      { "visual": "gubbara", "caption": { "ur": "غبارے اوپر اڑتے ہیں — آسمان کی طرف۔", "en": "Balloons fly up — toward the sky." }, "audio": "w5l8_show_2" },
+      { "visual": "party-flag", "caption": { "ur": "جھنڈے کناروں پر لہراتے ہیں۔", "en": "Flags wave on the edges." }, "audio": "w5l8_show_3" }
+    ]
+  },
+  "do": {
+    "activity": {
+      "type": "tap-select",
+      "prompt": { "ur": "پوسٹر سجاؤ! ہر سجاوٹ پر کلک کرو — ہر چیز اپنی جگہ پر!", "en": "Decorate the poster! Tap every decoration — everything in its place!" },
+      "audio": "w5l8_do_prompt",
+      "scene": "bg-workshop",
+      "cursorArt": "teer",
+      "items": [
+        { "id": "place-flower", "x": 12, "y": 70, "art": "flower", "correct": true, "glow": true, "hint": { "ur": "پھول نیچے — بالکل صحیح جگہ!", "en": "Flower low — exactly the right place!" } },
+        { "id": "place-flag", "x": 16, "y": 22, "art": "party-flag", "correct": true, "glow": true, "hint": { "ur": "جھنڈا کنارے پر لہرایا!", "en": "The flag waves on the edge!" } },
+        { "id": "place-star", "x": 48, "y": 14, "art": "star", "correct": true, "glow": true, "hint": { "ur": "ستارہ اوپر چمکا!", "en": "The star shines on top!" } },
+        { "id": "place-balloon", "x": 82, "y": 26, "art": "gubbara", "correct": true, "glow": true, "hint": { "ur": "غبارہ اوپر اڑنے کو تیار!", "en": "The balloon is ready to fly!" } }
+      ],
+      "winPraise": { "ur": "واہ! پوسٹر نے جھوم کر کہا — میں تیار ہوں!", "en": "Wow! The poster danced and said — I am ready!" }
+    }
+  },
+  "cheer": {
+    "recap": [
+      { "ur": "سجاوٹ کا اصول: ہر چیز اپنی جگہ پر۔", "en": "The rule of decorating: everything in its place." },
+      { "ur": "پھول نیچے، غبارے اوپر، جھنڈے کناروں پر۔", "en": "Flowers low, balloons up, flags on the edges." }
+    ],
+    "recapAudio": ["w5l8_recap_1", "w5l8_recap_2"],
+    "rewardToast": { "ur": "میلے کا پوسٹر سج گیا!", "en": "The mela poster is decorated!" }
+  }
+}

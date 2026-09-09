@@ -1,0 +1,139 @@
+{
+  "id": "w4l4",
+  "schemaVersion": 1,
+  "world": 4,
+  "order": 4,
+  "title": { "ur": "فائلیں چھانٹو", "en": "Sort the Files" },
+  "skill": { "ur": "تصویریں تصویروں میں، گانے گانوں میں، کہانیاں کہانیوں میں", "en": "Pictures with pictures, songs with songs, stories with stories" },
+  "skillKey": "sort-files",
+  "minutes": 7,
+  "praise": { "ur": "زبردست! شہر کی فائلیں چھنٹ گئیں!", "en": "Zabardast! The city's files are all sorted!" },
+  "story": {
+    "scenes": [
+      {
+        "bg": "bg-city",
+        "cast": ["noor", "ustad-ullo", "golmatol", "bijli"],
+        "lines": [
+          {
+            "char": "narrator",
+            "ur": "فولڈر کھلا — اور اندر بھیڑ! تصویریں، گانے، کہانیاں سب ملے جلے!",
+            "en": "The folder opened — what a crowd! Pictures, songs, stories all mixed up!",
+            "audio": "w4l4_story_1"
+          },
+          {
+            "char": "ustad-ullo",
+            "emote": "perch",
+            "ur": "ہو ہو! ہر فائل اپنے فولڈر میں جائے۔ اسے کہتے ہیں چھانٹنا!",
+            "en": "Hoo hoo! Every file goes to its own folder. That is called sorting!",
+            "audio": "w4l4_story_2"
+          },
+          {
+            "char": "noor",
+            "emote": "pointing",
+            "ur": "تصویری فائل؟ تصویروں والے فولڈر میں!",
+            "en": "A picture file? Into the Pictures folder!",
+            "audio": "w4l4_story_3"
+          },
+          {
+            "char": "golmatol",
+            "emote": "guilty",
+            "ur": "میوں! میں بھی مدد کروں گا — اس بار سب کچھ سنجیدگی سے!",
+            "en": "Meow! I will help too — this time, all serious!",
+            "audio": "w4l4_story_4"
+          },
+          {
+            "char": "narrator",
+            "ur": "چلو تینوں فولڈر بھریں — تصویریں، گانے، کہانیاں!",
+            "en": "Let's fill all three folders — pictures, songs, stories!",
+            "audio": "w4l4_story_5",
+            "choice": { "ur": "چھانٹی شروع!", "en": "Start sorting!", "audio": "w4l4_story_5_choice" }
+          }
+        ]
+      }
+    ]
+  },
+  "show": {
+    "steps": [
+      {
+        "visual": "folder",
+        "caption": { "ur": "تصویروں کا فولڈر — صرف تصویری فائلیں!", "en": "The Pictures folder — only picture files!" },
+        "audio": "w4l4_show_1"
+      },
+      {
+        "visual": "folder-open",
+        "caption": { "ur": "گانوں کا فولڈر — صرف گانے والی فائلیں!", "en": "The Songs folder — only song files!" },
+        "audio": "w4l4_show_2"
+      },
+      {
+        "visual": "file-doc",
+        "caption": { "ur": "کہانیوں کا فولڈر — صرف کہانی والی فائلیں!", "en": "The Stories folder — only story files!" },
+        "audio": "w4l4_show_3"
+      }
+    ]
+  },
+  "do": {
+    "activity": {
+      "type": "sort-bins",
+      "prompt": { "ur": "فائل اٹھاؤ، سوچو، اور اس کے فولڈر پر دباؤ!", "en": "Pick a file, think, and tap its folder!" },
+      "audio": "w4l4_do_prompt",
+      "bins": [
+        { "id": "pics", "label": { "ur": "تصویریں", "en": "Pictures" }, "art": "folder" },
+        { "id": "songs", "label": { "ur": "گانے", "en": "Songs" }, "art": "folder" },
+        { "id": "stories", "label": { "ur": "کہانیاں", "en": "Stories" }, "art": "folder" }
+      ],
+      "cards": [
+        {
+          "id": "aam",
+          "art": "file-img",
+          "text": { "ur": "آم کی تصویر", "en": "A mango picture" },
+          "bin": "pics",
+          "explain": { "ur": "آم کی تصویر — تصویروں کے فولڈر میں!", "en": "A mango picture — into the Pictures folder!" }
+        },
+        {
+          "id": "bulbul",
+          "art": "file-song",
+          "text": { "ur": "بلبل کا گانا", "en": "A nightingale song" },
+          "bin": "songs",
+          "explain": { "ur": "گانا؟ گانوں کے فولڈر میں!", "en": "A song? Into the Songs folder!" }
+        },
+        {
+          "id": "sher",
+          "art": "file-doc",
+          "text": { "ur": "شیر اور چوہے کی کہانی", "en": "The lion and mouse story" },
+          "bin": "stories",
+          "explain": { "ur": "کہانی؟ کہانیوں کے فولڈر میں!", "en": "A story? Into the Stories folder!" }
+        },
+        {
+          "id": "gaon",
+          "art": "file-img",
+          "text": { "ur": "گاؤں کی تصویر", "en": "A village picture" },
+          "bin": "pics",
+          "explain": { "ur": "تصویر تو تصویر ہے — تصویروں کے فولڈر میں!", "en": "Any picture goes to the Pictures folder!" }
+        },
+        {
+          "id": "chaand",
+          "art": "file-song",
+          "text": { "ur": "چاند کا گیت", "en": "A song about the moon" },
+          "bin": "songs",
+          "explain": { "ur": "چاند کا گیت — گانوں کے فولڈر میں!", "en": "The moon song — into the Songs folder!" }
+        },
+        {
+          "id": "huroof",
+          "art": "file-doc",
+          "text": { "ur": "حروف کی کہانی", "en": "An alphabet story" },
+          "bin": "stories",
+          "explain": { "ur": "حروف کی کہانی — کہانیوں کے فولڈر میں!", "en": "The alphabet story — into the Stories folder!" }
+        }
+      ],
+      "wrongHint": { "ur": "اوپس! ایک بگ ملا! سوچو — یہ تصویر ہے، گانا ہے یا کہانی؟", "en": "Oops! A bug! Think — is it a picture, a song, or a story?" }
+    }
+  },
+  "cheer": {
+    "recap": [
+      { "ur": "چھانٹنا: ہر فائل اپنے فولڈر میں۔", "en": "Sorting: every file in its own folder." },
+      { "ur": "تصویریں، گانے، کہانیاں — تین فولڈر، تین گھر!", "en": "Pictures, songs, stories — three folders, three homes!" }
+    ],
+    "recapAudio": ["w4l4_recap_1", "w4l4_recap_2"],
+    "rewardToast": { "ur": "اُستاد اُلو کہتے ہیں: ہو ہو! شہر کبھی اتنا صاف نہیں تھا!", "en": "Ustaad Ulloo says: hoo hoo! The city was never this tidy!" }
+  }
+}

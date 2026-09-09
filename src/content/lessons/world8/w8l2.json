@@ -1,0 +1,120 @@
+{
+  "id": "w8l2",
+  "schemaVersion": 1,
+  "world": 8,
+  "order": 2,
+  "title": { "ur": "پہلا پروگرام", "en": "My First Program" },
+  "skill": { "ur": "ترتیب: پرچم → آگے بڑھو → جواہر", "en": "Order: flag → move → gem" },
+  "skillKey": "first-program",
+  "minutes": 5,
+  "praise": {
+    "ur": "زبردست! تم نے اپنا پہلا پروگرام چلایا!",
+    "en": "Zabardast! You ran your very first program!"
+  },
+  "story": {
+    "scenes": [
+      {
+        "bg": "bg-mountain",
+        "cast": ["bijli", "noor", "chotu", "ustad-ullo"],
+        "lines": [
+          {
+            "char": "narrator",
+            "ur": "پہاڑ پر ایک جواہر چمک رہا ہے — اور بجلی سو رہی ہے، خوابوں میں بیپ بیپ!",
+            "en": "A gem shines on the mountain — and Bijli is asleep, beeping in her dreams!",
+            "audio": "w8l2_story_1"
+          },
+          {
+            "char": "chotu",
+            "emote": "playful",
+            "ur": "بجلی کو جگاؤ! چلو اس کے لیے پروگرام بنائیں!",
+            "en": "Wake Bijli up! Let's build her a program!",
+            "audio": "w8l2_story_2"
+          },
+          {
+            "char": "noor",
+            "emote": "excited",
+            "ur": "ترتیب یاد: پہلے پرچم، پھر آگے بڑھو، پھر جواہر!",
+            "en": "Remember the order: first the flag, then move, then the gem!",
+            "audio": "w8l2_story_3"
+          },
+          {
+            "char": "bijli",
+            "emote": "waking",
+            "ur": "بیپ…؟ پرچم! پروگرام شروع! میں تیار ہوں!",
+            "en": "Beep…? A flag! Program starting! I am ready!",
+            "audio": "w8l2_story_4",
+            "fx": "beep"
+          },
+          {
+            "char": "ustad-ullo",
+            "emote": "nodding",
+            "ur": "بلاکس صحیح ترتیب میں دباؤ — اور جواہر جیتو!",
+            "en": "Tap the blocks in the right order — and win the gem!",
+            "audio": "w8l2_story_5",
+            "choice": {
+              "ur": "پروگرام بناؤ!",
+              "en": "Build the program!",
+              "audio": "w8l2_story_5_choice"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "show": {
+    "steps": [
+      {
+        "visual": "block-flag",
+        "caption": { "ur": "ہر پروگرام پرچم بلاک سے شروع ہوتا ہے۔", "en": "Every program starts with the flag block." },
+        "audio": "w8l2_show_1"
+      },
+      {
+        "visual": "block-cmd",
+        "caption": { "ur": "پھر کمانڈز ترتیب سے — ایک، دو، تین!", "en": "Then commands in order — one, two, three!" },
+        "audio": "w8l2_show_2"
+      },
+      {
+        "visual": "gem",
+        "caption": { "ur": "آخر میں ہدف — جواہر! پروگرام مکمل!", "en": "At the end, the goal — the gem! Program complete!" },
+        "audio": "w8l2_show_3"
+      }
+    ]
+  },
+  "do": {
+    "activity": {
+      "type": "tap-sequence",
+      "prompt": { "ur": "پروگرام بناؤ: پرچم، آگے بڑھو، جواہر — صحیح ترتیب میں دباؤ!", "en": "Build the program: flag, move, gem — tap them in the right order!" },
+      "audio": "w8l2_do_prompt",
+      "steps": [
+        {
+          "id": "flag",
+          "art": "block-flag",
+          "label": { "ur": "شروع — پرچم", "en": "START — the flag" },
+          "audio": "w8l2_do_flag"
+        },
+        {
+          "id": "move",
+          "art": "block-cmd",
+          "label": { "ur": "آگے بڑھو", "en": "Move forward" },
+          "audio": "w8l2_do_move"
+        },
+        {
+          "id": "end",
+          "art": "gem",
+          "label": { "ur": "جواہر حاصل!", "en": "Gem get!" },
+          "audio": "w8l2_do_end"
+        }
+      ],
+      "order": ["flag", "move", "end"],
+      "wrongHint": { "ur": "اوپس! ایک بگ ملا! سوچو — سب سے پہلے پرچم آتا ہے!", "en": "Oops! A bug! Think — the flag comes first!" }
+    }
+  },
+  "cheer": {
+    "recap": [
+      { "ur": "پروگرام بلاکس کی قطار ہے — ترتیب سے چلتی ہے۔", "en": "A program is a line of blocks — it runs in order." },
+      { "ur": "پرچم → آگے بڑھو → جواہر — یہ تمہارا پہلا پروگرام!", "en": "Flag → move → gem — that is your first program!" }
+    ],
+    "recapAudio": ["w8l2_recap_1", "w8l2_recap_2"],
+    "rewardToast": { "ur": "پہلا پروگرام مکمل! بجلی جاگ گئی اور جواہر پا لیا!", "en": "First program done! Bijli woke up and got the gem!" }
+  }
+}

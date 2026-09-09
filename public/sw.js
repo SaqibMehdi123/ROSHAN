@@ -7,7 +7,7 @@
  *  - audio files (/audio/*.mp3) are cached on first play (on-demand precache);
  *  - never cache cross-origin requests or non-GET.
  */
-const CACHE = "roshan-v1";
+const CACHE = "roshan-v2-8worlds";
 const PRECACHE = ["/", "/manifest.webmanifest", "/icons/icon-192.png", "/icons/icon-512.png"];
 
 self.addEventListener("install", (event) => {

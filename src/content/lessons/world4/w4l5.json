@@ -1,0 +1,97 @@
+{
+  "id": "w4l5",
+  "schemaVersion": 1,
+  "world": 4,
+  "order": 5,
+  "title": { "ur": "سیو کرو — محفوظ!", "en": "Save it — Safe forever!" },
+  "skill": { "ur": "سیو دبانے سے کام ہمیشہ کے لیے محفوظ رہتا ہے", "en": "Tap Save and your work stays safe forever" },
+  "skillKey": "save-work",
+  "minutes": 6,
+  "praise": { "ur": "شاباش! تمہارا کام ہمیشہ کے لیے محفوظ!", "en": "Shabash! Your work is safe forever!" },
+  "story": {
+    "scenes": [
+      {
+        "bg": "bg-lab",
+        "cast": ["chotu", "noor", "bijli"],
+        "lines": [
+          {
+            "char": "chotu",
+            "emote": "happy",
+            "ur": "دیکھو! میں نے آم کے درخت کی تصویر بنائی!",
+            "en": "Look! I drew a picture of a mango tree!",
+            "audio": "w4l5_story_1"
+          },
+          {
+            "char": "noor",
+            "emote": "thinking",
+            "ur": "واہ! پر اگر کمپیوٹر بند ہو گیا تو تصویر کہاں جائے گی؟",
+            "en": "Wow! But if the computer turns off, where will the picture go?",
+            "audio": "w4l5_story_2"
+          },
+          {
+            "char": "bijli",
+            "emote": "happy",
+            "ur": "بیپ! اسی لیے ہے سیو بٹن — کام محفوظ کرنے والا جادوئی تالا!",
+            "en": "Beep! That is what Save is for — the magic lock that keeps work safe!",
+            "audio": "w4l5_story_3"
+          },
+          {
+            "char": "chotu",
+            "emote": "excited",
+            "ur": "تو پہلے بناؤ، پھر نام دو، پھر سیو دباؤ!",
+            "en": "So: first make it, then name it, then tap Save!",
+            "audio": "w4l5_story_4"
+          },
+          {
+            "char": "narrator",
+            "ur": "سیکھو سیو کے تین جادوئی قدم!",
+            "en": "Learn Save's three magic steps!",
+            "audio": "w4l5_story_5",
+            "choice": { "ur": "سیو سیکھو!", "en": "Teach me Save!", "audio": "w4l5_story_5_choice" }
+          }
+        ]
+      }
+    ]
+  },
+  "show": {
+    "steps": [
+      {
+        "visual": "qalam",
+        "caption": { "ur": "پہلا قدم: بناؤ — تصویر بناؤ یا کہانی لکھو۔", "en": "Step one: Make — draw a picture or write a story." },
+        "audio": "w4l5_show_1"
+      },
+      {
+        "visual": "file-doc",
+        "caption": { "ur": "دوسرا قدم: نام دو — میری آم والی تصویر!", "en": "Step two: Name it — My Mango Picture!" },
+        "audio": "w4l5_show_2"
+      },
+      {
+        "visual": "save-floppy",
+        "caption": { "ur": "تیسرا قدم: سیو دباؤ — کام ہمیشہ کے لیے محفوظ!", "en": "Step three: Tap Save — your work is safe forever!" },
+        "audio": "w4l5_show_3"
+      }
+    ]
+  },
+  "do": {
+    "activity": {
+      "type": "tap-sequence",
+      "prompt": { "ur": "تین قدم ترتیب سے دباؤ: بناؤ، نام، سیو!", "en": "Tap the three steps in order: make, name, save!" },
+      "audio": "w4l5_do_prompt",
+      "steps": [
+        { "id": "draw", "art": "qalam", "label": { "ur": "بناؤ", "en": "Make" }, "audio": "w4l5_do_draw" },
+        { "id": "name", "art": "file-doc", "label": { "ur": "نام دو", "en": "Name it" }, "audio": "w4l5_do_name" },
+        { "id": "save", "art": "save-floppy", "label": { "ur": "سیو", "en": "Save" }, "audio": "w4l5_do_save" }
+      ],
+      "order": ["draw", "name", "save"],
+      "wrongHint": { "ur": "اوپس! ایک بگ! ترتیب یاد کرو: بناؤ، نام، سیو!", "en": "Oops! A bug! Remember the order: make, name, save!" }
+    }
+  },
+  "cheer": {
+    "recap": [
+      { "ur": "سیو دبایا؟ کام ہمیشہ کے لیے محفوظ!", "en": "Tapped Save? Your work is safe forever!" },
+      { "ur": "بناؤ، نام دو، سیو — تین قدم، ایک جادو!", "en": "Make, name, save — three steps, one magic!" }
+    ],
+    "recapAudio": ["w4l5_recap_1", "w4l5_recap_2"],
+    "rewardToast": { "ur": "چھوٹو کہتا ہے: میری آم والی تصویر محفوظ ہو گئی!", "en": "Chotu says: my mango picture is safe now!" }
+  }
+}

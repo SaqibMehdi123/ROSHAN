@@ -26,12 +26,12 @@ export function WelcomeGate() {
     return (
       <Shell>
         <div className="anim-bob">
-          <Bijli size={170} emote="waking" />
+          <Bijli size={180} emote="waking" />
         </div>
-        <h1 className="urdu mt-4 text-4xl font-bold">
+        <h1 className="urdu-tight mt-4 text-[2.1rem] font-bold sm:text-4xl">
           سلام! میں <span className="text-roshan-orange-deep">بجلی</span> ہوں!
         </h1>
-        <p className="urdu mt-2 text-2xl text-roshan-ink-soft">
+        <p className="urdu-tight mt-2 text-2xl text-roshan-ink-soft">
           تمھارا نام کیا ہے؟ (صرف پہلا نام)
         </p>
         <p className="ltr-term mt-1 text-sm text-roshan-ink-soft" dir="ltr">
@@ -41,7 +41,7 @@ export function WelcomeGate() {
           value={name}
           onChange={(e) => setName(e.target.value)}
           maxLength={14}
-          className="urdu mt-6 h-16 w-72 rounded-2xl border-4 border-roshan-card-border bg-white px-6 text-center text-2xl font-bold outline-none focus:border-roshan-orange"
+          className="urdu mt-6 h-16 w-72 rounded-2xl border-4 border-roshan-card-border bg-white px-6 text-center text-2xl font-bold shadow-[var(--r-shadow)] outline-none transition-colors focus:border-roshan-orange"
           placeholder="نام"
           aria-label="Your first name"
         />
@@ -63,9 +63,9 @@ export function WelcomeGate() {
   if (step === 1) {
     return (
       <Shell>
-        <h2 className="urdu text-3xl font-bold">اپنا رنگ چُنو!</h2>
-        <p className="urdu mt-1 text-xl text-roshan-ink-soft">یہ تمھارا خاص رنگ ہو گا۔</p>
-        <div className="mt-8 flex flex-row-reverse justify-center gap-4">
+        <h2 className="urdu-tight text-3xl font-bold sm:text-4xl">اپنا رنگ چُنو!</h2>
+        <p className="urdu-tight mt-1 text-xl text-roshan-ink-soft">یہ تمھارا خاص رنگ ہو گا۔</p>
+        <div className="mt-8 flex max-w-lg flex-row-reverse flex-wrap justify-center gap-3 sm:gap-4">
           {AVATAR_COLORS.map((c) => (
             <button
               key={c}
@@ -73,15 +73,18 @@ export function WelcomeGate() {
                 setColor(c);
                 void playAudio(undefined, "کمال!");
               }}
-              className={`h-20 w-20 rounded-full border-4 transition-transform hover:scale-110 ${color === c ? "border-roshan-ink scale-110" : "border-white"}`}
+              className={`h-16 w-16 rounded-full border-4 transition-transform hover:scale-110 sm:h-20 sm:w-20 ${color === c ? "scale-110 border-roshan-ink shadow-[var(--r-shadow)]" : "border-white shadow"}`}
               style={{ background: c }}
               aria-label={`color ${c}`}
             />
           ))}
         </div>
-        <div className="mt-10 flex items-end justify-center gap-8">
+        <div className="mt-10 flex items-end justify-center gap-6 sm:gap-8">
           <Bijli size={90} emote="happy" />
-          <div className="flex h-24 w-24 items-center justify-center rounded-full border-4 border-roshan-ink text-3xl font-bold text-white" style={{ background: color }}>
+          <div
+            className="flex h-24 w-24 items-center justify-center rounded-full border-4 border-roshan-ink text-3xl font-bold text-white shadow-[var(--r-shadow-btn)]"
+            style={{ background: `radial-gradient(circle at 32% 26%, #ffffffaa 0%, ${color} 52%)` }}
+          >
             {name.trim().slice(0, 2)}
           </div>
           <Chotu size={90} emote="excited" />
@@ -96,11 +99,11 @@ export function WelcomeGate() {
 
   return (
     <Shell>
-      <div className="flex items-center justify-center gap-6">
+      <div className="flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6">
         <Noor size={100} emote="pointing" />
-        <div>
-          <h2 className="urdu text-3xl font-bold">کیا تم دو کھلاڑی ہو؟</h2>
-          <p className="urdu mt-1 text-xl text-roshan-ink-soft">
+        <div className="text-center sm:text-right">
+          <h2 className="urdu-tight text-3xl font-bold">کیا تم دو کھلاڑی ہو؟</h2>
+          <p className="urdu-tight mt-1 text-xl text-roshan-ink-soft">
             ایک کمپیوٹر پر دو بچے — بار بار باری بدلیں گے!
           </p>
           <p className="ltr-term mt-1 text-xs text-roshan-ink-soft" dir="ltr">
@@ -110,18 +113,18 @@ export function WelcomeGate() {
         <Chotu size={100} emote="idle" />
       </div>
 
-      <div className="mt-8 flex justify-center gap-4">
+      <div className="mt-8 flex flex-wrap justify-center gap-4">
         <button
           onClick={() => setPairMode(false)}
           className={`btn-kid ${!pairMode ? "btn-teal" : "btn-back"}`}
         >
-          <span className="urdu text-xl font-semibold">نہیں، میں اکیلا ہوں</span>
+          <span className="urdu-tight text-xl font-semibold">نہیں، میں اکیلا ہوں</span>
         </button>
         <button
           onClick={() => setPairMode(true)}
           className={`btn-kid ${pairMode ? "btn-teal" : "btn-back"}`}
         >
-          <span className="urdu text-xl font-semibold">جی ہاں، دوست کے ساتھ!</span>
+          <span className="urdu-tight text-xl font-semibold">جی ہاں، دوست کے ساتھ!</span>
         </button>
       </div>
 
@@ -131,7 +134,7 @@ export function WelcomeGate() {
             value={buddy}
             onChange={(e) => setBuddy(e.target.value)}
             maxLength={14}
-            className="urdu h-16 w-72 rounded-2xl border-4 border-roshan-card-border bg-white px-6 text-center text-2xl font-bold outline-none focus:border-roshan-orange"
+            className="urdu h-16 w-72 rounded-2xl border-4 border-roshan-card-border bg-white px-6 text-center text-2xl font-bold shadow-[var(--r-shadow)] outline-none focus:border-roshan-orange"
             placeholder="دوست کا پہلا نام"
             aria-label="Buddy first name"
           />
@@ -157,7 +160,7 @@ export function ProfileGate() {
       <div className="anim-bob">
         <Bijli size={130} emote="happy" />
       </div>
-      <h2 className="urdu mt-2 text-3xl font-bold">کون کھیلے گا؟</h2>
+      <h2 className="urdu-tight mt-2 text-3xl font-bold sm:text-4xl">کون کھیلے گا؟</h2>
       <div className="mt-8 flex flex-row-reverse flex-wrap justify-center gap-4">
         {profiles.map((p) => (
           <button
@@ -166,7 +169,7 @@ export function ProfileGate() {
               void playAudio(undefined, `خوش آمدید ${p.name}!`);
               selectProfile(p.id);
             }}
-            className="card-kid flex min-h-32 w-40 flex-col items-center justify-center gap-2 p-4 hover:scale-105 transition-transform"
+            className="card-kid flex min-h-32 w-40 flex-col items-center justify-center gap-2 p-4 transition-transform hover:scale-105"
           >
             <div
               className="flex h-16 w-16 items-center justify-center rounded-full border-4 border-roshan-ink text-2xl font-bold text-white"
@@ -174,7 +177,7 @@ export function ProfileGate() {
             >
               {p.name.slice(0, 2)}
             </div>
-            <span className="urdu text-xl font-bold">{p.name}</span>
+            <span className="urdu-tight text-xl font-bold">{p.name}</span>
             <span className="ltr-term text-xs text-roshan-ink-soft" dir="ltr">
               {Object.values(p.stars).reduce((a, b) => a + b, 0)} ★
             </span>
@@ -182,10 +185,10 @@ export function ProfileGate() {
         ))}
         <button
           onClick={() => go("welcome")}
-          className="card-kid flex min-h-32 w-40 flex-col items-center justify-center gap-2 p-4 hover:scale-105 transition-transform"
+          className="card-kid flex min-h-32 w-40 flex-col items-center justify-center gap-2 p-4 transition-transform hover:scale-105"
         >
           <span className="text-4xl">＋</span>
-          <span className="urdu text-lg font-bold">نیا کھلاڑی</span>
+          <span className="urdu-tight text-lg font-bold">نیا کھلاڑی</span>
         </button>
       </div>
       <button onClick={() => go("teacher")} className="ltr-term mt-10 text-sm text-roshan-ink-soft underline" dir="ltr">
@@ -198,7 +201,12 @@ export function ProfileGate() {
 function Shell({ children }: { children: React.ReactNode }) {
   const profile = useActiveProfile();
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center px-6 py-10 text-center">
+    <main className="relative flex min-h-dvh flex-col items-center justify-center px-5 py-12 text-center">
+      {/* soft decorative blobs */}
+      <div className="pointer-events-none absolute -top-16 right-[12%] h-44 w-44 rounded-full bg-roshan-sun opacity-40 blur-2xl" aria-hidden />
+      <div className="pointer-events-none absolute bottom-[8%] left-[6%] h-52 w-52 rounded-full bg-roshan-sky opacity-20 blur-3xl" aria-hidden />
+      <div className="pointer-events-none absolute left-[14%] top-[10%] anim-twinkle text-2xl opacity-60" aria-hidden>✦</div>
+      <div className="pointer-events-none absolute right-[18%] bottom-[16%] anim-twinkle text-xl opacity-50" style={{ animationDelay: "1.2s" }} aria-hidden>✦</div>
       {children}
       <div className="absolute left-4 top-4 no-print">
         <RepeatButton />

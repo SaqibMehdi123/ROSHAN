@@ -1,0 +1,56 @@
+{
+  "id": "w7l4",
+  "schemaVersion": 1,
+  "world": 7,
+  "order": 4,
+  "title": { "ur": "انڈا، مرغی!", "en": "Egg, then Hen!" },
+  "skill": { "ur": "زندگی کی ترتیب: انڈا، چوزہ، مرغی", "en": "Life-cycle order: egg, chick, hen" },
+  "skillKey": "life-cycle-order",
+  "minutes": 5,
+  "praise": { "ur": "شاباش! زندگی کی ترتیب تم نے درست کی!", "en": "Shabash! You fixed the order of life!" },
+  "story": {
+    "scenes": [
+      {
+        "bg": "bg-meadow",
+        "cast": ["bijli", "chotu", "noor", "golmatol"],
+        "lines": [
+          { "char": "narrator", "ur": "میدان میں مُرگی اپنے انڈے کے پاس بیٹھی تھی۔", "en": "In the meadow, the hen sat beside her egg.", "audio": "w7l4_story_1" },
+          { "char": "bijli", "emote": "short-circuit", "ur": "بیپ! میرا دماغ کہہ رہا ہے: پہلے مرغی، پھر انڈا… کیا یہ سہی ہے؟", "en": "Beep! My brain says: first the hen, then the egg… is that right?", "audio": "w7l4_story_2" },
+          { "char": "noor", "emote": "thinking", "ur": "سوچو سوچو! انڈے سے چوزہ نکلتا ہے، چوزہ بڑا ہو کر مرغی بنتا ہے!", "en": "Think, think! An egg hatches a chick, and the chick grows into a hen!", "audio": "w7l4_story_3" },
+          { "char": "golmatol", "emote": "peeking", "ur": "میں نے تصویریں الٹ دیں: انڈا، مرغی، چوزہ؟ اوپس!", "en": "I flipped the pictures: egg, hen, chick? Oops!", "audio": "w7l4_story_4" },
+          { "char": "chotu", "emote": "happy", "ur": "ہاہا گول مٹول! اصل ترتیب: انڈا، چوزہ، مرغی!", "en": "Haha Gol Matol! The real order: egg, chick, hen!", "audio": "w7l4_story_5" },
+          { "char": "narrator", "ur": "کیا تم زندگی کی ترتیب دوبارہ درست کرو گے؟", "en": "Will you fix the order of life again?", "audio": "w7l4_story_6", "choice": { "ur": "ترتیب ٹھیک کرو!", "en": "Fix the order!", "audio": "w7l4_story_6_choice" } }
+        ]
+      }
+    ]
+  },
+  "show": {
+    "steps": [
+      { "visual": "egg", "caption": { "ur": "پہلے: انڈا۔", "en": "First: the egg." }, "audio": "w7l4_show_1" },
+      { "visual": "chick", "caption": { "ur": "پھر: چوزہ باہر آیا۔", "en": "Next: out came the chick." }, "audio": "w7l4_show_2" },
+      { "visual": "hen", "caption": { "ur": "آخر میں: بڑی مرغی!", "en": "Last: a big hen!" }, "audio": "w7l4_show_3" }
+    ]
+  },
+  "do": {
+    "activity": {
+      "type": "tap-sequence",
+      "prompt": { "ur": "انڈا، چوزہ، مرغی — زندگی کی ترتیب دباؤ!", "en": "Egg, chick, hen — tap life's order!" },
+      "audio": "w7l4_do_prompt",
+      "steps": [
+        { "id": "egg", "art": "egg", "label": { "ur": "انڈا", "en": "The egg" }, "audio": "w7l4_step_1" },
+        { "id": "chick", "art": "chick", "label": { "ur": "چوزہ", "en": "The chick" }, "audio": "w7l4_step_2" },
+        { "id": "hen", "art": "hen", "label": { "ur": "مرغی", "en": "The hen" }, "audio": "w7l4_step_3" }
+      ],
+      "order": ["egg", "chick", "hen"],
+      "wrongHint": { "ur": "اوپس! ایک بگ ملا! انڈے سے کون باہر آتا ہے؟ دوبارہ سوچو!", "en": "Oops! A bug! Who comes out of the egg? Think again!" }
+    }
+  },
+  "cheer": {
+    "recap": [
+      { "ur": "انڈا، چوزہ، مرغی — زندگی کی ترتیب۔", "en": "Egg, chick, hen — the order of life." },
+      { "ur": "ترتیب الٹی لگے تو بگ تلاش کرو۔", "en": "If the order looks flipped, hunt for the bug." }
+    ],
+    "recapAudio": ["w7l4_recap_1", "w7l4_recap_2"],
+    "rewardToast": { "ur": "چوتھا سوچنے کا جواہر مل گیا — مرغی خوش!", "en": "Fourth Thinking Gem won — the hen is happy!" }
+  }
+}

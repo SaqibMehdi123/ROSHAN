@@ -1,0 +1,55 @@
+{
+  "id": "w5l9",
+  "schemaVersion": 1,
+  "world": 5,
+  "order": 9,
+  "title": { "ur": "بناؤ، نام دو، سیو کرو", "en": "Make, Name, Save" },
+  "skill": { "ur": "بناؤ، نام لکھو، سیو کرو — تین قدم", "en": "Make, name, save — three steps" },
+  "skillKey": "make-name-save",
+  "minutes": 6,
+  "praise": { "ur": "زبردست! تمہارا کام سیو ہو گیا — ہمیشہ محفوظ!", "en": "Zabardast! Your work is saved — safe forever!" },
+  "story": {
+    "scenes": [
+      {
+        "bg": "bg-workshop",
+        "cast": ["bijli", "noor", "chotu", "golmatol"],
+        "lines": [
+          { "char": "narrator", "ur": "نور اور چھوٹو نے اب تک کا بہترین کارڈ بنایا — اب اسے کہیں کھونا نہیں!", "en": "Noor and Chotu made their best card ever — now they must not lose it!", "audio": "w5l9_story_1" },
+          { "char": "chotu", "emote": "surprised", "ur": "اڑ! گول مٹول ٹیبل پر چڑھ گیا! کارڈ گرے گا!", "en": "Eek! Gol Matol climbed on the table! The card will fall!", "audio": "w5l9_story_2" },
+          { "char": "golmatol", "emote": "guilty", "ur": "میاؤں!", "en": "Myaun!", "audio": "w5l9_story_3" },
+          { "char": "bijli", "emote": "happy", "ur": "کوئی فکر نہیں! سیو دباؤ — اور کارڈ فولڈر میں محفوظ، ہمیشہ کے لیے!", "en": "No worry! Tap Save — and the card is safe in the folder, forever!", "audio": "w5l9_story_4" },
+          { "char": "noor", "emote": "pointing", "ur": "بناؤ، نام دو، سیو کرو — فنکار کے تین قدم! چلو کر کے دکھاؤ!", "en": "Make, name, save — an artist's three steps! Show us how it's done!", "audio": "w5l9_story_5", "choice": { "ur": "ہاں! سیو کرو!", "en": "Yes! Save it!", "audio": "w5l9_story_5_choice" } }
+        ]
+      }
+    ]
+  },
+  "show": {
+    "steps": [
+      { "visual": "save-floppy", "caption": { "ur": "سیو کا نشان — دباؤ تو کام محفوظ!", "en": "The Save sign — tap it and your work is safe!" }, "audio": "w5l9_show_1" },
+      { "visual": "folder", "caption": { "ur": "سیو ہو تو کام فولڈر میں چلا جاتا ہے — اپنے گھر جیسا!", "en": "Saved work goes into the folder — like its own home!" }, "audio": "w5l9_show_2" },
+      { "visual": "trophy", "caption": { "ur": "بناؤ، نام دو، سیو — تم فنکار چیمپیئن!", "en": "Make, name, save — you are an artist champion!" }, "audio": "w5l9_show_3" }
+    ]
+  },
+  "do": {
+    "activity": {
+      "type": "tap-sequence",
+      "prompt": { "ur": "تین قدم یاد کرو — بناؤ، نام، سیو! ترتیب سے دباؤ۔", "en": "Remember three steps — make, name, save! Tap them in order." },
+      "audio": "w5l9_do_prompt",
+      "steps": [
+        { "id": "make", "art": "easel", "label": { "ur": "بناؤ", "en": "Make" } },
+        { "id": "name", "art": "text-tool", "label": { "ur": "نام لکھو", "en": "Write the name" } },
+        { "id": "save", "art": "save-floppy", "label": { "ur": "سیو کرو", "en": "Save" } }
+      ],
+      "order": ["make", "name", "save"],
+      "wrongHint": { "ur": "اوپس! ایک بگ ملا! اگلا قدم دباؤ — پہلے بناؤ، پھر نام، آخر میں سیو!", "en": "Oops! A bug! Tap the next step — first make, then name, and save at the end!" }
+    }
+  },
+  "cheer": {
+    "recap": [
+      { "ur": "بناؤ، نام دو، سیو کرو — فنکار کے تین قدم۔", "en": "Make, name, save — an artist's three steps." },
+      { "ur": "سیو کیا؟ کام ہمیشہ کے لیے محفوظ!", "en": "Saved? Your work is safe forever!" }
+    ],
+    "recapAudio": ["w5l9_recap_1", "w5l9_recap_2"],
+    "rewardToast": { "ur": "کارڈ فولڈر میں پہنچ گیا — محفوظ!", "en": "The card reached the folder — safe and sound!" }
+  }
+}

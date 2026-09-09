@@ -1,0 +1,218 @@
+{
+  "id": "w8l10",
+  "schemaVersion": 1,
+  "world": 8,
+  "order": 10,
+  "title": { "ur": "چوٹی — روشن ہیرو!", "en": "The Summit — ROSHAN Hero!" },
+  "skill": { "ur": "پورے سفر کی دہرائی — آٹھواں بیج!", "en": "Review of the whole journey — the eighth badge!" },
+  "skillKey": "roshan-hero",
+  "minutes": 7,
+  "badge": "roshan-hero",
+  "praise": {
+    "ur": "مبارک ہو، روشن ہیرو! تم پہاڑ کی چوٹی ہو!",
+    "en": "Congratulations, ROSHAN Hero! You are the summit of the mountain!"
+  },
+  "story": {
+    "scenes": [
+      {
+        "bg": "bg-mountain",
+        "props": ["party-flag", "dhol"],
+        "cast": ["bijli", "noor", "chotu", "ustad-ullo"],
+        "lines": [
+          {
+            "char": "narrator",
+            "ur": "چوٹی آ گئی! جھنڈے لہرا رہے ہیں، ڈھول بج رہا ہے — اور پوری وادی تمہارے قدموں میں!",
+            "en": "The summit at last! Flags wave, the dhol plays — and the whole valley lies at your feet!",
+            "audio": "w8l10_story_1",
+            "fx": "confetti"
+          },
+          {
+            "char": "noor",
+            "emote": "celebrating",
+            "ur": "یاد ہے؟ دوستی کا سفر، ماؤس ماسٹر، کی بورڈ نائٹ — تم نے سب جیتے!",
+            "en": "Remember? Journey of Friendship, Mouse Master, Keyboard Knight — you won them all!",
+            "audio": "w8l10_story_2"
+          },
+          {
+            "char": "chotu",
+            "emote": "celebrating",
+            "ur": "فولڈر کیپٹن، ننھا فنکار، سیفٹی اسٹار، لاجک چیمپیئن — کمال، کمال!",
+            "en": "Folder Captain, Little Artist, Safety Star, Logic Champion — wow, wow!",
+            "audio": "w8l10_story_3"
+          },
+          {
+            "char": "bijli",
+            "emote": "happy",
+            "ur": "اور آج، سب سے اوپر — روشن ہیرو! تم نے مجھے بلاکس سے چلانا سکھایا!",
+            "en": "And today, the highest of all — ROSHAN Hero! You taught me to move with blocks!",
+            "audio": "w8l10_story_4"
+          },
+          {
+            "char": "ustad-ullo",
+            "emote": "nodding",
+            "ur": "آٹھ بیج، ایک چوٹی، ایک نام: روشن ہیرو!",
+            "en": "Eight badges, one summit, one name: ROSHAN Hero!",
+            "audio": "w8l10_story_5"
+          },
+          {
+            "char": "narrator",
+            "ur": "آخری کوئز — چوٹی کا جھنڈا گاڑو!",
+            "en": "The final quiz — plant the flag on the summit!",
+            "audio": "w8l10_story_6",
+            "fx": "sparkle",
+            "choice": {
+              "ur": "روشن ہیرو کوئز!",
+              "en": "The ROSHAN Hero quiz!",
+              "audio": "w8l10_story_6_choice"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "show": {
+    "steps": [
+      {
+        "visual": "medal-mountain",
+        "caption": { "ur": "یہ ہے روشن ہیرو کا بیج — پہاڑ کا سب سے اونچا بیج!", "en": "This is the ROSHAN Hero badge — the highest badge of the mountain!" },
+        "audio": "w8l10_show_1"
+      },
+      {
+        "visual": "trophy",
+        "caption": { "ur": "آٹھ دنیائیں، آٹھ بیج — یہ تمہاری ٹرافی!", "en": "Eight worlds, eight badges — this is your trophy!" },
+        "audio": "w8l10_show_2"
+      },
+      {
+        "visual": "rocket",
+        "caption": { "ur": "پہاڑ فتح! اب آسمان بھی تمہارا ہے — اڑو!", "en": "Mountain conquered! Now even the sky is yours — fly!" },
+        "audio": "w8l10_show_3"
+      }
+    ]
+  },
+  "do": {
+    "activity": {
+      "type": "quiz-mix",
+      "prompt": { "ur": "روشن ہیرو کوئز: پانچ سوال — چوٹی فتح کرو!", "en": "The ROSHAN Hero quiz: five questions — conquer the summit!" },
+      "audio": "w8l10_do_prompt",
+      "questions": [
+        {
+          "id": "q1",
+          "art": "block-flag",
+          "question": { "ur": "پروگرام کس بلاک سے شروع ہوتا ہے؟", "en": "Which block starts the program?" },
+          "audio": "w8l10_q1",
+          "options": [
+            { "id": "a", "art": "block-flag", "label": { "ur": "پرچم — شروع", "en": "Flag — Start" } },
+            { "id": "b", "art": "block-loop", "label": { "ur": "لوپ", "en": "Loop" } }
+          ],
+          "answer": "a",
+          "explain": { "ur": "پرچم ہمیشہ پہلا — پروگرام کا شروع!", "en": "The flag is always first — the start of the program!" }
+        },
+        {
+          "id": "q2",
+          "art": "loop-arrow",
+          "question": { "ur": "لوپ بلاک کیا کرتا ہے؟", "en": "What does the loop block do?" },
+          "audio": "w8l10_q2",
+          "options": [
+            { "id": "a", "art": "loop-arrow", "label": { "ur": "کام دوبارہ کرتا ہے", "en": "Repeats a job" } },
+            { "id": "b", "art": "water-drop", "label": { "ur": "پانی پیتا ہے", "en": "Drinks water" } }
+          ],
+          "answer": "a",
+          "explain": { "ur": "لوپ = دوبارہ! ایک بلاک، بہت سارا کام!", "en": "Loop = again! One block, lots of work!" }
+        },
+        {
+          "id": "q3",
+          "art": "glitch-bug",
+          "question": { "ur": "بگ کیا ہوتا ہے؟", "en": "What is a bug?" },
+          "audio": "w8l10_q3",
+          "options": [
+            { "id": "a", "art": "glitch-bug", "label": { "ur": "ایک پیارا سا کیڑا — ٹھیک کر کے آگے!", "en": "A friendly critter — fix it and go!" } },
+            { "id": "b", "art": "frog", "label": { "ur": "ایک مینڈک", "en": "A frog" } }
+          ],
+          "answer": "a",
+          "explain": { "ur": "بگ کوئی ڈراپ نہیں — پکڑو، ٹھیک کرو، آگے بڑھو!", "en": "A bug is not scary — catch it, fix it, move on!" }
+        },
+        {
+          "id": "q4",
+          "art": "if-fork",
+          "question": { "ur": "اگر-تو بلاک کیا کرتا ہے؟", "en": "What does the if-then block do?" },
+          "audio": "w8l10_q4",
+          "options": [
+            { "id": "a", "art": "if-fork", "label": { "ur": "فیصلہ کرتا ہے", "en": "Makes a choice" } },
+            { "id": "b", "art": "block-cmd", "label": { "ur": "سو جاتا ہے", "en": "Goes to sleep" } }
+          ],
+          "answer": "a",
+          "explain": { "ur": "اگر یہ، تو وہ — پروگرام سوچتا ہے!", "en": "If this, then that — the program thinks!" }
+        },
+        {
+          "id": "q5",
+          "art": "star",
+          "question": { "ur": "اور بگ کون ٹھیک کرتا ہے؟", "en": "And who fixes the bugs?" },
+          "audio": "w8l10_q5",
+          "options": [
+            { "id": "a", "art": "star", "label": { "ur": "تم — بگ فکسر!", "en": "You — the bug fixer!" } },
+            { "id": "b", "art": "haathi", "label": { "ur": "ہاتھی", "en": "The elephant" } }
+          ],
+          "answer": "a",
+          "explain": { "ur": "تم! ہر بگ کے بعد تم اور بھی بہتر بنتے ہو!", "en": "You! Every bug makes you even better!" }
+        }
+      ],
+      "wrongHint": { "ur": "اوپس! ایک بگ ملا! دوبارہ سوچو — تم سب یاد رکھتے ہو!", "en": "Oops! A bug! Think again — you remember it all!" }
+    }
+  },
+  "bonus": {
+    "activity": {
+      "type": "tap-select",
+      "prompt": { "ur": "جشن! راکٹ، ستارے، جواہر — سب دباؤ!", "en": "Celebrate! Tap the rocket, stars, gems — every one!" },
+      "audio": "w8l10_bonus_prompt",
+      "scene": "bg-mountain",
+      "cursorArt": "teer",
+      "items": [
+        {
+          "id": "c1",
+          "x": 16,
+          "y": 28,
+          "art": "rocket",
+          "correct": true,
+          "hint": { "ur": "راکٹ اڑا — تمہاری چوٹی کی طرف!", "en": "The rocket flies — toward your summit!" },
+          "audio": "w8l10_bonus_1"
+        },
+        {
+          "id": "c2",
+          "x": 44,
+          "y": 50,
+          "art": "star",
+          "correct": true,
+          "hint": { "ur": "ستارہ جگمگا — تمہارے بیج کے لیے!", "en": "A star glows — for your badge!" },
+          "audio": "w8l10_bonus_2"
+        },
+        {
+          "id": "c3",
+          "x": 72,
+          "y": 26,
+          "art": "gem",
+          "correct": true,
+          "hint": { "ur": "جواہر برسے — روشن ہیرو کے نام!", "en": "Gems shower — for the ROSHAN Hero!" },
+          "audio": "w8l10_bonus_3"
+        },
+        {
+          "id": "c4",
+          "x": 60,
+          "y": 72,
+          "art": "party-flag",
+          "correct": true,
+          "hint": { "ur": "جھنڈا لہراؤ — چوٹی تمہاری!", "en": "Wave the flag — the summit is yours!" },
+          "audio": "w8l10_bonus_4"
+        }
+      ],
+      "winPraise": { "ur": "راکٹ، ستارے، جواہر، جھنڈا — روشن ہیرو کا جشن!", "en": "Rocket, stars, gems, flag — the ROSHAN Hero party!" }
+    }
+  },
+  "cheer": {
+    "recap": [
+      { "ur": "دوستی سے لاجک تک — سات بیج جیتے، آٹھواں آج ملا!", "en": "From Friendship to Logic — seven badges won, the eighth earned today!" },
+      { "ur": "پروگرام = پرچم + بلاکس + تمہاری سوچ — روشن ہیرو!", "en": "A program = a flag + blocks + your thinking — ROSHAN Hero!" }
+    ],
+    "recapAudio": ["w8l10_recap_1", "w8l10_recap_2"],
+    "rewardToast": { "ur": "بیج ملا: روشن ہیرو! پورا روشن سفر مکمل — تم ستارے ہو!", "en": "Badge earned: ROSHAN Hero! The whole ROSHAN journey is complete — you are a star!" }
+  }
+}

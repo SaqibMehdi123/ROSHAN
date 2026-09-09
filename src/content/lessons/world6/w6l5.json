@@ -1,0 +1,132 @@
+{
+  "id": "w6l5",
+  "schemaVersion": 1,
+  "world": 6,
+  "order": 5,
+  "title": { "ur": "اچھا سوال لکھو", "en": "Ask a Good Question" },
+  "skill": { "ur": "تلاش = بازار سے سوال پوچھنا؛ آسان الفاظ لکھو", "en": "Search = asking the bazaar a question; type simple words" },
+  "skillKey": "search-words",
+  "minutes": 7,
+  "praise": { "ur": "کمال! تم نے بازار سے دو سوال پوچھے اور دونوں جواب ملے!", "en": "Kamaal! You asked the bazaar two questions and got both answers!" },
+  "story": {
+    "scenes": [
+      {
+        "bg": "bg-bazaar",
+        "cast": ["noor", "chotu", "bijli", "ustad-ullo"],
+        "lines": [
+          {
+            "char": "noor",
+            "emote": "thinking",
+            "ur": "بازار اتنا بڑا ہے — آم کہاں ملیں گے؟",
+            "en": "The bazaar is so big — where will we find mangoes?",
+            "audio": "w6l5_story_1"
+          },
+          {
+            "char": "bijli",
+            "emote": "waving",
+            "ur": "بازار سے سوال پوچھو! تلاش ڈبے میں لکھو: آم — MANGO!",
+            "en": "Ask the bazaar a question! Type it in the search box: aam — MANGO!",
+            "audio": "w6l5_story_2"
+          },
+          {
+            "char": "chotu",
+            "emote": "happy",
+            "ur": "جیسے چاچا سے پوچھتے ہیں: چاچا، آم کہاں ہیں؟ اور وہ بتا دیتے ہیں!",
+            "en": "Like asking the shopkeeper: uncle, where are the mangoes? And he tells you!",
+            "audio": "w6l5_story_3"
+          },
+          {
+            "char": "ustad-ullo",
+            "emote": "nodding",
+            "ur": "آسان الفاظ لکھو — بازار فوراً جواب دے گا۔ ہو ہو!",
+            "en": "Type simple words — the bazaar answers fast. Hoo hoo!",
+            "audio": "w6l5_story_4"
+          },
+          {
+            "char": "narrator",
+            "ur": "پہلے MANGO لکھو، پھر GOAT — بازار خود دکھائے گا!",
+            "en": "First type MANGO, then GOAT — the bazaar will show you!",
+            "audio": "w6l5_story_5",
+            "choice": { "ur": "آؤ لکھیں!", "en": "Let's type!", "audio": "w6l5_story_5_choice" }
+          }
+        ]
+      }
+    ]
+  },
+  "show": {
+    "steps": [
+      {
+        "visual": "browser",
+        "caption": { "ur": "یہ تلاش کا ڈبا ہے — یہاں آسان سوال لکھو۔", "en": "This is the search box — type a simple question here." },
+        "audio": "w6l5_show_1"
+      },
+      {
+        "visual": "mango",
+        "caption": { "ur": "MANGO لکھا — آم کا اسٹال سامنے آ گیا!", "en": "Typed MANGO — the mango stall appears!" },
+        "audio": "w6l5_show_2"
+      },
+      {
+        "visual": "goat",
+        "caption": { "ur": "GOAT لکھا — بکریاں بازار میں مہمان!", "en": "Typed GOAT — goats visit the bazaar!" },
+        "audio": "w6l5_show_3"
+      }
+    ]
+  },
+  "do": {
+    "activity": {
+      "type": "type-input",
+      "prompt": { "ur": "بڑے کیپس دباؤ — پہلے MANGO لکھو، پھر GOAT!", "en": "Press the big keycaps — type MANGO first, then GOAT!" },
+      "audio": "w6l5_do_prompt",
+      "keys": ["M", "A", "N", "G", "O", "T"],
+      "targets": [
+        {
+          "id": "w1",
+          "expect": "MANGO",
+          "art": "mango",
+          "label": { "ur": "آم تلاش کرو — لکھو MANGO", "en": "Search mango — type MANGO" },
+          "audio": "w6l5_do_t1"
+        },
+        {
+          "id": "w2",
+          "expect": "GOAT",
+          "art": "goat",
+          "label": { "ur": "بکری تلاش کرو — لکھو GOAT", "en": "Search goat — type GOAT" },
+          "audio": "w6l5_do_t2"
+        }
+      ],
+      "eraser": true,
+      "enter": true,
+      "wrongHint": { "ur": "اوپس! ایک بگ! پھر سے — ایک ایک حرف، دھیرے دھیرے۔", "en": "Oops! A bug! Try again — one letter at a time, nice and slow." },
+      "winPraise": { "ur": "زبردست! بازار نے آم اور بکری دونوں دکھا دیے — تم سوال پوچھنے والے ماہر ہو!", "en": "Zabardast! The bazaar showed both mangoes and goats — you are a search expert!" }
+    }
+  },
+  "bonus": {
+    "activity": {
+      "type": "type-input",
+      "prompt": { "ur": "ایک سوال مزہ! ستارہ تلاش کرو — لکھو STAR!", "en": "One more fun question! Search the star — type STAR!" },
+      "audio": "w6l5_bonus_prompt",
+      "keys": ["M", "A", "N", "G", "O", "T", "S", "R"],
+      "targets": [
+        {
+          "id": "b1",
+          "expect": "STAR",
+          "art": "star",
+          "label": { "ur": "ستارہ تلاش کرو — لکھو STAR", "en": "Search star — type STAR" },
+          "audio": "w6l5_bonus_t1"
+        }
+      ],
+      "eraser": true,
+      "enter": true,
+      "wrongHint": { "ur": "اوپس! ایک بگ! دھیرے دھیرے — S, T, A, R۔", "en": "Oops! A bug! Nice and slow — S, T, A, R." },
+      "winPraise": { "ur": "شاباش! ستارہ تمہارا ہوا — بازار خوش!", "en": "Shabash! The star is yours — the bazaar is happy!" }
+    }
+  },
+  "cheer": {
+    "recap": [
+      { "ur": "تلاش = بازار سے سوال۔ آسان الفاظ لکھو۔", "en": "Searching = asking the bazaar. Type simple words." },
+      { "ur": "MANGO لکھا — آم ملے! GOAT لکھا — بکری ملے!", "en": "Typed MANGO — mangoes found! Typed GOAT — goats found!" }
+    ],
+    "recapAudio": ["w6l5_recap_1", "w6l5_recap_2"],
+    "rewardToast": { "ur": "بجلی کہتا ہے: بیپ! تم بازار سے سوال پوچھنا سیکھ گئے!", "en": "Bijli says: beep! You learned to ask the bazaar questions!" }
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "id": "w7l5",
+  "schemaVersion": 1,
+  "world": 7,
+  "order": 5,
+  "title": { "ur": "ایک جیسے ساتھی", "en": "Same Kind Together" },
+  "skill": { "ur": "ترتیب دینا: ایک جیسی چیزیں ایک ساتھ", "en": "Sorting: alike things go together" },
+  "skillKey": "sorting",
+  "minutes": 6,
+  "praise": { "ur": "زبردست! تم نے پھل اور جانوروں کی ترتیب لگائی!", "en": "Zabardast! You sorted the fruits and the animals!" },
+  "story": {
+    "scenes": [
+      {
+        "bg": "bg-pond",
+        "cast": ["noor", "chotu", "bijli", "golmatol"],
+        "lines": [
+          { "char": "narrator", "ur": "تالاب کے پاس گول مٹول کی سار چیزیں بکھر گئیں — پھل اور جانور مل گئے!", "en": "By the pond, Gol Matol's pile spilled — fruits and animals got mixed!", "audio": "w7l5_story_1" },
+          { "char": "golmatol", "emote": "guilty", "ur": "میاؤں! آم بکری کے ساتھ اور بکری آم کے ساتھ!", "en": "Meow! The mango is with the goat and the goat is with the mango!", "audio": "w7l5_story_2" },
+          { "char": "bijli", "emote": "happy", "ur": "بیپ! ایک جیسی چیزیں ایک ساتھ رہتی ہیں — یہ ترتیب کا کھیل ہے!", "en": "Beep! Things that are alike stay together — that's the sorting game!", "audio": "w7l5_story_3" },
+          { "char": "noor", "emote": "pointing", "ur": "پھل پھل والی ٹوکری میں، جانور جانور والی ٹوکری میں!", "en": "Fruits go in the fruit basket, animals in the animal basket!", "audio": "w7l5_story_4" },
+          { "char": "chotu", "emote": "excited", "ur": "سب سمیٹو — اور جواہر حاصل کرو!", "en": "Sort them all — and win the gem!", "audio": "w7l5_story_5" },
+          { "char": "narrator", "ur": "کیا تم ایک جیسے ساتھیوں کو جوڑو گے؟", "en": "Will you pair the alike friends?", "audio": "w7l5_story_6", "choice": { "ur": "ترتیب دو!", "en": "Sort them!", "audio": "w7l5_story_6_choice" } }
+        ]
+      }
+    ]
+  },
+  "show": {
+    "steps": [
+      { "visual": "mango", "caption": { "ur": "پھل: آم، کیلا، انگور۔", "en": "Fruits: mango, banana, grapes." }, "audio": "w7l5_show_1" },
+      { "visual": "goat", "caption": { "ur": "جانور: بکری، مچھلی۔", "en": "Animals: goat, fish." }, "audio": "w7l5_show_2" },
+      { "visual": "gem", "caption": { "ur": "سب سمیٹو — سوچنے کا جواہر پاؤ!", "en": "Sort them all — win the Thinking Gem!" }, "audio": "w7l5_show_3" }
+    ]
+  },
+  "do": {
+    "activity": {
+      "type": "sort-bins",
+      "prompt": { "ur": "ہر چیز کو اس کے ساتھی کی ٹوکری میں ڈالو!", "en": "Put each thing into its friend's basket!" },
+      "audio": "w7l5_do_prompt",
+      "bins": [
+        { "id": "fruit", "label": { "ur": "پھل", "en": "Fruits" }, "art": "mango" },
+        { "id": "animal", "label": { "ur": "جانور", "en": "Animals" }, "art": "goat" }
+      ],
+      "cards": [
+        { "id": "c1", "art": "mango", "text": { "ur": "آم", "en": "Mango" }, "bin": "fruit", "explain": { "ur": "آم میٹھا پھل ہے!", "en": "A mango is a sweet fruit!" } },
+        { "id": "c2", "art": "banana", "text": { "ur": "کیلا", "en": "Banana" }, "bin": "fruit", "explain": { "ur": "کیلا بھی پھل ہے — پیلے رنگ کا!", "en": "A banana is a fruit too — a yellow one!" } },
+        { "id": "c3", "art": "goat", "text": { "ur": "بکری", "en": "Goat" }, "bin": "animal", "explain": { "ur": "بکری جانور ہے — مائیں مائیں!", "en": "A goat is an animal — baa baa!" } },
+        { "id": "c4", "art": "fish", "text": { "ur": "مچھلی", "en": "Fish" }, "bin": "animal", "explain": { "ur": "مچھلی پانی میں تیرنے والی جانور ہے!", "en": "A fish is an animal that swims in water!" } },
+        { "id": "c5", "art": "grapes", "text": { "ur": "انگور", "en": "Grapes" }, "bin": "fruit", "explain": { "ur": "انگور گچھے والا پھل ہے!", "en": "Grapes are a bunch of fruit!" } }
+      ],
+      "wrongHint": { "ur": "اوپس! ایک بگ ملا! سوچو — یہ کھانے والا پھل ہے یا چلنے والا جانور؟", "en": "Oops! A bug! Think — is it a fruit to eat or an animal that moves?" }
+    }
+  },
+  "cheer": {
+    "recap": [
+      { "ur": "ایک جیسی چیزیں ایک ساتھ — یہ ہے ترتیب۔", "en": "Alike things together — that is sorting." },
+      { "ur": "پھل پھلوں کے ساتھ، جانور جانوروں کے ساتھ!", "en": "Fruits with fruits, animals with animals!" }
+    ],
+    "recapAudio": ["w7l5_recap_1", "w7l5_recap_2"],
+    "rewardToast": { "ur": "پانچواں سوچنے کا جواہر مل گیا — ترتیب مکمل!", "en": "Fifth Thinking Gem won — sorting complete!" }
+  }
+}

@@ -1,0 +1,119 @@
+{
+  "id": "w5l10",
+  "schemaVersion": 1,
+  "world": 5,
+  "order": 10,
+  "title": { "ur": "میلے کا پوسٹر مشن", "en": "The Mela Poster Mission" },
+  "skill": { "ur": "چھ رنگوں سے بڑا میلہ پوسٹر", "en": "Make the big mela poster with six colors" },
+  "skillKey": "mela-poster-mission",
+  "minutes": 7,
+  "praise": { "ur": "زبردست! تم ننھے فنکار — گاؤں کا پوسٹر تیار!", "en": "Zabardast! You little artist — the village poster is ready!" },
+  "story": {
+    "scenes": [
+      {
+        "bg": "bg-village-street",
+        "cast": ["bijli", "noor", "chotu", "ustad-ullo"],
+        "lines": [
+          { "char": "narrator", "ur": "کل میلا ہے! پورا گاؤں پوسٹر کا انتظار کر رہا ہے۔", "en": "Tomorrow is the mela! The whole village is waiting for the poster.", "audio": "w5l10_story_1" },
+          { "char": "ustad-ullo", "emote": "perch", "ur": "ہوو ہوو! بڑا پوسٹر، بڑے رنگ — میلے کی شان!", "en": "Hoo hoo! A big poster, big colors — the pride of the mela!", "audio": "w5l10_story_2" },
+          { "char": "chotu", "emote": "celebrating", "ur": "میں جھنڈے لاؤں گا، نور پھول — اور تم سب سے بڑا پوسٹر بناؤ!", "en": "I'll bring flags, Noor flowers — and you make the biggest poster!", "audio": "w5l10_story_3" }
+        ]
+      },
+      {
+        "bg": "bg-workshop",
+        "cast": ["bijli", "noor", "chotu"],
+        "lines": [
+          { "char": "bijli", "emote": "waving", "ur": "پینٹ اسٹوڈیو تیار ہے! چھ ڈبے، برش، بکٹ — سب تمہارے دوست!", "en": "The Paint Studio is ready! Six pots, brush, bucket — all your friends!", "audio": "w5l10_story_4" },
+          { "char": "noor", "emote": "excited", "ur": "سورج، بادل، بینر، دل — سب اس پوسٹر پر ہوں گے!", "en": "Sun, clouds, banner, heart — all will be on this poster!", "audio": "w5l10_story_5" },
+          { "char": "narrator", "ur": "یہ ننھے فنکار کا سب سے بڑا مشن ہے — میلے کا پوسٹر!", "en": "This is the little artist's biggest mission — the mela poster!", "audio": "w5l10_story_6", "choice": { "ur": "ہاں! پوسٹر بناؤ!", "en": "Yes! Make the poster!", "audio": "w5l10_story_6_choice" } }
+        ]
+      }
+    ]
+  },
+  "show": {
+    "steps": [
+      { "visual": "party-flag", "caption": { "ur": "میلے میں جھنڈے اور پھول — خوشی ہر طرف!", "en": "At the mela — flags and flowers, joy everywhere!" }, "audio": "w5l10_show_1" },
+      { "visual": "star", "caption": { "ur": "تمہارا پوسٹر سب سے چمکے گا۔", "en": "Your poster will shine the most." }, "audio": "w5l10_show_2" },
+      { "visual": "medal-paint", "caption": { "ur": "مشن پورا؟ ننھے فنکار کا میڈل تمہارا!", "en": "Mission done? The Little Artist medal is yours!" }, "audio": "w5l10_show_3" }
+    ]
+  },
+  "do": {
+    "activity": {
+      "type": "paint-zones",
+      "prompt": { "ur": "میلے کا بڑا پوسٹر بناؤ! چھ ڈبے، چھ رنگ — سب مل کر!", "en": "Make the big mela poster! Six pots, six colors — all together!" },
+      "audio": "w5l10_do_prompt",
+      "palette": [
+        { "id": "yellow", "color": "#FDE047", "name": { "ur": "پیلا", "en": "Yellow" } },
+        { "id": "green", "color": "#22C55E", "name": { "ur": "ہرا", "en": "Green" } },
+        { "id": "sky", "color": "#38BDF8", "name": { "ur": "آسمانی", "en": "Sky blue" } },
+        { "id": "pink", "color": "#EC4899", "name": { "ur": "گلابی", "en": "Pink" } },
+        { "id": "brown", "color": "#C68B4E", "name": { "ur": "براؤن", "en": "Brown" } },
+        { "id": "orange", "color": "#F59E0B", "name": { "ur": "نارنجی", "en": "Orange" } }
+      ],
+      "zones": [
+        { "id": "sky-clouds", "x": 0, "y": 0, "w": 100, "h": 50, "colorId": "sky" },
+        { "id": "sun", "x": 8, "y": 8, "w": 14, "h": 14, "round": true, "colorId": "yellow" },
+        { "id": "heart", "x": 62, "y": 16, "w": 13, "h": 13, "round": true, "colorId": "pink" },
+        { "id": "mela-banner", "x": 18, "y": 54, "w": 64, "h": 16, "colorId": "orange" },
+        { "id": "tree-trunk", "x": 84, "y": 50, "w": 8, "h": 24, "colorId": "brown" },
+        { "id": "ground", "x": 0, "y": 74, "w": 100, "h": 26, "colorId": "green" }
+      ],
+      "wrongHint": { "ur": "اوپس! ایک بگ ملا! دوسرا ڈبہ چُنو اور دوبارہ رنگو!", "en": "Oops! A bug! Pick another pot and paint again!" },
+      "winPraise": { "ur": "زبردست! یہ گاؤں کا سب سے خوبصورت پوسٹر ہے — میلا جھومے گا!", "en": "Zabardast! The most beautiful poster in the village — the mela will dance!" }
+    }
+  },
+  "bonus": {
+    "activity": {
+      "type": "quiz-mix",
+      "prompt": { "ur": "ننھے فنکار کے تین سوال — جواب دو اور میڈل پاؤ!", "en": "Three little-artist questions — answer and win your medal!" },
+      "audio": "w5l10_bonus_prompt",
+      "questions": [
+        {
+          "id": "q1",
+          "art": "magic-eraser",
+          "question": { "ur": "کون سا اوزار اوپس مٹاتا ہے؟", "en": "Which tool erases an oops?" },
+          "audio": "w5l10_q1",
+          "options": [
+            { "id": "a", "art": "magic-eraser", "label": { "ur": "جادوئی ربڑ", "en": "Magic eraser" } },
+            { "id": "b", "art": "paint-bucket", "label": { "ur": "پینٹ بکٹ", "en": "Paint bucket" } }
+          ],
+          "answer": "a",
+          "explain": { "ur": "جادوئی ربڑ اوپس کو صاف کر دیتا ہے!", "en": "The magic eraser clears the oops!" }
+        },
+        {
+          "id": "q2",
+          "art": "paint-bucket",
+          "question": { "ur": "بڑی جگہ ایک کلک میں کون بھرتا ہے؟", "en": "Who fills a big place in one tap?" },
+          "audio": "w5l10_q2",
+          "options": [
+            { "id": "a", "art": "pencil", "label": { "ur": "پنسل", "en": "Pencil" } },
+            { "id": "b", "art": "paint-bucket", "label": { "ur": "پینٹ بکٹ", "en": "Paint bucket" } }
+          ],
+          "answer": "b",
+          "explain": { "ur": "بکٹ بڑی جگہ ایک کلک میں بھر دیتا ہے!", "en": "The bucket fills big places in one tap!" }
+        },
+        {
+          "id": "q3",
+          "art": "save-floppy",
+          "question": { "ur": "بناؤ کے بعد کام کیسے محفوظ ہوتا ہے؟", "en": "How does your work stay safe after making?" },
+          "audio": "w5l10_q3",
+          "options": [
+            { "id": "a", "art": "save-floppy", "label": { "ur": "سیو", "en": "Save" } },
+            { "id": "b", "art": "undo-arrow", "label": { "ur": "انڈو", "en": "Undo" } }
+          ],
+          "answer": "a",
+          "explain": { "ur": "سیو دباؤ — کام فولڈر میں محفوظ!", "en": "Tap Save — your work is safe in the folder!" }
+        }
+      ],
+      "wrongHint": { "ur": "اوپس! ایک بگ ملا! دوبارہ سوچو — تم کر سکتے ہو!", "en": "Oops! A bug! Think again — you can do it!" }
+    }
+  },
+  "cheer": {
+    "recap": [
+      { "ur": "چھ رنگ، برش، بکٹ، ربڑ، انڈو — سب تمہارے دوست!", "en": "Six colors, brush, bucket, eraser, undo — all your friends!" },
+      { "ur": "بناؤ، نام دو، سیو کرو — ننھا فنکار تیار!", "en": "Make, name, save — the little artist is ready!" }
+    ],
+    "recapAudio": ["w5l10_recap_1", "w5l10_recap_2"],
+    "rewardToast": { "ur": "ننھے فنکار کا میڈل حاصل!", "en": "Little Artist medal earned!" }
+  }
+}

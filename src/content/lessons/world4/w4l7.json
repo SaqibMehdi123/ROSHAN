@@ -1,0 +1,132 @@
+{
+  "id": "w4l7",
+  "schemaVersion": 1,
+  "world": 4,
+  "order": 7,
+  "title": { "ur": "ری سائیکل بین — احتیاط سے", "en": "The Recycle Bin — with Care" },
+  "skill": { "ur": "پرانی ٹوٹی فائلیں بین میں، قیمتی فائلیں فولڈر میں", "en": "Old broken files go to the bin; precious files stay in folders" },
+  "skillKey": "recycle-bin-care",
+  "minutes": 7,
+  "praise": { "ur": "واہ! تم نے احتیاط سے صاف کیا — شہر چمک اٹھا!", "en": "Wow! You cleaned with care — the city shines!" },
+  "story": {
+    "scenes": [
+      {
+        "bg": "bg-city",
+        "cast": ["bijli", "golmatol", "chotu", "noor"],
+        "lines": [
+          {
+            "char": "bijli",
+            "emote": "idle",
+            "ur": "بیپ! یہ ہے ری سائیکل بین — پرانی، ٹوٹی فائلوں کا گھر۔",
+            "en": "Beep! This is the Recycle Bin — the home for old, broken files.",
+            "audio": "w4l7_story_1"
+          },
+          {
+            "char": "golmatol",
+            "emote": "guilty",
+            "ur": "میوں… تو کیا میں دادی کا گانا بھی بین میں ڈال دوں؟",
+            "en": "Meow… so should I put Grandma's song in the bin too?",
+            "audio": "w4l7_story_2"
+          },
+          {
+            "char": "chotu",
+            "emote": "surprised",
+            "ur": "رکو! یہ قیمتی فائل ہے — فولڈر میں رکھو!",
+            "en": "Stop! That is a precious file — keep it in a folder!",
+            "audio": "w4l7_story_3"
+          },
+          {
+            "char": "noor",
+            "emote": "happy",
+            "ur": "پہلے سوچو: یہ پرانی اور ٹوٹی ہے، یا قیمتی؟",
+            "en": "Think first: is it old and broken, or precious?",
+            "audio": "w4l7_story_4"
+          },
+          {
+            "char": "narrator",
+            "ur": "بنو ری سائیکل گارڈ — احتیاط سے چھانٹو!",
+            "en": "Be a Recycle Guard — sort with care!",
+            "audio": "w4l7_story_5",
+            "choice": { "ur": "میں گارڈ ہوں!", "en": "I am the Guard!", "audio": "w4l7_story_5_choice" }
+          }
+        ]
+      }
+    ]
+  },
+  "show": {
+    "steps": [
+      {
+        "visual": "recycle-bin",
+        "caption": { "ur": "پرانی، ٹوٹی فائلیں ری سائیکل بین میں جاتی ہیں۔", "en": "Old, broken files go into the Recycle Bin." },
+        "audio": "w4l7_show_1"
+      },
+      {
+        "visual": "folder",
+        "caption": { "ur": "قیمتی فائلیں فولڈر میں رہتی ہیں — ہمیشہ کے لیے!", "en": "Precious files stay in folders — forever!" },
+        "audio": "w4l7_show_2"
+      },
+      {
+        "visual": "star",
+        "caption": { "ur": "ری سائیکل بین دوبارہ ٹھیک ہونے کا موقع بھی ہے!", "en": "The Recycle Bin is also a second chance to fix things!" },
+        "audio": "w4l7_show_3"
+      }
+    ]
+  },
+  "do": {
+    "activity": {
+      "type": "sort-bins",
+      "prompt": { "ur": "سوچو: بین میں جائے گی یا فولڈر میں رہے گی؟", "en": "Think: into the bin, or keep it in the folder?" },
+      "audio": "w4l7_do_prompt",
+      "bins": [
+        { "id": "recycle", "label": { "ur": "ری سائیکل بین", "en": "Recycle Bin" }, "art": "recycle-bin" },
+        { "id": "keep", "label": { "ur": "رکھو", "en": "Keep" }, "art": "folder" }
+      ],
+      "cards": [
+        {
+          "id": "ghar",
+          "art": "file-img",
+          "text": { "ur": "گھر کی تصویر", "en": "A picture of our home" },
+          "bin": "keep",
+          "explain": { "ur": "یادگار تصویر — فولڈر میں رکھو!", "en": "A memory picture — keep it in the folder!" }
+        },
+        {
+          "id": "tooti",
+          "art": "file-doc",
+          "text": { "ur": "ٹوٹی ہوئی فائل", "en": "A broken file" },
+          "bin": "recycle",
+          "explain": { "ur": "ٹوٹی فائل بین میں جائے گی — بین اس کا خیال رکھے گا!", "en": "The broken file goes to the bin — the bin will care for it!" }
+        },
+        {
+          "id": "dadi",
+          "art": "file-song",
+          "text": { "ur": "دادی کا پسندیدہ گانا", "en": "Dadi's favourite song" },
+          "bin": "keep",
+          "explain": { "ur": "قیمتی گانا — فولڈر میں محفوظ!", "en": "A precious song — safe in the folder!" }
+        },
+        {
+          "id": "dhundli",
+          "art": "file-img",
+          "text": { "ur": "دھندلی پرانی تصویر", "en": "A blurry old picture" },
+          "bin": "recycle",
+          "explain": { "ur": "پرانی دھندلی تصویر — بین کے لیے بالکل ٹھیک!", "en": "The blurry old picture — just right for the bin!" }
+        },
+        {
+          "id": "kahani",
+          "art": "file-doc",
+          "text": { "ur": "میری پہلی کہانی", "en": "My first story" },
+          "bin": "keep",
+          "explain": { "ur": "تمہاری کہانی قیمتی ہے — رکھو!", "en": "Your story is precious — keep it!" }
+        }
+      ],
+      "wrongHint": { "ur": "اوپس! ایک بگ ملا! پہلے سوچو — قیمتی ہے یا پرانی؟", "en": "Oops! A bug! Think first — precious or old?" }
+    }
+  },
+  "cheer": {
+    "recap": [
+      { "ur": "قیمتی فائلیں فولڈر میں، پرانی ٹوٹی فائلیں بین میں۔", "en": "Precious files in folders; old broken files in the bin." },
+      { "ur": "پہلے سوچو، پھر دباؤ — ری سائیکل گارڈ!", "en": "Think first, then tap — Recycle Guard!" }
+    ],
+    "recapAudio": ["w4l7_recap_1", "w4l7_recap_2"],
+    "rewardToast": { "ur": "گول مٹول کہتا ہے: دادی کا گانا بچ گیا — میوں!", "en": "Gol Matol says: Grandma's song is safe — meow!" }
+  }
+}

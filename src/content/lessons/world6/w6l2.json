@@ -1,0 +1,127 @@
+{
+  "id": "w6l2",
+  "schemaVersion": 1,
+  "world": 6,
+  "order": 2,
+  "title": { "ur": "ویب سائٹ = اسٹال", "en": "A Website = a Stall" },
+  "skill": { "ur": "ہر ویب سائٹ ایک اسٹال ہے — اپنے ایڈریس اور نام پلیٹ کے ساتھ", "en": "Every website is a stall — with its own address and name-plate" },
+  "skillKey": "website-is-stall",
+  "minutes": 6,
+  "praise": { "ur": "زبردست! تم چار ویب سائٹ اسٹال گھوم آئے — بازار کے پہلوان!", "en": "Zabardast! You visited four website stalls — bazaar champions!" },
+  "story": {
+    "scenes": [
+      {
+        "bg": "bg-bazaar",
+        "cast": ["noor", "chotu", "bijli", "ustad-ullo"],
+        "lines": [
+          {
+            "char": "noor",
+            "emote": "pointing",
+            "ur": "دیکھو! ہر اسٹال پر ایک نام پلیٹ لگی ہے۔",
+            "en": "Look! Every stall has a name-plate.",
+            "audio": "w6l2_story_1"
+          },
+          {
+            "char": "bijli",
+            "emote": "happy",
+            "ur": "بیپ! انٹرنیٹ میں بھی ایسا ہی ہے — ہر اسٹال ایک ویب سائٹ ہے!",
+            "en": "Beep! The internet is just like that — every stall is a website!",
+            "audio": "w6l2_story_2"
+          },
+          {
+            "char": "chotu",
+            "emote": "excited",
+            "ur": "تو نام پلیٹ = ویب سائٹ کا ایڈریس؟ جیسے گھر کا پتہ!",
+            "en": "So the name-plate = the website's address? Like a house address!",
+            "audio": "w6l2_story_3"
+          },
+          {
+            "char": "ustad-ullo",
+            "emote": "nodding",
+            "ur": "بالکل! ایڈریس پڑھو، اور سیدھا اسی اسٹال پہنچ جاؤ۔",
+            "en": "Exactly! Read the address, and you reach that very stall.",
+            "audio": "w6l2_story_4"
+          },
+          {
+            "char": "narrator",
+            "ur": "چلو چار ویب سائٹ اسٹال دیکھیں — کیا کیا ملتا ہے؟",
+            "en": "Let's visit four website stalls — what will we find?",
+            "audio": "w6l2_story_5",
+            "choice": { "ur": "اسٹالوں پر چلو!", "en": "To the stalls!", "audio": "w6l2_story_5_choice" }
+          }
+        ]
+      }
+    ]
+  },
+  "show": {
+    "steps": [
+      {
+        "visual": "browser",
+        "caption": { "ur": "یہ براؤزر ہے — بازار گھومنے کی جادوئی کھڑکی۔", "en": "This is the browser — the magic window for walking around the bazaar." },
+        "audio": "w6l2_show_1"
+      },
+      {
+        "visual": "bazaar-stall",
+        "caption": { "ur": "ہر ویب سائٹ ایک اسٹال — کہانیوں والا، رنگوں والا، گیتوں والا۔", "en": "Every website is a stall — a stories stall, a drawing stall, a songs stall." },
+        "audio": "w6l2_show_2"
+      },
+      {
+        "visual": "letter-message",
+        "caption": { "ur": "نام پلیٹ پڑھو — پتہ چل جائے گا کہ ہم کس اسٹال میں ہیں۔", "en": "Read the name-plate — you will know which stall you are at." },
+        "audio": "w6l2_show_3"
+      }
+    ]
+  },
+  "do": {
+    "activity": {
+      "type": "tap-select",
+      "prompt": { "ur": "چاروں ویب سائٹ اسٹالوں پر جاؤ — ہر اسٹال دباؤ!", "en": "Visit all four website stalls — tap each stall!" },
+      "audio": "w6l2_do_prompt",
+      "scene": "bg-bazaar",
+      "cursorArt": "teer",
+      "items": [
+        {
+          "id": "s1",
+          "x": 14,
+          "y": 60,
+          "art": "bazaar-stall",
+          "correct": true,
+          "hint": { "ur": "کہانیوں کی ویب سائٹ! یہاں ننھی کہانیاں ملتی ہیں۔", "en": "A story website! Little stories live here." }
+        },
+        {
+          "id": "s2",
+          "x": 36,
+          "y": 66,
+          "art": "bazaar-stall",
+          "correct": true,
+          "hint": { "ur": "رنگوں کی ویب سائٹ! یہاں بناؤ اور رنگ بھرو۔", "en": "A drawing website! Make things and color here." }
+        },
+        {
+          "id": "s3",
+          "x": 58,
+          "y": 58,
+          "art": "bazaar-stall",
+          "correct": true,
+          "hint": { "ur": "گیتوں کی ویب سائٹ! یہاں بچوں کے گیت ہیں۔", "en": "A song website! Kids' songs live here." }
+        },
+        {
+          "id": "s4",
+          "x": 80,
+          "y": 64,
+          "art": "bazaar-stall",
+          "correct": true,
+          "hint": { "ur": "کھیلوں کی ویب سائٹ! یہاں چھوٹے چھوٹے کھیل ہیں۔", "en": "A game website! Little games live here." }
+        }
+      ],
+      "winPraise": { "ur": "شاباش! چار اسٹال، چار مزے — اب تم ویب سائٹیں جانتے ہو!", "en": "Shabash! Four stalls, four treats — you know websites now!" }
+    }
+  },
+  "cheer": {
+    "recap": [
+      { "ur": "ویب سائٹ = بازار کا اسٹال۔", "en": "A website = a stall in the bazaar." },
+      { "ur": "ہر اسٹال کا اپنا ایڈریس ہوتا ہے — نام پلیٹ جیسا۔", "en": "Every stall has its own address, like a name-plate." }
+    ],
+    "recapAudio": ["w6l2_recap_1", "w6l2_recap_2"],
+    "rewardToast": { "ur": "گول مٹول کہتا ہے: میو! اتنی ویب سائٹیں — سب اسٹال!", "en": "Gol Matol says: meow! So many websites — all stalls!" }
+  }
+}

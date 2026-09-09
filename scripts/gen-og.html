@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<style>
+  @font-face {
+    font-family: "Nastaliq";
+    src: url("./nastaliq-700.ttf") format("truetype");
+    font-weight: 700;
+  }
+  @font-face {
+    font-family: "FredokaOG";
+    src: url("./fredoka-600.ttf") format("truetype");
+    font-weight: 600;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1200px; height: 630px; overflow: hidden; }
+  .frame {
+    width: 1200px; height: 630px;
+    background:
+      radial-gradient(120% 70% at 50% -10%, #FDE9C4 0%, rgba(253,233,196,0) 60%),
+      linear-gradient(180deg, #BFE8F5 0%, #E8F6FB 40%, #FFF8EC 72%, #FFF3DC 100%);
+    color: #4A3421;
+    font-family: "FredokaOG", sans-serif;
+    position: relative;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    gap: 26px;
+  }
+  .sun {
+    position: absolute; top: 52px; right: 88px; width: 110px; height: 110px;
+    border-radius: 9999px;
+    background: radial-gradient(circle at 32% 28%, #FFF9DB 0%, #FDE047 55%, #F59E0B 100%);
+    border: 6px solid #4A3421;
+    box-shadow: 0 8px 0 rgba(74,52,33,0.14);
+  }
+  .cloud { position: absolute; opacity: .92; }
+  .sparkle { position: absolute; color: #F59E0B; font-size: 30px; }
+  .titleRow { display: flex; align-items: center; gap: 34px; margin-top: 10px; }
+  .badge {
+    width: 152px; height: 152px; border-radius: 9999px;
+    background: radial-gradient(circle at 32% 26%, #FFFDE6 0%, #FDE68A 58%, #FBBF24 100%);
+    border: 6px solid #4A3421;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 84px;
+    box-shadow: 0 10px 0 rgba(74,52,33,0.18);
+  }
+  .nameCol { display: flex; flex-direction: column; align-items: flex-start; }
+  .name { font-size: 112px; font-weight: 600; letter-spacing: 2px; line-height: 1; }
+  .urdu { font-family: "Nastaliq"; font-size: 58px; font-weight: 700; color: #D97706; margin-top: 2px; line-height: 1.6; direction: rtl; }
+  .sub { font-size: 39px; font-weight: 600; opacity: .88; }
+  .chips { display: flex; gap: 18px; margin-top: 6px; }
+  .chip {
+    padding: 12px 28px; border-radius: 9999px; border: 3px solid #4A3421;
+    background: #FFFFFF; font-size: 27px; font-weight: 600;
+    box-shadow: 0 5px 0 rgba(74,52,33,0.15);
+  }
+  .footer { position: absolute; bottom: 36px; font-size: 23px; opacity: .55; }
+</style>
+</head>
+<body>
+  <div class="frame">
+    <svg class="cloud" style="top:64px; left:90px;" width="150" height="58" viewBox="0 0 100 40">
+      <ellipse cx="30" cy="26" rx="26" ry="12" fill="#fff"/><ellipse cx="56" cy="20" rx="22" ry="14" fill="#fff"/><ellipse cx="74" cy="28" rx="18" ry="10" fill="#fff"/>
+    </svg>
+    <svg class="cloud" style="top:150px; right:280px; opacity:.7;" width="110" height="44" viewBox="0 0 100 40">
+      <ellipse cx="30" cy="26" rx="26" ry="12" fill="#fff"/><ellipse cx="58" cy="22" rx="20" ry="12" fill="#fff"/>
+    </svg>
+    <div class="sun"></div>
+    <div class="sparkle" style="top:110px; left:300px;">✦</div>
+    <div class="sparkle" style="bottom:170px; right:150px; font-size:24px;">✦</div>
+
+    <div class="titleRow">
+      <div class="badge">⚡</div>
+      <div class="nameCol">
+        <div class="name">ROSHAN</div>
+        <div class="urdu">روشـن</div>
+      </div>
+    </div>
+
+    <div class="sub">Digital literacy for village schools — Classes 1–5</div>
+
+    <div class="chips">
+      <div class="chip">8 worlds · 76 lessons</div>
+      <div class="chip">Spoken Urdu</div>
+      <div class="chip">Works offline</div>
+      <div class="chip">Zero failure</div>
+    </div>
+
+    <div class="footer">github.com/SaqibMehdi123/ROSHAN</div>
+  </div>
+</body>
+</html>

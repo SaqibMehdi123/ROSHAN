@@ -1,0 +1,129 @@
+{
+  "id": "w7l12",
+  "schemaVersion": 1,
+  "world": 7,
+  "order": 12,
+  "title": { "ur": "لاجک چیمپیئن", "en": "Logic Champion" },
+  "skill": { "ur": "سب کیا یاد: پیٹرن، ترتیب، لوپ، اگر-تو، بگ فکس", "en": "Remember it all: patterns, order, loops, if-then, bug fixes" },
+  "skillKey": "logic-champion",
+  "minutes": 7,
+  "praise": { "ur": "شاباش لاجک چیمپیئن! بجلی کا دماغ پھر سے پورا!", "en": "Shabash, Logic Champion! Bijli's brain is whole again!" },
+  "story": {
+    "scenes": [
+      {
+        "bg": "bg-jungle",
+        "cast": ["bijli", "noor", "chotu", "golmatol", "ustad-ullo"],
+        "lines": [
+          { "char": "narrator", "ur": "آخرکار! سارے سچے جواہر جمع — بجلی کا دماغ دوبارہ جڑ رہا ہے!", "en": "At last! All the true gems collected — Bijli's brain is reconnecting!", "audio": "w7l12_story_1" },
+          { "char": "bijli", "emote": "waking", "ur": "بیپ! بیپ! پیٹرن… ترتیب… لوپ… اگر-تو… سب یاد آ گیا!", "en": "Beep! Beep! Patterns… order… loops… if-then… I remember it all!", "audio": "w7l12_story_2" },
+          { "char": "golmatol", "emote": "guilty", "ur": "معاف کر دینی بجلی! اب میں جواہر جوڑوں گا، ملا نہیں!", "en": "Forgive me, Bijli! Now I will join gems, not jumble them!", "audio": "w7l12_story_3" },
+          { "char": "ustad-ullo", "emote": "nodding", "ur": "ایک آخری چیلنج — پانچ سوال، پھر لاجک چیمپیئن کا تمغہ!", "en": "One last challenge — five questions, then the Logic Champion badge!", "audio": "w7l12_story_4" },
+          { "char": "chotu", "emote": "celebrating", "ur": "پھر جشن! بیج کھلا، لوپ تالی، جواہر جھلمک!", "en": "Then a party! Seeds bloom, loops clap, gems shine!", "audio": "w7l12_story_5" },
+          { "char": "narrator", "ur": "کیا تم لاجک چیمپیئن کا تمغہ حاصل کرو گے؟", "en": "Will you win the Logic Champion badge?", "audio": "w7l12_story_6", "choice": { "ur": "میں چیمپیئن بنوں گا!", "en": "I will be the Champion!", "audio": "w7l12_story_6_choice" } }
+        ]
+      }
+    ]
+  },
+  "show": {
+    "steps": [
+      { "visual": "gem", "caption": { "ur": "پانچ سوال — پانچ سوچنے کے جواہر!", "en": "Five questions — five Thinking Gems!" }, "audio": "w7l12_show_1" },
+      { "visual": "medal-gem", "caption": { "ur": "جواب دو — لاجک چیمپیئن کا میڈل پاؤ!", "en": "Answer well — win the Logic Champion medal!" }, "audio": "w7l12_show_2" },
+      { "visual": "trophy", "caption": { "ur": "پھر جشن — بجلی پھر سے پوری!", "en": "Then celebrate — Bijli is whole again!" }, "audio": "w7l12_show_3" }
+    ]
+  },
+  "do": {
+    "activity": {
+      "type": "quiz-mix",
+      "prompt": { "ur": "پانچ لاجک سوال — چیمپیئن ٹیسٹ!", "en": "Five logic questions — the Champion test!" },
+      "audio": "w7l12_do_prompt",
+      "questions": [
+        {
+          "id": "q1",
+          "art": "flower",
+          "question": { "ur": "پھول، تتلی، پھول، تتلی… اگلا کون سا؟", "en": "Flower, butterfly, flower, butterfly… what comes next?" },
+          "audio": "w7l12_q1",
+          "options": [
+            { "id": "a", "art": "laddu", "label": { "ur": "لڈو", "en": "A laddu" } },
+            { "id": "b", "art": "butterfly", "label": { "ur": "تتلی", "en": "The butterfly" } }
+          ],
+          "answer": "b",
+          "explain": { "ur": "پیٹرن دہرایا: پھول کے بعد تتلی!", "en": "Pattern repeated: after the flower comes the butterfly!" }
+        },
+        {
+          "id": "q2",
+          "art": "egg",
+          "question": { "ur": "انڈے کے بعد کون باہر آتا ہے؟", "en": "Who comes out after the egg?" },
+          "audio": "w7l12_q2",
+          "options": [
+            { "id": "a", "art": "hen", "label": { "ur": "مرغی", "en": "The hen" } },
+            { "id": "b", "art": "chick", "label": { "ur": "چوزہ", "en": "The chick" } }
+          ],
+          "answer": "b",
+          "explain": { "ur": "انڈا، پھر چوزہ، پھر مرغی — ترتیب یاد!", "en": "Egg, then chick, then hen — order remembered!" }
+        },
+        {
+          "id": "q3",
+          "art": "block-loop",
+          "question": { "ur": "لوپ کیا کرتا ہے؟", "en": "What does a loop do?" },
+          "audio": "w7l12_q3",
+          "options": [
+            { "id": "a", "art": "watch", "label": { "ur": "انتظار کرتا ہے", "en": "It waits" } },
+            { "id": "b", "art": "loop-arrow", "label": { "ur": "کام بار بار دہراتا ہے", "en": "It repeats the job" } }
+          ],
+          "answer": "b",
+          "explain": { "ur": "لوپ ایک قدم بار بار چلاتا ہے!", "en": "A loop runs one step again and again!" }
+        },
+        {
+          "id": "q4",
+          "art": "if-fork",
+          "question": { "ur": "اگر بارش ہو، تو میںڈک کیا کرے گا؟", "en": "If it rains, what will the frog do?" },
+          "audio": "w7l12_q4",
+          "options": [
+            { "id": "a", "art": "frog", "label": { "ur": "برستے میں کھل کھلائے گا", "en": "Splish splash in the rain" } },
+            { "id": "b", "art": "icecream", "label": { "ur": "آئس کریم میں بدل جائے گا", "en": "Turn into ice cream" } }
+          ],
+          "answer": "a",
+          "explain": { "ur": "اگر بارش، تو میںڈک خوش — کھل کھل!", "en": "If rain, then happy frog — splish splash!" }
+        },
+        {
+          "id": "q5",
+          "art": "glitch-bug",
+          "question": { "ur": "بگ مل جائے تو کیا کرنے کا نام؟", "en": "What do we do when we find a bug?" },
+          "audio": "w7l12_q5",
+          "options": [
+            { "id": "a", "art": "yoyo", "label": { "ur": "یویو کھیل لینا", "en": "Go play with the yoyo" } },
+            { "id": "b", "art": "block-cmd", "label": { "ur": "سوچو، ترتیب دو، ٹھیک کرو", "en": "Think, order, fix" } }
+          ],
+          "answer": "b",
+          "explain": { "ur": "بگ دوست ہے — سوچو، ٹھیک کرو، جواہر پاؤ!", "en": "The bug is a friend — think, fix it, win a gem!" }
+        }
+      ],
+      "wrongHint": { "ur": "اوپس! ایک بگ ملا! دوبارہ سوچو — چیمپیئن دوبارہ سوچتے ہیں!", "en": "Oops! A bug! Think again — champions think again!" }
+    }
+  },
+  "bonus": {
+    "activity": {
+      "type": "tap-select",
+      "prompt": { "ur": "جشن! پانچوں جواہر پر تھپکی — بجلی کا دماغ پورا ہو!", "en": "Party! Tap all five gems — make Bijli's brain whole!" },
+      "audio": "w7l12_bonus_prompt",
+      "scene": "bg-jungle",
+      "cursorArt": "teer",
+      "items": [
+        { "id": "g1", "x": 12, "y": 60, "art": "gem", "correct": true, "hint": { "ur": "پہلا جواہر چمک اٹھا!", "en": "The first gem is glowing!" } },
+        { "id": "g2", "x": 32, "y": 72, "art": "gem", "correct": true, "hint": { "ur": "دوسرا جواہر جھلمک!", "en": "The second gem sparkles!" } },
+        { "id": "g3", "x": 52, "y": 55, "art": "gem", "correct": true, "hint": { "ur": "تیسرا جواہر جگمگ!", "en": "The third gem glimmers!" } },
+        { "id": "g4", "x": 72, "y": 68, "art": "gem", "correct": true, "hint": { "ur": "چوتھا جواہر چمک چمک!", "en": "The fourth gem twinkles!" } },
+        { "id": "g5", "x": 92, "y": 58, "art": "gem", "correct": true, "hint": { "ur": "پانچواں جواہر — دماغ پورا!", "en": "The fifth gem — brain complete!" } }
+      ],
+      "winPraise": { "ur": "کمال! بجلی کا دماغ پورا — لاجک چیمپیئن!", "en": "Amazing! Bijli's brain is whole — Logic Champion!" }
+    }
+  },
+  "cheer": {
+    "recap": [
+      { "ur": "پیٹرن، ترتیب، لوپ، اگر-تو، بگ فکس — تمہارا دماغ چمک گیا!", "en": "Patterns, order, loops, if-then, bug fixes — your brain is glowing!" },
+      { "ur": "لاجک چیمپیئن کا تمغہ تمہارا — شاباش شاباش!", "en": "The Logic Champion badge is yours — shabash, shabash!" }
+    ],
+    "recapAudio": ["w7l12_recap_1", "w7l12_recap_2"],
+    "rewardToast": { "ur": "بجلی کا دماغ پورا — لاجک چیمپیئن!", "en": "Bijli's brain is whole — Logic Champion!" }
+  }
+}

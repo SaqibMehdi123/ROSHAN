@@ -1,0 +1,116 @@
+{
+  "id": "w6l6",
+  "schemaVersion": 1,
+  "world": 6,
+  "order": 6,
+  "title": { "ur": "پاس ورڈ — صرف تمہاری چابی", "en": "Password — Your Only Key" },
+  "skill": { "ur": "پاس ورڈ خفیہ چابی: مضبوط بناؤ (حروف + عدد)، چھپاؤ، صرف امی ابو کو بتاؤ", "en": "A password is a secret key: make it strong (letters + numbers), hide it, tell only Ammi and Abu" },
+  "skillKey": "password-secret-key",
+  "minutes": 6,
+  "praise": { "ur": "شاباش! پاس ورڈ کے تین قدم یاد ہیں — چابی محفوظ!", "en": "Shabash! You know the three password steps — the key is safe!" },
+  "story": {
+    "scenes": [
+      {
+        "bg": "bg-lab",
+        "cast": ["chotu", "bijli", "golmatol", "ustad-ullo"],
+        "lines": [
+          {
+            "char": "bijli",
+            "emote": "waving",
+            "ur": "آج ہم سپر چابی بنائیں گے — پاس ورڈ!",
+            "en": "Today we make a super key — a password!",
+            "audio": "w6l6_story_1"
+          },
+          {
+            "char": "chotu",
+            "emote": "surprised",
+            "ur": "پاس ورڈ؟ وہ کیا ہوتا ہے؟",
+            "en": "A password? What is that?",
+            "audio": "w6l6_story_2"
+          },
+          {
+            "char": "bijli",
+            "emote": "happy",
+            "ur": "پاس ورڈ خفیہ چابی ہے! حروف + عدد = مضبوط چابی، صرف تمہاری!",
+            "en": "A password is a secret key! Letters + numbers = a strong key, only yours!",
+            "audio": "w6l6_story_3"
+          },
+          {
+            "char": "golmatol",
+            "emote": "peeking",
+            "ur": "میو! مجھے بھی بتا دو؟",
+            "en": "Meow! Tell me too?",
+            "audio": "w6l6_story_4"
+          },
+          {
+            "char": "ustad-ullo",
+            "emote": "flying",
+            "ur": "نہیں گول مٹول! پاس ورڈ کسی کو نہیں بتاتے — صرف امی اور ابو کو۔ یہی اصل سپر پاور ہے!",
+            "en": "No, Gol Matol! We tell no one the password — only Ammi and Abu. That is the real superpower!",
+            "audio": "w6l6_story_5"
+          },
+          {
+            "char": "narrator",
+            "ur": "چلو، تین قدم یاد کریں — بناؤ، چھپاؤ، نہ بتاؤ!",
+            "en": "Let's remember three steps — make it, hide it, don't tell it!",
+            "audio": "w6l6_story_6",
+            "choice": { "ur": "سپر چابی تیار!", "en": "Super key ready!", "audio": "w6l6_story_6_choice" }
+          }
+        ]
+      }
+    ]
+  },
+  "show": {
+    "steps": [
+      {
+        "visual": "key-password",
+        "caption": { "ur": "چابی بناؤ: حروف + عدد — جیسے MANGO7۔ یہ مضبوط چابی ہے۔", "en": "Make the key: letters + numbers — like MANGO7. That is a strong key." },
+        "audio": "w6l6_show_1"
+      },
+      {
+        "visual": "lock",
+        "caption": { "ur": "چابی تالے میں — پاس ورڈ ہمیشہ خفیہ رہتا ہے۔", "en": "The key goes in the lock — the password always stays secret." },
+        "audio": "w6l6_show_2"
+      },
+      {
+        "visual": "shield-safe",
+        "caption": { "ur": "نہ بتاؤ: نہ دوست کو، نہ گول مٹول کو — صرف امی اور ابو کو۔", "en": "Don't tell it: not your friend, not Gol Matol — only Ammi and Abu." },
+        "audio": "w6l6_show_3"
+      }
+    ]
+  },
+  "do": {
+    "activity": {
+      "type": "tap-sequence",
+      "prompt": { "ur": "پاس ورڈ کے تین قدم — درست ترتیب میں دباؤ!", "en": "The three password steps — tap them in the right order!" },
+      "audio": "w6l6_do_prompt",
+      "steps": [
+        {
+          "id": "make",
+          "art": "key-password",
+          "label": { "ur": "چابی بناؤ — حروف اور عدد", "en": "Make the key — letters and numbers" }
+        },
+        {
+          "id": "hide",
+          "art": "lock",
+          "label": { "ur": "تالے میں چھپاؤ", "en": "Hide it in the lock" }
+        },
+        {
+          "id": "guard",
+          "art": "shield-safe",
+          "label": { "ur": "کسی کو نہ بتاؤ — صرف امی ابو کو", "en": "Tell no one — only Ammi and Abu" }
+        }
+      ],
+      "order": ["make", "hide", "guard"],
+      "wrongHint": { "ur": "اوپس! ایک بگ! پہلے چابی بناؤ، پھر چھپاؤ، پھر نہ بتاؤ — پھر سے!", "en": "Oops! A bug! First make it, then hide it, then don't tell it — try again!" }
+    }
+  },
+  "cheer": {
+    "recap": [
+      { "ur": "پاس ورڈ خفیہ چابی — حروف اور عدد اسے مضبوط بناتے ہیں۔", "en": "A password is a secret key — letters and numbers make it strong." },
+      { "ur": "بناؤ، چھپاؤ، کسی کو نہ بتاؤ — صرف امی اور ابو کو۔", "en": "Make it, hide it, tell no one — only Ammi and Abu." }
+    ],
+    "recapAudio": ["w6l6_recap_1", "w6l6_recap_2"],
+    "rewardToast": { "ur": "گول مٹول کہتا ہے: میو! مجھے پاس ورڈ نہیں ملا — مگر مجھے تم پر فخر ہے!", "en": "Gol Matol says: meow! I didn't get the password — but I am proud of you!" }
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "id": "w7l8",
+  "schemaVersion": 1,
+  "world": 7,
+  "order": 8,
+  "title": { "ur": "لوپ کھیلو — تالیاں!", "en": "Play the Loop — Clap!" },
+  "skill": { "ur": "لوپ کی مشق: ایک بلاک، بار بار چلتا ہے", "en": "Loop practice: one block that runs many times" },
+  "skillKey": "loop-clap",
+  "minutes": 6,
+  "praise": { "ur": "شاباش! لوپ کے سوالے آسان لگ گئے!", "en": "Shabash! Loop questions feel easy now!" },
+  "story": {
+    "scenes": [
+      {
+        "bg": "bg-jungle",
+        "cast": ["chotu", "bijli", "noor", "golmatol"],
+        "lines": [
+          { "char": "narrator", "ur": "جنگل کی پارٹی! چھوٹو نے ڈھول بجایا — سب تالیاں بجانے لگے۔", "en": "Jungle party! Chotu beat the dhol — everyone started clapping.", "audio": "w7l8_story_1" },
+          { "char": "chotu", "emote": "happy", "ur": "تالی، تالی، تالی، تالی — چار بار! اب ہاتھ تھک گئے!", "en": "Clap, clap, clap, clap — four times! Now my hands are tired!", "audio": "w7l8_story_2" },
+          { "char": "bijli", "emote": "waving", "ur": "بیپ! لوپ لگاؤ — ایک تالی کا بلاک، چار بار چلو!", "en": "Beep! Use a loop — one clap block, run it four times!", "audio": "w7l8_story_3" },
+          { "char": "golmatol", "emote": "peeking", "ur": "میاؤں! لوپ لگا تو میں بھی تالیاں بجاؤں گا!", "en": "Meow! Add a loop and I will clap too!", "audio": "w7l8_story_4" },
+          { "char": "noor", "emote": "celebrating", "ur": "لوپ سے تالیاں خود بجتی رہیں — کیا پارٹی تھی!", "en": "With the loop the claps played by themselves — what a party!", "audio": "w7l8_story_5" },
+          { "char": "narrator", "ur": "کیا تم لوپ کے سوالوں کے جواب دو گے؟", "en": "Will you answer the loop questions?", "audio": "w7l8_story_6", "choice": { "ur": "لوپ کھیلو!", "en": "Play the loop!", "audio": "w7l8_story_6_choice" } }
+        ]
+      }
+    ]
+  },
+  "show": {
+    "steps": [
+      { "visual": "block-loop", "caption": { "ur": "لوپ بلاک — بار بار چلنے والا دوست۔", "en": "The loop block — the friend that runs again and again." }, "audio": "w7l8_show_1" },
+      { "visual": "dhol", "caption": { "ur": "ڈھول کی تھاپ: تالی، تالی، تالی، تالی!", "en": "The dhol beat: clap, clap, clap, clap!" }, "audio": "w7l8_show_2" },
+      { "visual": "gem", "caption": { "ur": "لوپ جان لو — سوچنے کا جواہر پاؤ!", "en": "Learn the loop — win the Thinking Gem!" }, "audio": "w7l8_show_3" }
+    ]
+  },
+  "do": {
+    "activity": {
+      "type": "quiz-mix",
+      "prompt": { "ur": "لوپ کے تین سوال — دماغ چلاؤ!", "en": "Three loop questions — use your brain!" },
+      "audio": "w7l8_do_prompt",
+      "questions": [
+        {
+          "id": "q1",
+          "art": "block-loop",
+          "question": { "ur": "بار بار والے کام کے لیے کیا استعمال ہوتا ہے؟", "en": "What do we use for a repeating job?" },
+          "audio": "w7l8_q1",
+          "options": [
+            { "id": "a", "art": "block-loop", "label": { "ur": "لوپ", "en": "The loop" } },
+            { "id": "b", "art": "keyboard", "label": { "ur": "کی بورڈ", "en": "The keyboard" } }
+          ],
+          "answer": "a",
+          "explain": { "ur": "ہاں! بار بار کام؟ لوپ ہی جواب ہے!", "en": "Yes! A repeating job? The loop is the answer!" }
+        },
+        {
+          "id": "q2",
+          "art": "loop-arrow",
+          "question": { "ur": "لوپ کیا کرتا ہے؟", "en": "What does a loop do?" },
+          "audio": "w7l8_q2",
+          "options": [
+            { "id": "a", "art": "watch", "label": { "ur": "انتظار کرتا ہے", "en": "It waits" } },
+            { "id": "b", "art": "loop-arrow", "label": { "ur": "کام بار بار دہراتا ہے", "en": "It repeats the job" } }
+          ],
+          "answer": "b",
+          "explain": { "ur": "لوپ کام کو بار بار دہراتا ہے!", "en": "A loop repeats the job again and again!" }
+        },
+        {
+          "id": "q3",
+          "art": "dhol",
+          "question": { "ur": "چار تالیاں لوپ سے کیسے بجائیں؟", "en": "How do we clap four times with a loop?" },
+          "audio": "w7l8_q3",
+          "options": [
+            { "id": "a", "art": "block-cmd", "label": { "ur": "چار الگ الگ بلاک", "en": "Four separate blocks" } },
+            { "id": "b", "art": "block-loop", "label": { "ur": "ایک لوپ بلاک، چار بار", "en": "One loop block, four times" } }
+          ],
+          "answer": "b",
+          "explain": { "ur": "ایک بلاک لکھو — لوپ چار بار بجائے گا!", "en": "Write one block — the loop will play it four times!" }
+        }
+      ],
+      "wrongHint": { "ur": "اوپس! ایک بگ ملا! دوبارہ سوچو — لوپ بار بار کا دوست ہے!", "en": "Oops! A bug! Think again — the loop is the repeat friend!" }
+    }
+  },
+  "cheer": {
+    "recap": [
+      { "ur": "لوپ = ایک بلاک، بار بار چلتا ہے۔", "en": "Loop = one block that runs again and again." },
+      { "ur": "چار تالیاں؟ ایک لوپ کافی ہے!", "en": "Four claps? One loop is enough!" }
+    ],
+    "recapAudio": ["w7l8_recap_1", "w7l8_recap_2"],
+    "rewardToast": { "ur": "آٹھواں سوچنے کا جواہر مل گیا — تالی تالی!", "en": "Eighth Thinking Gem won — clap clap!" }
+  }
+}

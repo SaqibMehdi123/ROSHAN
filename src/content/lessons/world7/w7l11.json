@@ -1,0 +1,59 @@
+{
+  "id": "w7l11",
+  "schemaVersion": 1,
+  "world": 7,
+  "order": 11,
+  "title": { "ur": "جواہر کی تلاش", "en": "The Gem Hunt" },
+  "skill": { "ur": "سنیں اور پہچانیں: نام سنو، وہی چیز تلاش کرو", "en": "Listen and find: hear the name, spot that thing" },
+  "skillKey": "gem-hunt",
+  "minutes": 6,
+  "praise": { "ur": "کمال! تم نے ہر چیز پہچان لی!", "en": "Kamaal! You recognized every single thing!" },
+  "story": {
+    "scenes": [
+      {
+        "bg": "bg-jungle",
+        "cast": ["bijli", "noor", "chotu", "golmatol"],
+        "lines": [
+          { "char": "narrator", "ur": "آخری جواہر جنگل میں بکھر گئے — چھپ گئے ہیں!", "en": "The last gems scattered into the jungle — they are hiding!", "audio": "w7l11_story_1" },
+          { "char": "bijli", "emote": "waving", "ur": "بیپ! کان کھولو — نام سنو اور وہی چیز تلاش کرو!", "en": "Beep! Open your ears — hear the name and find that thing!", "audio": "w7l11_story_2" },
+          { "char": "golmatol", "emote": "peeking", "ur": "میں بھی مدد کروں گا — دم سے اشارہ، میاؤں!", "en": "I will help too — my tail will point, meow!", "audio": "w7l11_story_3" },
+          { "char": "chotu", "emote": "excited", "ur": "جواہر، ستارہ، تتلی، پھول — سب تلاش کرو!", "en": "Gems, stars, butterflies, flowers — find them all!", "audio": "w7l11_story_4" },
+          { "char": "noor", "emote": "happy", "ur": "نام سنیں، چیز پہچانیں — جواہر تمہارا!", "en": "Hear the name, spot the thing — the gem is yours!", "audio": "w7l11_story_5" },
+          { "char": "narrator", "ur": "کیا تم سارے چھپے جواہر تلاش کرو گے؟", "en": "Will you find all the hidden gems?", "audio": "w7l11_story_6", "choice": { "ur": "جواہر تلاش کرو!", "en": "Hunt the gems!", "audio": "w7l11_story_6_choice" } }
+        ]
+      }
+    ]
+  },
+  "show": {
+    "steps": [
+      { "visual": "gem", "caption": { "ur": "یہ ہے سوچنے کا جواہر!", "en": "This is a Thinking Gem!" }, "audio": "w7l11_show_1" },
+      { "visual": "butterfly", "caption": { "ur": "جنگل میں تتلیاں، پھول اور ستارے بھی چھپے ہیں۔", "en": "Butterflies, flowers and stars hide in the jungle too." }, "audio": "w7l11_show_2" },
+      { "visual": "medal-gem", "caption": { "ur": "سب تلاش کرو — لاجک چیمپیئن قریب ہے!", "en": "Find them all — Logic Champion is near!" }, "audio": "w7l11_show_3" }
+    ]
+  },
+  "do": {
+    "activity": {
+      "type": "find-named",
+      "prompt": { "ur": "نام سنو اور وہی چیز جنگل میں تلاش کرو!", "en": "Listen to the name and find that thing in the jungle!" },
+      "audio": "w7l11_do_prompt",
+      "scene": "bg-jungle",
+      "targets": [
+        { "id": "t1", "art": "gem", "x": 12, "y": 58, "name": { "ur": "سب سے بڑا جواہر", "en": "The biggest gem" } },
+        { "id": "t2", "art": "shape-star", "x": 32, "y": 72, "name": { "ur": "ستارہ", "en": "The star" } },
+        { "id": "t3", "art": "butterfly", "x": 52, "y": 55, "name": { "ur": "تتلی", "en": "The butterfly" } },
+        { "id": "t4", "art": "flower", "x": 72, "y": 70, "name": { "ur": "پھول", "en": "The flower" } },
+        { "id": "t5", "art": "mango", "x": 92, "y": 60, "name": { "ur": "آم", "en": "The mango" } }
+      ],
+      "wrongHint": { "ur": "اوپس! ایک بگ ملا! نام دوبارہ سنو، دوبارہ سوچو!", "en": "Oops! A bug! Listen to the name again, think again!" },
+      "winPraise": { "ur": "سارے جواہر ملے — تمہاری آنکھیں اور کان تیز ہیں!", "en": "All gems found — your eyes and ears are sharp!" }
+    }
+  },
+  "cheer": {
+    "recap": [
+      { "ur": "نام سنو، چیز پہچانو — تلاش مکمل!", "en": "Hear the name, spot the thing — hunt complete!" },
+      { "ur": "جواہر ملے — بجلی کا دماغ قریب قریب پورا!", "en": "Gems found — Bijli's brain is almost whole!" }
+    ],
+    "recapAudio": ["w7l11_recap_1", "w7l11_recap_2"],
+    "rewardToast": { "ur": "گیارھواں سوچنے کا جواہر مل گیا!", "en": "Eleventh Thinking Gem won!" }
+  }
+}

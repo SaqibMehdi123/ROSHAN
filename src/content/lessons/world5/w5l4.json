@@ -1,0 +1,58 @@
+{
+  "id": "w5l4",
+  "schemaVersion": 1,
+  "world": 5,
+  "order": 4,
+  "title": { "ur": "شکلیں — ستارہ اور دل", "en": "Shapes — Star & Heart" },
+  "skill": { "ur": "شکلیں لگا کر کارڈ سجاؤ", "en": "Decorate cards with shapes" },
+  "skillKey": "shapes-star-heart",
+  "minutes": 5,
+  "praise": { "ur": "واہ! تمہارے کارڈ پر ستارے جگمگا گئے!", "en": "Wow! Stars are sparkling on your card!" },
+  "story": {
+    "scenes": [
+      {
+        "bg": "bg-workshop",
+        "cast": ["bijli", "noor", "chotu"],
+        "lines": [
+          { "char": "narrator", "ur": "نور میلے کے لیے دعوتی کارڈ بنا رہی تھی۔", "en": "Noor was making an invitation card for the mela.", "audio": "w5l4_story_1" },
+          { "char": "bijli", "emote": "happy", "ur": "شکلیں دیکھو! ستارہ اور دل — کارڈ کو چمکا دیتے ہیں!", "en": "Look at the shapes! A star and a heart — they make the card sparkle!", "audio": "w5l4_story_2" },
+          { "char": "chotu", "emote": "playful", "ur": "لڈو کی شکل بھی ہے؟ مجھے لڈو والا کارڈ چاہئے!", "en": "Is there a laddu shape? I want a laddu card!", "audio": "w5l4_story_3" },
+          { "char": "noor", "emote": "happy", "ur": "ہاہا! پھول اور تتلی بھی سجاتے ہیں۔ آؤ سب مل کر سجاؤ!", "en": "Haha! Flowers and butterflies decorate too. Let's decorate together!", "audio": "w5l4_story_4" },
+          { "char": "narrator", "ur": "کیا تم کارڈ سجاؤ گے؟", "en": "Will you decorate the card?", "audio": "w5l4_story_5", "choice": { "ur": "ہاں! کارڈ سجاؤ!", "en": "Yes! Decorate the card!", "audio": "w5l4_story_5_choice" } }
+        ]
+      }
+    ]
+  },
+  "show": {
+    "steps": [
+      { "visual": "shape-star", "caption": { "ur": "ستارہ — چمکتا ہوا سجاوٹ!", "en": "A star — a sparkling decoration!" }, "audio": "w5l4_show_1" },
+      { "visual": "shape-heart", "caption": { "ur": "دل — دوستی کی نشانی۔", "en": "A heart — a sign of friendship." }, "audio": "w5l4_show_2" },
+      { "visual": "flower", "caption": { "ur": "پھول — کارڈ کی خوشبو!", "en": "A flower — the card's perfume!" }, "audio": "w5l4_show_3" }
+    ]
+  },
+  "do": {
+    "activity": {
+      "type": "tap-select",
+      "prompt": { "ur": "کارڈ سجاؤ! ہر سجاوٹ پر کلک کرو — ستارہ، دل، پھول، تتلی، پتنگ!", "en": "Decorate the card! Tap every decoration — star, heart, flower, butterfly, kite!" },
+      "audio": "w5l4_do_prompt",
+      "scene": "bg-workshop",
+      "cursorArt": "teer",
+      "items": [
+        { "id": "deco-star", "x": 12, "y": 24, "art": "shape-star", "correct": true, "glow": true, "hint": { "ur": "ستارہ جگمگا گیا!", "en": "The star sparkles!" } },
+        { "id": "deco-heart", "x": 34, "y": 20, "art": "shape-heart", "correct": true, "glow": true, "hint": { "ur": "دل نے کارڈ کو پیار بنا دیا!", "en": "The heart made the card lovely!" } },
+        { "id": "deco-flower", "x": 56, "y": 28, "art": "flower", "correct": true, "glow": true, "hint": { "ur": "پھول کھل گیا — خوشبو آئی!", "en": "The flower bloomed — smell the perfume!" } },
+        { "id": "deco-butterfly", "x": 78, "y": 22, "art": "butterfly", "correct": true, "glow": true, "move": true, "hint": { "ur": "تتلی اڑ گئی — کتنی پیاری!", "en": "The butterfly flew — so pretty!" } },
+        { "id": "deco-kite", "x": 64, "y": 60, "art": "kite", "correct": true, "glow": true, "hint": { "ur": "پتنگ کارڈ پر جھوم رہا ہے!", "en": "The kite dances on the card!" } }
+      ],
+      "winPraise": { "ur": "واہ! کارڈ تو جشن بن گیا! شاباش ننھے فنکار!", "en": "Wow! The card became a celebration! Shabash, little artist!" }
+    }
+  },
+  "cheer": {
+    "recap": [
+      { "ur": "شکلیں بات کرتی ہیں — ستارہ چمکتا ہے، دل پیار کرتا ہے۔", "en": "Shapes speak — a star shines, a heart loves." },
+      { "ur": "سجا کارڈ دل کو خوش کر دیتا ہے۔", "en": "A decorated card makes hearts happy." }
+    ],
+    "recapAudio": ["w5l4_recap_1", "w5l4_recap_2"],
+    "rewardToast": { "ur": "دعوتی کارڈ تیار — میلے میں بھجو!", "en": "Invitation card ready — send it to the mela!" }
+  }
+}

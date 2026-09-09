@@ -34,10 +34,10 @@ export default function Home() {
 
   if (!hydrated) {
     return (
-      <main className="flex min-h-screen items-center justify-center">
+      <main className="flex min-h-dvh items-center justify-center">
         <div className="anim-bob text-center">
-          <div className="mx-auto h-20 w-20 animate-pulse rounded-full bg-roshan-sun" />
-          <p className="urdu mt-4 text-2xl font-bold">بجلی جاگ رہی ہے…</p>
+          <div className="mx-auto h-20 w-20 animate-pulse rounded-full shadow-[var(--r-shadow)]" style={{ background: "radial-gradient(circle at 32% 26%, #FFFDE6 0%, var(--r-sun) 55%)" }} />
+          <p className="urdu-tight mt-4 text-2xl font-bold">بجلی جاگ رہی ہے…</p>
           <p className="ltr-term text-xs text-roshan-ink-soft" dir="ltr">ROSHAN is waking up…</p>
         </div>
       </main>
@@ -81,5 +81,5 @@ export default function Home() {
     }
   }
 
-  return <div key="roshan-root" className="min-h-screen bg-roshan-cream">{view}</div>;
+  return <div key="roshan-root" className="min-h-dvh">{view}</div>;
 }

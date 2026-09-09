@@ -1,0 +1,164 @@
+{
+  "id": "w8l4",
+  "schemaVersion": 1,
+  "world": 8,
+  "order": 4,
+  "title": { "ur": "پرچم، چلو، چھلانگ، خوشی!", "en": "Flag, Walk, Jump, Cheer!" },
+  "skill": { "ur": "چار بلاکس کا پروگرام — ترتیب سے", "en": "A four-block program — in order" },
+  "skillKey": "four-step-program",
+  "minutes": 6,
+  "praise": {
+    "ur": "شاباش! چار بلاکس، چار کام — پروگرام زندہ باد!",
+    "en": "Shabash! Four blocks, four jobs — hooray for programs!"
+  },
+  "story": {
+    "scenes": [
+      {
+        "bg": "bg-mountain",
+        "cast": ["bijli", "noor", "chotu", "ustad-ullo"],
+        "lines": [
+          {
+            "char": "narrator",
+            "ur": "آج پہاڑ پر جشن ہے — اور بجلی رقص کے موڈ میں!",
+            "en": "Today is party day on the mountain — and Bijli is in dance mood!",
+            "audio": "w8l4_story_1"
+          },
+          {
+            "char": "chotu",
+            "emote": "excited",
+            "ur": "بجلی کے لیے خوشی والا پروگرام بناتے ہیں! چار بلاکس!",
+            "en": "Let's build a happy program for Bijli! Four blocks!",
+            "audio": "w8l4_story_2"
+          },
+          {
+            "char": "noor",
+            "emote": "happy",
+            "ur": "پرچم، چلو، چھلانگ، خوشی — ترتیب یاد ہے؟",
+            "en": "Flag, walk, jump, cheer — do you remember the order?",
+            "audio": "w8l4_story_3"
+          },
+          {
+            "char": "bijli",
+            "emote": "happy",
+            "ur": "چھلانگ؟ بیپ بیپ! مجھے چھلانگیں بہت پسند ہیں!",
+            "en": "Jump? Beep beep! I love jumps!",
+            "audio": "w8l4_story_4"
+          },
+          {
+            "char": "ustad-ullo",
+            "emote": "perch",
+            "ur": "چارو بلاکس صحیح ترتیب میں دباؤ — پھر ڈھول بجے گا!",
+            "en": "Tap all four blocks in the right order — then the dhol will play!",
+            "audio": "w8l4_story_5",
+            "choice": {
+              "ur": "جشن شروع!",
+              "en": "Start the party!",
+              "audio": "w8l4_story_5_choice"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "show": {
+    "steps": [
+      {
+        "visual": "block-flag",
+        "caption": { "ur": "پرچم = شروع! ہمیشہ پہلا بلاک۔", "en": "Flag = start! Always the first block." },
+        "audio": "w8l4_show_1"
+      },
+      {
+        "visual": "block-cmd",
+        "caption": { "ur": "چلو اور چھلانگ — دو کمانڈ بلاکس، ترتیب سے۔", "en": "Walk and jump — two command blocks, in order." },
+        "audio": "w8l4_show_2"
+      },
+      {
+        "visual": "party-flag",
+        "caption": { "ur": "خوشی بلاک — آخر میں جشن! ڈھول دھم دھم!", "en": "The cheer block — party at the end! Dum dum, dhol!" },
+        "audio": "w8l4_show_3"
+      }
+    ]
+  },
+  "do": {
+    "activity": {
+      "type": "tap-sequence",
+      "prompt": { "ur": "جشن پروگرام: پرچم، چلو، چھلانگ، خوشی — صحیح ترتیب میں دباؤ!", "en": "Party program: flag, walk, jump, cheer — tap them in the right order!" },
+      "audio": "w8l4_do_prompt",
+      "steps": [
+        {
+          "id": "flag",
+          "art": "block-flag",
+          "label": { "ur": "شروع — پرچم", "en": "START — the flag" },
+          "audio": "w8l4_do_flag"
+        },
+        {
+          "id": "walk",
+          "art": "block-cmd",
+          "label": { "ur": "چلو — آگے", "en": "Walk — forward" },
+          "audio": "w8l4_do_walk"
+        },
+        {
+          "id": "jump",
+          "art": "block-cmd",
+          "label": { "ur": "چھلانگ — اوپر!", "en": "Jump — up high!" },
+          "audio": "w8l4_do_jump"
+        },
+        {
+          "id": "cheer",
+          "art": "party-flag",
+          "label": { "ur": "خوشی — ڈھول!", "en": "Cheer — dhol!" },
+          "audio": "w8l4_do_cheer"
+        }
+      ],
+      "order": ["flag", "walk", "jump", "cheer"],
+      "wrongHint": { "ur": "اوپس! ایک بگ ملا! یاد رکھو: پرچم سب سے پہلے، خوشی سب سے آخر!", "en": "Oops! A bug! Remember: the flag first, the cheer last!" }
+    }
+  },
+  "bonus": {
+    "activity": {
+      "type": "tap-select",
+      "prompt": { "ur": "جشن کی چیزیں چھوؤ — سب سہی ہیں!", "en": "Tap the party things — every one is right!" },
+      "audio": "w8l4_bonus_prompt",
+      "scene": "bg-mountain",
+      "cursorArt": "teer",
+      "items": [
+        {
+          "id": "p1",
+          "x": 20,
+          "y": 40,
+          "art": "dhol",
+          "correct": true,
+          "hint": { "ur": "ڈھول! دھم دھم — جشن کی آواز!", "en": "The dhol! Dum dum — the sound of the party!" },
+          "audio": "w8l4_bonus_1"
+        },
+        {
+          "id": "p2",
+          "x": 50,
+          "y": 62,
+          "art": "party-flag",
+          "correct": true,
+          "hint": { "ur": "جھنڈا! اٹھو اور لہراؤ!", "en": "The flag! Up high and waving!" },
+          "audio": "w8l4_bonus_2"
+        },
+        {
+          "id": "p3",
+          "x": 78,
+          "y": 38,
+          "art": "star",
+          "correct": true,
+          "hint": { "ur": "ستارہ! تمہارے پروگرام کا انعام!", "en": "A star! A prize for your program!" },
+          "audio": "w8l4_bonus_3"
+        }
+      ],
+      "winPraise": { "ur": "ڈھول، جھنڈا، ستارہ — جشن مکمل!", "en": "Dhol, flag, star — party complete!" }
+    }
+  },
+  "cheer": {
+    "recap": [
+      { "ur": "چار بلاکس = چار کام: پرچم، چلو، چھلانگ، خوشی!", "en": "Four blocks = four jobs: flag, walk, jump, cheer!" },
+      { "ur": "ترتیب سے بلاکس لگاؤ — پروگرام خود چلتا ہے!", "en": "Snap the blocks in order — the program runs by itself!" }
+    ],
+    "recapAudio": ["w8l4_recap_1", "w8l4_recap_2"],
+    "rewardToast": { "ur": "بجلی نے تمہارے پروگرام پر چھلانگ لگائی!", "en": "Bijli jumped — because of your program!" }
+  }
+}

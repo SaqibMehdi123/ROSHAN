@@ -1,0 +1,61 @@
+{
+  "id": "w7l9",
+  "schemaVersion": 1,
+  "world": 7,
+  "order": 9,
+  "title": { "ur": "اگر-تو کے فیصلے", "en": "If-Then Choices" },
+  "skill": { "ur": "اگر-تو: پہلے حال دیکھو، پھر کام چنو", "en": "If-then: look at the situation, then choose the action" },
+  "skillKey": "if-then",
+  "minutes": 6,
+  "praise": { "ur": "زبردست! اگر-تو کے فیصلے تم نے آسان کیے!", "en": "Zabardast! You made if-then choices look easy!" },
+  "story": {
+    "scenes": [
+      {
+        "bg": "bg-jungle",
+        "cast": ["noor", "chotu", "bijli", "golmatol"],
+        "lines": [
+          { "char": "narrator", "ur": "جنگل میں بادل گرجا — بارش ہونے والی ہے!", "en": "A cloud rumbled in the jungle — rain is coming!", "audio": "w7l9_story_1" },
+          { "char": "bijli", "emote": "short-circuit", "ur": "بیپ! فیصلے کا وقت: اگر بارش، تو چھتری! اگر دھوپ، تو ٹوپی!", "en": "Beep! Time to decide: if rain, then umbrella! If sun, then cap!", "audio": "w7l9_story_2" },
+          { "char": "golmatol", "emote": "peeking", "ur": "میں تو برستے میں کھیلنے جاؤں گا — میںڈک والی طرح!", "en": "I will play in the rain — just like the frog!", "audio": "w7l9_story_3" },
+          { "char": "noor", "emote": "pointing", "ur": "اگر-تو کا راز: پہلے حال دیکھو، پھر کام چنو۔", "en": "The if-then secret: first look at what is happening, then choose the action.", "audio": "w7l9_story_4" },
+          { "char": "chotu", "emote": "happy", "ur": "اگر دھوپ، تو آئس کریم — مزہ والا فیصلہ!", "en": "If sun, then ice cream — a yummy choice!", "audio": "w7l9_story_5" },
+          { "char": "narrator", "ur": "کیا تم اگر-تو کے فیصلے درست لگاؤ گے؟", "en": "Will you set the if-then choices right?", "audio": "w7l9_story_6", "choice": { "ur": "فیصلے کرو!", "en": "Make the choices!", "audio": "w7l9_story_6_choice" } }
+        ]
+      }
+    ]
+  },
+  "show": {
+    "steps": [
+      { "visual": "if-fork", "caption": { "ur": "اگر-تو: فیصلے کا سگنل۔", "en": "If-then: the choice signal." }, "audio": "w7l9_show_1" },
+      { "visual": "water-drop", "caption": { "ur": "اگر بارش — تو چھتری!", "en": "If rain — then umbrella!" }, "audio": "w7l9_show_2" },
+      { "visual": "sun", "caption": { "ur": "اگر دھوپ — تو ٹوپی اور آئس کریم!", "en": "If sun — then cap and ice cream!" }, "audio": "w7l9_show_3" }
+    ]
+  },
+  "do": {
+    "activity": {
+      "type": "sort-bins",
+      "prompt": { "ur": "ہر چیز کو اگر-تو کے صحیح فیصلے میں ڈالو!", "en": "Put each thing in its if-then choice!" },
+      "audio": "w7l9_do_prompt",
+      "bins": [
+        { "id": "rain", "label": { "ur": "اگر بارش", "en": "If rain" }, "art": "water-drop" },
+        { "id": "sun", "label": { "ur": "اگر دھوپ", "en": "If sun" }, "art": "sun" }
+      ],
+      "cards": [
+        { "id": "c1", "art": "water-drop", "text": { "ur": "بارش", "en": "Rain" }, "bin": "rain", "explain": { "ur": "اگر بارش، تو چھتری اور بارش کا مزہ!", "en": "If rain, then umbrella and rainy fun!" } },
+        { "id": "c2", "art": "frog", "text": { "ur": "میںڈک", "en": "Frog" }, "bin": "rain", "explain": { "ur": "اگر بارش، تو میںڈک کھل کھلائے گا!", "en": "If rain, then the frog will go splish splash!" } },
+        { "id": "c3", "art": "kite", "text": { "ur": "پتنگ", "en": "Kite" }, "bin": "sun", "explain": { "ur": "اگر دھوپ، تو آسمان میں پتنگ!", "en": "If sun, then a kite up in the sky!" } },
+        { "id": "c4", "art": "icecream", "text": { "ur": "آئس کریم", "en": "Ice cream" }, "bin": "sun", "explain": { "ur": "اگر دھوپ، تو ٹھنڈا آئس کریم!", "en": "If sun, then a cold ice cream!" } },
+        { "id": "c5", "art": "flower", "text": { "ur": "پھول", "en": "Flower" }, "bin": "sun", "explain": { "ur": "اگر دھوپ، تو پھول کھل جاتا ہے!", "en": "If sun, then the flower blooms!" } }
+      ],
+      "wrongHint": { "ur": "اوپس! ایک بگ ملا! سوچو — بارش کا دوست یا دھوپ کا دوست؟", "en": "Oops! A bug! Think — a rain friend or a sun friend?" }
+    }
+  },
+  "cheer": {
+    "recap": [
+      { "ur": "اگر-تو = پہلے حال، پھر کام۔", "en": "If-then = first the situation, then the action." },
+      { "ur": "اگر بارش تو چھتری، اگر دھوپ تو ٹوپی!", "en": "If rain then umbrella, if sun then cap!" }
+    ],
+    "recapAudio": ["w7l9_recap_1", "w7l9_recap_2"],
+    "rewardToast": { "ur": "نواں سوچنے کا جواہر مل گیا — بہادر فیصلے!", "en": "Ninth Thinking Gem won — brave choices!" }
+  }
+}

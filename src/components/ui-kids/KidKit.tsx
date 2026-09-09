@@ -47,7 +47,7 @@ export function BigButton({
     >
       {art && <Art id={art} size={34} />}
       <span className="flex flex-col items-center leading-none">
-        <span className="urdu text-[1.375rem] font-semibold">{ur}</span>
+        <span className="urdu-tight text-[1.375rem] font-semibold">{ur}</span>
         {en && <span className="ltr-term mt-1 text-sm opacity-70">{en}</span>}
         {sublabel && <span className="ltr-term mt-0.5 text-xs opacity-60">{sublabel}</span>}
       </span>
@@ -147,6 +147,7 @@ export function SpeakBubble({
   audio,
   emote,
   onDone,
+  hideUr,
 }: {
   speaker?: string;
   ur: string;
@@ -154,6 +155,8 @@ export function SpeakBubble({
   audio?: string;
   emote?: string;
   onDone?: () => void;
+  /** Show only the English pairing — used when the Urdu caption is already on screen (SHOW stage). */
+  hideUr?: boolean;
 }) {
   const spoken = useRef(false);
   useEffect(() => {
@@ -176,10 +179,12 @@ export function SpeakBubble({
           {speaker}
         </div>
       )}
-      <p className={`urdu text-[1.35rem] font-semibold ${emote === "narrator" ? "text-roshan-ink-soft" : ""}`} key={ur}>
-        {ur}
-      </p>
-      {en && <p className="ltr-term mt-2 border-t border-dashed border-roshan-card-border pt-2 text-sm text-roshan-ink-soft" dir="ltr">{en}</p>}
+      {!hideUr && (
+        <p className={`urdu text-[1.35rem] font-semibold ${emote === "narrator" ? "text-roshan-ink-soft" : ""}`} key={ur}>
+          {ur}
+        </p>
+      )}
+      {en && <p className={`ltr-term text-sm text-roshan-ink-soft ${hideUr ? "" : "mt-2 border-t border-dashed border-roshan-card-border pt-2"}`} dir="ltr">{en}</p>}
     </div>
   );
 }
@@ -191,7 +196,7 @@ export function ProgressDots({ phases, current }: { phases: string[]; current: n
       {phases.map((p, i) => (
         <div
           key={p}
-          className={`h-3.5 w-3.5 rounded-full border-2 border-roshan-ink ${i === current ? "bg-roshan-orange" : i < current ? "bg-roshan-green" : "bg-white"}`}
+          className={`h-3.5 w-3.5 rounded-full border-2 border-roshan-ink transition-colors ${i === current ? "scale-110 bg-roshan-orange shadow-sm" : i < current ? "bg-roshan-green" : "bg-white"}`}
           title={p}
         />
       ))}

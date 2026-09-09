@@ -1,0 +1,134 @@
+{
+  "id": "w8l5",
+  "schemaVersion": 1,
+  "world": 8,
+  "order": 5,
+  "title": { "ur": "لوپ بلاک — کمائی والا", "en": "The Loop Block — Clever Short-cut" },
+  "skill": { "ur": "لوپ کام کو دہراتا ہے؛ بلاکس پہچانو", "en": "A loop repeats a job; spot the blocks" },
+  "skillKey": "loop-block",
+  "minutes": 5,
+  "praise": {
+    "ur": "شاباش! لوپ بلاک مل گیا — اب کام ہو گیا آسان!",
+    "en": "Shabash! You found the loop block — now the work is easy!"
+  },
+  "story": {
+    "scenes": [
+      {
+        "bg": "bg-mountain",
+        "cast": ["bijli", "noor", "chotu", "ustad-ullo"],
+        "lines": [
+          {
+            "char": "narrator",
+            "ur": "راستے پر چار جواہر — اور چاروں کے لیے چار کمانڈ بلاکس؟",
+            "en": "Four gems on the path — and four command blocks for all four?",
+            "audio": "w8l5_story_1"
+          },
+          {
+            "char": "chotu",
+            "emote": "oops",
+            "ur": "اتنی دفعہ بلاک دبانا؟ میری انگلی تھک گئی!",
+            "en": "Tapping so many times? My finger is tired!",
+            "audio": "w8l5_story_2"
+          },
+          {
+            "char": "noor",
+            "emote": "thinking",
+            "ur": "ایک لوپ بلاک استعمال کرو! وہ کہتا ہے: یہ کام دوبارہ کرو!",
+            "en": "Use one loop block! It says: do this job again!",
+            "audio": "w8l5_story_3"
+          },
+          {
+            "char": "bijli",
+            "emote": "happy",
+            "ur": "لوپ سن کر میں جھومتی ہوں — دوبارہ! دوبارہ! بیپ!",
+            "en": "Hearing a loop makes me dance — again! again! beep!",
+            "audio": "w8l5_story_4"
+          },
+          {
+            "char": "ustad-ullo",
+            "emote": "perch",
+            "ur": "پہاڑ پر بلاکس چھپے ہیں — لوپ بلاک ڈھونڈو!",
+            "en": "Blocks hide on the mountain — find the loop block!",
+            "audio": "w8l5_story_5",
+            "choice": {
+              "ur": "لوپ ڈھونڈو!",
+              "en": "Find the loop!",
+              "audio": "w8l5_story_5_choice"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "show": {
+    "steps": [
+      {
+        "visual": "block-loop",
+        "caption": { "ur": "لوپ بلاک کہتا ہے: ایک ہی کام، بار بار!", "en": "The loop block says: one job, again and again!" },
+        "audio": "w8l5_show_1"
+      },
+      {
+        "visual": "loop-arrow",
+        "caption": { "ur": "تیروں کا چکر = دہراؤ! چار جواہر؟ کوئی مسئلہ نہیں!", "en": "A circle of arrows = repeat! Four gems? No problem!" },
+        "audio": "w8l5_show_2"
+      },
+      {
+        "visual": "gem",
+        "caption": { "ur": "لوپ نے چاروں جواہر اکٹھے کر دیے — کمائی والا!", "en": "The loop gathered all four gems — so clever!" },
+        "audio": "w8l5_show_3"
+      }
+    ]
+  },
+  "do": {
+    "activity": {
+      "type": "find-named",
+      "prompt": { "ur": "سنو اور دباؤ — لوپ بلاک، کمانڈ بلاک، پرچم، جواہر!", "en": "Listen and tap — loop block, command block, flag, gem!" },
+      "audio": "w8l5_do_prompt",
+      "scene": "bg-mountain",
+      "targets": [
+        {
+          "id": "t1",
+          "art": "block-loop",
+          "x": 22,
+          "y": 30,
+          "name": { "ur": "لوپ بلاک", "en": "Loop block" },
+          "audio": "w8l5_do_t1"
+        },
+        {
+          "id": "t2",
+          "art": "block-cmd",
+          "x": 50,
+          "y": 58,
+          "name": { "ur": "کمانڈ بلاک", "en": "Command block" },
+          "audio": "w8l5_do_t2"
+        },
+        {
+          "id": "t3",
+          "art": "block-flag",
+          "x": 78,
+          "y": 32,
+          "name": { "ur": "شروع کا پرچم", "en": "The start flag" },
+          "audio": "w8l5_do_t3"
+        },
+        {
+          "id": "t4",
+          "art": "gem",
+          "x": 64,
+          "y": 74,
+          "name": { "ur": "جواہر", "en": "The gem" },
+          "audio": "w8l5_do_t4"
+        }
+      ],
+      "wrongHint": { "ur": "اوپس! یہ وہ نہیں — دوبارہ سنو اور ڈھونڈو!", "en": "Oops! Not that one — listen again and find it!" },
+      "winPraise": { "ur": "تم نے سب بلاکس پہچان لیے — لوپ سب سے کمائی والا!", "en": "You know all the blocks — the loop is the cleverest!" }
+    }
+  },
+  "cheer": {
+    "recap": [
+      { "ur": "لوپ = دوبارہ! ایک بلاک، بہت سارا کام۔", "en": "Loop = again! One block, lots of work." },
+      { "ur": "پرچم شروع کرتا ہے، کمانڈ کام کرتی ہے، لوپ دہراتا ہے۔", "en": "The flag starts, the command works, the loop repeats." }
+    ],
+    "recapAudio": ["w8l5_recap_1", "w8l5_recap_2"],
+    "rewardToast": { "ur": "بجلی چار جواہر لے آئی — صرف ایک لوپ بلاک سے!", "en": "Bijli brought four gems — with just one loop block!" }
+  }
+}

@@ -1,0 +1,215 @@
+{
+  "id": "w6l8",
+  "schemaVersion": 1,
+  "world": 6,
+  "order": 8,
+  "title": { "ur": "سیفٹی شیلڈ مشن", "en": "Safety Shield Mission" },
+  "skill": { "ur": "دنیا ۶ کی دہرائی: انٹرنیٹ، ویب سائٹ، لنک، پاس ورڈ، نجی باتیں، انجان پیغام", "en": "World 6 review: internet, websites, links, passwords, private info, unknown messages" },
+  "skillKey": "w6-review",
+  "minutes": 7,
+  "badge": "safety-star",
+  "praise": { "ur": "مبارک ہو! تم 'سیفٹی اسٹار' بن گئے — اُستاد اُلوو فخر کرتے ہیں!", "en": "Congratulations! You are a Safety Star — Ustaad Ulloo is proud of you!" },
+  "story": {
+    "scenes": [
+      {
+        "bg": "bg-bazaar",
+        "props": ["party-flag"],
+        "cast": ["noor", "chotu", "bijli", "ustad-ullo"],
+        "lines": [
+          {
+            "char": "narrator",
+            "ur": "سیفٹی شیلڈ کی تربیت مکمل! اب آخری مشن!",
+            "en": "Safety Shield training is complete! Now the final mission!",
+            "audio": "w6l8_story_1",
+            "fx": "confetti"
+          },
+          {
+            "char": "ustad-ullo",
+            "emote": "perch",
+            "ur": "پانچ سوال — ہر جواب ڈھال کا ایک حصہ روشن کرے گا!",
+            "en": "Five questions — each answer lights up one part of the shield!",
+            "audio": "w6l8_story_2"
+          },
+          {
+            "char": "noor",
+            "emote": "celebrating",
+            "ur": "انٹرنیٹ بازار، ویب سائٹ اسٹال، لنک دروازہ — ہم سب یاد رکھتے ہیں!",
+            "en": "Internet bazaar, websites are stalls, links are doors — we remember it all!",
+            "audio": "w6l8_story_3"
+          },
+          {
+            "char": "chotu",
+            "emote": "excited",
+            "ur": "اور پاس ورڈ؟ صرف امی ابو کو! انجان پیغام؟ پہلے بڑوں سے پوچھو!",
+            "en": "And the password? Only Ammi and Abu! Unknown message? Ask an elder first!",
+            "audio": "w6l8_story_4"
+          },
+          {
+            "char": "ustad-ullo",
+            "emote": "flying",
+            "ur": "مشن پورا ہوا تو 'سیفٹی اسٹار' کا بیج ملے گا — روشن ہیرو کی طرف ایک قدم!",
+            "en": "Finish the mission and the Safety Star badge is yours — one step toward ROSHAN Hero!",
+            "audio": "w6l8_story_5",
+            "fx": "sparkle"
+          },
+          {
+            "char": "narrator",
+            "ur": "کیا تم سیفٹی اسٹار بنو گے؟",
+            "en": "Will you become a Safety Star?",
+            "audio": "w6l8_story_6",
+            "choice": { "ur": "مشن شروع!", "en": "Start the mission!", "audio": "w6l8_story_6_choice" }
+          }
+        ]
+      }
+    ]
+  },
+  "show": {
+    "steps": [
+      {
+        "visual": "medal-shield",
+        "caption": { "ur": "یہ بیج تمہارا ہو سکتا ہے — سیفٹی اسٹار!", "en": "This badge can be yours — Safety Star!" },
+        "audio": "w6l8_show_1"
+      },
+      {
+        "visual": "shield-safe",
+        "caption": { "ur": "ہر جواب ڈھال کا ایک حصہ روشن کرے گا — چمک اُٹھے گی!", "en": "Each answer lights up one part of the shield — it will glow!" },
+        "audio": "w6l8_show_2"
+      },
+      {
+        "visual": "party-flag",
+        "caption": { "ur": "بگ آ گیا؟ کوئی بات نہیں — بگ فکسر ہمیشہ جیتتے ہیں!", "en": "A bug showed up? No worries — bug fixers always win!" },
+        "audio": "w6l8_show_3"
+      }
+    ]
+  },
+  "do": {
+    "activity": {
+      "type": "quiz-mix",
+      "prompt": { "ur": "سیفٹی اسٹار کوئز: ہر سوال سنو، صحیح جواب دباؤ!", "en": "Safety Star quiz: listen to each question, tap the right answer!" },
+      "audio": "w6l8_do_prompt",
+      "questions": [
+        {
+          "id": "q1",
+          "art": "globe-net",
+          "question": { "ur": "انٹرنیٹ کیا ہے؟", "en": "What is the internet?" },
+          "audio": "w6l8_q1",
+          "options": [
+            { "id": "a", "art": "bazaar-stall", "label": { "ur": "دنیا کا سب سے بڑا بازار", "en": "The world's biggest bazaar" } },
+            { "id": "b", "art": "rickshaw", "label": { "ur": "ایک چھوٹی سی رکشہ", "en": "A tiny rickshaw" } }
+          ],
+          "answer": "a",
+          "explain": { "ur": "بالکل! انٹرنیٹ وہ بازار ہے جو ہر گاؤں اور ہر شہر کو جوڑتا ہے۔", "en": "Exactly! The internet is the bazaar that connects every village and city." }
+        },
+        {
+          "id": "q2",
+          "art": "link-chain",
+          "question": { "ur": "لنک کیا کرتا ہے؟", "en": "What does a link do?" },
+          "audio": "w6l8_q2",
+          "options": [
+            { "id": "a", "art": "browser", "label": { "ur": "دوسرے اسٹال کا دروازہ کھولتا ہے", "en": "Opens a door to another stall" } },
+            { "id": "b", "art": "monitor", "label": { "ur": "کمپیوٹر سُلا دیتا ہے", "en": "Puts the computer to sleep" } }
+          ],
+          "answer": "a",
+          "explain": { "ur": "ہاں! لنک جادوئی دروازہ ہے — دباؤ اور دوسرے اسٹال پہنچو۔", "en": "Yes! A link is a magic door — tap it and reach another stall." }
+        },
+        {
+          "id": "q3",
+          "art": "key-password",
+          "question": { "ur": "پاس ورڈ کون جان سکتا ہے؟", "en": "Who may know your password?" },
+          "audio": "w6l8_q3",
+          "options": [
+            { "id": "a", "art": "home", "label": { "ur": "صرف امی اور ابو", "en": "Only Ammi and Abu" } },
+            { "id": "b", "art": "bazaar-stall", "label": { "ur": "سارا بازار", "en": "The whole bazaar" } }
+          ],
+          "answer": "a",
+          "explain": { "ur": "سہی بات! پاس ورڈ خفیہ چابی ہے — صرف گھر والے جان سکتے ہیں۔", "en": "Right! The password is a secret key — only family may know it." }
+        },
+        {
+          "id": "q4",
+          "art": "lock",
+          "question": { "ur": "نجی باتیں — مکمل نام، پتہ، فون — کس کے ساتھ رکھو؟", "en": "Private things — full name, address, phone — who do we keep them with?" },
+          "audio": "w6l8_q4",
+          "options": [
+            { "id": "a", "art": "home", "label": { "ur": "صرف گھر والوں کے ساتھ", "en": "With family only" } },
+            { "id": "b", "art": "bazaar-stall", "label": { "ur": "بازار میں سب کو بتاؤ", "en": "Tell everyone in the bazaar" } }
+          ],
+          "answer": "a",
+          "explain": { "ur": "زبردست! نجی باتیں صرف گھر والوں کے ساتھ — یہی سپر ڈھال ہے۔", "en": "Zabardast! Private things stay with family only — that is the super shield." }
+        },
+        {
+          "id": "q5",
+          "art": "letter-message",
+          "question": { "ur": "انجان پیغام آئے تو کیا کرو؟", "en": "An unknown message arrives — what do you do?" },
+          "audio": "w6l8_q5",
+          "options": [
+            { "id": "a", "art": "ask-first", "label": { "ur": "پہلے بڑوں سے پوچھو", "en": "Ask an elder first" } },
+            { "id": "b", "art": "browser", "label": { "ur": "فوراً کھولو", "en": "Open it right away" } }
+          ],
+          "answer": "a",
+          "explain": { "ur": "شاباش! انجان پیغام؟ سپر پاور: پہلے بڑوں سے پوچھو — ڈھال محفوظ!", "en": "Shabash! Unknown message? Superpower: ask an elder first — shield safe!" }
+        }
+      ],
+      "wrongHint": { "ur": "اوپس! ایک بگ ملا! دوبارہ سوچو — تمہاری ڈھال تمہارے ساتھ ہے!", "en": "Oops! A bug! Think again — your shield is right here with you!" }
+    }
+  },
+  "bonus": {
+    "activity": {
+      "type": "tap-select",
+      "prompt": { "ur": "پانچ چمکتے دائرے دباؤ — سیفٹی شیلڈ پوری روشن کرو!", "en": "Tap five glowing spots — light up the whole Safety Shield!" },
+      "audio": "w6l8_bonus_prompt",
+      "scene": "bg-courtyard",
+      "cursorArt": "teer",
+      "items": [
+        {
+          "id": "g1",
+          "x": 14,
+          "y": 52,
+          "art": "glow-spot",
+          "correct": true,
+          "hint": { "ur": "ایک روشنی! چار مزے!", "en": "One light! Four more!" }
+        },
+        {
+          "id": "g2",
+          "x": 32,
+          "y": 66,
+          "art": "glow-spot",
+          "correct": true,
+          "hint": { "ur": "دو! ڈھال چمک رہی ہے!", "en": "Two! The shield is glowing!" }
+        },
+        {
+          "id": "g3",
+          "x": 50,
+          "y": 44,
+          "art": "glow-spot",
+          "correct": true,
+          "hint": { "ur": "تین! آدھا راستہ!", "en": "Three! Halfway there!" }
+        },
+        {
+          "id": "g4",
+          "x": 68,
+          "y": 64,
+          "art": "glow-spot",
+          "correct": true,
+          "hint": { "ur": "چار! بس ایک اور!", "en": "Four! Just one more!" }
+        },
+        {
+          "id": "g5",
+          "x": 86,
+          "y": 52,
+          "art": "glow-spot",
+          "correct": true,
+          "hint": { "ur": "پانچ! سیفٹی شیلڈ پوری روشن!", "en": "Five! The Safety Shield is fully lit!" }
+        }
+      ],
+      "winPraise": { "ur": "کمال! ڈھال پوری روشن — تم سیفٹی اسٹار ہو!", "en": "Kamaal! The shield is fully lit — you are a Safety Star!" }
+    }
+  },
+  "cheer": {
+    "recap": [
+      { "ur": "انٹرنیٹ بازار، ویب سائٹ اسٹال، لنک دروازہ — اور پاس ورڈ خفیہ چابی!", "en": "Internet bazaar, websites are stalls, links are doors — and the password is a secret key!" },
+      { "ur": "نجی باتیں صرف گھر والوں سے؛ انجان پیغام؟ پہلے بڑوں سے پوچھو!", "en": "Private things are family only; unknown message? Ask an elder first!" }
+    ],
+    "recapAudio": ["w6l8_recap_1", "w6l8_recap_2"],
+    "rewardToast": { "ur": "بیج ملا: سیفٹی اسٹار! تمہاری ڈھال ہمیشہ تمہارے ساتھ!", "en": "Badge earned: Safety Star! Your shield is always with you!" }
+  }
+}

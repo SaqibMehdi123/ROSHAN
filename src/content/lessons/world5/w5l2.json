@@ -1,0 +1,60 @@
+{
+  "id": "w5l2",
+  "schemaVersion": 1,
+  "world": 5,
+  "order": 2,
+  "title": { "ur": "قلم اور برش", "en": "Pencil & Brush" },
+  "skill": { "ur": "پنسل سے لکیر، برش سے رنگ", "en": "Draw lines with the pencil, fill color with the brush" },
+  "skillKey": "pencil-brush-fill",
+  "minutes": 6,
+  "praise": { "ur": "واہ! پنسل اور برش کی جوڑی — تم نے پرچم اڑا دیا!", "en": "Wow! The pencil-and-brush team — your flag is flying!" },
+  "story": {
+    "scenes": [
+      {
+        "bg": "bg-workshop",
+        "cast": ["bijli", "noor", "chotu"],
+        "lines": [
+          { "char": "narrator", "ur": "میلے کے لیے جھنڈے چاہئیں! نور نے پنسل اٹھایا۔", "en": "The mela needs flags! Noor picked up the pencil.", "audio": "w5l2_story_1" },
+          { "char": "noor", "emote": "pointing", "ur": "پنسل سے لکیر بنتی ہے — دیکھو، پرچم کی شکل!", "en": "The pencil draws lines — look, a flag shape!", "audio": "w5l2_story_2" },
+          { "char": "chotu", "emote": "playful", "ur": "اب رنگ! برش ڈبو اور پھر پھیرو — چٹ چٹ!", "en": "Now color! Dip the brush and sweep — swish swish!", "audio": "w5l2_story_3" },
+          { "char": "bijli", "emote": "happy", "ur": "بالکل! پہلے پنسل سے بناؤ، پھر برش سے رنگ بھرو۔", "en": "Exactly! First draw with the pencil, then fill color with the brush.", "audio": "w5l2_story_4" },
+          { "char": "narrator", "ur": "کیا تم میلے کا پرچم رنگو گے؟", "en": "Will you paint the mela flag?", "audio": "w5l2_story_5", "choice": { "ur": "ہاں! پرچم رنگو!", "en": "Yes! Paint the flag!", "audio": "w5l2_story_5_choice" } }
+        ]
+      }
+    ]
+  },
+  "show": {
+    "steps": [
+      { "visual": "pencil", "caption": { "ur": "پنسل سے لکیریں بناؤ — شکل تیار!", "en": "Draw lines with the pencil — the shape is ready!" }, "audio": "w5l2_show_1" },
+      { "visual": "paint-brush", "caption": { "ur": "برش سے رنگ بھرو — آہستہ اور خوبصورت۔", "en": "Fill color with the brush — slow and beautiful." }, "audio": "w5l2_show_2" },
+      { "visual": "party-flag", "caption": { "ur": "لکیر اور رنگ مل کر میلے کا پرچم بنے!", "en": "Lines plus colors make the mela flag!" }, "audio": "w5l2_show_3" }
+    ]
+  },
+  "do": {
+    "activity": {
+      "type": "paint-zones",
+      "prompt": { "ur": "پرچم کی تین پٹیاں رنگو! پہلے رنگ چُنو، پھر پٹی پر کلک کرو۔", "en": "Paint the three flag stripes! Pick a color, then tap a stripe." },
+      "audio": "w5l2_do_prompt",
+      "palette": [
+        { "id": "sky", "color": "#38BDF8", "name": { "ur": "آسمانی", "en": "Sky blue" } },
+        { "id": "yellow", "color": "#FDE047", "name": { "ur": "پیلا", "en": "Yellow" } },
+        { "id": "green", "color": "#22C55E", "name": { "ur": "ہرا", "en": "Green" } }
+      ],
+      "zones": [
+        { "id": "stripe-top", "x": 25, "y": 16, "w": 50, "h": 16, "colorId": "sky" },
+        { "id": "stripe-middle", "x": 25, "y": 34, "w": 50, "h": 16, "colorId": "yellow" },
+        { "id": "stripe-bottom", "x": 25, "y": 52, "w": 50, "h": 16, "colorId": "green" }
+      ],
+      "wrongHint": { "ur": "اوپس! ایک بگ ملا! دوسرا رنگ چُنو اور دوبارہ کلک کرو!", "en": "Oops! A bug! Pick another color and tap again!" },
+      "winPraise": { "ur": "واہ! کیا خوب پرچم! میلے میں یہ سب سے اوپر لہرائے گا!", "en": "Wow! What a flag! It will fly highest at the mela!" }
+    }
+  },
+  "cheer": {
+    "recap": [
+      { "ur": "پہلے پنسل سے بناؤ، پھر برش سے رنگ بھرو۔", "en": "First draw with the pencil, then fill with the brush." },
+      { "ur": "پرچم کی ہر پٹی کا اپنا رنگ ہے۔", "en": "Every stripe of the flag has its own color." }
+    ],
+    "recapAudio": ["w5l2_recap_1", "w5l2_recap_2"],
+    "rewardToast": { "ur": "میلے کا پہلا پرچم تیار!", "en": "First mela flag is ready!" }
+  }
+}

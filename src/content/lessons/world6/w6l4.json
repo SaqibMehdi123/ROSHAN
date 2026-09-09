@@ -1,0 +1,167 @@
+{
+  "id": "w6l4",
+  "schemaVersion": 1,
+  "world": 6,
+  "order": 4,
+  "title": { "ur": "لنک — جادوئی دروازہ", "en": "Links — Magic Doors" },
+  "skill": { "ur": "لنک دباؤ تو دوسرا اسٹال کھلتا ہے؛ انجان لنک؟ پہلے بڑوں سے پوچھو", "en": "Tap a link to open another stall; unknown link? Ask an elder first" },
+  "skillKey": "links-magic-doors",
+  "minutes": 6,
+  "praise": { "ur": "شاباش! سپر ڈھال آن — تم نے صرف محفوظ دروازے کھولے!", "en": "Shabash! Super shield on — you only opened safe doors!" },
+  "story": {
+    "scenes": [
+      {
+        "bg": "bg-bazaar",
+        "cast": ["chotu", "ustad-ullo", "bijli", "noor"],
+        "lines": [
+          {
+            "char": "chotu",
+            "emote": "excited",
+            "ur": "دیکھو! یہ چمکتا لنک! دبا دوں؟",
+            "en": "Look! A shiny link! Can I tap it?",
+            "audio": "w6l4_story_1"
+          },
+          {
+            "char": "ustad-ullo",
+            "emote": "flying",
+            "ur": "رکو چھوٹو! لنک جادوئی دروازہ ہے — دباؤ تو دوسرا اسٹال کھل جاتا ہے۔",
+            "en": "Wait, Chotu! A link is a magic door — tap it and another stall opens.",
+            "audio": "w6l4_story_2"
+          },
+          {
+            "char": "bijli",
+            "emote": "happy",
+            "ur": "جانا پہچانا لنک ہو؟ دباؤ اور مزے کرو!",
+            "en": "A link you know well? Tap it and enjoy!",
+            "audio": "w6l4_story_3"
+          },
+          {
+            "char": "ustad-ullo",
+            "emote": "perch",
+            "ur": "اور انجان لنک یا انجان پیغام؟ سپر پاور: پہلے بڑوں سے پوچھو!",
+            "en": "And an unknown link or message? Superpower: ask an elder first!",
+            "audio": "w6l4_story_4"
+          },
+          {
+            "char": "noor",
+            "emote": "pointing",
+            "ur": "ہم اُستاد اُلوو کی سیفٹی ڈھال کے ساتھ بازار گھومیں گے!",
+            "en": "We will walk the bazaar with Ustaad Ulloo's Safety Shield!",
+            "audio": "w6l4_story_5"
+          },
+          {
+            "char": "narrator",
+            "ur": "چلو، محفوظ دروازے تلاش کریں!",
+            "en": "Let's find the safe doors!",
+            "audio": "w6l4_story_6",
+            "choice": { "ur": "ڈھال تیار!", "en": "Shield ready!", "audio": "w6l4_story_6_choice" }
+          }
+        ]
+      }
+    ]
+  },
+  "show": {
+    "steps": [
+      {
+        "visual": "link-chain",
+        "caption": { "ur": "لنک = جادوئی دروازہ۔ دباؤ — دوسرے اسٹال پہنچ جاؤ۔", "en": "A link = a magic door. Tap it — you reach another stall." },
+        "audio": "w6l4_show_1"
+      },
+      {
+        "visual": "shield-safe",
+        "caption": { "ur": "سپر پاور ڈھال: کوئی انجان چیز دکھے؟ پہلے بڑوں سے پوچھو۔", "en": "The shield superpower: something unknown appears? Ask an elder first." },
+        "audio": "w6l4_show_2"
+      },
+      {
+        "visual": "ask-first",
+        "caption": { "ur": "پوچھنا بہادری ہے — اُستاد اُلوو اور گھر والے ہمیشہ مدد کریں گے۔", "en": "Asking is bravery — Ustaad Ulloo and your family will always help." },
+        "audio": "w6l4_show_3"
+      }
+    ]
+  },
+  "do": {
+    "activity": {
+      "type": "tap-select",
+      "prompt": { "ur": "جانا پہچانا لنک دباؤ؛ انجان پیغام دکھے تو بڑوں سے پوچھو!", "en": "Tap the links you know; see an unknown message? Ask an elder!" },
+      "audio": "w6l4_do_prompt",
+      "scene": "bg-bazaar",
+      "cursorArt": "teer",
+      "items": [
+        {
+          "id": "l1",
+          "x": 14,
+          "y": 56,
+          "art": "link-chain",
+          "correct": true,
+          "hint": { "ur": "کہانیوں کا لنک — جانا پہچانا! دباؤ اور کہانی سنیں۔", "en": "The stories link — an old friend! Tap and listen to a story." }
+        },
+        {
+          "id": "m1",
+          "x": 38,
+          "y": 64,
+          "art": "letter-message",
+          "correct": false,
+          "hint": { "ur": "انجان پیغام! سپر پاور: پہلے بڑوں سے پوچھو!", "en": "An unknown message! Superpower: ask an elder first!" }
+        },
+        {
+          "id": "l2",
+          "x": 62,
+          "y": 54,
+          "art": "link-chain",
+          "correct": true,
+          "hint": { "ur": "رنگوں کا لنک — یہاں ہم اکثر بناتے ہیں! دباؤ!", "en": "The drawing link — we create here often! Tap it!" }
+        },
+        {
+          "id": "m2",
+          "x": 86,
+          "y": 62,
+          "art": "letter-message",
+          "correct": false,
+          "hint": { "ur": "یہ دروازہ انجان ہے — اُستاد اُلوو کہتے ہیں: پہلے پوچھو!", "en": "This door is unknown — Ustaad Ulloo says: ask first!" }
+        }
+      ],
+      "winPraise": { "ur": "زبردست! تمہاری سیفٹی ڈھال چمک رہی ہے — صرف محفوظ دروازے کھولے!", "en": "Zabardast! Your Safety Shield is glowing — only safe doors opened!" }
+    }
+  },
+  "bonus": {
+    "activity": {
+      "type": "find-named",
+      "prompt": { "ur": "گول مٹول بازار میں چھپ گیا! چھپے ہوئے دوست تلاش کرو!", "en": "Gol Matol is hiding in the bazaar! Find the hidden friends!" },
+      "audio": "w6l4_bonus_prompt",
+      "scene": "bg-bazaar",
+      "targets": [
+        {
+          "id": "b1",
+          "art": "sneak-in",
+          "x": 18,
+          "y": 58,
+          "name": { "ur": "چھپا ہوا گول مٹول", "en": "Gol Matol hiding" }
+        },
+        {
+          "id": "b2",
+          "art": "butterfly",
+          "x": 46,
+          "y": 40,
+          "name": { "ur": "تتلی", "en": "The butterfly" }
+        },
+        {
+          "id": "b3",
+          "art": "kite",
+          "x": 74,
+          "y": 46,
+          "name": { "ur": "پتنگ", "en": "The kite" }
+        }
+      ],
+      "wrongHint": { "ur": "اوپس! ایک بگ! وہ دوسرا دوست ہے — نام سنو اور تلاش کرو!", "en": "Oops! A bug! That is a different friend — listen to the name and find it!" },
+      "winPraise": { "ur": "کمال! گول مٹول مل گیا — میو میو، اچھی تلاش!", "en": "Kamaal! Gol Matol is found — meow meow, what a search!" }
+    }
+  },
+  "cheer": {
+    "recap": [
+      { "ur": "لنک جادوئی دروازہ — جانا پہچانا لنک مزہ، انجان لنک؟ پوچھو!", "en": "A link is a magic door — known links are fun; an unknown link? Ask!" },
+      { "ur": "سپر پاور: پہلے بڑوں سے پوچھو — یہی سیفٹی ڈھال ہے!", "en": "Superpower: ask an elder first — that is the Safety Shield!" }
+    ],
+    "recapAudio": ["w6l4_recap_1", "w6l4_recap_2"],
+    "rewardToast": { "ur": "اُستاد اُلوو کہتے ہیں: تمہاری ڈھال چمک رہی ہے! ہو ہو!", "en": "Ustaad Ulloo says: your shield is glowing! Hoo hoo!" }
+  }
+}

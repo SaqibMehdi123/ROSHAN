@@ -1,0 +1,154 @@
+{
+  "id": "w6l7",
+  "schemaVersion": 1,
+  "world": 6,
+  "order": 7,
+  "title": { "ur": "کیا بتائیں، کیا نہیں؟", "en": "Share or Keep?" },
+  "skill": { "ur": "نجی باتیں: مکمل نام، گھر کا پتہ، اسکول، تصویریں، فون — صرف گھر والوں سے", "en": "Private info: full name, home address, school, photos, phone — family only" },
+  "skillKey": "share-or-keep",
+  "minutes": 6,
+  "praise": { "ur": "زبردست! تم جانتے ہو کیا بتانا ہے اور کیا رکھنا ہے — سپر ڈھال!", "en": "Zabardast! You know what to share and what to keep — super shield!" },
+  "story": {
+    "scenes": [
+      {
+        "bg": "bg-bazaar",
+        "cast": ["noor", "chotu", "bijli", "ustad-ullo"],
+        "lines": [
+          {
+            "char": "bijli",
+            "emote": "waving",
+            "ur": "نیا کھیل: بتاؤ یا رکھو! میں سوال پوچھوں گی، تم سوچو۔",
+            "en": "New game: Say it or keep it! I ask, you think.",
+            "audio": "w6l7_story_1"
+          },
+          {
+            "char": "noor",
+            "emote": "excited",
+            "ur": "پسندیدہ رنگ؟ بتاؤ! سب جانتے ہیں — مجھے ہرا پسند ہے!",
+            "en": "Favorite color? Say it! Everyone knows — I love green!",
+            "audio": "w6l7_story_2"
+          },
+          {
+            "char": "chotu",
+            "emote": "surprised",
+            "ur": "اور گھر کا پتہ؟ وہ بھی بتا دوں؟",
+            "en": "And my home address? Should I say that too?",
+            "audio": "w6l7_story_3"
+          },
+          {
+            "char": "ustad-ullo",
+            "emote": "perch",
+            "ur": "وہ رکھو! مکمل نام، گھر کا پتہ، اسکول، تصویریں، فون نمبر — نجی باتیں! صرف گھر والوں کے ساتھ۔",
+            "en": "Keep that! Full name, home address, school, photos, phone number — private! Family only.",
+            "audio": "w6l7_story_4"
+          },
+          {
+            "char": "chotu",
+            "emote": "happy",
+            "ur": "سمجھ گیا! پسندیدہ کھیل بتاؤ، گھر کا پتہ رکھو!",
+            "en": "Got it! Say your favorite game, keep the address!",
+            "audio": "w6l7_story_5"
+          },
+          {
+            "char": "narrator",
+            "ur": "چلو، ہر کارڈ صحیح ڈبے میں ڈالیں!",
+            "en": "Let's put every card in the right bin!",
+            "audio": "w6l7_story_6",
+            "choice": { "ur": "کھیل شروع!", "en": "Start the game!", "audio": "w6l7_story_6_choice" }
+          }
+        ]
+      }
+    ]
+  },
+  "show": {
+    "steps": [
+      {
+        "visual": "shield-safe",
+        "caption": { "ur": "بتا جا سکتا ہے: لقب، پسندیدہ رنگ، پسندیدہ کھیل۔", "en": "OK to share: nickname, favorite color, favorite game." },
+        "audio": "w6l7_show_1"
+      },
+      {
+        "visual": "lock",
+        "caption": { "ur": "رکھو: مکمل نام، گھر کا پتہ، اسکول کا نام۔", "en": "Keep it: full name, home address, school name." },
+        "audio": "w6l7_show_2"
+      },
+      {
+        "visual": "phone",
+        "caption": { "ur": "فون نمبر اور تصویریں؟ وہ بھی رکھو — صرف گھر والے جانتے ہیں۔", "en": "Phone number and photos? Keep those too — only family knows them." },
+        "audio": "w6l7_show_3"
+      }
+    ]
+  },
+  "do": {
+    "activity": {
+      "type": "sort-bins",
+      "prompt": { "ur": "ہر کارڈ اٹھاؤ اور ڈالو — بتا جا سکتا ہے یا صرف گھر والوں سے؟", "en": "Pick up each card and sort it — OK to share, or family only?" },
+      "audio": "w6l7_do_prompt",
+      "bins": [
+        {
+          "id": "safe",
+          "label": { "ur": "بتا جا سکتا ہے", "en": "OK to share" },
+          "art": "shield-safe"
+        },
+        {
+          "id": "secret",
+          "label": { "ur": "صرف گھر والوں سے", "en": "Family only" },
+          "art": "lock"
+        }
+      ],
+      "cards": [
+        {
+          "id": "c1",
+          "art": "flower",
+          "text": { "ur": "میرا پسندیدہ رنگ — ہرا", "en": "My favorite color — green" },
+          "bin": "safe",
+          "explain": { "ur": "پسندیدہ رنگ بتانا مزے کی بات ہے — سب رنگوں کے دوست!", "en": "Sharing a favorite color is fun — everyone loves colors!" }
+        },
+        {
+          "id": "c2",
+          "art": "star",
+          "text": { "ur": "میرا لقب — چاند", "en": "My nickname — Chand" },
+          "bin": "safe",
+          "explain": { "ur": "لقب سب کو بتا سکتے ہو — گھر میں سب یہی کہتے ہیں!", "en": "You can share your nickname — the whole family calls you that!" }
+        },
+        {
+          "id": "c3",
+          "art": "ball",
+          "text": { "ur": "میرا پسندیدہ کھیل — کرکٹ", "en": "My favorite game — cricket" },
+          "bin": "safe",
+          "explain": { "ur": "پسندیدہ کھیل؟ بتاؤ اور ساتھ کھیلو!", "en": "Favorite game? Share it and play together!" }
+        },
+        {
+          "id": "c4",
+          "art": "letter-message",
+          "text": { "ur": "میرا مکمل نام", "en": "My full name" },
+          "bin": "secret",
+          "explain": { "ur": "مکمل نام نجی ہے — صرف گھر والے جانتے ہیں۔ رکھو!", "en": "Your full name is private — only family knows it. Keep it!" }
+        },
+        {
+          "id": "c5",
+          "art": "monitor",
+          "text": { "ur": "میرے اسکول کا نام", "en": "My school's name" },
+          "bin": "secret",
+          "explain": { "ur": "اسکول کا نام؟ رکھو — صرف گھر والوں سے بتاؤ۔", "en": "The school's name? Keep it — tell family only." }
+        },
+        {
+          "id": "c6",
+          "art": "phone",
+          "text": { "ur": "گھر کا فون نمبر", "en": "Our home phone number" },
+          "bin": "secret",
+          "explain": { "ur": "فون نمبر صرف گھر والوں کے پاس — یہی سپر ڈھال!", "en": "The phone number stays with family only — that is the super shield!" }
+        }
+      ],
+      "wrongHint": { "ur": "اوپس! ایک بگ! سوچو — کیا یہ بات صرف گھر والوں کی ہے؟ دوسرے ڈبے میں ڈالو۔", "en": "Oops! A bug! Think — is this family-only business? Try the other bin." }
+    }
+  },
+  "cheer": {
+    "recap": [
+      { "ur": "بتاؤ: لقب، رنگ، کھیل۔ رکھو: نام، پتہ، اسکول، تصویریں، فون۔", "en": "Say: nickname, color, game. Keep: name, address, school, photos, phone." },
+      { "ur": "نجی باتیں صرف گھر والوں سے — یہ سیفٹی ڈھال کا قاعدہ ہے!", "en": "Private things are family only — that is the Safety Shield rule!" }
+    ],
+    "recapAudio": ["w6l7_recap_1", "w6l7_recap_2"],
+    "rewardToast": { "ur": "اُستاد اُلوو کہتے ہیں: آج تمہاری ڈھال دو گنا چمکی!", "en": "Ustaad Ulloo says: your shield glows twice as bright today!" }
+  }
+}

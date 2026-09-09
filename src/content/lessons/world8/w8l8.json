@@ -1,0 +1,120 @@
+{
+  "id": "w8l8",
+  "schemaVersion": 1,
+  "world": 8,
+  "order": 8,
+  "title": { "ur": "کہانی کا اختتام لکھو", "en": "Write THE END" },
+  "skill": { "ur": "ٹائپ کرو: THE END + اپنا نام", "en": "Type: THE END + your own name" },
+  "skillKey": "type-the-end",
+  "minutes": 7,
+  "praise": {
+    "ur": "شاباش مصنف! تمہاری کہانی مکمل ہو گئی!",
+    "en": "Shabash, author! Your story is complete!"
+  },
+  "story": {
+    "scenes": [
+      {
+        "bg": "bg-mountain",
+        "cast": ["bijli", "noor", "chotu", "ustad-ullo"],
+        "lines": [
+          {
+            "char": "narrator",
+            "ur": "بجلی نے تمہارا بلاک پروگرام رچایا — کہانی تیار ہے، بس اختتام باقی!",
+            "en": "Bijli acted out your block program — the story is ready, only the ending is left!",
+            "audio": "w8l8_story_1"
+          },
+          {
+            "char": "bijli",
+            "emote": "happy",
+            "ur": "بیپ! ہر کہانی کے آخر میں لکھتے ہیں: THE END!",
+            "en": "Beep! Every story ends with: THE END!",
+            "audio": "w8l8_story_2"
+          },
+          {
+            "char": "noor",
+            "emote": "excited",
+            "ur": "اور مصنف کا نام — یعنی تمہارا نام! کی بورڈ تیار ہے!",
+            "en": "And the author's name — that means your name! The keyboard is ready!",
+            "audio": "w8l8_story_3"
+          },
+          {
+            "char": "chotu",
+            "emote": "celebrating",
+            "ur": "پھر ڈھول بجے گا — دنیا کی پہلی کوڈڈ کہانی!",
+            "en": "Then the dhol will play — the world's first coded story!",
+            "audio": "w8l8_story_4"
+          },
+          {
+            "char": "ustad-ullo",
+            "emote": "nodding",
+            "ur": "کلیدیں دباؤ — THE END اور تمہارا نام!",
+            "en": "Tap the keys — THE END and your own name!",
+            "audio": "w8l8_story_5",
+            "choice": {
+              "ur": "لکھنا شروع!",
+              "en": "Start writing!",
+              "audio": "w8l8_story_5_choice"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "show": {
+    "steps": [
+      {
+        "visual": "keyboard",
+        "caption": { "ur": "کلیدیں تمہارے دوست — ہر کلید ایک حرف!", "en": "Keys are your friends — every key is a letter!" },
+        "audio": "w8l8_show_1"
+      },
+      {
+        "visual": "magic-eraser",
+        "caption": { "ur": "کوئی حرف ٹیڈھا؟ جادوئی اریزر صاف کر دے گا!", "en": "A wobbly letter? The magic eraser wipes it clean!" },
+        "audio": "w8l8_show_2"
+      },
+      {
+        "visual": "enter-door",
+        "caption": { "ur": "ENTER دروازہ ہے — لکھو اور کہو: ہو گیا!", "en": "ENTER is the door — type and say: done!" },
+        "audio": "w8l8_show_3"
+      }
+    ]
+  },
+  "do": {
+    "activity": {
+      "type": "type-input",
+      "prompt": { "ur": "لکھو: THE END — پھر اپنا نام، اے مصنف!", "en": "Type: THE END — then your own name, dear author!" },
+      "audio": "w8l8_do_prompt",
+      "keys": ["T", "H", "E", "N", "D", "A", "B", "I", "M", "O", "R", "S", "U", "Z"],
+      "targets": [
+        {
+          "id": "end1",
+          "expect": "THE END",
+          "art": "star",
+          "label": { "ur": "کہانی کا اختتام لکھو: THE END", "en": "Write the story ending: THE END" },
+          "audio": "w8l8_do_end1"
+        },
+        {
+          "id": "name1",
+          "expect": "ROSHAN",
+          "useProfileName": true,
+          "art": "glow-spot",
+          "label": { "ur": "اب مصنف کا نام — تمہارا نام لکھو!", "en": "Now the author's name — type your own name!" },
+          "audio": "w8l8_do_name1"
+        }
+      ],
+      "eraser": true,
+      "enter": true,
+      "space": true,
+      "wrongHint": { "ur": "اوپس! ایک بگ! صحیح کلید دباؤ — تم کر سکتے ہو!", "en": "Oops! A bug! Tap the right key — you can do it!" },
+      "winPraise": { "ur": "THE END اور تمہارا نام — کہانی مکمل، مصنف سلام!", "en": "THE END plus your name — story complete, salute the author!" }
+    }
+  },
+  "cheer": {
+    "recap": [
+      { "ur": "THE END کہانی کا دروازہ بند کرتا ہے — خوبصورتی سے!", "en": "THE END closes a story's door — beautifully!" },
+      { "ur": "اپنا نام لکھنا یعنی کہنا: یہ میں نے بنایا!", "en": "Typing your name means saying: I made this!" }
+    ],
+    "recapAudio": ["w8l8_recap_1", "w8l8_recap_2"],
+    "rewardToast": { "ur": "تمہاری کوڈڈ کہانی تیار — مصنف: تم!", "en": "Your coded story is ready — author: you!" }
+  }
+}

@@ -1,0 +1,136 @@
+{
+  "id": "w8l6",
+  "schemaVersion": 1,
+  "world": 8,
+  "order": 6,
+  "title": { "ur": "اگر-تو بلاک", "en": "The If-Then Block" },
+  "skill": { "ur": "پروگرام فیصلے کرتا ہے: اگر بارش، تو چھتری", "en": "Programs choose: if rain, then umbrella" },
+  "skillKey": "if-then",
+  "minutes": 6,
+  "praise": {
+    "ur": "کمال! اب تمہارا پروگرام سوچ بھی سکتا ہے!",
+    "en": "Amazing! Now your program can think too!"
+  },
+  "story": {
+    "scenes": [
+      {
+        "bg": "bg-mountain",
+        "cast": ["bijli", "noor", "chotu", "ustad-ullo"],
+        "lines": [
+          {
+            "char": "narrator",
+            "ur": "پہاڑ کے راستے میں شاخ — ایک طرف پتھر، دوسری طرف بادل!",
+            "en": "The mountain path forks — rocks on one side, a cloud on the other!",
+            "audio": "w8l6_story_1"
+          },
+          {
+            "char": "bijli",
+            "emote": "short-circuit",
+            "ur": "بیپ-بز! بادل میرا دماغ گیلا کر دے گا — میں کیا کروں؟",
+            "en": "Beep-bzz! That cloud will soak my brain — what do I do?",
+            "audio": "w8l6_story_2"
+          },
+          {
+            "char": "noor",
+            "emote": "pointing",
+            "ur": "اگر-تو بلاک! اگر بارش ہو، تو چھتری! اگر راستہ بند ہو، تو مڑو!",
+            "en": "The if-then block! If rain, then umbrella! If the path is blocked, then turn!",
+            "audio": "w8l6_story_3"
+          },
+          {
+            "char": "chotu",
+            "emote": "playful",
+            "ur": "اگر مٹھائی ہو، تو کھاؤ! یہ فیصلہ تو مجھے بھی آتا ہے!",
+            "en": "If there are sweets, then eat them! Even I know that decision!",
+            "audio": "w8l6_story_4"
+          },
+          {
+            "char": "ustad-ullo",
+            "emote": "nodding",
+            "ur": "اگر-تو کوئز — تین فیصلے تمہارے انتظار میں!",
+            "en": "The if-then quiz — three decisions are waiting for you!",
+            "audio": "w8l6_story_5",
+            "choice": {
+              "ur": "فیصلے کرو!",
+              "en": "Make the choices!",
+              "audio": "w8l6_story_5_choice"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "show": {
+    "steps": [
+      {
+        "visual": "if-fork",
+        "caption": { "ur": "اگر-تو بلاک دو راستے کھولتا ہے — پروگرام خود فیصلہ کرتا ہے!", "en": "The if-then block opens two paths — the program decides by itself!" },
+        "audio": "w8l6_show_1"
+      },
+      {
+        "visual": "gubbara",
+        "caption": { "ur": "اگر بارش آئے، تو چھتری کھولو — بجلی خشک!", "en": "If rain comes, then open the umbrella — Bijli stays dry!" },
+        "audio": "w8l6_show_2"
+      },
+      {
+        "visual": "glow-spot",
+        "caption": { "ur": "سہی فیصلے پر روشنی جلتی ہے — تم پروگرامر ہو!", "en": "A good decision lights up — you are the programmer!" },
+        "audio": "w8l6_show_3"
+      }
+    ]
+  },
+  "do": {
+    "activity": {
+      "type": "quiz-mix",
+      "prompt": { "ur": "تین فیصلے — ہر سوال سنو اور جواب چنو!", "en": "Three decisions — listen to each question and pick the answer!" },
+      "audio": "w8l6_do_prompt",
+      "questions": [
+        {
+          "id": "q1",
+          "art": "gubbara",
+          "question": { "ur": "اگر بارش آئے تو کیا کرو گے؟", "en": "If the rain comes, what will you do?" },
+          "audio": "w8l6_q1",
+          "options": [
+            { "id": "a", "art": "gubbara", "label": { "ur": "چھتری کھولو", "en": "Open the umbrella" } },
+            { "id": "b", "art": "block-loop", "label": { "ur": "لوپ میں ناچو", "en": "Dance in a loop" } }
+          ],
+          "answer": "a",
+          "explain": { "ur": "اگر بارش، تو چھتری — بجلی خشک رہ گئی!", "en": "If rain, then umbrella — Bijli stayed dry!" }
+        },
+        {
+          "id": "q2",
+          "art": "if-fork",
+          "question": { "ur": "اگر راستہ بند ہو تو؟", "en": "If the path is blocked, then?" },
+          "audio": "w8l6_q2",
+          "options": [
+            { "id": "a", "art": "block-cmd", "label": { "ur": "مڑو — دوسرا راستہ", "en": "Turn — take another path" } },
+            { "id": "b", "art": "star", "label": { "ur": "وہیں کھڑے رہو", "en": "Just stand there" } }
+          ],
+          "answer": "a",
+          "explain": { "ur": "اگر راستہ بند، تو مڑو — پروگرام نیا راستہ ڈھونڈتا ہے!", "en": "If blocked, then turn — the program finds another way!" }
+        },
+        {
+          "id": "q3",
+          "art": "if-fork",
+          "question": { "ur": "اگر-تو بلاک کیا کرتا ہے؟", "en": "What does the if-then block do?" },
+          "audio": "w8l6_q3",
+          "options": [
+            { "id": "a", "art": "if-fork", "label": { "ur": "فیصلہ کرتا ہے", "en": "It makes a choice" } },
+            { "id": "b", "art": "block-flag", "label": { "ur": "پروگرام شروع کرتا ہے", "en": "It starts the program" } }
+          ],
+          "answer": "a",
+          "explain": { "ur": "اگر-تو فیصلہ کرتا ہے — اگر یہ، تو وہ!", "en": "If-then makes a choice — if this, then that!" }
+        }
+      ],
+      "wrongHint": { "ur": "اوپس! ایک بگ! سوچو — اگر یہ ہو، تو تم کیا کرو گے؟", "en": "Oops! A bug! Think — if this happens, what will you do?" }
+    }
+  },
+  "cheer": {
+    "recap": [
+      { "ur": "اگر-تو بلاک پروگرام کو فیصلہ کرنا سکھاتا ہے۔", "en": "The if-then block teaches programs to choose." },
+      { "ur": "اگر بارش، تو چھتری — اور اگر بگ، تو ٹھیک کرو!", "en": "If rain, then umbrella — and if a bug, then fix it!" }
+    ],
+    "recapAudio": ["w8l6_recap_1", "w8l6_recap_2"],
+    "rewardToast": { "ur": "بجلی نے چھتری کھولی — تمہارے اگر-تو نے بچایا!", "en": "Bijli opened the umbrella — your if-then saved her!" }
+  }
+}

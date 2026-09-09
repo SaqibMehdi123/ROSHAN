@@ -1,0 +1,73 @@
+{
+  "id": "w5l7",
+  "schemaVersion": 1,
+  "world": 5,
+  "order": 7,
+  "title": { "ur": "ٹیکسٹ — نام لکھو", "en": "Text — Write Your Name" },
+  "skill": { "ur": "T ٹول سے اپنا نام لکھو", "en": "Write your name with the Text tool" },
+  "skillKey": "text-tool-name",
+  "minutes": 6,
+  "praise": { "ur": "کمال! تمہارا نام پوسٹر پر چمک رہا ہے!", "en": "Kamaal! Your name is shining on the poster!" },
+  "story": {
+    "scenes": [
+      {
+        "bg": "bg-workshop",
+        "cast": ["bijli", "noor", "chotu"],
+        "lines": [
+          { "char": "narrator", "ur": "پوسٹر تیار تھا، مگر ایک چیز کم تھی — نام!", "en": "The poster was ready, but one thing was missing — a name!", "audio": "w5l7_story_1" },
+          { "char": "bijli", "emote": "happy", "ur": "ٹی ٹول بلاؤ! T کے نشان سے حروف آتے ہیں — لکھنے کا جادو!", "en": "Call the Text tool! The T sign brings letters — the magic of writing!", "audio": "w5l7_story_2" },
+          { "char": "noor", "emote": "excited", "ur": "میں اپنا نام لکھوں گی — نور!", "en": "I will write my name — Noor!", "audio": "w5l7_story_3" },
+          { "char": "chotu", "emote": "playful", "ur": "میں تو چھوٹو لکھوں گا — بڑا سا، چمکتا ہوا!", "en": "I'll write Chotu — big and shining!", "audio": "w5l7_story_4" },
+          { "char": "narrator", "ur": "اب تمہاری باری — اپنا نام پوسٹر پر لکھو!", "en": "Now your turn — write your name on the poster!", "audio": "w5l7_story_5", "choice": { "ur": "ہاں! نام لکھوں گا!", "en": "Yes! I'll write my name!", "audio": "w5l7_story_5_choice" } }
+        ]
+      }
+    ]
+  },
+  "show": {
+    "steps": [
+      { "visual": "text-tool", "caption": { "ur": "T دباؤ — ٹیکسٹ ٹول حروف لاتا ہے۔", "en": "Tap T — the Text tool brings letters." }, "audio": "w5l7_show_1" },
+      { "visual": "qalam", "caption": { "ur": "پہلے لوگ قلم سے لکھتے تھے، اب کمپیوٹر پر بھی!", "en": "People first wrote with the qalam — now on the computer too!" }, "audio": "w5l7_show_2" },
+      { "visual": "party-flag", "caption": { "ur": "نام لکھا؟ پوسٹر تیار — میلے میں لٹاؤ!", "en": "Name written? Poster ready — hang it at the mela!" }, "audio": "w5l7_show_3" }
+    ]
+  },
+  "do": {
+    "activity": {
+      "type": "type-input",
+      "prompt": { "ur": "اپنا نام لکھو! بڑی کلیدوں پر انگلی رکھو۔", "en": "Type your name! Put your finger on the big keys." },
+      "audio": "w5l7_do_prompt",
+      "keys": ["A", "B", "D", "H", "I", "M", "N", "O", "R", "S", "U", "Z"],
+      "targets": [
+        { "id": "n1", "expect": "NOOR", "label": { "ur": "اپنا نام لکھو", "en": "Type your name" }, "useProfileName": true }
+      ],
+      "eraser": true,
+      "enter": true,
+      "space": false,
+      "wrongHint": { "ur": "اوپس! ایک بگ ملا! یہ کلید نہیں — نام والی کلید ڈھونڈو!", "en": "Oops! A bug! Not that key — find the name key!" },
+      "winPraise": { "ur": "کمال! تمہارا نام پوسٹر پر چمک رہا ہے — تم لکھ سکتے ہو!", "en": "Kamaal! Your name shines on the poster — you can write!" }
+    }
+  },
+  "bonus": {
+    "activity": {
+      "type": "type-input",
+      "prompt": { "ur": "میلے کا اعلان لکھو — سنو! میلا آیا!", "en": "Write the mela call — SUNO! The mela is here!" },
+      "audio": "w5l7_bonus_prompt",
+      "keys": ["A", "B", "D", "H", "I", "M", "N", "O", "R", "S", "U", "Z"],
+      "targets": [
+        { "id": "bn1", "expect": "SUNO", "label": { "ur": "لکھو: سنو!", "en": "Type SUNO!" } }
+      ],
+      "eraser": true,
+      "enter": true,
+      "space": false,
+      "wrongHint": { "ur": "اوپس! ایک بگ ملا! دوبارہ دیکھو — S، U، N، O!", "en": "Oops! A bug! Look again — S, U, N, O!" },
+      "winPraise": { "ur": "سنو سنو! میلا آیا — تمہارا اعلان تیار!", "en": "Suno suno! The mela is here — your announcement is ready!" }
+    }
+  },
+  "cheer": {
+    "recap": [
+      { "ur": "T ٹول حروف لاتا ہے — نام لکھنے کا جادو۔", "en": "The T tool brings letters — the magic of writing your name." },
+      { "ur": "ہر نام خاص ہے — تمہارا نام بھی!", "en": "Every name is special — yours too!" }
+    ],
+    "recapAudio": ["w5l7_recap_1", "w5l7_recap_2"],
+    "rewardToast": { "ur": "پوسٹر پر تمہارا نام چمکا!", "en": "Your name sparkled on the poster!" }
+  }
+}

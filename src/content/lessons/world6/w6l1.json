@@ -1,0 +1,122 @@
+{
+  "id": "w6l1",
+  "schemaVersion": 1,
+  "world": 6,
+  "order": 1,
+  "title": { "ur": "انٹرنیٹ کیا ہے؟", "en": "What is the Internet?" },
+  "skill": { "ur": "انٹرنیٹ = دنیا کا سب سے بڑا بازار، جہاں کمپیوٹر آپس میں بات کرتے ہیں", "en": "The internet = the world's biggest bazaar, where computers talk to each other" },
+  "skillKey": "what-is-internet",
+  "minutes": 6,
+  "praise": { "ur": "شاباش! تم نے انٹرنیٹ بازار پہچان لیا — کمال!", "en": "Shabash! You recognized the Internet Bazaar — kamaal!" },
+  "story": {
+    "scenes": [
+      {
+        "bg": "bg-bazaar",
+        "cast": ["noor", "chotu", "bijli", "ustad-ullo"],
+        "lines": [
+          {
+            "char": "narrator",
+            "ur": "آج بجلی تمہیں ایک خاص جگہ لے جا رہی ہے — انٹرنیٹ بازار!",
+            "en": "Today Bijli is taking you to a special place — the Internet Bazaar!",
+            "audio": "w6l1_story_1"
+          },
+          {
+            "char": "bijli",
+            "emote": "waving",
+            "ur": "بیپ! یہ دنیا کا سب سے بڑا بازار ہے — ہر گاؤں اور ہر شہر اس سے جڑا ہے!",
+            "en": "Beep! This is the world's biggest bazaar — every village and city is connected to it!",
+            "audio": "w6l1_story_2"
+          },
+          {
+            "char": "chotu",
+            "emote": "surprised",
+            "ur": "اتنا بڑا بازار! یہاں باتیں کون کرتا ہے؟",
+            "en": "Such a big bazaar! Who talks here?",
+            "audio": "w6l1_story_3"
+          },
+          {
+            "char": "bijli",
+            "emote": "happy",
+            "ur": "کمپیوٹر! سب کمپیوٹر آپس میں باتیں کرتے ہیں — جیسے دوست فون پر بات کرتے ہیں۔",
+            "en": "Computers! All computers talk to each other — like friends chatting on the phone.",
+            "audio": "w6l1_story_4"
+          },
+          {
+            "char": "ustad-ullo",
+            "emote": "perch",
+            "ur": "ہو ہو! اس بازار میں سب کچھ ملتا ہے — کتابیں، پھل، کھیل۔ آؤ، تلاش کرو!",
+            "en": "Hoo hoo! This bazaar has everything — books, fruit, games. Come, let's explore!",
+            "audio": "w6l1_story_5"
+          },
+          {
+            "char": "narrator",
+            "ur": "کیا تم انٹرنیٹ بازار کے اسٹال تلاش کرو گے؟",
+            "en": "Will you find the stalls of the Internet Bazaar?",
+            "audio": "w6l1_story_6",
+            "choice": { "ur": "چلو بازار دیکھیں!", "en": "Let's see the bazaar!", "audio": "w6l1_story_6_choice" }
+          }
+        ]
+      }
+    ]
+  },
+  "show": {
+    "steps": [
+      {
+        "visual": "globe-net",
+        "caption": { "ur": "یہ ہے انٹرنیٹ — دنیا کو جوڑنے والا جال، جیسے گول globe!", "en": "This is the internet — a net around the globe that connects everyone!" },
+        "audio": "w6l1_show_1"
+      },
+      {
+        "visual": "bazaar-stall",
+        "caption": { "ur": "انٹرنیٹ بازار کا ہر اسٹال کچھ نہ کچھ دکھاتا ہے۔", "en": "Every stall of the Internet Bazaar shows you something." },
+        "audio": "w6l1_show_2"
+      },
+      {
+        "visual": "monitor",
+        "caption": { "ur": "کمپیوٹر بازار کا دوست ہے — بات کرتا ہے، سنتا ہے، دکھاتا ہے۔", "en": "The computer is the bazaar's friend — it talks, listens, and shows." },
+        "audio": "w6l1_show_3"
+      }
+    ]
+  },
+  "do": {
+    "activity": {
+      "type": "find-named",
+      "prompt": { "ur": "اُستاد اُلوو اسٹال کا نام لیں گے — تم وہ اسٹال دباؤ!", "en": "Ustaad Ulloo will name a stall — tap that stall!" },
+      "audio": "w6l1_do_prompt",
+      "scene": "bg-bazaar",
+      "targets": [
+        {
+          "id": "t1",
+          "art": "bazaar-stall",
+          "x": 16,
+          "y": 62,
+          "name": { "ur": "کتابوں کا اسٹال", "en": "The books stall" }
+        },
+        {
+          "id": "t2",
+          "art": "mango",
+          "x": 42,
+          "y": 58,
+          "name": { "ur": "پھلوں کا اسٹال", "en": "The fruit stall" }
+        },
+        {
+          "id": "t3",
+          "art": "ball",
+          "x": 68,
+          "y": 64,
+          "name": { "ur": "کھیلونوں کا اسٹال", "en": "The toy stall" }
+        }
+      ],
+      "wrongHint": { "ur": "اوپس! ایک بگ! یہ دوسرا اسٹال ہے — دھیان سے سنیں اور وہی اسٹال تلاش کریں!", "en": "Oops! A bug! That is another stall — listen carefully and find the named one!" },
+      "winPraise": { "ur": "کمال! تم نے تینوں اسٹال ڈھونڈ نکالے — زبردست!", "en": "Kamaal! You found all three stalls — zabardast!" }
+    }
+  },
+  "cheer": {
+    "recap": [
+      { "ur": "انٹرنیٹ دنیا کا سب سے بڑا بازار ہے۔", "en": "The internet is the world's biggest bazaar." },
+      { "ur": "اس بازار میں کمپیوٹر آپس میں باتیں کرتے ہیں۔", "en": "In this bazaar, computers talk to each other." }
+    ],
+    "recapAudio": ["w6l1_recap_1", "w6l1_recap_2"],
+    "rewardToast": { "ur": "بجلی کہتا ہے: بازار دیکھ لیا! اب اسٹالوں پر چلو!", "en": "Bijli says: you've seen the bazaar! Now let's visit the stalls!" }
+  }
+}
