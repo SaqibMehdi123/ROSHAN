@@ -1,16 +1,17 @@
 /**
- * TEACHER HUB — second product (spec §7). Phase 1 scope:
- * Dashboard (per-student progress + stuck alerts) · CSV export · Lesson plans (W1 L1–L3)
- * · Printables (lab-rules poster, parent letter) · shells for Academy/Reading Room (Phase 2).
+ * TEACHER HUB — second product (spec §7), full scope:
+ * Dashboard (per-student progress + stuck alerts) · CSV export · Lesson plans · Printables
+ * · Parent letter · Teacher Academy · Reading Room · Session Planner — all offline.
  * All data is read from the SAME device's local storage (privacy-first, no server).
  */
 "use client";
 
 import { useMemo, useState } from "react";
 import { useApp, checkTeacherPin } from "@/lib/store";
-import { PLANS } from "@/content/teacher/plans";
+import { ALL_PLANS as PLANS } from "@/content/teacher/plans";
 import { getLesson, WORLDS } from "@/lib/content";
 import { Art } from "@/components/art/Props";
+import { TeacherAcademy, ReadingRoom, SessionPlanner } from "@/components/teacher/TeacherExtras";
 
 type Tab = "dashboard" | "plans" | "printables" | "academy" | "reading" | "parents" | "planner";
 
@@ -35,7 +36,7 @@ export function TeacherHub() {
         <div>
           <h1 className="text-2xl font-bold text-roshan-ink">ROSHAN Teacher Hub</h1>
           <p className="text-sm text-roshan-ink-soft">
-            Progress lives on THIS device (child privacy). Phase 2 adds lab-wide sync.
+            Progress lives on THIS device (child privacy) — no server, no accounts, fully offline.
           </p>
         </div>
         <button onClick={() => go("map")} className="rounded-lg border-2 border-roshan-card-border px-4 py-2 text-sm font-semibold text-roshan-ink hover:bg-white">
@@ -64,7 +65,9 @@ export function TeacherHub() {
         ))}
       {tab === "printables" && <Printables />}
       {tab === "parents" && <ParentNotes />}
-      {(tab === "academy" || tab === "reading" || tab === "planner") && <Phase2Stub tab={tab} />}
+      {tab === "academy" && <TeacherAcademy />}
+      {tab === "reading" && <ReadingRoom />}
+      {tab === "planner" && <SessionPlanner />}
     </main>
   );
 }
@@ -248,7 +251,8 @@ function PlanList({ onOpen }: { onOpen: (id: string) => void }) {
         </button>
       ))}
       <div className="rounded-2xl border-2 border-dashed border-roshan-card-border p-5 text-sm text-roshan-ink-soft">
-        Plans for every lesson of all 8 worlds ship with each world build (see docs/04-curriculum.md).
+        All 76 lessons have a plan — the first three are hand-written, the rest are derived live from
+        each lesson&apos;s own story, demo and game (so they always match what the child sees).
       </div>
     </div>
   );
@@ -413,29 +417,3 @@ function ParentNotes() {
   );
 }
 
-function Phase2Stub({ tab }: { tab: string }) {
-  const titles: Record<string, { en: string; ur: string; desc: string }> = {
-    academy: {
-      en: "Teacher Academy",
-      ur: "اُستاد اکیڈمی",
-      desc: "Short beginner course for teachers themselves (your first week with a computer) + facilitation skills: running pair mode, praising mistakes as debugging, no-lecture teaching. Ships as narrated Urdu slides in Phase 2.",
-    },
-    reading: {
-      en: "Reading Room",
-      ur: "مطالعہ کمرہ",
-      desc: "Simply-written guides: how young children learn logic, healthy screen time, good questions to ask while kids work, managing a small lab with limited electricity. Ships in Phase 2.",
-    },
-    planner: {
-      en: "Session Planner",
-      ur: "سیشن پلانر",
-      desc: "40-minute template: 5 min story → 10 min demo on big screen → 20 min hands-on in pairs → 5 min recap by Ustaad Ulloo. Drag lesson chips onto a week grid in Phase 2.",
-    },
-  };
-  const t = titles[tab];
-  return (
-    <div className="rounded-2xl border-2 border-dashed border-roshan-card-border bg-white p-6">
-      <h3 className="text-lg font-bold">{t.en} — <span className="urdu">{t.ur}</span></h3>
-      <p className="mt-2 text-sm text-roshan-ink-soft">{t.desc}</p>
-    </div>
-  );
-}

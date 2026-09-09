@@ -1,9 +1,11 @@
 /**
- * Teacher lesson plans (spec §7) — Phase 1 ships plans for W1 L1–L3.
+ * Teacher lesson plans (spec §7) — hand-written for W1 L1–L3; every other
+ * lesson is auto-derived from its lesson JSON in plans.generated.ts.
  * Each plan: 5-min prep checklist, read-aloud script, demo steps, common kid
  * mistakes + fixes, exercise answers, and a NO-ELECTRICITY alternative.
  */
 import type { Bilingual } from "@/lib/schema";
+import { GENERATED_PLANS } from "./plans.generated";
 
 export interface TeacherPlan {
   lessonId: string;
@@ -623,3 +625,6 @@ export const PLANS: TeacherPlan[] = [
     unplugged: "Knight ceremony: cardboard talwar par bachay apna naam likhte hain — 'knights' kneel, teacher knight banati hai. Naam wali talwar ghar le jaayein!",
   },
 ];
+
+export const ALL_PLANS = [...PLANS, ...GENERATED_PLANS];
+

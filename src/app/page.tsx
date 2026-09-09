@@ -7,6 +7,7 @@
 
 import { useEffect } from "react";
 import { useApp, useActiveProfile } from "@/lib/store";
+import { setSlowVoice } from "@/lib/audio";
 import { WelcomeGate, ProfileGate } from "@/components/screens/WelcomeGate";
 import { AdventureMap } from "@/components/screens/AdventureMap";
 import { WorldView } from "@/components/screens/WorldView";
@@ -24,6 +25,11 @@ export default function Home() {
   useEffect(() => {
     hydrate();
   }, [hydrate]);
+
+  // keep the narration engine in sync with the child's slow-voice setting
+  useEffect(() => {
+    setSlowVoice(!!active?.settings.slowVoice);
+  }, [active?.settings.slowVoice]);
 
   // register offline service worker (production builds; dev keeps live reload)
   useEffect(() => {

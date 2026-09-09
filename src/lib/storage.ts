@@ -18,6 +18,7 @@ const KEYS = {
 export interface DeviceSettings {
   music: boolean;
   sfx: boolean;
+  slowVoice: boolean;
 }
 
 function read<T>(key: string, fallback: T): T {
@@ -44,7 +45,7 @@ export const storage = {
   writeProfiles: (p: Profile[]) => write(KEYS.profiles, p),
   readActiveProfile: () => read<string | null>(KEYS.activeProfile, null),
   writeActiveProfile: (id: string | null) => write(KEYS.activeProfile, id),
-  readDevice: () => read<DeviceSettings>(KEYS.device, { music: true, sfx: true }),
+  readDevice: () => read<DeviceSettings>(KEYS.device, { music: true, sfx: true, slowVoice: false }),
   writeDevice: (d: DeviceSettings) => write(KEYS.device, d),
   readTeacherPinHash: () => read<string | null>(KEYS.teacher, null),
   writeTeacherPinHash: (h: string) => write(KEYS.teacher, h),

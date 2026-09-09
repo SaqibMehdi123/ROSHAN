@@ -84,6 +84,11 @@ export function SettingsScreen() {
             on={profile?.settings.sfx ?? device.sfx}
             onChange={(v) => (profile ? setSettings({ sfx: v }) : setDevice({ sfx: v }))}
           />
+          <Toggle
+            labelUr="آہستہ آواز — slow story voice"
+            on={profile?.settings.slowVoice ?? device.slowVoice}
+            onChange={(v) => (profile ? setSettings({ slowVoice: v }) : setDevice({ slowVoice: v }))}
+          />
         </div>
 
         {profile?.pairMode && (

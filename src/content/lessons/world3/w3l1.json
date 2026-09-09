@@ -3,8 +3,14 @@
   "schemaVersion": 1,
   "world": 3,
   "order": 1,
-  "title": { "ur": "سیدھا بیٹھو — بجلی کی کمر!", "en": "Sit Tall! (posture)" },
-  "skill": { "ur": "سیدھی کمر، دونوں ہاتھ، پاؤں زمین پر", "en": "Straight back, both hands, feet down" },
+  "title": {
+    "ur": "سیدھا بیٹھو — بجلی کی کمر!",
+    "en": "Sit Tall! (posture)"
+  },
+  "skill": {
+    "ur": "سیدھی کمر، دونوں ہاتھ، پاؤں زمین پر",
+    "en": "Straight back, both hands, feet down"
+  },
   "skillKey": "posture",
   "minutes": 7,
   "praise": {
@@ -15,7 +21,11 @@
     "scenes": [
       {
         "bg": "bg-lab",
-        "cast": ["chotu", "bijli", "ustad-ullo"],
+        "cast": [
+          "chotu",
+          "bijli",
+          "ustad-ullo"
+        ],
         "lines": [
           {
             "char": "narrator",
@@ -56,6 +66,9 @@
               "audio": "w3l1_story_5_choice"
             }
           }
+        ],
+        "props": [
+          "posture-slouch"
         ]
       }
     ]
@@ -64,12 +77,18 @@
     "steps": [
       {
         "visual": "posture-good",
-        "caption": { "ur": "یہ سیدھا بیٹھنا ہے — کمر کھڑی، ہاتھ تیار!", "en": "This is sitting tall — back straight, hands ready!" },
+        "caption": {
+          "ur": "یہ سیدھا بیٹھنا ہے — کمر کھڑی، ہاتھ تیار!",
+          "en": "This is sitting tall — back straight, hands ready!"
+        },
         "audio": "w3l1_show_1"
       },
       {
         "visual": "posture-tooclose",
-        "caption": { "ur": "اسکرین سے ایک ہاتھ کا فاصلہ رکھو۔", "en": "Keep one hand's distance from the screen." },
+        "caption": {
+          "ur": "اسکرین سے ایک ہاتھ کا فاصلہ رکھو۔",
+          "en": "Keep one hand's distance from the screen."
+        },
         "audio": "w3l1_show_2"
       }
     ]
@@ -77,7 +96,10 @@
   "do": {
     "activity": {
       "type": "tap-select",
-      "prompt": { "ur": "سیدھے بیٹھنے والی tasveer دباؤ!", "en": "Tap the picture that shows sitting tall!" },
+      "prompt": {
+        "ur": "سیدھے بیٹھنے والی tasveer دباؤ!",
+        "en": "Tap the picture that shows sitting tall!"
+      },
       "audio": "w3l1_do_prompt",
       "scene": "bg-lab",
       "items": [
@@ -87,7 +109,10 @@
           "y": 68,
           "art": "posture-good",
           "correct": true,
-          "hint": { "ur": "بالکل سہی! کمر کھڑی، پاؤں زمین پر!", "en": "Exactly right! Back tall, feet on the floor!" }
+          "hint": {
+            "ur": "بالکل سہی! کمر کھڑی، پاؤں زمین پر!",
+            "en": "Exactly right! Back tall, feet on the floor!"
+          }
         },
         {
           "id": "slouch",
@@ -95,7 +120,10 @@
           "y": 70,
           "art": "posture-slouch",
           "correct": false,
-          "hint": { "ur": "یہ جھکا ہوا ہے — بگ! کمر سیدھی کرو۔", "en": "That one is slouching — a bug! Straighten up." }
+          "hint": {
+            "ur": "یہ جھکا ہوا ہے — بگ! کمر سیدھی کرو۔",
+            "en": "That one is slouching — a bug! Straighten up."
+          }
         },
         {
           "id": "feetup",
@@ -103,7 +131,10 @@
           "y": 68,
           "art": "posture-feetup",
           "correct": false,
-          "hint": { "ur": "پاؤں زمین پر ہونے چاہئیں — بگ فکس!", "en": "Feet belong on the floor — fix the bug!" }
+          "hint": {
+            "ur": "پاؤں زمین پر ہونے چاہئیں — بگ فکس!",
+            "en": "Feet belong on the floor — fix the bug!"
+          }
         },
         {
           "id": "tooclose",
@@ -111,18 +142,36 @@
           "y": 70,
           "art": "posture-tooclose",
           "correct": false,
-          "hint": { "ur": "بہت قریب! ایک ہاتھ کا فاصلہ رکھو۔", "en": "Too close! Keep one hand's distance." }
+          "hint": {
+            "ur": "بہت قریب! ایک ہاتھ کا فاصلہ رکھو۔",
+            "en": "Too close! Keep one hand's distance."
+          }
         }
       ],
-      "winPraise": { "ur": "تم تو سچے کمپیوٹر فرشتے ہو!", "en": "You are a true computer friend!" }
+      "winPraise": {
+        "ur": "تم تو سچے کمپیوٹر فرشتے ہو!",
+        "en": "You are a true computer friend!"
+      }
     }
   },
   "cheer": {
     "recap": [
-      { "ur": "سیدھا بیٹھنا = کمپیوٹر دوستوں کا پہلا قاعدہ۔", "en": "Sitting tall = a computer friend's first rule." },
-      { "ur": "کمر کھڑی، پاؤں زمین پر، اسکرین سے فاصلہ!", "en": "Back tall, feet down, one hand from the screen!" }
+      {
+        "ur": "سیدھا بیٹھنا = کمپیوٹر دوستوں کا پہلا قاعدہ۔",
+        "en": "Sitting tall = a computer friend's first rule."
+      },
+      {
+        "ur": "کمر کھڑی، پاؤں زمین پر، اسکرین سے فاصلہ!",
+        "en": "Back tall, feet down, one hand from the screen!"
+      }
     ],
-    "recapAudio": ["w3l1_recap_1", "w3l1_recap_2"],
-    "rewardToast": { "ur": "بجلی کہتا ہے: میری کمر خوش ہے!", "en": "Bijli says: my back is happy!" }
+    "recapAudio": [
+      "w3l1_recap_1",
+      "w3l1_recap_2"
+    ],
+    "rewardToast": {
+      "ur": "بجلی کہتا ہے: میری کمر خوش ہے!",
+      "en": "Bijli says: my back is happy!"
+    }
   }
 }

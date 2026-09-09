@@ -3,8 +3,14 @@
   "schemaVersion": 1,
   "world": 1,
   "order": 1,
-  "title": { "ur": "اسٹور روم کا جادویی صندوق", "en": "The Magic Box in the Storeroom" },
-  "skill": { "ur": "کمپیوٹر کیا ہے؟", "en": "What is a computer?" },
+  "title": {
+    "ur": "اسٹور روم کا جادویی صندوق",
+    "en": "The Magic Box in the Storeroom"
+  },
+  "skill": {
+    "ur": "کمپیوٹر کیا ہے؟",
+    "en": "What is a computer?"
+  },
   "skillKey": "what-is-computer",
   "minutes": 7,
   "badge": "dosti-ka-safar",
@@ -12,13 +18,18 @@
     "ur": "شاباش! تم نے کمپیوٹر پہچان لیے!",
     "en": "Shabash! You recognized computers!"
   },
-
   "story": {
     "scenes": [
       {
         "bg": "bg-storeroom",
-        "props": ["crate", "cricket-bat"],
-        "cast": ["noor", "chotu"],
+        "props": [
+          "crate",
+          "cricket-bat"
+        ],
+        "cast": [
+          "noor",
+          "chotu"
+        ],
         "lines": [
           {
             "char": "narrator",
@@ -45,8 +56,14 @@
       },
       {
         "bg": "bg-storeroom",
-        "props": ["crate"],
-        "cast": ["noor", "chotu", "bijli"],
+        "props": [
+          "crate"
+        ],
+        "cast": [
+          "noor",
+          "chotu",
+          "bijli"
+        ],
         "lines": [
           {
             "char": "narrator",
@@ -82,7 +99,11 @@
       {
         "bg": "bg-storeroom",
         "props": [],
-        "cast": ["bijli", "noor", "chotu"],
+        "cast": [
+          "bijli",
+          "noor",
+          "chotu"
+        ],
         "lines": [
           {
             "char": "bijli",
@@ -90,6 +111,13 @@
             "ur": "میں ایک کمپیوٹر ہوں! کمپیوٹر سوچتے ہیں اور مدد کرتے ہیں!",
             "en": "I am a computer! Computers think and help!",
             "audio": "w1l1_s3_l1"
+          },
+          {
+            "char": "bijli",
+            "emote": "happy",
+            "ur": "کمپیوٹر ایسے کام کرتا ہے: تم اسے کچھ بتاؤ، وہ سوچے، پھر جواب دے!",
+            "en": "A computer works like this: you tell it something, it thinks, then it answers!",
+            "audio": "w1l1_s3_l1b"
           },
           {
             "char": "bijli",
@@ -104,14 +132,26 @@
             "ur": "جی ہاں دباؤ اور بجلی کا دوست بنو!",
             "en": "Tap YES and become Bijli's friend!",
             "audio": "w1l1_s3_l3",
-            "choice": { "ur": "جی ہاں!", "en": "Yes!", "audio": "ui_yes" }
+            "choice": {
+              "ur": "جی ہاں!",
+              "en": "Yes!",
+              "audio": "ui_yes"
+            }
           }
         ]
       },
       {
         "bg": "bg-village-street",
-        "props": ["mango-tree", "chai-cup"],
-        "cast": ["bijli", "noor", "chotu", "golmatol"],
+        "props": [
+          "mango-tree",
+          "chai-cup"
+        ],
+        "cast": [
+          "bijli",
+          "noor",
+          "chotu",
+          "golmatol"
+        ],
         "lines": [
           {
             "char": "bijli",
@@ -138,90 +178,165 @@
       }
     ]
   },
-
   "show": {
     "steps": [
       {
         "visual": "show-phone",
-        "caption": { "ur": "فون — ایک چھوٹا کمپیوٹر!", "en": "Phone — a small computer!" },
+        "caption": {
+          "ur": "فون — ایک چھوٹا کمپیوٹر!",
+          "en": "Phone — a small computer!"
+        },
         "audio": "w1l1_show_1"
       },
       {
         "visual": "show-calculator",
-        "caption": { "ur": "کیلکولیٹر — گنتی والا کمپیوٹر!", "en": "Calculator — a counting computer!" },
+        "caption": {
+          "ur": "کیلکولیٹر — گنتی والا کمپیوٹر!",
+          "en": "Calculator — a counting computer!"
+        },
         "audio": "w1l1_show_2"
       },
       {
         "visual": "show-atm",
-        "caption": { "ur": "بینک مشین — پیسے والا کمپیوٹر!", "en": "Bank machine — a money computer!" },
+        "caption": {
+          "ur": "بینک مشین — پیسے والا کمپیوٹر!",
+          "en": "Bank machine — a money computer!"
+        },
         "audio": "w1l1_show_3"
       },
       {
         "visual": "show-laptop",
-        "caption": { "ur": "اور یہ — بجلی جیسا کمپیوٹر!", "en": "And this — a computer like Bijli!" },
+        "caption": {
+          "ur": "اور یہ — بجلی جیسا کمپیوٹر!",
+          "en": "And this — a computer like Bijli!"
+        },
         "audio": "w1l1_show_4"
       }
     ]
   },
-
   "do": {
     "activity": {
       "type": "tap-select",
-      "prompt": { "ur": "گاؤں میں چھپے کمپیوٹر ڈھونڈو! ہر کمپیوٹر پر کلک کرو!", "en": "Find the computers hiding in the village! Tap every computer!" },
+      "prompt": {
+        "ur": "گاؤں میں چھپے کمپیوٹر ڈھونڈو! ہر کمپیوٹر پر کلک کرو!",
+        "en": "Find the computers hiding in the village! Tap every computer!"
+      },
       "audio": "w1l1_do_prompt",
       "scene": "bg-village-street",
       "items": [
         {
           "id": "phone",
-          "x": 12, "y": 60, "art": "phone", "correct": true,
-          "hint": { "ur": "درست! فون ایک چھوٹا کمپیوٹر ہے!", "en": "Yes! A phone is a small computer!" }
+          "x": 12,
+          "y": 60,
+          "art": "phone",
+          "correct": true,
+          "hint": {
+            "ur": "درست! فون ایک چھوٹا کمپیوٹر ہے!",
+            "en": "Yes! A phone is a small computer!"
+          }
         },
         {
           "id": "calculator",
-          "x": 38, "y": 72, "art": "calculator", "correct": true,
-          "hint": { "ur": "درست! کیلکولیٹر گنتی والا کمپیوٹر ہے!", "en": "Yes! A calculator is a counting computer!" }
+          "x": 38,
+          "y": 72,
+          "art": "calculator",
+          "correct": true,
+          "hint": {
+            "ur": "درست! کیلکولیٹر گنتی والا کمپیوٹر ہے!",
+            "en": "Yes! A calculator is a counting computer!"
+          }
         },
         {
           "id": "atm",
-          "x": 63, "y": 74, "art": "atm", "correct": true,
-          "hint": { "ur": "درست! بینک مشین بھی کمپیوٹر ہے!", "en": "Yes! The bank machine is a computer too!" }
+          "x": 63,
+          "y": 74,
+          "art": "atm",
+          "correct": true,
+          "hint": {
+            "ur": "درست! بینک مشین بھی کمپیوٹر ہے!",
+            "en": "Yes! The bank machine is a computer too!"
+          }
         },
         {
           "id": "laptop",
-          "x": 80, "y": 70, "art": "laptop", "correct": true,
-          "hint": { "ur": "درست! یہ بجلی جیسا کمپیوٹر ہے!", "en": "Yes! A computer just like Bijli!" }
+          "x": 80,
+          "y": 70,
+          "art": "laptop",
+          "correct": true,
+          "hint": {
+            "ur": "درست! یہ بجلی جیسا کمپیوٹر ہے!",
+            "en": "Yes! A computer just like Bijli!"
+          }
         },
         {
           "id": "goat",
-          "x": 30, "y": 84, "art": "goat", "correct": false,
-          "hint": { "ur": "اوپس! ایک بگ ملا! بکری کمپیوٹر نہیں… دوبارہ کوشش کریں!", "en": "Oops! A bug! A goat is not a computer… try again!" }
+          "x": 30,
+          "y": 84,
+          "art": "goat",
+          "correct": false,
+          "hint": {
+            "ur": "اوپس! ایک بگ ملا! بکری کمپیوٹر نہیں… دوبارہ کوشش کریں!",
+            "en": "Oops! A bug! A goat is not a computer… try again!"
+          }
         },
         {
           "id": "cricket-bat",
-          "x": 50, "y": 86, "art": "cricket-bat", "correct": false,
-          "hint": { "ur": "اوپس! ایک بگ ملا! بیٹ سے کھیلیں، کمپیوٹر نہیں!", "en": "Oops! A bug! You play with a bat, it doesn't compute!" }
+          "x": 50,
+          "y": 86,
+          "art": "cricket-bat",
+          "correct": false,
+          "hint": {
+            "ur": "اوپس! ایک بگ ملا! بیٹ سے کھیلیں، کمپیوٹر نہیں!",
+            "en": "Oops! A bug! You play with a bat, it doesn't compute!"
+          }
         },
         {
           "id": "mango-tree",
-          "x": 76, "y": 30, "art": "mango-tree", "correct": false,
-          "hint": { "ur": "اوپس! ایک بگ ملا! آم والا درخت کمپیوٹر نہیں!", "en": "Oops! A bug! The mango tree is not a computer!" }
+          "x": 76,
+          "y": 30,
+          "art": "mango-tree",
+          "correct": false,
+          "hint": {
+            "ur": "اوپس! ایک بگ ملا! آم والا درخت کمپیوٹر نہیں!",
+            "en": "Oops! A bug! The mango tree is not a computer!"
+          }
         },
         {
           "id": "well",
-          "x": 16, "y": 78, "art": "well", "correct": false,
-          "hint": { "ur": "اوپس! ایک بگ ملا! کھوہ پانی کے لیے ہے!", "en": "Oops! A bug! The well is for water!" }
+          "x": 16,
+          "y": 78,
+          "art": "well",
+          "correct": false,
+          "hint": {
+            "ur": "اوپس! ایک بگ ملا! کھوہ پانی کے لیے ہے!",
+            "en": "Oops! A bug! The well is for water!"
+          }
         }
       ],
-      "winPraise": { "ur": "زبردست! تم نے چاروں کمپیوٹر ڈھونڈ لیے!", "en": "Zabardast! You found all four computers!" }
+      "winPraise": {
+        "ur": "زبردست! تم نے چاروں کمپیوٹر ڈھونڈ لیے!",
+        "en": "Zabardast! You found all four computers!"
+      }
     }
   },
-
   "cheer": {
     "recap": [
-      { "ur": "کمپیوٹر سوچنے اور مدد کرنے والا دوست ہے۔", "en": "A computer is a friend that thinks and helps." },
-      { "ur": "فون، کیلکولیٹر، بینک مشین — سب کمپیوٹر ہیں!", "en": "Phones, calculators, bank machines — all computers!" }
+      {
+        "ur": "کمپیوٹر سوچنے اور مدد کرنے والا دوست ہے۔",
+        "en": "A computer is a friend that thinks and helps."
+      },
+      {
+        "ur": "فون، کیلکولیٹر، بینک مشین — سب کمپیوٹر ہیں!",
+        "en": "Phones, calculators, bank machines — all computers!"
+      }
     ],
-    "recapAudio": ["w1l1_recap_1", "w1l1_recap_2"],
-    "rewardToast": { "ur": "+١ سٹیکر حاصل کیا!", "en": "+1 sticker earned!" }
+    "recapAudio": [
+      "w1l1_recap_1",
+      "w1l1_recap_2"
+    ],
+    "rewardToast": {
+      "ur": "+١ سٹیکر حاصل کیا!",
+      "en": "+1 sticker earned!"
+    }
   }
 }

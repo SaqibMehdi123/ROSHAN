@@ -3,16 +3,30 @@
   "schemaVersion": 1,
   "world": 4,
   "order": 6,
-  "title": { "ur": "فولڈر کے اندر فولڈر", "en": "Folders inside Folders" },
-  "skill": { "ur": "بڑا فولڈر چھوٹے فولڈر بھی رکھ سکتا ہے", "en": "A big folder can hold small folders too" },
+  "title": {
+    "ur": "فولڈر کے اندر فولڈر",
+    "en": "Folders inside Folders"
+  },
+  "skill": {
+    "ur": "بڑا فولڈر چھوٹے فولڈر بھی رکھ سکتا ہے",
+    "en": "A big folder can hold small folders too"
+  },
   "skillKey": "nested-folders",
   "minutes": 6,
-  "praise": { "ur": "کمال! فولڈر کے اندر فولڈر — تم تو جادوگر ہو!", "en": "Amazing! Folders inside folders — you are a magician!" },
+  "praise": {
+    "ur": "کمال! فولڈر کے اندر فولڈر — تم تو جادوگر ہو!",
+    "en": "Amazing! Folders inside folders — you are a magician!"
+  },
   "story": {
     "scenes": [
       {
         "bg": "bg-city",
-        "cast": ["ustad-ullo", "bijli", "noor", "chotu"],
+        "cast": [
+          "ustad-ullo",
+          "bijli",
+          "noor",
+          "chotu"
+        ],
         "lines": [
           {
             "char": "ustad-ullo",
@@ -47,7 +61,11 @@
             "ur": "چلو چھوٹے فولڈر بڑے فولڈر کے گھر بھیجیں!",
             "en": "Let's send the small folders home into the big folder!",
             "audio": "w4l6_story_5",
-            "choice": { "ur": "فولڈر گھر جاؤ!", "en": "Folders, go home!", "audio": "w4l6_story_5_choice" }
+            "choice": {
+              "ur": "فولڈر گھر جاؤ!",
+              "en": "Folders, go home!",
+              "audio": "w4l6_story_5_choice"
+            }
           }
         ]
       }
@@ -57,17 +75,26 @@
     "steps": [
       {
         "visual": "folder",
-        "caption": { "ur": "بڑا فولڈر — اس کا نام 'سکول'!", "en": "The big folder — its name is School!" },
+        "caption": {
+          "ur": "بڑا فولڈر — اس کا نام 'سکول'!",
+          "en": "The big folder — its name is School!"
+        },
         "audio": "w4l6_show_1"
       },
       {
         "visual": "folder-open",
-        "caption": { "ur": "کھولو — اندر چھوٹے فولڈر نظر آتے ہیں!", "en": "Open it — small folders appear inside!" },
+        "caption": {
+          "ur": "کھولو — اندر چھوٹے فولڈر نظر آتے ہیں!",
+          "en": "Open it — small folders appear inside!"
+        },
         "audio": "w4l6_show_2"
       },
       {
         "visual": "file-doc",
-        "caption": { "ur": "چھوٹے فولڈر میں فائلیں — سب اپنی جگہ!", "en": "Files inside the small folders — everything in its place!" },
+        "caption": {
+          "ur": "چھوٹے فولڈر میں فائلیں — سب اپنی جگہ!",
+          "en": "Files inside the small folders — everything in its place!"
+        },
         "audio": "w4l6_show_3"
       }
     ]
@@ -75,13 +102,46 @@
   "do": {
     "activity": {
       "type": "drag-drop",
-      "prompt": { "ur": "چھوٹے فولڈر پکڑو اور بڑے کھلے فولڈر میں ڈالو!", "en": "Grab the small folders and drop them into the big open folder!" },
+      "prompt": {
+        "ur": "چھوٹے فولڈر پکڑو اور بڑے کھلے فولڈر میں ڈالو!",
+        "en": "Grab the small folders and drop them into the big open folder!"
+      },
       "audio": "w4l6_do_prompt",
       "scene": "bg-city",
       "draggable": [
-        { "id": "kitab", "art": "folder", "x": 16, "y": 78, "audio": "w4l6_f_kitab" },
-        { "id": "khel", "art": "folder", "x": 50, "y": 84, "audio": "w4l6_f_khel" },
-        { "id": "tasveer", "art": "folder", "x": 84, "y": 78, "audio": "w4l6_f_tasveer" }
+        {
+          "id": "kitab",
+          "art": "folder",
+          "x": 16,
+          "y": 78,
+          "audio": "w4l6_f_kitab",
+          "name": {
+            "ur": "کتابوں کا فولڈر",
+            "en": "Books folder"
+          }
+        },
+        {
+          "id": "khel",
+          "art": "folder",
+          "x": 50,
+          "y": 84,
+          "audio": "w4l6_f_khel",
+          "name": {
+            "ur": "کھیلوں کا فولڈر",
+            "en": "Games folder"
+          }
+        },
+        {
+          "id": "tasveer",
+          "art": "folder",
+          "x": 84,
+          "y": 78,
+          "audio": "w4l6_f_tasveer",
+          "name": {
+            "ur": "تصویروں کا فولڈر",
+            "en": "Pictures folder"
+          }
+        }
       ],
       "targets": [
         {
@@ -89,38 +149,132 @@
           "art": "folder-open",
           "x": 50,
           "y": 28,
-          "accepts": ["kitab", "khel", "tasveer"],
-          "label": { "ur": "بڑا فولڈر — سکول", "en": "Big folder — School" },
-          "success": { "ur": "چھوٹا فولڈر بڑے کے اندر — کیا بات!", "en": "A small folder inside the big one — brilliant!" }
+          "accepts": [
+            "kitab",
+            "khel",
+            "tasveer"
+          ],
+          "label": {
+            "ur": "بڑا فولڈر — سکول",
+            "en": "Big folder — School"
+          },
+          "success": {
+            "ur": "چھوٹا فولڈر بڑے کے اندر — کیا بات!",
+            "en": "A small folder inside the big one — brilliant!"
+          }
         }
       ],
-      "wrongHint": { "ur": "اوپس! ایک بگ ملا! فولڈر کو بڑے فولڈر کے اوپر چھوڑو!", "en": "Oops! A bug! Drop the folder right on the big folder!" },
-      "winPraise": { "ur": "زبردست! فولڈر کا پورا خاندان اکٹھا!", "en": "Zabardast! The whole folder family together!" }
+      "wrongHint": {
+        "ur": "اوپس! ایک بگ ملا! فولڈر کو بڑے فولڈر کے اوپر چھوڑو!",
+        "en": "Oops! A bug! Drop the folder right on the big folder!"
+      },
+      "winPraise": {
+        "ur": "زبردست! فولڈر کا پورا خاندان اکٹھا!",
+        "en": "Zabardast! The whole folder family together!"
+      }
     }
   },
   "bonus": {
     "activity": {
       "type": "tap-select",
-      "prompt": { "ur": "بونس! چھوٹے فولڈر ڈھونڈو!", "en": "Bonus! Find the small folders!" },
+      "prompt": {
+        "ur": "بونس! چھوٹے فولڈر ڈھونڈو!",
+        "en": "Bonus! Find the small folders!"
+      },
       "audio": "w4l6_bonus_prompt",
       "scene": "bg-city",
       "items": [
-        { "id": "b1", "x": 14, "y": 58, "art": "folder", "correct": true, "hint": { "ur": "یہ فولڈر ہے — سہی!", "en": "That is a folder — yes!" } },
-        { "id": "b2", "x": 38, "y": 66, "art": "file-img", "correct": false, "hint": { "ur": "یہ فائل ہے — فولڈر نہیں!", "en": "That is a file, not a folder!" } },
-        { "id": "b3", "x": 62, "y": 58, "art": "folder", "correct": true, "hint": { "ur": "ایک اور فولڈر مل گیا!", "en": "Another folder found!" } },
-        { "id": "b4", "x": 86, "y": 66, "art": "file-song", "correct": false, "hint": { "ur": "یہ گانے والی فائل ہے!", "en": "That is a song file!" } },
-        { "id": "b5", "x": 26, "y": 82, "art": "folder", "correct": true, "hint": { "ur": "چھپا ہوا فولڈر بھی مل گیا!", "en": "Found the hiding folder too!" } },
-        { "id": "b6", "x": 74, "y": 82, "art": "file-doc", "correct": false, "hint": { "ur": "یہ کہانی والی فائل ہے!", "en": "That is a story file!" } }
+        {
+          "id": "b1",
+          "x": 14,
+          "y": 58,
+          "art": "folder",
+          "correct": true,
+          "hint": {
+            "ur": "یہ فولڈر ہے — سہی!",
+            "en": "That is a folder — yes!"
+          }
+        },
+        {
+          "id": "b2",
+          "x": 38,
+          "y": 66,
+          "art": "file-img",
+          "correct": false,
+          "hint": {
+            "ur": "یہ فائل ہے — فولڈر نہیں!",
+            "en": "That is a file, not a folder!"
+          }
+        },
+        {
+          "id": "b3",
+          "x": 62,
+          "y": 58,
+          "art": "folder",
+          "correct": true,
+          "hint": {
+            "ur": "ایک اور فولڈر مل گیا!",
+            "en": "Another folder found!"
+          }
+        },
+        {
+          "id": "b4",
+          "x": 86,
+          "y": 66,
+          "art": "file-song",
+          "correct": false,
+          "hint": {
+            "ur": "یہ گانے والی فائل ہے!",
+            "en": "That is a song file!"
+          }
+        },
+        {
+          "id": "b5",
+          "x": 26,
+          "y": 82,
+          "art": "folder",
+          "correct": true,
+          "hint": {
+            "ur": "چھپا ہوا فولڈر بھی مل گیا!",
+            "en": "Found the hiding folder too!"
+          }
+        },
+        {
+          "id": "b6",
+          "x": 74,
+          "y": 82,
+          "art": "file-doc",
+          "correct": false,
+          "hint": {
+            "ur": "یہ کہانی والی فائل ہے!",
+            "en": "That is a story file!"
+          }
+        }
       ],
-      "winPraise": { "ur": "واہ! تم فولڈر پہچاننے کے چیمپئن ہو!", "en": "Wow! You are a folder-spotting champion!" }
+      "winPraise": {
+        "ur": "واہ! تم فولڈر پہچاننے کے چیمپئن ہو!",
+        "en": "Wow! You are a folder-spotting champion!"
+      }
     }
   },
   "cheer": {
     "recap": [
-      { "ur": "بڑے فولڈر میں چھوٹے فولڈر — ڈبے کے اندر ڈبہ۔", "en": "Small folders inside big folders — boxes inside boxes." },
-      { "ur": "اور سب سے اندر؟ فائلیں — سب اپنی جگہ!", "en": "And deepest inside? Files — everything in its place!" }
+      {
+        "ur": "بڑے فولڈر میں چھوٹے فولڈر — ڈبے کے اندر ڈبہ۔",
+        "en": "Small folders inside big folders — boxes inside boxes."
+      },
+      {
+        "ur": "اور سب سے اندر؟ فائلیں — سب اپنی جگہ!",
+        "en": "And deepest inside? Files — everything in its place!"
+      }
     ],
-    "recapAudio": ["w4l6_recap_1", "w4l6_recap_2"],
-    "rewardToast": { "ur": "اُستاد اُلو کہتے ہیں: 'سکول' فولڈر اب تمہارا بھی ہے!", "en": "Ustaad Ulloo says: the School folder is yours too now!" }
+    "recapAudio": [
+      "w4l6_recap_1",
+      "w4l6_recap_2"
+    ],
+    "rewardToast": {
+      "ur": "اُستاد اُلو کہتے ہیں: 'سکول' فولڈر اب تمہارا بھی ہے!",
+      "en": "Ustaad Ulloo says: the School folder is yours too now!"
+    }
   }
 }

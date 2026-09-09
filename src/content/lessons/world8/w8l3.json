@@ -3,8 +3,14 @@
   "schemaVersion": 1,
   "world": 8,
   "order": 3,
-  "title": { "ur": "بجلی کو چلاؤ", "en": "Make Bijli Move" },
-  "skill": { "ur": "بلاکس سلاٹوں میں جوڑو — بجلی پھول تک چلے", "en": "Snap blocks into slots — Bijli walks to the flower" },
+  "title": {
+    "ur": "بجلی کو چلاؤ",
+    "en": "Make Bijli Move"
+  },
+  "skill": {
+    "ur": "بلاکس سلاٹوں میں جوڑو — بجلی پھول تک چلے",
+    "en": "Snap blocks into slots — Bijli walks to the flower"
+  },
   "skillKey": "drag-blocks",
   "minutes": 6,
   "praise": {
@@ -15,7 +21,11 @@
     "scenes": [
       {
         "bg": "bg-mountain",
-        "cast": ["bijli", "noor", "chotu"],
+        "cast": [
+          "bijli",
+          "noor",
+          "chotu"
+        ],
         "lines": [
           {
             "char": "narrator",
@@ -63,17 +73,26 @@
     "steps": [
       {
         "visual": "block-cmd",
-        "caption": { "ur": "کمانڈ بلاک پکڑو — اسے سلاٹ تک کھینچو۔", "en": "Hold a command block — drag it to a slot." },
+        "caption": {
+          "ur": "کمانڈ بلاک پکڑو — اسے سلاٹ تک کھینچو۔",
+          "en": "Hold a command block — drag it to a slot."
+        },
         "audio": "w8l3_show_1"
       },
       {
         "visual": "pattern-blocks",
-        "caption": { "ur": "بلاک سلاٹ میں جُڑ گیا — کلک! اگلا بلاک!", "en": "The block snapped into the slot — click! Next block!" },
+        "caption": {
+          "ur": "بلاک سلاٹ میں جُڑ گیا — کلک! اگلا بلاک!",
+          "en": "The block snapped into the slot — click! Next block!"
+        },
         "audio": "w8l3_show_2"
       },
       {
         "visual": "flower",
-        "caption": { "ur": "تینوں بلاکس جڑ گئے؟ بجلی چل پڑی — پھول حاضر!", "en": "All three snapped in? Bijli starts walking — hello, flower!" },
+        "caption": {
+          "ur": "تینوں بلاکس جڑ گئے؟ بجلی چل پڑی — پھول حاضر!",
+          "en": "All three snapped in? Bijli starts walking — hello, flower!"
+        },
         "audio": "w8l3_show_3"
       }
     ]
@@ -81,7 +100,10 @@
   "do": {
     "activity": {
       "type": "drag-drop",
-      "prompt": { "ur": "تینوں کمانڈ بلاکس تین سلاٹوں میں جوڑو — بجلی پھول تک چلے گی!", "en": "Snap all three command blocks into the three slots — Bijli will walk to the flower!" },
+      "prompt": {
+        "ur": "تینوں کمانڈ بلاکس تین سلاٹوں میں جوڑو — بجلی پھول تک چلے گی!",
+        "en": "Snap all three command blocks into the three slots — Bijli will walk to the flower!"
+      },
       "audio": "w8l3_do_prompt",
       "scene": "bg-mountain",
       "draggable": [
@@ -90,21 +112,33 @@
           "art": "block-cmd",
           "x": 16,
           "y": 25,
-          "audio": "w8l3_do_d1"
+          "audio": "w8l3_do_d1",
+          "name": {
+            "ur": "کمانڈ بلاک",
+            "en": "Command block"
+          }
         },
         {
           "id": "d2",
           "art": "block-cmd",
           "x": 16,
           "y": 47,
-          "audio": "w8l3_do_d2"
+          "audio": "w8l3_do_d2",
+          "name": {
+            "ur": "کمانڈ بلاک",
+            "en": "Command block"
+          }
         },
         {
           "id": "d3",
           "art": "block-cmd",
           "x": 16,
           "y": 69,
-          "audio": "w8l3_do_d3"
+          "audio": "w8l3_do_d3",
+          "name": {
+            "ur": "کمانڈ بلاک",
+            "en": "Command block"
+          }
         }
       ],
       "targets": [
@@ -113,42 +147,90 @@
           "art": "block-cmd",
           "x": 58,
           "y": 28,
-          "accepts": ["d1", "d2", "d3"],
+          "accepts": [
+            "d1",
+            "d2",
+            "d3"
+          ],
           "capacity": 1,
-          "label": { "ur": "سلاٹ ۱ — قدم", "en": "Slot 1 — a step" },
-          "success": { "ur": "بلاک جُڑ گیا! ایک قدم ہو گیا!", "en": "Block snapped in! One step done!" }
+          "label": {
+            "ur": "سلاٹ ۱ — قدم",
+            "en": "Slot 1 — a step"
+          },
+          "success": {
+            "ur": "بلاک جُڑ گیا! ایک قدم ہو گیا!",
+            "en": "Block snapped in! One step done!"
+          }
         },
         {
           "id": "slot2",
           "art": "block-cmd",
           "x": 58,
           "y": 50,
-          "accepts": ["d1", "d2", "d3"],
+          "accepts": [
+            "d1",
+            "d2",
+            "d3"
+          ],
           "capacity": 1,
-          "label": { "ur": "سلاٹ ۲ — قدم", "en": "Slot 2 — a step" },
-          "success": { "ur": "دوسرا بلاک جُڑ گیا — چلتے رہو!", "en": "Second block snapped in — keep going!" }
+          "label": {
+            "ur": "سلاٹ ۲ — قدم",
+            "en": "Slot 2 — a step"
+          },
+          "success": {
+            "ur": "دوسرا بلاک جُڑ گیا — چلتے رہو!",
+            "en": "Second block snapped in — keep going!"
+          }
         },
         {
           "id": "slot3",
           "art": "block-cmd",
           "x": 58,
           "y": 72,
-          "accepts": ["d1", "d2", "d3"],
+          "accepts": [
+            "d1",
+            "d2",
+            "d3"
+          ],
           "capacity": 1,
-          "label": { "ur": "سلاٹ ۳ — قدم", "en": "Slot 3 — a step" },
-          "success": { "ur": "تیسرا بلاک جُڑ گیا — پھول قریب ہے!", "en": "Third block snapped in — the flower is near!" }
+          "label": {
+            "ur": "سلاٹ ۳ — قدم",
+            "en": "Slot 3 — a step"
+          },
+          "success": {
+            "ur": "تیسرا بلاک جُڑ گیا — پھول قریب ہے!",
+            "en": "Third block snapped in — the flower is near!"
+          }
         }
       ],
-      "wrongHint": { "ur": "اوپس! ایک بگ! بلاک کو خالی سلاٹ تک لے جاؤ!", "en": "Oops! A bug! Carry the block to an empty slot!" },
-      "winPraise": { "ur": "تینوں بلاکس جڑ گئے — بجلی پھول تک پہنچ گئی! زبردست!", "en": "All three blocks in — Bijli reached the flower! Zabardast!" }
+      "wrongHint": {
+        "ur": "اوپس! ایک بگ! بلاک کو خالی سلاٹ تک لے جاؤ!",
+        "en": "Oops! A bug! Carry the block to an empty slot!"
+      },
+      "winPraise": {
+        "ur": "تینوں بلاکس جڑ گئے — بجلی پھول تک پہنچ گئی! زبردست!",
+        "en": "All three blocks in — Bijli reached the flower! Zabardast!"
+      }
     }
   },
   "cheer": {
     "recap": [
-      { "ur": "سلاٹ بلاکس کے گھر ہیں — جوڑو اور پروگرام تیار!", "en": "Slots are the blocks' homes — snap them in and the program is ready!" },
-      { "ur": "بجلی صرف وہی کرتی ہے جو تم بلاکسوں میں لکھو۔", "en": "Bijli only does what your blocks say." }
+      {
+        "ur": "سلاٹ بلاکس کے گھر ہیں — جوڑو اور پروگرام تیار!",
+        "en": "Slots are the blocks' homes — snap them in and the program is ready!"
+      },
+      {
+        "ur": "بجلی صرف وہی کرتی ہے جو تم بلاکسوں میں لکھو۔",
+        "en": "Bijli only does what your blocks say."
+      }
     ],
-    "recapAudio": ["w8l3_recap_1", "w8l3_recap_2"],
-    "rewardToast": { "ur": "بجلی کے پاس پھول ہے — اور تمہارے پاس پروگرام!", "en": "Bijli has the flower — and you have a program!" }
+    "recapAudio": [
+      "w8l3_recap_1",
+      "w8l3_recap_2"
+    ],
+    "rewardToast": {
+      "ur": "بجلی کے پاس پھول ہے — اور تمہارے پاس پروگرام!",
+      "en": "Bijli has the flower — and you have a program!"
+    }
   }
 }

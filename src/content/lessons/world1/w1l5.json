@@ -3,57 +3,202 @@
   "schemaVersion": 1,
   "world": 1,
   "order": 5,
-  "title": { "ur": "الوداع بجلی — اچھی نیند!", "en": "Goodnight, Bijli — Shut Down!" },
-  "skill": { "ur": "کمپیوٹر بند کرنے کی ترتیب: کام بند، شٹ ڈاؤن، انتظار، سوئچ آف", "en": "Shutdown order: close work, shut down, wait, switch off" },
+  "title": {
+    "ur": "الوداع بجلی — اچھی نیند!",
+    "en": "Goodnight, Bijli — Shut Down!"
+  },
+  "skill": {
+    "ur": "کمپیوٹر بند کرنے کی ترتیب: کام بند، شٹ ڈاؤن، انتظار، سوئچ آف",
+    "en": "Shutdown order: close work, shut down, wait, switch off"
+  },
   "skillKey": "power-off",
   "minutes": 7,
-  "praise": { "ur": "زبردست! بجلی اچھی نیند سو گیا — تم نے اسے صحیح طریقے سے سلایا!", "en": "Zabardast! Bijli sleeps well — you shut him down the right way!" },
+  "praise": {
+    "ur": "زبردست! بجلی اچھی نیند سو گیا — تم نے اسے صحیح طریقے سے سلایا!",
+    "en": "Zabardast! Bijli sleeps well — you shut him down the right way!"
+  },
   "story": {
     "scenes": [
       {
         "bg": "bg-lab",
-        "cast": ["bijli", "noor", "chotu"],
+        "cast": [
+          "bijli",
+          "noor",
+          "chotu"
+        ],
         "lines": [
-          { "char": "narrator", "ur": "سورج ڈھل رہا تھا۔ اسکول کا وقت ختم — لیکن بجلی سونا نہیں چاہتا تھا!", "en": "The sun was setting. School was over — but Bijli did not want to sleep!", "audio": "w1l5_story_1" },
-          { "char": "bijli", "emote": "worried", "ur": "میں سوں تو سکتا ہوں… لیکن صحیح طریقے سے! براہ راست سوئچ مت بند کرو!", "en": "I can sleep… but the RIGHT way! Never just kill the wall switch!", "audio": "w1l5_story_2" },
-          { "char": "chotu", "emote": "thinking", "ur": "کیوں بجلی؟ کیا ہو جائے گا؟", "en": "Why, Bijli? What would happen?", "audio": "w1l5_story_3" },
-          { "char": "bijli", "emote": "serious", "ur": "میرا دماغ خراب ہو سکتا ہے! پہلے کام بند کرو، پھر شٹ ڈاؤن، پھر انتظار کرو!", "en": "My brain could get hurt! First close your work, then shut down, then wait!", "audio": "w1l5_story_4" },
-          { "char": "ustad-ullo", "ur": "اور جب اسکرین پر 'شٹنگ ڈاؤن' ختم ہو جائے — تب دیوار کا سوئچ بند کرو۔", "en": "And when 'shutting down' finishes on the screen — only then switch off the wall.", "audio": "w1l5_story_5", "fx": "sparkle" },
-          { "char": "noor", "emote": "happy", "ur": "سمجھ گئی! الوداع بجلی — اچھی نیند!", "en": "Understood! Goodnight Bijli — sleep well!", "audio": "w1l5_story_6" },
-          { "char": "narrator", "ur": "دوستو! کیا تم بجلی کو سلانا سیکھ گئے ہو؟", "en": "Friends! Have you learned to put Bijli to sleep?", "audio": "w1l5_story_7", "choice": { "ur": "مجھے بجلی کو سلانا ہے!", "en": "I want to put Bijli to sleep!", "audio": "w1l5_story_7_choice" } }
+          {
+            "char": "narrator",
+            "ur": "سورج ڈھل رہا تھا۔ اسکول کا وقت ختم — لیکن بجلی سونا نہیں چاہتا تھا!",
+            "en": "The sun was setting. School was over — but Bijli did not want to sleep!",
+            "audio": "w1l5_story_1"
+          },
+          {
+            "char": "bijli",
+            "emote": "worried",
+            "ur": "میں سوں تو سکتا ہوں… لیکن صحیح طریقے سے! براہ راست سوئچ مت بند کرو!",
+            "en": "I can sleep… but the RIGHT way! Never just kill the wall switch!",
+            "audio": "w1l5_story_2"
+          },
+          {
+            "char": "chotu",
+            "emote": "thinking",
+            "ur": "کیوں بجلی؟ کیا ہو جائے گا؟",
+            "en": "Why, Bijli? What would happen?",
+            "audio": "w1l5_story_3"
+          },
+          {
+            "char": "bijli",
+            "emote": "serious",
+            "ur": "میرا دماغ خراب ہو سکتا ہے! پہلے کام بند کرو، پھر شٹ ڈاؤن، پھر انتظار کرو!",
+            "en": "My brain could get hurt! First close your work, then shut down, then wait!",
+            "audio": "w1l5_story_4"
+          },
+          {
+            "char": "ustad-ullo",
+            "ur": "اور جب اسکرین پر 'شٹنگ ڈاؤن' ختم ہو جائے — تب دیوار کا سوئچ بند کرو۔",
+            "en": "And when 'shutting down' finishes on the screen — only then switch off the wall.",
+            "audio": "w1l5_story_5",
+            "fx": "sparkle"
+          },
+          {
+            "char": "noor",
+            "emote": "happy",
+            "ur": "سمجھ گئی! الوداع بجلی — اچھی نیند!",
+            "en": "Understood! Goodnight Bijli — sleep well!",
+            "audio": "w1l5_story_6"
+          },
+          {
+            "char": "narrator",
+            "ur": "دوستو! کیا تم بجلی کو سلانا سیکھ گئے ہو؟",
+            "en": "Friends! Have you learned to put Bijli to sleep?",
+            "audio": "w1l5_story_7",
+            "choice": {
+              "ur": "مجھے بجلی کو سلانا ہے!",
+              "en": "I want to put Bijli to sleep!",
+              "audio": "w1l5_story_7_choice"
+            }
+          }
+        ],
+        "props": [
+          "close-work",
+          "power-switch"
         ]
       }
     ]
   },
   "show": {
     "steps": [
-      { "visual": "close-work", "caption": { "ur": "پہلا قدم: اپنا کام بند کرو۔", "en": "Step 1: Close your work." }, "audio": "w1l5_show_1" },
-      { "visual": "shutdown", "caption": { "ur": "دوسرا قدم: اسٹارٹ بٹن → شٹ ڈاؤن۔", "en": "Step 2: Start button, then Shut Down." }, "audio": "w1l5_show_2" },
-      { "visual": "wait", "caption": { "ur": "تیسرا قدم: 'شٹنگ ڈاؤن' لکھا دیکھو — انتظار کرو۔", "en": "Step 3: Watch 'shutting down' — wait." }, "audio": "w1l5_show_3" },
-      { "visual": "power-switch", "caption": { "ur": "آخر میں: دیوار کا سوئچ بند کرو۔", "en": "Last: switch off the wall socket." }, "audio": "w1l5_show_4" }
+      {
+        "visual": "close-work",
+        "caption": {
+          "ur": "پہلا قدم: اپنا کام بند کرو۔",
+          "en": "Step 1: Close your work."
+        },
+        "audio": "w1l5_show_1"
+      },
+      {
+        "visual": "shutdown",
+        "caption": {
+          "ur": "دوسرا قدم: اسٹارٹ بٹن → شٹ ڈاؤن۔",
+          "en": "Step 2: Start button, then Shut Down."
+        },
+        "audio": "w1l5_show_2"
+      },
+      {
+        "visual": "wait",
+        "caption": {
+          "ur": "تیسرا قدم: 'شٹنگ ڈاؤن' لکھا دیکھو — انتظار کرو۔",
+          "en": "Step 3: Watch 'shutting down' — wait."
+        },
+        "audio": "w1l5_show_3"
+      },
+      {
+        "visual": "power-switch",
+        "caption": {
+          "ur": "آخر میں: دیوار کا سوئچ بند کرو۔",
+          "en": "Last: switch off the wall socket."
+        },
+        "audio": "w1l5_show_4"
+      }
     ]
   },
   "do": {
     "activity": {
       "type": "tap-sequence",
-      "prompt": { "ur": "بجلی کو سلانے کے قدم صحیح ترتیب سے دباؤ!", "en": "Tap Bijli's sleep steps in the right order!" },
+      "prompt": {
+        "ur": "بجلی کو سلانے کے قدم صحیح ترتیب سے دباؤ!",
+        "en": "Tap Bijli's sleep steps in the right order!"
+      },
       "audio": "w1l5_do_prompt",
       "steps": [
-        { "id": "close", "art": "close-work", "label": { "ur": "اپنا کام بند کرو", "en": "Close your work" }, "audio": "w1l5_step_1" },
-        { "id": "shutdown", "art": "shutdown", "label": { "ur": "شٹ ڈاؤن دباؤ", "en": "Press Shut Down" }, "audio": "w1l5_step_2" },
-        { "id": "wait", "art": "wait", "label": { "ur": "انتظار کرو", "en": "Wait" }, "audio": "w1l5_step_3" },
-        { "id": "switch-off", "art": "power-switch", "label": { "ur": "دیوار کا سوئچ بند کرو", "en": "Wall switch off" }, "audio": "w1l5_step_4" }
+        {
+          "id": "close",
+          "art": "close-work",
+          "label": {
+            "ur": "اپنا کام بند کرو",
+            "en": "Close your work"
+          },
+          "audio": "w1l5_step_1"
+        },
+        {
+          "id": "shutdown",
+          "art": "shutdown",
+          "label": {
+            "ur": "شٹ ڈاؤن دباؤ",
+            "en": "Press Shut Down"
+          },
+          "audio": "w1l5_step_2"
+        },
+        {
+          "id": "wait",
+          "art": "wait",
+          "label": {
+            "ur": "انتظار کرو",
+            "en": "Wait"
+          },
+          "audio": "w1l5_step_3"
+        },
+        {
+          "id": "switch-off",
+          "art": "power-switch",
+          "label": {
+            "ur": "دیوار کا سوئچ بند کرو",
+            "en": "Wall switch off"
+          },
+          "audio": "w1l5_step_4"
+        }
       ],
-      "order": ["close", "shutdown", "wait", "switch-off"],
-      "wrongHint": { "ur": "اوپس! ایک بگ ملا! یہ قدم ابھی نہیں — بجلی کہہ رہا ہے: پہلے کام بند کرو!", "en": "Oops! A bug! Not this step yet — Bijli says: close your work first!" }
+      "order": [
+        "close",
+        "shutdown",
+        "wait",
+        "switch-off"
+      ],
+      "wrongHint": {
+        "ur": "اوپس! ایک بگ ملا! یہ قدم ابھی نہیں — بجلی کہہ رہا ہے: پہلے کام بند کرو!",
+        "en": "Oops! A bug! Not this step yet — Bijli says: close your work first!"
+      }
     }
   },
   "cheer": {
     "recap": [
-      { "ur": "کام بند، شٹ ڈاؤن، انتظار — پھر سوئچ آف۔", "en": "Close work, shut down, wait — then switch off." },
-      { "ur": "اچھی الوداع = صحت مند بجلی!", "en": "A good goodnight = a healthy Bijli!" }
+      {
+        "ur": "کام بند، شٹ ڈاؤن، انتظار — پھر سوئچ آف۔",
+        "en": "Close work, shut down, wait — then switch off."
+      },
+      {
+        "ur": "اچھی الوداع = صحت مند بجلی!",
+        "en": "A good goodnight = a healthy Bijli!"
+      }
     ],
-    "recapAudio": ["w1l5_recap_1", "w1l5_recap_2"],
-    "rewardToast": { "ur": "بجلی خراٹے لے کر سو گیا!", "en": "Bijli is snoring happily!" }
+    "recapAudio": [
+      "w1l5_recap_1",
+      "w1l5_recap_2"
+    ],
+    "rewardToast": {
+      "ur": "بجلی خراٹے لے کر سو گیا!",
+      "en": "Bijli is snoring happily!"
+    }
   }
 }

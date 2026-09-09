@@ -3,8 +3,14 @@
   "schemaVersion": 1,
   "world": 8,
   "order": 1,
-  "title": { "ur": "بلاکس — جادوئی کمانڈیں", "en": "Blocks — Magic Commands" },
-  "skill": { "ur": "بلاکس پہچانو: کمانڈ، پرچم، لوپ", "en": "Meet the blocks: command, flag, loop" },
+  "title": {
+    "ur": "بلاکس — جادوئی کمانڈیں",
+    "en": "Blocks — Magic Commands"
+  },
+  "skill": {
+    "ur": "بلاکس پہچانو: کمانڈ، پرچم، لوپ",
+    "en": "Meet the blocks: command, flag, loop"
+  },
   "skillKey": "blocks-intro",
   "minutes": 6,
   "praise": {
@@ -15,7 +21,12 @@
     "scenes": [
       {
         "bg": "bg-mountain",
-        "cast": ["bijli", "noor", "chotu", "ustad-ullo"],
+        "cast": [
+          "bijli",
+          "noor",
+          "chotu",
+          "ustad-ullo"
+        ],
         "lines": [
           {
             "char": "narrator",
@@ -56,6 +67,11 @@
               "audio": "w8l1_story_5_choice"
             }
           }
+        ],
+        "props": [
+          "block-cmd",
+          "block-flag",
+          "block-loop"
         ]
       }
     ]
@@ -64,17 +80,26 @@
     "steps": [
       {
         "visual": "block-cmd",
-        "caption": { "ur": "کمانڈ بلاک — ایک حکم۔ بجلی فوراً کرتی ہے!", "en": "The command block — one order. Bijli does it right away!" },
+        "caption": {
+          "ur": "کمانڈ بلاک — ایک حکم۔ بجلی فوراً کرتی ہے!",
+          "en": "The command block — one order. Bijli does it right away!"
+        },
         "audio": "w8l1_show_1"
       },
       {
         "visual": "block-flag",
-        "caption": { "ur": "پرچم بلاک — پروگرام کا شروع! ہمیشہ سب سے پہلے۔", "en": "The flag block — the program's start! Always first." },
+        "caption": {
+          "ur": "پرچم بلاک — پروگرام کا شروع! ہمیشہ سب سے پہلے۔",
+          "en": "The flag block — the program's start! Always first."
+        },
         "audio": "w8l1_show_2"
       },
       {
         "visual": "block-loop",
-        "caption": { "ur": "لوپ بلاک — کہتا ہے: دوبارہ کرو! کمائی والا!", "en": "The loop block — it says: do it again! So clever!" },
+        "caption": {
+          "ur": "لوپ بلاک — کہتا ہے: دوبارہ کرو! کمائی والا!",
+          "en": "The loop block — it says: do it again! So clever!"
+        },
         "audio": "w8l1_show_3"
       }
     ]
@@ -82,7 +107,10 @@
   "do": {
     "activity": {
       "type": "tap-select",
-      "prompt": { "ur": "پہاڑ پر بلاکس چھوؤ اور سنو وہ کیا کرتے ہیں!", "en": "Tap the blocks on the mountain and hear what they do!" },
+      "prompt": {
+        "ur": "پہاڑ پر بلاکس چھوؤ اور سنو وہ کیا کرتے ہیں!",
+        "en": "Tap the blocks on the mountain and hear what they do!"
+      },
       "audio": "w8l1_do_prompt",
       "scene": "bg-mountain",
       "cursorArt": "teer",
@@ -93,7 +121,10 @@
           "y": 32,
           "art": "block-flag",
           "correct": true,
-          "hint": { "ur": "پرچم بلاک! پروگرام کو شروع کرتا ہے — بیپ!", "en": "The flag block! It starts the program — beep!" },
+          "hint": {
+            "ur": "پرچم بلاک! پروگرام کو شروع کرتا ہے — بیپ!",
+            "en": "The flag block! It starts the program — beep!"
+          },
           "audio": "w8l1_do_b1"
         },
         {
@@ -102,7 +133,10 @@
           "y": 55,
           "art": "block-cmd",
           "correct": true,
-          "hint": { "ur": "کمانڈ بلاک! ایک حکم — بجلی فوراً کرتی ہے!", "en": "The command block! One order — Bijli does it at once!" },
+          "hint": {
+            "ur": "کمانڈ بلاک! ایک حکم — بجلی فوراً کرتی ہے!",
+            "en": "The command block! One order — Bijli does it at once!"
+          },
           "audio": "w8l1_do_b2"
         },
         {
@@ -111,19 +145,37 @@
           "y": 30,
           "art": "block-loop",
           "correct": true,
-          "hint": { "ur": "لوپ بلاک! کہتا ہے: دوبارہ، دوبارہ!", "en": "The loop block! It says: again, again!" },
+          "hint": {
+            "ur": "لوپ بلاک! کہتا ہے: دوبارہ، دوبارہ!",
+            "en": "The loop block! It says: again, again!"
+          },
           "audio": "w8l1_do_b3"
         }
       ],
-      "winPraise": { "ur": "تم نے تینوں جادوئی بلاکس پہچان لیے — کمال!", "en": "You found all three magic blocks — wow!" }
+      "winPraise": {
+        "ur": "تم نے تینوں جادوئی بلاکس پہچان لیے — کمال!",
+        "en": "You found all three magic blocks — wow!"
+      }
     }
   },
   "cheer": {
     "recap": [
-      { "ur": "بلاکس جادوئی کمانڈیں ہیں — بجلی ان کی پیروی کرتی ہے۔", "en": "Blocks are magic commands — Bijli obeys them." },
-      { "ur": "پرچم بلاک ہر پروگرام کا شروع ہے۔", "en": "The flag block starts every program." }
+      {
+        "ur": "بلاکس جادوئی کمانڈیں ہیں — بجلی ان کی پیروی کرتی ہے۔",
+        "en": "Blocks are magic commands — Bijli obeys them."
+      },
+      {
+        "ur": "پرچم بلاک ہر پروگرام کا شروع ہے۔",
+        "en": "The flag block starts every program."
+      }
     ],
-    "recapAudio": ["w8l1_recap_1", "w8l1_recap_2"],
-    "rewardToast": { "ur": "پہلا قدم! بجلی کہتی ہے: آؤ پروگرام بنائیں!", "en": "First step! Bijli says: let's make a program!" }
+    "recapAudio": [
+      "w8l1_recap_1",
+      "w8l1_recap_2"
+    ],
+    "rewardToast": {
+      "ur": "پہلا قدم! بجلی کہتی ہے: آؤ پروگرام بنائیں!",
+      "en": "First step! Bijli says: let's make a program!"
+    }
   }
 }

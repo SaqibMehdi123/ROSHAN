@@ -3,8 +3,14 @@
   "schemaVersion": 1,
   "world": 8,
   "order": 9,
-  "title": { "ur": "اپنا کھیل بناؤ", "en": "Build Your Own Game" },
-  "skill": { "ur": "کمانڈ بلاکس + لوپ بلاک — کھیل تیار!", "en": "Command blocks + a loop block — game ready!" },
+  "title": {
+    "ur": "اپنا کھیل بناؤ",
+    "en": "Build Your Own Game"
+  },
+  "skill": {
+    "ur": "کمانڈ بلاکس + لوپ بلاک — کھیل تیار!",
+    "en": "Command blocks + a loop block — game ready!"
+  },
   "skillKey": "make-a-game",
   "minutes": 7,
   "praise": {
@@ -15,7 +21,11 @@
     "scenes": [
       {
         "bg": "bg-mountain",
-        "cast": ["bijli", "noor", "chotu"],
+        "cast": [
+          "bijli",
+          "noor",
+          "chotu"
+        ],
         "lines": [
           {
             "char": "narrator",
@@ -63,17 +73,26 @@
     "steps": [
       {
         "visual": "gem",
-        "caption": { "ur": "جواہر = سکور! جتنے پکڑو، اتنا جیتو!", "en": "Gems = score! Catch more, win more!" },
+        "caption": {
+          "ur": "جواہر = سکور! جتنے پکڑو، اتنا جیتو!",
+          "en": "Gems = score! Catch more, win more!"
+        },
         "audio": "w8l9_show_1"
       },
       {
         "visual": "block-cmd",
-        "caption": { "ur": "کمانڈ بلاکس: بجلی آگے بڑھے گی اور جواہر پکڑے گی!", "en": "Command blocks: Bijli will move and catch the gems!" },
+        "caption": {
+          "ur": "کمانڈ بلاکس: بجلی آگے بڑھے گی اور جواہر پکڑے گی!",
+          "en": "Command blocks: Bijli will move and catch the gems!"
+        },
         "audio": "w8l9_show_2"
       },
       {
         "visual": "block-loop",
-        "caption": { "ur": "لوپ بلاک لوپ سلاٹ میں — کھیل بار بار چلے گا!", "en": "The loop block goes in the loop slot — the game plays again and again!" },
+        "caption": {
+          "ur": "لوپ بلاک لوپ سلاٹ میں — کھیل بار بار چلے گا!",
+          "en": "The loop block goes in the loop slot — the game plays again and again!"
+        },
         "audio": "w8l9_show_3"
       }
     ]
@@ -81,7 +100,10 @@
   "do": {
     "activity": {
       "type": "drag-drop",
-      "prompt": { "ur": "بلاکس سلاٹوں میں جوڑو — اور لوپ بلاک لوپ سلاٹ میں!", "en": "Snap the blocks into the slots — and the loop block into the loop slot!" },
+      "prompt": {
+        "ur": "بلاکس سلاٹوں میں جوڑو — اور لوپ بلاک لوپ سلاٹ میں!",
+        "en": "Snap the blocks into the slots — and the loop block into the loop slot!"
+      },
       "audio": "w8l9_do_prompt",
       "scene": "bg-mountain",
       "draggable": [
@@ -90,21 +112,33 @@
           "art": "block-cmd",
           "x": 15,
           "y": 24,
-          "audio": "w8l9_do_d1"
+          "audio": "w8l9_do_d1",
+          "name": {
+            "ur": "کمانڈ بلاک",
+            "en": "Command block"
+          }
         },
         {
           "id": "d2",
           "art": "block-cmd",
           "x": 15,
           "y": 46,
-          "audio": "w8l9_do_d2"
+          "audio": "w8l9_do_d2",
+          "name": {
+            "ur": "کمانڈ بلاک",
+            "en": "Command block"
+          }
         },
         {
           "id": "d3",
           "art": "block-loop",
           "x": 15,
           "y": 68,
-          "audio": "w8l9_do_d3"
+          "audio": "w8l9_do_d3",
+          "name": {
+            "ur": "لوپ بلاک",
+            "en": "Loop block"
+          }
         }
       ],
       "targets": [
@@ -113,41 +147,85 @@
           "art": "block-cmd",
           "x": 60,
           "y": 30,
-          "accepts": ["d1", "d2"],
+          "accepts": [
+            "d1",
+            "d2"
+          ],
           "capacity": 1,
-          "label": { "ur": "کمانڈ سلاٹ ۱", "en": "Command slot 1" },
-          "success": { "ur": "کمانڈ لگی — بجلی تیار!", "en": "Command in — Bijli is ready!" }
+          "label": {
+            "ur": "کمانڈ سلاٹ ۱",
+            "en": "Command slot 1"
+          },
+          "success": {
+            "ur": "کمانڈ لگی — بجلی تیار!",
+            "en": "Command in — Bijli is ready!"
+          }
         },
         {
           "id": "slot2",
           "art": "block-cmd",
           "x": 60,
           "y": 50,
-          "accepts": ["d1", "d2"],
+          "accepts": [
+            "d1",
+            "d2"
+          ],
           "capacity": 1,
-          "label": { "ur": "کمانڈ سلاٹ ۲", "en": "Command slot 2" },
-          "success": { "ur": "دوسری کمانڈ لگی — کھیل بڑھا!", "en": "Second command in — the game grew!" }
+          "label": {
+            "ur": "کمانڈ سلاٹ ۲",
+            "en": "Command slot 2"
+          },
+          "success": {
+            "ur": "دوسری کمانڈ لگی — کھیل بڑھا!",
+            "en": "Second command in — the game grew!"
+          }
         },
         {
           "id": "slot3",
           "art": "block-loop",
           "x": 60,
           "y": 70,
-          "accepts": ["d3"],
-          "label": { "ur": "لوپ سلاٹ — دہراؤ!", "en": "Loop slot — repeat!" },
-          "success": { "ur": "لوپ جُڑ گیا — جواہر برسے گا!", "en": "Loop snapped in — gems will pour down!" }
+          "accepts": [
+            "d3"
+          ],
+          "label": {
+            "ur": "لوپ سلاٹ — دہراؤ!",
+            "en": "Loop slot — repeat!"
+          },
+          "success": {
+            "ur": "لوپ جُڑ گیا — جواہر برسے گا!",
+            "en": "Loop snapped in — gems will pour down!"
+          }
         }
       ],
-      "wrongHint": { "ur": "اوپس! ایک بگ! لوپ بلاک لوپ سلاٹ میں جاتا ہے!", "en": "Oops! A bug! The loop block goes in the loop slot!" },
-      "winPraise": { "ur": "تمہارا کھیل تیار — بجلی جواہر پکڑتی ہے! کھیل، کھیل!", "en": "Your game is ready — Bijli catches the gems! Play, play!" }
+      "wrongHint": {
+        "ur": "اوپس! ایک بگ! لوپ بلاک لوپ سلاٹ میں جاتا ہے!",
+        "en": "Oops! A bug! The loop block goes in the loop slot!"
+      },
+      "winPraise": {
+        "ur": "تمہارا کھیل تیار — بجلی جواہر پکڑتی ہے! کھیل، کھیل!",
+        "en": "Your game is ready — Bijli catches the gems! Play, play!"
+      }
     }
   },
   "cheer": {
     "recap": [
-      { "ur": "کھیل بھی پروگرام ہے — بلاکس ترتیب سے، لوپ ساتھ!", "en": "A game is a program too — blocks in order, loop included!" },
-      { "ur": "تم نے بنایا، بجلی نے کھیلا — گیم میکرز زندہ باد!", "en": "You built it, Bijli played it — hooray for game makers!" }
+      {
+        "ur": "کھیل بھی پروگرام ہے — بلاکس ترتیب سے، لوپ ساتھ!",
+        "en": "A game is a program too — blocks in order, loop included!"
+      },
+      {
+        "ur": "تم نے بنایا، بجلی نے کھیلا — گیم میکرز زندہ باد!",
+        "en": "You built it, Bijli played it — hooray for game makers!"
+      }
     ],
-    "recapAudio": ["w8l9_recap_1", "w8l9_recap_2"],
-    "rewardToast": { "ur": "نیا کھیل تیار! بجلی کے اوپر جواہروں کی بارش!", "en": "New game ready! A shower of gems over Bijli!" }
+    "recapAudio": [
+      "w8l9_recap_1",
+      "w8l9_recap_2"
+    ],
+    "rewardToast": {
+      "ur": "نیا کھیل تیار! بجلی کے اوپر جواہروں کی بارش!",
+      "en": "New game ready! A shower of gems over Bijli!"
+    }
   }
 }

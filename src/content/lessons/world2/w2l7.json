@@ -3,58 +3,205 @@
   "schemaVersion": 1,
   "world": 2,
   "order": 7,
-  "title": { "ur": "کھینچو! — پھل ٹوکرے میں", "en": "Drag! — Fruit in the Basket" },
-  "skill": { "ur": "ڈریگ اینڈ ڈراپ: دباؤ، کھینچو، چھوڑو", "en": "Drag & drop: press, drag, release" },
+  "title": {
+    "ur": "کھینچو! — پھل ٹوکرے میں",
+    "en": "Drag! — Fruit in the Basket"
+  },
+  "skill": {
+    "ur": "ڈریگ اینڈ ڈراپ: دباؤ، کھینچو، چھوڑو",
+    "en": "Drag & drop: press, drag, release"
+  },
   "skillKey": "drag-drop",
   "minutes": 7,
-  "praise": { "ur": "شاباش! تم نے ہر پھل کھینچ کر ٹوکرے میں ڈالا — گول مٹول شکریہ کہتا ہے!", "en": "Shabash! You dragged every fruit into the basket — Gol Matol says thank you!" },
+  "praise": {
+    "ur": "شاباش! تم نے ہر پھل کھینچ کر ٹوکرے میں ڈالا — گول مٹول شکریہ کہتا ہے!",
+    "en": "Shabash! You dragged every fruit into the basket — Gol Matol says thank you!"
+  },
   "story": {
     "scenes": [
       {
         "bg": "bg-meadow",
-        "cast": ["golmatol", "bijli", "chotu"],
+        "cast": [
+          "golmatol",
+          "bijli",
+          "chotu"
+        ],
         "lines": [
-          { "char": "narrator", "ur": "گول مٹول میدان میں بیٹھا تھا — اور اس کا پیٹ گڑگڑا رہا تھا!", "en": "Gol Matol sat in the meadow — and his tummy was rumbling!", "audio": "w2l7_story_1" },
-          { "char": "golmatol", "emote": "playful", "ur": "میاؤں! میرا ٹوکرا خالی ہے! پھل دبوچ کر لاؤ!", "en": "Meow! My basket is empty! Drag the fruits over!", "audio": "w2l7_story_2" },
-          { "char": "bijli", "emote": "thinking", "ur": "پھل پر دباؤ، پکڑے رہو، کھینچو — اور ٹوکرے پر چھوڑ ڈالو!", "en": "Press a fruit, keep holding, drag — and release right on the basket!", "audio": "w2l7_story_3" },
-          { "char": "chotu", "emote": "happy", "ur": "پکڑو… کھینچو… چھوڑو! یہی ہے ڈریگ اور ڈراپ!", "en": "Hold… drag… release! That is drag and drop!", "audio": "w2l7_story_4" },
-          { "char": "narrator", "ur": "کیا تم گول مٹول کا ٹوکرا بھر دو گے؟", "en": "Will you fill Gol Matol's basket?", "audio": "w2l7_story_5", "choice": { "ur": "پھل کھینچو!", "en": "Drag the fruit!", "audio": "w2l7_story_5_choice" } }
+          {
+            "char": "narrator",
+            "ur": "گول مٹول میدان میں بیٹھا تھا — اور اس کا پیٹ گڑگڑا رہا تھا!",
+            "en": "Gol Matol sat in the meadow — and his tummy was rumbling!",
+            "audio": "w2l7_story_1"
+          },
+          {
+            "char": "golmatol",
+            "emote": "playful",
+            "ur": "میاؤں! میرا ٹوکرا خالی ہے! پھل دبوچ کر لاؤ!",
+            "en": "Meow! My basket is empty! Drag the fruits over!",
+            "audio": "w2l7_story_2"
+          },
+          {
+            "char": "bijli",
+            "emote": "thinking",
+            "ur": "پھل پر دباؤ، پکڑے رہو، کھینچو — اور ٹوکرے پر چھوڑ ڈالو!",
+            "en": "Press a fruit, keep holding, drag — and release right on the basket!",
+            "audio": "w2l7_story_3"
+          },
+          {
+            "char": "chotu",
+            "emote": "happy",
+            "ur": "پکڑو… کھینچو… چھوڑو! یہی ہے ڈریگ اور ڈراپ!",
+            "en": "Hold… drag… release! That is drag and drop!",
+            "audio": "w2l7_story_4"
+          },
+          {
+            "char": "narrator",
+            "ur": "کیا تم گول مٹول کا ٹوکرا بھر دو گے؟",
+            "en": "Will you fill Gol Matol's basket?",
+            "audio": "w2l7_story_5",
+            "choice": {
+              "ur": "پھل کھینچو!",
+              "en": "Drag the fruit!",
+              "audio": "w2l7_story_5_choice"
+            }
+          }
         ]
       }
     ]
   },
   "show": {
     "steps": [
-      { "visual": "mango", "caption": { "ur": "پہلے پھل پر دباؤ — اور پکڑے رہو!", "en": "First press the fruit — and keep holding!" }, "audio": "w2l7_show_1" },
-      { "visual": "teer", "caption": { "ur": "پکڑے پکڑے ہی کھینچو — پھل تیر کے ساتھ چلے گا۔", "en": "Drag while holding — the fruit follows Teer." }, "audio": "w2l7_show_2" },
-      { "visual": "fruit-basket", "caption": { "ur": "ٹوکرے کے اوپر چھوڑو — چٹ! پھل اندر!", "en": "Release over the basket — plop! Fruit inside!" }, "audio": "w2l7_show_3" }
+      {
+        "visual": "mango",
+        "caption": {
+          "ur": "پہلے پھل پر دباؤ — اور پکڑے رہو!",
+          "en": "First press the fruit — and keep holding!"
+        },
+        "audio": "w2l7_show_1"
+      },
+      {
+        "visual": "teer",
+        "caption": {
+          "ur": "پکڑے پکڑے ہی کھینچو — پھل تیر کے ساتھ چلے گا۔",
+          "en": "Drag while holding — the fruit follows Teer."
+        },
+        "audio": "w2l7_show_2"
+      },
+      {
+        "visual": "fruit-basket",
+        "caption": {
+          "ur": "ٹوکرے کے اوپر چھوڑو — چٹ! پھل اندر!",
+          "en": "Release over the basket — plop! Fruit inside!"
+        },
+        "audio": "w2l7_show_3"
+      }
     ]
   },
   "do": {
     "activity": {
       "type": "drag-drop",
-      "prompt": { "ur": "ہر پھل پکڑو، کھینچو اور گول مٹول کے ٹوکرے پر چھوڑو!", "en": "Grab each fruit, drag it, and drop it on Gol Matol's basket!" },
+      "prompt": {
+        "ur": "ہر پھل پکڑو، کھینچو اور گول مٹول کے ٹوکرے پر چھوڑو!",
+        "en": "Grab each fruit, drag it, and drop it on Gol Matol's basket!"
+      },
       "audio": "w2l7_do_prompt",
       "scene": "bg-meadow",
       "draggable": [
-        { "id": "aam", "art": "mango", "x": 12, "y": 30, "audio": "w2l7_f_aam" },
-        { "id": "kela", "art": "banana", "x": 34, "y": 18, "audio": "w2l7_f_kela" },
-        { "id": "angoor", "art": "grapes", "x": 58, "y": 28, "audio": "w2l7_f_angoor" },
-        { "id": "tarbooz", "art": "watermelon", "x": 82, "y": 20, "audio": "w2l7_f_tarbooz" }
+        {
+          "id": "aam",
+          "art": "mango",
+          "x": 12,
+          "y": 30,
+          "audio": "w2l7_f_aam",
+          "name": {
+            "ur": "آم",
+            "en": "Mango"
+          }
+        },
+        {
+          "id": "kela",
+          "art": "banana",
+          "x": 34,
+          "y": 18,
+          "audio": "w2l7_f_kela",
+          "name": {
+            "ur": "کیلا",
+            "en": "Banana"
+          }
+        },
+        {
+          "id": "angoor",
+          "art": "grapes",
+          "x": 58,
+          "y": 28,
+          "audio": "w2l7_f_angoor",
+          "name": {
+            "ur": "انگور",
+            "en": "Grapes"
+          }
+        },
+        {
+          "id": "tarbooz",
+          "art": "watermelon",
+          "x": 82,
+          "y": 20,
+          "audio": "w2l7_f_tarbooz",
+          "name": {
+            "ur": "تربوز",
+            "en": "Watermelon"
+          }
+        }
       ],
       "targets": [
-        { "id": "tokra", "art": "fruit-basket", "x": 50, "y": 78, "accepts": ["aam", "kela", "angoor", "tarbooz"], "label": { "ur": "گول مٹول کا ٹوکرا", "en": "Gol Matol's basket" }, "success": { "ur": "چٹ! ایک پھل ٹوکرے میں!", "en": "Plop! One fruit in the basket!" } }
+        {
+          "id": "tokra",
+          "art": "fruit-basket",
+          "x": 50,
+          "y": 78,
+          "accepts": [
+            "aam",
+            "kela",
+            "angoor",
+            "tarbooz"
+          ],
+          "label": {
+            "ur": "گول مٹول کا ٹوکرا",
+            "en": "Gol Matol's basket"
+          },
+          "success": {
+            "ur": "چٹ! ایک پھل ٹوکرے میں!",
+            "en": "Plop! One fruit in the basket!"
+          }
+        }
       ],
-      "wrongHint": { "ur": "اوپس! ایک بگ ملا! یہاں نہیں — ٹوکرے پر چھوڑو!", "en": "Oops! A bug! Not here — drop it on the basket!" },
-      "winPraise": { "ur": "زبردست! ٹوکرا بھر گیا — گول مٹول نے پیٹ پکڑ لیا!", "en": "Zabardast! The basket is full — Gol Matol holds his happy tummy!" }
+      "wrongHint": {
+        "ur": "اوپس! ایک بگ ملا! یہاں نہیں — ٹوکرے پر چھوڑو!",
+        "en": "Oops! A bug! Not here — drop it on the basket!"
+      },
+      "winPraise": {
+        "ur": "زبردست! ٹوکرا بھر گیا — گول مٹول نے پیٹ پکڑ لیا!",
+        "en": "Zabardast! The basket is full — Gol Matol holds his happy tummy!"
+      }
     }
   },
   "cheer": {
     "recap": [
-      { "ur": "ڈریگ کے تین قدم: دباؤ، کھینچو، چھوڑو۔", "en": "Three drag steps: press, drag, release." },
-      { "ur": "پکڑے رہو — ہوا میں چھوڑا تو پھل گر جائے گا!", "en": "Keep holding — release in mid-air and the fruit falls!" }
+      {
+        "ur": "ڈریگ کے تین قدم: دباؤ، کھینچو، چھوڑو۔",
+        "en": "Three drag steps: press, drag, release."
+      },
+      {
+        "ur": "پکڑے رہو — ہوا میں چھوڑا تو پھل گر جائے گا!",
+        "en": "Keep holding — release in mid-air and the fruit falls!"
+      }
     ],
-    "recapAudio": ["w2l7_recap_1", "w2l7_recap_2"],
-    "rewardToast": { "ur": "گول مٹول کہتا ہے: اگلا سبق پھولوں کا ہے!", "en": "Gol Matol says: next lesson is about flowers!" }
+    "recapAudio": [
+      "w2l7_recap_1",
+      "w2l7_recap_2"
+    ],
+    "rewardToast": {
+      "ur": "گول مٹول کہتا ہے: اگلا سبق پھولوں کا ہے!",
+      "en": "Gol Matol says: next lesson is about flowers!"
+    }
   }
 }

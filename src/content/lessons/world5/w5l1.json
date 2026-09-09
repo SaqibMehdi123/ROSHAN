@@ -3,55 +3,184 @@
   "schemaVersion": 1,
   "world": 5,
   "order": 1,
-  "title": { "ur": "پینٹ اسٹوڈیو — سلام", "en": "Hello, Paint Studio!" },
-  "skill": { "ur": "اسٹوڈیو اور اوزار پہچانو", "en": "Meet the studio and its tools" },
+  "title": {
+    "ur": "پینٹ اسٹوڈیو — سلام",
+    "en": "Hello, Paint Studio!"
+  },
+  "skill": {
+    "ur": "اسٹوڈیو اور اوزار پہچانو",
+    "en": "Meet the studio and its tools"
+  },
   "skillKey": "paint-studio-tools",
   "minutes": 6,
-  "praise": { "ur": "شاباش! تم پینٹ اسٹوڈیو کے سچے فنکار ہو!", "en": "Shabash! You are a true artist of the Paint Studio!" },
+  "praise": {
+    "ur": "شاباش! تم پینٹ اسٹوڈیو کے سچے فنکار ہو!",
+    "en": "Shabash! You are a true artist of the Paint Studio!"
+  },
   "story": {
     "scenes": [
       {
         "bg": "bg-workshop",
-        "cast": ["bijli", "noor", "chotu"],
+        "cast": [
+          "bijli",
+          "noor",
+          "chotu"
+        ],
         "lines": [
-          { "char": "narrator", "ur": "میلا آنے والا ہے! بجلی نے ورکشاپ میں پینٹ اسٹوڈیو کھول دیا ہے۔", "en": "The mela is coming! Bijli has opened a Paint Studio in the workshop.", "audio": "w5l1_story_1" },
-          { "char": "bijli", "emote": "waving", "ur": "سلام! یہ ہے پینٹ اسٹوڈیو! یہاں ہم سب کچھ بناتے ہیں!", "en": "Hello! This is the Paint Studio! Here we make everything!", "audio": "w5l1_story_2" },
-          { "char": "noor", "emote": "excited", "ur": "واہ! کھڑا بورڈ، برش، پنسل — اتنے سارے اوزار!", "en": "Wow! An easel, a brush, a pencil — so many tools!", "audio": "w5l1_story_3" },
-          { "char": "chotu", "emote": "surprised", "ur": "اور یہ بڑی سی بوتل کیا ہے؟", "en": "And what is this big bottle?", "audio": "w5l1_story_4" },
-          { "char": "bijli", "emote": "happy", "ur": "یہ پینٹ بکٹ ہے — رنگوں کا خزانہ! چلو اوزاروں سے ملو!", "en": "That is the paint bucket — a treasure of colors! Come, meet the tools!", "audio": "w5l1_story_5", "choice": { "ur": "چلو اسٹوڈیو دیکھو!", "en": "Let's look around!", "audio": "w5l1_story_5_choice" } }
+          {
+            "char": "narrator",
+            "ur": "میلا آنے والا ہے! بجلی نے ورکشاپ میں پینٹ اسٹوڈیو کھول دیا ہے۔",
+            "en": "The mela is coming! Bijli has opened a Paint Studio in the workshop.",
+            "audio": "w5l1_story_1"
+          },
+          {
+            "char": "bijli",
+            "emote": "waving",
+            "ur": "سلام! یہ ہے پینٹ اسٹوڈیو! یہاں ہم سب کچھ بناتے ہیں!",
+            "en": "Hello! This is the Paint Studio! Here we make everything!",
+            "audio": "w5l1_story_2"
+          },
+          {
+            "char": "noor",
+            "emote": "excited",
+            "ur": "واہ! کھڑا بورڈ، برش، پنسل — اتنے سارے اوزار!",
+            "en": "Wow! An easel, a brush, a pencil — so many tools!",
+            "audio": "w5l1_story_3"
+          },
+          {
+            "char": "chotu",
+            "emote": "surprised",
+            "ur": "اور یہ بڑی سی بوتل کیا ہے؟",
+            "en": "And what is this big bottle?",
+            "audio": "w5l1_story_4"
+          },
+          {
+            "char": "bijli",
+            "emote": "happy",
+            "ur": "یہ پینٹ بکٹ ہے — رنگوں کا خزانہ! چلو اوزاروں سے ملو!",
+            "en": "That is the paint bucket — a treasure of colors! Come, meet the tools!",
+            "audio": "w5l1_story_5",
+            "choice": {
+              "ur": "چلو اسٹوڈیو دیکھو!",
+              "en": "Let's look around!",
+              "audio": "w5l1_story_5_choice"
+            }
+          }
+        ],
+        "props": [
+          "paint-brush",
+          "paint-bucket"
         ]
       }
     ]
   },
   "show": {
     "steps": [
-      { "visual": "easel", "caption": { "ur": "یہ کھڑا بورڈ ہے — ایزل! اس پر ہم بناتے ہیں۔", "en": "This is the standing board — the easel! We create on it." }, "audio": "w5l1_show_1" },
-      { "visual": "paint-brush", "caption": { "ur": "یہ برش ہے — یہ رنگ لگاتا ہے۔", "en": "This is the brush — it paints colors." }, "audio": "w5l1_show_2" },
-      { "visual": "paint-bucket", "caption": { "ur": "یہ پینٹ بکٹ ہے — بڑی جگہ رنگ بھرتا ہے۔", "en": "This is the paint bucket — it fills big places." }, "audio": "w5l1_show_3" }
+      {
+        "visual": "easel",
+        "caption": {
+          "ur": "یہ کھڑا بورڈ ہے — ایزل! اس پر ہم بناتے ہیں۔",
+          "en": "This is the standing board — the easel! We create on it."
+        },
+        "audio": "w5l1_show_1"
+      },
+      {
+        "visual": "paint-brush",
+        "caption": {
+          "ur": "یہ برش ہے — یہ رنگ لگاتا ہے۔",
+          "en": "This is the brush — it paints colors."
+        },
+        "audio": "w5l1_show_2"
+      },
+      {
+        "visual": "paint-bucket",
+        "caption": {
+          "ur": "یہ پینٹ بکٹ ہے — بڑی جگہ رنگ بھرتا ہے۔",
+          "en": "This is the paint bucket — it fills big places."
+        },
+        "audio": "w5l1_show_3"
+      }
     ]
   },
   "do": {
     "activity": {
       "type": "find-named",
-      "prompt": { "ur": "بجلی اوزار کا نام کہے گی — تم وہ اوزار ڈھونڈ کر دباؤ!", "en": "Bijli will name a tool — find it and tap it!" },
+      "prompt": {
+        "ur": "بجلی اوزار کا نام کہے گی — تم وہ اوزار ڈھونڈ کر دباؤ!",
+        "en": "Bijli will name a tool — find it and tap it!"
+      },
       "audio": "w5l1_do_prompt",
       "scene": "bg-workshop",
       "targets": [
-        { "id": "brush", "art": "paint-brush", "x": 12, "y": 38, "name": { "ur": "برش", "en": "Brush" } },
-        { "id": "bucket", "art": "paint-bucket", "x": 38, "y": 44, "name": { "ur": "بکٹ", "en": "Bucket" } },
-        { "id": "pencil", "art": "pencil", "x": 62, "y": 34, "name": { "ur": "پنسل", "en": "Pencil" } },
-        { "id": "eraser", "art": "magic-eraser", "x": 86, "y": 40, "name": { "ur": "ربڑ", "en": "Eraser" } }
+        {
+          "id": "brush",
+          "art": "paint-brush",
+          "x": 12,
+          "y": 38,
+          "name": {
+            "ur": "برش",
+            "en": "Brush"
+          }
+        },
+        {
+          "id": "bucket",
+          "art": "paint-bucket",
+          "x": 38,
+          "y": 44,
+          "name": {
+            "ur": "بکٹ",
+            "en": "Bucket"
+          }
+        },
+        {
+          "id": "pencil",
+          "art": "pencil",
+          "x": 62,
+          "y": 34,
+          "name": {
+            "ur": "پنسل",
+            "en": "Pencil"
+          }
+        },
+        {
+          "id": "eraser",
+          "art": "magic-eraser",
+          "x": 86,
+          "y": 40,
+          "name": {
+            "ur": "ربڑ",
+            "en": "Eraser"
+          }
+        }
       ],
-      "wrongHint": { "ur": "اوپس! ایک بگ ملا! یہ دوسرا اوزار ہے — دوبارہ سنو اور ڈھونڈو!", "en": "Oops! A bug! That is another tool — listen again and find it!" },
-      "winPraise": { "ur": "زبردست! تم سب اوزار پہچانتے ہو — ننھے فنکار!", "en": "Zabardast! You know every tool — little artist!" }
+      "wrongHint": {
+        "ur": "اوپس! ایک بگ ملا! یہ دوسرا اوزار ہے — دوبارہ سنو اور ڈھونڈو!",
+        "en": "Oops! A bug! That is another tool — listen again and find it!"
+      },
+      "winPraise": {
+        "ur": "زبردست! تم سب اوزار پہچانتے ہو — ننھے فنکار!",
+        "en": "Zabardast! You know every tool — little artist!"
+      }
     }
   },
   "cheer": {
     "recap": [
-      { "ur": "پینٹ اسٹوڈیو میں ہم بناتے ہیں — کارڈ، پوسٹر، دعوتیں!", "en": "In the Paint Studio we make — cards, posters, invitations!" },
-      { "ur": "برش رنگ لگاتا ہے، بکٹ بڑی جگہ بھرتا ہے۔", "en": "The brush paints, the bucket fills big places." }
+      {
+        "ur": "پینٹ اسٹوڈیو میں ہم بناتے ہیں — کارڈ، پوسٹر، دعوتیں!",
+        "en": "In the Paint Studio we make — cards, posters, invitations!"
+      },
+      {
+        "ur": "برش رنگ لگاتا ہے، بکٹ بڑی جگہ بھرتا ہے۔",
+        "en": "The brush paints, the bucket fills big places."
+      }
     ],
-    "recapAudio": ["w5l1_recap_1", "w5l1_recap_2"],
-    "rewardToast": { "ur": "پینٹ اسٹوڈیو کھلا — ننھا فنکار تیار!", "en": "Paint Studio open — little artist ready!" }
+    "recapAudio": [
+      "w5l1_recap_1",
+      "w5l1_recap_2"
+    ],
+    "rewardToast": {
+      "ur": "پینٹ اسٹوڈیو کھلا — ننھا فنکار تیار!",
+      "en": "Paint Studio open — little artist ready!"
+    }
   }
 }

@@ -347,7 +347,7 @@ export function DragDropActivity({ activity, onWin, hintHandAfter = 2 }: CommonP
     setDrag(itemId);
     setPicked(null);
     const item = a.draggable.find((d) => d.id === itemId);
-    if (item?.audio) void playAudio(item.audio, undefined);
+    if (item?.audio) void playAudio(item.audio, item.name?.ur);
     else playSfx("pop", sfxOn);
   };
 

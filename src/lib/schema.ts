@@ -160,6 +160,7 @@ export interface DraggableItem {
   x: number; // % spawn position inside the scene (RTL-aware)
   y: number;
   audio?: string; // spoken when grabbed
+  name?: Bilingual; // object name spoken on grab (e.g. "آم — Mango")
 }
 
 export interface DropTarget {

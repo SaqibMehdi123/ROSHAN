@@ -87,6 +87,22 @@ const ICONS: Record<string, React.ReactNode> = {
       <circle cx="50" cy="52" r="5" fill="#38BDF8" stroke={INK} strokeWidth="2" />
     </g>
   ),
+  crate: (
+    <g>
+      <rect x="16" y="30" width="68" height="52" rx="5" fill="#C68B4E" stroke={INK} strokeWidth="3" />
+      <path d="M16 46 h68 M16 66 h68" stroke="#8B5E3C" strokeWidth="4" />
+      <path d="M16 30 l12 16 M84 30 l-12 16 M16 82 l12 -16 M84 82 l-12 -16" stroke={INK} strokeWidth="2" opacity="0.55" />
+      <rect x="24" y="18" width="52" height="16" rx="4" fill="#8B5E3C" stroke={INK} strokeWidth="2.5" />
+    </g>
+  ),
+  charpai: (
+    <g>
+      <path d="M14 44 h72 v10 H14 Z" fill="#C68B4E" stroke={INK} strokeWidth="3" />
+      <path d="M22 38 v-8 M78 38 v-8 M22 54 v10 M78 54 v10" stroke="#8B5E3C" strokeWidth="6" strokeLinecap="round" />
+      <path d="M18 44 q8 6 16 0 q8 6 16 0 q8 6 16 0 q8 6 16 0" stroke="#F59E0B" strokeWidth="2.5" fill="none" />
+      <path d="M18 54 q8 5 16 0 q8 5 16 0 q8 5 16 0 q8 5 16 0" stroke="#EC4899" strokeWidth="2.5" fill="none" />
+    </g>
+  ),
   /* ---- W1L2 parts ---- */
   monitor: (
     <g>

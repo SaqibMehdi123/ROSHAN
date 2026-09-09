@@ -11,7 +11,7 @@ import type { LessonProgress, Phase, Profile } from "@/lib/schema";
 import { simpleHash, storage, todayKey } from "@/lib/storage";
 import { getLesson, lessonsOfWorld } from "@/lib/content";
 import { playSfx, setMusic } from "@/lib/music";
-import { stopSpeaking } from "@/lib/audio";
+import { setSlowVoice, stopSpeaking } from "@/lib/audio";
 
 export type Screen =
   | "welcome" // profile gate (first run / no active profile)
@@ -49,7 +49,7 @@ interface AppState {
   activeLessonId: string | null;
   profiles: Profile[];
   activeProfileId: string | null;
-  device: { music: boolean; sfx: boolean };
+  device: { music: boolean; sfx: boolean; slowVoice: boolean };
 
   hydrate: () => void;
   go: (screen: Screen) => void;
@@ -71,7 +71,7 @@ interface AppState {
 
   brainGymResult: (success: boolean) => { tier: number; streak: number };
   setSettings: (s: Partial<Pick<Profile["settings"], "music" | "sfx" | "slowVoice">>) => void;
-  setDevice: (s: Partial<{ music: boolean; sfx: boolean }>) => void;
+  setDevice: (s: Partial<{ music: boolean; sfx: boolean; slowVoice: boolean }>) => void;
 }
 
 function touchStreak(p: Profile): Profile {
@@ -89,7 +89,7 @@ export const useApp = create<AppState>((set, get) => ({
   activeLessonId: null,
   profiles: [],
   activeProfileId: null,
-  device: { music: true, sfx: true },
+  device: { music: true, sfx: true, slowVoice: false },
   bugsInActivity: 0,
 
   hydrate: () => {
@@ -297,6 +297,7 @@ export const useApp = create<AppState>((set, get) => ({
     if (!p) return;
     const next: Profile = { ...p, settings: { ...p.settings, ...s } };
     if (typeof s.music === "boolean") setMusic(s.music);
+    if (typeof s.slowVoice === "boolean") setSlowVoice(s.slowVoice);
     storage.writeProfiles(get().profiles.map((x) => (x.id === p.id ? next : x)));
     set({ profiles: get().profiles.map((x) => (x.id === p.id ? next : x)) });
   },
@@ -304,6 +305,7 @@ export const useApp = create<AppState>((set, get) => ({
   setDevice: (s) => {
     const device = { ...get().device, ...s };
     if (typeof s.music === "boolean") setMusic(s.music);
+    if (typeof s.slowVoice === "boolean") setSlowVoice(s.slowVoice);
     storage.writeDevice(device);
     set({ device });
   },

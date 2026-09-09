@@ -191,6 +191,23 @@ function StoryPhase({
       {/* scene stage (capped so the dialog bubble always stays on screen) */}
       <div className="relative mx-auto max-w-3xl overflow-hidden rounded-3xl border-4 border-roshan-card-border bg-white shadow-[var(--r-shadow-lg)]">
         <Art id={scene.bg} className="block" />
+        {/* set dressing — story props scattered along the top edge */}
+        {scene.props && scene.props.length > 0 && (
+          <div className="pointer-events-none absolute inset-x-0 top-0 flex items-start justify-start gap-1 p-2" aria-hidden>
+            {scene.props.slice(0, 3).map((p, i) => (
+              <div
+                key={p}
+                className="anim-bob"
+                style={{
+                  animationDelay: `${i * 0.7}s`,
+                  transform: `rotate(${i % 2 === 0 ? -4 : 5}deg)`,
+                }}
+              >
+                <Art id={p} size={i === 0 ? 74 : 58} />
+              </div>
+            ))}
+          </div>
+        )}
         {/* soft vignette so characters pop */}
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-black/10 to-transparent" aria-hidden />
         <div className="absolute inset-x-0 bottom-1 flex items-end justify-center gap-2 px-4">

@@ -3,86 +3,242 @@
   "schemaVersion": 1,
   "world": 7,
   "order": 1,
-  "title": { "ur": "پیٹرن — جو دہرائی جائے", "en": "Patterns — What Repeats" },
-  "skill": { "ur": "پیٹرن پہچانو: جو بار بار دہرائے، اگلا قدم وہی ہے", "en": "Spot the pattern: what repeats tells you what comes next" },
+  "title": {
+    "ur": "پیٹرن — جو دہرائی جائے",
+    "en": "Patterns — What Repeats"
+  },
+  "skill": {
+    "ur": "پیٹرن پہچانو: جو بار بار دہرائے، اگلا قدم وہی ہے",
+    "en": "Spot the pattern: what repeats tells you what comes next"
+  },
   "skillKey": "patterns",
   "minutes": 6,
-  "praise": { "ur": "شاباش! پیٹرن کا پہلا جواہر — تمہارا دماغ جگمگ اٹھا!", "en": "Shabash! The first pattern gem — your brain is sparkling!" },
+  "praise": {
+    "ur": "شاباش! پیٹرن کا پہلا جواہر — تمہارا دماغ جگمگ اٹھا!",
+    "en": "Shabash! The first pattern gem — your brain is sparkling!"
+  },
   "story": {
     "scenes": [
       {
         "bg": "bg-jungle",
-        "cast": ["bijli", "noor", "chotu", "golmatol"],
+        "cast": [
+          "bijli",
+          "noor",
+          "chotu",
+          "golmatol"
+        ],
         "lines": [
-          { "char": "narrator", "ur": "درختوں کے درمیان لاجک کا جنگل! یہاں چمکتے جواہر اور رنگ برنگے پیٹرن ہیں۔", "en": "Among the trees lies the Logic Jungle! Here shine gems and colorful patterns.", "audio": "w7l1_story_1" },
-          { "char": "bijli", "emote": "short-circuit", "ur": "بیپ… بیپ… اوہ نہیں! گول مٹول نے میرے دماغ کے جواہر الٹ پلٹ کر دیے!", "en": "Beep… beep… oh no! Gol Matol scrambled my brain-gems!", "audio": "w7l1_story_2" },
-          { "char": "golmatol", "emote": "guilty", "ur": "میاؤں… مجھے مذاق آ رہا تھا! اب میں مدد کروں گا، وعدہ!", "en": "Meow… I was just playing! I will help now, promise!", "audio": "w7l1_story_3" },
-          { "char": "noor", "emote": "thinking", "ur": "دیکھو! درختوں پر پیٹرن ہے: سورج، ستارہ، سورج، ستارہ — جو بار بار دہرائے، وہی پیٹرن!", "en": "Look! The trees hold a pattern: sun, star, sun, star — what repeats again and again is a pattern!", "audio": "w7l1_story_4" },
-          { "char": "chotu", "emote": "happy", "ur": "پیٹرن پڑھ لو تو اگلا قدم خود نظر آ جائے گا!", "en": "Read the pattern and the next step appears by itself!", "audio": "w7l1_story_5" },
-          { "char": "narrator", "ur": "کیا تم پیٹرن پڑھ کر پہلا سوچنے کا جواہر حاصل کرو گے؟", "en": "Will you read the pattern and win the first Thinking Gem?", "audio": "w7l1_story_6", "choice": { "ur": "پیٹرن پڑھو!", "en": "Read the pattern!", "audio": "w7l1_story_6_choice" } }
+          {
+            "char": "narrator",
+            "ur": "درختوں کے درمیان لاجک کا جنگل! یہاں چمکتے جواہر اور رنگ برنگے پیٹرن ہیں۔",
+            "en": "Among the trees lies the Logic Jungle! Here shine gems and colorful patterns.",
+            "audio": "w7l1_story_1"
+          },
+          {
+            "char": "bijli",
+            "emote": "short-circuit",
+            "ur": "بیپ… بیپ… اوہ نہیں! گول مٹول نے میرے دماغ کے جواہر الٹ پلٹ کر دیے!",
+            "en": "Beep… beep… oh no! Gol Matol scrambled my brain-gems!",
+            "audio": "w7l1_story_2"
+          },
+          {
+            "char": "golmatol",
+            "emote": "guilty",
+            "ur": "میاؤں… مجھے مذاق آ رہا تھا! اب میں مدد کروں گا، وعدہ!",
+            "en": "Meow… I was just playing! I will help now, promise!",
+            "audio": "w7l1_story_3"
+          },
+          {
+            "char": "noor",
+            "emote": "thinking",
+            "ur": "دیکھو! درختوں پر پیٹرن ہے: سورج، ستارہ، سورج، ستارہ — جو بار بار دہرائے، وہی پیٹرن!",
+            "en": "Look! The trees hold a pattern: sun, star, sun, star — what repeats again and again is a pattern!",
+            "audio": "w7l1_story_4"
+          },
+          {
+            "char": "chotu",
+            "emote": "happy",
+            "ur": "پیٹرن پڑھ لو تو اگلا قدم خود نظر آ جائے گا!",
+            "en": "Read the pattern and the next step appears by itself!",
+            "audio": "w7l1_story_5"
+          },
+          {
+            "char": "narrator",
+            "ur": "کیا تم پیٹرن پڑھ کر پہلا سوچنے کا جواہر حاصل کرو گے؟",
+            "en": "Will you read the pattern and win the first Thinking Gem?",
+            "audio": "w7l1_story_6",
+            "choice": {
+              "ur": "پیٹرن پڑھو!",
+              "en": "Read the pattern!",
+              "audio": "w7l1_story_6_choice"
+            }
+          }
+        ],
+        "props": [
+          "pattern-blocks",
+          "gem"
         ]
       }
     ]
   },
   "show": {
     "steps": [
-      { "visual": "pattern-blocks", "caption": { "ur": "پیٹرن وہ چیز ہے جو بار بار دہرائی جائے۔", "en": "A pattern is something that repeats again and again." }, "audio": "w7l1_show_1" },
-      { "visual": "shape-star", "caption": { "ur": "سورج، ستارہ، سورج، ستارہ… اگلا سورج آئے گا!", "en": "Sun, star, sun, star… next comes a sun!" }, "audio": "w7l1_show_2" },
-      { "visual": "gem", "caption": { "ur": "پیٹرن سہی پڑھو — سوچنے کا جواہر تمہارا!", "en": "Read the pattern right — the Thinking Gem is yours!" }, "audio": "w7l1_show_3" }
+      {
+        "visual": "pattern-blocks",
+        "caption": {
+          "ur": "پیٹرن وہ چیز ہے جو بار بار دہرائی جائے۔",
+          "en": "A pattern is something that repeats again and again."
+        },
+        "audio": "w7l1_show_1"
+      },
+      {
+        "visual": "shape-star",
+        "caption": {
+          "ur": "سورج، ستارہ، سورج، ستارہ… اگلا سورج آئے گا!",
+          "en": "Sun, star, sun, star… next comes a sun!"
+        },
+        "audio": "w7l1_show_2"
+      },
+      {
+        "visual": "gem",
+        "caption": {
+          "ur": "پیٹرن سہی پڑھو — سوچنے کا جواہر تمہارا!",
+          "en": "Read the pattern right — the Thinking Gem is yours!"
+        },
+        "audio": "w7l1_show_3"
+      }
     ]
   },
   "do": {
     "activity": {
       "type": "quiz-mix",
-      "prompt": { "ur": "پیٹرن دیکھو اور بتاؤ — اگلا کون سا؟", "en": "Look at the pattern and tell — what comes next?" },
+      "prompt": {
+        "ur": "پیٹرن دیکھو اور بتاؤ — اگلا کون سا؟",
+        "en": "Look at the pattern and tell — what comes next?"
+      },
       "audio": "w7l1_do_prompt",
       "questions": [
         {
           "id": "q1",
           "art": "pattern-blocks",
-          "question": { "ur": "سورج، ستارہ، سورج، ستارہ… اگلا کون سا؟", "en": "Sun, star, sun, star… what comes next?" },
+          "question": {
+            "ur": "سورج، ستارہ، سورج، ستارہ… اگلا کون سا؟",
+            "en": "Sun, star, sun, star… what comes next?"
+          },
           "audio": "w7l1_q1",
           "options": [
-            { "id": "a", "art": "sun", "label": { "ur": "سورج", "en": "Sun" } },
-            { "id": "b", "art": "banana", "label": { "ur": "کیلا", "en": "Banana" } }
+            {
+              "id": "a",
+              "art": "sun",
+              "label": {
+                "ur": "سورج",
+                "en": "Sun"
+              }
+            },
+            {
+              "id": "b",
+              "art": "banana",
+              "label": {
+                "ur": "کیلا",
+                "en": "Banana"
+              }
+            }
           ],
           "answer": "a",
-          "explain": { "ur": "ہاں! پیٹرن دہرائے گا: سورج، ستارہ، سورج!", "en": "Yes! The pattern repeats: sun, star, sun!" }
+          "explain": {
+            "ur": "ہاں! پیٹرن دہرائے گا: سورج، ستارہ، سورج!",
+            "en": "Yes! The pattern repeats: sun, star, sun!"
+          }
         },
         {
           "id": "q2",
           "art": "flower",
-          "question": { "ur": "پھول، تتلی، پھول، تتلی… اگلا کون سا؟", "en": "Flower, butterfly, flower, butterfly… what comes next?" },
+          "question": {
+            "ur": "پھول، تتلی، پھول، تتلی… اگلا کون سا؟",
+            "en": "Flower, butterfly, flower, butterfly… what comes next?"
+          },
           "audio": "w7l1_q2",
           "options": [
-            { "id": "a", "art": "stone", "label": { "ur": "پتھر", "en": "Stone" } },
-            { "id": "b", "art": "butterfly", "label": { "ur": "تتلی", "en": "Butterfly" } }
+            {
+              "id": "a",
+              "art": "stone",
+              "label": {
+                "ur": "پتھر",
+                "en": "Stone"
+              }
+            },
+            {
+              "id": "b",
+              "art": "butterfly",
+              "label": {
+                "ur": "تتلی",
+                "en": "Butterfly"
+              }
+            }
           ],
           "answer": "b",
-          "explain": { "ur": "پیٹرن کہتا ہے: پھول کے بعد تتلی!", "en": "The pattern says: after the flower comes the butterfly!" }
+          "explain": {
+            "ur": "پیٹرن کہتا ہے: پھول کے بعد تتلی!",
+            "en": "The pattern says: after the flower comes the butterfly!"
+          }
         },
         {
           "id": "q3",
           "art": "gem",
-          "question": { "ur": "جواہر، ستارہ، جواہر، ستارہ… اگلا کون سا؟", "en": "Gem, star, gem, star… what comes next?" },
+          "question": {
+            "ur": "جواہر، ستارہ، جواہر، ستارہ… اگلا کون سا؟",
+            "en": "Gem, star, gem, star… what comes next?"
+          },
           "audio": "w7l1_q3",
           "options": [
-            { "id": "a", "art": "gem", "label": { "ur": "جواہر", "en": "Gem" } },
-            { "id": "b", "art": "mango", "label": { "ur": "آم", "en": "Mango" } }
+            {
+              "id": "a",
+              "art": "gem",
+              "label": {
+                "ur": "جواہر",
+                "en": "Gem"
+              }
+            },
+            {
+              "id": "b",
+              "art": "mango",
+              "label": {
+                "ur": "آم",
+                "en": "Mango"
+              }
+            }
           ],
           "answer": "a",
-          "explain": { "ur": "زبردست! پیٹرن نے جواہر کھول دیا!", "en": "Zabardast! The pattern unlocked the gem!" }
+          "explain": {
+            "ur": "زبردست! پیٹرن نے جواہر کھول دیا!",
+            "en": "Zabardast! The pattern unlocked the gem!"
+          }
         }
       ],
-      "wrongHint": { "ur": "اوپس! ایک بگ ملا! پیٹرن دوبارہ بولو: پہلا، دوسرا، پہلا… دوبارہ سوچو!", "en": "Oops! A bug! Say the pattern again: first, second, first… think again!" }
+      "wrongHint": {
+        "ur": "اوپس! ایک بگ ملا! پیٹرن دوبارہ بولو: پہلا، دوسرا، پہلا… دوبارہ سوچو!",
+        "en": "Oops! A bug! Say the pattern again: first, second, first… think again!"
+      }
     }
   },
   "cheer": {
     "recap": [
-      { "ur": "پیٹرن = جو بار بار دہرائے۔", "en": "A pattern = what repeats again and again." },
-      { "ur": "پیٹرن پڑھو تو اگلا قدم خود نظر آتا ہے!", "en": "Read the pattern and the next step appears!" }
+      {
+        "ur": "پیٹرن = جو بار بار دہرائے۔",
+        "en": "A pattern = what repeats again and again."
+      },
+      {
+        "ur": "پیٹرن پڑھو تو اگلا قدم خود نظر آتا ہے!",
+        "en": "Read the pattern and the next step appears!"
+      }
     ],
-    "recapAudio": ["w7l1_recap_1", "w7l1_recap_2"],
-    "rewardToast": { "ur": "پہلا سوچنے کا جواہر مل گیا — دماغ چمک گیا!", "en": "First Thinking Gem won — brain glowing!" }
+    "recapAudio": [
+      "w7l1_recap_1",
+      "w7l1_recap_2"
+    ],
+    "rewardToast": {
+      "ur": "پہلا سوچنے کا جواہر مل گیا — دماغ چمک گیا!",
+      "en": "First Thinking Gem won — brain glowing!"
+    }
   }
 }
