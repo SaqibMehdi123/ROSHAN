@@ -34,7 +34,8 @@ export default function Home() {
   // register offline service worker (production builds; dev keeps live reload)
   useEffect(() => {
     if (process.env.NODE_ENV === "production" && "serviceWorker" in navigator) {
-      navigator.serviceWorker.register("/sw.js").catch(() => undefined);
+      const base = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+      navigator.serviceWorker.register(`${base}/sw.js`).catch(() => undefined);
     }
   }, []);
 

@@ -1,10 +1,10 @@
 {
-  "id": "/",
+  "id": "./",
   "name": "ROSHAN — روشن | Village Digital Literacy",
   "short_name": "ROSHAN",
   "description": "Offline-first digital literacy adventure for Classes 1-5: 8 worlds, 76 spoken Urdu lessons — Noor, Chotu aur Bijli ke sath seekhein!",
-  "start_url": "/",
-  "scope": "/",
+  "start_url": "./",
+  "scope": "./",
   "display": "fullscreen",
   "orientation": "any",
   "background_color": "#FFF8EC",
@@ -16,13 +16,13 @@
     {
       "name": "Adventure Map",
       "short_name": "Map",
-      "url": "/",
+      "url": "./",
       "description": "Jump back to the adventure map"
     }
   ],
   "icons": [
-    { "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
-    { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
-    { "src": "/icons/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+    { "src": "./icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "./icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "./icons/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
   ]
 }

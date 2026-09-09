@@ -151,3 +151,9 @@ character sheets and Urdu voice recordings still needed. Artists and voice artis
 ## License
 
 License to be decided by the project owner. © 2026 ROSHAN project.
+
+## Deployment
+
+Pushes to `main` auto-deploy to GitHub Pages via `.github/workflows/deploy.yml`
+(static export, base path `/ROSHAN`): https://saqibmehdi123.github.io/ROSHAN/
+Enable Pages once in repo settings: Settings → Pages → Source: GitHub Actions.

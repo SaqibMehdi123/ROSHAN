@@ -23,6 +23,9 @@ function emit() {
   listeners.forEach((fn) => fn());
 }
 
+/** Static-host base path (e.g. "/ROSHAN" on GitHub Pages) — empty locally. */
+const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
 /** Called by the settings screen — children can choose a slower story voice. */
 export function setSlowVoice(slow: boolean) {
   slowVoice = slow;
@@ -109,7 +112,7 @@ function playFile(key: string, done: () => void): Promise<boolean> {
       resolve(ok);
     };
     try {
-      const audio = new Audio(`/audio/${key}.mp3`);
+      const audio = new Audio(`${BASE}/audio/${key}.mp3`);
       currentHtmlAudio = audio;
       audio.onended = () => {
         currentHtmlAudio = null;

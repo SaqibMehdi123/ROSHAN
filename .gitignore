@@ -60,3 +60,6 @@ server.log
 *.db
 server.log
 tool-results/
+
+# static export output
+out/
