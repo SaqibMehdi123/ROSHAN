@@ -1,0 +1,6 @@
+1:"$Sreact.fragment"
+2:I[22016,["/ROSHAN/_next/static/chunks/ff1a16fafef87110.js","/ROSHAN/_next/static/chunks/d2be314c3ece3fbe.js","/ROSHAN/_next/static/chunks/2e25c7de70e0c09e.js"],""]
+3:I[97367,["/ROSHAN/_next/static/chunks/ff1a16fafef87110.js","/ROSHAN/_next/static/chunks/d2be314c3ece3fbe.js"],"OutletBoundary"]
+4:"$Sreact.suspense"
+0:{"buildId":"yIoxjt4n5gMCWbZPkPoZ7","rsc":["$","$1","c",{"children":[["$","main",null,{"className":"flex min-h-dvh flex-col items-center justify-center gap-5 px-6 text-center","children":[["$","div",null,{"className":"anim-bob text-7xl","children":"🧭"}],["$","h1",null,{"className":"urdu-tight text-3xl font-bold","children":"یہ راستہ نقشے پر نہیں ہے!"}],["$","p",null,{"className":"ltr-term text-sm text-roshan-ink-soft","dir":"ltr","children":"This path is not on the map — let's go home."}],["$","$L2",null,{"href":"/","className":"btn-kid btn-go","children":["$","span",null,{"className":"urdu-tight text-xl font-bold","children":"نقشے پر واپس"}]}]]}],[["$","script","script-0",{"src":"/ROSHAN/_next/static/chunks/2e25c7de70e0c09e.js","async":true}]],["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"loading":null,"isPartial":false}
+5:null

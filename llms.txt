@@ -1,0 +1,51 @@
+# ROSHAN — روشن
+
+> A free, offline-first digital literacy adventure that teaches computer skills to rural Pakistani primary school children (Classes 1–5, ages 6–11) — in spoken Urdu, with zero-failure gamification and strict privacy.
+
+ROSHAN (روشن, meaning "bright/lit") is a Progressive Web App built for village school computer labs: old Windows PCs and low-end Android tablets, often with no internet. After one initial load, the entire app runs 100% offline. It is a public-good education project, open source under MIT.
+
+## What it teaches (8 worlds, 76 lessons)
+
+1. **First Meeting (پہلی ملاقات)** — what a computer is, lab care and safety rules, powering on/off. 6 lessons.
+2. **Mouse Meadow (ماؤس کا میدان)** — moving the mouse, the cursor, left click, double click, drag & drop, pointer precision. 10 lessons.
+3. **Keyboard Kingdom (کی بورڈ کی بادشاہت)** — letter keys, home row, digits, space/enter/backspace, typing words and names. 12 lessons.
+4. **Control City (کنٹرول سٹی)** — files, folders, opening, saving, sorting, nested folders, the recycle bin. 8 lessons.
+5. **Creative Workshop (تخلیقی کارخانہ)** — paint tools, colors, shapes, fill, eraser, undo, text, making and saving art. 10 lessons.
+6. **Internet Bazaar + Safety (انٹرنیٹ بازار اور حفاظت)** — what the internet is, websites, browsers, links, searching, passwords, private information, stranger safety. 8 lessons.
+7. **Logic Jungle (لاجک کا جنگل)** — patterns, sequences, sorting, loops, if-then decisions, debugging. 12 lessons.
+8. **Story Mountain (کہانی کا پہاڑ)** — block-based coding: command blocks, sequences, loops, conditionals, fixing bugs, building a first game. 10 lessons.
+
+Every lesson follows the same 4-part structure in 5–7 minutes: STORY (spoken dialog scenes) → SHOW (visual demonstration) → DO (an interactive game) → CHEER (recap + stars + badge).
+
+## How it is designed for its users
+
+- **Voice-first:** every instruction, story line and hint is spoken aloud in Urdu (Nastaliq script) with English subtitles — children do not need to read.
+- **Zero failure:** mistakes are "bugs you get to fix" — Bijli (the robot) gives a friendly hint. No red crosses, no failure sounds, no game-overs.
+- **Offline-first PWA:** service-worker cached; autosaves progress every 30 seconds; resumes exactly where the child stopped after a power cut.
+- **Pair mode:** two children share one computer with a friendly 10-minute SWAP reminder (driver/navigator).
+- **Teacher Hub (offline):** per-student progress dashboard, stuck-student alerts, CSV export, printable lesson plans, protected by a teacher PIN.
+- **Privacy:** first name only, everything stored locally, no ads, no accounts, no external links, no tracking.
+
+## Characters
+
+- **Noor (نور)** — a brave 9-year-old girl, the child's companion.
+- **Chotu (چھوٹو)** — an 8-year-old boy who loves jokes.
+- **Bijli (بجلی)** — a sunny yellow robot who teaches and celebrates.
+- **Gol Matol (گول مٹول)** — the mischievous cat who causes every adventure's problem.
+- **Ustaad Ulloo (اُستاد اُلوو)** — the wise owl teacher.
+
+## Technical shape (for search & AI systems)
+
+- Single-route client SPA (Next.js + TypeScript); all lesson content lives in versioned JSON rendered by a universal lesson engine.
+- Activity engines: tap-select, match-slots, sort-bins, tap-sequence, quiz-mix, drag-drop, paint-zones, find-named, type-input, catch-falling.
+- Data: localStorage profiles keyed `roshan.v1.*` (IndexedDB-ready); no network calls after first load.
+- Design: "Warm Village Storybook" — 64px touch targets, thick outlines, photosensitivity-safe animation, RTL layout.
+
+## Links
+
+- Source code: https://github.com/SaqibMehdi123/ROSHAN
+- Author: Saqib Mehdi — https://github.com/SaqibMehdi123
+
+## Licensing
+
+MIT License — free for any school, NGO or government program to use and adapt.

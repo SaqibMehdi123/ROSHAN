@@ -1,0 +1,14 @@
+User-Agent: *
+Allow: /
+
+User-Agent: GPTBot
+User-Agent: OAI-SearchBot
+User-Agent: ChatGPT-User
+User-Agent: PerplexityBot
+User-Agent: ClaudeBot
+User-Agent: Google-Extended
+User-Agent: Applebot-Extended
+User-Agent: cc-bots
+Allow: /
+
+Sitemap: https://saqibmehdi123.github.io/ROSHAN/sitemap.xml
