@@ -7,7 +7,7 @@
  *  - audio files (/audio/*.mp3, ~75MB) are cached on first play (on-demand);
  *  - never cache cross-origin, non-GET, or failed responses.
  */
-const CACHE = "roshan-vmtua1erw";
+const CACHE = "roshan-vmu1ctafo";
 const SCOPE = new URL(self.registration.scope).pathname;
 const PRECACHE = [
   SCOPE,
