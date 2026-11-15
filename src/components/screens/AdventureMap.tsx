@@ -8,13 +8,13 @@
 
 import { useEffect } from "react";
 import { useApp, useActiveProfile } from "@/lib/store";
-import { WORLDS, LESSONS, lessonsOfWorld, getLesson } from "@/lib/content";
+import { WORLDS, LESSONS, lessonsOfWorld, getLesson, WORLD_MEDALS } from "@/lib/content";
 import { Art } from "@/components/art/Props";
 import { Character } from "@/components/art/Characters";
 import { RepeatButton } from "@/components/ui-kids/KidKit";
 import { playAudio } from "@/lib/audio";
 
-const MEDALS = ["medal-box", "medal-mouse", "medal-keyboard", "medal-folder", "medal-paint", "medal-shield", "medal-gem", "medal-mountain"];
+const MEDALS = WORLD_MEDALS;
 
 /** Node positions along an S-curved path (RTL: W1 starts top-right, ends at W8 left). */
 const NODE_POS = [
@@ -150,6 +150,7 @@ export function AdventureMap() {
             const readyLessons = lessonsOfWorld(w.id);
             const doneCount = readyLessons.filter((l) => profile.progress[l.id]?.completed).length;
             const pct = readyLessons.length ? doneCount / readyLessons.length : 0;
+            const inProgress = unlocked && pct > 0 && pct < 1;
             return (
               <button
                 key={w.id}
@@ -166,14 +167,13 @@ export function AdventureMap() {
                 aria-label={w.name.en}
               >
                 <div
-                  className={`node-circle mx-auto ${isCurrent ? "node-current" : ""} ${!unlocked ? "node-locked" : ""}`}
+                  className={`node-circle mx-auto ${isCurrent ? "node-current" : ""} ${!unlocked ? "node-locked" : ""} ${inProgress ? "node-progress" : ""}`}
                   style={unlocked ? { background: `radial-gradient(circle at 32% 26%, #ffffffcc 0%, ${w.color} 46%)`, borderColor: "#4A3421" } : undefined}
                 >
-                  <Art id={unlocked ? MEDALS[i] : "lock"} size={unlocked ? 44 : 38} />
+                  <Art id={unlocked ? MEDALS[i] : "lock"} size={unlocked ? (isCurrent ? 50 : 44) : 34} />
                 </div>
                 <div
-                  className={`urdu-tight mx-auto mt-1.5 w-[5.6rem] rounded-full px-1 py-0.5 text-[0.82rem] font-bold leading-[1.9] sm:w-28 sm:text-[0.95rem] ${unlocked ? "bg-white/85 shadow-sm" : "bg-white/0"}`}
-                  style={{ color: unlocked ? "#4A3421" : "#8A7156" }}
+                  className={`urdu-tight map-label mx-auto mt-1.5 w-[5.6rem] rounded-full px-1 py-0.5 text-[0.82rem] font-bold leading-[1.9] sm:w-28 sm:text-[0.95rem] ${unlocked ? (isCurrent ? "map-label-current" : "") : "map-label-locked"}`}
                 >
                   {w.name.ur}
                 </div>
@@ -231,8 +231,10 @@ export function AdventureMap() {
           }}
         >
           <Art id="gem" size={36} />
-          <span className="urdu-tight text-2xl font-bold">برین جم</span>
-          <span className="ltr-term text-xs opacity-80" dir="ltr">Brain Gym · 3 min</span>
+          <span className="flex flex-col items-center leading-none">
+            <span className="urdu-tight text-2xl font-bold">برین جم</span>
+            <span className="urdu-tight mt-1 text-[0.8rem] opacity-80">دماغ کی ورزش · ۳ منٹ</span>
+          </span>
         </button>
       </div>
 

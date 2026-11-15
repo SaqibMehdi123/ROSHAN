@@ -49,6 +49,7 @@ export function WelcomeGate() {
           <BigButton
             label={{ ur: "چلو!", en: "Let's go!" }}
             variant="go"
+            className="min-w-48"
             disabled={name.trim().length < 2}
             onClick={() => {
               void playAudio(undefined, "واہ! خوبصورت نام ہے!");
@@ -66,18 +67,27 @@ export function WelcomeGate() {
         <h2 className="urdu-tight text-3xl font-bold sm:text-4xl">اپنا رنگ چُنو!</h2>
         <p className="urdu-tight mt-1 text-xl text-roshan-ink-soft">یہ تمھارا خاص رنگ ہو گا۔</p>
         <div className="mt-8 flex max-w-lg flex-wrap justify-center gap-3 sm:gap-4">
-          {AVATAR_COLORS.map((c) => (
-            <button
-              key={c}
-              onClick={() => {
-                setColor(c);
-                void playAudio(undefined, "کمال!");
-              }}
-              className={`h-16 w-16 rounded-full border-4 transition-transform hover:scale-110 sm:h-20 sm:w-20 ${color === c ? "scale-110 border-roshan-ink shadow-[var(--r-shadow)]" : "border-white shadow"}`}
-              style={{ background: c }}
-              aria-label={`color ${c}`}
-            />
-          ))}
+          {AVATAR_COLORS.map((c) => {
+            const on = color === c;
+            return (
+              <button
+                key={c}
+                onClick={() => {
+                  setColor(c);
+                  void playAudio(undefined, "کمال!");
+                }}
+                className={`relative h-16 w-16 rounded-full border-4 transition-transform hover:scale-110 sm:h-20 sm:w-20 ${on ? "scale-110 border-roshan-ink shadow-[var(--r-shadow)]" : "border-white shadow"}`}
+                style={{ background: c }}
+                aria-label={`color ${c}`}
+              >
+                {on && (
+                  <span className="ltr-term absolute inset-0 flex items-center justify-center text-4xl font-bold text-white drop-shadow-[0_2px_0_rgba(74,52,33,0.6)]" aria-hidden>
+                    ✓
+                  </span>
+                )}
+              </button>
+            );
+          })}
         </div>
         <div className="mt-10 flex items-end justify-center gap-6 sm:gap-8">
           <Bijli size={90} emote="happy" />
@@ -220,8 +230,8 @@ function Shell({ children }: { children: React.ReactNode }) {
           switch player
         </button>
       )}
-      <p className="ltr-term absolute bottom-3 left-0 right-0 text-center text-xs text-roshan-ink-soft" dir="ltr">
-        ROSHAN · روشن — digital literacy for every village child · works offline
+      <p className="urdu-tight absolute bottom-3 left-0 right-0 text-center text-sm text-roshan-ink-soft" dir="rtl">
+        روشن — ہر بچے کی روشن کمپیوٹر دنیا · بغیر انٹرنیٹ بھی چلتا ہے
       </p>
     </main>
   );

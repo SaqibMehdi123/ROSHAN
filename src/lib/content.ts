@@ -109,6 +109,18 @@ export function lessonsOfWorld(worldId: number): Lesson[] {
   return LESSONS.filter((l) => l.world === worldId).sort((a, b) => a.order - b.order);
 }
 
+/** World index → trophy medal art id (map node + world banner share this). */
+export const WORLD_MEDALS = [
+  "medal-box",
+  "medal-mouse",
+  "medal-keyboard",
+  "medal-folder",
+  "medal-paint",
+  "medal-shield",
+  "medal-gem",
+  "medal-mountain",
+];
+
 export function getLesson(id: string): Lesson | undefined {
   return LESSONS.find((l) => l.id === id);
 }

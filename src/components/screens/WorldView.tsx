@@ -6,7 +6,7 @@
 "use client";
 
 import { useApp, useActiveProfile } from "@/lib/store";
-import { getWorld, lessonsOfWorld } from "@/lib/content";
+import { getWorld, lessonsOfWorld, WORLD_MEDALS } from "@/lib/content";
 import { Art } from "@/components/art/Props";
 import { Character } from "@/components/art/Characters";
 import { BigButton, RepeatButton } from "@/components/ui-kids/KidKit";
@@ -42,7 +42,7 @@ export function WorldView() {
         <div className="pointer-events-none absolute -left-10 -top-10 h-32 w-32 rounded-full opacity-30" style={{ background: world.color }} aria-hidden />
         <div className="pointer-events-none absolute -bottom-12 -right-12 h-40 w-40 rounded-full opacity-20" style={{ background: world.color }} aria-hidden />
 
-        <div className="relative">
+          <div className="relative">
           <div className="mx-auto mb-1 w-fit anim-bob">
             <Character id="bijli" size={72} emote="happy" />
           </div>
@@ -50,21 +50,21 @@ export function WorldView() {
             {world.name.ur}
           </h1>
           <p className="ltr-term text-sm font-semibold tracking-wide text-roshan-ink-soft" dir="ltr">{world.name.en}</p>
-          <p className="urdu-tight mx-auto mt-2 max-w-xl text-lg sm:text-xl">{world.arcSummary.ur}</p>
+          <p className="urdu-tight mx-auto mt-2 max-w-xl text-lg sm:text-xl leading-[1.9] line-clamp-2">{world.arcSummary.ur}</p>
 
           <div className="mt-4 flex flex-wrap items-center justify-center gap-2">
-            <span className="stat-chip urdu-tight text-base">
-              <Art id="star" size={20} />
+            <span className="stat-chip urdu-tight text-base" style={{ borderColor: `${world.color}55` }}>
+              <Art id={WORLD_MEDALS[world.id - 1]} size={26} />
               بیج: {world.badgeName.ur}
             </span>
-            <span className="stat-chip ltr-term text-sm" dir="ltr">
-              {doneCount}/{total} lessons
+            <span className="stat-chip urdu-tight text-sm">
+              <span className="ltr-term" dir="ltr">{doneCount}/{total}</span> سبق
             </span>
           </div>
           <div className="meter mx-auto mt-3 max-w-xs" dir="ltr">
             <span style={{ width: `${pct * 100}%` }} />
           </div>
-        </div>
+          </div>
       </div>
 
       {/* Lesson path (RTL) */}
@@ -108,7 +108,7 @@ export function WorldView() {
                   <span className="urdu-tight text-sm">جلد</span>
                 </div>
               )}
-              <p className="urdu-tight mt-2 text-[1.02rem] font-semibold leading-[1.9] sm:text-base">
+              <p className={`urdu-tight map-label mt-2 rounded-full px-2 text-center text-[1.02rem] font-semibold leading-[1.9] sm:text-base ${locked ? "map-label-locked" : ""}`}>
                 {lesson ? lesson.title.ur : "نئی کہانی"}
               </p>
               {lesson && done && (
