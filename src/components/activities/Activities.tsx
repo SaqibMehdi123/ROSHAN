@@ -15,6 +15,7 @@ import type {
 } from "@/lib/schema";
 import { Art } from "@/components/art/Props";
 import { BugBanner } from "@/components/ui-kids/KidKit";
+import { useApp } from "@/lib/store";
 import { playAudio, stopSpeaking } from "@/lib/audio";
 import { playSfx } from "@/lib/music";
 import { PromptBar, useBugFeedback } from "./shared";
@@ -164,9 +165,11 @@ export function TapSelectActivity({ activity, onWin, hintHandAfter = 2 }: Common
         )}
       </div>
       <div className="mt-3 flex items-center justify-center gap-4">
-        <div className="ltr-term rounded-full bg-white px-4 py-1.5 text-sm font-semibold shadow-sm" dir="ltr">
-          {found.length} / {correctItems.length}
-        </div>
+        <span className="stat-chip urdu-tight text-base" dir="rtl" title="ملے ہوئے — found">
+          <span className="ltr-term flex items-center gap-1.5" dir="ltr">
+            <Art id="star" size={18} /> {found.length} / {correctItems.length}
+          </span>
+        </span>
       </div>
       {banner && <div className="mt-3"><BugBanner hint={banner} visible /></div>}
       {found.length === correctItems.length && (
@@ -375,8 +378,8 @@ export function SortBinsActivity({ activity, onWin, hintHandAfter = 2 }: CommonP
           </div>
         )}
 
-        <div className="ltr-term mt-4 text-center text-sm text-roshan-ink-soft" dir="ltr">
-          card {Math.min(idx + 1, a.cards.length)} / {a.cards.length}
+        <div className="urdu-tight mt-4 text-center text-sm text-roshan-ink-soft" dir="rtl">
+          کارڈ {Math.min(idx + 1, a.cards.length)} / {a.cards.length}
         </div>
       </div>
       {stalls >= hintHandAfter && !explain && <HintHandCenter />}

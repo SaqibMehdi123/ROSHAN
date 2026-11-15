@@ -72,8 +72,8 @@ export function KeyBoard({
   };
 
   return (
-    <div className="mx-auto mt-4 w-fit max-w-full select-none rounded-3xl border-4 border-roshan-card-border bg-[#EDE4FB] p-3 shadow-[var(--r-shadow)]">
-      <div className="flex flex-wrap items-center justify-center gap-2" dir="ltr">
+    <div className="mx-auto mt-4 w-fit max-w-full select-none rounded-3xl border-4 border-roshan-card-border bg-[#EDE4FB] p-3 shadow-[var(--r-shadow)] sm:p-4">
+      <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3" dir="ltr">
         {caps.map((k) => {
           const special = SPECIALS[k];
           const isHint = hintKey === k;
@@ -85,7 +85,7 @@ export function KeyBoard({
               className={`relative transition-transform hover:scale-105 active:scale-95 ${isHint ? "anim-ring rounded-2xl" : ""} ${isWrong ? "anim-wiggle" : ""}`}
               aria-label={special ? special.label : `key ${k}`}
             >
-              <Art id={special ? special.art : `key-${k}`} size={special ? (special.wide ? 92 : 72) : 72} />
+              <Art id={special ? special.art : `key-${k}`} size={special ? (special.wide ? 104 : 84) : 84} />
             </button>
           );
         })}

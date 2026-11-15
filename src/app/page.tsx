@@ -20,6 +20,7 @@ import { TeacherHub } from "@/components/teacher/TeacherHub";
 export default function Home() {
   const { screen, hydrated, hydrate } = useApp();
   const active = useActiveProfile(); // hooks must run unconditionally
+  const activeLessonId = useApp((s) => s.activeLessonId);
 
   // hydrate persisted state on first client render
   useEffect(() => {
@@ -68,7 +69,10 @@ export default function Home() {
         view = <WorldView />;
         break;
       case "lesson":
-        view = <LessonPlayer />;
+        // key per lesson: guarantees a clean player state when switching lessons
+        // directly (e.g. "next lesson" on the cheer screen) — phase/stars used to
+        // carry over from the previous lesson.
+        view = <LessonPlayer key={activeLessonId ?? "lesson"} />;
         break;
       case "braingym":
         view = <BrainGym />;

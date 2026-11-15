@@ -10,7 +10,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { Lesson, Phase, StoryLine } from "@/lib/schema";
 import { useApp, useActiveProfile } from "@/lib/store";
-import { getLesson, getWorld } from "@/lib/content";
+import { getLesson, getWorld, lessonsOfWorld } from "@/lib/content";
 import { Art } from "@/components/art/Props";
 import { Character } from "@/components/art/Characters";
 import { BigButton, Confetti, ProgressDots, RepeatButton, SpeakBubble, StarRow } from "@/components/ui-kids/KidKit";
@@ -256,9 +256,16 @@ function StoryPhase({
       )}
 
       {!line.choice && (
-        <p className="urdu-tight mt-4 text-center text-lg text-roshan-ink-soft" style={{ opacity: lineDone ? 1 : 0.45 }}>
-          {lineDone ? "آگے بڑھنے کے لیے کہیں بھی دباؤ" : "…" }
-        </p>
+        <div className="mt-4 flex justify-center">
+          {lineDone ? (
+            <span className="urdu-tight anim-bob inline-flex items-center gap-2 rounded-full border-2 border-roshan-orange bg-[#FFF8EC] px-5 py-2 text-lg font-bold text-roshan-orange-deep shadow-sm">
+              آگے بڑھنے کے لیے کہیں بھی دباؤ
+              <span className="ltr-term text-xl" dir="ltr" aria-hidden>←</span>
+            </span>
+          ) : (
+            <span className="urdu-tight text-lg text-roshan-ink-soft animate-pulse">…</span>
+          )}
+        </div>
       )}
     </div>
   );
@@ -335,6 +342,13 @@ function CheerPhase({
   const world = lesson.world;
   const worldDef = getWorld(world);
   const badgeName = newBadge && worldDef ? worldDef.badgeName : null;
+  const profile = useActiveProfile();
+  const openLesson = useApp((s) => s.openLesson);
+
+  // Next uncompleted lesson in this world → give the child a direct "next" action
+  const nextLesson = profile
+    ? lessonsOfWorld(world).find((l) => !profile.progress[l.id]?.completed && l.id !== lesson.id)
+    : undefined;
 
   useEffect(() => {
     setCelebrate(true);
@@ -344,7 +358,7 @@ function CheerPhase({
       clearTimeout(t1);
       clearTimeout(t2);
     };
-     
+    
   }, []);
 
   return (
@@ -364,6 +378,7 @@ function CheerPhase({
       <div className="mt-4 flex justify-center">
         <StarRow count={stars} size={56} />
       </div>
+      <p className="urdu-tight mt-1 text-sm text-roshan-ink-soft">تمہارے ستارے — your stars</p>
 
       {/* Ustaad Ulloo 2-line recap */}
       <div className="card-kid mx-auto mt-6 flex max-w-xl items-center gap-4 p-5" key={lesson.cheer.recap[0].ur}>
@@ -388,10 +403,19 @@ function CheerPhase({
         </div>
       )}
 
-      <div className="mt-6 flex justify-center">
+      <div className="mt-6 flex flex-wrap justify-center gap-4">
+        {nextLesson && (
+          <BigButton
+            label={{ ur: "اگلا سبق", en: "Next lesson" }}
+            variant="success"
+            onClick={() => openLesson(nextLesson.id)}
+          />
+        )}
         <BigButton label={{ ur: "نقشے پر واپس", en: "Back to map" }} variant="go" onClick={onHome} />
       </div>
-      <p className="ltr-term mt-3 text-xs text-roshan-ink-soft" dir="ltr">world {world} · lesson complete</p>
+      <p className="urdu-tight mt-3 text-xs text-roshan-ink-soft">
+        دنیا {world} · سبق مکمل!
+      </p>
     </div>
   );
 }
