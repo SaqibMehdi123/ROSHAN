@@ -65,7 +65,7 @@ export function WelcomeGate() {
       <Shell>
         <h2 className="urdu-tight text-3xl font-bold sm:text-4xl">اپنا رنگ چُنو!</h2>
         <p className="urdu-tight mt-1 text-xl text-roshan-ink-soft">یہ تمھارا خاص رنگ ہو گا۔</p>
-        <div className="mt-8 flex max-w-lg flex-row-reverse flex-wrap justify-center gap-3 sm:gap-4">
+        <div className="mt-8 flex max-w-lg flex-wrap justify-center gap-3 sm:gap-4">
           {AVATAR_COLORS.map((c) => (
             <button
               key={c}
@@ -161,7 +161,7 @@ export function ProfileGate() {
         <Bijli size={130} emote="happy" />
       </div>
       <h2 className="urdu-tight mt-2 text-3xl font-bold sm:text-4xl">کون کھیلے گا؟</h2>
-      <div className="mt-8 flex flex-row-reverse flex-wrap justify-center gap-4">
+      <div className="mt-8 flex flex-wrap justify-center gap-4">
         {profiles.map((p) => (
           <button
             key={p.id}

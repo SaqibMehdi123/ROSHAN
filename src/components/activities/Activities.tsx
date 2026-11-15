@@ -5,7 +5,7 @@
  */
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type {
   Activity,
   Bilingual,
@@ -15,9 +15,9 @@ import type {
 } from "@/lib/schema";
 import { Art } from "@/components/art/Props";
 import { BugBanner } from "@/components/ui-kids/KidKit";
-import { useApp } from "@/lib/store";
 import { playAudio, stopSpeaking } from "@/lib/audio";
 import { playSfx } from "@/lib/music";
+import { PromptBar, useBugFeedback } from "./shared";
 import {
   DragDropActivity,
   FindNamedActivity,
@@ -31,20 +31,6 @@ interface CommonProps {
   activity: Activity;
   onWin: () => void;
   hintHandAfter?: number; // stalls before the hint hand appears (default 2)
-}
-
-function useBugFeedback() {
-  const addBug = useApp((s) => s.addBug);
-  const [banner, setBanner] = useState<Bilingual | null>(null);
-  const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const showBug = (hint: Bilingual) => {
-    addBug();
-    setBanner(hint);
-    if (timer.current) clearTimeout(timer.current);
-    timer.current = setTimeout(() => setBanner(null), 4200);
-  };
-  useEffect(() => () => { if (timer.current) clearTimeout(timer.current); }, []);
-  return { banner, showBug };
 }
 
 /* ============================ TAP SELECT ============================ */
@@ -114,7 +100,7 @@ export function TapSelectActivity({ activity, onWin, hintHandAfter = 2 }: Common
 
   return (
     <div className="w-full">
-      <Prompt prompt={a.prompt} audio={a.audio} />
+      <PromptBar prompt={a.prompt} audio={a.audio} />
       <div
         ref={sceneRef}
         className="relative mx-auto max-w-4xl overflow-hidden rounded-3xl border-4 border-roshan-card-border shadow-[var(--r-shadow)]"
@@ -238,7 +224,7 @@ export function MatchSlotsActivity({ activity, onWin, hintHandAfter = 2 }: Commo
 
   return (
     <div className="w-full">
-      <Prompt prompt={a.prompt} audio={a.audio} />
+      <PromptBar prompt={a.prompt} audio={a.audio} />
       <div className="mx-auto grid max-w-4xl grid-cols-1 gap-4 md:grid-cols-2">
         {/* Bijli with empty slots (or a keyboard-style row for home-row practice) */}
         <div className="card-kid flex flex-col items-center justify-center gap-3 p-4">
@@ -354,7 +340,7 @@ export function SortBinsActivity({ activity, onWin, hintHandAfter = 2 }: CommonP
 
   return (
     <div className="w-full">
-      <Prompt prompt={a.prompt} audio={a.audio} />
+      <PromptBar prompt={a.prompt} audio={a.audio} />
       <div className="mx-auto max-w-4xl">
         {/* current card */}
         {card && (
@@ -400,21 +386,6 @@ export function SortBinsActivity({ activity, onWin, hintHandAfter = 2 }: CommonP
 }
 
 /* ======================= shared little pieces ======================= */
-function Prompt({ prompt, audio }: { prompt: Bilingual; audio: string }) {
-  return (
-    <div className="mb-4 text-center">
-      <p className="urdu text-2xl font-bold" key={prompt.ur}>{prompt.ur}</p>
-      <p className="ltr-term mt-1 text-sm text-roshan-ink-soft" dir="ltr">{prompt.en}</p>
-      <button
-        className="ltr-term mt-1 text-xs text-roshan-teal underline"
-        onClick={() => void playAudio(audio, prompt.ur)}
-      >
-        sunno dobara (replay instruction)
-      </button>
-    </div>
-  );
-}
-
 /** Friendly pointing hand (SVG, no emoji) — appears after repeated stalls. */
 function HandSvg({ size = 44, flip = false }: { size?: number; flip?: boolean }) {
   return (

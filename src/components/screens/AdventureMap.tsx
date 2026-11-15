@@ -8,7 +8,7 @@
 
 import { useEffect } from "react";
 import { useApp, useActiveProfile } from "@/lib/store";
-import { WORLDS, lessonsOfWorld } from "@/lib/content";
+import { WORLDS, LESSONS, lessonsOfWorld, getLesson } from "@/lib/content";
 import { Art } from "@/components/art/Props";
 import { Character } from "@/components/art/Characters";
 import { RepeatButton } from "@/components/ui-kids/KidKit";
@@ -54,7 +54,13 @@ export function AdventureMap() {
     return prevReady.length > 0 && prevReady.every((l) => profile.progress[l.id]?.completed);
   };
 
-  const currentWorld = profile.current?.world ?? 1;
+  // "You are here": the world of the FIRST lesson the child has not finished yet.
+  // (P1 fix — previously fell back to world 1, so the marker jumped "home" after every lesson.)
+  const currentWorld = (() => {
+    const next = LESSONS.find((l) => !profile.progress[l.id]?.completed);
+    if (next) return next.world;
+    return WORLDS[WORLDS.length - 1].id;
+  })();
   const totalStars = Object.values(profile.stars).reduce((a, b) => a + b, 0);
   const doneLessons = Object.values(profile.progress).filter((p) => p.completed).length;
   const badgeCount = profile.badges.length;
@@ -73,11 +79,11 @@ export function AdventureMap() {
           <div className="text-right">
             <p className="urdu-tight text-xl font-bold sm:text-2xl">{profile.name}! خوش آمدید</p>
             <div className="mt-0.5 flex flex-wrap items-center justify-end gap-1.5">
-              <span className="stat-chip ltr-term text-xs sm:text-sm" dir="ltr">
+              <span className="stat-chip ltr-term text-xs sm:text-sm" dir="ltr" title="ستارے — stars">
                 <Art id="star" size={16} /> {totalStars}
               </span>
-              <span className="stat-chip ltr-term text-xs sm:text-sm" dir="ltr">
-                🧩 {doneLessons}/{profile.stars ? Object.keys(profile.progress).length || doneLessons : doneLessons}
+              <span className="stat-chip urdu-tight text-xs sm:text-sm" title="سبق مکمل — lessons done">
+                <span className="ltr-term" dir="ltr">{doneLessons}/{LESSONS.length}</span> سبق
               </span>
               {profile.helperMode && (
                 <span className="stat-chip ltr-term text-xs text-roshan-teal sm:text-sm" dir="ltr">
@@ -89,8 +95,8 @@ export function AdventureMap() {
         </div>
         <div className="flex items-center gap-2">
           <IconButton art="trophy" label="انعام" onClick={() => go("album")} />
-          <IconButton art="medal-box" label="دوست" onClick={() => go("cast")} />
-          <IconButton art="home" label="سیٹنگ" onClick={() => go("settings")} />
+          <IconButton art="friends" label="دوست" onClick={() => go("cast")} />
+          <IconButton art="settings" label="سیٹنگ" onClick={() => go("settings")} />
         </div>
       </header>
 
@@ -195,22 +201,25 @@ export function AdventureMap() {
       </div>
 
       {/* Resume card */}
-      {profile.current && (
-        <div className="card-kid mt-5 flex flex-col items-center justify-between gap-4 p-5 sm:flex-row sm:p-6">
-          <div className="text-center sm:text-right">
-            <p className="urdu-tight text-2xl font-bold sm:text-[1.7rem]">وہاں سے شروع کرو جہاں تم رکے تھے!</p>
-            <p className="urdu-tight text-lg text-roshan-ink-soft">
-              سبق: {profile.current.lesson} — دوبارہ کھولو۔
-            </p>
+      {profile.current && (() => {
+        const rl = getLesson(profile.current.lesson);
+        return (
+          <div className="card-kid mt-5 flex flex-col items-center justify-between gap-4 p-5 sm:flex-row sm:p-6">
+            <div className="text-center sm:text-right">
+              <p className="urdu-tight text-2xl font-bold sm:text-[1.7rem]">وہاں سے شروع کرو جہاں تم رکے تھے!</p>
+              <p className="urdu-tight text-lg text-roshan-ink-soft">
+                {rl ? rl.title.ur : "سبق"} — دوبارہ کھولو۔
+              </p>
+            </div>
+            <button
+              className="btn-kid btn-success w-full sm:w-auto"
+              onClick={() => useApp.getState().openLesson(profile.current!.lesson, true)}
+            >
+              <span className="urdu-tight text-2xl font-bold">جاری رکھو</span>
+            </button>
           </div>
-          <button
-            className="btn-kid btn-success w-full sm:w-auto"
-            onClick={() => useApp.getState().openLesson(profile.current!.lesson, true)}
-          >
-            <span className="urdu-tight text-2xl font-bold">جاری رکھو</span>
-          </button>
-        </div>
-      )}
+        );
+      })()}
 
       {/* Bottom action row: Brain Gym door */}
       <div className="mt-5 flex justify-center">

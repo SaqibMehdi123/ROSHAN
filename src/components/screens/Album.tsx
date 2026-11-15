@@ -27,9 +27,12 @@ export function Album() {
 
       <div className="card-kid p-5 text-center">
         <h1 className="urdu text-3xl font-bold">میرا انعام خانہ</h1>
-        <p className="ltr-term text-xs text-roshan-ink-soft" dir="ltr">
-          Trophy Shelf — {totalStars} stars · {profile.bugsFixed} bugs fixed · streak {profile.streak.count} days
-          {profile.helperMode ? " · Computer Hero helper!" : ""}
+        <p className="urdu-tight mt-1 text-base text-roshan-ink-soft" dir="rtl">
+          ★ {totalStars} · بگ فکس {profile.bugsFixed} · لگاتار {profile.streak.count} دن
+          {profile.helperMode ? " · کمپیوٹر ہیرو!" : ""}
+        </p>
+        <p className="ltr-term mt-0.5 text-xs text-roshan-ink-soft" dir="ltr">
+          {totalStars} stars · {profile.bugsFixed} bugs fixed · {profile.streak.count}-day streak
         </p>
       </div>
 

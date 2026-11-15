@@ -21,40 +21,12 @@ import { playAudio, stopSpeaking } from "@/lib/audio";
 import { playSfx } from "@/lib/music";
 import { KeyBoard, usePhysicalKeys, type KeyAction } from "./KeyBoard";
 import { seedOf, seededShuffle } from "./Activities2";
+import { PromptBar, useBugFeedback } from "./shared";
 
 interface CommonProps {
   activity: import("@/lib/schema").Activity;
   onWin: () => void;
   hintHandAfter?: number;
-}
-
-function useBugFeedback() {
-  const addBug = useApp((s) => s.addBug);
-  const [banner, setBanner] = useState<Bilingual | null>(null);
-  const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const showBug = (hint: Bilingual) => {
-    addBug();
-    setBanner(hint);
-    if (timer.current) clearTimeout(timer.current);
-    timer.current = setTimeout(() => setBanner(null), 4200);
-  };
-  useEffect(() => () => { if (timer.current) clearTimeout(timer.current); }, []);
-  return { banner, showBug };
-}
-
-function Prompt({ prompt, audio }: { prompt: Bilingual; audio: string }) {
-  return (
-    <div className="mb-4 text-center">
-      <p className="urdu text-2xl font-bold" key={prompt.ur}>{prompt.ur}</p>
-      <p className="ltr-term mt-1 text-sm text-roshan-ink-soft" dir="ltr">{prompt.en}</p>
-      <button
-        className="ltr-term mt-1 text-xs text-roshan-teal underline"
-        onClick={() => void playAudio(audio, prompt.ur)}
-      >
-        sunno dobara (replay instruction)
-      </button>
-    </div>
-  );
 }
 
 function resolveTargetExpect(t: TypeTarget, profileName: string): string {
@@ -229,7 +201,7 @@ export function TypeInputActivity({ activity, onWin }: CommonProps) {
 
   return (
     <div className="w-full">
-      <Prompt prompt={a.prompt} audio={a.audio} />
+      <PromptBar prompt={a.prompt} audio={a.audio} />
 
       {/* target card: art + label + slots */}
       <div className="card-kid mx-auto flex max-w-2xl flex-col items-center gap-3 p-5" key={target.id}>
@@ -425,7 +397,7 @@ export function CatchFallingActivity({ activity, onWin }: CommonProps) {
 
   return (
     <div className="w-full">
-      <Prompt prompt={a.prompt} audio={a.audio} />
+      <PromptBar prompt={a.prompt} audio={a.audio} />
 
       <div
         className="relative mx-auto h-72 max-w-3xl overflow-hidden rounded-3xl border-4 border-roshan-card-border md:h-96"

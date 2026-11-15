@@ -398,6 +398,40 @@ const ICONS: Record<string, React.ReactNode> = {
       <rect x="38" y="68" width="24" height="8" rx="3" fill="#8B5E3C" stroke={INK} strokeWidth="2.5" />
     </g>
   ),
+  /* ---- app chrome icons (P1 fix: icon ↔ label must match) ---- */
+  speaker: (
+    <g>
+      <path d="M30 40 h12 l16 -12 v44 l-16 -12 H30 Z" fill="#0D9488" stroke={INK} strokeWidth="3" strokeLinejoin="round" />
+      <path d="M66 38 q6 12 0 24" fill="none" stroke={INK} strokeWidth="3" strokeLinecap="round" />
+      <path d="M74 30 q10 20 0 40" fill="none" stroke="#F59E0B" strokeWidth="3" strokeLinecap="round" />
+    </g>
+  ),
+  friends: (
+    <g>
+      <circle cx="36" cy="40" r="16" fill="#F2C79B" stroke={INK} strokeWidth="3" />
+      <circle cx="66" cy="48" r="13" fill="#F59E0B" stroke={INK} strokeWidth="3" />
+      <path d="M30 42 q3 3 6 0 M38 42 q3 3 6 0" fill="none" stroke={INK} strokeWidth="2.5" strokeLinecap="round" />
+      <path d="M31 49 q5 5 10 0" fill="none" stroke={INK} strokeWidth="2.5" strokeLinecap="round" />
+      <path d="M61 49 q2.5 2.5 5 0 M68 49 q2.5 2.5 5 0" fill="none" stroke={INK} strokeWidth="2.5" strokeLinecap="round" />
+      <path d="M61 55 q5 4 10 0" fill="none" stroke={INK} strokeWidth="2.5" strokeLinecap="round" />
+      <path d="M50 88 l8 -4 -2 -12" fill="none" stroke={INK} strokeWidth="3" strokeLinecap="round" />
+      <path d="M20 88 q15 -12 30 -16 q18 -4 30 4" fill="#EC4899" stroke={INK} strokeWidth="3" strokeLinejoin="round" />
+    </g>
+  ),
+  settings: (
+    <g>
+      <path
+        d="M50 20 l7 3 8 -5 7 7 -5 8 3 7 v0 l3 7 -5 8 7 7 -8 5 -3 8 h0 l-7 3 -5 8 -8 -5 -7 3 -8 -5 -3 -8 -8 -5 5 -8 -3 -7 5 -8 -7 -7 8 -5 3 -7 7 -3 5 -8 8 5 7 -3 8 5 3 7 Z"
+        fill="#F59E0B"
+        stroke={INK}
+        strokeWidth="3"
+        strokeLinejoin="round"
+        transform="rotate(18 50 50) scale(0.82) translate(11 11)"
+      />
+      <circle cx="50" cy="50" r="13" fill="#FFF8EC" stroke={INK} strokeWidth="3" />
+      <circle cx="50" cy="50" r="5" fill="#0D9488" stroke={INK} strokeWidth="2" />
+    </g>
+  ),
   /* ---- W1 L4–L6 (Phase 2) ---- */
   "close-work": (
     <g>

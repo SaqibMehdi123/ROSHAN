@@ -68,7 +68,7 @@ export function WorldView() {
       </div>
 
       {/* Lesson path (RTL) */}
-      <div className="mt-9 flex flex-row-reverse flex-wrap items-start justify-center gap-x-5 gap-y-9 sm:gap-x-7">
+      <div className="mt-9 flex flex-wrap items-start justify-center gap-x-5 gap-y-9 sm:gap-x-7">
         {Array.from({ length: total }, (_, i) => {
           const n = i + 1;
           const lesson = lessons[n - 1];

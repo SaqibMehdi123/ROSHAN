@@ -110,7 +110,7 @@ export function BrainGym() {
             </div>
           )}
 
-          <div className="mt-8 flex flex-row-reverse flex-wrap justify-center gap-5">
+          <div className="mt-8 flex flex-wrap justify-center gap-5">
             {puzzle.options.map((o) => (
               <button
                 key={o.id}

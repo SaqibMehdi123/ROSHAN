@@ -251,8 +251,8 @@ function PlanList({ onOpen }: { onOpen: (id: string) => void }) {
         </button>
       ))}
       <div className="rounded-2xl border-2 border-dashed border-roshan-card-border p-5 text-sm text-roshan-ink-soft">
-        All 76 lessons have a plan — the first three are hand-written, the rest are derived live from
-        each lesson&apos;s own story, demo and game (so they always match what the child sees).
+        ہر سبق کا پلان موجود ہے — اُسی کہانی، اُسی مشق اور اُسی کھیل سے بنا ہوا، جو بچہ دیکھتا ہے۔
+        (Every lesson&apos;s plan is built from its own story, demo and game — it always matches what the child sees.)
       </div>
     </div>
   );

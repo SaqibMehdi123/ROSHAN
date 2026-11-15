@@ -101,7 +101,7 @@ export function SettingsScreen() {
         {/* Teacher zone */}
         <div className="mt-8 border-t-2 border-dashed border-roshan-card-border pt-6">
           <p className="urdu text-xl font-bold text-right">اُستاد زون — Teacher Zone</p>
-          <div className="mt-3 flex flex-row-reverse items-center gap-3">
+          <div className="mt-3 flex items-center gap-3">
             <input
               value={pin}
               onChange={(e) => { setPin(e.target.value); setPinError(false); }}

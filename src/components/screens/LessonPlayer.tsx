@@ -181,7 +181,7 @@ function StoryPhase({
   const markDone = () => setDoneIdx(idx);
 
   const advance = () => {
-    if (!lineDone && !line.choice) return; // wait for narration
+    if (!lineDone) return; // wait for narration (P1 fix: choice lines could be skipped before audio finished)
     if (idx + 1 >= flat.length) onDone();
     else onStep(idx + 1);
   };

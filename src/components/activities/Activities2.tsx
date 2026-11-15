@@ -21,6 +21,7 @@ import { BugBanner } from "@/components/ui-kids/KidKit";
 import { useApp } from "@/lib/store";
 import { playAudio, stopSpeaking } from "@/lib/audio";
 import { playSfx } from "@/lib/music";
+import { PromptBar, useBugFeedback } from "./shared";
 
 interface CommonProps {
   activity: import("@/lib/schema").Activity;
@@ -42,20 +43,6 @@ export function seededShuffle<T>(arr: T[], seed: number): T[] {
     [a[i], a[j]] = [a[j], a[i]];
   }
   return a;
-}
-
-function useBugFeedback() {
-  const addBug = useApp((s) => s.addBug);
-  const [banner, setBanner] = useState<Bilingual | null>(null);
-  const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const showBug = (hint: Bilingual) => {
-    addBug();
-    setBanner(hint);
-    if (timer.current) clearTimeout(timer.current);
-    timer.current = setTimeout(() => setBanner(null), 4200);
-  };
-  useEffect(() => () => { if (timer.current) clearTimeout(timer.current); }, []);
-  return { banner, showBug };
 }
 
 /* ============================ TAP SEQUENCE ============================ */
@@ -104,7 +91,7 @@ export function TapSequenceActivity({ activity, onWin, hintHandAfter = 2 }: Comm
 
   return (
     <div className="w-full">
-      <Prompt prompt={a.prompt} audio={a.audio} />
+      <PromptBar prompt={a.prompt} audio={a.audio} />
 
       {/* order strip — placed steps appear here in the correct order */}
       <div className="mx-auto mb-4 flex max-w-3xl items-center justify-center gap-2">
@@ -211,7 +198,7 @@ export function QuizMixActivity({ activity, onWin, hintHandAfter = 2 }: CommonPr
 
   return (
     <div className="w-full">
-      <Prompt prompt={a.prompt} audio={a.audio} />
+      <PromptBar prompt={a.prompt} audio={a.audio} />
       <div className="mx-auto max-w-3xl">
         {/* question card */}
         <div className="card-kid mx-auto flex w-fit max-w-xl flex-col items-center gap-2 p-5" key={q.id}>
@@ -403,7 +390,7 @@ export function DragDropActivity({ activity, onWin, hintHandAfter = 2 }: CommonP
 
   return (
     <div className="w-full">
-      <Prompt prompt={a.prompt} audio={a.audio} />
+      <PromptBar prompt={a.prompt} audio={a.audio} />
       <div
         ref={sceneRef}
         className="relative mx-auto max-w-4xl touch-none overflow-hidden rounded-3xl border-4 border-roshan-card-border shadow-[var(--r-shadow)]"
@@ -546,7 +533,7 @@ export function PaintZonesActivity({ activity, onWin, hintHandAfter = 2 }: Commo
 
   return (
     <div className="w-full">
-      <Prompt prompt={a.prompt} audio={a.audio} />
+      <PromptBar prompt={a.prompt} audio={a.audio} />
 
       {/* zones composition (stained-glass village) */}
       <div className="relative mx-auto aspect-[16/9] max-w-4xl overflow-hidden rounded-3xl border-4 border-roshan-card-border shadow-[var(--r-shadow)] bg-white">
@@ -658,7 +645,7 @@ export function FindNamedActivity({ activity, onWin, hintHandAfter = 2 }: Common
 
   return (
     <div className="w-full">
-      <Prompt prompt={a.prompt} audio={a.audio} />
+      <PromptBar prompt={a.prompt} audio={a.audio} />
 
       {/* current name card */}
       <div className="card-kid anim-pop mx-auto mb-4 flex w-fit items-center gap-4 p-4" key={current?.id}>
@@ -709,22 +696,6 @@ export function FindNamedActivity({ activity, onWin, hintHandAfter = 2 }: Common
       {round >= order.length && (
         <p className="urdu anim-pop mt-3 text-center text-2xl font-bold text-roshan-green">{a.winPraise.ur}</p>
       )}
-    </div>
-  );
-}
-
-/* shared prompt (kept identical to Activities.tsx) */
-function Prompt({ prompt, audio }: { prompt: Bilingual; audio: string }) {
-  return (
-    <div className="mb-4 text-center">
-      <p className="urdu text-2xl font-bold" key={prompt.ur}>{prompt.ur}</p>
-      <p className="ltr-term mt-1 text-sm text-roshan-ink-soft" dir="ltr">{prompt.en}</p>
-      <button
-        className="ltr-term mt-1 text-xs text-roshan-teal underline"
-        onClick={() => void playAudio(audio, prompt.ur)}
-      >
-        sunno dobara (replay instruction)
-      </button>
     </div>
   );
 }
