@@ -44,9 +44,9 @@ export default function Home() {
     return (
       <main className="flex min-h-dvh items-center justify-center">
         <div className="anim-bob text-center">
-          <div className="mx-auto h-20 w-20 animate-pulse rounded-full shadow-[var(--r-shadow)]" style={{ background: "radial-gradient(circle at 32% 26%, #FFFDE6 0%, var(--r-sun) 55%)" }} />
+          <div className="mx-auto h-16 w-16 animate-pulse rounded-full bg-primary shadow-[var(--r-shadow)]" />
           <p className="urdu-tight mt-4 text-2xl font-bold">بجلی جاگ رہی ہے…</p>
-          <p className="ltr-term text-xs text-roshan-ink-soft" dir="ltr">ROSHAN is waking up…</p>
+          <p className="ltr-term text-xs text-soft" dir="ltr">ROSHAN is waking up…</p>
         </div>
       </main>
     );

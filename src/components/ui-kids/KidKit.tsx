@@ -1,12 +1,13 @@
 /**
- * Kid UI kit — the reusable building blocks of the ROSHAN design system (docs/02).
- * Every interactive element: ≥64px target, thick outlines, spoken label, no failure language.
+ * Kid UI kit — ROSHAN Studio v3 building blocks.
+ * Flat surfaces, hairline borders, one indigo primary, soft shadows.
+ * Every interactive element: ≥60px target, spoken label, zero-failure language.
  */
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Art } from "@/components/art/Props";
-import { Bijli } from "@/components/art/Characters";
+import { Bijli, Character } from "@/components/art/Characters";
 import { playAudio, onSpeakingChange, repeatLast, isSpeaking } from "@/lib/audio";
 import { playSfx } from "@/lib/music";
 import type { Bilingual } from "@/lib/schema";
@@ -45,12 +46,34 @@ export function BigButton({
         onClick?.();
       }}
     >
-      {art && <Art id={art} size={34} />}
+      {art && <Art id={art} size={30} />}
       <span className="flex flex-col items-center leading-none">
-        <span className="urdu-tight text-[1.375rem] font-semibold">{ur}</span>
-        {en && <span className="ltr-term mt-1 text-sm opacity-70">{en}</span>}
+        <span className="urdu-tight text-[1.25rem] font-bold">{ur}</span>
+        {en && <span className="ltr-term mt-1 text-[0.8rem] font-medium opacity-75">{en}</span>}
         {sublabel && <span className="ltr-term mt-0.5 text-xs opacity-60">{sublabel}</span>}
       </span>
+    </button>
+  );
+}
+
+/* ------------------------------ IconButton ------------------------------ */
+/** 48px circular chrome button — back, home, meta navigation. */
+export function IconButton({
+  art,
+  label,
+  onClick,
+  className,
+  size = 26,
+}: {
+  art: string;
+  label: string;
+  onClick?: () => void;
+  className?: string;
+  size?: number;
+}) {
+  return (
+    <button onClick={onClick} className={`icon-btn ${className ?? ""}`} aria-label={label} title={label}>
+      <Art id={art} size={size} />
     </button>
   );
 }
@@ -73,7 +96,7 @@ export function StarRow({ count, size = 44, animate = true }: { count: number; s
 }
 
 /* ------------------------------ Confetti ------------------------------ */
-const CONFETTI_COLORS = ["#F59E0B", "#0D9488", "#38BDF8", "#EC4899", "#22C55E", "#FDE68A"];
+const CONFETTI_COLORS = ["#5856D6", "#1EA97C", "#F5A623", "#FF6F59", "#3E9BE8", "#A78BFA"];
 
 export function Confetti({ pieces = 36 }: { pieces?: number }) {
   const arr = useMemo(
@@ -100,7 +123,7 @@ export function Confetti({ pieces = 36 }: { pieces?: number }) {
 }
 
 /* ------------------------------ BugBanner ------------------------------ */
-/** Zero-failure feedback: teal, curious Bijli, gentle hint. No red. No X. */
+/** Zero-failure feedback: soft amber, curious Bijli, gentle hint. No red. No X. */
 export function BugBanner({ hint, visible }: { hint: Bilingual; visible: boolean }) {
   if (!visible) return null;
   return (
@@ -109,11 +132,11 @@ export function BugBanner({ hint, visible }: { hint: Bilingual; visible: boolean
         <Bijli size={44} emote="idle" />
       </div>
       <div className="text-right">
-        <p className="urdu text-[1.15rem] font-semibold leading-[1.7]">
+        <p className="urdu text-[1.1rem] font-bold leading-[1.7]">
           اوپس! ایک بگ ملا! دوبارہ کوشش کریں؟
         </p>
-        <p className="urdu text-[1.05rem] leading-[1.7] opacity-90">{hint.ur}</p>
-        <p className="ltr-term text-xs opacity-70">{hint.en}</p>
+        <p className="urdu text-[1rem] leading-[1.7] opacity-80">{hint.ur}</p>
+        <p className="ltr-term text-xs opacity-60">{hint.en}</p>
       </div>
     </div>
   );
@@ -127,19 +150,19 @@ export function RepeatButton({ className }: { className?: string }) {
   return (
     <button
       onClick={() => void repeatLast()}
-      className={`btn-kid !min-h-16 !min-w-16 !p-2 ${className ?? ""}`}
+      className={`icon-btn ${speaking ? "!border-amber" : ""} ${className ?? ""}`}
       aria-label="Repeat audio"
       title="دوبارہ سنیں"
     >
       <div className={speaking ? "anim-wiggle" : ""}>
-        <Bijli size={44} />
+        <Bijli size={38} />
       </div>
     </button>
   );
 }
 
 /* ----------------------------- SpeakBubble ----------------------------- */
-/** Narration/dialog bubble: Urdu primary (Naskh), English secondary, speaker chip. */
+/** Narration/dialog card: speaker avatar, Urdu primary (Naskh), English secondary. */
 const SPEAKER_UR: Record<string, string> = {
   bijli: "بجلی",
   noor: "نور",
@@ -148,6 +171,7 @@ const SPEAKER_UR: Record<string, string> = {
   "ustad-ullo": "استاد العلول",
   ustad: "استاد العلول",
   narrator: "کہانی",
+  English: "English",
 };
 
 export function SpeakBubble({
@@ -184,36 +208,47 @@ export function SpeakBubble({
   const speakerUr = speaker ? SPEAKER_UR[speaker] ?? speaker : undefined;
   return (
     <div className="bubble mx-auto w-fit max-w-2xl">
-      {speakerUr && (
-        <div className="urdu-tight -mb-1 w-fit rounded-full bg-roshan-accent px-3 py-0.5 text-sm font-bold text-roshan-orange-deep">
-          {speakerUr}
+      <div className="flex items-start gap-3 text-right">
+        {speaker && speaker !== "narrator" && (
+          <div className="mx-1 shrink-0" aria-hidden>
+            <Character id={speaker} size={52} emote={emote && emote !== "narrator" ? emote : "idle"} />
+          </div>
+        )}
+        <div className="min-w-0 flex-1">
+          {speakerUr && (
+            <div className="urdu-tight -mb-1 w-fit text-sm font-bold text-primary-strong">{speakerUr}</div>
+          )}
+          {!hideUr && (
+            <p
+              className={`urdu mt-1 text-[1.3rem] font-semibold ${emote === "narrator" || speaker === "narrator" ? "text-soft" : ""}`}
+              key={ur}
+            >
+              {ur}
+            </p>
+          )}
+          {en && (
+            <p
+              className={`ltr-term text-[0.9rem] font-medium text-soft ${hideUr ? "" : "mt-2 border-t border-hairline pt-2"}`}
+              dir="ltr"
+            >
+              {en}
+            </p>
+          )}
         </div>
-      )}
-      {!hideUr && (
-        <p className={`urdu mt-2 text-[1.35rem] font-semibold ${emote === "narrator" ? "text-roshan-ink-soft" : ""}`} key={ur}>
-          {ur}
-        </p>
-      )}
-      {en && (
-        <p
-          className={`ltr-term text-[0.95rem] font-medium text-roshan-ink-soft ${hideUr ? "" : "mt-2 border-t border-dashed border-roshan-card-border pt-2"}`}
-          dir="ltr"
-        >
-          {en}
-        </p>
-      )}
+      </div>
     </div>
   );
 }
 
 /* ------------------------------ ProgressDots ------------------------------ */
+/** Phase progress — 4 calm segments (done / current / upcoming). */
 export function ProgressDots({ phases, current }: { phases: string[]; current: number }) {
   return (
-    <div className="flex items-center gap-2" dir="rtl">
+    <div className="flex items-center gap-1.5" dir="rtl">
       {phases.map((p, i) => (
-        <div
+        <span
           key={p}
-          className={`h-3.5 w-3.5 rounded-full border-2 border-roshan-ink transition-colors ${i === current ? "scale-110 bg-roshan-orange shadow-sm" : i < current ? "bg-roshan-green" : "bg-white"}`}
+          className={`h-2.5 rounded-full transition-all ${i === current ? "w-9 bg-primary" : i < current ? "w-5 bg-success" : "w-5 bg-[#DDD9D0]"}`}
           title={p}
         />
       ))}

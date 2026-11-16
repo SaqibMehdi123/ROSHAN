@@ -1,8 +1,8 @@
 /**
- * ADVENTURE MAP — the home screen and ONLY navigation for children (spec §4).
- * A winding right→left path through 8 lands; completed = bright, locked = soft grey
- * with friendly lock; Noor & Bijli stand at the child's current spot.
- * v2: living sky (drifting clouds, twinkling sun), stat chips, fluid responsive layout.
+ * ADVENTURE MAP → "THE JOURNEY" (Studio v3).
+ * A calm vertical trail of the 8 worlds — big flat nodes on a dashed spine,
+ * progress meters, Noor & Bijli at the child's current stop.
+ * Replaces the v2 scattered sky-map: organized, scannable, thumb-friendly.
  */
 "use client";
 
@@ -11,22 +11,10 @@ import { useApp, useActiveProfile } from "@/lib/store";
 import { WORLDS, LESSONS, lessonsOfWorld, getLesson, WORLD_MEDALS } from "@/lib/content";
 import { Art } from "@/components/art/Props";
 import { Character } from "@/components/art/Characters";
-import { RepeatButton } from "@/components/ui-kids/KidKit";
+import { BigButton, IconButton, RepeatButton } from "@/components/ui-kids/KidKit";
 import { playAudio } from "@/lib/audio";
 
 const MEDALS = WORLD_MEDALS;
-
-/** Node positions along an S-curved path (RTL: W1 starts top-right, ends at W8 left). */
-const NODE_POS = [
-  { x: 6, y: 26 },
-  { x: 19, y: 66 },
-  { x: 31, y: 24 },
-  { x: 43, y: 68 },
-  { x: 55, y: 26 },
-  { x: 67, y: 70 },
-  { x: 79, y: 28 },
-  { x: 90, y: 66 },
-];
 
 export function AdventureMap() {
   const { openWorld, go, hydrated } = useApp();
@@ -50,12 +38,10 @@ export function AdventureMap() {
     const prev = WORLDS.find((w) => w.id === id - 1);
     if (!prev) return true;
     const prevReady = lessonsOfWorld(prev.id);
-    // A world unlocks when the previous world's READY lessons are all done.
     return prevReady.length > 0 && prevReady.every((l) => profile.progress[l.id]?.completed);
   };
 
   // "You are here": the world of the FIRST lesson the child has not finished yet.
-  // (P1 fix — previously fell back to world 1, so the marker jumped "home" after every lesson.)
   const currentWorld = (() => {
     const next = LESSONS.find((l) => !profile.progress[l.id]?.completed);
     if (next) return next.world;
@@ -63,194 +49,155 @@ export function AdventureMap() {
   })();
   const totalStars = Object.values(profile.stars).reduce((a, b) => a + b, 0);
   const doneLessons = Object.values(profile.progress).filter((p) => p.completed).length;
-  const badgeCount = profile.badges.length;
 
   return (
-    <main className="mx-auto min-h-dvh w-full max-w-6xl px-3 pb-32 pt-3 sm:px-5 sm:pt-5">
-      {/* Top bar: greeting + stats + meta actions */}
-      <header className="card-kid mb-4 flex flex-wrap items-center justify-between gap-x-4 gap-y-3 px-4 py-3 sm:px-6">
-        <div className="flex items-center gap-3">
+    <main className="mx-auto min-h-dvh w-full max-w-xl px-4 pb-28 pt-5 sm:px-6">
+      {/* ── Top bar: player + meta ─────────────────────────────── */}
+      <header className="flex flex-wrap items-center justify-between gap-x-3 gap-y-2">
+        <div className="flex min-w-0 items-center gap-3">
           <div
-            className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border-4 border-roshan-ink text-xl font-bold text-white shadow-[var(--r-shadow)] sm:h-16 sm:w-16"
+            className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full text-base font-bold text-white"
             style={{ background: profile.avatarColor }}
           >
             {profile.name.slice(0, 2)}
           </div>
-          <div className="text-right">
-            <p className="urdu-tight text-xl font-bold sm:text-2xl">{profile.name}! خوش آمدید</p>
-            <div className="mt-0.5 flex flex-wrap items-center justify-end gap-1.5">
-              <span className="stat-chip ltr-term text-xs sm:text-sm" dir="ltr" title="ستارے — stars">
-                <Art id="star" size={16} /> {totalStars}
+          <div className="min-w-0">
+            <p className="urdu-tight truncate text-xl font-bold leading-[1.6]">{profile.name}! خوش آمدید</p>
+            <div className="flex items-center gap-2 text-sm text-soft" dir="ltr">
+              <span className="inline-flex items-center gap-1 font-semibold" title="stars">
+                <Art id="star" size={15} /> {totalStars}
               </span>
-              <span className="stat-chip urdu-tight text-xs sm:text-sm" title="سبق مکمل — lessons done">
-                <span className="ltr-term" dir="ltr">{doneLessons}/{LESSONS.length}</span> سبق
-              </span>
-              {profile.helperMode && (
-                <span className="stat-chip ltr-term text-xs text-roshan-teal sm:text-sm" dir="ltr">
-                  Computer Hero!
-                </span>
-              )}
+              <span aria-hidden>·</span>
+              <span className="font-semibold">{doneLessons}/{LESSONS.length}</span>
+              <span className="urdu-tight">سبق</span>
             </div>
           </div>
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex shrink-0 items-center gap-2">
           <IconButton art="trophy" label="انعام" onClick={() => go("album")} />
           <IconButton art="friends" label="دوست" onClick={() => go("cast")} />
           <IconButton art="settings" label="سیٹنگ" onClick={() => go("settings")} />
         </div>
       </header>
 
-      {/* The map — a living storybook sky */}
-      <div className="card-kid overflow-hidden p-2" style={{ background: "linear-gradient(180deg,#BFE8F5 0%, #E8F6FB 34%, #FFF8EC 100%)" }}>
-        <div className="relative aspect-[5/6] min-h-[440px] w-full sm:aspect-[2/1] sm:min-h-[420px]">
-          {/* sun */}
-          <div className="anim-bob pointer-events-none absolute right-[4%] top-[3%] sm:right-[2%]">
-            <Art id="sun" size={54} />
-          </div>
-          {/* drifting clouds */}
-          <div className="anim-cloud pointer-events-none absolute left-[6%] top-[8%] opacity-90" aria-hidden>
-            <svg viewBox="0 0 100 40" width="110" height="44"><ellipse cx="30" cy="26" rx="26" ry="12" fill="#fff" /><ellipse cx="56" cy="20" rx="22" ry="14" fill="#fff" /><ellipse cx="74" cy="28" rx="18" ry="10" fill="#fff" /></svg>
-          </div>
-          <div className="anim-cloud pointer-events-none absolute right-[26%] top-[46%] opacity-70 sm:right-[24%]" style={{ animationDelay: "-4s" }} aria-hidden>
-            <svg viewBox="0 0 100 40" width="86" height="34"><ellipse cx="30" cy="26" rx="26" ry="12" fill="#fff" /><ellipse cx="58" cy="22" rx="20" ry="12" fill="#fff" /></svg>
-          </div>
-          {/* twinkling sparkles */}
-          {[
-            { r: "12%", t: "18%" }, { r: "84%", t: "12%" }, { r: "40%", t: "10%" },
-            { r: "58%", t: "82%" }, { r: "8%", t: "88%" }, { r: "93%", t: "36%" },
-          ].map((p, i) => (
-            <span key={i} className="anim-twinkle pointer-events-none absolute text-lg" style={{ right: p.r, top: p.t, animationDelay: `${i * 0.7}s` }} aria-hidden>✦</span>
-          ))}
-
-          {/* winding path */}
-          <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="absolute inset-0 h-full w-full">
-            <path
-              d="M 96 26 C 92 48, 88 60, 84 66 C 78 74, 74 34, 70 28 C 66 22, 62 62, 57 70 C 52 76, 48 32, 44 26 C 40 22, 36 62, 31 70 C 27 76, 23 32, 19 26 C 15 22, 12 60, 8 66"
-              stroke="#F3E5C8"
-              strokeWidth="7"
-              fill="none"
-              strokeLinecap="round"
-              strokeDasharray="0.1 3.6"
-            />
-            <path
-              d="M 96 26 C 92 48, 88 60, 84 66 C 78 74, 74 34, 70 28 C 66 22, 62 62, 57 70 C 52 76, 48 32, 44 26 C 40 22, 36 62, 31 70 C 27 76, 23 32, 19 26 C 15 22, 12 60, 8 66"
-              stroke="#E8D9BC"
-              strokeWidth="3"
-              fill="none"
-              strokeLinecap="round"
-              strokeDasharray="0.1 4.4"
-            />
-            {/* journey direction — chevrons pointing LEFT (RTL travel) */}
-            {[[88.5, 47, -62], [76.5, 52, 68], [64, 48, -66], [52.5, 52, 64], [40, 48, -66], [27.5, 52, 64], [15.5, 47, -60]].map(([x, y, r], i) => (
-              <g key={i} transform={`translate(${x} ${y}) rotate(${r})`} opacity="0.9">
-                <path d="M2.2 -2.4 L-1.6 0 L2.2 2.4" fill="none" stroke="#D9B97F" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" transform="scale(1.35)" />
-              </g>
-            ))}
-          </svg>
-
-          {/* start flag — the journey begins here (RTL: top-right) */}
-          <div className="pointer-events-none absolute z-10 flex flex-col items-center" style={{ right: "1.5%", top: "12%" }} aria-hidden>
-            <svg viewBox="0 0 40 58" width="30" height="44">
-              <line x1="7" y1="4" x2="7" y2="54" stroke="#8B5E3C" strokeWidth="3.4" strokeLinecap="round" />
-              <path d="M9 5 L34 12 L9 21 Z" fill="#F59E0B" stroke="#4A3421" strokeWidth="2" strokeLinejoin="round" />
-            </svg>
-          </div>
-
-          {/* world nodes */}
-          {WORLDS.map((w, i) => {
-            const unlocked = worldUnlocked(w.id);
-            const isCurrent = unlocked && w.id === currentWorld;
-            const pos = NODE_POS[i];
-            const readyLessons = lessonsOfWorld(w.id);
-            const doneCount = readyLessons.filter((l) => profile.progress[l.id]?.completed).length;
-            const pct = readyLessons.length ? doneCount / readyLessons.length : 0;
-            const inProgress = unlocked && pct > 0 && pct < 1;
-            return (
-              <button
-                key={w.id}
-                onClick={() => {
-                  if (!unlocked) {
-                    void playAudio(undefined, "پہلے پچھلی زمین مکمل کرو!");
-                    return;
-                  }
-                  void playAudio(undefined, `${w.name.ur}!`);
-                  openWorld(w.id);
-                }}
-                className="absolute -translate-y-1/2 translate-x-1/2 text-center transition-transform hover:scale-[1.04] focus-visible:outline-none"
-                style={{ right: `${pos.x}%`, top: `${pos.y}%` }}
-                aria-label={w.name.en}
-              >
-                <div
-                  className={`node-circle mx-auto ${isCurrent ? "node-current" : ""} ${!unlocked ? "node-locked" : ""} ${inProgress ? "node-progress" : ""}`}
-                  style={unlocked ? { background: `radial-gradient(circle at 32% 26%, #ffffffcc 0%, ${w.color} 46%)`, borderColor: "#4A3421" } : undefined}
-                >
-                  <Art id={unlocked ? MEDALS[i] : "lock"} size={unlocked ? (isCurrent ? 50 : 44) : 34} />
-                </div>
-                <div
-                  className={`urdu-tight map-label mx-auto mt-1.5 w-[5.6rem] whitespace-nowrap rounded-full px-1 py-0.5 text-[0.82rem] font-bold leading-[1.6] sm:w-28 sm:text-[0.95rem] ${unlocked ? (isCurrent ? "map-label-current" : "") : "map-label-locked"}`}
-                >
-                  {w.name.ur}
-                </div>
-                {unlocked && pct > 0 && (
-                  <div className="meter mx-auto mt-1 w-16 sm:w-20" dir="ltr">
-                    <span style={{ width: `${pct * 100}%` }} />
-                  </div>
-                )}
-              </button>
-            );
-          })}
-
-          {/* Noor & Bijli stand right AT the current spot */}
-          {(() => {
-            const idx = Math.max(0, WORLDS.findIndex((w) => w.id === currentWorld));
-            const pos = NODE_POS[idx] ?? NODE_POS[0];
-            return (
-              <div
-                className="pointer-events-none absolute z-20 flex items-end gap-0"
-                style={{ right: `calc(${pos.x}% + 26px)`, top: `calc(${pos.y}% - 34px)` }}
-              >
-                <Character id="noor" size={46} emote="waving" />
-                <Character id="bijli" size={42} emote="happy" />
-              </div>
-            );
-          })()}
-        </div>
-      </div>
-
-      {/* Resume card */}
+      {/* ── Resume strip ───────────────────────────────────────── */}
       {profile.current && (() => {
         const rl = getLesson(profile.current.lesson);
         return (
-          <div className="card-kid mt-5 flex flex-col items-center justify-between gap-4 p-5 sm:flex-row sm:p-6">
-            <div className="text-center sm:text-right">
-              <p className="urdu-tight text-2xl font-bold sm:text-[1.7rem]">وہاں سے شروع کرو جہاں تم رکے تھے!</p>
-              <p className="urdu-tight text-lg text-roshan-ink-soft">
-                {rl ? rl.title.ur : "سبق"} — دوبارہ کھولو۔
-              </p>
+          <div className="card-kid mt-5 flex flex-col items-stretch justify-between gap-3 px-4 py-3 sm:flex-row sm:items-center">
+            <div className="min-w-0 text-right">
+              <p className="urdu-tight text-sm text-soft">وہاں سے شروع کرو جہاں تم رکے تھے</p>
+              <p className="urdu-tight truncate text-lg font-bold">{rl ? rl.title.ur : "سبق"}</p>
             </div>
             <button
-              className="btn-kid btn-success w-full sm:w-auto"
+              className="btn-kid btn-success !min-h-12 shrink-0 !px-5 !text-lg"
               onClick={() => useApp.getState().openLesson(profile.current!.lesson, true)}
             >
-              <span className="urdu-tight text-2xl font-bold">جاری رکھو</span>
+              <span className="urdu-tight text-lg font-bold">جاری رکھو</span>
             </button>
           </div>
         );
       })()}
 
-      {/* Bottom action row: Brain Gym door */}
-      <div className="mt-5 flex justify-center">
+      {/* ── The journey trail ──────────────────────────────────── */}
+      <section className="relative mx-auto mt-8 w-full max-w-md" aria-label="تمہارا سفر">
+        {/* dashed spine down the center */}
+        <div
+          className="pointer-events-none absolute left-1/2 top-6 bottom-6 w-0.5 -translate-x-1/2"
+          style={{ background: "repeating-linear-gradient(to bottom, #DCD8CF 0 8px, transparent 8px 16px)" }}
+          aria-hidden
+        />
+        <div className="flex flex-col items-center gap-8">
+          {WORLDS.map((w) => {
+            const unlocked = worldUnlocked(w.id);
+            const isCurrent = unlocked && w.id === currentWorld;
+            const readyLessons = lessonsOfWorld(w.id);
+            const doneCount = readyLessons.filter((l) => profile.progress[l.id]?.completed).length;
+            const pct = readyLessons.length ? doneCount / readyLessons.length : 0;
+            const complete = pct >= 1;
+
+            return (
+              <div key={w.id} className={`relative z-10 flex w-full flex-col items-center ${isCurrent ? "mt-6" : ""}`}>
+                {/* Noor & Bijli walk beside the current stop */}
+                {isCurrent && (
+                  <div
+                    className="pointer-events-none absolute flex items-end gap-0.5"
+                    style={{ left: "calc(50% + 52px)", top: "2px" }}
+                    aria-hidden
+                  >
+                    <Character id="noor" size={48} emote="waving" />
+                    <Character id="bijli" size={42} emote="happy" />
+                  </div>
+                )}
+                <button
+                  onClick={() => {
+                    if (!unlocked) {
+                      void playAudio(undefined, "پہلے پچھلی زمین مکمل کرو!");
+                      return;
+                    }
+                    void playAudio(undefined, `${w.name.ur}!`);
+                    openWorld(w.id);
+                  }}
+                  className={`group flex flex-col items-center outline-none ${unlocked ? "cursor-pointer" : "cursor-default"}`}
+                  aria-label={w.name.en}
+                >
+                  <div
+                    className={`node-circle !h-[76px] !w-[76px] ${isCurrent ? "node-current" : ""}`}
+                    style={
+                      unlocked
+                        ? {
+                            background: complete ? "var(--r-success-tint)" : w.color,
+                            color: complete ? "var(--r-teal)" : "#fff",
+                          }
+                        : undefined
+                    }
+                  >
+                    {unlocked ? (
+                      complete ? (
+                        <Art id={MEDALS[w.id - 1]} size={38} />
+                      ) : (
+                        <Art id={MEDALS[w.id - 1]} size={40} />
+                      )
+                    ) : (
+                      <Art id="lock" size={30} />
+                    )}
+                  </div>
+                </button>
+
+                {/* world label + progress */}
+                <div className="mt-2 flex flex-col items-center gap-1">
+                  <p
+                    className={`urdu-tight map-label text-center text-[1.05rem] font-bold leading-[1.6] ${isCurrent ? "map-label-current" : ""} ${!unlocked ? "map-label-locked" : ""}`}
+                  >
+                    {w.name.ur}
+                  </p>
+                  {unlocked && readyLessons.length > 0 ? (
+                    <div className="meter w-24" dir="ltr" title={`${doneCount}/${readyLessons.length}`}>
+                      <span style={{ width: `${pct * 100}%` }} />
+                    </div>
+                  ) : (
+                    <p className="urdu-tight text-xs text-soft">بند ہے</p>
+                  )}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* ── Brain Gym ──────────────────────────────────────────── */}
+      <div className="mt-9 flex justify-center">
         <button
-          className="btn-kid btn-reward"
+          className="btn-kid btn-reward w-full max-w-sm"
           onClick={() => {
             void playAudio(undefined, "برین جم! دماغ کی ورزش کا وقت!");
             go("braingym");
           }}
         >
-          <Art id="gem" size={36} />
+          <Art id="gem" size={30} />
           <span className="flex flex-col items-center leading-none">
-            <span className="urdu-tight text-2xl font-bold">برین جم</span>
-            <span className="urdu-tight mt-1 text-[0.8rem] opacity-80">دماغ کی ورزش · ۳ منٹ</span>
+            <span className="urdu-tight text-xl font-bold">برین جم</span>
+            <span className="urdu-tight mt-1 text-[0.78rem] font-medium opacity-90">دماغ کی ورزش · ۳ منٹ</span>
           </span>
         </button>
       </div>
@@ -259,14 +206,5 @@ export function AdventureMap() {
         <RepeatButton />
       </div>
     </main>
-  );
-}
-
-function IconButton({ art, label, onClick }: { art: string; label: string; onClick: () => void }) {
-  return (
-    <button onClick={onClick} className="btn-kid btn-back !min-h-16 !min-w-16 flex-col !gap-1 !rounded-2xl !px-3 !py-2" aria-label={label}>
-      <Art id={art} size={30} />
-      <span className="urdu-tight text-xs leading-4">{label}</span>
-    </button>
   );
 }

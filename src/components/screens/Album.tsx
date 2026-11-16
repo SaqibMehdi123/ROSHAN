@@ -7,7 +7,7 @@
 import { useApp, useActiveProfile, outfitUnlocks } from "@/lib/store";
 import { WORLDS, LESSONS } from "@/lib/content";
 import { Art, lessonIcon } from "@/components/art/Props";
-import { BigButton, RepeatButton, StarRow } from "@/components/ui-kids/KidKit";
+import { IconButton, RepeatButton, StarRow } from "@/components/ui-kids/KidKit";
 import { playAudio } from "@/lib/audio";
 
 export function Album() {
@@ -19,19 +19,29 @@ export function Album() {
   const unlocks = outfitUnlocks();
 
   return (
-    <main className="mx-auto min-h-screen max-w-4xl px-4 pb-24 pt-6">
-      <div className="mb-4 flex items-center justify-between">
-        <BigButton label={{ ur: "نقشے پر", en: "Map" }} variant="back" onClick={() => go("map")} />
+    <main className="mx-auto min-h-screen w-full max-w-xl px-4 pb-24 pt-5 sm:px-6">
+      <div className="flex items-center justify-between gap-3">
+        <IconButton art="home" label="نقشے پر" onClick={() => go("map")} />
+        <h1 className="urdu-tight flex-1 text-center text-2xl font-bold">میرا انعام خانہ</h1>
         <RepeatButton />
       </div>
 
-      <div className="card-kid p-5 text-center">
-        <h1 className="urdu text-3xl font-bold">میرا انعام خانہ</h1>
-        <p className="urdu-tight mt-1 text-base text-roshan-ink-soft" dir="rtl">
-          ★ {totalStars} · بگ فکس {profile.bugsFixed} · لگاتار {profile.streak.count} دن
-          {profile.helperMode ? " · کمپیوٹر ہیرو!" : ""}
-        </p>
-        <p className="ltr-term mt-0.5 text-xs text-roshan-ink-soft" dir="ltr">
+      <div className="card-kid mt-5 p-5 text-center">
+        <div className="flex items-center justify-center gap-2" dir="ltr">
+          <span className="inline-flex items-center gap-1.5 rounded-full bg-amber-tint px-3.5 py-1.5 text-sm font-bold text-amber">
+            <Art id="star" size={16} /> {totalStars}
+          </span>
+          <span className="inline-flex items-center gap-1.5 rounded-full bg-success-tint px-3.5 py-1.5 text-sm font-bold text-success">
+            <span className="urdu-tight">بگ فکس</span> {profile.bugsFixed}
+          </span>
+          <span className="inline-flex items-center gap-1.5 rounded-full bg-primary-tint px-3.5 py-1.5 text-sm font-bold text-primary-strong">
+            <span className="urdu-tight">لگاتار</span> {profile.streak.count} <span className="urdu-tight">دن</span>
+          </span>
+        </div>
+        {profile.helperMode && (
+          <p className="urdu-tight mt-2 text-sm font-bold text-success">کمپیوٹر ہیرو!</p>
+        )}
+        <p className="ltr-term mt-2 text-xs text-soft" dir="ltr">
           {totalStars} stars · {profile.bugsFixed} bugs fixed · {profile.streak.count}-day streak
         </p>
       </div>
@@ -48,7 +58,7 @@ export function Album() {
                 onClick={() => void playAudio(undefined, earned ? `${w.badgeName.ur}!` : "یہ بیج ابھی باقی ہے!")}
                 className={`card-kid flex flex-col items-center gap-1 p-3 ${earned ? "" : "opacity-45"}`}
               >
-                <div className="rounded-full" style={{ background: earned ? w.color : "#EFE9DD" }}>
+                <div className="rounded-full" style={{ background: earned ? `${w.color}24` : "#F0EEE9" }}>
                   <Art id={`medal-${["box", "mouse", "keyboard", "folder", "paint", "shield", "gem", "mountain"][w.id - 1]}`} size={52} />
                 </div>
                 <span className="urdu text-center text-[0.8rem] font-bold leading-[1.8]">{w.badgeName.ur}</span>
@@ -70,7 +80,7 @@ export function Album() {
           <div className="card-kid flex flex-col items-center gap-2 p-8 text-center">
             <Art id="medal-box" size={64} />
             <p className="urdu text-lg font-bold">پہلا سبق مکمل کرو اور پہلا سٹیکر جیتو!</p>
-            <p className="ltr-term text-xs text-roshan-ink-soft" dir="ltr">Finish your first lesson to earn a sticker!</p>
+            <p className="ltr-term text-xs text-soft" dir="ltr">Finish your first lesson to earn a sticker!</p>
           </div>
         ) : (
           <div className="card-kid grid grid-cols-3 gap-3 p-5 sm:grid-cols-5">
@@ -78,7 +88,7 @@ export function Album() {
               <button
                 key={l.id}
                 onClick={() => void playAudio(undefined, l.title.ur)}
-                className="flex flex-col items-center gap-1 rounded-2xl border-3 border-roshan-green bg-green-50 p-2"
+                className="flex flex-col items-center gap-1 rounded-2xl border border-success/30 bg-success-tint p-2"
               >
                 <div className="anim-pop">
                   <Art id={lessonIcon(l.skillKey)} size={46} />
@@ -101,7 +111,7 @@ export function Album() {
               <div key={o.id} className={`card-kid flex min-w-36 flex-col items-center gap-1 p-3 ${earned ? "" : "opacity-45"}`}>
                 <Art id={earned ? "party-flag" : "lock"} size={44} />
                 <span className="urdu text-sm font-bold">{o.name.ur}</span>
-                <span className="ltr-term text-xs text-roshan-ink-soft" dir="ltr">{totalStars}/{o.at} ★</span>
+                <span className="ltr-term text-xs text-soft" dir="ltr">{totalStars}/{o.at} ★</span>
               </div>
             );
           })}

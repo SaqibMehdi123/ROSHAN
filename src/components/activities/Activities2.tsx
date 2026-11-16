@@ -101,7 +101,7 @@ export function TapSequenceActivity({ activity, onWin, hintHandAfter = 2 }: Comm
           return (
             <div
               key={id}
-              className={`flex min-h-16 flex-1 flex-col items-center justify-center rounded-2xl border-3 p-2 transition-all ${done ? "border-solid border-roshan-green bg-green-50" : "border-dashed border-roshan-lock bg-white/70"}`}
+              className={`flex min-h-16 flex-1 flex-col items-center justify-center rounded-2xl border-2 p-2 transition-all ${done ? "border-solid border-success bg-success-tint" : "border-dashed border-lock bg-white/70"}`}
             >
               {done && step ? (
                 <div className="anim-pop flex items-center gap-1">
@@ -411,11 +411,11 @@ export function DragDropActivity({ activity, onWin, hintHandAfter = 2 }: CommonP
               style={{ right: `${t.x}%`, top: `${t.y}%` }}
               aria-label={t.label?.en ?? t.id}
             >
-              <div className={full ? "rounded-full bg-green-100/85 p-1 ring-4 ring-roshan-green/50" : "rounded-full border-3 border-dashed border-roshan-lock bg-white/40 p-1"}>
+              <div className={full ? "rounded-full bg-success-tint p-1 ring-4 ring-success/50" : "rounded-full border-2 border-dashed border-lock bg-white/40 p-1"}>
                 <Art id={t.art} size={104} />
               </div>
               {capacityOf(t) > 1 && (
-                <span className="ltr-term absolute -bottom-1 -left-1 rounded-full bg-white px-2 text-xs font-bold text-roshan-green shadow" dir="ltr">
+                <span className="ltr-term absolute -bottom-1 -left-1 rounded-full bg-white px-2 text-xs font-bold text-success shadow" dir="ltr">
                   {got.length}/{capacityOf(t)}
                 </span>
               )}
@@ -546,7 +546,7 @@ export function PaintZonesActivity({ activity, onWin, hintHandAfter = 2 }: Commo
             <button
               key={z.id}
               onClick={() => tapZone(z.id)}
-              className={`absolute border-3 border-dashed transition-all ${colorId ? "border-solid border-transparent" : "border-roshan-lock bg-[#F6EBD8]/60 hover:scale-[1.02]"} ${isWrong ? "anim-wiggle" : ""} ${isHint ? "anim-ring" : ""}`}
+              className={`absolute border-2 border-dashed transition-all ${colorId ? "border-solid border-transparent" : "border-lock bg-white/60 hover:scale-[1.02]"} ${isWrong ? "anim-wiggle" : ""} ${isHint ? "anim-ring" : ""}`}
               style={{
                 right: `${z.x}%`,
                 top: `${z.y}%`,
@@ -569,10 +569,10 @@ export function PaintZonesActivity({ activity, onWin, hintHandAfter = 2 }: Commo
           <button
             key={p.id}
             onClick={() => pickPot(p.id)}
-            className={`flex w-20 flex-col items-center gap-1 rounded-2xl border-3 bg-white p-2 transition-transform hover:scale-105 ${pot === p.id ? "border-roshan-orange bg-orange-50 ring-4 ring-roshan-orange/30" : "border-roshan-card-border"}`}
+            className={`flex w-20 flex-col items-center gap-1 rounded-2xl border-2 bg-white p-2 transition-transform hover:scale-105 ${pot === p.id ? "border-primary bg-primary-tint ring-4 ring-primary/25" : "border-hairline"}`}
             aria-label={p.name.en}
           >
-            <span className="h-10 w-10 rounded-full border-3 border-roshan-ink shadow-inner" style={{ background: p.color }} />
+            <span className="h-10 w-10 rounded-full border border-hairline shadow-inner" style={{ background: p.color }} />
             <span className="urdu text-base font-bold">{p.name.ur}</span>
             <span className="ltr-term text-[0.6rem] text-roshan-ink-soft" dir="ltr">{p.name.en}</span>
           </button>

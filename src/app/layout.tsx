@@ -107,7 +107,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#FFF8EC",
+  themeColor: "#F6F5F1",
   width: "device-width",
   initialScale: 1,
   maximumScale: 1, // kiosk-style for kids; no accidental zoom

@@ -1,7 +1,8 @@
 /**
- * World view — lessons on a mini-path inside one land.
- * Lesson states: done (stars) / current (pulsing) / locked (soft).
- * v2: immersive land banner, fluid nodes, progress meter, no "coming soon" filler.
+ * WORLD VIEW (Studio v3) — lessons of one world as a calm numbered list.
+ * Each lesson = a full-width row: status disc (done ✓ / current / lock),
+ * title, stars. The current row is highlighted; a dashed connector
+ * links the sequence. Replaces the v2 scattered-circle wrap.
  */
 "use client";
 
@@ -9,7 +10,7 @@ import { useApp, useActiveProfile } from "@/lib/store";
 import { getWorld, lessonsOfWorld, WORLD_MEDALS } from "@/lib/content";
 import { Art, lessonIcon } from "@/components/art/Props";
 import { Character } from "@/components/art/Characters";
-import { BigButton, RepeatButton } from "@/components/ui-kids/KidKit";
+import { IconButton, RepeatButton } from "@/components/ui-kids/KidKit";
 import { playAudio } from "@/lib/audio";
 
 export function WorldView() {
@@ -20,118 +21,137 @@ export function WorldView() {
 
   const lessons = lessonsOfWorld(world.id);
   const total = world.lessonCount;
-
-  // first uncompleted lesson = current
   const currentLessonId = lessons.find((l) => !profile.progress[l.id]?.completed)?.id ?? lessons[0]?.id;
   const doneCount = lessons.filter((l) => profile.progress[l.id]?.completed).length;
   const pct = total ? doneCount / total : 0;
 
   return (
-    <main className="mx-auto min-h-dvh w-full max-w-4xl px-3 pb-32 pt-3 sm:px-5 sm:pt-5">
-      <div className="mb-4 flex items-center justify-between">
-        <BigButton label={{ ur: "نقشے پر", en: "Map" }} variant="back" onClick={() => go("map")} />
+    <main className="mx-auto min-h-dvh w-full max-w-xl px-4 pb-28 pt-5 sm:px-6">
+      {/* chrome row */}
+      <div className="flex items-center justify-between gap-3">
+        <IconButton art="home" label="نقشے پر" onClick={() => go("map")} />
+        <div className="flex-1 text-center">
+          <h1 className="urdu-tight text-2xl font-bold leading-[1.5]">{world.name.ur}</h1>
+          <p className="ltr-term text-xs font-semibold tracking-wide text-soft" dir="ltr">{world.name.en}</p>
+        </div>
         <RepeatButton />
       </div>
 
-      {/* Land banner */}
+      {/* world summary card (progress lives inside — no orphan bars) */}
       <div
-        className="card-kid relative overflow-hidden px-5 py-6 text-center sm:px-8 sm:py-8"
-        style={{ background: `linear-gradient(160deg, ${world.color}33 0%, ${world.color}14 40%, #FFFFFF 75%)` }}
+        className="card-kid mt-5 px-5 py-4"
+        style={{ background: `linear-gradient(0deg, ${world.color}0F, ${world.color}0F), #FFFFFF` }}
       >
-        {/* soft corner blobs */}
-        <div className="pointer-events-none absolute -left-10 -top-10 h-32 w-32 rounded-full opacity-30" style={{ background: world.color }} aria-hidden />
-        <div className="pointer-events-none absolute -bottom-12 -right-12 h-40 w-40 rounded-full opacity-20" style={{ background: world.color }} aria-hidden />
-
-          <div className="relative">
-          <div className="mx-auto mb-1 w-fit anim-bob">
-            <Character id="bijli" size={72} emote="happy" />
+        <div className="flex items-center justify-between gap-4">
+          <div className="flex min-w-0 items-center gap-3">
+            <div
+              className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full text-white"
+              style={{ background: world.color }}
+            >
+              <Art id={WORLD_MEDALS[world.id - 1]} size={28} />
+            </div>
+            <div className="min-w-0 text-right">
+              <p className="urdu-tight truncate text-base font-bold" style={{ color: world.color }}>
+                {world.badgeName.ur} <span className="text-soft">· بیج</span>
+              </p>
+              <p className="urdu-tight mt-0.5 line-clamp-1 text-sm text-soft">{world.arcSummary.ur}</p>
+            </div>
           </div>
-          <h1 className="urdu-tight text-[2rem] font-bold sm:text-4xl" style={{ color: world.color }}>
-            {world.name.ur}
-          </h1>
-          <p className="ltr-term text-sm font-semibold tracking-wide text-roshan-ink-soft" dir="ltr">{world.name.en}</p>
-          <p className="urdu-tight mx-auto mt-2 max-w-xl text-lg sm:text-xl leading-[1.6] line-clamp-2">{world.arcSummary.ur}</p>
-
-          <div className="mt-4 flex flex-wrap items-center justify-center gap-2">
-            <span className="stat-chip urdu-tight text-base" style={{ borderColor: `${world.color}55` }}>
-              <Art id={WORLD_MEDALS[world.id - 1]} size={26} />
-              بیج: {world.badgeName.ur}
-            </span>
-            <span className="stat-chip urdu-tight text-sm">
-              <span className="ltr-term" dir="ltr">{doneCount}/{total}</span> سبق
-            </span>
+          <div className="shrink-0 text-center" dir="ltr">
+            <p className="text-xl font-bold leading-none">{doneCount}<span className="text-soft">/{total}</span></p>
+            <p className="urdu-tight text-xs text-soft">سبق</p>
           </div>
-          <div className="meter mx-auto mt-3 max-w-xs" dir="ltr">
-            <span style={{ width: `${pct * 100}%` }} />
-          </div>
-          </div>
+        </div>
+        <div className="meter mt-3" dir="ltr">
+          <span style={{ width: `${pct * 100}%` }} />
+        </div>
       </div>
 
-      {/* Lesson path (RTL) — each node shows the lesson's own skill icon */}
-      <div className="mt-9 flex flex-wrap items-start justify-center gap-x-5 gap-y-9 sm:gap-x-7">
+      {/* lesson list — white rows, dashed connector behind the status discs */}
+      <ol className="relative mx-auto mt-6 w-full max-w-md" aria-label="اسباق">
+        <div
+          className="pointer-events-none absolute right-[37px] top-10 bottom-10 w-0.5"
+          style={{ background: "repeating-linear-gradient(to bottom, #DCD8CF 0 8px, transparent 8px 16px)" }}
+          aria-hidden
+        />
         {Array.from({ length: total }, (_, i) => {
           const n = i + 1;
           const lesson = lessons[n - 1];
-          const prog = lesson ? profile.progress[lesson.id] : undefined;
+          if (!lesson) return null;
+          const prog = profile.progress[lesson.id];
           const done = prog?.completed ?? false;
-          const isCurrent = lesson && lesson.id === currentLessonId && !done;
-          const locked = lesson && !done && lesson.id !== currentLessonId && !prog;
+          const isCurrent = lesson.id === currentLessonId && !done;
+          const locked = !done && lesson.id !== currentLessonId && !prog;
+
+          const stars = profile.stars[lesson.id] ?? 0;
 
           return (
-            <div key={n} className="relative flex w-[6.8rem] flex-col items-center text-center sm:w-28">
-              <div className="ltr-term absolute -top-5 left-1/2 -translate-x-1/2 rounded-full bg-white/90 px-2 py-0.5 text-[0.7rem] font-bold text-roshan-ink-soft shadow-sm" dir="ltr">
-                {world.id}.{n}
-              </div>
-              {lesson ? (
-                <button
-                  onClick={() => {
-                    if (locked) {
-                      void playAudio(undefined, "پہلے اگلا سبق مکمل کرو!");
-                      return;
-                    }
-                    openLesson(lesson.id);
+            <li key={lesson.id} className="relative">
+              <button
+                onClick={() => {
+                  if (locked) {
+                    void playAudio(undefined, "پہلے اگلا سبق مکمل کرو!");
+                    return;
+                  }
+                  openLesson(lesson.id);
+                }}
+                className={`mb-3 flex w-full items-center gap-4 rounded-2xl border bg-white px-4 py-3 text-right transition-all ${
+                  isCurrent
+                    ? "border-2 shadow-[var(--r-shadow-lg)]"
+                    : locked
+                      ? "cursor-default border-transparent opacity-60"
+                      : "border-hairline hover:-translate-y-0.5 hover:shadow-[var(--r-shadow)]"
+                }`}
+                style={isCurrent ? { borderColor: world.color } : undefined}
+                aria-label={lesson.title.en}
+              >
+                {/* status disc */}
+                <span
+                  className="relative z-10 flex h-[52px] w-[52px] shrink-0 items-center justify-center rounded-full"
+                  style={{
+                    background: done ? "var(--r-success-tint)" : locked ? "#F0EEE9" : world.color,
+                    color: done ? "var(--r-teal)" : locked ? "#A8A299" : "#fff",
+                    boxShadow: isCurrent ? `0 0 0 5px ${world.color}2E` : "var(--r-shadow)",
                   }}
-                  className={`node-circle ${isCurrent ? "node-current" : ""} ${done ? "node-done" : ""} ${locked ? "node-locked" : ""}`}
-                  style={locked ? undefined : { background: done ? "radial-gradient(circle at 32% 26%, #ffffffcc 0%, #DFF7E7 46%)" : `radial-gradient(circle at 32% 26%, #ffffffcc 0%, ${world.color} 46%)` }}
-                  aria-label={lesson.title.en}
                 >
                   {done ? (
-                    <span className="relative">
-                      <Art id={lessonIcon(lesson.skillKey)} size={38} />
-                      <span className="absolute -bottom-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full border-2 border-white bg-roshan-green" aria-hidden>
-                        <svg viewBox="0 0 10 8" width="9" height="8"><path d="M1 4 l2.6 2.8 L9 1" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
-                      </span>
-                    </span>
+                    <svg viewBox="0 0 12 10" width="20" height="17" aria-hidden>
+                      <path d="M1.5 5 l3 3.2 L10.5 1.2" fill="none" stroke="var(--r-teal)" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
                   ) : locked ? (
-                    <Art id="lock" size={34} />
+                    <Art id="lock" size={24} />
                   ) : (
-                    <Art id={lessonIcon(lesson.skillKey)} size={44} />
+                    <Art id={lessonIcon(lesson.skillKey)} size={30} />
                   )}
-                </button>
-              ) : (
-                <div className="node-circle node-locked !cursor-default">
-                  <span className="urdu-tight text-sm">جلد</span>
-                </div>
-              )}
-              <p className={`urdu-tight map-label mt-2 max-w-[6.5rem] rounded-full px-2 text-center text-[1.02rem] font-semibold leading-[1.6] sm:text-base ${locked ? "map-label-locked" : ""}`}>
-                {lesson ? lesson.title.ur : "نئی کہانی"}
-              </p>
-              {lesson && done && (
-                <div className="mt-1 flex h-6 items-center gap-0.5" dir="ltr">
-                  {[1, 2, 3].map((s) => (
-                    <span key={s} className={s <= (profile.stars[lesson.id] ?? 0) ? "text-lg" : "text-lg opacity-25"}>★</span>
-                  ))}
-                </div>
-              )}
-              {isCurrent && (
-                <div className="mt-1 h-10">
-                  <Character id="bijli" size={38} emote="happy" />
-                </div>
-              )}
-            </div>
+                </span>
+
+                {/* title + stars */}
+                <span className="min-w-0 flex-1">
+                  <span className="urdu-tight block truncate text-[1.15rem] font-bold leading-[1.6]">
+                    {lesson.title.ur}
+                  </span>
+                  {done ? (
+                    <span className="mt-0.5 flex items-center gap-0.5" dir="ltr">
+                      {[1, 2, 3].map((s) => (
+                        <span key={s} className={`text-sm ${s <= stars ? "text-amber" : "text-hairline"}`}>★</span>
+                      ))}
+                    </span>
+                  ) : isCurrent ? (
+                    <span className="urdu-tight text-sm font-semibold" style={{ color: world.color }}>
+                      ابھی یہیں ہو — چلو شروع کریں!
+                    </span>
+                  ) : (
+                    <span className="ltr-term text-xs text-soft" dir="ltr">{lesson.title.en}</span>
+                  )}
+                </span>
+
+                {/*Bijli peeks from the current row*/}
+                {isCurrent && <Character id="bijli" size={44} emote="happy" className="shrink-0" />}
+              </button>
+            </li>
           );
         })}
-      </div>
+      </ol>
 
       <div className="fixed bottom-4 left-4 z-40 no-print">
         <RepeatButton />
@@ -139,4 +159,3 @@ export function WorldView() {
     </main>
   );
 }
-

@@ -230,10 +230,10 @@ export function TypeInputActivity({ activity, onWin }: CommonProps) {
                 key={i}
                 className={`flex h-14 w-12 items-center justify-center rounded-xl border-b-4 text-3xl font-extrabold transition-all md:h-16 md:w-14 ${
                   wrong
-                    ? "border-roshan-orange-deep bg-orange-50 text-roshan-orange-deep"
+                    ? "border-amber bg-amber-tint text-ink"
                     : c
-                      ? "border-roshan-green bg-green-50 text-roshan-green"
-                      : "border-dashed border-roshan-lock bg-white/70 text-transparent"
+                      ? "border-success bg-success-tint text-success"
+                      : "border-dashed border-lock bg-white/70 text-transparent"
                 } ${filledWrong ? "anim-wiggle" : ""} ${c && !wrong ? "anim-pop" : ""}`}
                 style={c === " " ? { background: "#DDD6FE" } : undefined}
                 aria-label={`slot ${i + 1}`}
@@ -449,8 +449,8 @@ export function CatchFallingActivity({ activity, onWin }: CommonProps) {
           <div className="anim-pop absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
             <div className="flex flex-col items-center gap-1">
               <Art id="star" size={44} />
-              <div className="flex h-20 w-20 items-center justify-center rounded-2xl border-4 border-roshan-green bg-green-50" dir="ltr">
-                <span className="text-3xl font-extrabold text-roshan-green">{letter.char.toUpperCase()}</span>
+              <div className="flex h-20 w-20 items-center justify-center rounded-2xl border-2 border-success bg-success-tint" dir="ltr">
+                <span className="text-3xl font-extrabold text-success">{letter.char.toUpperCase()}</span>
               </div>
             </div>
           </div>

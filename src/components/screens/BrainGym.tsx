@@ -9,7 +9,7 @@ import { useEffect, useMemo, useState } from "react";
 import { brainGymForDay } from "@/lib/content";
 import { useApp, useActiveProfile } from "@/lib/store";
 import { Art } from "@/components/art/Props";
-import { BigButton, BugBanner, Confetti, RepeatButton } from "@/components/ui-kids/KidKit";
+import { BigButton, BugBanner, Confetti, IconButton, RepeatButton } from "@/components/ui-kids/KidKit";
 import { playAudio, stopSpeaking } from "@/lib/audio";
 import { playSfx } from "@/lib/music";
 import { todayKey } from "@/lib/storage";
@@ -57,38 +57,35 @@ export function BrainGym() {
   };
 
   return (
-    <main className="mx-auto min-h-screen max-w-3xl px-4 pb-24 pt-6">
-      <div className="mb-4 flex items-center justify-between">
-        <BigButton label={{ ur: "نقشے پر", en: "Map" }} variant="back" onClick={() => go("map")} />
+    <main className="mx-auto min-h-screen w-full max-w-xl px-4 pb-24 pt-5 sm:px-6">
+      <div className="flex items-center justify-between gap-3">
+        <IconButton art="home" label="نقشے پر" onClick={() => go("map")} />
+        <h1 className="urdu-tight flex-1 text-center text-2xl font-bold">برین جم</h1>
         <RepeatButton />
       </div>
 
-      <div className="card-kid p-6 text-center">
+      <div className="card-kid mt-5 p-5 text-center">
         <div className="flex items-center justify-center gap-3">
-          <Art id="gem" size={44} />
-          <h1 className="urdu text-3xl font-bold">برین جم</h1>
-          <Art id="gem" size={44} />
+          <Art id="gem" size={38} />
+          <div>
+            <p className="urdu-tight text-lg font-bold">روزانہ ورزش · سطح {tier}</p>
+            <p className="urdu-tight text-sm text-soft">{playedToday ? "آج مکمل! دوبارہ کھیل سکتے ہو" : "ہفتہ وار چیمپیئن: ذاتی ریکارڈ — صرف اپنے آپ سے مقابلہ!"}</p>
+          </div>
         </div>
-        <p className="urdu-tight mt-1 text-base text-roshan-ink-soft">
-          روزانہ ورزش · سطح {tier} {playedToday ? " · آج مکمل! دوبارہ کھیل سکتے ہو" : ""}
-        </p>
-        <p className="urdu mt-1 text-lg text-roshan-ink-soft">
-          ہفتہ وار چیمپیئن: ذاتی ریکارڈ — صرف اپنے آپ سے مقابلہ!
-        </p>
       </div>
 
       {result === "win" ? (
         <div className="mt-8 text-center">
           <Confetti pieces={30} />
           <div className="anim-bob mx-auto w-fit"><Art id="trophy" size={120} /></div>
-          <p className="urdu mt-4 text-3xl font-bold text-roshan-green">شاباش! دماغ تیز ہے!</p>
+          <p className="urdu mt-4 text-3xl font-bold text-success">شاباش! دماغ تیز ہے!</p>
           <p className="urdu mt-2 text-xl">{puzzle.explain.ur}</p>
           {tierUp && (
-            <p className="urdu mt-2 text-xl font-bold text-roshan-orange">
+            <p className="urdu mt-2 text-xl font-bold text-primary-strong">
               نئی سطح کھل گئی — اگلی دفعہ مشکل تر!
             </p>
           )}
-          <p className="urdu-tight mt-2 text-base text-roshan-ink-soft">لگاتار {profile.brainGym.streak} جیتیں!</p>
+          <p className="urdu-tight mt-2 text-base text-soft">لگاتار {profile.brainGym.streak} جیتیں!</p>
           <div className="mt-6 flex justify-center gap-3">
             <BigButton label={{ ur: "دوبارہ", en: "Replay" }} variant="back" onClick={() => { setResult("idle"); stopSpeaking(); }} />
             <BigButton label={{ ur: "سبق چلو", en: "To lesson" }} variant="go" onClick={() => go(profile.current ? "world" : "map")} />
@@ -97,7 +94,7 @@ export function BrainGym() {
       ) : (
         <div className="mt-8">
           <p className="urdu text-center text-2xl font-bold">{puzzle.prompt.ur}</p>
-          <p className="ltr-term mt-1 text-center text-sm text-roshan-ink-soft" dir="ltr">{puzzle.prompt.en}</p>
+          <p className="ltr-term mt-1 text-center text-sm text-soft" dir="ltr">{puzzle.prompt.en}</p>
 
           {puzzle.series && (
             <div className="mt-6 flex items-center justify-center gap-3">
@@ -106,7 +103,7 @@ export function BrainGym() {
                   <Art id={s.art} size={64} />
                 </div>
               ))}
-              <span className="urdu text-3xl font-bold text-roshan-orange">؟</span>
+              <span className="urdu text-3xl font-bold text-primary-strong">؟</span>
             </div>
           )}
 

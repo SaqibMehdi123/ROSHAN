@@ -240,7 +240,7 @@ export function MatchSlotsActivity({ activity, onWin, hintHandAfter = 2 }: Commo
                 <button
                   key={slot.id}
                   onClick={() => tryPlace(slot.id)}
-                  className={`relative ${a.row ? "h-24 w-20" : "h-28 w-28"} flex flex-col items-center justify-center rounded-2xl border-3 border-dashed transition-all ${filled ? "border-solid border-roshan-green bg-green-50" : "border-roshan-lock bg-cream hover:scale-105"} ${shakeSlot === slot.id ? "anim-wiggle" : ""}`}
+                  className={`relative ${a.row ? "h-24 w-20" : "h-28 w-28"} flex flex-col items-center justify-center rounded-2xl border-2 border-dashed transition-all ${filled ? "border-solid border-success bg-success-tint" : "border-lock bg-white/70 hover:scale-105"} ${shakeSlot === slot.id ? "anim-wiggle" : ""}`}
                   aria-label={slot.label.en}
                 >
                   {filled ? (
@@ -274,7 +274,7 @@ export function MatchSlotsActivity({ activity, onWin, hintHandAfter = 2 }: Commo
                     setPicked(selected ? null : item.id);
                     void playAudio(undefined, `${item.name.ur}!`);
                   }}
-                  className={`flex w-28 flex-col items-center rounded-2xl border-3 bg-white p-3 transition-all ${used ? "opacity-30" : selected ? "border-roshan-orange bg-orange-50 scale-105 shadow-md" : "border-roshan-card-border hover:scale-105"}`}
+                  className={`flex w-28 flex-col items-center rounded-2xl border-2 bg-white p-3 transition-all ${used ? "opacity-30" : selected ? "border-primary bg-primary-tint scale-105 shadow-md" : "border-hairline hover:scale-105"}`}
                 >
                   <Art id={item.art} size={62} />
                   <span className="urdu mt-1 text-base font-bold">{item.name.ur}</span>
