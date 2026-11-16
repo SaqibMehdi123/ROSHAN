@@ -188,8 +188,8 @@ export function MatchSlotsActivity({ activity, onWin, hintHandAfter = 2 }: Commo
   const [shakeSlot, setShakeSlot] = useState<string | null>(null);
   const { banner, showBug } = useBugFeedback();
   const sfxOn = useApp((s) => s.device.sfx);
-  const leftTitle = a.panelTitles?.left ?? { ur: "بجلی کے جُز واپس لگاؤ", en: "Put Bijli's parts back" };
-  const rightTitle = a.panelTitles?.right ?? { ur: "جُز — Parts", en: "Parts" };
+  const leftTitle = a.panelTitles?.left ?? { ur: "بجلی کے حصے واپس لگاؤ", en: "Put Bijli's parts back" };
+  const rightTitle = a.panelTitles?.right ?? { ur: "حصے — Parts", en: "Parts" };
 
   useEffect(() => {
     void playAudio(a.audio, a.prompt.ur);

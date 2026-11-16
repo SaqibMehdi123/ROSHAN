@@ -33,8 +33,8 @@ function profOf(s: Pick<AppState, "profiles" | "activeProfileId">): Profile | nu
 }
 
 const OUTFIT_UNLOCKS: { at: number; id: string; name: { ur: string; en: string } }[] = [
-  { at: 12, id: "cap", name: { ur: "مزیدار ٹوپی", "en": "Cool Cap" } },
-  { at: 30, id: "dasti-topi", name: { ur: "دستی ٹوپی", "en": "Dasti Topi" } },
+  { at: 12, id: "cap", name: { ur: "شاندار ٹوپی", "en": "Cool Cap" } },
+  { at: 30, id: "dasti-topi", name: { ur: "پارٹی ٹوپی", "en": "Party Cap" } },
   { at: 60, id: "hero-cape", name: { ur: "ہیرو کیپ", "en": "Hero Cape" } },
 ];
 

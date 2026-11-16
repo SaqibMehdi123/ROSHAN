@@ -5,7 +5,7 @@ Concurrency 8, 3 retries, resume-safe (skips existing valid files)."""
 import asyncio, json, os, sys, time
 import edge_tts
 
-ROOT = "/home/z/my-project"
+ROOT = "/home/z/my-project/ROSHAN"
 OUT = f"{ROOT}/public/audio"
 MANIFEST = f"{ROOT}/scripts/tts-manifest.json"
 CONC = 8

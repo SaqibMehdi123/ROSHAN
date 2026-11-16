@@ -120,7 +120,7 @@ export function Album() {
 
       {/* Outfit unlocks — star meters toward each unlock */}
       <section className="mt-8">
-        <h2 className="urdu mb-3 text-2xl font-bold">پوشاک</h2>
+        <h2 className="urdu mb-3 text-2xl font-bold">کپڑے</h2>
         <div className="grid grid-cols-2 gap-4 sm:grid-cols-3">
           {unlocks.map((o) => {
             const earned = profile.outfits.includes(o.id) || totalStars >= o.at;

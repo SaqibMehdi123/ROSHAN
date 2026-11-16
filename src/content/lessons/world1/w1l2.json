@@ -4,7 +4,7 @@
   "world": 1,
   "order": 2,
   "title": {
-    "ur": "بجلی کے جُز",
+    "ur": "بجلی کے حصے",
     "en": "Bijli's Parts"
   },
   "skill": {
@@ -15,7 +15,7 @@
   "minutes": 7,
   "badge": "dosti-ka-safar",
   "praise": {
-    "ur": "شاباش! تم نے بجلی کے سب جُز واپس لگا دیے!",
+    "ur": "شاباش! تم نے بجلی کے سب حصے واپس لگا دیے!",
     "en": "Shabash! You put all of Bijli's parts back!"
   },
   "story": {
@@ -48,7 +48,7 @@
           {
             "char": "bijli",
             "emote": "short-circuit",
-            "ur": "بز-بز-بز! اوہ نہیں! میرے جُز الگ ہو گئے!",
+            "ur": "بز-بز-بز! اوہ نہیں! میرے حصے الگ ہو گئے!",
             "en": "Bzz-bzz-bzz! Oh no! My parts came off!",
             "audio": "w1l2_s1_l3",
             "fx": "shake"
@@ -67,7 +67,7 @@
           {
             "char": "noor",
             "emote": "pointing",
-            "ur": "مصیبت نہیں، بجلی! ہم تمہارے جُز واپس لگا دیں گے۔ پہلے سب کو جانیں!",
+            "ur": "مصیبت نہیں، بجلی! ہم تمہارے حصے واپس لگا دیں گے۔ پہلے سب کو جانیں!",
             "en": "No problem, Bijli! We'll put your parts back. First let's learn them!",
             "audio": "w1l2_s2_l1"
           },
@@ -102,7 +102,7 @@
           {
             "char": "chotu",
             "emote": "excited",
-            "ur": "چلو بگ فکسر بنیں! جُز واپس لگاتے ہیں!",
+            "ur": "چلو بگ فکسر بنیں! حصے واپس لگاتے ہیں!",
             "en": "Let's be Bug Fixers! Put the parts back!",
             "audio": "w1l2_s2_l6"
           }
@@ -150,7 +150,7 @@
     "activity": {
       "type": "match-slots",
       "prompt": {
-        "ur": "جُز اٹھاؤ اور بجلی پر سہی جگہ لگاؤ!",
+        "ur": "حصہ اٹھاؤ اور بجلی پر سہی جگہ لگاؤ!",
         "en": "Pick a part and place it on the right spot on Bijli!"
       },
       "audio": "w1l2_do_prompt",
@@ -243,7 +243,7 @@
         }
       ],
       "wrongHint": {
-        "ur": "اوپس! ایک بگ ملا! یہ جُز یہاں نہیں لگے گا… دوبارہ کوشش کریں؟",
+        "ur": "اوپس! ایک بگ ملا! یہ حصہ یہاں نہیں لگے گا… دوبارہ کوشش کریں؟",
         "en": "Oops! A bug! This part doesn't go here… try again?"
       }
     }

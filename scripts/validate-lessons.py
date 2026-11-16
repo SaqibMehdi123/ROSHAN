@@ -2,7 +2,7 @@
 """ROSHAN lesson validator — schema shape, art IDs, audio keys, engine integrity."""
 import json, re, glob, sys, os
 
-ROOT = '/home/z/my-project'
+ROOT = '/home/z/my-project/ROSHAN'
 errors = []
 warnings = []
 

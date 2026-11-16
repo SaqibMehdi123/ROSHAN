@@ -176,7 +176,11 @@ export function WelcomeGate() {
         <BigButton
           label={{ ur: `خوش آمدید، ${name.trim()}!`, en: `Welcome, ${name.trim()}!` }}
           variant="success"
-          onClick={() => createProfile(name, color, pairMode, pairMode ? buddy : undefined)}
+          speakLabel={false}
+          onClick={() => {
+            void playAudio(undefined, "خوش آمدید!"); // static neural clip — names can't be pre-generated
+            createProfile(name, color, pairMode, pairMode ? buddy : undefined);
+          }}
         />
       </div>
     </Shell>
@@ -197,7 +201,7 @@ export function ProfileGate() {
           <button
             key={p.id}
             onClick={() => {
-              void playAudio(undefined, `خوش آمدید ${p.name}!`);
+              void playAudio(undefined, "خوش آمدید!");
               selectProfile(p.id);
             }}
             className="card-kid flex min-h-36 w-40 flex-col items-center justify-center gap-2 p-4 transition-transform hover:scale-[1.04]"

@@ -1,0 +1,14 @@
+{
+  "created": 1794856087,
+  "id": "2026111703080670fdf5c025724782",
+  "request_id": "2026111703080670fdf5c025724782",
+  "text": "麦当的膝盖上，玛格丽亚在她的脚后跟上坐着。",
+  "usage": {
+    "completion_tokens": 20,
+    "prompt_tokens": 115,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 135
+  }
+}

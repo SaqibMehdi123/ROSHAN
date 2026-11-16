@@ -114,6 +114,12 @@ function playFile(key: string, done: () => void): Promise<boolean> {
     try {
       const audio = new Audio(`${BASE}/audio/${key}.mp3`);
       currentHtmlAudio = audio;
+      // "آہستہ آواز" (slow voice) must also affect bundled neural clips —
+      // time-stretch without pitch shift (default preservesPitch = true).
+      if (slowVoice) {
+        audio.playbackRate = 0.82;
+        try { audio.preservesPitch = true; } catch {}
+      }
       audio.onended = () => {
         currentHtmlAudio = null;
         done(); // emits "stopped speaking" to listeners
@@ -162,25 +168,23 @@ export async function playAudio(
     currentHtmlAudio = null;
   }
 
-  // 3) device speech synthesis — Urdu voice, else Hindi, else default voice with ur lang hint
+  // 3) device speech synthesis — ONLY a real Urdu/Hindi voice (any other voice
+  // mangles Urdu letter-signs into garbage); else fall through to the visual beat
   if (urText && typeof window.speechSynthesis !== "undefined") {
     refreshVoices();
-    const urdu = pickVoice("ur");
-    const hindi = urdu ?? pickVoice("hi");
-    const u = new SpeechSynthesisUtterance(urText);
-    if (hindi) {
-      u.voice = hindi;
-      u.lang = hindi.lang;
-    } else {
-      u.lang = "ur-PK"; // engine may still honor the language hint
+    const voice = pickVoice("ur") ?? pickVoice("hi");
+    if (voice) {
+      const u = new SpeechSynthesisUtterance(urText);
+      u.voice = voice;
+      u.lang = voice.lang;
+      u.rate = opts.rate ?? (slowVoice ? 0.72 : 0.9);
+      u.pitch = 1.05;
+      u.onend = done;
+      u.onerror = done;
+      currentUtterance = u;
+      window.speechSynthesis.speak(u);
+      return;
     }
-    u.rate = opts.rate ?? (slowVoice ? 0.72 : 0.9);
-    u.pitch = 1.05;
-    u.onend = done;
-    u.onerror = done;
-    currentUtterance = u;
-    window.speechSynthesis.speak(u);
-    return;
   }
 
   // 4) visual-only fallback: brief beat so UI pacing stays calm

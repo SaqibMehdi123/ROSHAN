@@ -34,7 +34,7 @@ export function CastScreen() {
             key={c.id}
             onClick={() => {
               setActive(c.id);
-              void playAudio(c.introAudio, `${c.role.ur} ${c.catchphrase.ur}`);
+              void playAudio(undefined, `${c.role.ur} ${c.catchphrase.ur}`);
             }}
             className={`card-kid flex flex-col items-center gap-2 p-4 transition-transform hover:scale-[1.03] ${active === c.id ? "!border-primary shadow-[var(--r-shadow-lg)]" : ""}`}
           >
@@ -72,7 +72,7 @@ export function SettingsScreen() {
       <div className="card-kid mt-5 p-6">
         <div className="mt-2 space-y-4">
           <Toggle
-            labelUr="سنگیت"
+            labelUr="گانا"
             labelEn="background music"
             on={profile?.settings.music ?? device.music}
             onChange={(v) => (profile ? setSettings({ music: v }) : setDevice({ music: v }))}
@@ -94,7 +94,7 @@ export function SettingsScreen() {
         {profile?.pairMode && (
           <div className="mt-6 rounded-2xl border-2 border-success/30 bg-success-tint p-4 text-right">
             <p className="urdu text-lg font-bold text-success">جوڑی موڈ چالو ہے</p>
-            <p className="urdu text-base">{profile.name} ↔ {profile.buddyName ?? "دوست"} — ہر ١٠ منٹ میں سوپ!</p>
+            <p className="urdu text-base">{profile.name} ↔ {profile.buddyName ?? "دوست"} — ہر ١٠ منٹ میں باری بدلو!</p>
           </div>
         )}
 

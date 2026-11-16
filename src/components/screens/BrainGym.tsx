@@ -93,7 +93,7 @@ export function BrainGym() {
         <div className="text-right">
           <p className="urdu-tight text-lg font-bold">روزانہ ورزش · سطح {tier}</p>
           <p className="urdu-tight text-sm text-soft">
-            {playedToday ? "آج مکمل! دوبارہ کھیل سکتے ہو" : "ہفتہ وار چیمپیئن: ذاتی ریکارڈ — صرف اپنے آپ سے مقابلہ!"}
+            {playedToday ? "آج مکمل! دوبارہ کھیل سکتے ہو" : "ہفتے کا چیمپیئن: اپنا ریکارڈ — صرف اپنے آپ سے مقابلہ!"}
           </p>
         </div>
       </div>
@@ -153,7 +153,7 @@ export function BrainGym() {
               <Bijli size={banner ? 96 : 84} emote={banner ? "idle" : "happy"} />
             </div>
             <p className="urdu-tight max-w-[16rem] pb-6 text-sm text-soft">
-              {banner ? "قریک ہے… ایک بار پھر سوچو!" : "آرام سے سوچو — جلدی نہیں!"}
+              {banner ? "قریب ہے… ایک بار پھر سوچو!" : "آرام سے سوچو — جلدی نہیں!"}
             </p>
           </div>
 

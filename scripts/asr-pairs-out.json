@@ -1,0 +1,74 @@
+[
+ {
+  "label": "murgi",
+  "tag": "with",
+  "src": "مُرگی",
+  "asr": null
+ },
+ {
+  "label": "murgi",
+  "tag": "plain",
+  "src": "مرگی",
+  "asr": "Merhaba"
+ },
+ {
+  "label": "ussi",
+  "tag": "with",
+  "src": "اُسی",
+  "asr": null
+ },
+ {
+  "label": "ussi",
+  "tag": "plain",
+  "src": "اسی",
+  "asr": "E C"
+ },
+ {
+  "label": "dum",
+  "tag": "with",
+  "src": "دُم",
+  "asr": "Dumb."
+ },
+ {
+  "label": "dum",
+  "tag": "plain",
+  "src": "دم",
+  "asr": null
+ },
+ {
+  "label": "beech",
+  "tag": "with",
+  "src": "بِیچ",
+  "asr": "Bunch"
+ },
+ {
+  "label": "beech",
+  "tag": "plain",
+  "src": "بیچ",
+  "asr": "bitch"
+ },
+ {
+  "label": "chuno",
+  "tag": "with",
+  "src": "چُنو",
+  "asr": null
+ },
+ {
+  "label": "chuno",
+  "tag": "plain",
+  "src": "چنو",
+  "asr": null
+ },
+ {
+  "label": "ustad",
+  "tag": "with",
+  "src": "اُستاد",
+  "asr": null
+ },
+ {
+  "label": "ustad",
+  "tag": "plain",
+  "src": "استاد",
+  "asr": null
+ }
+]

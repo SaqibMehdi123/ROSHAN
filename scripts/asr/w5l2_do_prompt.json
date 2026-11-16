@@ -1,0 +1,14 @@
+{
+  "created": 1794856088,
+  "id": "20261117030807a29cbd5ab9824da1",
+  "request_id": "20261117030807a29cbd5ab9824da1",
+  "text": "Parchment, three patties, colors. First color, you know, then patty, please.",
+  "usage": {
+    "completion_tokens": 24,
+    "prompt_tokens": 139,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 163
+  }
+}

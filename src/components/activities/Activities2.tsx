@@ -624,7 +624,7 @@ export function FindNamedActivity({ activity, onWin, hintHandAfter = 2 }: Common
   useEffect(() => {
     if (!current) return;
     const t = setTimeout(() => {
-      void playAudio(current.audio, `ابھی ${current.name.ur} پر اشارہ کرو!`);
+      void playAudio(undefined, `ابھی ${current.name.ur} پر اشارہ کرو!`);
     }, 600);
     return () => clearTimeout(t);
   }, [round]);

@@ -8,7 +8,7 @@ Voice casting: female (Uzma) for bijli/noor/narrator/system, male (Asad) for oth
 """
 import json, glob, hashlib, re, os
 
-ROOT = "/home/z/my-project"
+ROOT = "/home/z/my-project/ROSHAN"
 FEMALE = "ur-PK-UzmaNeural"
 MALE = "ur-PK-AsadNeural"
 
@@ -271,7 +271,7 @@ for f in glob.glob(f"{ROOT}/src/**/*.tsx", recursive=True) + glob.glob(f"{ROOT}/
     src = open(f, encoding="utf-8").read()
     for m in re.finditer(r"playAudio\(\s*(?:undefined|null)\s*,\s*[\"'`]([^\"'`]+)[\"'`]", src):
         t = m.group(1).strip()
-        if t:
+        if t and "${" not in t:  # template literals with expressions are handled in section 5
             inline.add(t)
     # template literal with expressions can't be pre-generated; skip those
 
@@ -283,6 +283,80 @@ for (key, ur, v, r, p) in keyed:
     ak = auto_key(ur)
     if ak not in entries:
         entries[ak] = {"text": ur, "voice": v, "rate": r, "pitch": p}
+
+# ---- 5) composed dynamic strings (template literals with enumerable values) ----
+# Runtime speaks these via playAudio(undefined, `…${x}…`); the auto-hash lookup
+# (audio.ts step 2) finds the clip, so pre-generating here removes device-TTS fallbacks.
+
+# a) map welcome — AdventureMap passes key "ui_welcome" (generic, child name shown visually)
+add("ui_welcome", "روشن کی دنیا میں خوش آمدید! کس زمین میں چلتے ہیں؟", *SYSTEM)
+
+# b) cast screen intros: "<role.ur> <catchphrase.ur>" per character
+for c in chars:
+    txt = f"{c.get('role',{}).get('ur','')} {c.get('catchphrase',{}).get('ur','')}".strip()
+    if txt:
+        add(auto_key(txt), txt, *CHAR_VOICE.get(c.get("id", ""), SYSTEM))
+
+# c) world names on the map: "<name.ur>!"
+worlds = json.load(open(f"{ROOT}/src/content/worlds.json"))
+for w in worlds:
+    nm = w.get("name", {}).get("ur", "")
+    if nm:
+        add(auto_key(f"{nm}!"), f"{nm}!", *SYSTEM)
+
+# d) activity composed strings, enumerated over lesson content
+for f in glob.glob(f"{ROOT}/src/content/lessons/world*/*.json"):
+    d = json.load(open(f))
+    for blk_name in ("do", "bonus"):
+        blk = d.get(blk_name)
+        act = blk.get("activity", {}) if isinstance(blk, dict) else {}
+        if not isinstance(act, dict):
+            continue
+        # color-palette activities: "<color> رنگ!" / "<color> — بالکل ٹھیک!"
+        for p_ in act.get("palette", []) or []:
+            nm = (p_.get("name") or {}).get("ur", "")
+            if nm:
+                for txt in (f"{nm} رنگ!", f"{nm} — بالکل ٹھیک!"):
+                    add(auto_key(txt), txt, *SYSTEM)
+        # find-named: "ابھی <name> پر اشارہ کرو!" / "بالکل صحیح — یہ <name> ہے!"
+        for t in act.get("targets", []) or []:
+            nm = (t.get("name") or {}).get("ur", "")
+            if not nm:
+                continue
+            for txt in (f"ابھی {nm} پر اشارہ کرو!", f"بالکل صحیح — یہ {nm} ہے!"):
+                add(auto_key(txt), txt, *SYSTEM)
+        # match-slots: "<item name>!" (grab feedback)
+        for it in act.get("items", []) or []:
+            nm = (it.get("name") or {}).get("ur", "")
+            # skip keycap-style names (single punctuation/latin chars) — nothing to speak
+            if nm and any("\u0600" <= ch <= "\u06FF" for ch in nm) and len(nm.strip()) > 1:
+                add(auto_key(f"{nm}!"), f"{nm}!", *SYSTEM)
+
+# ---- 6) KidKit BigButton / Album GoButton label props (spoken on tap) ----
+#   Generic Bilingual-object sweep: ANY { ur: "…", en: … } literal in TSX —
+#   covers label props (incl. ternaries), PHASE_LABELS, panelTitles defaults, etc.
+#   A few unspoken extras are harmless; a missing clip is not.
+bilingual_re = re.compile(r'\{\s*ur:\s*"([^"]+)"\s*,\s*en:')
+URCHAR = re.compile(r'[\u0600-\u06FF]')
+for f in glob.glob(f"{ROOT}/src/**/*.tsx", recursive=True):
+    src = open(f, encoding="utf-8").read()
+    for m in bilingual_re.finditer(src):
+        t = m.group(1).strip()
+        if t and "${" not in t and URCHAR.search(t):
+            add(auto_key(t), t, *SYSTEM)
+
+# ---- 7) Album screen: world badges + locked-world hints + lesson titles ----
+for w in worlds:
+    bn = w.get("badgeName", {}).get("ur", "")
+    if bn:
+        add(auto_key(f"{bn}!"), f"{bn}!", *SYSTEM)
+add(auto_key("اس دنیا کے سب سبق مکمل کرو!"), "اس دنیا کے سب سبق مکمل کرو!", *SYSTEM)
+add(auto_key("پہلے پچھلی دنیا کھلو!"), "پہلے پچھلی دنیا کھلو!", *SYSTEM)
+for f in glob.glob(f"{ROOT}/src/content/lessons/world*/*.json"):
+    d = json.load(open(f))
+    t = (d.get("title") or {}).get("ur", "")
+    if t:
+        add(auto_key(t), t, *SYSTEM)
 
 # ---- emit keyed manifest ----
 manifest = []

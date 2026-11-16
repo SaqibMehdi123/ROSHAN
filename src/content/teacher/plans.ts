@@ -51,7 +51,7 @@ export const PLANS: TeacherPlan[] = [
   },
   {
     lessonId: "w1l2",
-    title: { ur: "بجلی کے جُز", en: "Bijli's Parts (Monitor, CPU, Keyboard, Mouse)" },
+    title: { ur: "بجلی کے حصے", en: "Bijli's Parts (Monitor, CPU, Keyboard, Mouse)" },
     prepChecklist: [
       "PC par monitor/CPU/keyboard/mouse bachon ko dikhao (asli cheezein!)",
       "Har jodi ke PC par ROSHAN w1l2 kholo",

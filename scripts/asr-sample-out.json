@@ -1,0 +1,56 @@
+[
+ {
+  "key": "ui_welcome",
+  "src": "روشن کی دنیا میں خوش آمدید! کس زمین میں چلتے ہیں؟",
+  "asr": null,
+  "expected": "roshan ki duniya mein khush aamdeed"
+ },
+ {
+  "key": "auto-e38da4a54639",
+  "src": "خوش آمدید!",
+  "asr": null,
+  "expected": "khush aamdeed"
+ },
+ {
+  "key": "auto-93b659887511",
+  "src": "ہمت والی لیڈر — وہی سوال پوچھتی ہے جو تم پوچھتے! چلو! کچھ نیا سیکھیں!",
+  "asr": null,
+  "expected": "himmat wali leader ... chalo kuch naya seekhein"
+ },
+ {
+  "key": "auto-a1ba2b790ef2",
+  "src": "ہنسی والا دوست — غلطیاں کرتا ہے، بگ ڈھونڈتا ہے! اوہو! پھر بگ آ گیا!",
+  "asr": null,
+  "expected": "hansi wala dost ... ohho phir bug aa gaya"
+ },
+ {
+  "key": "auto-bae10ad6d9b2",
+  "src": "اُستاد زون میں خوش آمدید!",
+  "asr": null,
+  "expected": "ustad zone mein khush aamdeed"
+ },
+ {
+  "key": "w1l2_do_prompt",
+  "src": "حصہ اٹھاؤ اور بجلی پر سہی جگہ لگاؤ!",
+  "asr": null,
+  "expected": "hissa uthao aur bijli par sahi jagah lagao"
+ },
+ {
+  "key": "w1l2_s1_l3",
+  "src": "بز-بز-بز! اوہ نہیں! میرے حصے الگ ہو گئے!",
+  "asr": null,
+  "expected": "biz-biz-biz oh nahi mere hisse alag ho gaye"
+ },
+ {
+  "key": "auto-cec6aea0347f",
+  "src": "باری بدلو! اب دوسرے دوست کی باری!",
+  "asr": null,
+  "expected": "baari badlo ab doosre dost ki baari"
+ },
+ {
+  "key": "auto-7224bcf86534",
+  "src": "بز-بز-بز! اوہ نہیں! میرے حصے الگ ہو گئے!",
+  "asr": null,
+  "expected": "biz-biz-biz oh nahi mere hisse alag ho gaye"
+ }
+]

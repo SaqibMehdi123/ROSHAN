@@ -478,7 +478,7 @@ function PairSwapTimer() {
         if (s <= 1) {
           setShowSwap(true);
           setCountdown(SWAP_COUNTDOWN_S);
-          void playAudio(undefined, "سوپ! اب دوسرے دوست کی باری!");
+          void playAudio(undefined, "باری بدلو! اب دوسرے دوست کی باری!");
           return SWAP_INTERVAL_MS / 1000;
         }
         return s - 1;
@@ -507,7 +507,7 @@ function PairSwapTimer() {
           onClick={() => {
             setShowSwap(true);
             setCountdown(SWAP_COUNTDOWN_S);
-            void playAudio(undefined, "سوپ! اب دوسرے دوست کی باری!");
+            void playAudio(undefined, "باری بدلو! اب دوسرے دوست کی باری!");
           }}
         >
           <span className="urdu text-lg font-bold">باری بدلو</span>
@@ -520,8 +520,8 @@ function PairSwapTimer() {
       {/* SWAP overlay */}
       {showSwap && (
         <div className="fixed inset-0 z-50 flex flex-col items-center justify-center gap-6 bg-[#F6F5F1]/95 backdrop-blur-sm">
-          <h2 className="urdu-tight text-6xl font-bold text-primary-strong">سوپ!</h2>
-          <p className="urdu-tight text-2xl font-semibold">اب دوسرے دوست کو موقع دو!</p>
+          <h2 className="urdu-tight text-6xl font-bold text-primary-strong">باری بدلو!</h2>
+          <p className="urdu-tight text-2xl font-semibold">اب دوسرے دوست کی باری ہے!</p>
           <p className="ltr-term text-sm text-roshan-ink-soft" dir="ltr">
             {profile.name} ↔ {profile.buddyName ?? "dost"} — swap driver &amp; navigator seats!
           </p>
