@@ -1,7 +1,7 @@
 /**
- * Kid UI kit — ROSHAN Studio v3 building blocks.
- * Flat surfaces, hairline borders, one indigo primary, soft shadows.
- * Every interactive element: ≥60px target, spoken label, zero-failure language.
+ * Kid UI kit — ROSHAN v4 “Village Fair” building blocks.
+ * Warm paper · saturated flat color · 3D press edges · ink-outline art.
+ * Every interactive element: ≥52px target, spoken label, zero-failure language.
  */
 "use client";
 
@@ -13,7 +13,7 @@ import { playSfx } from "@/lib/music";
 import type { Bilingual } from "@/lib/schema";
 
 /* ------------------------------ BigButton ------------------------------ */
-type BtnVariant = "go" | "back" | "teal" | "reward" | "success";
+type BtnVariant = "go" | "back" | "teal" | "reward" | "success" | "gold" | "sky";
 
 export function BigButton({
   label,
@@ -46,24 +46,24 @@ export function BigButton({
         onClick?.();
       }}
     >
-      {art && <Art id={art} size={30} />}
+      {art && <Art id={art} size={32} />}
       <span className="flex flex-col items-center leading-none">
-        <span className="urdu-tight text-[1.25rem] font-bold">{ur}</span>
-        {en && <span className="ltr-term mt-1 text-[0.8rem] font-medium opacity-75">{en}</span>}
-        {sublabel && <span className="ltr-term mt-0.5 text-xs opacity-60">{sublabel}</span>}
+        <span className="urdu-tight text-[1.3rem] font-bold">{ur}</span>
+        {en && <span className="ltr-term mt-1 text-[0.8rem] font-semibold opacity-80">{en}</span>}
+        {sublabel && <span className="ltr-term mt-0.5 text-xs opacity-70">{sublabel}</span>}
       </span>
     </button>
   );
 }
 
 /* ------------------------------ IconButton ------------------------------ */
-/** 48px circular chrome button — back, home, meta navigation. */
+/** 52px rounded-square chrome button — back, home, meta navigation. */
 export function IconButton({
   art,
   label,
   onClick,
   className,
-  size = 26,
+  size = 28,
 }: {
   art: string;
   label: string;
@@ -78,6 +78,68 @@ export function IconButton({
   );
 }
 
+/* -------------------------------- Chip -------------------------------- */
+/** Stat chip — white pill with icon + bold value (+ tiny Urdu label). */
+export function Chip({
+  art,
+  value,
+  label,
+  className,
+}: {
+  art?: string;
+  value: React.ReactNode;
+  label?: string;
+  className?: string;
+}) {
+  return (
+    <span className={`chip ${className ?? ""}`} dir="ltr">
+      {art && <Art id={art} size={17} />}
+      <span className="flex items-baseline gap-1">
+        <span className="text-[0.95rem] font-bold leading-none">{value}</span>
+        {label && <span className="urdu-tight text-[0.7rem] leading-none text-soft">{label}</span>}
+      </span>
+    </span>
+  );
+}
+
+/* ----------------------------- EnvBackdrop ----------------------------- */
+/** The painted village sky behind the big screens: sun, drifting clouds,
+ *  rolling hills at the horizon. Fixed layer — content scrolls over it. */
+export function EnvBackdrop() {
+  return (
+    <div className="env-sky pointer-events-none fixed inset-0 -z-10 overflow-hidden" aria-hidden>
+      {/* sun */}
+      <div
+        className="absolute top-[6%] left-[5%] h-[72px] w-[72px] rounded-full"
+        style={{ background: "#FFE9A8", boxShadow: "0 0 0 12px rgba(255, 233, 168, 0.45), 0 0 70px 34px rgba(255, 243, 196, 0.8)" }}
+      />
+      {/* drifting clouds */}
+      <div className="anim-cloud absolute top-[10%] right-[8%] w-[130px] opacity-95" style={{ animationDelay: "0s" }}>
+        <svg viewBox="0 0 120 60" className="w-full"><ellipse cx="42" cy="40" rx="34" ry="17" fill="#fff" /><ellipse cx="72" cy="30" rx="28" ry="19" fill="#fff" /><ellipse cx="92" cy="42" rx="24" ry="13" fill="#fff" /></svg>
+      </div>
+      <div className="anim-cloud absolute top-[26%] left-[14%] w-[100px] opacity-85" style={{ animationDelay: "2.5s" }}>
+        <svg viewBox="0 0 120 60" className="w-full"><ellipse cx="42" cy="40" rx="34" ry="17" fill="#fff" /><ellipse cx="72" cy="31" rx="27" ry="18" fill="#fff" /><ellipse cx="92" cy="42" rx="22" ry="12" fill="#fff" /></svg>
+      </div>
+      <div className="anim-cloud absolute top-[18%] right-[30%] w-[80px] opacity-75" style={{ animationDelay: "5s" }}>
+        <svg viewBox="0 0 120 60" className="w-full"><ellipse cx="42" cy="40" rx="34" ry="17" fill="#fff" /><ellipse cx="70" cy="32" rx="26" ry="17" fill="#fff" /></svg>
+      </div>
+      {/* rolling hills at the horizon */}
+      <svg
+        className="absolute bottom-0 left-0 w-full"
+        viewBox="0 0 400 130"
+        preserveAspectRatio="none"
+        style={{ height: "min(24vh, 190px)" }}
+      >
+        <path d="M0 130 Q60 40 150 84 Q240 122 310 96 Q360 80 400 96 V130 Z" fill="#CDEBB2" />
+        <path d="M0 130 Q80 66 180 104 Q270 130 340 112 Q375 104 400 112 V130 Z" fill="#A9DD8B" />
+        <path d="M0 130 Q90 96 200 122 Q310 142 400 124 V130 Z" fill="#8FCF73" />
+        <ellipse cx="52" cy="112" rx="7" ry="3" fill="#8FCF73" />
+        <ellipse cx="330" cy="108" rx="9" ry="3.5" fill="#8FCF73" />
+      </svg>
+    </div>
+  );
+}
+
 /* ------------------------------- StarRow ------------------------------- */
 export function StarRow({ count, size = 44, animate = true }: { count: number; size?: number; animate?: boolean }) {
   return (
@@ -86,7 +148,7 @@ export function StarRow({ count, size = 44, animate = true }: { count: number; s
         <div
           key={i}
           className={animate && i <= count ? "anim-pop" : ""}
-          style={{ animationDelay: `${i * 0.12}s`, opacity: i <= count ? 1 : 0.25 }}
+          style={{ animationDelay: `${i * 0.12}s`, opacity: i <= count ? 1 : 0.3, filter: i <= count ? "none" : "grayscale(1)" }}
         >
           <Art id="star" size={size} />
         </div>
@@ -96,7 +158,7 @@ export function StarRow({ count, size = 44, animate = true }: { count: number; s
 }
 
 /* ------------------------------ Confetti ------------------------------ */
-const CONFETTI_COLORS = ["#5856D6", "#1EA97C", "#F5A623", "#FF6F59", "#3E9BE8", "#A78BFA"];
+const CONFETTI_COLORS = ["#FF9600", "#22C55E", "#3E9BE8", "#FFC800", "#FF6F59", "#14B8A6"];
 
 export function Confetti({ pieces = 36 }: { pieces?: number }) {
   const arr = useMemo(
@@ -129,7 +191,7 @@ export function BugBanner({ hint, visible }: { hint: Bilingual; visible: boolean
   return (
     <div className="bug-banner mx-auto max-w-xl" role="status">
       <div className="shrink-0">
-        <Bijli size={44} emote="idle" />
+        <Bijli size={46} emote="idle" />
       </div>
       <div className="text-right">
         <p className="urdu text-[1.1rem] font-bold leading-[1.7]">
@@ -155,7 +217,7 @@ export function RepeatButton({ className }: { className?: string }) {
       title="دوبارہ سنیں"
     >
       <div className={speaking ? "anim-wiggle" : ""}>
-        <Bijli size={38} />
+        <Bijli size={40} />
       </div>
     </button>
   );
@@ -211,16 +273,18 @@ export function SpeakBubble({
       <div className="flex items-start gap-3 text-right">
         {speaker && speaker !== "narrator" && (
           <div className="mx-1 shrink-0" aria-hidden>
-            <Character id={speaker} size={52} emote={emote && emote !== "narrator" ? emote : "idle"} />
+            <Character id={speaker} size={54} emote={emote && emote !== "narrator" ? emote : "idle"} />
           </div>
         )}
         <div className="min-w-0 flex-1">
           {speakerUr && (
-            <div className="urdu-tight -mb-1 w-fit text-sm font-bold text-primary-strong">{speakerUr}</div>
+            <div className="urdu-tight -mb-1 w-fit rounded-full bg-primary-tint px-3 py-0.5 text-sm font-bold text-primary-strong">
+              {speakerUr}
+            </div>
           )}
           {!hideUr && (
             <p
-              className={`urdu mt-1 text-[1.3rem] font-semibold ${emote === "narrator" || speaker === "narrator" ? "text-soft" : ""}`}
+              className={`urdu mt-1 text-[1.35rem] font-semibold ${emote === "narrator" || speaker === "narrator" ? "text-soft" : ""}`}
               key={ur}
             >
               {ur}
@@ -241,14 +305,14 @@ export function SpeakBubble({
 }
 
 /* ------------------------------ ProgressDots ------------------------------ */
-/** Phase progress — 4 calm segments (done / current / upcoming). */
+/** Phase progress — 4 chunky segments (done / current / upcoming). */
 export function ProgressDots({ phases, current }: { phases: string[]; current: number }) {
   return (
-    <div className="flex items-center gap-1.5" dir="rtl">
+    <div className="flex items-center gap-2" dir="rtl">
       {phases.map((p, i) => (
         <span
           key={p}
-          className={`h-2.5 rounded-full transition-all ${i === current ? "w-9 bg-primary" : i < current ? "w-5 bg-success" : "w-5 bg-[#DDD9D0]"}`}
+          className={`h-3 rounded-full transition-all ${i === current ? "w-12 bg-primary" : i < current ? "w-6 bg-success" : "w-6 bg-[#EDE7DB]"}`}
           title={p}
         />
       ))}

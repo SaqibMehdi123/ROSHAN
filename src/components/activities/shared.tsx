@@ -16,9 +16,9 @@ import { useApp } from "@/lib/store";
 /* ---------------- Prompt bar (every DO activity) ---------------- */
 export function PromptBar({ prompt, audio }: { prompt: Bilingual; audio: string }) {
   return (
-    <div className="card-kid mx-auto mb-4 flex w-full max-w-2xl items-center gap-3 px-4 py-3">
+    <div className="card-kid mx-auto mb-4 flex w-full max-w-2xl items-center gap-3.5 px-4 py-3.5">
       <button
-        className="btn-kid btn-back !min-h-16 !min-w-16 !shrink-0 !rounded-2xl !px-3"
+        className="btn-kid btn-back !min-h-16 !min-w-16 !shrink-0 !rounded-2xl !px-3 hover:!border-amber"
         onClick={() => {
           playSfx("pop", true);
           void playAudio(audio, prompt.ur);
@@ -27,15 +27,15 @@ export function PromptBar({ prompt, audio }: { prompt: Bilingual; audio: string 
         title="سنو دوبارہ"
       >
         <span className="flex flex-col items-center leading-none">
-          <Art id="speaker" size={34} />
+          <Art id="speaker" size={36} />
           <span className="urdu-tight mt-1 text-[0.8rem] font-bold leading-4">سنو دوبارہ</span>
         </span>
       </button>
       <div className="min-w-0 flex-1 text-center">
-        <p className="urdu text-[1.35rem] font-bold leading-[1.6]" key={prompt.ur}>
+        <p className="urdu text-[1.4rem] font-bold leading-[1.6]" key={prompt.ur}>
           {prompt.ur}
         </p>
-        <p className="ltr-term mt-0.5 text-sm text-roshan-ink-soft" dir="ltr">
+        <p className="ltr-term mt-0.5 text-sm text-soft" dir="ltr">
           {prompt.en}
         </p>
       </div>

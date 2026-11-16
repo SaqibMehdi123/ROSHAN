@@ -104,7 +104,7 @@ export function TapSelectActivity({ activity, onWin, hintHandAfter = 2 }: Common
       <PromptBar prompt={a.prompt} audio={a.audio} />
       <div
         ref={sceneRef}
-        className="relative mx-auto max-w-4xl overflow-hidden rounded-3xl border-4 border-roshan-card-border shadow-[var(--r-shadow)]"
+        className="relative mx-auto max-w-4xl overflow-hidden rounded-[28px] border-2 border-line-strong shadow-[var(--r-shadow)]"
         onPointerMove={(e) => {
           if (!a.cursorArt || e.pointerType !== "mouse") return;
           const r = sceneRef.current?.getBoundingClientRect();
@@ -113,6 +113,11 @@ export function TapSelectActivity({ activity, onWin, hintHandAfter = 2 }: Common
         }}
       >
         <Art id={a.scene} className="block" />
+        {/* live counter — anchored to the scene card, not floating below */}
+        <span className="chip absolute top-3 right-3 z-10 !py-1" dir="ltr">
+          <Art id="star" size={16} />
+          {found.length} / {correctItems.length}
+        </span>
         {/* Teer — the friendly cursor that follows the mouse (mouse only) */}
         {a.cursorArt && teerPos && (
           <div
@@ -164,16 +169,11 @@ export function TapSelectActivity({ activity, onWin, hintHandAfter = 2 }: Common
           />
         )}
       </div>
-      <div className="mt-3 flex items-center justify-center gap-4">
-        <span className="stat-chip urdu-tight text-base" dir="rtl" title="ملے ہوئے — found">
-          <span className="ltr-term flex items-center gap-1.5" dir="ltr">
-            <Art id="star" size={18} /> {found.length} / {correctItems.length}
-          </span>
-        </span>
+      <div className="mt-4 flex items-center justify-center gap-4">
+        {banner && <BugBanner hint={banner} visible />}
       </div>
-      {banner && <div className="mt-3"><BugBanner hint={banner} visible /></div>}
       {found.length === correctItems.length && (
-        <p className="urdu anim-pop mt-3 text-center text-2xl font-bold text-roshan-green">{a.winPraise.ur}</p>
+        <p className="urdu anim-pop mt-3 text-center text-2xl font-bold text-success">{a.winPraise.ur}</p>
       )}
     </div>
   );
@@ -356,25 +356,30 @@ export function SortBinsActivity({ activity, onWin, hintHandAfter = 2 }: CommonP
 
         {explain ? (
           <div className="mt-4 text-center">
-            <p className="urdu text-2xl font-bold text-roshan-green">{explain.ur}</p>
-            <button className="btn-kid btn-success mt-3" onClick={next}>
+            <p className="urdu text-2xl font-bold text-success">{explain.ur}</p>
+            <button className="btn-kid btn-success mt-4 !min-h-14 !px-8" onClick={next}>
               <span className="urdu text-xl font-bold">{idx + 1 >= a.cards.length ? "مکمل!" : "اگلا"}</span>
+              <span className="ltr-term" dir="ltr" aria-hidden>←</span>
             </button>
           </div>
         ) : (
           <div className="mt-5 grid grid-cols-2 gap-6">
-            {a.bins.map((bin) => (
-              <button
-                key={bin.id}
-                onClick={() => sort(bin.id)}
-                className="card-kid flex min-h-32 flex-col items-center justify-center gap-1 p-4 transition-transform hover:scale-105"
-                style={{ background: bin.id === "theek" ? "#F0FDF4" : "#F0FDFA" }}
-              >
-                <Art id={bin.art} size={72} />
-                <span className="urdu text-xl font-bold">{bin.label.ur}</span>
-                <span className="ltr-term text-xs text-roshan-ink-soft" dir="ltr">{bin.label.en}</span>
-              </button>
-            ))}
+            {a.bins.map((bin) => {
+              const isTheek = bin.id === "theek";
+              return (
+                <button
+                  key={bin.id}
+                  onClick={() => sort(bin.id)}
+                  className={`card-kid flex min-h-36 flex-col items-center justify-center gap-1.5 p-4 transition-transform hover:scale-[1.04] ${
+                    isTheek ? "!border-success/50 bg-success-tint" : "!border-sky2/50 bg-sky2/15"
+                  }`}
+                >
+                  <Art id={bin.art} size={80} />
+                  <span className="urdu text-xl font-bold">{bin.label.ur}</span>
+                  <span className="ltr-term text-xs text-soft" dir="ltr">{bin.label.en}</span>
+                </button>
+              );
+            })}
           </div>
         )}
 

@@ -1115,6 +1115,22 @@ export const OBJECTS_ICONS: Record<string, ReactNode> = {
     </g>
   ),
 
+  /** teacher — green chalkboard on a wooden stand, chalk squiggles (Teacher Zone) */
+  teacher: (
+    <g strokeLinejoin="round" strokeLinecap="round">
+      <ellipse cx="50" cy="90" rx="30" ry="4.5" fill="rgba(74,52,33,0.10)" />
+      <path d="M34 66 L28 88 M66 66 L72 88" stroke="#8B5A2B" strokeWidth="4" />
+      <rect x="42" y="60" width="16" height="5" rx="2" fill="#A97142" stroke={INK} strokeWidth="2" />
+      <rect x="14" y="14" width="72" height="52" rx="7" fill="#8B5A2B" stroke={INK} strokeWidth="3" />
+      <rect x="20" y="20" width="60" height="40" rx="4" fill="#2E7D5B" stroke={INK} strokeWidth="2.5" />
+      <path d="M27 30 q8 -2 14 1 M27 36 h12 M27 42 q6 3 12 0" stroke="#F7F3E8" strokeWidth="2.6" fill="none" strokeLinecap="round" />
+      <path d="M47 30 q7 3 0 7 q-7 4 0 7" stroke="#F7F3E8" strokeWidth="2.4" fill="none" />
+      <rect x="63" y="30" width="12" height="4" rx="2" fill="#F7F3E8" opacity="0.9" />
+      <path d="M69 42 l3 6 6 1 -4.5 4 1 6 -5.5 -3 -5.5 3 1 -6 -4.5 -4 6 -1 Z" fill="#FFC800" stroke="#B98600" strokeWidth="1.2" />
+      <path d="M18 25 q4 -3 8 0" stroke="#F7F3E8" strokeWidth="1.8" opacity="0.6" fill="none" />
+    </g>
+  ),
+
   /** close-work — open book with bookmark, warm cover */
   "close-work": (
     <g strokeLinejoin="round" strokeLinecap="round">

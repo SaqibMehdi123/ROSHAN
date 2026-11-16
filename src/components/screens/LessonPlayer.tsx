@@ -189,17 +189,17 @@ function StoryPhase({
   return (
     <div onClick={advance} className="cursor-pointer select-none">
       {/* scene stage (capped so the dialog card always stays on screen) */}
-      <div className="relative mx-auto max-w-3xl overflow-hidden rounded-[24px] border border-hairline bg-white shadow-[var(--r-shadow-lg)]">
+      <div className="relative mx-auto max-w-3xl overflow-hidden rounded-[28px] border-2 border-line-strong bg-white shadow-[var(--r-shadow-lg)]">
         <Art id={scene.bg} className="block" />
         {/* set dressing — story props stand naturally on the ground at the sides */}
         {scene.props && scene.props.length > 0 && (
-          <div className="pointer-events-none absolute inset-x-0 bottom-0 flex items-end justify-between px-3 pb-1" aria-hidden>
-            <div className="flex items-end gap-2">
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 flex items-end justify-between px-6 pb-2" aria-hidden>
+            <div className="flex items-end gap-3">
               {scene.props.slice(0, 2).map((p) => (
-                <Art key={p} id={p} size={62} />
+                <Art key={p} id={p} size={66} />
               ))}
             </div>
-            {scene.props[2] && <Art id={scene.props[2]} size={54} />}
+            {scene.props[2] && <Art id={scene.props[2]} size={58} />}
           </div>
         )}
         {/* soft vignette so characters pop */}
@@ -247,7 +247,7 @@ function StoryPhase({
           })}
         </div>
         {/* progress — clean pill */}
-        <div className="ltr-term absolute left-3 top-2 rounded-full bg-white/90 px-3 py-0.5 text-xs font-bold text-soft" dir="ltr">
+        <div className="ltr-term absolute left-3 top-3 rounded-full border-2 border-line-strong bg-white/95 px-3.5 py-1 text-xs font-bold text-soft" dir="ltr">
           {idx + 1} / {total}
         </div>
       </div>
@@ -280,21 +280,23 @@ function StoryPhase({
       )}
 
       {!line.choice && (
-        <div className="mt-5 flex justify-center">
+        <div className="mt-6 flex justify-center">
           {lineDone ? (
             <button
-              className="btn-kid btn-teal !min-h-14 !px-7 anim-bob"
+              className="btn-kid btn-teal !min-h-16 !px-9 anim-bob"
               onClick={(e) => {
                 e.stopPropagation();
                 advance();
               }}
             >
-              <span className="urdu-tight text-lg font-bold">آگے بڑھو</span>
-              <span className="ltr-term text-xl" dir="ltr" aria-hidden>←</span>
+              <span className="urdu-tight text-xl font-bold">آگے بڑھو</span>
+              <span className="ltr-term text-2xl" dir="ltr" aria-hidden>←</span>
             </button>
           ) : (
-            <span className="urdu-tight flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-base text-soft shadow-[var(--r-shadow)]">
-              <span className="ltr-term" dir="ltr" aria-hidden>🔊</span>
+            <span className="urdu-tight flex items-center gap-2.5 rounded-full border-2 border-amber/60 bg-amber-tint px-6 py-3 text-lg text-ink shadow-[0_3px_0_rgba(62,56,50,0.08)]">
+              <span aria-hidden>
+                <Art id="speaker" size={26} />
+              </span>
               سن رہے ہیں…
             </span>
           )}

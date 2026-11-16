@@ -393,13 +393,18 @@ export function DragDropActivity({ activity, onWin, hintHandAfter = 2 }: CommonP
       <PromptBar prompt={a.prompt} audio={a.audio} />
       <div
         ref={sceneRef}
-        className="relative mx-auto max-w-4xl touch-none overflow-hidden rounded-3xl border-4 border-roshan-card-border shadow-[var(--r-shadow)]"
+        className="relative mx-auto max-w-4xl touch-none overflow-hidden rounded-[28px] border-2 border-line-strong shadow-[var(--r-shadow)]"
         onPointerMove={onSceneMove}
         onPointerUp={onSceneUp}
       >
         <Art id={a.scene} className="block" />
 
-        {/* drop targets */}
+        {/* live counter — anchored to the scene card, not floating below */}
+        <span className="chip absolute top-3 right-3 z-10 !py-1" dir="ltr">
+          {totalPlaced} / {totalNeeded}
+        </span>
+
+        {/* drop targets — labeled baskets with a live counter */}
         {a.targets.map((t) => {
           const got = placed[t.id] ?? [];
           const full = got.length >= capacityOf(t);
@@ -411,14 +416,23 @@ export function DragDropActivity({ activity, onWin, hintHandAfter = 2 }: CommonP
               style={{ right: `${t.x}%`, top: `${t.y}%` }}
               aria-label={t.label?.en ?? t.id}
             >
-              <div className={full ? "rounded-full bg-success-tint p-1 ring-4 ring-success/50" : "rounded-full border-2 border-dashed border-lock bg-white/40 p-1"}>
-                <Art id={t.art} size={104} />
-              </div>
-              {capacityOf(t) > 1 && (
-                <span className="ltr-term absolute -bottom-1 -left-1 rounded-full bg-white px-2 text-xs font-bold text-success shadow" dir="ltr">
-                  {got.length}/{capacityOf(t)}
+              <div
+                className={`flex flex-col items-center gap-1 rounded-[22px] p-1.5 transition-all ${
+                  full
+                    ? "border-[3px] border-solid border-success bg-white/90"
+                    : "border-[3px] border-dashed border-[#FF9600] bg-white/85"
+                }`}
+              >
+                <div className={full ? "rounded-full bg-success-tint p-1" : ""}>
+                  <Art id={t.art} size={92} />
+                </div>
+                <span className="urdu-tight whitespace-nowrap rounded-full bg-white px-2.5 py-0.5 text-[0.8rem] font-bold leading-[1.5] text-ink shadow-sm">
+                  {t.label?.ur ?? ""}
+                  {capacityOf(t) > 1 && (
+                    <span className="ltr-term mr-1 text-success" dir="ltr"> {got.length}/{capacityOf(t)}</span>
+                  )}
                 </span>
-              )}
+              </div>
             </button>
           );
         })}
@@ -444,7 +458,7 @@ export function DragDropActivity({ activity, onWin, hintHandAfter = 2 }: CommonP
               }}
               aria-label={item.id}
             >
-              <div className={isPicked ? "rounded-full ring-4 ring-roshan-orange" : ""}>
+              <div className={isPicked ? "rounded-full ring-4 ring-primary" : ""}>
                 <Art id={item.art} size={86} />
               </div>
             </button>
@@ -461,14 +475,9 @@ export function DragDropActivity({ activity, onWin, hintHandAfter = 2 }: CommonP
         )}
       </div>
 
-      <div className="mt-3 flex items-center justify-center gap-4">
-        <div className="ltr-term rounded-full bg-white px-4 py-1.5 text-sm font-semibold shadow-sm" dir="ltr">
-          {totalPlaced} / {totalNeeded}
-        </div>
-      </div>
-      {banner && <div className="mt-3"><BugBanner hint={banner} visible /></div>}
+      {banner && <div className="mt-4 flex justify-center"><BugBanner hint={banner} visible /></div>}
       {allPlaced && (
-        <p className="urdu anim-pop mt-3 text-center text-2xl font-bold text-roshan-green">{a.winPraise.ur}</p>
+        <p className="urdu anim-pop mt-3 text-center text-2xl font-bold text-success">{a.winPraise.ur}</p>
       )}
     </div>
   );
