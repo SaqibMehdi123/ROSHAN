@@ -13,6 +13,9 @@ const nextConfig: NextConfig = {
   assetPrefix: basePath || undefined,
   typescript: { ignoreBuildErrors: true },
   reactStrictMode: false,
+  // Workspace root = this project dir (it is nested under ~/my-project, so
+  // auto-detection would otherwise climb too far up and break CSS resolution).
+  turbopack: { root: __dirname },
 };
 
 export default nextConfig;

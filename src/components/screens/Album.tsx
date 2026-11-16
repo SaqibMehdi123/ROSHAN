@@ -6,7 +6,7 @@
 
 import { useApp, useActiveProfile, outfitUnlocks } from "@/lib/store";
 import { WORLDS, LESSONS } from "@/lib/content";
-import { Art } from "@/components/art/Props";
+import { Art, lessonIcon } from "@/components/art/Props";
 import { BigButton, RepeatButton, StarRow } from "@/components/ui-kids/KidKit";
 import { playAudio } from "@/lib/audio";
 
@@ -58,53 +58,53 @@ export function Album() {
         </div>
       </section>
 
-      {/* Sticker album — one per completed lesson */}
+      {/* Sticker album — earned stickers shine; the rest stay a happy mystery */}
       <section className="mt-8">
-        <h2 className="urdu mb-3 text-2xl font-bold text-right">سٹیکر البم — Sticker Album</h2>
-        <div className="card-kid grid grid-cols-4 gap-3 p-5 sm:grid-cols-6">
-          {LESSONS.map((l) => {
-            const earned = profile.stickers.includes(l.id);
-            return (
+        <div className="mb-3 flex items-center justify-between">
+          <h2 className="urdu text-2xl font-bold">سٹیکر البم — Stickers</h2>
+          <span className="stat-chip urdu-tight text-sm">
+            <span className="ltr-term" dir="ltr">{profile.stickers.length}/{LESSONS.length}</span>
+          </span>
+        </div>
+        {profile.stickers.length === 0 ? (
+          <div className="card-kid flex flex-col items-center gap-2 p-8 text-center">
+            <Art id="medal-box" size={64} />
+            <p className="urdu text-lg font-bold">پہلا سبق مکمل کرو اور پہلا سٹیکر جیتو!</p>
+            <p className="ltr-term text-xs text-roshan-ink-soft" dir="ltr">Finish your first lesson to earn a sticker!</p>
+          </div>
+        ) : (
+          <div className="card-kid grid grid-cols-3 gap-3 p-5 sm:grid-cols-5">
+            {LESSONS.filter((l) => profile.stickers.includes(l.id)).map((l) => (
               <button
                 key={l.id}
-                onClick={() => void playAudio(undefined, earned ? l.title.ur : "یہ سٹیکر اےسے ملے گا!")}
-                className={`flex flex-col items-center gap-1 rounded-2xl border-3 border-dashed p-2 ${earned ? "border-roshan-green bg-green-50" : "border-roshan-card-border opacity-60"}`}
+                onClick={() => void playAudio(undefined, l.title.ur)}
+                className="flex flex-col items-center gap-1 rounded-2xl border-3 border-roshan-green bg-green-50 p-2"
               >
-                {earned ? <div className="anim-pop"><Art id="star" size={44} /></div> : <span className="urdu text-2xl text-roshan-lock">؟</span>}
-                <span className="urdu text-[0.75rem] leading-[1.7]">{l.title.ur}</span>
+                <div className="anim-pop">
+                  <Art id={lessonIcon(l.skillKey)} size={46} />
+                </div>
+                <span className="urdu text-center text-[0.75rem] font-semibold leading-[1.6]">{l.title.ur}</span>
+                <StarRow count={profile.stars[l.id] ?? 0} size={16} animate={false} />
               </button>
-            );
-          })}
-        </div>
+            ))}
+          </div>
+        )}
       </section>
 
       {/* Outfit unlocks */}
       <section className="mt-8">
-        <h2 className="urdu mb-3 text-2xl font-bold text-right">پوشاک — Outfits</h2>
-        <div className="flex flex-wrap justify-end gap-4">
+        <h2 className="urdu mb-3 text-2xl font-bold">پوشاک — Outfits</h2>
+        <div className="flex flex-wrap justify-center gap-4">
           {unlocks.map((o) => {
             const earned = profile.outfits.includes(o.id) || totalStars >= o.at;
             return (
               <div key={o.id} className={`card-kid flex min-w-36 flex-col items-center gap-1 p-3 ${earned ? "" : "opacity-45"}`}>
-                <Art id={earned ? "medal-paint" : "lock"} size={44} />
+                <Art id={earned ? "party-flag" : "lock"} size={44} />
                 <span className="urdu text-sm font-bold">{o.name.ur}</span>
                 <span className="ltr-term text-xs text-roshan-ink-soft" dir="ltr">{totalStars}/{o.at} ★</span>
               </div>
             );
           })}
-        </div>
-      </section>
-
-      {/* Latest stars */}
-      <section className="mt-8">
-        <h2 className="urdu mb-3 text-2xl font-bold text-right">تارے — My stars</h2>
-        <div className="flex flex-wrap justify-end gap-3">
-          {LESSONS.filter((l) => profile.stars[l.id]).map((l) => (
-            <div key={l.id} className="card-kid flex items-center gap-3 p-3">
-              <span className="urdu text-sm font-bold">{l.title.ur}</span>
-              <StarRow count={profile.stars[l.id]} size={26} animate={false} />
-            </div>
-          ))}
         </div>
       </section>
     </main>

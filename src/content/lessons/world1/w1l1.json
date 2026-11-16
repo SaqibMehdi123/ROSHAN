@@ -23,7 +23,7 @@
       {
         "bg": "bg-storeroom",
         "props": [
-          "crate",
+          "glowing-box",
           "cricket-bat"
         ],
         "cast": [
@@ -57,7 +57,7 @@
       {
         "bg": "bg-storeroom",
         "props": [
-          "crate"
+          "glowing-box"
         ],
         "cast": [
           "noor",

@@ -32,7 +32,7 @@ export function PromptBar({ prompt, audio }: { prompt: Bilingual; audio: string 
         </span>
       </button>
       <div className="min-w-0 flex-1 text-center">
-        <p className="urdu text-[1.35rem] font-bold leading-[1.9]" key={prompt.ur}>
+        <p className="urdu text-[1.35rem] font-bold leading-[1.6]" key={prompt.ur}>
           {prompt.ur}
         </p>
         <p className="ltr-term mt-0.5 text-sm text-roshan-ink-soft" dir="ltr">

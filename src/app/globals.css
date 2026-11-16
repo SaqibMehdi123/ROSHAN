@@ -6,8 +6,8 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-fredoka);
-  --font-mono: var(--font-fredoka);
+  --font-sans: var(--font-latin);
+  --font-mono: var(--font-latin);
   --color-border: var(--border);
   --color-ring: var(--ring);
   --color-primary: var(--primary);
@@ -62,7 +62,7 @@
   --r-shadow-lg: 0 8px 0 rgba(74, 52, 33, 0.10), 0 18px 40px -12px rgba(74, 52, 33, 0.25);
   --r-shadow-btn: 0 5px 0 rgba(74, 52, 33, 0.55), 0 12px 24px -8px rgba(74, 52, 33, 0.35);
 
-  /* fluid type scale (mobile → desktop, Nastaliq needs headroom) */
+  /* fluid type scale (mobile → desktop) */
   --fs-hero: clamp(1.9rem, 3.4vw + 1.1rem, 3.1rem);
   --fs-title: clamp(1.5rem, 2.2vw + 1rem, 2.25rem);
   --fs-body: clamp(1.05rem, 0.5vw + 0.95rem, 1.35rem);
@@ -96,7 +96,7 @@ body {
 }
 
 body {
-  font-family: var(--font-fredoka), "Noto Nastaliq Urdu", sans-serif;
+  font-family: var(--font-latin), var(--font-urdu), sans-serif;
   min-height: 100dvh;
   overscroll-behavior: none;
   /* gentle storybook sky: warm sun glow at top, soft cream wash */
@@ -107,18 +107,18 @@ body {
   background-attachment: fixed;
 }
 
-/* Urdu Nastaliq — needs vertical room (spec: 2x line-height) */
+/* Urdu Naskh — upright textbook script; comfortable 1.7 line height */
 .urdu {
-  font-family: var(--font-nastaliq), "Noto Nastaliq Urdu", serif;
-  line-height: 2;
+  font-family: var(--font-urdu), "Noto Naskh Arabic", serif;
+  line-height: 1.7;
   direction: rtl;
   unicode-bidi: isolate;
 }
 
-/* tighter Nastaliq for big headings (keeps hero blocks compact) */
+/* Naskh for headings — compact but airy */
 .urdu-tight {
-  font-family: var(--font-nastaliq), "Noto Nastaliq Urdu", serif;
-  line-height: 1.75;
+  font-family: var(--font-urdu), "Noto Naskh Arabic", serif;
+  line-height: 1.5;
   direction: rtl;
   unicode-bidi: isolate;
 }
@@ -127,7 +127,7 @@ body {
 .ltr-term {
   direction: ltr;
   unicode-bidi: isolate;
-  font-family: var(--font-fredoka), sans-serif;
+  font-family: var(--font-latin), sans-serif;
 }
 
 /* ============================================================
@@ -154,6 +154,7 @@ body {
   -webkit-tap-highlight-color: transparent;
   position: relative;
   overflow: hidden;
+  line-height: 1.45;
 }
 /* glossy top-light so buttons feel like candy */
 .btn-kid::before {
@@ -195,7 +196,7 @@ body {
 /* Storybook card */
 .card-kid {
   background: linear-gradient(180deg, #FFFFFF 0%, #FFFDF7 100%);
-  border: 4px solid var(--r-card-border);
+  border: 3px solid var(--r-card-border);
   border-radius: 26px;
   box-shadow: var(--r-shadow-lg);
   position: relative;
@@ -204,8 +205,8 @@ body {
 .card-kid::before {
   content: "";
   position: absolute;
-  inset: 5px;
-  border-radius: 20px;
+  inset: 4px;
+  border-radius: 21px;
   border: 1.5px solid rgba(243, 229, 200, 0.8);
   pointer-events: none;
 }
@@ -287,7 +288,7 @@ body {
   border: 2px solid var(--r-card-border);
   box-shadow: 0 2px 0 rgba(74, 52, 33, 0.08);
   font-weight: 600;
-  line-height: 1.9;
+  line-height: 1.55;
 }
 
 /* sticky glass HUD used by lesson screens */
@@ -430,7 +431,7 @@ body {
   background: linear-gradient(180deg, #FFFFFF, #FFFDF6);
   border: 3px solid var(--r-outline);
   border-radius: 22px;
-  padding: 1rem 1.5rem;
+  padding: 1.25rem 1.75rem;
   box-shadow: var(--r-shadow-lg);
 }
 .bubble::after {
@@ -470,7 +471,7 @@ body {
 
 /* Landscape phones: tighten vertical rhythm so play areas stay visible */
 @media (max-height: 520px) and (orientation: landscape) {
-  .urdu, .urdu-tight { line-height: 1.65; }
+  .urdu, .urdu-tight { line-height: 1.45; }
   .btn-kid { min-height: 56px; }
 }
 

@@ -109,10 +109,10 @@ export function BugBanner({ hint, visible }: { hint: Bilingual; visible: boolean
         <Bijli size={44} emote="idle" />
       </div>
       <div className="text-right">
-        <p className="urdu text-[1.15rem] font-semibold leading-[2]">
+        <p className="urdu text-[1.15rem] font-semibold leading-[1.7]">
           اوپس! ایک بگ ملا! دوبارہ کوشش کریں؟
         </p>
-        <p className="urdu text-[1.05rem] leading-[2] opacity-90">{hint.ur}</p>
+        <p className="urdu text-[1.05rem] leading-[1.7] opacity-90">{hint.ur}</p>
         <p className="ltr-term text-xs opacity-70">{hint.en}</p>
       </div>
     </div>
@@ -139,7 +139,17 @@ export function RepeatButton({ className }: { className?: string }) {
 }
 
 /* ----------------------------- SpeakBubble ----------------------------- */
-/** Narration/dialog bubble: Urdu primary (Nastaliq), English secondary, speaker chip. */
+/** Narration/dialog bubble: Urdu primary (Naskh), English secondary, speaker chip. */
+const SPEAKER_UR: Record<string, string> = {
+  bijli: "بجلی",
+  noor: "نور",
+  chotu: "چھوٹو",
+  golmatol: "گول مٹول",
+  "ustad-ullo": "استاد العلول",
+  ustad: "استاد العلول",
+  narrator: "کہانی",
+};
+
 export function SpeakBubble({
   speaker,
   ur,
@@ -170,21 +180,28 @@ export function SpeakBubble({
     return () => {
       cancelled = true;
     };
-     
   }, [audio, ur]);
+  const speakerUr = speaker ? SPEAKER_UR[speaker] ?? speaker : undefined;
   return (
     <div className="bubble mx-auto w-fit max-w-2xl">
-      {speaker && (
-        <div className="ltr-term mb-1 text-xs font-semibold uppercase tracking-wide text-roshan-orange-deep">
-          {speaker}
+      {speakerUr && (
+        <div className="urdu-tight -mb-1 w-fit rounded-full bg-roshan-accent px-3 py-0.5 text-sm font-bold text-roshan-orange-deep">
+          {speakerUr}
         </div>
       )}
       {!hideUr && (
-        <p className={`urdu text-[1.35rem] font-semibold ${emote === "narrator" ? "text-roshan-ink-soft" : ""}`} key={ur}>
+        <p className={`urdu mt-2 text-[1.35rem] font-semibold ${emote === "narrator" ? "text-roshan-ink-soft" : ""}`} key={ur}>
           {ur}
         </p>
       )}
-      {en && <p className={`ltr-term text-sm text-roshan-ink-soft ${hideUr ? "" : "mt-2 border-t border-dashed border-roshan-card-border pt-2"}`} dir="ltr">{en}</p>}
+      {en && (
+        <p
+          className={`ltr-term text-[0.95rem] font-medium text-roshan-ink-soft ${hideUr ? "" : "mt-2 border-t border-dashed border-roshan-card-border pt-2"}`}
+          dir="ltr"
+        >
+          {en}
+        </p>
+      )}
     </div>
   );
 }

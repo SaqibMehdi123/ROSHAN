@@ -44,7 +44,7 @@ export function CastScreen() {
             <p className="ltr-term text-xs text-roshan-ink-soft" dir="ltr">{c.name.en}</p>
             {active === c.id && (
               <div className="mt-1 w-full text-right">
-                <p className="urdu text-base leading-[2]">{c.role.ur}</p>
+                <p className="urdu text-base leading-[1.7]">{c.role.ur}</p>
                 <p className="urdu text-lg font-bold text-roshan-orange-deep">“{c.catchphrase.ur}”</p>
                 <p className="ltr-term text-[0.7rem] text-roshan-ink-soft" dir="ltr">{c.catchphrase.en}</p>
               </div>
@@ -129,7 +129,10 @@ export function SettingsScreen() {
               <span className="urdu text-lg font-bold">داخل ہوں</span>
             </button>
           </div>
-          <p className="ltr-term mt-2 text-xs text-roshan-ink-soft" dir="ltr">
+          <p className="urdu text-base text-roshan-ink-soft text-right">
+            {teacherHashExists ? "اپنا پن لکھ کر اندر جائیں۔" : "پہلی بار: اُستاد زون کے لیے کم از کم ۴ ہندسوں کا پن بنائیں۔"}
+          </p>
+          <p className="ltr-term mt-1 text-xs text-roshan-ink-soft" dir="ltr">
             {teacherHashExists ? "Enter the PIN you created." : "First time: choose a PIN (4+ digits) for the teacher hub."}
           </p>
           {pinError && <p className="urdu mt-1 text-base text-roshan-orange-deep">پن غلط ہے — دوبارہ کوشش کریں۔</p>}

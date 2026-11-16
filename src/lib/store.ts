@@ -334,3 +334,9 @@ export function checkTeacherPin(pin: string): boolean {
   const h = storage.readTeacherPinHash();
   return h !== null && h === simpleHash(pin);
 }
+
+// Dev/test hook: lets e2e scripts drive navigation deterministically.
+// Stripped from production reasoning only by convention — exposes no secrets.
+if (typeof window !== "undefined" && process.env.NODE_ENV === "development") {
+  (window as unknown as { __roshan?: unknown }).__roshan = useApp;
+}

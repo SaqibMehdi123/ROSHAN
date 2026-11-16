@@ -69,8 +69,8 @@ export function BrainGym() {
           <h1 className="urdu text-3xl font-bold">برین جم</h1>
           <Art id="gem" size={44} />
         </div>
-        <p className="ltr-term text-xs text-roshan-ink-soft" dir="ltr">
-          daily warm-up · tier {tier} {playedToday ? "· done today — you can still replay!" : ""}
+        <p className="urdu-tight mt-1 text-base text-roshan-ink-soft">
+          روزانہ ورزش · سطح {tier} {playedToday ? " · آج مکمل! دوبارہ کھیل سکتے ہو" : ""}
         </p>
         <p className="urdu mt-1 text-lg text-roshan-ink-soft">
           ہفتہ وار چیمپیئن: ذاتی ریکارڈ — صرف اپنے آپ سے مقابلہ!
@@ -88,7 +88,7 @@ export function BrainGym() {
               نئی سطح کھل گئی — اگلی دفعہ مشکل تر!
             </p>
           )}
-          <p className="ltr-term mt-2 text-sm text-roshan-ink-soft" dir="ltr">streak: {profile.brainGym.streak} in a row</p>
+          <p className="urdu-tight mt-2 text-base text-roshan-ink-soft">لگاتار {profile.brainGym.streak} جیتیں!</p>
           <div className="mt-6 flex justify-center gap-3">
             <BigButton label={{ ur: "دوبارہ", en: "Replay" }} variant="back" onClick={() => { setResult("idle"); stopSpeaking(); }} />
             <BigButton label={{ ur: "سبق چلو", en: "To lesson" }} variant="go" onClick={() => go(profile.current ? "world" : "map")} />

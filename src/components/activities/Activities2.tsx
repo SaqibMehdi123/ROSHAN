@@ -131,7 +131,7 @@ export function TapSequenceActivity({ activity, onWin, hintHandAfter = 2 }: Comm
               aria-label={step.label.en}
             >
               <Art id={step.art} size={72} />
-              <span className="urdu text-center text-base font-bold leading-[1.9]">{step.label.ur}</span>
+              <span className="urdu text-center text-base font-bold leading-[1.6]">{step.label.ur}</span>
               <span className="ltr-term text-center text-[0.65rem] text-roshan-ink-soft" dir="ltr">{step.label.en}</span>
             </button>
           );
@@ -203,7 +203,7 @@ export function QuizMixActivity({ activity, onWin, hintHandAfter = 2 }: CommonPr
         {/* question card */}
         <div className="card-kid mx-auto flex w-fit max-w-xl flex-col items-center gap-2 p-5" key={q.id}>
           <Art id={q.art} size={100} />
-          <p className="urdu text-center text-2xl font-bold leading-[1.9]">{q.question.ur}</p>
+          <p className="urdu text-center text-2xl font-bold leading-[1.6]">{q.question.ur}</p>
           <p className="ltr-term text-center text-sm text-roshan-ink-soft" dir="ltr">{q.question.en}</p>
         </div>
 
@@ -227,7 +227,7 @@ export function QuizMixActivity({ activity, onWin, hintHandAfter = 2 }: CommonPr
                 aria-label={opt.label.en}
               >
                 {opt.art && <Art id={opt.art} size={62} />}
-                <span className="urdu text-center text-xl font-bold leading-[1.9]">{opt.label.ur}</span>
+                <span className="urdu text-center text-xl font-bold leading-[1.6]">{opt.label.ur}</span>
                 <span className="ltr-term text-xs text-roshan-ink-soft" dir="ltr">{opt.label.en}</span>
               </button>
             ))}

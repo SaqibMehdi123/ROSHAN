@@ -217,7 +217,7 @@ export function TypeInputActivity({ activity, onWin }: CommonProps) {
           <div className="anim-pop"><Art id={target.art} size={110} /></div>
         ) : null}
 
-        <p className="urdu text-center text-2xl font-bold leading-[1.9]">{target.label.ur}</p>
+        <p className="urdu text-center text-2xl font-bold leading-[1.6]">{target.label.ur}</p>
         <p className="ltr-term text-center text-sm text-roshan-ink-soft" dir="ltr">{target.label.en}</p>
 
         {/* typing slots (LTR — Latin letters) */}

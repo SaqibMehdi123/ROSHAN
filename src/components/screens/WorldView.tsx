@@ -7,7 +7,7 @@
 
 import { useApp, useActiveProfile } from "@/lib/store";
 import { getWorld, lessonsOfWorld, WORLD_MEDALS } from "@/lib/content";
-import { Art } from "@/components/art/Props";
+import { Art, lessonIcon } from "@/components/art/Props";
 import { Character } from "@/components/art/Characters";
 import { BigButton, RepeatButton } from "@/components/ui-kids/KidKit";
 import { playAudio } from "@/lib/audio";
@@ -50,7 +50,7 @@ export function WorldView() {
             {world.name.ur}
           </h1>
           <p className="ltr-term text-sm font-semibold tracking-wide text-roshan-ink-soft" dir="ltr">{world.name.en}</p>
-          <p className="urdu-tight mx-auto mt-2 max-w-xl text-lg sm:text-xl leading-[1.9] line-clamp-2">{world.arcSummary.ur}</p>
+          <p className="urdu-tight mx-auto mt-2 max-w-xl text-lg sm:text-xl leading-[1.6] line-clamp-2">{world.arcSummary.ur}</p>
 
           <div className="mt-4 flex flex-wrap items-center justify-center gap-2">
             <span className="stat-chip urdu-tight text-base" style={{ borderColor: `${world.color}55` }}>
@@ -67,7 +67,7 @@ export function WorldView() {
           </div>
       </div>
 
-      {/* Lesson path (RTL) */}
+      {/* Lesson path (RTL) — each node shows the lesson's own skill icon */}
       <div className="mt-9 flex flex-wrap items-start justify-center gap-x-5 gap-y-9 sm:gap-x-7">
         {Array.from({ length: total }, (_, i) => {
           const n = i + 1;
@@ -78,7 +78,7 @@ export function WorldView() {
           const locked = lesson && !done && lesson.id !== currentLessonId && !prog;
 
           return (
-            <div key={n} className="relative flex w-[6.4rem] flex-col items-center text-center sm:w-28">
+            <div key={n} className="relative flex w-[6.8rem] flex-col items-center text-center sm:w-28">
               <div className="ltr-term absolute -top-5 left-1/2 -translate-x-1/2 rounded-full bg-white/90 px-2 py-0.5 text-[0.7rem] font-bold text-roshan-ink-soft shadow-sm" dir="ltr">
                 {world.id}.{n}
               </div>
@@ -96,11 +96,16 @@ export function WorldView() {
                   aria-label={lesson.title.en}
                 >
                   {done ? (
-                    <Art id="star" size={40} />
+                    <span className="relative">
+                      <Art id={lessonIcon(lesson.skillKey)} size={38} />
+                      <span className="absolute -bottom-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full border-2 border-white bg-roshan-green" aria-hidden>
+                        <svg viewBox="0 0 10 8" width="9" height="8"><path d="M1 4 l2.6 2.8 L9 1" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                      </span>
+                    </span>
                   ) : locked ? (
                     <Art id="lock" size={34} />
                   ) : (
-                    <span className="text-3xl text-white drop-shadow">▶</span>
+                    <Art id={lessonIcon(lesson.skillKey)} size={44} />
                   )}
                 </button>
               ) : (
@@ -108,18 +113,18 @@ export function WorldView() {
                   <span className="urdu-tight text-sm">جلد</span>
                 </div>
               )}
-              <p className={`urdu-tight map-label mt-2 rounded-full px-2 text-center text-[1.02rem] font-semibold leading-[1.9] sm:text-base ${locked ? "map-label-locked" : ""}`}>
+              <p className={`urdu-tight map-label mt-2 max-w-[6.5rem] rounded-full px-2 text-center text-[1.02rem] font-semibold leading-[1.6] sm:text-base ${locked ? "map-label-locked" : ""}`}>
                 {lesson ? lesson.title.ur : "نئی کہانی"}
               </p>
               {lesson && done && (
-                <div className="mt-0.5 flex gap-0.5" dir="ltr">
+                <div className="mt-1 flex h-6 items-center gap-0.5" dir="ltr">
                   {[1, 2, 3].map((s) => (
                     <span key={s} className={s <= (profile.stars[lesson.id] ?? 0) ? "text-lg" : "text-lg opacity-25"}>★</span>
                   ))}
                 </div>
               )}
               {isCurrent && (
-                <div className="mt-1">
+                <div className="mt-1 h-10">
                   <Character id="bijli" size={38} emote="happy" />
                 </div>
               )}
@@ -134,3 +139,4 @@ export function WorldView() {
     </main>
   );
 }
+

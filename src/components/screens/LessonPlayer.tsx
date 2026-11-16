@@ -90,7 +90,7 @@ export function LessonPlayer() {
           <Art id="home" size={32} />
         </button>
         <div className="flex min-w-0 flex-col items-center gap-0.5">
-          <p className="urdu-tight truncate text-lg font-bold leading-[1.9] sm:text-xl">{lesson.title.ur}</p>
+          <p className="urdu-tight truncate text-lg font-bold leading-[1.6] sm:text-xl">{lesson.title.ur}</p>
           <div className="flex items-center gap-2">
             <ProgressDots phases={PHASES.map((p) => PHASE_LABELS[p].en)} current={phaseIdx} />
             <span className="urdu-tight text-sm text-roshan-ink-soft">{PHASE_LABELS[phase].ur}</span>
@@ -191,39 +191,62 @@ function StoryPhase({
       {/* scene stage (capped so the dialog bubble always stays on screen) */}
       <div className="relative mx-auto max-w-3xl overflow-hidden rounded-3xl border-4 border-roshan-card-border bg-white shadow-[var(--r-shadow-lg)]">
         <Art id={scene.bg} className="block" />
-        {/* set dressing — story props scattered along the top edge */}
+        {/* set dressing — story props stand naturally on the ground at the sides */}
         {scene.props && scene.props.length > 0 && (
-          <div className="pointer-events-none absolute inset-x-0 top-0 flex items-start justify-start gap-1 p-2" aria-hidden>
-            {scene.props.slice(0, 3).map((p, i) => (
-              <div
-                key={p}
-                className="anim-bob"
-                style={{
-                  animationDelay: `${i * 0.7}s`,
-                  transform: `rotate(${i % 2 === 0 ? -4 : 5}deg)`,
-                }}
-              >
-                <Art id={p} size={i === 0 ? 74 : 58} />
-              </div>
-            ))}
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 flex items-end justify-between px-3 pb-1" aria-hidden>
+            <div className="flex items-end gap-2">
+              {scene.props.slice(0, 2).map((p) => (
+                <Art key={p} id={p} size={62} />
+              ))}
+            </div>
+            {scene.props[2] && <Art id={scene.props[2]} size={54} />}
           </div>
         )}
         {/* soft vignette so characters pop */}
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-black/10 to-transparent" aria-hidden />
-        <div className="absolute inset-x-0 bottom-1 flex items-end justify-center gap-2 px-4">
-          {scene.cast.map((c) => (
-            <div key={c} className="transition-transform hover:scale-105">
-              <Character
-                id={c}
-                size={c === "golmatol" ? 118 : c === "ustad-ullo" ? 110 : 100}
-                emote={line.char === c ? line.emote ?? "idle" : "idle"}
-                className={line.char === c ? "anim-pop" : ""}
-              />
-            </div>
-          ))}
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-black/15 to-transparent" aria-hidden />
+        {/* cast — the speaker is in the spotlight; every poke also advances the story */}
+        <div className="absolute inset-x-0 bottom-1 flex items-end justify-center gap-4 px-4">
+          {scene.cast.map((c) => {
+            const speaking = line.char === c;
+            return (
+              <button
+                key={c}
+                onClick={() => {
+                  playSfx("happyBeep", true); // tappable friends — the poke beeps happily
+                }}
+                className={`relative rounded-full transition-all duration-300 ${speaking ? "z-10" : ""}`}
+                style={{
+                  transform: speaking ? "scale(1.13) translateY(-4px)" : "scale(0.96)",
+                }}
+                aria-label={c}
+              >
+                {/* spotlight halo + soft ground shadow under the speaker */}
+                {speaking && (
+                  <>
+                    <span
+                      className="absolute left-1/2 top-1/2 -z-10 h-[120%] w-[130%] -translate-x-1/2 -translate-y-1/2 rounded-full"
+                      style={{ background: "radial-gradient(closest-side, rgba(253,230,138,0.55), rgba(253,230,138,0))" }}
+                      aria-hidden
+                    />
+                    <span
+                      className="absolute bottom-1 left-1/2 h-3 w-[70%] -translate-x-1/2 rounded-[100%]"
+                      style={{ background: "rgba(74,52,33,0.18)" }}
+                      aria-hidden
+                    />
+                  </>
+                )}
+                <Character
+                  id={c}
+                  size={c === "golmatol" ? 112 : c === "ustad-ullo" ? 104 : 96}
+                  emote={speaking ? line.emote ?? "idle" : "idle"}
+                  className={speaking ? "anim-pop" : ""}
+                />
+              </button>
+            );
+          })}
         </div>
-        {/* progress */}
-        <div className="ltr-term absolute left-3 top-2 rounded-full bg-white/85 px-3 py-0.5 text-xs font-bold shadow-sm" dir="ltr">
+        {/* progress — clean pill */}
+        <div className="ltr-term absolute left-3 top-2 rounded-full bg-white/90 px-3 py-0.5 text-xs font-bold text-roshan-ink shadow-sm" dir="ltr">
           {idx + 1} / {total}
         </div>
       </div>
@@ -242,7 +265,7 @@ function StoryPhase({
 
       {/* hero moment: mission accept */}
       {line.choice && lineDone && (
-        <div className="mt-4 flex justify-center" onClick={(e) => e.stopPropagation()}>
+        <div className="mt-5 flex justify-center" onClick={(e) => e.stopPropagation()}>
           <BigButton
             label={{ ur: line.choice.ur, en: line.choice.en }}
             variant="success"
@@ -256,14 +279,23 @@ function StoryPhase({
       )}
 
       {!line.choice && (
-        <div className="mt-4 flex justify-center">
+        <div className="mt-5 flex justify-center">
           {lineDone ? (
-            <span className="urdu-tight anim-bob inline-flex items-center gap-2 rounded-full border-2 border-roshan-orange bg-[#FFF8EC] px-5 py-2 text-lg font-bold text-roshan-orange-deep shadow-sm">
-              آگے بڑھنے کے لیے کہیں بھی دباؤ
+            <button
+              className="btn-kid btn-teal !min-h-14 !px-7 anim-bob"
+              onClick={(e) => {
+                e.stopPropagation();
+                advance();
+              }}
+            >
+              <span className="urdu-tight text-lg font-bold">آگے بڑھو</span>
               <span className="ltr-term text-xl" dir="ltr" aria-hidden>←</span>
-            </span>
+            </button>
           ) : (
-            <span className="urdu-tight text-lg text-roshan-ink-soft animate-pulse">…</span>
+            <span className="urdu-tight flex items-center gap-2 rounded-full bg-white/70 px-5 py-2 text-base text-roshan-ink-soft">
+              <span className="ltr-term" dir="ltr" aria-hidden>🔊</span>
+              سن رہے ہیں…
+            </span>
           )}
         </div>
       )}
@@ -292,11 +324,20 @@ function ShowPhase({
 
   return (
     <div className="select-none">
-      <div className="card-kid mx-auto flex max-w-2xl flex-col items-center gap-4 p-6" key={idx}>
-        <div className="anim-pop">
-          <Art id={step.visual} size={190} />
+      <div className="card-kid mx-auto flex max-w-2xl flex-col items-center gap-5 p-6 sm:p-8" key={idx}>
+        {/* step dots */}
+        <div className="flex items-center gap-2" dir="ltr" aria-hidden>
+          {steps.map((_, i) => (
+            <span
+              key={i}
+              className={`h-2.5 rounded-full transition-all ${i === idx ? "w-7 bg-roshan-orange" : i < idx ? "w-2.5 bg-roshan-green" : "w-2.5 bg-roshan-card-border"}`}
+            />
+          ))}
         </div>
-        <p className="urdu text-center text-3xl font-bold">{step.caption.ur}</p>
+        <div className="anim-pop" key={step.visual}>
+          <Art id={step.visual} size={210} />
+        </div>
+        <p className="urdu text-center text-3xl font-bold leading-[1.7]">{step.caption.ur}</p>
         <SpeakBubble
           speaker="English"
           ur={step.caption.ur}
@@ -306,7 +347,7 @@ function ShowPhase({
           hideUr
         />
       </div>
-      <div className="mt-5 flex items-center justify-center gap-3">
+      <div className="mt-6 flex items-center justify-center gap-3">
         {idx > 0 && (
           <BigButton label={{ ur: "پیچھے", en: "Back" }} variant="back" onClick={() => onStep(idx - 1)} />
         )}
@@ -384,9 +425,9 @@ function CheerPhase({
       <div className="card-kid mx-auto mt-6 flex max-w-xl items-center gap-4 p-5" key={lesson.cheer.recap[0].ur}>
         <Character id="ustad-ullo" size={96} emote="perch" />
         <div className="text-right">
-          <p className="ltr-term text-xs font-bold uppercase text-roshan-teal">Ustaad Ulloo</p>
-          <p className="urdu text-xl font-semibold leading-[2]">{lesson.cheer.recap[0].ur}</p>
-          <p className="urdu text-xl font-semibold leading-[2]">{lesson.cheer.recap[1].ur}</p>
+          <p className="urdu-tight text-sm font-bold text-roshan-teal">استاد العلول کہتے ہیں:</p>
+          <p className="urdu text-xl font-semibold leading-[1.7]">{lesson.cheer.recap[0].ur}</p>
+          <p className="urdu text-xl font-semibold leading-[1.7]">{lesson.cheer.recap[1].ur}</p>
           <p className="ltr-term mt-1 text-xs text-roshan-ink-soft" dir="ltr">
             {lesson.cheer.recap[0].en} {lesson.cheer.recap[1].en}
           </p>

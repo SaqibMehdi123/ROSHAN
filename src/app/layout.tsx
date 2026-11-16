@@ -1,25 +1,27 @@
 import type { Metadata, Viewport } from "next";
-import { Noto_Nastaliq_Urdu, Fredoka } from "next/font/google";
+import { Noto_Naskh_Arabic, Baloo_2 } from "next/font/google";
 import "./globals.css";
 
 // Canonical site URL — override per deployment with NEXT_PUBLIC_SITE_URL
 export const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ?? "https://saqibmehdi123.github.io/ROSHAN";
 
-// Urdu in Nastaliq script — self-hosted at build time so the PWA works fully offline
-const nastaliq = Noto_Nastaliq_Urdu({
-  variable: "--font-nastaliq",
+// Urdu in NASKH script — the upright textbook script children read in school.
+// (Nastaliq's diagonally-hanging letters read as "tilted" to young kids; Naskh
+// sits flat on the line, is heavier, and matches their Urdu primers.)
+const urduFont = Noto_Naskh_Arabic({
+  variable: "--font-urdu",
   subsets: ["arabic"],
   weight: ["400", "500", "600", "700"],
   display: "swap",
   preload: true,
 });
 
-// Rounded friendly font for English terms & UI numbers
-const fredoka = Fredoka({
-  variable: "--font-fredoka",
+// Chunky rounded upright Latin font for English terms & UI numbers
+const latinFont = Baloo_2({
+  variable: "--font-latin",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "500", "600", "700", "800"],
   display: "swap",
 });
 
@@ -186,7 +188,7 @@ function structuredData() {
           name: "Can children use ROSHAN before they can read?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Yes. ROSHAN is voice-first: every story line, instruction and hint is spoken aloud in Urdu (Nastaliq script), with optional speech synthesis and English subtitles. No reading is required to complete any lesson.",
+            text: "Yes. ROSHAN is voice-first: every story line, instruction and hint is spoken aloud in Urdu (Naskh script), with optional speech synthesis and English subtitles. No reading is required to complete any lesson.",
           },
         },
         {
@@ -239,7 +241,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ur" dir="rtl" suppressHydrationWarning>
-      <body className={`${nastaliq.variable} ${fredoka.variable} antialiased`}>
+      <body className={`${urduFont.variable} ${latinFont.variable} antialiased`}>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData()) }}

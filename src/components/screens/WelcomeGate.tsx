@@ -66,7 +66,7 @@ export function WelcomeGate() {
       <Shell>
         <h2 className="urdu-tight text-3xl font-bold sm:text-4xl">اپنا رنگ چُنو!</h2>
         <p className="urdu-tight mt-1 text-xl text-roshan-ink-soft">یہ تمھارا خاص رنگ ہو گا۔</p>
-        <div className="mt-8 flex max-w-lg flex-wrap justify-center gap-3 sm:gap-4">
+        <div className="mt-8 mx-auto grid w-fit grid-cols-6 gap-3 sm:gap-4">
           {AVATAR_COLORS.map((c) => {
             const on = color === c;
             return (
@@ -76,7 +76,7 @@ export function WelcomeGate() {
                   setColor(c);
                   void playAudio(undefined, "کمال!");
                 }}
-                className={`relative h-16 w-16 rounded-full border-4 transition-transform hover:scale-110 sm:h-20 sm:w-20 ${on ? "scale-110 border-roshan-ink shadow-[var(--r-shadow)]" : "border-white shadow"}`}
+                className={`relative h-14 w-14 rounded-full border-4 transition-transform hover:scale-110 sm:h-20 sm:w-20 ${on ? "scale-110 border-roshan-ink shadow-[var(--r-shadow)]" : "border-white shadow"}`}
                 style={{ background: c }}
                 aria-label={`color ${c}`}
               >

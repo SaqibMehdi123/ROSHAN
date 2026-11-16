@@ -140,7 +140,21 @@ export function AdventureMap() {
               strokeLinecap="round"
               strokeDasharray="0.1 4.4"
             />
+            {/* journey direction — chevrons pointing LEFT (RTL travel) */}
+            {[[88.5, 47, -62], [76.5, 52, 68], [64, 48, -66], [52.5, 52, 64], [40, 48, -66], [27.5, 52, 64], [15.5, 47, -60]].map(([x, y, r], i) => (
+              <g key={i} transform={`translate(${x} ${y}) rotate(${r})`} opacity="0.9">
+                <path d="M2.2 -2.4 L-1.6 0 L2.2 2.4" fill="none" stroke="#D9B97F" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" transform="scale(1.35)" />
+              </g>
+            ))}
           </svg>
+
+          {/* start flag — the journey begins here (RTL: top-right) */}
+          <div className="pointer-events-none absolute z-10 flex flex-col items-center" style={{ right: "1.5%", top: "12%" }} aria-hidden>
+            <svg viewBox="0 0 40 58" width="30" height="44">
+              <line x1="7" y1="4" x2="7" y2="54" stroke="#8B5E3C" strokeWidth="3.4" strokeLinecap="round" />
+              <path d="M9 5 L34 12 L9 21 Z" fill="#F59E0B" stroke="#4A3421" strokeWidth="2" strokeLinejoin="round" />
+            </svg>
+          </div>
 
           {/* world nodes */}
           {WORLDS.map((w, i) => {
@@ -173,7 +187,7 @@ export function AdventureMap() {
                   <Art id={unlocked ? MEDALS[i] : "lock"} size={unlocked ? (isCurrent ? 50 : 44) : 34} />
                 </div>
                 <div
-                  className={`urdu-tight map-label mx-auto mt-1.5 w-[5.6rem] rounded-full px-1 py-0.5 text-[0.82rem] font-bold leading-[1.9] sm:w-28 sm:text-[0.95rem] ${unlocked ? (isCurrent ? "map-label-current" : "") : "map-label-locked"}`}
+                  className={`urdu-tight map-label mx-auto mt-1.5 w-[5.6rem] whitespace-nowrap rounded-full px-1 py-0.5 text-[0.82rem] font-bold leading-[1.6] sm:w-28 sm:text-[0.95rem] ${unlocked ? (isCurrent ? "map-label-current" : "") : "map-label-locked"}`}
                 >
                   {w.name.ur}
                 </div>
@@ -186,14 +200,17 @@ export function AdventureMap() {
             );
           })}
 
-          {/* Noor & Bijli stand at the current spot */}
+          {/* Noor & Bijli stand right AT the current spot */}
           {(() => {
             const idx = Math.max(0, WORLDS.findIndex((w) => w.id === currentWorld));
             const pos = NODE_POS[idx] ?? NODE_POS[0];
             return (
-              <div className="pointer-events-none absolute z-10 flex translate-x-1/2 items-end gap-0.5 sm:gap-1" style={{ right: `${pos.x}%`, top: `calc(${pos.y}% + 52px)` }}>
-                <Character id="noor" size={56} emote="waving" />
-                <Character id="bijli" size={52} emote="happy" />
+              <div
+                className="pointer-events-none absolute z-20 flex items-end gap-0"
+                style={{ right: `calc(${pos.x}% + 26px)`, top: `calc(${pos.y}% - 34px)` }}
+              >
+                <Character id="noor" size={46} emote="waving" />
+                <Character id="bijli" size={42} emote="happy" />
               </div>
             );
           })()}
